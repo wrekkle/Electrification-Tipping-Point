@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "generated": "2026-10-30",
+  "scope": "索引外、2023-2026、有全文或官方代码的近邻文献；只记录可借用的模型/算法与迁移接口，不复述已有 40 篇及 2026-10-29 四篇笔记的方法摘要。",
+  "index_check": {
+    "index": "literature/index.json",
+    "n_items": 40,
+    "method": "脚本读取 index.json，对 arXiv 编号与题名关键词做子串匹配；4 篇均为 0 命中。",
+    "hits": {"2301.06418": 0, "2501.19208": 0, "2501.12354": 0, "2609.39397": 0},
+    "checked_at": "2026-10-30"
+  },
+  "request_budget": {
+    "limit": 18,
+    "attempts_used": 10,
+    "http_200": 9,
+    "failed_attempts": 1,
+    "log": "request_log.jsonl",
+    "hard_stop": "到 18 次即停止；本阶段 10 次后停止检索，未再追加网络请求。"
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Mind The Gap: Modelling Difference Between Censored and Uncensored Electric Vehicle Charging Demand",
+      "authors": ["Frederik Boe Hüttel", "Filipe Rodrigues", "Francisco Câmara Pereira"],
+      "year": 2023,
+      "version": "arXiv:2301.06418v4, 2023-05-30 (v1 2023-01-16)",
+      "venue_status": "arXiv preprint; 未核得正式期刊卷期",
+      "url": "https://arxiv.org/abs/2301.06418",
+      "access": "全文 HTML 可访问（ar5iv）；本记录核对到 §3.1-§3.3、§5，未逐页通读",
+      "code": "未核得官方代码仓库；不声称有代码",
+      "not_in_index": true,
+      "relevance": ["有限充电容量导致的截断/拒绝需求", "聚合充电记录下的潜在需求", "EV 插枪/兼容概率 q 的观测偏差"],
+      "borrowable": [
+        "右删失定义 y=min(y*,τ) 与删失指示 l_i：§3.1 Eq.(1)-(2)",
+        "Tobit 似然：未删失用密度、删失用尾概率：§3.2 Eq.(3)-(7)",
+        "删失分位数回归的 tilted loss 与 max{τ,f} 修正：§3.3 Eq.(8)-(13)",
+        "把观测记录偏差归因于占用站点与竞争服务两类删失：§1、§5"
+      ],
+      "required_inputs": ["逐时段观测需求/充电会话 y_i", "容量或供给上限 τ_i", "删失指示 l_i", "协变量（时间、站点、天气等）"],
+      "migration": {
+        "existing_modules": ["research/measurement/validation_20261029/code/validation_common.py: estimate()", "research/measurement/validation_20261029/code/bounds.py: q_bounds()"],
+        "new_module": "censored_poisson_mle / censored_q_diagnostic（本目录 toy_demo.py 已实现一维 Poisson 版本）",
+        "what_changes": "把 q 的点估计替换为删失似然/MLE 诊断；q 区间仍保留上下界，不把 MLE 当识别。"
+      },
+      "caveats": [
+        "Copenhagen GPS 轨迹与竞争服务情景，不是广州数据。",
+        "Tobit/GCN 需要逐站时间序列与协变量；本目录只迁移一维 Poisson MLE，未迁移 GCN。",
+        "删失比例高时 MLE 方差大；y=τ 时 MLE 可能无穷。"
+      ],
+      "used_by_options": ["O1", "O2", "O5"]
+    },
+    {
+      "id": "S2",
+      "title": "Spatial Supply Repositioning with Censored Demand Data",
+      "authors": ["Hansheng Jiang", "Chunlin Sun", "Zuo-Jun Max Shen"],
+      "year": 2025,
+      "version": "arXiv:2501.19208v2, 2025-10-17 (v1 2025-01-31)",
+      "venue_status": "arXiv preprint; 未核得正式期刊卷期",
+      "url": "https://arxiv.org/abs/2501.19208",
+      "access": "全文 HTML 可访问；本记录核对到 §2、§3.2、§4、§5、§6.1-§6.2，未逐页通读",
+      "code": "未核得官方代码仓库；不声称有代码",
+      "not_in_index": true,
+      "relevance": ["固定可复用供给 + 丢单/拒绝", "聚合删失观测下的决策", "共享出行网络", "最坏后悔/下界"],
+      "borrowable": [
+        "固定总量、不可外部补货的可复用库存模型与丢单成本：§2",
+        "base-stock 目标向量及其渐近最优性：§3.2",
+        "离线最优 base-stock 的 MILP/LP 精确改写：§4",
+        "SOAR：用代理成本从删失观测获得梯度信号：§5",
+        "Ω(n√T) 后悔下界与删失数据的学习边界：§6.1-§6.2"
+      ],
+      "required_inputs": ["各位置库存/可用量 x_{t,i}", "租借/归还流与 OD 概率", "删失需求 d̄=min(d, supply)", "调度成本与丢单惩罚"],
+      "migration": {
+        "existing_modules": ["research/measurement/validation_20261029/code/validation_decisions.py: e5_ablation/e6_holdout", "research/measurement/validation_20261029/code/sim_model.py"],
+        "new_module": "多期 base-stock 目标（未实现，列 O6）",
+        "what_changes": "把单期 n_c 选择扩展为多期目标向量；用删失观测的代理梯度替代点预测；保留真实后悔基准。"
+      },
+      "caveats": [
+        "对象是一way车辆共享，不是停车场；停车位不可移动，不能直接套用调度动作。",
+        "SOAR 的 regret 保证依赖其网络结构与步长条件；未复现，不引用为已证。",
+        "本目录只借其‘固定供给+删失+后悔基准’的结构，未实现 SOAR。"
+      ],
+      "used_by_options": ["O2", "O6"]
+    },
+    {
+      "id": "S3",
+      "title": "Diffusion-aware Censored Gaussian Processes for Demand Modelling",
+      "authors": ["Filipe Rodrigues"],
+      "year": 2025,
+      "version": "arXiv:2501.12354v1, 2025-01-21",
+      "venue_status": "arXiv preprint; 未核得正式期刊卷期",
+      "url": "https://arxiv.org/abs/2501.12354",
+      "access": "全文 HTML 可访问；本记录核对到 §3.1、§5.1-§5.2、§6.4，未逐页通读",
+      "code": "未核得官方代码仓库；不声称有代码",
+      "not_in_index": true,
+      "relevance": ["充电兼容共享/替代", "未满足需求在相似服务间的转移", "聚合观测下的潜在需求"],
+      "borrowable": [
+        "右删失 Tobit 似然：§3.1 Eq.(1)-(2)",
+        "未满足需求在图上的扩散：§5.1 Eq.(4)-(7)",
+        "sink 节点表示放弃替代：§5.1",
+        "含扩散项的删失似然：§5.2 Eq.(8)-(9)"
+      ],
+      "required_inputs": ["各服务/站点的聚合需求 y_{n,k}", "可用供给 u_{n,k}", "服务相似度图（位置/属性）", "扩散步数或单步假设"],
+      "migration": {
+        "existing_modules": ["research/measurement/validation_20261029/code/validation_decisions.py: 共享规则 s 的比较"],
+        "new_module": "compatibility_spillover（未实现，列 O6）",
+        "what_changes": "把当前二值 shared/dedicated 规则替换为兼容图上的需求转移；用 sink 表示拒绝后放弃。"
+      },
+      "caveats": [
+        "GP 推断未实现；EV 充电只是三个应用之一。",
+        "扩散矩阵与长度尺度需要真实相似度/距离；广州场站兼容关系未取得。",
+        "把未满足需求全部转移是模型假设，不是观测事实。"
+      ],
+      "used_by_options": ["O6"]
+    },
+    {
+      "id": "S4",
+      "title": "Towards Optimal Inventory Control under Censored Demand: A Biased Sample-Average Approximation Approach",
+      "authors": ["Yuxuan Han", "Xiaoyu Fan", "Jiawei Zhang", "Zhengyuan Zhou"],
+      "year": 2026,
+      "version": "arXiv:2609.39397v1, 2026-09-30",
+      "venue_status": "arXiv preprint; 未核得正式期刊卷期",
+      "url": "https://arxiv.org/abs/2609.39397",
+      "access": "全文 HTML 可访问；本记录核对到 §1.1、§3、§4、§5、§6，未逐页通读",
+      "code": "未核得官方代码仓库；不声称有代码",
+      "not_in_index": true,
+      "relevance": ["截断/拒绝需求", "删失观测的覆盖条件", "悲观/乐观 SAA", "样本复杂度"],
+      "borrowable": [
+        "有效样本量 N*：删失水平必须覆盖最优策略真正需要的需求坐标：§1.1",
+        "base-stock 策略的成本分解（局部 CDF 误差传播）：§3 Theorem 3.6",
+        "uniform CDF 误差到策略次优性的确定性界：§4 Eq.(1.1)",
+        "DP-UCB：向上偏 CDF 的离线悲观 SAA：§5",
+        "lower-biased SAA 与 self-coverage：§6"
+      ],
+      "required_inputs": ["删失样本 (y_t^k, d̄_t^k)", "需求支撑上界 M", "持有/缺货成本", "行为策略的删失水平"],
+      "migration": {
+        "existing_modules": ["research/measurement/validation_20261029/code/bounds.py: sampling_error/offered_arrival_bounds", "research/measurement/validation_20261029/code/validation_decisions.py: q_sensitivity_grid"],
+        "new_module": "coverage_diagnostic（未实现，列 O7）",
+        "what_changes": "在现有 q 区间之外增加‘删失水平是否覆盖决策相关需求坐标’的诊断；用偏 CDF 替代中点情景。"
+      },
+      "caveats": [
+        "对象是多期库存，不是停车；覆盖条件需映射到停车拒绝/插枪层级。",
+        "定理条件（有界离散需求、base-stock 类）未在停车模型验证。",
+        "本目录只借‘覆盖条件’的思想做敏感性解释，未实现 DP-UCB。"
+      ],
+      "used_by_options": ["O2", "O5", "O7"]
+    }
+  ]
+}

@@ -1,0 +1,481 @@
+{
+  "baseline": {
+    "command": "python run_all.py --mode all --seed 42 --out outputs_revision --no-canonical",
+    "counts": {
+      "candidates": 21,
+      "feasibility_rows": 180,
+      "fig8_rows": 100,
+      "saa_rows": 36,
+      "scenarios": 500,
+      "sensitivity_rows": 360,
+      "static_curves": 3024,
+      "static_optimum": 144,
+      "v2_days": 300,
+      "v2_designs": 648,
+      "v2_q_rows": 16,
+      "v2_stat_cells": 36
+    },
+    "facts": {
+      "confidence_set_sizes": [
+        1,
+        2
+      ],
+      "denominator_columns_present": true,
+      "denominator_sample": [
+        {
+          "design": "fixed,pi_F,m=0",
+          "shortfall_rate_admitted": 0.0,
+          "unserved_rate_all": 0.6
+        },
+        {
+          "design": "fixed,pi_F,m=20",
+          "shortfall_rate_admitted": 0.03116511077,
+          "unserved_rate_all": 0.03570641748
+        },
+        {
+          "design": "fixed,pi_F,m=40",
+          "shortfall_rate_admitted": 0.03152535125,
+          "unserved_rate_all": 0.03152535125
+        },
+        {
+          "design": "fixed,pi_F,m=60",
+          "shortfall_rate_admitted": 0.03152535125,
+          "unserved_rate_all": 0.03152535125
+        }
+      ],
+      "g_range": [
+        4794232.625,
+        4800000.0
+      ],
+      "max_abs_cvar_minus_aux": 0.0,
+      "n_g_negative": 0,
+      "n_g_rows": 36,
+      "n_service_rows": 648,
+      "region_counts": {
+        "partial_dominant": 36
+      },
+      "time_unit_columns": [
+        "energy_time_unit"
+      ]
+    },
+    "output_sha256": {
+      "confidence_sets.csv": "42c70ee2e2fdd6febc0139be5fe954706dab81921048b5e0d619b089dadee7e8",
+      "cvar.csv": "b349386a1b7a4070d63c219f6efeda22000a19f9acc64bd99bb2fecf6500e801",
+      "decomposition.csv": "4e65ea2ffefd19e8734eb2e1ea7d12be03bd50cf27f6c3ad3154d765c0c4ea5f",
+      "etp.csv": "1e865cf6ca666c760d6edd4b20519347cf5b09406284440f4392b393f9283682",
+      "etp_points.json": "8122c912dbfc034b8502cb41940249cb6d6989dcf95164c775074fac18060781",
+      "feasibility_costs.csv": "4d8b88bb561d881ed72f21c02d3ccd04b79a5197bf047eed9e33aa22768685c7",
+      "fig8_regions.csv": "9d5d4442b731728d931ab0edd1b3ebd8eb0aef1357e8199c287f7ecbfc173dbe",
+      "g_curve.csv": "0b5bbfc1fbc1cb870be0d99ccb255fff6f77a89aa9e2004e71e2f08a7b064372",
+      "integer_check.csv": "63e023051e2c6a617cc1cee597313cb84facd72a6bed6e65e7722424788ea8b4",
+      "manifest.json": "51f61567aebd91f777f85fb84abe8fa13a86364fe2e8a2d713a740c7eb3b9ce6",
+      "modes.csv": "153005fd06446a16f44cd04d6fe73f6e047077cdd255f97098891414b8aa1ee7",
+      "params.json": "6ef51cefaad730add3943282b4383bf28376735904f966d960362c376891ff04",
+      "rule_matrix.csv": "cfb2ac9829ca8cdcb78c251b0a411dbb608c369e597a0e464a4a22ade9411e19",
+      "saa_error.csv": "7cf9b1278307012e9234e667371f7d5ef46a5a1c623e84c7632bebcaa26edb43",
+      "sensitivity.csv": "54eaf5cac87dccb2824c2df11c19a7e4f2e2533b48f4645b4eeb558a9447f818",
+      "static_curves.csv": "bb9e3ff272fe052e570cef079963fca3c04f540896ee627af185260c72e9859e",
+      "static_optimum.csv": "08fb7739cbbaa020138c88addb86e9912a9a54bc8e31b11ac7b01b9668e69355",
+      "summary.json": "8841a3a2c1a97ca7ec485ef305967ffe29355c4a177a348a521e8155f38c8b4f",
+      "v2_best.csv": "2ce023b10b896455668629e6d61fffb4b316de0cf4787d9372f0a393f9f3e23b",
+      "v2_confidence_sets.csv": "bf00af11a7d42d57bc7859abdd9462d04f76db0ba74e87f6b3fa93e3936b4017",
+      "v2_cvar.csv": "923015665a9b0dc7d19b902273d1cccb761f729b066d04b26e9c71b231ce9cd0",
+      "v2_designs.csv": "b94e0e5e9ef4bc5fbc68c591268aaef14c5025a660a64339512c1721e00412b5",
+      "v2_g_curve.csv": "0f9254e9d6830f4dbc0346192f7382c64f70ccdb40f1b5952511c8c944db4485",
+      "v2_q_sensitivity.csv": "829beab7ce59f91190a1c50ef54608dd291ed1edc77a59622fdbab4f7660d163",
+      "v2_regions.csv": "2d0521799a85f76894b2e88f75766bb576ec621fabcef9184845d88dbf016b96",
+      "v2_service_accounting.csv": "b97ac4f966e2dafa4b765c6d649363f8b32680583477a4cbbf427bcdbd482817",
+      "v2_timeline_sample.csv": "b52b19ebc344a81f3f7312863f9cccef7cf7769653211e072126dba0357a7912"
+    },
+    "psc_increase_pct_range": [
+      0.0,
+      37.819247952781225
+    ],
+    "run_dir": "outputs_revision\\baseline\\20261029-160352-seed42",
+    "runtime_seconds": 242.249,
+    "seed": 42,
+    "static_etp_points": {
+      "plc|beta": 0.2,
+      "plc|binomial": 1.0,
+      "pnc|beta": null,
+      "pnc|binomial": null
+    },
+    "v2_etp_points": {
+      "plc|beta": null,
+      "plc|binomial": null,
+      "pnc|beta": null,
+      "pnc|binomial": null
+    },
+    "v2_region_counts": {
+      "partial_dominant": 36
+    }
+  },
+  "baseline_log_tail": "run_dir: outputs_revision\\baseline\\20261029-160352-seed42\r\nruntime_seconds: 242.25\r\ncounts: {'static_curves': 3024, 'static_optimum': 144, 'scenarios': 500, 'candidates': 21, 'sensitivity_rows': 360, 'saa_rows': 36, 'feasibility_rows': 180, 'fig8_rows': 100, 'v2_designs': 648, 'v2_days': 300, 'v2_stat_cells': 36, 'v2_q_rows': 16}\r\nELAPSED_SECONDS=242.645 EXIT=0\r\n",
+  "determinism": {
+    "csv_different": [],
+    "csv_identical": [
+      "confidence_sets.csv",
+      "cvar.csv",
+      "decomposition.csv",
+      "etp.csv",
+      "feasibility_costs.csv",
+      "fig8_regions.csv",
+      "g_curve.csv",
+      "integer_check.csv",
+      "modes.csv",
+      "rule_matrix.csv",
+      "saa_error.csv",
+      "sensitivity.csv",
+      "static_curves.csv",
+      "static_optimum.csv",
+      "v2_best.csv",
+      "v2_confidence_sets.csv",
+      "v2_cvar.csv",
+      "v2_designs.csv",
+      "v2_g_curve.csv",
+      "v2_q_sensitivity.csv",
+      "v2_regions.csv",
+      "v2_service_accounting.csv",
+      "v2_timeline_sample.csv"
+    ],
+    "csv_total": 23,
+    "json_different_after_scrub": [],
+    "json_expected_difference_timestamped_hashes": [
+      "manifest.json"
+    ],
+    "json_identical_after_scrub": [
+      "etp_points.json",
+      "params.json",
+      "summary.json"
+    ],
+    "run_a": "outputs_revision\\baseline\\20261029-160352-seed42",
+    "run_b": "outputs_revision_repeat\\baseline\\20261029-160755-seed42",
+    "scrubbed_keys": [
+      "command",
+      "created",
+      "elapsed_seconds",
+      "generated_at",
+      "generated_by",
+      "run_id",
+      "runtime_seconds",
+      "timestamp"
+    ]
+  },
+  "previous_canonical": {
+    "counts": {
+      "candidates": 21,
+      "feasibility_rows": 180,
+      "fig8_rows": 100,
+      "saa_rows": 36,
+      "scenarios": 500,
+      "sensitivity_rows": 360,
+      "static_curves": 3024,
+      "static_optimum": 144,
+      "v2_days": 300,
+      "v2_designs": 704,
+      "v2_q_rows": 16,
+      "v2_stat_cells": 44
+    },
+    "dir": "research\\electrification\\repro\\outputs\\baseline\\canonical-seed42",
+    "facts": {
+      "confidence_set_sizes": [
+        1,
+        2,
+        3
+      ],
+      "denominator_columns_present": false,
+      "denominator_sample": [],
+      "g_range": [
+        -873272.4717,
+        4243398.74
+      ],
+      "max_abs_cvar_minus_aux": 0.0,
+      "n_g_negative": 11,
+      "n_g_rows": 44,
+      "n_service_rows": 704,
+      "region_counts": {
+        "full_dominant": 4,
+        "partial_dominant": 27,
+        "undetermined": 13
+      },
+      "time_unit_columns": []
+    },
+    "note": "previous canonical output was left untouched; it was produced by the pre-fix code and is not comparable as a result, only as a before/after record",
+    "runtime_seconds": 379.06,
+    "v2_etp_points": {
+      "plc|beta": null,
+      "plc|binomial": null,
+      "pnc|beta": null,
+      "pnc|binomial": null
+    },
+    "v2_region_counts": {
+      "full_dominant": 4,
+      "partial_dominant": 27,
+      "undetermined": 13
+    }
+  },
+  "provenance": {
+    "all_source_hashes_match_copy": true,
+    "copied_at": "2026-10-29T15:37:53",
+    "excluded": [
+      "outputs/",
+      "__pycache__/",
+      "*.pyc"
+    ],
+    "files": 18,
+    "source_root": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro",
+    "target_root": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro_revision_20261029"
+  },
+  "python": {
+    "executable": "C:\\anaconda\\python.exe",
+    "numpy": "1.26.4",
+    "runtime": "3.12.3"
+  },
+  "r_item_probe": {
+    "R1_after": {
+      "energy_delivered_kwh": 20.0,
+      "metrics_time_unit": "minute",
+      "t_a": 690.0,
+      "t_c": 690.0,
+      "t_d": 714.0,
+      "t_r": 750.0
+    },
+    "R1_before": {
+      "energy_delivered_kwh": 20.0,
+      "t_a": 11.5,
+      "t_c": 11.5,
+      "t_d": 35.5,
+      "t_r": 71.5
+    },
+    "R2_after": {
+      "g_hat": 10.0,
+      "g_hi": 10.000000000000028,
+      "g_lo": 9.999999999999972
+    },
+    "R2_before": {
+      "g_hat": 10.0,
+      "g_hi": 18.297056819922478,
+      "g_lo": 1.7029431800775168
+    },
+    "R3_after": {
+      "best": 0,
+      "family_size": 5,
+      "included": [
+        0,
+        3
+      ],
+      "method": "max-t",
+      "pvalues": [
+        1.0,
+        0.001996,
+        0.001996,
+        1.0,
+        0.001996
+      ]
+    },
+    "R3_before": {
+      "best": 0,
+      "included": [
+        0
+      ],
+      "method": "max-t",
+      "pvalues": [
+        0.001996,
+        0.001996,
+        0.001996,
+        0.001996,
+        0.001996
+      ]
+    },
+    "R4_after": [
+      {
+        "device": 0,
+        "t_a": 0.0,
+        "t_c": 0.0,
+        "t_d": 96.0
+      },
+      {
+        "device": 1,
+        "t_a": 0.0,
+        "t_c": 0.0,
+        "t_d": 3.0
+      },
+      {
+        "device": 0,
+        "t_a": 1.0,
+        "t_c": 96.0,
+        "t_d": 99.0
+      },
+      {
+        "device": 1,
+        "t_a": 3.0,
+        "t_c": 3.0,
+        "t_d": 6.0
+      }
+    ],
+    "R4_before": [
+      {
+        "device": 0,
+        "t_a": 0.0,
+        "t_c": 0.0,
+        "t_d": 96.0
+      },
+      {
+        "device": 1,
+        "t_a": 0.0,
+        "t_c": 0.0,
+        "t_d": 3.0
+      },
+      {
+        "device": 0,
+        "t_a": 1.0,
+        "t_c": 96.0,
+        "t_d": 99.0
+      },
+      {
+        "device": 1,
+        "t_a": 3.0,
+        "t_c": 96.0,
+        "t_d": 99.0
+      }
+    ],
+    "R5_after": {
+      "cvar": 84.59999999999995,
+      "cvar_aux": 84.59999999999994,
+      "tail_weight": 1.250000000000001
+    },
+    "R5_before": {
+      "cvar": 61.5,
+      "cvar_aux": 84.59999999999994
+    },
+    "R6_after": 0.6,
+    "R6_before": null
+  },
+  "revision_dir": "research\\electrification\\repro_revision_20261029",
+  "stat_experiment": {
+    "coverage_near_tie_max_t": {
+      "S": 100,
+      "clearly_worse_count": 1,
+      "clearly_worse_inclusion_rate": 0.0,
+      "coverage_best": 0.99,
+      "inclusion_rate_by_candidate": [
+        0.99,
+        0.9733333333333334,
+        0.93,
+        0.9533333333333334,
+        0.9166666666666666,
+        0.6966666666666667,
+        0.22666666666666666,
+        0.0
+      ],
+      "mean_set_size": 5.6866666666666665,
+      "method": "max-t",
+      "mis_exclusion_rate": 0.01,
+      "noise_sd": 0.6,
+      "reps": 300,
+      "se_of_gap": 0.0848528137423857
+    },
+    "coverage_separated_max_t": {
+      "S": 100,
+      "clearly_worse_count": 3,
+      "clearly_worse_inclusion_rate": 0.0,
+      "coverage_best": 1.0,
+      "inclusion_rate_by_candidate": [
+        1.0,
+        0.8333333333333334,
+        0.43333333333333335,
+        0.013333333333333334,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_set_size": 2.28,
+      "method": "max-t",
+      "mis_exclusion_rate": 0.0,
+      "noise_sd": 0.6,
+      "reps": 300,
+      "se_of_gap": 0.0848528137423857
+    },
+    "cvar": {
+      "aux_agreement_max_gap": 4.263256414560601e-14,
+      "fractional_example_84_6": 84.59999999999995,
+      "normal_check": {
+        "analytic_cvar": 2.062712807507428,
+        "monte_carlo_n500k": 2.0555145828015995,
+        "relative_gap": 0.0034896882782856843
+      },
+      "note": "exactness is with respect to the empirical distribution; the normal check is a large-sample sanity check only"
+    },
+    "etp_grid": {
+      "grid_points": 4,
+      "mismatch_count": 0,
+      "patterns_checked": 81
+    },
+    "exact_tie": {
+      "family_size": 3,
+      "included": [
+        0,
+        1
+      ],
+      "pvalues": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "file": "reports/stat_experiment.json",
+    "paired_fixed_offset": {
+      "g_hat": 10.0,
+      "g_hi": 10.0,
+      "g_lo": 10.0,
+      "width": 0.0
+    },
+    "paired_min_selection": {
+      "K": 6,
+      "bias_vs_true_g": 0.27074902010844326,
+      "coverage_of_true_g": 0.92,
+      "mean_critical_value": 2.5428416825218854,
+      "mean_g_hat_fixed_partial": -4.9860573472211716,
+      "mean_g_hat_min": -4.729250979891557,
+      "mean_width": 1.3049415415243475,
+      "method": "simultaneous-max-t",
+      "note": "g = max_k E[d_k]; the point estimate is biased up by the max, the simultaneous max-t interval keeps nominal coverage because the same bounds are used for every candidate",
+      "reps": 200,
+      "selection_bias_min_vs_fixed": 0.25680636732961537,
+      "true_g": -5.0
+    }
+  },
+  "tests": {
+    "after_bundled_python": {
+      "before_counts": {
+        "errors": 0,
+        "failures": 0
+      },
+      "fail_or_error_lines": 0,
+      "ok": true,
+      "path": "after_unittest_bundled.log",
+      "tests": 73
+    },
+    "after_default_python": {
+      "before_counts": {
+        "errors": 0,
+        "failures": 0
+      },
+      "fail_or_error_lines": 0,
+      "ok": true,
+      "path": "after_unittest.log",
+      "tests": 73
+    },
+    "before_on_unfixed_copy": {
+      "before_counts": {
+        "errors": 8,
+        "failures": 10
+      },
+      "fail_or_error_lines": 18,
+      "ok": false,
+      "path": "before_regressions.log",
+      "tests": 26
+    }
+  }
+}

@@ -1,0 +1,121 @@
+"""Paired policy comparisons and reproducible output envelopes."""
+from dataclasses import replace
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import statistics
+import tempfile
+
+from . import VERSION
+from .config import Config, POLICIES
+from .costs import COST_MODEL_VERSION
+from .demand import generate, stream_hash
+from .simulation import Simulation
+from .metrics import calculate
+
+
+def provenance():
+    root = Path(__file__).resolve().parent
+    hashes = {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+              for p in sorted(root.rglob("*")) if p.is_file() and "__pycache__" not in p.parts and p.suffix in {".py", ".html", ".js", ".css"}}
+    return {"model_version": VERSION, "source_sha256": hashes,
+            "created_utc": datetime.now(timezone.utc).isoformat(),
+            "data_source": "synthetic; not calibrated to observed parking data",
+            "units": {"time": "minute", "power": "kW", "energy": "kWh",
+                      "cost": "config.cost.currency (default TWD) per simulated window"},
+            "cost_model_version": COST_MODEL_VERSION}
+
+
+def export_run(sim):
+    return {"provenance": provenance(), "config": sim.config.to_dict(),
+            "seed": sim.config.seed, "demand_hash": sim.demand_hash, **sim.export()}
+
+
+def compare(config, seeds=None):
+    c = config if isinstance(config, Config) else Config.parse(config)
+    seeds = seeds if seeds is not None else [c.seed, c.seed + 1, c.seed + 2]
+    if not isinstance(seeds, list) or not 1 <= len(seeds) <= 8 or any(type(s) is not int or not 0 <= s < 2**31 for s in seeds):
+        raise ValueError("随机种子需为1至8个不重复的非负整数，最大2147483647")
+    if len(set(seeds)) != len(seeds):
+        raise ValueError("随机种子不能重复")
+    max_factor = {"steady": 1, "peaks": c.peak_multiplier, "burst": c.burst_multiplier,
+                  "drift": max(1, c.drift_rate_multiplier)}[c.scenario]
+    if len(seeds) * 4 * c.arrival_rate_hour * max_factor * c.duration_hours > 120000:
+        raise ValueError("对比总运行量过大，请减少随机种子、到达强度或仿真时长")
+    runs = []
+    for seed in seeds:
+        seeded = replace(c, seed=seed)
+        arrivals = generate(seeded)
+        digest = stream_hash(arrivals)
+        for policy in POLICIES:
+            sim = Simulation(replace(seeded, policy=policy), arrivals)
+            sim.run()
+            runs.append({"seed": seed, "policy": policy, "demand_hash": digest, "metrics": calculate(sim)})
+    keys = ["rejection_rate", "total_cost", "energy_delivered_kwh", "charge_completion_rate_all",
+            "mean_occupancy_rate", "brier", "interval_coverage", "interval_width_min", "departed_shortfall_kwh"]
+    rows = []
+    for policy, label in POLICIES.items():
+        selected = [r for r in runs if r["policy"] == policy]
+        row = {"policy": policy, "name": label, "seeds": len(seeds)}
+        for key in keys:
+            values = [r["metrics"][key] for r in selected if r["metrics"][key] is not None]
+            row[key] = statistics.mean(values) if values else None
+            row[key + "_std"] = statistics.stdev(values) if len(values) > 1 else (0.0 if values else None)
+        diffs, incomplete = [], 0
+        for r in selected:
+            base = next(x for x in runs if x["seed"] == r["seed"] and x["policy"] == "open")
+            left, right = r["metrics"]["total_cost"], base["metrics"]["total_cost"]
+            if left is None or right is None:
+                # 缺参运行的总成本是 null（未知），不得当 0 参与相减
+                incomplete += 1
+                continue
+            diffs.append(left - right)
+        row["paired_cost_delta_vs_open"] = statistics.mean(diffs) if diffs else None
+        row["paired_cost_pairs"] = len(diffs)
+        row["paired_cost_incomplete_runs"] = incomplete
+        row["cost_complete_runs"] = sum(r["metrics"]["cost_complete"] for r in selected)
+        rows.append(row)
+    first = runs[0]["metrics"]
+    return {"provenance": provenance(), "config": c.to_dict(), "seeds": seeds, "rows": rows, "runs": runs,
+            "cost_model_version": first["cost_model_version"],
+            "cost_currency": first["cost_currency"], "cost_price_year": first["cost_price_year"],
+            "comparison": "每个seed重放同一外生车辆流；std为种子间样本标准差，不是置信区间；非最优性证明",
+            "cost_note": "缺参时 total_cost 为 null；均值只聚合 complete 运行，配对成本差只对两侧 complete 的 seed 计算"}
+
+
+def write_output(directory, payload):
+    """Write result.json atomically: temp file in the same directory, fsync, os.replace.
+
+    A crash or a serialization error must not leave a half-written result.json. The
+    directory itself is still created with exist_ok=False so an existing run is never
+    silently overwritten.
+    """
+    target = Path(directory)
+    target.mkdir(parents=True, exist_ok=False)
+    handle = tempfile.NamedTemporaryFile("w", dir=target, delete=False, encoding="utf-8",
+                                         prefix=".result-", suffix=".tmp")
+    try:
+        json.dump(payload, handle, ensure_ascii=False, indent=2, allow_nan=False)
+        handle.flush()
+        os.fsync(handle.fileno())
+        handle.close()
+        os.replace(handle.name, target / "result.json")
+    except BaseException:
+        try:
+            handle.close()
+        except Exception:
+            pass
+        try:
+            os.unlink(handle.name)
+        except OSError:
+            pass
+        # A failed run must not leave an empty directory that blocks a retry with
+        # exist_ok=False. Only remove it when it is empty (never delete foreign data).
+        try:
+            target.rmdir()
+        except OSError:
+            pass
+        raise
+    return target.resolve()

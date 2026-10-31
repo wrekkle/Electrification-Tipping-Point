@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://api.nva.unit.no" />
+    <link rel="dns-prefetch" href="https://api.nva.unit.no" />
+    <!-- MathJax is loaded from this CDN when a page contains a formula -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Nasjonalt vitenarkiv" />
+    <link rel="manifest" href="/manifest.json" />
+    <style>mjx-container{font-size:100%!important;display:inline!important}</style>
+    <script type="module" crossorigin src="/assets/index-Vm51rz2T.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-B0Z9INg1.js">
+    <link rel="modulepreload" crossorigin href="/assets/@mui-BrFOz5g1.js">
+    <link rel="modulepreload" crossorigin href="/assets/i18next-DbDiRKxb.js">
+    <link rel="modulepreload" crossorigin href="/assets/useTranslation-6C-EGOpw.js">
+    <link rel="modulepreload" crossorigin href="/assets/Trans-Dy6vSJyV.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-redux-bdT4Aa7c.js">
+    <link rel="modulepreload" crossorigin href="/assets/compiler-runtime-Crldhsyf.js">
+    <link rel="modulepreload" crossorigin href="/assets/@aws-amplify-C1MLCKQa.js">
+    <link rel="modulepreload" crossorigin href="/assets/yup-Cg2-Hr3R.js">
+    <link rel="modulepreload" crossorigin href="/assets/date-fns-DqFX-zi3.js">
+    <link rel="modulepreload" crossorigin href="/assets/urlPaths-D9DHS02Q.js">
+    <link rel="modulepreload" crossorigin href="/assets/hooks-BySoPLFR.js">
+    <link rel="modulepreload" crossorigin href="/assets/components-44Husere.js">
+    <link rel="modulepreload" crossorigin href="/assets/lib-kbsvGETP.js">
+    <link rel="modulepreload" crossorigin href="/assets/constants-C4wgcAPF.js">
+    <link rel="modulepreload" crossorigin href="/assets/i18next-browser-languagedetector-B40ZpxCq.js">
+    <link rel="modulepreload" crossorigin href="/assets/translation-helpers-U_mW9VGc.js">
+    <link rel="modulepreload" crossorigin href="/assets/axios-CGJNTijy.js">
+    <link rel="modulepreload" crossorigin href="/assets/apiRequest-K_OIHzp0.js">
+    <link rel="modulepreload" crossorigin href="/assets/dataTestIds-BQqCVC0q.js">
+    <link rel="modulepreload" crossorigin href="/assets/@tanstack-DK1_Sz39.js">
+    <link rel="modulepreload" crossorigin href="/assets/redux-toolkit.modern-CCqaborC.js">
+    <link rel="modulepreload" crossorigin href="/assets/user.types-BpmkYJ55.js">
+    <link rel="modulepreload" crossorigin href="/assets/useAuthentication-CeJyYQqx.js">
+    <link rel="modulepreload" crossorigin href="/assets/formik-Bo-1fxhd.js">
+    <link rel="modulepreload" crossorigin href="/assets/axios-mock-adapter-CkgIcevY.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-C9QxtpjB.css">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

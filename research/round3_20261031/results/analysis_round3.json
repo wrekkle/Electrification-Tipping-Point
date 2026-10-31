@@ -1,0 +1,1937 @@
+{
+ "source": "research/round3_20261031/run_experiments.py",
+ "alpha": 0.05,
+ "constraints": [
+  "capacity_only_unmet_rate",
+  "ev_parking_failure_rate",
+  "ice_parking_failure_rate"
+ ],
+ "curves": {
+  "A_pi0": {
+   "n": 90,
+   "achieved": 85,
+   "infeasible": 5,
+   "min": 1,
+   "median": 11,
+   "max": 84,
+   "mean": 18.49411764705882
+  },
+  "B_pi1": {
+   "n": 90,
+   "achieved": 83,
+   "infeasible": 7,
+   "min": 1,
+   "median": 12,
+   "max": 84,
+   "mean": 19.72289156626506
+  },
+  "C_quota": {
+   "n": 90,
+   "achieved": 83,
+   "infeasible": 7,
+   "min": 1,
+   "median": 12,
+   "max": 84,
+   "mean": 19.72289156626506
+  },
+  "D_pi2": {
+   "n": 90,
+   "achieved": 87,
+   "infeasible": 3,
+   "min": 1,
+   "median": 12,
+   "max": 84,
+   "mean": 19.632183908045977
+  }
+ },
+ "delta_k": {
+  "B_pi1": {
+   "pairs": 83,
+   "infeasible_pairs": 7,
+   "mean": -1.0602409638554218,
+   "median": 0,
+   "positive": 0,
+   "zero": 80,
+   "negative": 3,
+   "by_lot_seed": [
+    {
+     "lot": "TPE0008",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 11,
+     "k_rule": 11
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 2,
+     "k_rule": 2
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 20,
+     "k_rule": 20
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 25,
+     "k_rule": 25
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 24,
+     "k_rule": 24
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 15,
+     "k_rule": 15
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 20,
+     "k_rule": 20
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 28,
+     "k_rule": 28
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 20,
+     "k_rule": 20
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 29,
+     "k_rule": 29
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 3,
+     "k_rule": 3
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 3,
+     "k_rule": 3
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 3,
+     "k_rule": 3
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 11,
+     "k_rule": 11
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 5,
+     "k_rule": 5
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 17,
+     "k_rule": 17
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 21,
+     "k_rule": 21
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 23,
+     "k_rule": 23
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 6,
+     "dk": -62,
+     "k_base": 15,
+     "k_rule": 77
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 25,
+     "k_rule": 25
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 12,
+     "k_rule": 12
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 21,
+     "k_rule": 21
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 18,
+     "k_rule": 18
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 21,
+     "k_rule": 21
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 16,
+     "k_rule": 16
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 23,
+     "k_rule": 23
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 14,
+     "k_rule": 14
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 5,
+     "k_rule": 5
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 10,
+     "dk": -22,
+     "k_base": 2,
+     "k_rule": 24
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 17,
+     "k_rule": 17
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 3,
+     "dk": -4,
+     "k_base": 23,
+     "k_rule": 27
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 14,
+     "k_rule": 14
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 11,
+     "k_rule": 11
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 25,
+     "k_rule": 25
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 70,
+     "k_rule": 70
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 75,
+     "k_rule": 75
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 73,
+     "k_rule": 73
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 64,
+     "k_rule": 64
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 64,
+     "k_rule": 64
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 77,
+     "k_rule": 77
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 61,
+     "k_rule": 61
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 84,
+     "k_rule": 84
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 52,
+     "k_rule": 52
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 70,
+     "k_rule": 70
+    }
+   ],
+   "cluster_bootstrap": {
+    "mean": -1.087684285324813,
+    "lo": -2.883720930232558,
+    "hi": 0.0,
+    "lots_resampled": 9,
+    "draws": 5000,
+    "note": "场站聚类配对 bootstrap；只重采样场站块，种子固定"
+   }
+  },
+  "C_quota": {
+   "pairs": 83,
+   "infeasible_pairs": 7,
+   "mean": -1.0602409638554218,
+   "median": 0,
+   "positive": 0,
+   "zero": 80,
+   "negative": 3,
+   "by_lot_seed": [
+    {
+     "lot": "TPE0008",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 11,
+     "k_rule": 11
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 2,
+     "k_rule": 2
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 20,
+     "k_rule": 20
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 25,
+     "k_rule": 25
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 24,
+     "k_rule": 24
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 15,
+     "k_rule": 15
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 20,
+     "k_rule": 20
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 28,
+     "k_rule": 28
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 20,
+     "k_rule": 20
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 29,
+     "k_rule": 29
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 3,
+     "k_rule": 3
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 3,
+     "k_rule": 3
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 3,
+     "k_rule": 3
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 11,
+     "k_rule": 11
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 5,
+     "k_rule": 5
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 17,
+     "k_rule": 17
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 21,
+     "k_rule": 21
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 23,
+     "k_rule": 23
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 6,
+     "dk": -62,
+     "k_base": 15,
+     "k_rule": 77
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 25,
+     "k_rule": 25
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 12,
+     "k_rule": 12
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 21,
+     "k_rule": 21
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 18,
+     "k_rule": 18
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 21,
+     "k_rule": 21
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 16,
+     "k_rule": 16
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 23,
+     "k_rule": 23
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 14,
+     "k_rule": 14
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 5,
+     "k_rule": 5
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 10,
+     "dk": -22,
+     "k_base": 2,
+     "k_rule": 24
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 17,
+     "k_rule": 17
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 3,
+     "dk": -4,
+     "k_base": 23,
+     "k_rule": 27
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 14,
+     "k_rule": 14
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 11,
+     "k_rule": 11
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 25,
+     "k_rule": 25
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 70,
+     "k_rule": 70
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 75,
+     "k_rule": 75
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 73,
+     "k_rule": 73
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 64,
+     "k_rule": 64
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 64,
+     "k_rule": 64
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 77,
+     "k_rule": 77
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 61,
+     "k_rule": 61
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 84,
+     "k_rule": 84
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 52,
+     "k_rule": 52
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 70,
+     "k_rule": 70
+    }
+   ],
+   "cluster_bootstrap": {
+    "mean": -1.087684285324813,
+    "lo": -2.883720930232558,
+    "hi": 0.0,
+    "lots_resampled": 9,
+    "draws": 5000,
+    "note": "场站聚类配对 bootstrap；只重采样场站块，种子固定"
+   }
+  },
+  "D_pi2": {
+   "pairs": 85,
+   "infeasible_pairs": 5,
+   "mean": -0.35294117647058826,
+   "median": 0,
+   "positive": 0,
+   "zero": 83,
+   "negative": 2,
+   "by_lot_seed": [
+    {
+     "lot": "TPE0008",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 11,
+     "k_rule": 11
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0008",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 2,
+     "k_rule": 2
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 20,
+     "k_rule": 20
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 25,
+     "k_rule": 25
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 24,
+     "k_rule": 24
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 15,
+     "k_rule": 15
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 20,
+     "k_rule": 20
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 28,
+     "k_rule": 28
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 20,
+     "k_rule": 20
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 29,
+     "k_rule": 29
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE0401",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 3,
+     "k_rule": 3
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 3,
+     "k_rule": 3
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 3,
+     "k_rule": 3
+    },
+    {
+     "lot": "TPE0610",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 11,
+     "k_rule": 11
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 5,
+     "k_rule": 5
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 1,
+     "k_rule": 1
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 7,
+     "k_rule": 7
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE0695",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 17,
+     "k_rule": 17
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 21,
+     "k_rule": 21
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 23,
+     "k_rule": 23
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 6,
+     "dk": -26,
+     "k_base": 15,
+     "k_rule": 41
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 9,
+     "k_rule": 9
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 25,
+     "k_rule": 25
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 12,
+     "k_rule": 12
+    },
+    {
+     "lot": "TPE0930",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 21,
+     "k_rule": 21
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 18,
+     "k_rule": 18
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 21,
+     "k_rule": 21
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 16,
+     "k_rule": 16
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 23,
+     "k_rule": 23
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1171",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 14,
+     "k_rule": 14
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 4,
+     "k_rule": 4
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 10,
+     "k_rule": 10
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 6,
+     "k_rule": 6
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 5,
+     "k_rule": 5
+    },
+    {
+     "lot": "TPE1376",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 2,
+     "k_rule": 2
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 17,
+     "k_rule": 17
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 3,
+     "dk": -4,
+     "k_base": 23,
+     "k_rule": 27
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 14,
+     "k_rule": 14
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 11,
+     "k_rule": 11
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 19,
+     "k_rule": 19
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 25,
+     "k_rule": 25
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 13,
+     "k_rule": 13
+    },
+    {
+     "lot": "TPE1380",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 8,
+     "k_rule": 8
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 1,
+     "dk": 0,
+     "k_base": 70,
+     "k_rule": 70
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 2,
+     "dk": 0,
+     "k_base": 75,
+     "k_rule": 75
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 3,
+     "dk": 0,
+     "k_base": 73,
+     "k_rule": 73
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 4,
+     "dk": 0,
+     "k_base": 64,
+     "k_rule": 64
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 5,
+     "dk": 0,
+     "k_base": 64,
+     "k_rule": 64
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 6,
+     "dk": 0,
+     "k_base": 77,
+     "k_rule": 77
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 7,
+     "dk": 0,
+     "k_base": 61,
+     "k_rule": 61
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 8,
+     "dk": 0,
+     "k_base": 84,
+     "k_rule": 84
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 9,
+     "dk": 0,
+     "k_base": 52,
+     "k_rule": 52
+    },
+    {
+     "lot": "TPE0330",
+     "seed": 10,
+     "dk": 0,
+     "k_base": 70,
+     "k_rule": 70
+    }
+   ],
+   "cluster_bootstrap": {
+    "mean": -0.35873619653090794,
+    "lo": -1.011764705882353,
+    "hi": 0.0,
+    "lots_resampled": 9,
+    "draws": 5000,
+    "note": "场站聚类配对 bootstrap；只重采样场站块，种子固定"
+   }
+  }
+ },
+ "fixed_k": {
+  "B_pi1": {
+   "mean_diff_rule_minus_pi0": {
+    "capacity_only_unmet_rate": 0.018888888888888886,
+    "ev_parking_failure_rate": 0.001978021978021978,
+    "ice_parking_failure_rate": -0.00138583850961764,
+    "departed_shortfall_energy_rate": 0.0
+   },
+   "pairs": {
+    "capacity_only_unmet_rate": 75,
+    "ev_parking_failure_rate": 75,
+    "ice_parking_failure_rate": 75,
+    "departed_shortfall_energy_rate": 49
+   }
+  },
+  "C_quota": {
+   "mean_diff_rule_minus_pi0": {
+    "capacity_only_unmet_rate": 0.018888888888888886,
+    "ev_parking_failure_rate": 0.001978021978021978,
+    "ice_parking_failure_rate": -0.00138583850961764,
+    "departed_shortfall_energy_rate": 0.0
+   },
+   "pairs": {
+    "capacity_only_unmet_rate": 75,
+    "ev_parking_failure_rate": 75,
+    "ice_parking_failure_rate": 75,
+    "departed_shortfall_energy_rate": 49
+   }
+  },
+  "D_pi2": {
+   "mean_diff_rule_minus_pi0": {
+    "capacity_only_unmet_rate": 0.007777777777777777,
+    "ev_parking_failure_rate": 0.0,
+    "ice_parking_failure_rate": -0.0004654387007328183,
+    "departed_shortfall_energy_rate": 0.0
+   },
+   "pairs": {
+    "capacity_only_unmet_rate": 75,
+    "ev_parking_failure_rate": 75,
+    "ice_parking_failure_rate": 75,
+    "departed_shortfall_energy_rate": 49
+   }
+  }
+ },
+ "selection_bias": {
+  "A_pi0": {
+   "planned_cells": 90,
+   "achieved_cells": 85,
+   "infeasible_cells": 5,
+   "achieved_lots": 9,
+   "planned_lots": 9
+  },
+  "B_pi1": {
+   "planned_cells": 90,
+   "achieved_cells": 83,
+   "infeasible_cells": 7,
+   "achieved_lots": 9,
+   "planned_lots": 9
+  },
+  "C_quota": {
+   "planned_cells": 90,
+   "achieved_cells": 83,
+   "infeasible_cells": 7,
+   "achieved_lots": 9,
+   "planned_lots": 9
+  },
+  "D_pi2": {
+   "planned_cells": 90,
+   "achieved_cells": 87,
+   "infeasible_cells": 3,
+   "achieved_lots": 9,
+   "planned_lots": 9
+  }
+ }
+}

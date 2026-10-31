@@ -1,0 +1,233 @@
+{
+ "files": [
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/acebidx_taitung_evse_award.html",
+   "bytes": 224414,
+   "sha256": "09dbeb8b98c7cc10a4098943ed839860652c68b7a865cbd2b54dd5a64a0ad223"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/cbc_fx_statistics.html",
+   "bytes": 410755,
+   "sha256": "f90af614dd7baf6ddd180e56ea3fc28346280df392703bcdbe4375ec1fffe30b"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/cpc_historyprice.html",
+   "bytes": 196625,
+   "sha256": "3c44259e88ce06b9ccf3b0ba74d46bf0ad6345d0e6af24af4c52918f2ff85fcc"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/datagovtw_dataset_6046.json",
+   "bytes": 78,
+   "sha256": "789537ea0c20766936ad7db7a5b8f4738c15c6b58861a488f7c2a004c6db01bd"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/datagovtw_dataset_6339.json",
+   "bytes": 5974,
+   "sha256": "d78fe11542be1336e9db174a0c0a3c12daccb8e36a16b46382f7c538dbcdccad"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/datagovtw_search_powerprice.json",
+   "bytes": 556,
+   "sha256": "44a1dc30cb7250253cf536db7f221ca2746c82db5005fdbb7a0cdc119225c4a8"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/moeaea_retailprice.html",
+   "bytes": 40346,
+   "sha256": "72be8da78c3ad9320e9f5f1f05dc1423e7b3f44a98698b6dd8929bad1d5b77ac"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/moeaea_retailprice.js",
+   "bytes": 10753,
+   "sha256": "701c2f326a5c2178d3fa01372fb8f43963a9065bad31a44567417c3111a57720"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/moenv_ghg_registry.html",
+   "bytes": 65751,
+   "sha256": "2fc9e33467ae6f092ae0dc057cf5251be8e5c22911640afad3ddef87aee1fbf7"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/motc_parking_search_time.html",
+   "bytes": 89837,
+   "sha256": "3b0471da9004cef1a771b0aa17e868f2810158410504e815a8dca29552c22dc2"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/nstatdb_cpi.html",
+   "bytes": 49630,
+   "sha256": "1342d72a9ca24de0c5efe344a991d154fbff40346585c1f951a940e119e96a18"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/oil_price_range_2025_2026.json",
+   "bytes": 12823,
+   "sha256": "0f033445b42311b760490c8089305a1069207b6e2b42670e703ee5227bdce202"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/taipower_ev_zone.html",
+   "bytes": 105883,
+   "sha256": "c870aaec77f304e67e1459e67bf2f08183ca9b1c1db709cdbf0fced7e2529358"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/taipower_price_list.html",
+   "bytes": 104477,
+   "sha256": "ea457a401cfb03c1216756f38160039b7d6b8d67ba9850f02d2cdbf5463544a7"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/taipower_price_page.html",
+   "bytes": 100097,
+   "sha256": "42213cc119e893c41d39108334d660249969b2ca58f2e60c275e0afc8f6d4886"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/dgbas_cpi_news_11509.pdf",
+   "bytes": 369724,
+   "sha256": "4edec01c0d74be94b02a31903c16bd3b90dc650287da03354e158aaef4768c23"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/dgbas_price_monthly.pdf",
+   "bytes": 6958456,
+   "sha256": "21f894c44a97ed5daa1ee01270b2c280099f15896ce83d1a345afc4fe75f049f"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/iot_108_handbook_110c_params.pdf",
+   "bytes": 6692366,
+   "sha256": "bbdb897bb204a4268bd516b72783ad2aeec7a9c8146d64669bf9f5e8068d32c1"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/iot_handbook_latest.pdf",
+   "bytes": 548,
+   "sha256": "d465172175d35d493fb1633e237700022bd849fa123164790b168b8318acb090"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/moea_stat_handbook_fx.pdf",
+   "bytes": 4546,
+   "sha256": "e1bbe46fccb9215ed8e4f29aacce2598e32823a2a478b4a691744426bd804d91"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/moeaea_vehicle_fuel_economy_guide",
+   "bytes": 4548,
+   "sha256": "9d35d4d37b0ee3da72353d4d90cc30f09233c92b2f4c9adc00a833403230e35e"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/moenv_ghg_factors.pdf",
+   "bytes": 2363,
+   "sha256": "88683ed828270c121ac3e180cd20c73e3ae9ac9281d0ba0acb545b4fd9deb09b"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/moenv_ghg_factors_2024.pdf",
+   "bytes": 1168401,
+   "sha256": "f809a27150c014e1cb3bde3133cc433a8be5fe1f14105e63903970540ba9d623"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/nlma_ghg_inventory_2023.pdf",
+   "bytes": 1954141,
+   "sha256": "e2d3b3adf5fceef21635c196d3ab8d3f807627106f240386767e78aac42c4f6a"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/taipei_charging_fee_rates.pdf",
+   "bytes": 2285620,
+   "sha256": "4db0d848987f567894f2727548386a887b10e795ba11ceb9495c47e047630aa7"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/taipower_brief_price_2026.pdf",
+   "bytes": 1039836,
+   "sha256": "476859a821d7146af2c799b2361922adc389c41f3f41a7b7245f3a765bed97df"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/taipower_detail_price_2026.pdf",
+   "bytes": 1254436,
+   "sha256": "71b9573ce5e5841fec4a1277e327ce20834eddac9f407e586b85a6ddf907e78e"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/thb_public_charging_plan.pdf",
+   "bytes": 828424,
+   "sha256": "29fa95f47ac189c070b7ecb311cde41d3e42c2e95eb1eb3bba2568dc2ab86380"
+  },
+  {
+   "local_path": "research/cost_model_20261030/downloads/ey_time_value_handbook_excerpt.pdf",
+   "bytes": 12445778,
+   "sha256": "e72743c15e12b53293781a8907055774c9fc04ffde9905644286915f841b2414",
+   "carried_over": true
+  },
+  {
+   "local_path": "research/ev_parking_math_20261029/PDFs/P26_An_Online_Admission_Control_Mechanism_for_Electric_Vehicles_at_Public_Parking_Infrastructures.pdf",
+   "bytes": 1037480,
+   "sha256": "6c14530764139d3735fd941f5efdcf3d268ea6c16bdb1632373f8d622bfb2b69",
+   "carried_over": true
+  }
+ ],
+ "oil": {
+  "2025_full": {
+   "n": 52,
+   "start": "2025-01-01",
+   "end": "2025-12-31",
+   "A92": 27.6577,
+   "A95": 29.1577,
+   "A98": 31.1577,
+   "diesel": 26.3788
+  },
+  "2026_ytd": {
+   "n": 39,
+   "start": "2026-01-01",
+   "end": "2026-09-30",
+   "A92": 30.2385,
+   "A95": 31.7385,
+   "A98": 33.7385,
+   "diesel": 29.0513
+  },
+  "trailing12m": {
+   "n": 52,
+   "start": "2025-10-01",
+   "end": "2026-09-30",
+   "A92": 29.4212,
+   "A95": 30.9212,
+   "A98": 32.9212,
+   "diesel": 28.1481
+  },
+  "full_range": {
+   "n": 91,
+   "start": "2025-01-01",
+   "end": "2026-09-30",
+   "A92": 28.7637,
+   "A95": 30.2637,
+   "A98": 32.2637,
+   "diesel": 27.5242
+  },
+  "date_range": [
+   "2025/01/06",
+   "2026/09/28"
+  ],
+  "n_obs": 91
+ },
+ "vot": {
+  "chain_2009_to_2026_min": 4.5282,
+  "chain_2009_to_2026_hour": 271.69,
+  "chain_2018_to_2026_min": 6.7771,
+  "chain_2018_to_2026_hour": 406.63,
+  "chain_2009_to_2024_min": 4.3695,
+  "intercity_2009_to_2026_min": 6.5603,
+  "intercity_2018_to_2026_min": 8.6629,
+  "handbook_revision_ratio_2009_2018": 1.6427,
+  "cpi_ratio_2009_2018": 1.0976
+ },
+ "cpi": {
+  "base": "110年=100",
+  "2009": 89.07,
+  "2018": 97.76,
+  "2024": 107.81,
+  "2025_derived": 109.5996,
+  "2026_ytd_derived": 111.7258,
+  "growth_2025_pct": 1.66,
+  "growth_2026_ytd_pct": 1.94
+ },
+ "emission": {
+  "co2_kg_per_TJ": 69300,
+  "ch4_kg_per_TJ": 3,
+  "n2o_kg_per_TJ": 0.6
+ },
+ "electricity": {
+  "ev_tariff_offpeak_summer": 3.05,
+  "ev_tariff_offpeak_nonsummer": 2.9,
+  "ev_tariff_peak_summer": 12.47,
+  "ev_tariff_peak_nonsummer": 12.14,
+  "lowvoltage_flat_summer": 4.08,
+  "lowvoltage_flat_nonsummer": 3.87
+ }
+}

@@ -1,0 +1,176 @@
+{
+  "declared22_parameters": {
+    "charging_bays": "per contract (20% of n_spaces)",
+    "connectors": "= charging_bays (contract)",
+    "connector_kw": 22.0,
+    "feeder_kw": "= connectors * 22.0",
+    "k_domain": "0..charging_bays",
+    "max_connectors_per_site_override": null,
+    "feeder_share_override": null
+  },
+  "scenario_defaults_in_code": {
+    "file": "research/round8_20261031/engine/runner.py",
+    "lines": "62-67",
+    "values": {
+      "connector_kw": 7.0,
+      "charging_bay_share": 0.1,
+      "max_connectors_per_site": 4,
+      "feeder_share": 0.5
+    }
+  },
+  "where_defaults_apply": {
+    "file": "research/round8_20261031/engine/runner.py",
+    "function": "site_capability",
+    "line": 115,
+    "rule": "仅当站点缺字段时使用 SCENARIO_DEFAULTS；本契约每站四字段齐全"
+  },
+  "where_cli_override_applies": {
+    "file": "research/round8_20261031/engine/run_phase1.py",
+    "lines": "456-466",
+    "rule": "只有传 --connector-kw/--force-connector-kw 时覆盖"
+  },
+  "resolved_hardware": {
+    "Queensberry": {
+      "n_spaces": 82,
+      "charging_bays": 16,
+      "connectors": 16,
+      "connector_kw": 7.0,
+      "feeder_kw": 112.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 16,
+        "connectors": 16,
+        "connector_kw": 7.0,
+        "feeder_kw": 112.0
+      }
+    },
+    "Jolimont": {
+      "n_spaces": 58,
+      "charging_bays": 12,
+      "connectors": 12,
+      "connector_kw": 7.0,
+      "feeder_kw": 84.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 12,
+        "connectors": 12,
+        "connector_kw": 7.0,
+        "feeder_kw": 84.0
+      }
+    },
+    "Victoria Market": {
+      "n_spaces": 35,
+      "charging_bays": 7,
+      "connectors": 7,
+      "connector_kw": 7.0,
+      "feeder_kw": 49.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 7,
+        "connectors": 7,
+        "connector_kw": 7.0,
+        "feeder_kw": 49.0
+      }
+    },
+    "Southbank": {
+      "n_spaces": 72,
+      "charging_bays": 14,
+      "connectors": 14,
+      "connector_kw": 7.0,
+      "feeder_kw": 98.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 14,
+        "connectors": 14,
+        "connector_kw": 7.0,
+        "feeder_kw": 98.0
+      }
+    },
+    "University": {
+      "n_spaces": 40,
+      "charging_bays": 8,
+      "connectors": 8,
+      "connector_kw": 7.0,
+      "feeder_kw": 56.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 8,
+        "connectors": 8,
+        "connector_kw": 7.0,
+        "feeder_kw": 56.0
+      }
+    },
+    "Hyatt": {
+      "n_spaces": 15,
+      "charging_bays": 3,
+      "connectors": 3,
+      "connector_kw": 7.0,
+      "feeder_kw": 21.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 3,
+        "connectors": 3,
+        "connector_kw": 7.0,
+        "feeder_kw": 21.0
+      }
+    },
+    "Drummond": {
+      "n_spaces": 33,
+      "charging_bays": 7,
+      "connectors": 7,
+      "connector_kw": 7.0,
+      "feeder_kw": 49.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 7,
+        "connectors": 7,
+        "connector_kw": 7.0,
+        "feeder_kw": 49.0
+      }
+    },
+    "Princes Theatre": {
+      "n_spaces": 12,
+      "charging_bays": 2,
+      "connectors": 2,
+      "connector_kw": 7.0,
+      "feeder_kw": 14.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 2,
+        "connectors": 2,
+        "connector_kw": 7.0,
+        "feeder_kw": 14.0
+      }
+    },
+    "Titles": {
+      "n_spaces": 17,
+      "charging_bays": 3,
+      "connectors": 3,
+      "connector_kw": 7.0,
+      "feeder_kw": 21.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 3,
+        "connectors": 3,
+        "connector_kw": 7.0,
+        "feeder_kw": 21.0
+      }
+    },
+    "West Melbourne": {
+      "n_spaces": 18,
+      "charging_bays": 4,
+      "connectors": 4,
+      "connector_kw": 7.0,
+      "feeder_kw": 28.0,
+      "derived_fields": [],
+      "declared_in_contract": {
+        "charging_bays": 4,
+        "connectors": 4,
+        "connector_kw": 7.0,
+        "feeder_kw": 28.0
+      }
+    }
+  },
+  "evidence_no_4cap": "declared22 E3 k 网格到 declared charging_bays（最大 16），7kW E2 旧曲线也到 k=16/14/12/8；若 max_connectors=4 生效不会出现这些 k",
+  "conclusion": "审计结论：7 kW 与 main22 运行并未应用 charging_bay_share=0.1/max_connectors_per_site=4/feeder_share=0.5；这些默认值只对缺字段站点生效，本契约站点四字段齐全，实际使用契约声明值；main22 只强制了 connector_kw=22 与 feeder=connectors*22。因此 declared22 = main22 的硬件口径（本目录为显式复核运行）。"
+}

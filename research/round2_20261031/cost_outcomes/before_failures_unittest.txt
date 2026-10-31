@@ -1,0 +1,288 @@
+﻿python.exe : EEEEEEEEEEEEEEEEEEEFEEEEE.
+所在位置 行:4 字符: 8
++ $out = & python -m unittest apps.parking_lab.workbench.tests.test_cos ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (EEEEEEEEEEEEEEEEEEEFEEEEE.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+======================================================================
+ERROR: test_depreciation_annual_alternative_matches_capex (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntr
+yTests.test_depreciation_annual_alternative_matches_capex)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 623, in test_depreciation_annual_a
+lternative_matches_capex
+    annual = cost_module.facility_cost(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_device_cost_scales_with_k_and_days (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test
+_device_cost_scales_with_k_and_days)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 582, in test_device_cost_scales_wi
+th_k_and_days
+    report = cost_module.facility_cost(k, FACILITY_PARAMS, days=days)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_facility_fixed_absent_vs_explicit_none (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.
+test_facility_fixed_absent_vs_explicit_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 602, in test_facility_fixed_absent
+_vs_explicit_none
+    absent = cost_module.facility_cost(1, FACILITY_PARAMS, days=1.0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_facility_fixed_is_separate_and_prorated (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests
+.test_facility_fixed_is_separate_and_prorated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 594, in test_facility_fixed_is_sep
+arate_and_prorated
+    report = cost_module.facility_cost(2, params, days=0.25)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_invalid_inputs_rejected (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test_invalid_in
+puts_rejected) (k=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 634, in test_invalid_inputs_reject
+ed
+    cost_module.facility_cost(k, FACILITY_PARAMS, days=1.0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_invalid_inputs_rejected (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test_invalid_in
+puts_rejected) (k=1.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 634, in test_invalid_inputs_reject
+ed
+    cost_module.facility_cost(k, FACILITY_PARAMS, days=1.0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_invalid_inputs_rejected (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test_invalid_in
+puts_rejected) (k=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 634, in test_invalid_inputs_reject
+ed
+    cost_module.facility_cost(k, FACILITY_PARAMS, days=1.0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_invalid_inputs_rejected (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test_invalid_in
+puts_rejected) (days=-0.1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 637, in test_invalid_inputs_reject
+ed
+    cost_module.facility_cost(1, FACILITY_PARAMS, days=days)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_invalid_inputs_rejected (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test_invalid_in
+puts_rejected) (days=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 637, in test_invalid_inputs_reject
+ed
+    cost_module.facility_cost(1, FACILITY_PARAMS, days=days)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_invalid_inputs_rejected (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test_invalid_in
+puts_rejected) (days=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 637, in test_invalid_inputs_reject
+ed
+    cost_module.facility_cost(1, FACILITY_PARAMS, days=days)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_invalid_inputs_rejected (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test_invalid_in
+puts_rejected) (days='1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 637, in test_invalid_inputs_reject
+ed
+    cost_module.facility_cost(1, FACILITY_PARAMS, days=days)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_invalid_inputs_rejected (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test_invalid_in
+puts_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 639, in test_invalid_inputs_reject
+ed
+    cost_module.facility_cost(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_k_zero_is_zero_and_not_applicable (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryTests.test_
+k_zero_is_zero_and_not_applicable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 568, in test_k_zero_is_zero_and_no
+t_applicable
+    result = cost_module.facility_cost(0, FACILITY_PARAMS, days=1.0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_missing_device_parameters_are_none_not_zero (apps.parking_lab.workbench.tests.test_costs.FacilityCostEntryT
+ests.test_missing_device_parameters_are_none_not_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 612, in test_missing_device_parame
+ters_are_none_not_zero
+    no_capital = cost_module.facility_cost(1, {"maintenance_per_bay_day": 20.0}, days=1.0)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'facility_cost'
+
+======================================================================
+ERROR: test_capital_scales_with_equipped_bays_and_window (apps.parking_lab.workbench.tests.test_costs.LedgerFacilityCos
+tTests.test_capital_scales_with_equipped_bays_and_window)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 652, in test_capital_scales_with_e
+quipped_bays_and_window
+    per_day = report["daily_equivalent"]["operator_capital_depreciation_per_day"]
+              ~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'daily_equivalent'
+
+======================================================================
+ERROR: test_cost_report_carries_facility_block (apps.parking_lab.workbench.tests.test_costs.LedgerFacilityCostTests.tes
+t_cost_report_carries_facility_block)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 689, in test_cost_report_carries_f
+acility_block
+    self.assertEqual(report["facility_cost"]["source"], "costs.facility_cost")
+                     ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'facility_cost'
+
+======================================================================
+ERROR: test_facility_cost_block_matches_unique_entry (apps.parking_lab.workbench.tests.test_costs.LedgerFacilityCostTes
+ts.test_facility_cost_block_matches_unique_entry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 676, in test_facility_cost_block_m
+atches_unique_entry
+    block = report["facility_cost"]
+            ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'facility_cost'
+
+======================================================================
+ERROR: test_facility_fixed_item_and_flag (apps.parking_lab.workbench.tests.test_costs.LedgerFacilityCostTests.test_faci
+lity_fixed_item_and_flag)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 667, in test_facility_fixed_item_a
+nd_flag
+    self.assertAlmostEqual(report["items"]["operator_facility_fixed"], 60.0)
+                           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'operator_facility_fixed'
+
+======================================================================
+ERROR: test_maintenance_not_double_multiplied (apps.parking_lab.workbench.tests.test_costs.LedgerFacilityCostTests.test
+_maintenance_not_double_multiplied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 661, in test_maintenance_not_doubl
+e_multiplied
+    self.assertAlmostEqual(report["daily_equivalent"]["operator_maintenance_per_day"], 2 * 20.0)
+                           ~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'daily_equivalent'
+
+======================================================================
+ERROR: test_ev_without_charging_demand_is_ev_only (apps.parking_lab.workbench.tests.test_costs.OccupancyAttributionTest
+s.test_ev_without_charging_demand_is_ev_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 729, in test_ev_without_charging_d
+emand_is_ev_only
+    self.assertEqual(minutes["ice_blocking_connector"], 0.0)
+                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ice_blocking_connector'
+
+======================================================================
+ERROR: test_ice_blocking_connector_is_separate_from_no_charging_demand (apps.parking_lab.workbench.tests.test_costs.Occ
+upancyAttributionTests.test_ice_blocking_connector_is_separate_from_no_charging_demand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 708, in test_ice_blocking_connecto
+r_is_separate_from_no_charging_demand
+    self.assertAlmostEqual(minutes["ice_blocking_connector"], 10.0)
+                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ice_blocking_connector'
+
+======================================================================
+ERROR: test_legacy_key_mapping_reconstructs_old_mixed_value (apps.parking_lab.workbench.tests.test_costs.OccupancyAttri
+butionTests.test_legacy_key_mapping_reconstructs_old_mixed_value)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 753, in test_legacy_key_mapping_re
+constructs_old_mixed_value
+    self.assertAlmostEqual(cost_module.legacy_no_charging_demand(minutes), 10.0)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'apps.parking_lab.workbench.costs' has no attribute 'legacy_no_charging_demand'
+
+======================================================================
+ERROR: test_overstay_strictly_after_completion (apps.parking_lab.workbench.tests.test_costs.OccupancyAttributionTests.t
+est_overstay_strictly_after_completion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 737, in test_overstay_strictly_aft
+er_completion
+    self.assertEqual(minutes["ice_blocking_connector"], 0.0)
+                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ice_blocking_connector'
+
+======================================================================
+ERROR: test_pi0_ice_rejected_never_blocks_connector (apps.parking_lab.workbench.tests.test_costs.OccupancyAttributionTe
+sts.test_pi0_ice_rejected_never_blocks_connector)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 721, in test_pi0_ice_rejected_neve
+r_blocks_connector
+    self.assertEqual(minutes["ice_blocking_connector"], 0.0)
+                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ice_blocking_connector'
+
+======================================================================
+FAIL: test_attribution_vocabulary_covers_ice_blocking (apps.parking_lab.workbench.tests.test_costs.OccupancyAttribution
+Tests.test_attribution_vocabulary_covers_ice_blocking)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 760, in test_attribution_vocabular
+y_covers_ice_blocking
+    self.assertIn("ice_blocking_connector", cost_module.OCCUPANCY_REASONS)
+AssertionError: 'ice_blocking_connector' not found in ('no_charging_demand', 'overstay_after_complete', 'dispatch_defer
+', 'insufficient_power', 'equipment_failure')
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.025s
+
+FAILED (failures=1, errors=24)
+
+EXIT_CODE=1

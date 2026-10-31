@@ -1,0 +1,1451 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/motc/css/bootstrap.custom.css?v=WFmaSkaWfzzQUN6L0X3Mwen7VtlgPSDFzbX9ys1GVDY">
+    
+    
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+              integrity="sha512-ywmPbuxGS4cJ7GxwCX+bCJweeext047ZYU2HP52WWKbpJnF4/Zzfr2Bo19J4CWPXZmleVusQ9d//RB5bq0RP7w=="
+              crossorigin="anonymous"
+              referrerpolicy="no-referrer"/>
+    
+    <link rel="stylesheet" href="/motc/lib/bootstrap5-treeview/dist/bootstrap-treeview.min.css?v=ULjuiZ9iqqf97EETp_mZrnLusfOwISiI6AIL0IXShbc">
+    <link rel="stylesheet" href="/motc/css/variables.css?v=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs">
+    <link rel="stylesheet" href="/motc/css/common.css?v=XVt1NJ-bH5jOpwlRNAdg9D4HnTYrdsibe7bbQUNjCOE">
+    <link rel="stylesheet" href="/motc/css/common.print.css?v=VZl_SENDj0R-kU2N_s9MaUrBxj1WoI-yc3K7mRxi5gA" media="print">
+    <link rel="stylesheet" href="/motc/css/site.css?v=ZPgO5dGaDTwT3bK9gW4aeuqEdtXDM_yLzh5BLxzvvHc">
+    
+    
+    
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/jqgrid/5.8.10/css/ui.jqgrid-bootstrap5.min.css"
+              integrity="sha512-AABKm5AgD3j/uDe6Aa7uO9zUO5u/nZAzbaYFJ8OsBCS9y/raNtLvQJ6qVGcRvTtXSjVylZzG2iDvuUevI2d5bw=="
+              crossorigin="anonymous"
+              referrerpolicy="no-referrer"/>
+    
+    
+    
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.css"
+              integrity="sha512-BDStKWno6Ga+5cOFT9BUnl9erQFzfj+Qmr5MDnuGqTQ/QYDO1LPdonnF6V6lBO6JI13wg29/XmPsufxmCJ8TvQ=="
+              crossorigin="anonymous"
+              referrerpolicy="no-referrer"/>
+    
+    <link rel="stylesheet" href="/motc/css/statistics/display.css?v=m4V6ZYnQcthHApRJTn6ZEp-pV3WG_4EZ488wIy8U2bY">
+
+
+    <title>
+自用小客車在居家附近之尋找停車位時間及停車費 -         交通部統計查詢網
+    </title>
+</head>
+
+<body>
+<a href="#main"
+   class="link-skip-to-main p-2 link-light link-offset-2 link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+    進入內容區塊
+</a>
+<header class="navbar navbar-expand-md navbar-dark bg-dark sticky-top hide-on-print">
+    <nav class="container-md bd-gutter flex-wrap flex-md-nowrap" aria-label="Main navigation">
+        <h1 class="nav-brand link-light text-decoration-none fs-5">
+            <a class="text-decoration-none" href="/motc/Portal">
+                <img src="/motc/portal/images/portal-logo.png?v=NwmBCVOUfSfnUnxl5-cEZxObK1503ZARA4e8YJbNyWI" id="portal-logo" alt="&#x67E5;&#x8A62;&#x7DB2;" />
+            </a>
+            <a class="link-light link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="/motc/Portal/Home/SearchStatisticsDisplay">
+                &#x67E5;&#x8A62;&#x7DB2;
+            </a>
+        </h1>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar-main"
+                aria-controls="navbar-main"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-main">
+            <ul class="navbar-nav bg-dark">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/motc/Statistics/DefaultDisplay">
+                        <i class="bi bi-search"></i>
+                        &#x7D71;&#x8A08;&#x5716;&#x8868;&#x5FEB;&#x901F;&#x67E5;&#x8A62;
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/motc/Portal/Publication/ImportantReferenceIndicators">
+                            <i class="bi bi-book"></i>
+                            &#x91CD;&#x8981;&#x53C3;&#x8003;&#x6307;&#x6A19;
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/motc/Portal/Publication/TrafficStatisticsSummary">
+                            <i class="bi bi-book"></i>
+                            &#x7D71;&#x8A08;&#x8981;&#x89BD;
+                        </a>
+                    </li>
+                
+        <li class="nav-item">
+            <a href="https://youtu.be/_kP_mFpSssc?si=Ic4gD12zpgQWLmRi"
+               target="_blank"
+               class="nav-link">
+                <i class="bi bi-play-btn"></i>
+                操作說明
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/motc/file/新版統計資料庫上線問答集.pdf" download="新版統計資料庫上線問答集.pdf" class="nav-link">
+                <i class="bi bi-question-circle"></i>
+                問答集
+            </a>
+        </li>
+
+                <li class="nav-item">
+                        <button type="button"
+                                class="link-change-lang nav-link"
+                                data-target-lang="en">
+                            <i class="bi bi-globe2"></i>
+                            English
+                        </button>
+                </li>
+                    <li class="nav-item">
+                        <button type="button"
+                                class="nav-link"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modal-general-contact-info">
+                            <i class="bi bi-telephone"></i>
+                            &#x806F;&#x7D61;&#x8CC7;&#x8A0A;
+                        </button>
+                    </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div id="body-container" class="row mx-0">
+    <aside id="sidebar-main"
+           class="col d-flex px-0 hide-on-print">
+        <div class="flex-fill container">
+            
+        
+
+<div class="row">
+    <form class="col input-group" id="form-search-tree-menu">
+        <select class="form-select"
+                id="type-search-tree-menu"
+                title="查詢類型">
+            <option value="1">
+                &#x7D71;&#x8A08;&#x4E3B;&#x984C;
+            </option>
+            <option value="2" selected>
+                &#x7D71;&#x8A08;&#x8868;&#x540D;
+            </option>
+            <option value="3">
+                &#x7D71;&#x8A08;&#x9805;
+            </option>
+            <option value="4">
+                &#x8907;&#x5206;&#x985E;
+            </option>
+        </select>
+        <input type="search"
+               class="form-control"
+               id="keyword-search-tree-menu"
+               placeholder="&#x8ACB;&#x8F38;&#x5165;&#x95DC;&#x9375;&#x5B57;"
+               title="&#x8ACB;&#x8F38;&#x5165;&#x95DC;&#x9375;&#x5B57;">
+        <button type="submit"
+                class="btn btn-primary"
+                aria-label="搜尋">
+            <i class="bi bi-search"></i>
+        </button>
+    </form>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <button type="button" class="btn btn-primary" id="btn-tree-menu-open-all">
+            <i class="bi bi-arrows-expand"></i>
+            &#x5C55;&#x958B;&#x5168;&#x90E8;&#x9805;&#x76EE;
+        </button>
+        <button type="button" class="btn btn-primary" id="btn-tree-menu-close-all">
+            <i class="bi bi-arrows-collapse"></i>
+            &#x6536;&#x5408;&#x5168;&#x90E8;&#x9805;&#x76EE;
+        </button>
+    </div>
+</div>
+<div class="row">
+    <div id="container-tree-menu" class="col overflow-scroll w-100 pe-0">
+        <div id="tree-menu"></div>
+    </div>
+</div>
+
+
+        </div>
+        <button type="button" id="btn-toggle-sidebar-main"
+                class="btn bg-secondary bg-opacity-25 text-primary align-middle text-center px-0 rounded-0"
+                aria-label="開啟/關閉選單">
+            <i class="bi bi-caret-left-fill"></i>
+        </button>
+    </aside>
+    
+
+
+
+
+
+
+
+<main id="main"
+      class="col ps-4 py-1 py-md-4 position-relative"
+      data-period-type="2">
+    <div class="row mt-0 mt-md-3">
+        <div class="col">
+            <h4 class="mb-0 fw-bold">
+                &#x81EA;&#x7528;&#x5C0F;&#x5BA2;&#x8ECA;&#x5728;&#x5C45;&#x5BB6;&#x9644;&#x8FD1;&#x4E4B;&#x5C0B;&#x627E;&#x505C;&#x8ECA;&#x4F4D;&#x6642;&#x9593;&#x53CA;&#x505C;&#x8ECA;&#x8CBB;
+                <span class="hover-pointer hide-on-print"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modal-info">
+                    <i class="bi bi-info-circle d-inline d-md-none fs-4"></i>
+                    <i class="bi bi-info-circle d-none d-md-inline fs-6"></i>
+                    <span class="d-none d-md-inline fs-6">
+                        &#x8AAA;&#x660E;&#x53CA;&#x8CC7;&#x6599;&#x4F86;&#x6E90;
+                    </span>
+                </span>
+            </h4>
+        </div>
+    </div>
+    <div class="row mt-3 d-none d-md-flex">
+        <div class="col">
+            <div id="list-tabs" class="border rounded p-1"></div>
+        </div>
+    </div>
+    <div class="row mt-0 mt-md-3">
+        <div class="col-12 col-md-auto statistics-period-filters pe-md-0">
+            <div class="input-group statistics-period-settings mb-0 mb-md-3">
+                <select class="form-select select-period" id="select-period-start" title="從">
+                <option value="113-00-00">113&#x5E74;</option>
+<option value="111-00-00">111&#x5E74;</option>
+<option value="109-00-00">109&#x5E74;</option>
+<option value="107-00-00">107&#x5E74;</option>
+<option value="105-00-00">105&#x5E74;</option>
+<option value="103-00-00">103&#x5E74;</option>
+<option selected="selected" value="101-00-00">101&#x5E74;</option>
+</select>
+                <label class="input-group-text" for="select-period-end">
+                    &#x81F3;
+                </label>
+                <select class="form-select select-period" id="select-period-end">
+                <option selected="selected" value="113-00-00">113&#x5E74;</option>
+<option value="111-00-00">111&#x5E74;</option>
+<option value="109-00-00">109&#x5E74;</option>
+<option value="107-00-00">107&#x5E74;</option>
+<option value="105-00-00">105&#x5E74;</option>
+<option value="103-00-00">103&#x5E74;</option>
+<option value="101-00-00">101&#x5E74;</option>
+</select>
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0 me-1"
+                           type="checkbox"
+                           id="check-period-show-year"
+                           checked>
+                    <label class="form-check-label" for="check-period-show-year">
+                        &#x5E74;
+                    </label>
+                </div>
+                <div class="input-group-text d-none">
+                    <input class="form-check-input mt-0 me-1"
+                           type="checkbox"
+                           id="check-period-show-month"
+                           >
+                    <label class="form-check-label" for="check-period-show-month">
+                        &#x6708;
+                    </label>
+                </div>
+                <div class="input-group-text d-none">
+                    <input class="form-check-input mt-0 me-1"
+                           type="checkbox"
+                           id="check-period-show-quarter"
+                           >
+                    <label class="form-check-label" for="check-period-show-quarter">
+                        &#x5B63;
+                    </label>
+                </div>
+                <div class="input-group-text d-none">
+                    <input class="form-check-input mt-0 me-1"
+                           type="checkbox"
+                           id="check-period-show-half-year"
+                           >
+                    <label class="form-check-label" for="check-period-show-half-year">
+                        &#x534A;&#x5E74;
+                    </label>
+                </div>
+                <select class="form-select"
+                        name="compare-mode"
+                        title="增減值類型">
+                        <option value="0">
+                            &#x7D71;&#x8A08;&#x503C;
+                        </option>
+                        <option value="9">
+                            &#x8F03;&#x4E0A;&#x671F;&#x589E;&#x6E1B;&#x7387;
+                        </option>
+                        <option value="10">
+                            &#x8F03;&#x4E0A;&#x671F;&#x589E;&#x6E1B;&#x6578;
+                        </option>
+                        <option value="25">
+                            &#x7D71;&#x8A08;&#x503C;(&#x9644;&#x52A0;&#x8F03;&#x4E0A;&#x671F;&#x589E;&#x6E1B;&#x7387;)
+                        </option>
+                        <option value="42">
+                            &#x7D71;&#x8A08;&#x503C;(&#x9644;&#x52A0;&#x8F03;&#x4E0A;&#x671F;&#x589E;&#x6E1B;&#x6578;)
+                        </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-8 col-md-auto statistics-period-query px-md-0">
+            <button type="button"
+                    class="btn btn-primary"
+                    id="btn-set-period">
+                &#x67E5;&#x8A62;
+            </button>
+        </div>
+        <div class="col-4 col-md-auto statistics-advance-search-container">
+            <button type="button"
+                    class="btn btn-primary"
+                    id="btn-open-modal-advance-search"
+                    title="進一步查詢更多統計項目與分類">
+                <i class="bi bi-gear-fill d-none d-md-inline"></i>
+                &#x9032;&#x968E;&#x67E5;&#x8A62;
+            </button>
+        </div>
+    </div>
+    <div class="row mt-0 mt-md-3">
+        <div class="col-auto statistics-action-buttons">
+            <button type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-config-column">
+                <i class="bi bi-columns-gap d-none d-md-inline"></i>
+                &#x6B04;&#x5217;&#x914D;&#x7F6E;
+            </button>
+            <button type="button"
+                    class="btn btn-outline-dark btn-outline-hover"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-nouns">
+                <i class="bi bi-list-columns-reverse d-none d-md-inline"></i>
+                &#x7D71;&#x8A08;&#x540D;&#x8A5E;
+            </button>
+            <button type="button"
+                    class="btn btn-outline-dark btn-outline-hover"
+                    id="btn-open-modal-chart-statistics-display"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-chart-statistics-display">
+                <i class="bi bi-bar-chart d-none d-md-inline"></i>
+                &#x7D71;&#x8A08;&#x5716;&#x8868;
+            </button>
+            <button type="button"
+                    id="btn-table-copy"
+                    class="btn btn-outline-dark btn-outline-hover">
+                <i class="bi bi-columns-gap d-none d-md-inline"></i>
+                &#x8907;&#x88FD;&#x8868;&#x683C;
+            </button>
+            <button type="button"
+                    id="btn-print"
+                    class="btn btn-outline-dark btn-outline-hover">
+                <i class="bi bi-printer d-none d-md-inline"></i>
+                &#x5217;&#x5370;
+            </button>
+            <button type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-download">
+                <i class="bi bi-download d-none d-md-inline"></i>
+                &#x4E0B;&#x8F09;
+            </button>
+            <button type="button"
+                    class="btn btn-outline-dark btn-outline-hover"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal-copy">
+                <i class="bi bi-link-45deg d-none d-md-inline"></i>
+                &#x7DB2;&#x5740;&#x8207;&#x4F86;&#x6E90;
+            </button>
+        </div>
+        <div class="col-auto ms-auto pt-1 text-dark text-opacity-75">
+            &#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x8CC7;&#x6599;&#x66F4;&#x65B0;&#x6642;&#x9593;&#xFF1A;
+            <time id="publish-date" class="placeholder col-3"></time>
+        </div>
+        <div class="col-auto pt-1 text-dark text-opacity-75 container-unit-of-measurement">
+            &#x55AE;&#x4F4D;&#xFF1A;<span class="display-unit-of-measurement"></span>
+        </div>
+    </div>
+    <div class="row mt-0 mt-md-3">
+        <div class="col-12">
+            <div id="table-col" class="table-responsive"></div>
+        </div>
+    </div>
+
+    <button id="btn-go-top"
+            type="button"
+            class="btn btn-danger rounded-circle position-fixed fs-5 hide-on-print"
+            title="&#x79FB;&#x81F3;&#x9802;&#x90E8;"
+            aria-label="&#x79FB;&#x81F3;&#x9802;&#x90E8;">
+        <i class="bi bi-arrow-bar-down"></i>
+    </button>
+</main>
+
+
+
+</div>
+
+
+
+<div id="modal-general-contact-info" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    &#x806F;&#x7D61;&#x8CC7;&#x8A0A;
+                </h4>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                統計查詢網服務專線： (02) 23492900<br>轉公務統計 2721、2722、2723、2725<br>轉調查統計 2711、2712
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    &#x95DC;&#x9589;
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+<div id="modal-download-all-tab" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <form method="post" id="form-download-all-tab" class="modal-content" action="/motc/Download/TableAllTab">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    &#x5168;&#x90E8;&#x4E0B;&#x8F09;
+                </h4>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">
+                        &#x6A94;&#x6848;&#x985E;&#x578B;
+                    </label>
+                        <div class="form-check fs-4">
+                            <input class="form-check-input" type="radio" id="all-tab-radio-file-type-xlsx" value="xlsx" data-val="true" data-val-required="&#x5FC5;&#x9808;&#x9078;&#x64C7; FileType" name="FileType">
+                            <label class="form-check-label" for="all-tab-radio-file-type-xlsx">
+                                xlsx
+                            </label>
+                        </div>
+                        <div class="form-check fs-4">
+                            <input class="form-check-input" type="radio" id="all-tab-radio-file-type-xls" value="xls" name="FileType">
+                            <label class="form-check-label" for="all-tab-radio-file-type-xls">
+                                xls
+                            </label>
+                        </div>
+                        <div class="form-check fs-4">
+                            <input class="form-check-input" type="radio" id="all-tab-radio-file-type-ods" value="ods" name="FileType">
+                            <label class="form-check-label" for="all-tab-radio-file-type-ods">
+                                ods
+                            </label>
+                        </div>
+                </div>
+                <input type="hidden" data-val="true" data-val-required="The TabCount field is required." id="TabCount" name="TabCount" value="0" />
+                    <input type="hidden" id="download-all-tab-0-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[0].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-0-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[0].Title" value="" />
+                    <input type="hidden" id="download-all-tab-0-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[0].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-0-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[0].CompareMode" value="" />
+                    <input type="hidden" id="download-all-tab-1-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[1].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-1-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[1].Title" value="" />
+                    <input type="hidden" id="download-all-tab-1-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[1].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-1-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[1].CompareMode" value="" />
+                    <input type="hidden" id="download-all-tab-2-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[2].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-2-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[2].Title" value="" />
+                    <input type="hidden" id="download-all-tab-2-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[2].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-2-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[2].CompareMode" value="" />
+                    <input type="hidden" id="download-all-tab-3-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[3].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-3-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[3].Title" value="" />
+                    <input type="hidden" id="download-all-tab-3-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[3].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-3-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[3].CompareMode" value="" />
+                    <input type="hidden" id="download-all-tab-4-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[4].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-4-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[4].Title" value="" />
+                    <input type="hidden" id="download-all-tab-4-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[4].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-4-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[4].CompareMode" value="" />
+                    <input type="hidden" id="download-all-tab-5-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[5].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-5-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[5].Title" value="" />
+                    <input type="hidden" id="download-all-tab-5-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[5].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-5-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[5].CompareMode" value="" />
+                    <input type="hidden" id="download-all-tab-6-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[6].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-6-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[6].Title" value="" />
+                    <input type="hidden" id="download-all-tab-6-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[6].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-6-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[6].CompareMode" value="" />
+                    <input type="hidden" id="download-all-tab-7-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[7].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-7-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[7].Title" value="" />
+                    <input type="hidden" id="download-all-tab-7-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[7].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-7-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[7].CompareMode" value="" />
+                    <input type="hidden" id="download-all-tab-8-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[8].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-8-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[8].Title" value="" />
+                    <input type="hidden" id="download-all-tab-8-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[8].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-8-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[8].CompareMode" value="" />
+                    <input type="hidden" id="download-all-tab-9-seq" data-val="true" data-val-required="The Seq field is required." name="Tabs[9].Seq" value="" />
+                    <input type="hidden" id="download-all-tab-9-title" data-val="true" data-val-required="The value for Title must not be empty." name="Tabs[9].Title" value="" />
+                    <input type="hidden" id="download-all-tab-9-content" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." name="Tabs[9].TableContentHtmlBase64" value="" />
+                    <input type="hidden" id="download-all-tab-9-compare-mode" data-val="true" data-val-required="The CompareMode field is required." name="Tabs[9].CompareMode" value="" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    &#x53D6;&#x6D88;
+                </button>
+                <button type="button" id="btn-download-all-tab" class="btn btn-primary">
+                    &#x4E0B;&#x8F09;
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    
+
+
+<div id="modal-download" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <form method="post" id="form-download" class="modal-content" action="/motc/Download/Table">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    &#x4E0B;&#x8F09;&#x6A94;&#x6848; - &#x81EA;&#x7528;&#x5C0F;&#x5BA2;&#x8ECA;&#x5728;&#x5C45;&#x5BB6;&#x9644;&#x8FD1;&#x4E4B;&#x5C0B;&#x627E;&#x505C;&#x8ECA;&#x4F4D;&#x6642;&#x9593;&#x53CA;&#x505C;&#x8ECA;&#x8CBB;
+                </h4>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">
+                        &#x6A94;&#x6848;&#x985E;&#x578B;
+                    </label>
+                    <input type="hidden" id="download-seq" data-val="true" data-val-required="The Seq field is required." name="Seq" value="810" />
+                    <input type="hidden" data-val="true" data-val-required="The value for Title must not be empty." id="Title" name="Title" value="&#x81EA;&#x7528;&#x5C0F;&#x5BA2;&#x8ECA;&#x5728;&#x5C45;&#x5BB6;&#x9644;&#x8FD1;&#x4E4B;&#x5C0B;&#x627E;&#x505C;&#x8ECA;&#x4F4D;&#x6642;&#x9593;&#x53CA;&#x505C;&#x8ECA;&#x8CBB;" />
+                    <input type="hidden" data-val="true" data-val-required="The value for TableContentHtmlBase64 must not be empty." id="TableContentHtmlBase64" name="TableContentHtmlBase64" value="" />
+                    <input type="hidden" data-val="true" data-val-required="The CompareMode field is required." id="CompareMode" name="CompareMode" value="NoCompare" />
+                        <div class="form-check fs-4">
+                            <input class="form-check-input" type="radio" id="radio-file-type-xlsx" value="xlsx" data-val="true" data-val-required="&#x5FC5;&#x9808;&#x9078;&#x64C7; FileType" name="FileType">
+                            <label class="form-check-label" for="radio-file-type-xlsx">
+                                xlsx
+                            </label>
+                        </div>
+                        <div class="form-check fs-4">
+                            <input class="form-check-input" type="radio" id="radio-file-type-xls" value="xls" name="FileType">
+                            <label class="form-check-label" for="radio-file-type-xls">
+                                xls
+                            </label>
+                        </div>
+                        <div class="form-check fs-4">
+                            <input class="form-check-input" type="radio" id="radio-file-type-ods" value="ods" name="FileType">
+                            <label class="form-check-label" for="radio-file-type-ods">
+                                ods
+                            </label>
+                        </div>
+                        <div class="form-check fs-4">
+                            <input class="form-check-input" type="radio" id="radio-file-type-pdf" value="pdf" name="FileType">
+                            <label class="form-check-label" for="radio-file-type-pdf">
+                                pdf
+                            </label>
+                        </div>
+                        <div class="form-check fs-4">
+                            <input class="form-check-input" type="radio" id="radio-file-type-csv" value="csv" name="FileType">
+                            <label class="form-check-label" for="radio-file-type-csv">
+                                csv
+                            </label>
+                        </div>
+                        <div class="form-check fs-4">
+                            <input class="form-check-input" type="radio" id="radio-file-type-txt" value="txt" name="FileType">
+                            <label class="form-check-label" for="radio-file-type-txt">
+                                txt
+                            </label>
+                        </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    &#x53D6;&#x6D88;
+                </button>
+                <button type="button" id="btn-download" class="btn btn-primary">
+                    &#x4E0B;&#x8F09;
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <div id="modal-info" class="modal hide-on-print" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        &#x8AAA;&#x660E;&#x53CA;&#x8CC7;&#x6599;&#x4F86;&#x6E90;
+                    </h4>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                            <div class="mb-3">
+                                <b>資料來源：</b>交通部「自用小客車使用狀況調查」。
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-config-column" class="modal hide-on-print" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        &#x8A2D;&#x5B9A;&#x6B04;&#x5217;&#x914D;&#x7F6E;
+                    </h4>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            id="btn-close-config-column-modal">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-primary" id="btn-config-column">
+                        &#x8A2D;&#x5B9A;
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="btn-reset-config-column">
+                        &#x91CD;&#x8A2D;
+                    </button>
+                    <div>
+                        <div id="table-config-column"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-nouns" class="modal hide-on-print" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        &#x7D71;&#x8A08;&#x540D;&#x8A5E;
+                    </h4>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered border-primary">
+                        <tbody>
+                                <tr>
+                                    <td colspan="3" class="text-center">
+                                        &#x7121;
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        <a href="https://statis.motc.gov.tw/MAIN/Mocdb/index.jsp"
+                           target="_blank"
+                           title="交通統計名詞定義 (&#x53E6;&#x958B;&#x65B0;&#x5206;&#x9801;)"
+                           class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover">
+                            交通統計名詞定義
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-copy" class="modal hide-on-print" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        &#x8907;&#x88FD;&#x7DB2;&#x5740;&#x8207;&#x4F86;&#x6E90;
+                    </h4>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">&#x7DB2;&#x5740;</span>
+                        <input type="text"
+                               id="input-copy-url"
+                               class="form-control"
+                               readonly="readonly"
+                               title="&#x7DB2;&#x5740;">
+                        <button class="btn btn-warning"
+                                type="button"
+                                id="btn-copy-url"
+                                title="&#x8907;&#x88FD;"
+                                aria-label="&#x8907;&#x88FD;">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            &#x4F86;&#x6E90;
+                        </span>
+                        <input type="text"
+                               id="input-copy-reference"
+                               class="form-control"
+                               readonly="readonly"
+                               title="&#x4F86;&#x6E90;">
+                        <button class="btn btn-warning"
+                                type="button"
+                                id="btn-copy-reference"
+                                title="&#x8907;&#x88FD;"
+                                aria-label="&#x8907;&#x88FD;">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-advance-search" class="modal hide-on-print" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        &#x9032;&#x968E;&#x67E5;&#x8A62;
+                    </h4>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body accordion">
+                    <button type="button"
+                            class="btn btn-primary"
+                            id="btn-advance-set">
+                        &#x67E5;&#x8A62;
+                    </button>
+                    <div class="accordion-item">
+                        <h2 id="accordion-heading-advance-hide-period" class="accordion-header">
+                            <button class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#accordion-advance-hide-period"
+                                    aria-expanded="true"
+                                    aria-controls="accordion-advance-hide-period">
+                                &#x8A2D;&#x5B9A;&#x986F;&#x793A;&#x8CC7;&#x6599;&#x671F;
+                            </button>
+                        </h2>
+                        <div id="accordion-advance-hide-period"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="accordion-heading-advance-hide-period">
+                            <div class="accordion-body">
+                                <button type="button"
+                                        class="btn btn-secondary"
+                                        id="btn-advance-hide-period-check-all">
+                                    &#x5168;&#x9078;
+                                </button>
+                                <button type="button"
+                                        class="btn btn-secondary"
+                                        id="btn-advance-hide-period-uncheck-all">
+                                    &#x5168;&#x4E0D;&#x9078;
+                                </button>
+                                <button type="button"
+                                        class="btn btn-secondary"
+                                        id="btn-advance-hide-period-check-reverse">
+                                    &#x53CD;&#x5411;&#x9078;&#x53D6;
+                                </button>
+                                <ul id="list-group-hide-period" class="list-group">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 id="accordion-heading-advance-set-column" class="accordion-header">
+                            <button class="accordion-button"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#accordion-advance-set-column"
+                                    aria-expanded="true"
+                                    aria-controls="accordion-advance-set-column">
+                                &#x8A2D;&#x5B9A;&#x7D71;&#x8A08;&#x9805;
+                            </button>
+                        </h2>
+                        <div id="accordion-advance-set-column"
+                             class="accordion-collapse collapse"
+                             aria-labelledby="accordion-heading-advance-set-column">
+                            <div class="accordion-body">
+                                <button type="button"
+                                        class="btn btn-secondary"
+                                        id="btn-advance-set-column-check-all">
+                                    &#x5168;&#x9078;
+                                </button>
+                                <button type="button"
+                                        class="btn btn-secondary"
+                                        id="btn-advance-set-column-uncheck-all">
+                                    &#x5168;&#x4E0D;&#x9078;
+                                </button>
+                                <ul id="list-group-set-column" class="list-group">
+                                        <li class="list-group-item">
+                                                <input type="checkbox"
+                                                       class="form-check-input me-1 checkbox-set-column"
+                                                       value="8397"
+                                                       id="checkbox-set-column-8397"
+                                                       data-column-name="&#x5E73;&#x5747;&#x5728;&#x5C45;&#x5BB6;&#x9644;&#x8FD1;&#x4E4B;&#x5C0B;&#x627E;&#x505C;&#x8ECA;&#x4F4D;&#x6642;&#x9593;(&#x5206;&#x9418;)"
+                                                       checked="checked">
+                                            <label class="form-check-label" for="checkbox-set-column-8397">
+                                                &#x5E73;&#x5747;&#x5728;&#x5C45;&#x5BB6;&#x9644;&#x8FD1;&#x4E4B;&#x5C0B;&#x627E;&#x505C;&#x8ECA;&#x4F4D;&#x6642;&#x9593;(&#x5206;&#x9418;)
+                                            </label>
+                                        </li>
+                                        <li class="list-group-item">
+                                                <input type="checkbox"
+                                                       class="form-check-input me-1 checkbox-set-column"
+                                                       value="8398"
+                                                       id="checkbox-set-column-8398"
+                                                       data-column-name="&#x5E73;&#x5747;&#x5728;&#x5C45;&#x5BB6;&#x9644;&#x8FD1;&#x4E4B;&#x505C;&#x8ECA;&#x8CBB;(&#x5143;)"
+                                                       checked="checked">
+                                            <label class="form-check-label" for="checkbox-set-column-8398">
+                                                &#x5E73;&#x5747;&#x5728;&#x5C45;&#x5BB6;&#x9644;&#x8FD1;&#x4E4B;&#x505C;&#x8ECA;&#x8CBB;(&#x5143;)
+                                            </label>
+                                        </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="accordion-item">
+                            <h2 id="accordion-heading-advance-set-code-list" class="accordion-header">
+                                <button class="accordion-button"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#accordion-advance-set-code-list"
+                                        aria-expanded="true"
+                                        aria-controls="accordion-advance-set-code-list">
+                                    &#x8A2D;&#x5B9A;&#x8907;&#x5206;&#x985E;
+                                </button>
+                            </h2>
+                            <div id="accordion-advance-set-code-list"
+                                 class="accordion-collapse collapse"
+                                 aria-labelledby="accordion-heading-advance-set-code-list">
+                                <div class="accordion-body">
+                                        <div class="container-code-list">
+                                            <h5 class="title-set-code-list"
+                                                data-code-list-seq="950"
+                                                data-code-list-name="&#x4F7F;&#x7528;&#x7E23;&#x5E02;&#x5225;">
+                                                &#x4F7F;&#x7528;&#x7E23;&#x5E02;&#x5225;
+                                                <button type="button"
+                                                        class="btn btn-secondary btn-set-code-list-check-all">
+                                                    &#x5168;&#x9078;
+                                                </button>
+                                                <button type="button"
+                                                        class="btn btn-secondary btn-set-code-list-uncheck-all">
+                                                    &#x5168;&#x4E0D;&#x9078;
+                                                </button>
+                                            </h5>
+                                            <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19880"
+                                                                   id="checkbox-set-code-list-value-19880"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x7E3D;&#x8A08;"
+                                                                   checked>
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19880">
+                                                            &#x7E3D;&#x8A08;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19881"
+                                                                   id="checkbox-set-code-list-value-19881"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x65B0;&#x5317;&#x5E02;"
+                                                                   checked>
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19881">
+                                                            &#x65B0;&#x5317;&#x5E02;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19882"
+                                                                   id="checkbox-set-code-list-value-19882"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x81FA;&#x5317;&#x5E02;"
+                                                                   checked>
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19882">
+                                                            &#x81FA;&#x5317;&#x5E02;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19883"
+                                                                   id="checkbox-set-code-list-value-19883"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x6843;&#x5712;&#x5E02;"
+                                                                   checked>
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19883">
+                                                            &#x6843;&#x5712;&#x5E02;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19884"
+                                                                   id="checkbox-set-code-list-value-19884"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x81FA;&#x4E2D;&#x5E02;"
+                                                                   checked>
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19884">
+                                                            &#x81FA;&#x4E2D;&#x5E02;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19885"
+                                                                   id="checkbox-set-code-list-value-19885"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x81FA;&#x5357;&#x5E02;"
+                                                                   checked>
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19885">
+                                                            &#x81FA;&#x5357;&#x5E02;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19886"
+                                                                   id="checkbox-set-code-list-value-19886"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x9AD8;&#x96C4;&#x5E02;"
+                                                                   checked>
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19886">
+                                                            &#x9AD8;&#x96C4;&#x5E02;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19887"
+                                                                   id="checkbox-set-code-list-value-19887"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x5B9C;&#x862D;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19887">
+                                                            &#x5B9C;&#x862D;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19888"
+                                                                   id="checkbox-set-code-list-value-19888"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x65B0;&#x7AF9;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19888">
+                                                            &#x65B0;&#x7AF9;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19889"
+                                                                   id="checkbox-set-code-list-value-19889"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x82D7;&#x6817;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19889">
+                                                            &#x82D7;&#x6817;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19890"
+                                                                   id="checkbox-set-code-list-value-19890"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x5F70;&#x5316;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19890">
+                                                            &#x5F70;&#x5316;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19891"
+                                                                   id="checkbox-set-code-list-value-19891"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x5357;&#x6295;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19891">
+                                                            &#x5357;&#x6295;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19892"
+                                                                   id="checkbox-set-code-list-value-19892"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x96F2;&#x6797;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19892">
+                                                            &#x96F2;&#x6797;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19893"
+                                                                   id="checkbox-set-code-list-value-19893"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x5609;&#x7FA9;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19893">
+                                                            &#x5609;&#x7FA9;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19894"
+                                                                   id="checkbox-set-code-list-value-19894"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x5C4F;&#x6771;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19894">
+                                                            &#x5C4F;&#x6771;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19895"
+                                                                   id="checkbox-set-code-list-value-19895"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x81FA;&#x6771;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19895">
+                                                            &#x81FA;&#x6771;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19896"
+                                                                   id="checkbox-set-code-list-value-19896"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x82B1;&#x84EE;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19896">
+                                                            &#x82B1;&#x84EE;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19897"
+                                                                   id="checkbox-set-code-list-value-19897"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x6F8E;&#x6E56;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19897">
+                                                            &#x6F8E;&#x6E56;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19898"
+                                                                   id="checkbox-set-code-list-value-19898"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x57FA;&#x9686;&#x5E02;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19898">
+                                                            &#x57FA;&#x9686;&#x5E02;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19899"
+                                                                   id="checkbox-set-code-list-value-19899"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x65B0;&#x7AF9;&#x5E02;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19899">
+                                                            &#x65B0;&#x7AF9;&#x5E02;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19900"
+                                                                   id="checkbox-set-code-list-value-19900"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x5609;&#x7FA9;&#x5E02;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19900">
+                                                            &#x5609;&#x7FA9;&#x5E02;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19901"
+                                                                   id="checkbox-set-code-list-value-19901"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x91D1;&#x9580;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19901">
+                                                            &#x91D1;&#x9580;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                                    <li class="list-group-item">
+            <span class="display-level-spacer"></span>
+                                                            <input type="checkbox"
+                                                                   class="form-check-input me-1 checkbox-set-code-list-value"
+                                                                   value="19902"
+                                                                   id="checkbox-set-code-list-value-19902"
+                                                                   data-code-list-seq="950"
+                                                                   data-code-list-value-name="&#x9023;&#x6C5F;&#x7E23;"
+                                                                   >
+                                                        <label class="form-check-label"
+                                                               for="checkbox-set-code-list-value-19902">
+                                                            &#x9023;&#x6C5F;&#x7E23;
+                                                        </label>
+                                                    </li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-chart-statistics-display" class="modal hide-on-print" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        &#x81EA;&#x7528;&#x5C0F;&#x5BA2;&#x8ECA;&#x5728;&#x5C45;&#x5BB6;&#x9644;&#x8FD1;&#x4E4B;&#x5C0B;&#x627E;&#x505C;&#x8ECA;&#x4F4D;&#x6642;&#x9593;&#x53CA;&#x505C;&#x8ECA;&#x8CBB;
+                    </h4>
+                    <span class="ms-auto container-unit-of-measurement">
+                        &#x55AE;&#x4F4D;&#xFF1A;<span class="display-unit-of-measurement"></span>
+                    </span>
+                    <button type="button"
+                            class="btn-close ms-3"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-4x3">
+                        <div id="chart-statistics-display" class="w-100 h-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="toast-container p-3 bottom-0 start-50 translate-middle-x"
+     data-original-class="toast-container p-3">
+    <div id="toast-browser-hint"
+         role="alert"
+         aria-live="assertive"
+         aria-atomic="true"
+         class="toast"
+         data-bs-autohide="false">
+        <div class="toast-header">
+            <button type="button"
+                    class="btn-close ms-auto"
+                    data-bs-dismiss="toast"
+                    aria-label="Close">
+            </button>
+        </div>
+        <div class="toast-body">
+            建議使用最新版本的 Chrome、Firefox 或 Edge 瀏覽器，以獲得最佳的瀏覽體驗。
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(window.jQuery||document.write("\u003Cscript src=\u0022/motc/lib/jquery/dist/jquery.min.js\u0022 integrity=\u0022sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR\u002B8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==\u0022 crossorigin=\u0022anonymous\u0022 referrerpolicy=\u0022no-referrer\u0022\u003E\u003C/script\u003E"));</script>
+    <script src="/motc/lib/bootstrap/dist/js/bootstrap.bundle.min.js?v=CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC-mjoJimHGw"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.13/jsrender.min.js" integrity="sha512-T93uOawQ+FrEdyCPaWrQtppurbLm8SISu2QnHyddM0fGXKX9Amyirwibe1wGYbsW2F8lLzhOM/2+d3Zo94ljRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>($.templates||document.write("\u003Cscript src=\u0022/motc/lib/jsrender/jsrender.min.js\u0022 integrity=\u0022sha512-T93uOawQ\u002BFrEdyCPaWrQtppurbLm8SISu2QnHyddM0fGXKX9Amyirwibe1wGYbsW2F8lLzhOM/2\u002Bd3Zo94ljRQ==\u0022 crossorigin=\u0022anonymous\u0022 referrerpolicy=\u0022no-referrer\u0022\u003E\u003C/script\u003E"));</script>
+
+<script src="/motc/lib/ryanjuan-hestia-aspnetcore/jquery-jsrender-adapter.js?v=gnZP8hAeiI166Vlg3DEYROh18uYjtvacPDqZGlutvuc"></script>
+<script src="/motc/lib/bootstrap5-treeview/dist/bootstrap-treeview.min.js?v=GcSFGfMwdu-s97JFIXGiuy9W6xMsA4m1n-RtF4HnVnY"></script>
+<script src="/motc/lib/ryanjuan-hestia-aspnetcore/hestia-common.js?v=Prf0SKF-Yt14Pn-VgmqtyI2X0_o3GFBqz_80BKDIV54"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js" integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(window.jQuery && window.jQuery.validator||document.write("\u003Cscript src=\u0022/motc/lib/jquery-validation/dist/jquery.validate.min.js\u0022 integrity=\u0022sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5\u002BTd12qN5pvWXhuWaWcVwF\u002B\u002BF7aqu9cvqP0A==\u0022 crossorigin=\u0022anonymous\u0022 referrerpolicy=\u0022no-referrer\u0022\u003E\u003C/script\u003E"));</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/localization/messages_zh_TW.min.js" integrity="sha512-/eINzmE4NjJ9s1PCKnnziQH1M1DbySGaRbMIvf7dPqVUVIVnlSys88+o0y0nqwGJblUAcam632UHY09gHbku2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(window.jQuery.validator.messages.required === '必須填寫'||document.write("\u003Cscript src=\u0022/motc/lib/jquery-validation/dist/localization/messages_zh_TW.min.js\u0022 integrity=\u0022sha512-/eINzmE4NjJ9s1PCKnnziQH1M1DbySGaRbMIvf7dPqVUVIVnlSys88\u002Bo0y0nqwGJblUAcam632UHY09gHbku2Q==\u0022 crossorigin=\u0022anonymous\u0022 referrerpolicy=\u0022no-referrer\u0022\u003E\u003C/script\u003E"));</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive||document.write("\u003Cscript src=\u0022/motc/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js\u0022 integrity=\u0022sha512-xq\u002BVm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p\u002BZDFAR7kHnSFf\u002BzUv52B3prRYnbDRdgog==\u0022 crossorigin=\u0022anonymous\u0022 referrerpolicy=\u0022no-referrer\u0022\u003E\u003C/script\u003E"));</script>
+
+<script src="/motc/lib/ryanjuan-hestia-aspnetcore/jquery-validation-extensions.js?v=mBWKurTfpDpBgLBASRqowZb7xJBOAnbnbOe7SIvt7Jo"></script>
+<script src="/motc/lib/ryanjuan-hestia-aspnetcore-taiwan/jquery-validation-extensions.js?v=LpkH6nV2m7y5Q0bXNm6Q2Ltfv5ETA3-JcbLJJEFzcMc"></script>
+<script src="/motc/lib/ryanjuan-hestia-aspnetcore/jquery-validation-bootstrap-5-adapter.js?v=XK-g0xGH4ecXAZdocUlyv8z-qgBCeWxygobSlshL8N0"></script>
+
+<script src="/motc/js/common.js?v=LZZ67qsczjCNluUfGEw8cFWpns70mcgBwri3529EXEU"></script>
+<script src="/motc/js/site.js?v=3eTHEHQsj6XaccM4ktJ9UMwDT4c_YI20bQDwsN-CZ7I"></script>
+<script>
+    "use strict";
+
+    checkAndDisplayBrowserHint(
+        "toast-browser-hint",
+        14,
+    );
+</script>
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(window.jQuery.ui||document.write("\u003Cscript src=\u0022/motc/lib/jquery-ui/dist/jquery-ui.min.js\u0022 integrity=\u0022sha512-57oZ/vW8ANMjR/KQ6Be9v/\u002B/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU\u002BRpHom3Q==\u0022 crossorigin=\u0022anonymous\u0022 referrerpolicy=\u0022no-referrer\u0022\u003E\u003C/script\u003E"));</script>
+    
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.js" integrity="sha512-XgJh9jgd6gAHu9PcRBBAp0Hda8Tg87zi09Q2639t0tQpFFQhGpeCgaiEFji36Ozijjx9agZxB0w53edOFGCQ0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(window.jQuery.prototype.pivotUI||document.write("\u003Cscript src=\u0022/motc/lib/pivottable/dist/pivot.min.js\u0022 integrity=\u0022sha512-XgJh9jgd6gAHu9PcRBBAp0Hda8Tg87zi09Q2639t0tQpFFQhGpeCgaiEFji36Ozijjx9agZxB0w53edOFGCQ0g==\u0022 crossorigin=\u0022anonymous\u0022 referrerpolicy=\u0022no-referrer\u0022\u003E\u003C/script\u003E"));</script>
+    
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js" integrity="sha512-k37wQcV4v2h6jgYf5IUz1MoSKPpDs630XGSmCaCCOXxy2awgAWKHGZWr9nMyGgk3IOxA1NxdkN8r1JHgkUtMoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>(echarts||document.write("\u003Cscript src=\u0022/motc/lib/echarts/dist/echarts.min.js\u0022 integrity=\u0022sha512-k37wQcV4v2h6jgYf5IUz1MoSKPpDs630XGSmCaCCOXxy2awgAWKHGZWr9nMyGgk3IOxA1NxdkN8r1JHgkUtMoQ==\u0022 crossorigin=\u0022anonymous\u0022 referrerpolicy=\u0022no-referrer\u0022\u003E\u003C/script\u003E"));</script>
+    
+    <script>
+        "use strict";
+
+        class Model {
+            static get MaxTabCount() { return 10; }
+        }
+    </script>
+    <script src="/motc/js/statistics/display.js?v=tJiUNannplQYUj-V1gpnxxBXJonZKPVT291ecDeIEhQ"></script>
+    <script src="/motc/js/statistics/display-chart.js?v=UO2ugvgWfJwdcj6D4FztvmBjoO0mo907WATtSZk2Hmc"></script>
+        <script>
+            const DateFormatConfig = {
+                formatYear: (value) => `${value}年`,
+                formatMonth: (value) => `${value}月`,
+                formatDay: (value) => `${value}日`,
+                formatBreakYearSuffix: (start, end) => `(${start}至${end})`,
+            };
+        </script>
+    <script>
+        "use strict";
+
+        const I18nStrings = {
+            CloseAll: "全部關閉",
+            DownloadAll: "全部下載",
+            Date: "日期",
+            TableIsCopied: "表格已複製",
+            UrlIsCopied: "網址已複製",
+            ReferenceIsCopied: "來源已複製",
+            SortAscending: "遞增",
+            SortDescending: "遞減",
+            AppendCompareRateTitle: "增減比較",
+            AppendCompareRateValue: "統計值",
+            AppendCompareModes: [
+                "增減率",
+                "增減數",
+            ],
+            NoDataMessage: `您選擇的條件沒有資料，請調整條件後重新查詢`,
+        };
+
+        const urls = {
+            metadata: "https://statis.motc.gov.tw/motc/Statistics/DisplayMetadata.json",
+            data: "https://statis.motc.gov.tw/motc/Statistics/Display.json",
+        };
+
+        const startEndConfig = {
+            idStart: "select-period-start",
+            idEnd: "select-period-end",
+            classSelect: "select-period",
+        };
+
+        const periodConfig = {
+            containerClass: "container-period-settings",
+        };
+
+        const pivotConfig = {
+            ids: {
+                pivotContainer: "table-config-column",
+            },
+            defaultSettings: undefined,
+        };
+
+        const cellLimitConfig = {
+            limit: 20000,
+            message: `您選擇了{1}個儲存格資料，超出上限{0}個儲存格資料上限，請調整條件後重新查詢`,
+        };
+
+        const appendModes = [
+            [
+                "25"
+            ], [
+                "42"
+            ]
+        ];
+
+        const unitOfMeasurementConfig = {
+            classContainer: "container-unit-of-measurement",
+            classDisplay: "display-unit-of-measurement",
+        };
+
+        (async function() {
+            const statisticsDisplayState = await initializeStatisticsDisplay(
+                810,
+                0,
+                I18nStrings,
+                urls,
+                DateFormatConfig,
+                startEndConfig,
+                periodConfig,
+                pivotConfig,
+                appendModes,
+                unitOfMeasurementConfig,
+                cellLimitConfig,
+                {
+                    normalDownload: {
+                        formId: "form-download",
+                        buttonId: "btn-download",
+                        seqId: "download-seq",
+                        contentId: "TableContentHtmlBase64",
+                        compareModeId: "CompareMode",
+                    },
+                    downloadAll: {
+                        modalId: "modal-download-all-tab",
+                        formId: "form-download-all-tab",
+                        buttonId: "btn-download-all-tab",
+                        tabCountId: "TabCount",
+                    },
+                });
+
+            initializeStatisticsDisplayChart(
+                statisticsDisplayState,
+                "chart-statistics-display",
+                "btn-open-modal-chart-statistics-display",
+                "container-chart-period",
+                "btn-set-chart-period",
+            );
+        }());
+    </script>
+    <script src="/motc/js/statistics/display-publish-date.js?v=xiPdVQWA0KOQMmqInpBoEMuNxPLWthu-5SfD5FjrdBk"></script>
+    <script>
+        "use strict";
+
+        (async function() {
+            await setPublishDate(
+                "https://statis.motc.gov.tw/motc/Statistics/DisplayPublishDate.json",
+                810,
+                "publish-date",
+                "placeholder col-3");
+        }());
+    </script>
+        <script src="/motc/js/statistics/display-tree-menu.js?v=-Pedz5i_nn33qG8EKwnjNVa3UQMAfmUIVOkp_YGnMls"></script>
+        <script>
+            "use strict";
+
+            let displayTreeMenu;
+            (async function() {
+                displayTreeMenu = await DisplayTreeMenu.setup(
+                    810,
+                    "/motc/Statistics/DisplayTreeViewData",
+                    {
+                        treeMenu: "tree-menu",
+                        container: "container-tree-menu",
+                        btnOpenAll: "btn-tree-menu-open-all",
+                        btnCloseAll: "btn-tree-menu-close-all",
+                        searchForm: "form-search-tree-menu",
+                        searchType: "type-search-tree-menu",
+                        searchKeyword: "keyword-search-tree-menu",
+                    });
+            }());
+        </script>
+
+</body>
+</html>

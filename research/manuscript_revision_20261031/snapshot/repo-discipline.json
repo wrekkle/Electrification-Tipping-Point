@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "project": "停车场充电桩优化方案",
+  "owner": "tho25",
+  "_说明": "本文件是项目唯一检查配置。scripts/*.py 只读解析；写入须显式 --out/--write。",
+  "required_reads": [
+    "AGENTS.md",
+    "README.md"
+  ],
+  "max_required_bytes": 40960,
+  "char_metric": {
+    "name": "LF 归一化后的 Unicode 字符数",
+    "newline": "先把 CRLF、CR 统一成 LF，每个换行计 1 个字符",
+    "count_spaces": true,
+    "count_punctuation": true,
+    "implementation": "len(bytes.decode('utf-8', errors='replace').replace('\\r\\n', '\\n').replace('\\r', '\\n'))",
+    "note": "同一文件在 CRLF 与 LF 下结果相同，因此换行风格不影响档位判定。"
+  },
+  "text_tiers": [
+    300,
+    1000,
+    3200,
+    6800,
+    8000
+  ],
+  "default_tier": 300,
+  "max_code_chars": 24000,
+  "max_long_line_chars": 1000,
+  "doc_exts": [
+    ".md",
+    ".markdown",
+    ".txt",
+    ".json",
+    ".yml",
+    ".yaml",
+    ".toml",
+    ".cfg",
+    ".ini",
+    ".csv"
+  ],
+  "code_exts": [
+    ".py",
+    ".m",
+    ".ps1",
+    ".cmd",
+    ".sh"
+  ],
+  "skip_dirs": [
+    ".git",
+    "__pycache__",
+    "tmp",
+    ".venv",
+    ".idea",
+    ".vscode",
+    "node_modules"
+  ],
+  "paths": [
+    {"glob": "AGENTS.md", "category": "管理文档·agent 规则", "limit": 3200},
+    {"glob": "README.md", "category": "管理文档·项目入口", "limit": 3200},
+    {"glob": "repo-discipline.json", "category": "检查配置", "limit": 6800},
+    {"glob": "docs/README.md", "category": "管理文档·目录说明", "limit": 1000},
+    {"glob": "docs/TODO.md", "category": "管理文档·唯一待办", "limit": 8000},
+    {"glob": "docs/PROGRESS.md", "category": "管理文档·进度入口", "limit": 3200},
+    {"glob": "docs/methods/*.md", "category": "管理文档·方法规范", "limit": 3200},
+    {"glob": "docs/reports/*.md", "category": "报告·归档证据（脚本生成或人写）", "limit": null},
+    {"glob": "docs/reports/*.json", "category": "报告·归档证据（脚本生成的机器可读结果）", "limit": null},
+    {"glob": "paper/README.md", "category": "管理文档·稿件说明", "limit": 1000},
+    {"glob": "paper/SECTIONS.md", "category": "管理文档·章节清单", "limit": 3200},
+    {"glob": "literature/README.md", "category": "管理文档·文献说明", "limit": 1000},
+    {"glob": "literature/notes/README.md", "category": "管理文档·笔记说明", "limit": 1000},
+    {"glob": "literature/notes/*.md", "category": "阅读笔记", "limit": 3200},
+    {"glob": "literature/INDEX.md", "category": "机器生成索引", "limit": null, "generated": true},
+    {"glob": "literature/index.json", "category": "机器生成索引", "limit": null, "generated": true},
+    {"glob": "literature/reading-log.json", "category": "人工登记的阅读状态", "limit": null},
+    {"glob": "research/**", "category": "历史记录·研究方案(只读)", "limit": null},
+    {"glob": "experiments/prei/**", "category": "实验契约、固定场景与机器运行证据", "limit": null},
+    {"glob": "apps/parking_lab/README.md", "category": "管理文档·仿真实验台说明", "limit": 3200},
+    {"glob": "apps/parking_lab/**", "category": "仿真实验台源码、配置与运行证据", "limit": null},
+    {"glob": "matlab/prei/**", "category": "MATLAB/Octave研究实现与机器运行证据", "limit": null},
+    {"glob": "plan/**", "category": "历史记录·工作日历(只读)", "limit": null},
+    {"glob": "papers/**", "category": "文献数据与下载记录(证据)", "limit": null},
+    {"glob": "metadata/**", "category": "迁移与校验记录(证据)", "limit": null},
+    {"glob": "待手动下载论文链接_*.md", "category": "历史记录·过时快照", "limit": null},
+    {"glob": "其他获取方式_*.md", "category": "历史记录·全文获取入口与尝试（2026-10-29快照）", "limit": 3200},
+    {"glob": "scripts/*.py", "category": "源码", "limit": null},
+    {"glob": "scripts/*.cmd", "category": "源码", "limit": null}
+  ],
+  "non_managed_note": "limit为null的条目按历史记录、证据、机器生成物或论文登记，仍报告实际长度。新增管理文档从300档起，升档须登记。",
+  "generated_header": "生成命令:",
+  "generated_globs": [
+    "literature/INDEX.md",
+    "literature/index.json",
+    "docs/reports/*-文档与链接检查.md",
+    "docs/reports/*-字数报告.md",
+    "docs/reports/*-字数报告.json",
+    "docs/reports/*-文献索引检查.md"
+  ],
+  "status_files": [
+    "docs/**/*.md",
+    "paper/SECTIONS.md",
+    "docs/reports/*.md"
+  ],
+  "status_prefix": "状态:",
+  "status_enum": [
+    "草案",
+    "生效",
+    "阻塞",
+    "已完成",
+    "已封存"
+  ],
+  "status_header_lines": 12,
+  "pending_words": [
+    "待办",
+    "待确认",
+    "待定",
+    "未解决",
+    "TODO",
+    "FIXME"
+  ],
+  "max_pending_files": 3,
+  "registry_refs": [
+    "docs/TODO.md",
+    "TODO.md",
+    "TODO"
+  ],
+  "_registry_note": "同一行只要出现 TODO 字样，就按“指向登记处”处理，不重复计入待办分散度。",
+  "_code_limit_note": "源码软线为24000字符，不拦提交。",
+  "claim_words": [
+    "已精读",
+    "已复现",
+    "已验证",
+    "已录用"
+  ],
+  "_claim_words_note": "只查会被误读成结论的四个词；命中时要求同行有反引号路径或斜杠证据指针，且前 12 字内没有否定词（不/未/没/别/勿/禁）。",
+  "paper": {
+    "manuscript": "main_paper/Electrification tipping point_manuscript 202603submit.docx",
+    "sections_file": "paper/SECTIONS.md",
+    "title_to_abstract": "Abstract",
+    "keywords_prefix": "Keywords:",
+    "body_start": "Introduction",
+    "body_end": "References",
+    "back_matter_start": "Data availability and code availability",
+    "language": "en",
+    "count_rules": {
+      "chinese_char": "Unicode 汉字区间 U+3400–U+4DBF、U+4E00–U+9FFF、U+F900–U+FAFF、U+20000–U+2A6DF、U+2F800–U+2FA1F",
+      "english_word": "正则 [A-Za-z][A-Za-z'’\\-]*，一个词条计 1 个词",
+      "chars": "同管理文档口径：LF 归一化后的全部字符（含空格与标点）",
+      "formula": "Word 公式（OMML）单独计数，文字里数不到公式符号，所以不并入汉字/英文词",
+      "tables": "表格内文字单独统计，不计入正文段落字数",
+      "captions": "图题、表题（Caption 样式）单独统计，不计入正文",
+      "references": "Bibliography 样式段落，单独统计，不套正文口径"
+    },
+    "target_journal": null,
+    "target_words": null,
+    "target_note": "未提供期刊与目标字数。"
+  },
+  "literature": {
+    "index_json": "literature/index.json",
+    "index_md": "literature/INDEX.md",
+    "reading_log": "literature/reading-log.json",
+    "notes_dir": "literature/notes",
+    "p_sources": "research/ev_parking_math_20261029/sources.json",
+    "p_status": "research/ev_parking_math_20261029/download_status.json",
+    "p_csv": "research/ev_parking_math_20261029/download_manifest.csv",
+    "p_pdf_subdir": "PDFs",
+    "m_manifest": "papers/electrification-math/download_manifest.json",
+    "m_download_updates": [
+      "papers/electrification-math/download_manifest_updates_2026-10-29.json",
+      "papers/electrification-math/download_manifest_updates_2026-10-30.json",
+      "papers/electrification-math/download_manifest_updates_2026-10-30_charge_probability.json",
+      "papers/electrification-math/download_manifest_updates_2026-10-31_M18.json",
+      "papers/electrification-math/meta31.json"
+    ],
+    "p_pdf_root": "research/ev_parking_math_20261029",
+    "m_pdf_root": "papers/electrification-math",
+    "note_sources": {
+      "P": [
+        "research/ev_parking_math_20261029/literature_35.md",
+        "research/ev_parking_math_20261029/research_framework.md"
+      ],
+      "M": [
+        "plan/notes.md",
+        "research/electrification/算法解析与数学结合建议_2026-10-29.md"
+      ]
+    },
+    "pending_lists": [
+      "待手动下载论文链接_*.md"
+    ],
+    "read_states": [
+      "未开始",
+      "摘要级",
+      "全文略读",
+      "精读并记笔记",
+      "已验证",
+      "已引用"
+    ],
+    "read_state_requires_note": [
+      "精读并记笔记",
+      "已验证",
+      "已引用"
+    ]
+  }
+}

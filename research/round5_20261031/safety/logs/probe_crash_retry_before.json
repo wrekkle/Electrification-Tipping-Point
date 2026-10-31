@@ -1,0 +1,107 @@
+{
+  "tmp_root": "C:\\Projects\\停车场充电桩优化方案\\research\\round5_20261031\\safety\\tmp\\crash_retry",
+  "steps": {
+    "hard_crash": {
+      "run": {
+        "exit": 7,
+        "stdout": "",
+        "stderr": ""
+      },
+      "tree": [
+        ".result-l7cx6t2i.tmp"
+      ],
+      "state": {
+        "state": "NO_INSPECT_API"
+      },
+      "result_exists": false,
+      "temp_files": [
+        ".result-l7cx6t2i.tmp"
+      ],
+      "crash_evidence_absent": true
+    },
+    "retry_default": {
+      "run": {
+        "exit": 2,
+        "stdout": "ERR FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'C:\\\\Projects\\\\停车场充电桩优化方案\\\\research\\\\round5_20261031\\\\safety\\\\tmp\\\\crash_retry\\\\crash'",
+        "stderr": ""
+      },
+      "state": {
+        "state": "NO_INSPECT_API"
+      },
+      "tree": [
+        ".result-l7cx6t2i.tmp"
+      ]
+    },
+    "retry_force": {
+      "run": {
+        "exit": 2,
+        "stdout": "ERR TypeError: write_output() got an unexpected keyword argument 'force'",
+        "stderr": ""
+      },
+      "state": {
+        "state": "NO_INSPECT_API"
+      },
+      "tree": [
+        ".result-l7cx6t2i.tmp"
+      ],
+      "marker": null
+    },
+    "serialize_fail": {
+      "raised": "ValueError: Out of range float values are not JSON compliant: nan",
+      "dir_exists": false,
+      "tree": []
+    },
+    "corrupt_result": {
+      "retry": {
+        "exit": 2,
+        "stdout": "ERR FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'C:\\\\Projects\\\\停车场充电桩优化方案\\\\research\\\\round5_20261031\\\\safety\\\\tmp\\\\crash_retry\\\\corrupt'",
+        "stderr": ""
+      },
+      "state": {
+        "state": "NO_INSPECT_API"
+      },
+      "force": {
+        "exit": 2,
+        "stdout": "ERR TypeError: write_output() got an unexpected keyword argument 'force'",
+        "stderr": ""
+      },
+      "tree": [
+        "result.json"
+      ]
+    },
+    "foreign_dir": {
+      "retry": {
+        "exit": 2,
+        "stdout": "ERR FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'C:\\\\Projects\\\\停车场充电桩优化方案\\\\research\\\\round5_20261031\\\\safety\\\\tmp\\\\crash_retry\\\\foreign'",
+        "stderr": ""
+      },
+      "state": {
+        "state": "NO_INSPECT_API"
+      },
+      "force": {
+        "exit": 2,
+        "stdout": "ERR TypeError: write_output() got an unexpected keyword argument 'force'",
+        "stderr": ""
+      },
+      "tree": [
+        "keep.txt"
+      ],
+      "keep_intact": true
+    },
+    "empty_dir": {
+      "retry": {
+        "exit": 2,
+        "stdout": "ERR FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'C:\\\\Projects\\\\停车场充电桩优化方案\\\\research\\\\round5_20261031\\\\safety\\\\tmp\\\\crash_retry\\\\empty'",
+        "stderr": ""
+      },
+      "state": {
+        "state": "NO_INSPECT_API"
+      },
+      "force": {
+        "exit": 2,
+        "stdout": "ERR TypeError: write_output() got an unexpected keyword argument 'force'",
+        "stderr": ""
+      }
+    }
+  }
+}

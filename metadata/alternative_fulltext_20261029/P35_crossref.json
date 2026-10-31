@@ -1,0 +1,435 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          17
+        ]
+      ],
+      "date-time": "2026-10-17T02:59:53Z",
+      "timestamp": 1792205993913,
+      "version": "4.4.0"
+    },
+    "reference-count": 48,
+    "publisher": "Institute for Operations Research and the Management Sciences (INFORMS)",
+    "issue": "3",
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "Operations Research"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          5
+        ]
+      ]
+    },
+    "abstract": "<jats:p>A team of researchers, Cheung and Lyu, developed a new computational approach to tackle a central challenge in online planning: balancing real-time decisions with long-term performance in dynamic systems. Traditional solutions often rely on intractable dynamic programming, but the new method delivers near-optimal performance efficiently, even in nonstationary environments. The framework addresses a broad class of planning problems with concave objectives and convex constraints, applicable to real-world scenarios like coupon assignment, order fulfillment, and resource allocation. The study considers two decision-making settings: one with unlimited access to data samples via simulations and another with finite sample data. By leveraging gradient-based insights from offline simulations, the researchers propose an offline-to-online framework that performs well in both settings. Notably, in the sampling setting, the approach improves as more data or longer planning horizons become available. Numerical tests on coupon assignment and supply chain management problems show significant gains over existing methods.</jats:p>",
+    "DOI": "10.1287/opre.2022.0604",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          9,
+          22
+        ]
+      ],
+      "date-time": "2025-09-22T16:25:12Z",
+      "timestamp": 1758558312000
+    },
+    "page": "1513-1538",
+    "source": "Crossref",
+    "is-referenced-by-count": 1,
+    "title": [
+      "Online Planning in Nonstationary Environments"
+    ],
+    "prefix": "10.1287",
+    "volume": "74",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-9380-5673",
+        "authenticated-orcid": false,
+        "given": "Wang Chi",
+        "family": "Cheung",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Industrial Systems Engineering and Management, National University of Singapore, Singapore SG 117576"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-3900-4258",
+        "authenticated-orcid": false,
+        "given": "Guodong",
+        "family": "Lyu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "School of Business and Management, The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "109",
+    "reference": [
+      {
+        "key": "B1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Agrawal S, Devanur NR (2015) Fast algorithms for online stochastic convex programming. Indyk P, ed.\n                      Proc. 26th Ann. ACM-SIAM Sympos. Discrete Algorithms\n                      (SIAM, Philadelphia), 1405–1424.",
+        "DOI": "10.1137/1.9781611973730.93"
+      },
+      {
+        "key": "B2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2014.1289"
+      },
+      {
+        "key": "B3",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Alaei S, Hajiaghayi M, Liaghat V (2012) Online prophet-inequality matching with applications to ad allocation. Faltings B, Leyton-Brown K, Ipeirotis P, eds.\n                      Proc. 13th ACM Conf. Electronic Commerce\n                      (Association for Computing Machinery (ACM), New York), 18–35.",
+        "DOI": "10.1145/2229012.2229018"
+      },
+      {
+        "key": "B4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2018.3220"
+      },
+      {
+        "key": "B5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.47.4.512.9829"
+      },
+      {
+        "key": "B6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2021.2242"
+      },
+      {
+        "key": "B7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.1120.1103"
+      },
+      {
+        "key": "B8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2015.1408"
+      },
+      {
+        "key": "B9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1561/2200000050"
+      },
+      {
+        "key": "B10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2019.3365"
+      },
+      {
+        "key": "B11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/moor.2018.0937"
+      },
+      {
+        "key": "B12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2019.1843"
+      },
+      {
+        "key": "B13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2021.4024"
+      },
+      {
+        "key": "B14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.1080.0664"
+      },
+      {
+        "key": "B15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ejor.2014.03.030"
+      },
+      {
+        "issue": "9",
+        "key": "B16",
+        "first-page": "6139",
+        "volume": "70",
+        "author": "Gong X-Y",
+        "year": "2024",
+        "journal-title": "Management Sci."
+      },
+      {
+        "key": "B17",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Guo H, Liu X, Wei H, Ying L (2022) Online convex optimization with hard constraints: Towards the best of two worlds and beyond. Koyejo S, Mohamed S, Agarwal A, Belgrave D, Cho K, Oh A, eds.\n                      Proc. 36th Internat. Conf. Neural Inform. Processing Systems\n                      , Advances in Neural Information Processing Systems 35 (Curran Associates Inc., Red Hook, NY), 36426–36439.",
+        "DOI": "10.52202/068431-2639"
+      },
+      {
+        "key": "B18",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1142/S0217595919400153"
+      },
+      {
+        "key": "B19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/ijoc.2013.0553"
+      },
+      {
+        "key": "B20",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3557045"
+      },
+      {
+        "issue": "2",
+        "key": "B21",
+        "first-page": "356",
+        "volume": "32",
+        "author": "Jiang G",
+        "year": "2020",
+        "journal-title": "INFORMS J. Comput."
+      },
+      {
+        "key": "B22",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2020.03850"
+      },
+      {
+        "key": "B23",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2022.2386"
+      },
+      {
+        "key": "B24",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.41.4.577"
+      },
+      {
+        "key": "B25",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2021.2164"
+      },
+      {
+        "issue": "1",
+        "key": "B26",
+        "first-page": "825",
+        "volume": "71",
+        "author": "Li X",
+        "year": "2025",
+        "journal-title": "Management Sci."
+      },
+      {
+        "key": "B27",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/inte.2023.0084"
+      },
+      {
+        "key": "B28",
+        "unstructured": "Lyu G (2019) Online resource allocation: Theory and applications. PhD thesis, National University of Singapore, Singapore."
+      },
+      {
+        "key": "B29",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/msom.2020.0247"
+      },
+      {
+        "key": "B30",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2018.3169"
+      },
+      {
+        "key": "B31",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2019.1931"
+      },
+      {
+        "issue": "1",
+        "key": "B32",
+        "first-page": "2503",
+        "volume": "13",
+        "author": "Mahdavi M",
+        "year": "2012",
+        "journal-title": "J. Machine Learn. Res."
+      },
+      {
+        "key": "B33",
+        "volume-title": "Problem Complexity and Method Efficiency in Optimization",
+        "author": "Nemirovskij AS",
+        "year": "1983"
+      },
+      {
+        "key": "B34",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Papadimitriou C, Pollner T, Saberi A, Wajc D (2021) Online stochastic max-weight bipartite matching: Beyond prophet inequalities. Biró P, Chawla S, Echenique F, eds.\n                      Proc. 22nd ACM Conf. Econom. Comput\n                      . (Association for Computing Machinery (ACM), New York), 763–764.",
+        "DOI": "10.1145/3465456.3467613"
+      },
+      {
+        "key": "B35",
+        "unstructured": "Rakhlin A, Sridharan K (2013) Online learning with predictable sequences. Shalev-Shwartz S, Steinwart I, eds.\n                      Proc. Conf. Learn. Theory\n                      (PMLR, Princeton, NJ), 993–1019."
+      },
+      {
+        "key": "B36",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TAC.2023.3237486"
+      },
+      {
+        "key": "B37",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1561/2200000018"
+      },
+      {
+        "key": "B38",
+        "unstructured": "Shalev-Shwartz S, Shamir O, Srebro N, Sridharan K (2009) Stochastic convex optimization.\n                      Proc. 22nd Ann. Conf. Learn. Theory\n                      (Montreal, Quebec)\n                      ."
+      },
+      {
+        "key": "B39",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2018.1810"
+      },
+      {
+        "key": "B40",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2015.1370"
+      },
+      {
+        "key": "B41",
+        "unstructured": "Wang X, Truong V-A, Bank D (2018) Online advance admission scheduling for services with customer preferences. Preprint, submitted May 26, https://arxiv.org/abs/1805.10412."
+      },
+      {
+        "key": "B42",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2019.3449"
+      },
+      {
+        "key": "B43",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.19.8.936"
+      },
+      {
+        "key": "B44",
+        "unstructured": "Yu H, Neely M, Wei X (2017) Online convex optimization with stochastic constraints. von Luxburg U, Guyon I, Bengio S, Wallach H, Fergus R, eds.\n                      Proc. 31st Internat. Conf. Neural Inform. Processing Systems\n                      , Advances in Neural Information Processing Systems, vol. 30 (Curran Associates Inc., Red Hook, NY), 1427–1437."
+      },
+      {
+        "key": "B45",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2018.1724"
+      },
+      {
+        "key": "B46",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2016.2674"
+      },
+      {
+        "key": "B47",
+        "unstructured": "Zinkevich M (2003) Online convex programming and generalized infinitesimal gradient ascent. Fawcett T, Mishra N, eds.\n                      Proc. 20th Internat. Conf. Machine Learn.\n                      (AAAI Press, Washington, DC), 928–936."
+      },
+      {
+        "key": "B48",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.35.1.71"
+      }
+    ],
+    "container-title": [
+      "Operations Research"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://pubsonline.informs.org/doi/pdf/10.1287/opre.2022.0604",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          25
+        ]
+      ],
+      "date-time": "2026-05-25T08:16:51Z",
+      "timestamp": 1779697011000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://pubsonline.informs.org/doi/10.1287/opre.2022.0604"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          5
+        ]
+      ]
+    },
+    "references-count": 48,
+    "journal-issue": {
+      "issue": "3",
+      "published-print": {
+        "date-parts": [
+          [
+            2026,
+            5
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.1287/opre.2022.0604"
+    ],
+    "URL": "https://doi.org/10.1287/opre.2022.0604",
+    "relation": {},
+    "ISSN": [
+      "0030-364X",
+      "1526-5463"
+    ],
+    "issn-type": [
+      {
+        "value": "0030-364X",
+        "type": "print"
+      },
+      {
+        "value": "1526-5463",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          5
+        ]
+      ]
+    }
+  }
+}

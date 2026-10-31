@@ -1,0 +1,496 @@
+{
+  "source": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\main_paper\\Electrification tipping point_manuscript 202603submit.docx",
+  "sha256": "04bda3111fcc9af3959d3c262cc7a49cdd011d28c710bf747ab6bd39164e5415",
+  "scope": "Content and OMML only; paragraph IDs are XML order, not page numbers.",
+  "matches_historical_extraction": true,
+  "records": [
+    {
+      "paragraph": 1,
+      "text": "Electrification Tipping Point: Charging Everywhere Before EV Everywhere"
+    },
+    {
+      "paragraph": 3,
+      "text": "Abstract"
+    },
+    {
+      "paragraph": 4,
+      "text": "With electric vehicle (EV) proliferation, EV-only public parking with charging piles expands, often exhibiting low utilization, eroding parking availability to internal combustion engine vehicle (ICEV) users and thus creating the “Parking Resources-EV-ICEV” (PREI) problem for urban planners and management. This study develops the parking social cost (PSC)-based systematic method, optimizes the Pile-to-Parking Ratio (PPR) to minimize PSC, and identifies the conditions of electrification tipping point (ETP), where a discrete switch to 100% PPR without EV-only restriction is socially optimal, as opposed to conventional gradual growth in PPR. The method considers key factors such as vehicle arrival randomness, EV proportion fluctuation and various scenarios reflecting space sharing, smart overhead charging. We find that even at conservative 5.4-7.6 RMB intangible cost per event of cruising for parking, the conventional thinking of PPR passively following EV proportion can cause 42-91% PSC loss increasing, compared to the optimal PPR, indicating serious pressure for urban parking management. Relaxing the EV-only restriction (space sharing) for short-term peak parking demand can reduce the PSC by approximately 33% but risk upsetting EV users. ETP is found at 40%-95% EV proportions, which alerts city governments and parking operators to adopt “charging everywhere” significantly earlier than “EV Everywhere” full electrification."
+    },
+    {
+      "paragraph": 6,
+      "text": "Keywords: parking management; cruising for parking; electric vehicle; charging infrastructure; urban planning"
+    },
+    {
+      "paragraph": 8,
+      "text": "Introduction "
+    },
+    {
+      "paragraph": 9,
+      "text": "Electric vehicles, recognized as pivotal clean energy technologies in transportation, offer advantages such as reduced emissions and oil dependency1. However, in densely populated urban areas with limited parking space, the rapid expansion of EV-only parking lots with charging piles has eroded the parking availability for internal combustion engine vehicle (ICEV) users, resulting in conflicts of parking interests and burdens of parking management for local governments2-4. Such problems are defined in this study as the “Parking Resources-EV-ICEV” (PREI) problem, where the limited parking space is increasingly difficult to accommodate legitimate parking demand from  EV and ICEV users, triggering unpleasant events of cruising ICEV users facing underutilized EV-only parking spots or cruising EV users facing “ICE’d” EV-only spots, as illustrated in Fig. 1. Evidence of PREI conflicts is accumulating, such as 500 complaints to Kunming’s municipal hotline within three months regarding charging accessibility5, public discontent with inefficient management of parking and charging infrastructure in the Netherlands6, the pervasive \"ICEing\" phenomenon where ICEV occupy EV charging spaces, and “cruising for parking” where vehicle owners are compelled to search for alternative parking locations7-9. The ICEing phenomenon has attracted the attention of many scholars and legislative measures of the national government10,11. IEVOA reported that ICEing behavior is a common source of anger, and Asensio et al. included this negative impact in their assessment of sustainable infrastructure development12. Legislative measures in the U.S. and Australian jurisdictions now prohibit ICEV from parking at public charging stations under penalties exceeding $50 or $9913,14. "
+    },
+    {
+      "paragraph": 11,
+      "text": "Fig. 1 PREI problem faced by public charging infrastructure development"
+    },
+    {
+      "paragraph": 13,
+      "text": "Solving the PREI problem requires optimizing planning and operating decisions of parking infrastructure by considering four interest components—EV users, ICEV users, parking lots operators, and the grid, as illustrated in Fig. 1. The extant literature largely addresses only three of these components. From EV users’ perspective, relevant studies have centered on balancing charging demand with parking availability to promote equitable transportation electrification. Early research adopted the P-Median Model to minimize EV owners’ travel distance to charging stations, while subsequent studies expanded the objective to total transportation distance to address route deviations for vacant charging spaces15,16. Additionally, consumer preferences highlighted the importance of minimizing charging time and waiting costs, leading to the application of queuing theory and the integration of waiting time costs in optimization frameworks, with information-sharing and advance booking further optimizing infrastructure placement and sizing17-20. Research oriented to parking facility operators emphasizes cost-effectiveness and profitability. Research based on genetic algorithms and optimization theory has begun to gain attention. These studies determine fixed investment and operating costs based on factors such as charger usage, time-of-use pricing, and charging schedule21-30. Finally, a growing strand connects charging infrastructure to the power system, examining V2G operation, grid stability, and bi-objective formulations that trade user revenues against load variance31-33."
+    },
+    {
+      "paragraph": 15,
+      "text": "However, solving the PREI problem faces a fundamental knowledge gap—modeling and integrating the parking interests of ICEV users, as existing studies have primarily focused on the perspectives of EV owners, charging infrastructure providers, and grid operators, mostly if not entirely overlooking the legitimate parking interests of ICEV owners. To systematically integrate ICEV parking interests into existing modeling frameworks, we face three technical challenges. The first is to diagnose and properly model the fundamental cause of the PREI problem, which we believe is the stochastic and largely unpredictable vehicle arrivals at the mixed parking facility serving both EVs and ICEVs. If the arrival of each and every EV or ICEV is perfectly foreseen by the facility operator and the operation cost of adding or removing EV-only restriction at each lot is negligible, then the PREI problem essentially disappears. The second is to quantify the intangible costs associated with environmental impacts and user behavior cost (or inconvenience) arising from cruising for parking due to the failed attempt by an EV or ICEV user to find a parking space. Such quantification methods are available in transportation planning literatures34-36 and need to be integrated in the PREI problem context. The third challenge is how to develop a coherent parking social cost (PSC)-based model framework that integrates tangible costs of charging infrastructure, intangible behavior costs for EV and ICEV users, environmental impacts, physical mechanism constraints (e.g. charging power) and key uncertainties (i.e. random vehicle arrival as this study’s focus)."
+    },
+    {
+      "paragraph": 17,
+      "text": "To overcome these obstacles in addressing the PREI problem, this study uniquely formulates the PREI problem as a PSC optimization, integrating qualification methods of intangible cost associated with EV parking and charging, ICEV parking and infrastructure provision under stochastic arrivals. We reveal that the conventional passive strategy of PPR expansion can lead to serious conflicts of parking interests, especially when parking demand is uncertain and owners are heterogeneous. To this end, the PREI-Solver model is employed. This model allows us to conduct the PPR optimization and sensitivity analysis to assess the PSC loss and PSC increasing under various EV proportion and different conflict intensity. We then assessed the application of various operating modes such as sharing spaces or overhead infrastructure. As an unexpected outcome, our model also identifies the ETP, which suggest “charging everywhere” when EV proportion reaches 0.4-0.95. Overall, these findings underscore the urgent need for deliberate PPR expansion strategies to help urban planners or infrastructure operators avoid serious parking conflicts between EV and ICEV drivers. To support implementation, the model tool PREI-Solver we provided allows urban planners to apply the PSC optimization in the specific local context."
+    },
+    {
+      "paragraph": 18,
+      "text": "Results"
+    },
+    {
+      "paragraph": 19,
+      "text": "Optimal PPR under baseline"
+    },
+    {
+      "paragraph": 20,
+      "text": "According to the degree of parking space scarcity, parking lots are categorized into two types: $P_{nc}$, where parking supply is sufficient and no arriving vehicle is forced to leave, and $P_{lc}$, where parking supply is constrained and some arriving vehicles may be denied parking. These two types are characterized by the vacancy rate and the leaving rate, respectively. Based on existing literature and observed parking-lot data, the stochastic variation in both vehicle arrivals and EV proportion is represented by a Poisson distribution and a Beta distribution in the model respectively (Details are provided in the Supplementary Material Note 1). "
+    },
+    {
+      "paragraph": 22,
+      "text": "The results in Fig. 2a and Fig. 2b show that, regardless of parking space scarcity, the optimal PPR is generally slightly lower than the average EV proportion when the latter is below 0.7. For example, when $R_{ev}=0.2$, the optimal PPR is 0.15 for $P_{nc}$ and 0.10 for $P_{lc}$. However, the mechanisms underlying this result differ between the two parking-lot types. For $P_{nc}$, due to vacant spaces remaining, charging demand per unit parking space is less. Therefore, PPR slightly below the EV proportion can improve charger utilization while still satisfying charging demand. For $P_{lc}$, the mechanism is more strongly shaped by the trade-off among charging pile construction cost, ICEV leaving cost, and EV leaving cost, as illustrated in Fig. 2c. When the PPR is reduced from the optimum to 0.05, the savings in charging pile construction and the reduction in ICEV leaving cost amount to only about 69% of the additional EV leaving cost. As a result, the total PSC increases. Conversely, when the PPR is increased to 0.15, the additional charging pile construction cost together with the increase in ICEV leaving cost is approximately 1.15 times larger than the reduction in EV leaving cost, again leading to a higher PSC. Consequently, the optimal PPR lagging behind the EV proportion is considered a better strategy than PPR passively following the EV proportion. "
+    },
+    {
+      "paragraph": 24,
+      "text": "A similar pattern can be observed under different levels of vacancy rate or leaving rate. Specifically, as the vacancy rate decreases, the optimal PPR moves closer to the EV proportion. By contrast, under different leaving rate settings, the optimal PPR generally close to the EV proportion, because once parking scarcity becomes the dominant constraint, PSC is primarily driven by leaving cost rather than charging pile construction cost. In such cases, both EV leaving cost caused by under-provision and ICEV leaving cost caused by over-provision of charging piles become costly."
+    },
+    {
+      "paragraph": 26,
+      "text": "However, the tendency of the optimal PPR following the EV proportion is interrupted in parking lots with scarce parking spaces when the EV proportion exceeds 0.7. Under this highly electrified condition, the optimal solution may jump to the extreme case of PPR=1. Although the charging piles utilization decreases from 100% to 70%, a fully installed charging system allows all parking spaces to serve all vehicles under severe scarcity, substantially reducing leaving cost which exceed the additional infrastructure expenditure. This finding indicates that once EV proportion becomes sufficiently high in space-constrained parking lots, the PSC-minimizing strategy shifts from a utilization-oriented infrastructure design to a reliability-oriented one, in which ensuring service availability for nearly all arriving vehicles becomes more valuable than limiting charging-pile investment from social perspective."
+    },
+    {
+      "paragraph": 28,
+      "text": "Fig. 2 Optimized PSC and PPR. a, Parking social cost curve of $P_{nc}$. b, Parking social cost curve of $P_{lc}$. c, PSC component change of $P_{lc}$. d, optimal PPR under different EV proportion and scarcity degree."
+    },
+    {
+      "paragraph": 30,
+      "text": "Sensitivity analysis "
+    },
+    {
+      "paragraph": 31,
+      "text": "The above analysis is based on typical parking-lot operating conditions and implicit cost values. In practice, however, parking-lot operations are subject to substantial uncertainty, including stochastic variation in vehicle arrivals, fluctuations in EV proportion, heterogeneity in the value of time, and the associated complaint probability. As shown in Fig. 3a, these uncertainties affect PSC by -15% - 14% across different EV proportions, levels of parking-space scarcity, and parameter settings. Compared with the variance of  EV proportion ($V_{ev}=0.09$) and variance of arrival vehicles ($V_{Nav}= 42$) in baseline case, even the extreme parameter settings like $V_{ev}=0.25 and V_{Nav}= 100$ , the impact on the total PSC is only 2%. However, because time-related cost accounts for approximately half of the PSC per vehicle, the parameters governing its distribution such as mean value of time (meanvot) and its standard deviation (stdvot) have a more pronounced influence on PSC than other sources of uncertainty. Moreover, this influence is amplified under higher EV proportions and more severe parking-space scarcity."
+    },
+    {
+      "paragraph": 33,
+      "text": "To further examine the robustness of the proposed optimal strategy, sensitivity analysis is conducted for the key uncertain parameters to evaluate the PSC reduction potential under different operating conditions. As summarized in Fig. 3b, the optimization strategy avoids 42–91% of PSC loss relative to a passive PPR strategy across the tested scenarios. The magnitude of this benefit depends primarily on parking-space scarcity and EV proportion. In general, the optimization effect weakens as the EV proportion increases because the passive following strategy becomes inherently close to the optimum, leaving less considerable room for optimization. Additionally, relative to the baseline case, the degree of reduction remains broadly comparable across scenarios, indicating that the optimization strategy retains effectiveness under diverse operating conditions."
+    },
+    {
+      "paragraph": 35,
+      "text": "Although the percentage of PSC loss avoided is similar across different levels of parking-space scarcity, the corresponding optimal PPR differs substantially. In $P_{nc}$, the optimal PPR under sensitivity scenarios remains close to the baseline value because sufficient parking capacity provides flexibility to absorb temporary mismatches between charging demand and charging supply, thereby reducing the need for major adjustments in charger deployment. By contrast, for $P_{lc}$, under more adverse conditions such as higher $V_{ev}$ or a higher meanvot, the optimal PPR increases significantly and full installation of charging piles is reached earlier (EV proportion is 0.6). This is because the leaving cost of unserved vehicle rises more rapidly in such cases, making additional charging infrastructure economically justified at a lower EV proportion level."
+    },
+    {
+      "paragraph": 38,
+      "text": "Fig. 3 Sensitivity analysis for 20% or extreme value from baseline value. a, PSC increasing compared to baseline. b, PSC loss avoided compared to passive PPR strategy. c, PPR change."
+    },
+    {
+      "paragraph": 40,
+      "text": "Optimal PPR under various operation modes "
+    },
+    {
+      "paragraph": 41,
+      "text": "To study the impact of “ICEing” phenomenon and different charging pile deployment methods on charging piles deployment, we simulate three supply-side regimes: (i) partial sharing, where a fraction of charging spaces temporarily admits ICEVs; (ii) full sharing, where all charging spaces allow ICEVs to park; and (iii) an overhead track-mounted operation mode in which a mobile charger running on an overhead rail serves 2 parking spaces. In the partial-sharing case, we set sharing proportion =0.4 according to prior practice as an example37. As shown in Fig. 4, introducing sharing spaces provides little benefit for $P_{nc}$, but reduces PSC by 27% in congested parking lot $P_{lc}$ compared with the non-sharing scenarios. This improvement arises mainly from the increased temporary parking opportunities available to ICEVs, resulting enhancement in overall space utilization. When the sharing proportion increases to 100%, the PSC reduction further expands to 33%. And when the EV proportion rises to 0.8, the benefit declines to 18%. Notably, overhead track-mounted operation mode is effective for both types of parking lots. Dynamically repositioning allows chargers to be deployed more sparsely while effectively making every parking space serviceable on demand. As a result, the overhead system achieves 40%-60% PSC reduction by reducing charging infrastructure installation cost and leaving cost. "
+    },
+    {
+      "paragraph": 43,
+      "text": "For $P_{lc}$, although introducing shared parking spaces could alleviate competition for parking spaces between EVs and ICEVs, the impact on the optimal PPR remains uncertain. When the EV proportion is 0.2, the optimal PPR increases from 0.10 to 0.25, since the additional parking flexibility reduces ICEV leaving cost. When the EV proportion rises to 0.8, however, the optimal PPR decreases slightly from 1.00 to 0.90, as sharing partially mitigates the severe parking-space competition and reduces the necessity of full charger installation. The overhead charging mode produces an even stronger effect because it lowers infrastructure cost while preserving service accessibility. Consequently, the optimal PPR further increases to 0.30 at an EV proportion of 0.2 and decreases less, to 0.95, at an EV proportion of 0.8."
+    },
+    {
+      "paragraph": 45,
+      "text": "Fig. 4 PSC reduction and optimal PPR under various operation modes."
+    },
+    {
+      "paragraph": 47,
+      "text": "Conditions for Electrification Tipping Point (ETP)"
+    },
+    {
+      "paragraph": 48,
+      "text": "According to above analysis, as EV proportion gradually increases, the optimal PPR will equal to 1 and remain thereafter. Therefore, PSC under the full-installation can be seen as a benchmark to identify the EV proportion where start of charging everywhere as ETP and provide range of PPR that could be installed in advance or postponed. Color-coded maps in Fig. 5 show the economically viable PPR ranges, where red-black zones indicate that full installation is superior to partial deployment. For $P_{nc}$, every EV proportion maps to a corresponding optimal PPR until EV proportion reaches 1. However, for $P_{lc}$, once EV proportion surpasses 0.7, full installation is optimal, indicating an ETP of 0.7. According to equation (9), if fully installation when EV proportion reaches 0.7 in the $P_{lc}$, the vehicle owner can gain net benefit 4.1 RMB and 6.3 RMB for EV and ICEV respectively."
+    },
+    {
+      "paragraph": 50,
+      "text": "To further explore the possible range of the ETP and clarify its potential drivers, sensitivity analysis is conducted and the results are presented in Fig. 5. We observe that when the vacancy rate is higher than 0.1, the ETP remains close to 1. Under sufficiently loose parking conditions, the cost savings from reducing vehicle leaving through fully charger deployment are too limited to offset the associated infrastructure investment. As the vacancy rate declines and the system transitions into conditions characterized by rising leaving rates, the marginal benefit of additional chargers increases, and the ETP falls accordingly. Almost all factors exhibit a similar effect on the ETP as in the baseline case, in the sense that a higher leaving rate generally shifts the ETP to a lower value. A counterintuitive exception is the higher EV proportion fluctuation, whose increased variability tends to delay the ETP as the leaving rate rises. In such cases, a larger fluctuation in EV proportion does not consistently translate into a proportional increase in the marginal value of charger deployment. As a result, the incremental benefit of installing chargers earlier is weakened, and the ETP is postponed."
+    },
+    {
+      "paragraph": 52,
+      "text": "Additionally, greater and stochastic variability in value of time and the EV proportion also lowers the ETP, because higher uncertainty increases the leaving cost associated with insufficient charger provision, resulting the system reaches ETP at a lower EV proportion. Notably, a 20% increase in time-cost parameters has a larger impact on the ETP than an equivalent 20% decrease. This asymmetry arises because higher time cost simultaneously means to higher complaint probability. As a consequence, the marginal benefit of additional charger deployment rises quickly, causing the ETP to shift earlier.  "
+    },
+    {
+      "paragraph": 54,
+      "text": "Fig. 5 ETP measurements are performed. a, Optional economic PPR range of $P_{nc}$. b, Optional economic PPR range of $P_{lc}$. c, Sensitivity analysis of ETP. d, ETP under various parking space scarcity."
+    },
+    {
+      "paragraph": 55,
+      "text": "Discussion "
+    },
+    {
+      "paragraph": 56,
+      "text": "To address the PREI problem and to improve the economics of charging infrastructure deployment, this study constructs the PREI-solver model to analyze the PSC loss of passive following charging installation strategy compared to optimization. Then we evaluate how uncertainty and various operation modes can exacerbate or relieve parking and charging pressure. Building on these analyses, we propose a dynamic PPR timetable aligned with ongoing EV proportion, parking space scarcity and key parameters. Additionally, the ETP is identified as an EV proportion threshold at which full infrastructure deployment becomes socially preferable to any partial-deployment strategy. "
+    },
+    {
+      "paragraph": 58,
+      "text": "Our findings indicate that charging pile planning should not be treated purely as an energy-infrastructure sizing problem. Instead, it is more appropriately understood as a resource-allocation problem under parking space scarcity, stochastic arrivals, and heterogeneous implicit cost perceived. When the EV proportion remains below approximately 0.7, the optimal PPR is generally lower than the EV proportion. More importantly, the deviation from proportional matching is not arbitrary, but systematically governed by an efficiency-oriented logic or scarcity-allocation logic for different degree of parking space scarcity. In other words, similar numerical PPR outcomes may emerge from fundamentally different mechanisms, reminding us that the setting of PPR should be based on the actual parking situation, especially parking spaces scarcity."
+    },
+    {
+      "paragraph": 60,
+      "text": "Much of current practice and policy implicitly assumes that charging infrastructure should expand incrementally and proportionally with EV growth. The present results suggest instead that the efficient deployment path may be staged: modest under-provision relative to EV proportion may be justified during the early and middle phases of electrification, while a sudden move toward universal provision may become optimal once a critical threshold is crossed. In other word, a one-size-fits-all deployment rule based on aggregate EV proportion would could lead to persistent underinvestment and rapidly escalating social costs."
+    },
+    {
+      "paragraph": 61,
+      "text": "By explicitly modeling implicit leaving cost, we find PSC is more sensitive to uncertainty that amplifies the social penalty of denied service than to uncertainty that merely perturbs average demand. Many infrastructure planning studies place primary emphasis on predicting future charging demand, yet the present results suggest that PSC outcomes may depend at least as strongly on who is cruising for parking and how costly that cruising is. Therefore, charging infrastructure for high-value or time-sensitive user groups should be planned more conservatively, with greater emphasis on availability. This may be particularly relevant for hospitals, airports, business districts, or logistics nodes, where the social or commercial penalty of cruising for parking is substantially higher than the average. From a governance perspective, this also implies that complaint records, user surveys, and observed service-quality responses should be treated as informative planning data rather than negative feedback."
+    },
+    {
+      "paragraph": 63,
+      "text": "Our findings also show that sharing spaces and overhead track-mounted operation modes are potential options for addressing the PREI problem. In dense urban areas where installing large numbers of dedicated chargers may be constrained by land, wiring, or retrofit cost, flexible operating modes may serve as substitutes for increasing physical charger intensity. Their strong performance in PSC reduction suggests that investment in flexible charging architectures may be a cost-effective strategy when conventional full deployment is difficult or politically contentious."
+    },
+    {
+      "paragraph": 65,
+      "text": "ETP revealed in this work is a system-level outcome shaped by parking scarcity, demand uncertainty, time valuation, and behavioral response. This means that ETP is location-specific rather than universal. Two parking lots with the same EV proportion may have very different ETPs if they differ in vacancy conditions or user sensitivity to parking failure. Therefore, the practical value of the ETP concept lies precisely in its ability to translate local operating conditions into a planning threshold. This makes it more useful than passive following strategy that ignore parking-system heterogeneity."
+    },
+    {
+      "paragraph": 67,
+      "text": "Our study is based on observations in Guangzhou China, but its analytical structure is broadly transferable and can be used to evaluate optimal charger deployment in other parking systems. Once locally observable inputs such as parking capacity, arrival characteristics, EV proportion, vacancy or leaving rate, value-of-time distribution, and charger installation cost is available, the framework can be readily applied to other parking lots. More broadly, the model can support policy appraisal under alternative institutional and technological scenarios. Because it explicitly captures changes in operating modes such as sharing spaces or overhead track-mounted charging. It can be used to compare not only different charger quantities but also different charger-allocation mechanisms. This expands its value from a sizing tool to a broader evaluation framework for charging-service design."
+    },
+    {
+      "paragraph": 69,
+      "text": "Nevertheless, this study has several important limitations. First, several model inputs (e.g., unit complaint cost, mean value of time) vary between different cities. Therefore, careful calibration is required before applying this framework to cities with different spatial patterns, traffic regimes, or institutional constraints. Second, our sensitivity analysis, while illustrative, is limited in scope. Factors such as urban density gradients, the market penetration of real-time navigation and parking apps can also materially affect both the social benefits and the timing of the ETP. Above extensions to account for ETP will highlight the application potential of the concept, thereby providing a bridge between EV transition goals and site-specific parking management realities."
+    },
+    {
+      "paragraph": 70,
+      "text": "Methods "
+    },
+    {
+      "paragraph": 71,
+      "text": "Optimization Framework"
+    },
+    {
+      "paragraph": 72,
+      "text": "This systematic framework optimizes PPR by jointly minimizing tangible costs and intangible costs associated with vehicle parking, charging and infrastructure installation. The objective function is expressed as"
+    },
+    {
+      "paragraph": 73,
+      "text": "$minPPR∈0,1PSC(PPR)=C_{i}PPR+C_{lev}PPR+C_{licev}PPR$"
+    },
+    {
+      "paragraph": 74,
+      "text": "(1)"
+    },
+    {
+      "paragraph": 75,
+      "text": "$PSC$ represents the parking social cost, where the decision variable PPR denotes the ratio of the total number of charging piles to the total number of parking spaces. $C_{i}$ (RMB) signifies the cost incurred by the installation, operation, and maintenance of charging piles, which is contingent on PPR. $C_{lev}$ (RMB) and $C_{licev }$(RMB) represent the leaving cost incurred by EV and ICEV respectively. Since parking/charging fees paid by vehicle owners are retained by parking lot operators, they are consequently excluded from the cost computations. The PSC and its three constituent costs are all functions of PPR. Specifically, an increase in PPR leads to an elevated installation cost, diminished EV leaving cost and an indeterminate influence on the leaving costs of ICEV. Consequently, the resulting change in the PSC can be bidirectional."
+    },
+    {
+      "paragraph": 77,
+      "text": "The relationship between $C_{i}$ and PPR$ $is "
+    },
+    {
+      "paragraph": 78,
+      "text": "$C_{i}=N_{ps}∙PPR ∙ (C_{char}+C_{om})    $"
+    },
+    {
+      "paragraph": 79,
+      "text": "(2)"
+    },
+    {
+      "paragraph": 80,
+      "text": "here $N_{ps}$ denotes the total number of parking spaces, $C_{char}$ (RMB) represents the installation cost of charging piles, and $C_{om}$ (RMB) denotes the operation and maintenance cost of charging piles. These costs collectively serve as metrics for assessing the investment required for parking lot infrastructure.  The type of charging pile deployed (e.g., slow, fast, or ultrafast charging) significantly influences both the installation cost and charging duration.  This study assumes an installation cost of RMB 60,000 and a lifespan of 5 years, based on an average charging power of 50kW in China. "
+    },
+    {
+      "paragraph": 82,
+      "text": "We assume a fixed parking supply with no illegal parking activity: EV and ICEV spaces are strictly segregated except in the sharing space scenario. When drivers find no available space, they have to search for an alternative. This process is commonly described as “cruising for parking.” Considering the leaving cost of such a search (approximately 5 RMB) is significantly lower than the cost of occupying charging spaces, typically amounting to 200 RMB. Thus, leaving cost is expressed as: "
+    },
+    {
+      "paragraph": 83,
+      "text": "$C_{lev}=max⁡(0,(N_{av}.R_{ev}-N_{ps}.PPR)).(C_{en}+C_{time}+C_{fuel}+C_{com})        $"
+    },
+    {
+      "paragraph": 84,
+      "text": "(3)"
+    },
+    {
+      "paragraph": 85,
+      "text": "$C_{licev}=max0,N_{av}-N_{av}.R_{ev}-N_{ps}-N_{ps}.PPR.(C_{en}+C_{time}+C_{fuel}+C_{com})$"
+    },
+    {
+      "paragraph": 86,
+      "text": "(4)"
+    },
+    {
+      "paragraph": 87,
+      "text": "where $N_{av}$ is the arriving vehicle number and $R_{ev}$ is EV proportion, $C_{en}$ is environmental cost assumed to 0.085 and 0.24 RMB per vehicle per leaving for EV and ICEV respectively, according to vehicle emission and cruising kilometer38. Time cost is defined as:"
+    },
+    {
+      "paragraph": 88,
+      "text": "$C_{time}=T_{hunt}.k.C_{vot}   $"
+    },
+    {
+      "paragraph": 89,
+      "text": "(5)"
+    },
+    {
+      "paragraph": 90,
+      "text": "where $T_{hunt}$ represents the average time spent (about 6 minutes) searching for the parking lot in Tianyi CBD in Ningbo, China39. Variable $k$ (1.12) denotes the road network peak trip delay index between Ningbo and Guangzhou, obtained from the “2023 Traffic Analysis Report on Major Cities in China” released by Amap in conjunction with the Big Data Development Department of the National Information Center. $C_{vot}$ represents the value of time of heterogeneous vehicle owners. According to household income and wage statistics in China, it is modeled as a lognormal distribution with parameters $μ$=2.98, $σ$=0.8499, yielding a mean value of 28.4 (see data source, estimation procedure, and fitting results in the Supplementary Material Note 2). The fuel cost is given by:"
+    },
+    {
+      "paragraph": 91,
+      "text": "$C_{fuel}=T_{hunt}.v.C_{fu}   $"
+    },
+    {
+      "paragraph": 92,
+      "text": "(6)"
+    },
+    {
+      "paragraph": 93,
+      "text": "where $v$  is the speed while seeking another parking lot considering traffic congestion, assuming to be 30 kilometer/hour. $C_{fu}$ is the unit fuel cost of EV and ICEV with assumption of 0.2 and 0.8 RMB/kilometer."
+    },
+    {
+      "paragraph": 95,
+      "text": "When vehicles frequently encounter difficulties in finding parking spaces, the discontentment may lead to a surge in complaints lodged by governmental bodies, parking lot operators, and other pertinent authorities, urging them to implement the necessary improvements. The immediate consequence of such complaints and dissatisfaction is the allocation of financial and material resources by society to address the issue and appease the affected vehicle owners. To quantify these impacts, this study introduces complaint cost $C_{com}$which is defined as:"
+    },
+    {
+      "paragraph": 96,
+      "text": "$C_{com}=N_{l}.R_{com}.C_{com} $"
+    },
+    {
+      "paragraph": 97,
+      "text": "(7)"
+    },
+    {
+      "paragraph": 98,
+      "text": "where $N_{l}$ represents the number of vehicles engaged in cruising for parking, which primarily depends on the PPR and $N_{av}$. $R_{com}$ denotes the probability of complaints among those cruising for parking, reflecting the threshold at which individuals are willing to tolerate the absence of available parking or charging spaces, with values ranging from zero to one. A value of zero for $R_{com}$ implies that vehicle owners accept the consequences of cruising for parking, are not emotionally hurt or do not take remedial action, resulting in minimal costs. Conversely, $R_{com}$=1 indicates that vehicle owners are highly concerned about their ability to successfully park or charge, prompting them to take proactive measures to address the situation. To capture behavioral heterogeneity, the probability of complaint is assumed to depend on the value of time. The underlying rationale is that vehicle owners with a higher value of time are more sensitive to parking unavailability and experience a stronger perceived loss, including inconvenience and anxiety. Therefore, the complaint probability is formulated as a logit-type function of the value of time (Details are provided in the Supplementary Material Note 3). $C_{com}$ presents the average budget per complaint cost (1.5 RMB) allocated to the Foshan Municipal Market Supervision and Administration Bureau Departmental Budget for public service expenditures40."
+    },
+    {
+      "paragraph": 100,
+      "text": "While a PPR of 1 indicates that the charging infrastructure is 100% complete, allowing ICEV to park in charging spaces without fines, the question of who should pay for the additional installation cost of the charging piles is well worth discussing. Consider a scenario in which vehicle owners, initially unable to secure parking but accommodated by the comprehensive installation of charging piles, are obligated to share installation cost. The financial implications for these owners can be quantified as follows:"
+    },
+    {
+      "paragraph": 101,
+      "text": "$C_{lfull}=1-ETP.\\frac{C_{full}}{N_{lpart}-N_{lfull}}  $"
+    },
+    {
+      "paragraph": 102,
+      "text": "(8)"
+    },
+    {
+      "paragraph": 103,
+      "text": "where $N_{lpart}$, $N_{lfull}$ are the number of vehicles leaving when charging piles are partially or fully installed at the turning point respectively. $C_{full}$ is the full installation cost. The net benefit to each of these vehicle owners, derived from comparing their expenditures under partial versus full installation, is given by:"
+    },
+    {
+      "paragraph": 104,
+      "text": "$B_{full}=C_{lev/licev}-1-ETP.\\frac{C_{full}}{N_{lpart}-N_{lfull}}$"
+    },
+    {
+      "paragraph": 105,
+      "text": "(9)"
+    },
+    {
+      "paragraph": 106,
+      "text": "this formulation shows that a closer ETP to 1 indicates greater willingness among vehicle owners to support the installation of more charging piles. This means charging everywhere and parking everywhere will obtain the support of vehicle owners, and from a social perspective, lower PSC will also be welcomed by the government."
+    },
+    {
+      "paragraph": 108,
+      "text": "Data and solution"
+    },
+    {
+      "paragraph": 109,
+      "text": "The parameters for the typical scenario are obtained through cluster analysis of hourly parking lot operation data in Guangzhou China, from March 1st to March 31st in 2024. This dataset contains 145,429 parking spaces in 638 parking lots, containing public parking facilities names, total parking capacity, real-time vacancy counts, and geographic coordinates. The average parameters of the dataset are used as a baseline scenario for optimizing PPR, while the extreme parameters were used for sensitivity analysis (Details are provided in the Supplementary Material table 1). "
+    },
+    {
+      "paragraph": 111,
+      "text": "Optimization problems can be solved using various methods, mainly depending on the structure of the problem and computational complexity. The objective of this study is inherently nonlinear, owing to the underlying complexity of the system.  Consequently, the enumeration method, which remains robust in the face of nonlinearity, is adopted in this study.  This approach systematically generates and evaluates every conceivable solution to a problem, ensuring comprehensive exploration of the solution space. Although enumeration is not renowned for its computational efficiency or scalability, it possesses a distinct advantage: it does not presuppose any particular structure, objective, or constraints inherent to the problem.  This attribute guarantees that the obtained solution is the global optimum.  During the validation phase, enumeration provides an invaluable window into the search process, enabling a thorough examination and analysis of all the generated solutions and their associated objective function values.  This level of transparency offers profound insights into the interplay among various cost components. All simulations were conducted using MATLAB R2023b."
+    },
+    {
+      "paragraph": 112,
+      "text": "References"
+    },
+    {
+      "paragraph": 113,
+      "text": "Marshall, B. M., Kelly, J. C., Lee, T.-K., Keoleian, G. A. & Filipi, Z. Environmental assessment of plug-in hybrid electric vehicles using naturalistic drive cycles and vehicle travel patterns: A Michigan case study. Energy Policy 58, 358–370 (2013)."
+    },
+    {
+      "paragraph": 114,
+      "text": "Mei, Z., Que, Z., Qiu, H., Zhu, Z. & Cai, Z. Optimizing the configuration of electric vehicle charging piles in public parking lots based on a multi-agent model. Physica A: Statistical Mechanics and its Applications 632, 129329 (2023)."
+    },
+    {
+      "paragraph": 115,
+      "text": "Wang, Y., Fan, S., Sun, X. & Liu, X. Investigating the deployment of initial public charging infrastructure: Planning-based VS market-based approaches. Transportation Research Part D: Transport and Environment 119, 103755 (2023)."
+    },
+    {
+      "paragraph": 116,
+      "text": "Wang, Z., Chen, H. & Deng, S. Spatial justice in the transition to electric vehicle infrastructure. npj. Sustain. Mobil. Transp. 3, 20 (2026)."
+    },
+    {
+      "paragraph": 117,
+      "text": "Wang. Provincial and municipal authorities responded to citizens’ complaints about the difficulty of parking in Kunming. https://kunming.yunnan.cn/system/2021/08/03/031589296.shtml (2021)."
+    },
+    {
+      "paragraph": 118,
+      "text": "Caixin. Why are Dutch consumers dissatisfied despite having the largest number of charging piles in Europe. https://www.caixin.com/2023-06-15/102066644.html (2023)."
+    },
+    {
+      "paragraph": 119,
+      "text": "Schuur, J. S., Switalski, M., Salliou, N. & Grêt-Regamey, A. Identifying levers of urban neighbourhood transformation using serious games. npj Urban Sustain 4, 5 (2024)."
+    },
+    {
+      "paragraph": 120,
+      "text": "Sovacool, B. K. et al. Policy prescriptions to address energy and transport poverty in the United Kingdom. Nat Energy 8, 273–283 (2023)."
+    },
+    {
+      "paragraph": 121,
+      "text": "Thomas, G. H. et al. A relational approach to characterizing householder perceptions of disruption in heat transitions. Nat Energy 9, 570–579 (2024)."
+    },
+    {
+      "paragraph": 122,
+      "text": "First Finance. The damage rate of public charging piles is as high as 20%, and the occupation by oil vehicles is frequent. The battery swapping model is on the verge of emerging. https://baijiahao.baidu.com/s?id=1715229001523036518&wfr=spider&for=pc (2021)."
+    },
+    {
+      "paragraph": 123,
+      "text": "Mikulic. How to solve hogging and ICEing issues at EV charging stations in the UK. https://www.britishparking-media.co.uk/blogs/guest-post-how-to-solve-hogging-and-iceing-issues-at-ev-charging-stations-in-the-uk (2025)."
+    },
+    {
+      "paragraph": 124,
+      "text": "Asensio, O. I. et al. Real-time data from mobile platforms to evaluate sustainable transportation infrastructure. Nat Sustain 3, 463–471 (2020)."
+    },
+    {
+      "paragraph": 125,
+      "text": "NRMA. EV charging etiquette: Best practices for drivers. https://www.mynrma.com.au/open-road/advice-and-how-to/ev-charging-etiquette (2024)."
+    },
+    {
+      "paragraph": 126,
+      "text": "Victor. Can Gas Cars Park at EV Charging Spots. https://getevgas.com/can-gas-cars-park-at-ev-charging-spots/ (2024)."
+    },
+    {
+      "paragraph": 127,
+      "text": "Tian, D. et al. Optimal Location for Electric Vehicles Charging Stations Based on P-Median Model. in 278–289 (Springer, 2020)."
+    },
+    {
+      "paragraph": 128,
+      "text": "Xu, H., Miao, S., Zhang, C. & Shi, D. Optimal placement of charging infrastructures for large-scale integration of pure electric vehicles into grid. International Journal of Electrical Power & Energy Systems 53, 159–165 (2013)."
+    },
+    {
+      "paragraph": 129,
+      "text": "Brückmann, G. & Bernauer, T. An experimental analysis of consumer preferences towards public charging infrastructure. Transportation Research Part D: Transport and Environment 116, 103626 (2023)."
+    },
+    {
+      "paragraph": 130,
+      "text": "Tan, M., Ren, Y., Pan, R., Wang, L. & Chen, J. Fair and efficient electric vehicle charging scheduling optimization considering the maximum individual waiting time and operating cost. IEEE Transactions on Vehicular Technology (2023)."
+    },
+    {
+      "paragraph": 131,
+      "text": "Vandet, C. A. & Rich, J. Optimal placement and sizing of charging infrastructure for EVs under information-sharing. Technological Forecasting and Social Change 187, 122205 (2023)."
+    },
+    {
+      "paragraph": 132,
+      "text": "Hou, W., Luo, Q., Wu, X., Zhou, Y. & Si, G. Multiobjective optimization of large-scale EVs charging path planning and charging pricing strategy for charging station. Complexity 2021, 1–17 (2021)."
+    },
+    {
+      "paragraph": 133,
+      "text": "Li, J., Wu, Y., Ma, S., Zhang, J. & Sun, X. Multi-objective optimization scheduling of integrated energy systems considering regional time-of-use electricity prices and weight sensitivity. Electric Power Systems Research 236, 110905 (2024)."
+    },
+    {
+      "paragraph": 134,
+      "text": "Zhou, G., Zhu, Z. & Luo, S. Location optimization of electric vehicle charging stations: Based on cost model and genetic algorithm. Energy 247, 123437 (2022)."
+    },
+    {
+      "paragraph": 135,
+      "text": "Mehar, S. & Senouci, S. M. An optimization location scheme for electric charging stations. in vol. 1 1–5 (IEEE, 2013)."
+    },
+    {
+      "paragraph": 136,
+      "text": "J. Mortimer, B., Dominik Bach, A., Hecht, C., Uwe Sauer, D. & W. De Doncker, R. Public Charging Infrastructure in Germany–A Utilization and Profitability Analysis. Journal of Modern Power Systems and Clean Energy 10, 1750–1760 (2022)."
+    },
+    {
+      "paragraph": 137,
+      "text": "Metais, M.-O., Jouini, O., Perez, Y., Berrada, J. & Suomalainen, E. Too much or not enough? Planning electric vehicle charging infrastructure: A review of modeling options. Renewable and Sustainable Energy Reviews 153, 111719 (2022)."
+    },
+    {
+      "paragraph": 138,
+      "text": "Kim, H., Kim, D.-W. & Kim, M.-K. Economics of charging infrastructure for electric vehicles in Korea. Energy Policy 164, 112875 (2022)."
+    },
+    {
+      "paragraph": 139,
+      "text": "Cui, W. & Lu, B. Energy-aware operations management for flow shops under TOU electricity tariff. Computers & Industrial Engineering 151, 106942 (2021)."
+    },
+    {
+      "paragraph": 140,
+      "text": "Liu, J. et al. Optimal EV charging scheduling by considering the limited number of chargers. IEEE Transactions on Transportation Electrification 7, 1112–1122 (2020)."
+    },
+    {
+      "paragraph": 141,
+      "text": "Jia, L., Hu, Z., Liang, W., Lang, W. & Song, Y. A novel approach for urban electric vehicle charging facility planning considering combination of slow and fast charging. in 3354–3360 (IEEE, 2014)."
+    },
+    {
+      "paragraph": 142,
+      "text": "Zhang, Y. et al. Efficient deployment of electric vehicle charging infrastructure: Simultaneous optimization of charging station placement and charging pile assignment. IEEE Transactions on Intelligent Transportation Systems 22, 6654–6659 (2020)."
+    },
+    {
+      "paragraph": 143,
+      "text": "Xu, J. & Huang, Y. The short-term optimal resource allocation approach for electric vehicles and V2G service stations. Applied Energy 319, 119200 (2022)."
+    },
+    {
+      "paragraph": 144,
+      "text": "Kong, W., Luo, Y., Feng, G., Li, K. & Peng, H. Optimal location planning method of fast charging station for electric vehicles considering operators, drivers, vehicles, traffic flow and power grid. Energy 186, 115826 (2019)."
+    },
+    {
+      "paragraph": 145,
+      "text": "Niu, Z., An, K. & Ma, W. Vehicle-to-grid enabled charging infrastructure planning and operations considering demand uncertainties. Transportation Research Part D: Transport and Environment 127, 103918 (2024)."
+    },
+    {
+      "paragraph": 146,
+      "text": "Shoup, D. C. Cruising for parking. Transport Policy 13, 479–486 (2006)."
+    },
+    {
+      "paragraph": 147,
+      "text": "Tscharaktschiew, S. & Reimann, F. Cruising or Parking. Transportation Research Part A: Policy and Practice 198, 104516 (2025)."
+    },
+    {
+      "paragraph": 148,
+      "text": "van Ommeren, J. N., Wentink, D. & Rietveld, P. Empirical evidence on cruising for parking. Transportation Research Part A: Policy and Practice 46, 123–130 (2012)."
+    },
+    {
+      "paragraph": 149,
+      "text": "Chen, L., Huang, X., Zhang, H. & Luo, Y. A study on coordinated optimization of electric vehicle charging and charging pile selection. Energies 11, 1350 (2018)."
+    },
+    {
+      "paragraph": 150,
+      "text": "Hu, Y., Jin, Y. & Zhang, S. Climate, Health Impacts, and Social Costs of Electric Vehicles in China: A Cost-Benefit Analysis. Beijing Da Xue Xue Bao 57, 916–926 (2021)."
+    },
+    {
+      "paragraph": 151,
+      "text": "Zhu, Y., Ye, X., Yang, Z., Li, M. & Chang, Y. Research on the Impact of Parking and Parking Behavior on Traffic Flow Based on VISSIM Simulation: Taking the Downtown Area of Ningbo as an Example. in CICTP 2020 3039–3050 (2020)."
+    },
+    {
+      "paragraph": 152,
+      "text": "Foshan Municipal Market Supervision and Administration. Foshan Municipal Market Supervision and Administration Bureau Departmental Budget. https://search.gd.gov.cn/search/all/757038?keywords=%E9%A2%84%E7%AE%97%202024&filterType=localSite&filterId=undefined (2024)."
+    },
+    {
+      "paragraph": 154,
+      "text": "Data availability and code availability"
+    },
+    {
+      "paragraph": 155,
+      "text": "The data that support the findings of this study are publicly available via website named “Jumei Intelligence: Real-time query of national parking data” https://market.cloud.tencent.com/products/31983. "
+    },
+    {
+      "paragraph": 157,
+      "text": "Code is available from the corresponding author upon reasonable request. "
+    },
+    {
+      "paragraph": 158,
+      "text": "Ethics declarations"
+    },
+    {
+      "paragraph": 159,
+      "text": "The authors declare no conflicts of interest."
+    }
+  ]
+}

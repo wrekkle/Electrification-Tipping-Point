@@ -1,0 +1,133 @@
+{
+  "thresholds": {
+    "parking_service": 0.05,
+    "charging_access": 0.05,
+    "energy_service": 0.1
+  },
+  "unit": "independent stream (site-day)",
+  "k_grid": "0..charging_bays",
+  "per_policy": {
+    "A": {
+      "parking_service_k": {
+        "n_streams": 24,
+        "n_hold": 23,
+        "n_no_k": 1,
+        "median_k": 0,
+        "min_k": 0,
+        "max_k": 0
+      },
+      "charging_access_k": {
+        "n_streams": 24,
+        "n_hold": 1,
+        "n_no_k": 23,
+        "median_k": 0,
+        "min_k": 0,
+        "max_k": 0
+      },
+      "energy_service_k": {
+        "n_streams": 24,
+        "n_hold": 1,
+        "n_no_k": 23,
+        "median_k": 0,
+        "min_k": 0,
+        "max_k": 0
+      },
+      "three_constraints_k": {
+        "n_streams": 24,
+        "n_hold": 1,
+        "n_no_k": 23,
+        "median_k": 0,
+        "min_k": 0,
+        "max_k": 0
+      },
+      "infeasible_streams": [
+        "Jolimont:2014-01-07#0",
+        "Jolimont:2014-01-24#0",
+        "Jolimont:2014-02-12#0",
+        "Jolimont:2014-02-24#0",
+        "Jolimont:2014-03-30#0",
+        "Queensberry:2014-01-07#0",
+        "Queensberry:2014-01-25#0",
+        "Southbank:2014-01-12#0",
+        "Southbank:2014-01-15#0",
+        "Southbank:2014-01-28#0",
+        "Titles:2014-02-20#0",
+        "Titles:2014-03-14#0",
+        "University:2014-02-19#0",
+        "Victoria Market:2014-01-09#0",
+        "Victoria Market:2014-01-21#0",
+        "Victoria Market:2014-02-11#0",
+        "Victoria Market:2014-02-16#0",
+        "Victoria Market:2014-02-20#0",
+        "Victoria Market:2014-03-08#0",
+        "Victoria Market:2014-03-15#0",
+        "Victoria Market:2014-03-18#0",
+        "Victoria Market:2014-03-22#0",
+        "West Melbourne:2014-02-19#0"
+      ]
+    },
+    "D": {
+      "parking_service_k": {
+        "n_streams": 24,
+        "n_hold": 24,
+        "n_no_k": 0,
+        "median_k": 0.0,
+        "min_k": 0,
+        "max_k": 0
+      },
+      "charging_access_k": {
+        "n_streams": 24,
+        "n_hold": 1,
+        "n_no_k": 23,
+        "median_k": 0,
+        "min_k": 0,
+        "max_k": 0
+      },
+      "energy_service_k": {
+        "n_streams": 24,
+        "n_hold": 1,
+        "n_no_k": 23,
+        "median_k": 0,
+        "min_k": 0,
+        "max_k": 0
+      },
+      "three_constraints_k": {
+        "n_streams": 24,
+        "n_hold": 1,
+        "n_no_k": 23,
+        "median_k": 0,
+        "min_k": 0,
+        "max_k": 0
+      },
+      "infeasible_streams": [
+        "Jolimont:2014-01-07#0",
+        "Jolimont:2014-01-24#0",
+        "Jolimont:2014-02-12#0",
+        "Jolimont:2014-02-24#0",
+        "Jolimont:2014-03-30#0",
+        "Queensberry:2014-01-07#0",
+        "Queensberry:2014-01-25#0",
+        "Southbank:2014-01-12#0",
+        "Southbank:2014-01-15#0",
+        "Southbank:2014-01-28#0",
+        "Titles:2014-02-20#0",
+        "Titles:2014-03-14#0",
+        "University:2014-02-19#0",
+        "Victoria Market:2014-01-09#0",
+        "Victoria Market:2014-01-21#0",
+        "Victoria Market:2014-02-11#0",
+        "Victoria Market:2014-02-16#0",
+        "Victoria Market:2014-02-20#0",
+        "Victoria Market:2014-03-08#0",
+        "Victoria Market:2014-03-15#0",
+        "Victoria Market:2014-03-18#0",
+        "Victoria Market:2014-03-22#0",
+        "West Melbourne:2014-02-19#0"
+      ]
+    }
+  },
+  "files": [
+    "constraint_thresholds.csv",
+    "constraint_thresholds.json"
+  ]
+}

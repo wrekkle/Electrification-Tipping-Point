@@ -1,0 +1,106 @@
+{
+  "schema_version": "round4_preregistration/v1",
+  "created": "2026-10-31",
+  "status": "written_before_round4_supplementary_runs",
+  "objective": "在不预设共享有效/无效的前提下，检验第三轮负面结果对充电概率来源情景、固定k独立评价、EV/ICE服务权衡调参与停留情景的稳健性，并审查其机制与适用范围。",
+  "fixed_choices": {
+    "reference": {
+      "p_ev": 0.1,
+      "q_need": 0.36,
+      "label": "round3 historical reference, not identified"
+    },
+    "source_scenarios": [
+      "M08-NEAR-BEV",
+      "M08-NEAR-COMBINED",
+      "M10-OUT-OF-HOME",
+      "M08-ALL-AWAY-REF"
+    ],
+    "lots_train": [
+      "TPE0008",
+      "TPE0401",
+      "TPE0610",
+      "TPE0695",
+      "TPE0330"
+    ],
+    "lots_validation": [
+      "TPE0930",
+      "TPE1376",
+      "TPE1171",
+      "TPE1380"
+    ],
+    "rules": [
+      "dedicated_by_type",
+      "full_open_ice_first",
+      "predictive_shared_ice_first"
+    ],
+    "joint_constraints": {
+      "ev_capacity_unmet": 0.05,
+      "ev_parking_failure": 0.05,
+      "ice_parking_failure": 0.05
+    },
+    "k_grid": [
+      0,
+      40
+    ],
+    "seeds_scenario": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "把 REF 的 q_need=0.36 换成有来源的 q_use→q_need 假设迁移情景（0.0713/0.237/0.263/0.286）后，共享相对专用的 Δk 中位数仍为 0，且不出现正 Δk。",
+      "falsifier": "任一场站/种子/情景出现 Δk>0 且通过联合约束。"
+    },
+    {
+      "id": "H2",
+      "statement": "用训练种子选出的固定 k 在独立种子上评价时，共享规则不会比专用规则更少违反联合服务约束。",
+      "falsifier": "共享规则在独立种子上违规率显著更低且 EV/ICE 服务不劣。"
+    },
+    {
+      "id": "H3",
+      "statement": "在固定 k 下按 EV 容量与 ICE 停车服务权衡重新选择 C/D 参数，仍不会低于专用的最小设备数。",
+      "falsifier": "重新选择的 C/D 在所有训练种子上以更小 k 满足约束。"
+    },
+    {
+      "id": "H4",
+      "statement": "停留时长 ±20% 情景不改变 Δk 的符号/中位数结论。",
+      "falsifier": "某一停留情景出现稳定正 Δk。"
+    }
+  ],
+  "metrics": {
+    "primary": "Δk = k_rule − k_dedicated under joint constraints",
+    "secondary": [
+      "capacity_unmet_rate",
+      "ev_parking_failure_rate",
+      "ice_parking_failure_rate",
+      "departed_shortfall_energy_ratio"
+    ],
+    "fixed_k": [
+      "joint_feasible",
+      "capacity_unmet_rate",
+      "ev_parking_failure_rate",
+      "ice_parking_failure_rate"
+    ]
+  },
+  "analysis": {
+    "achieved_only": false,
+    "all_preregistered_cells_counted": true,
+    "intervals": "场站聚类配对 bootstrap 5000 次，95% 百分位",
+    "infeasible_pairs": "单列，不计作 Δk=0；报告不可行原因（搜索上限 vs 服务冲突）",
+    "no_metric_mixing": "EV 与 ICE 失败率分别报告，不将不同分母拼成同一置信区间"
+  },
+  "budget": {
+    "scenario_runs": "4 source scenarios × 3 rules × 5 lots × 5 seeds × k=0..40",
+    "fixed_k_runs": "3 rules × 5 lots × 6 independent seeds × 1 k",
+    "dwell_runs": "±20% × 3 rules × 3 lots × 3 seeds × k=0..40 (exploratory)",
+    "hard_stop": "任一步骤超过 30 分钟或出现不可解释数值错误则停止并记录，不扩网格"
+  },
+  "deviations_to_record": [
+    "2026-10-31: 来源目录 scenario_id 实际为 M08-NEAR-BEV 等（无 SC- 前缀）；REF 在目录中标注为情景参考而非识别值。"
+  ]
+}

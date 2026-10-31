@@ -1,0 +1,29 @@
+{
+  "schema_version": "r8-run-manifest/v1",
+  "family": "E5",
+  "status": "ok",
+  "generated_utc": "2026-10-31T11:11:09.160326+00:00",
+  "output_version": "r8-engine-v1-2026-10-31",
+  "command": "run_phase1.py --mode data --contract research/round8_20261031/data/processed/public_parking_events.json --out research/round8_20261031/experiments --seed 20261031 --skip-selfcheck",
+  "seed": 20261031,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "inputs": [
+    {
+      "path": "research\\round8_20261031\\data\\processed\\public_parking_events.json",
+      "sha256": "38b1422bb95d4122565d4de70a5ef4faf35e41600019068c9c077a295ee6bdf6"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "info_E5.csv",
+      "sha256": "e123e2f896d2409a0739334b0b85581827b1946bf96d992ce40b5408d45b2371"
+    }
+  ],
+  "notes": [
+    "探索性：逐独立流的 Δk 方向与幅度；不作确认性结论"
+  ],
+  "mode": "real_data",
+  "dataset_id": "melbourne_parking_bay_events_2014",
+  "scenario_label": "scenario_charging_layer_not_observed"
+}

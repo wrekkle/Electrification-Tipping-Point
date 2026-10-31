@@ -1,0 +1,307 @@
+{
+  "schema": "round2_verification/v1",
+  "passed": 12,
+  "total": 12,
+  "results": [
+    {
+      "check": "1_device_cost_window",
+      "status": "PASS",
+      "detail": {
+        "daily": {
+          "value": 163.09535342465753,
+          "items": {
+            "device_capital": 63.99595616438356,
+            "device_maintenance": 86.59939726027397,
+            "facility_fixed": 12.5
+          },
+          "missing": [],
+          "not_applicable": []
+        },
+        "half": {
+          "value": 81.54767671232877,
+          "items": {
+            "device_capital": 31.99797808219178,
+            "device_maintenance": 43.29969863013699,
+            "facility_fixed": 6.25
+          },
+          "missing": [],
+          "not_applicable": []
+        },
+        "zero": {
+          "value": 12.5,
+          "items": {
+            "device_capital": 0.0,
+            "device_maintenance": 0.0,
+            "facility_fixed": 12.5
+          },
+          "missing": [],
+          "not_applicable": [
+            "device_capital",
+            "device_maintenance"
+          ]
+        },
+        "expect_device_daily": 150.59535342465753,
+        "missing_value": null,
+        "pass": true
+      }
+    },
+    {
+      "check": "2_demand_gap_14kwh",
+      "status": "PASS",
+      "detail": {
+        "energy_kwh": 14.0,
+        "delivered_kwh": 7.0,
+        "gap_kwh": 7.0,
+        "dwell_min": 60.0,
+        "pass": true
+      }
+    },
+    {
+      "check": "3_stationary_residual",
+      "status": "PASS",
+      "detail": {
+        "expected": 14.61214189061747,
+        "observed": 14.132347906666666,
+        "n_initial": 150,
+        "warm_start_method": "length_biased_stationary",
+        "pass": true
+      }
+    },
+    {
+      "check": "4_pev_feasible",
+      "status": "PASS",
+      "detail": {
+        "path": "research/calibration/charging_probability_20261030/model_20261031_v2.json",
+        "z": 0.03636583089107938,
+        "identification_status": "unidentified",
+        "renamed_status": "usage_proxy",
+        "has_usage_proxy_name": true,
+        "pass": true,
+        "rows_checked": 0,
+        "violations": []
+      }
+    },
+    {
+      "check": "5_search_status",
+      "status": "PASS",
+      "detail": {
+        "cases": [
+          {
+            "case": "all_unmet",
+            "result": {
+              "status": "infeasible_upper_bound",
+              "k": null,
+              "alpha": 0.05,
+              "evaluated_max": 2,
+              "baseline": 10.0,
+              "note": "无 k 达标且已检查到硬上限 k=2；k=None，不得用 max(by_k) 冒充推荐",
+              "boundary": false
+            }
+          },
+          {
+            "case": "achieved",
+            "result": {
+              "status": "achieved",
+              "k": 3,
+              "alpha": 0.05,
+              "evaluated_max": 3,
+              "baseline": 10.0,
+              "note": "k=3 使 U(k)=0.4 <= alpha*U(0)=0.5；恰在硬上限 k=3 达标（boundary=True），未再扩大搜索",
+              "boundary": true
+            }
+          },
+          {
+            "case": "no_demand",
+            "result": {
+              "status": "no_demand",
+              "k": 0,
+              "alpha": 0.05,
+              "evaluated_max": 1,
+              "baseline": 0.0,
+              "note": "U(0)=0：无连接器时也没有未服务需求，k=0 即达标",
+              "boundary": false
+            }
+          },
+          {
+            "case": "missing_k0",
+            "result": {
+              "status": "missing_data",
+              "k": null,
+              "alpha": 0.05,
+              "evaluated_max": 2,
+              "baseline": null,
+              "note": "缺 k=0 基线行或基线值缺失，无法定义服务水平",
+              "boundary": false
+            }
+          }
+        ],
+        "pass": true,
+        "note": "legacy_return 说明 R2-C 未完成"
+      }
+    },
+    {
+      "check": "6_erlang_occupancy",
+      "status": "PASS",
+      "detail": {
+        "erlang": [
+          {
+            "load": 0.5,
+            "servers": 1,
+            "expected": 0.3333333333333333,
+            "module": 0.3333333333333333,
+            "closed_form": 0.3333333333333333
+          },
+          {
+            "load": 1.0,
+            "servers": 1,
+            "expected": 0.5,
+            "module": 0.5,
+            "closed_form": 0.5
+          },
+          {
+            "load": 2.0,
+            "servers": 2,
+            "expected": 0.4,
+            "module": 0.4,
+            "closed_form": 0.4
+          },
+          {
+            "load": 5.0,
+            "servers": 3,
+            "expected": 0.5296610169491526,
+            "module": 0.5296610169491526,
+            "closed_form": 0.5296610169491526
+          }
+        ],
+        "mean_connector_minutes": 952.0,
+        "pass": true,
+        "report_wrong_b11_claim_removed": true
+      }
+    },
+    {
+      "check": "7_denominators",
+      "status": "PASS",
+      "detail": {
+        "no_demand_charge_requests": 0,
+        "pending_at_end": 1,
+        "pending_events_counted_as_failure": 0,
+        "pending_energy": 27.666666666666668,
+        "pass": true
+      }
+    },
+    {
+      "check": "8_occupancy_conservation",
+      "status": "PASS",
+      "detail": {
+        "ledger": {
+          "no_charging_demand_bay_min": 0.0,
+          "overstay_after_complete_min": 4.285714,
+          "ice_blocking_connector_min": 0.0
+        },
+        "three_class_sum": 4.285714,
+        "total_bay_minutes": 150.0,
+        "costs_occupancy_keys": [
+          "dispatch_defer",
+          "equipment_failure",
+          "ice_blocking_connector",
+          "insufficient_power",
+          "no_charging_demand",
+          "overstay_after_complete"
+        ],
+        "pass": true,
+        "costs_no_charging": 0.0
+      }
+    },
+    {
+      "check": "9_hidden_info",
+      "status": "PASS",
+      "detail": {
+        "same": true,
+        "first": [
+          [
+            0.0,
+            true,
+            true,
+            0
+          ],
+          [
+            5.0,
+            true,
+            true,
+            1
+          ],
+          [
+            10.0,
+            true,
+            true,
+            2
+          ]
+        ],
+        "second": [
+          [
+            0.0,
+            true,
+            true,
+            0
+          ],
+          [
+            5.0,
+            true,
+            true,
+            1
+          ],
+          [
+            10.0,
+            true,
+            true,
+            2
+          ]
+        ],
+        "pass": true
+      }
+    },
+    {
+      "check": "10_exogenous_invariance",
+      "status": "PASS",
+      "detail": {
+        "traffic_hash": {
+          "k1": "3d98cc35f862ec6f624dc2183902d129005ce8c1787189cb01dde93cbbe23c34",
+          "k3": "3d98cc35f862ec6f624dc2183902d129005ce8c1787189cb01dde93cbbe23c34",
+          "kw11": "3d98cc35f862ec6f624dc2183902d129005ce8c1787189cb01dde93cbbe23c34",
+          "feeder60": "3d98cc35f862ec6f624dc2183902d129005ce8c1787189cb01dde93cbbe23c34"
+        },
+        "unique": 1,
+        "pass": true
+      }
+    },
+    {
+      "check": "11_cost_split",
+      "status": "PASS",
+      "detail": {
+        "pass": true,
+        "total": null,
+        "complete": false,
+        "missing": [
+          "maintenance_per_kwh"
+        ]
+      }
+    },
+    {
+      "check": "12_enumeration",
+      "status": "PASS",
+      "detail": {
+        "lots_checked": 3,
+        "loss": 100.0,
+        "mismatches": [],
+        "oos": {
+          "train_mae": 1.9718017714009948,
+          "n_train": 3,
+          "validation_mae": 5.913875844390363,
+          "n_validation": 2
+        },
+        "excluded_points": 13,
+        "pass": true
+      }
+    }
+  ]
+}

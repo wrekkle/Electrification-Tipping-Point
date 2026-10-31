@@ -1,0 +1,22 @@
+{
+  "schema_version": "r8-run-manifest/v1",
+  "family": "E4",
+  "status": "ok",
+  "generated_utc": "2026-10-31T11:00:35.525515+00:00",
+  "output_version": "r8-engine-v1-2026-10-31",
+  "command": "run_phase1.py --mode synthetic --seed 20261031",
+  "seed": 20261031,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "test_E4.csv",
+      "sha256": "4eae1f502ca8ec37fa1f8e9683668500d0db237cc06de24a4f74c16471efd0ce"
+    }
+  ],
+  "notes": [
+    "同流配对重放；k 由训练集预注册，测试集不调参",
+    "B2 literature_status=规则改编（见 baseline_meta 字段）"
+  ]
+}

@@ -1,0 +1,8 @@
+declared_energy_kwh,n_requests,demand_kwh,ideal_delivered_kwh,ideal_energy_rate,session_failure,session_failure_rate,meets_5pct_session_standard
+2.0,6588,13176.0,11450.0,0.869,1688,0.2562,False
+4.0,6588,26352.0,20379.4,0.7734,2460,0.3734,False
+6.0,6588,39528.0,28145.3,0.712,2902,0.4405,False
+8.0,6588,52704.0,35175.1,0.6674,3246,0.4927,False
+10.0,6588,65880.0,41554.2,0.6308,3553,0.5393,False
+14.0,6588,92232.0,52716.7,0.5716,4017,0.6097,False
+20.0,6588,131760.0,66278.0,0.503,4625,0.702,False

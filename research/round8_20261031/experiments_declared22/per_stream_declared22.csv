@@ -1,0 +1,21 @@
+site_id,day_key,stream_id,n_spaces,declared_charging_bays,k_max_declared,k_star,status,k_star_share,capacity_only_unmet_at_eval,charge_requests,gate_rejections,no_connector,shortfall_sessions,sessions_dwell_lt_required,access_rate,dwell_min_median,required_min_median,delivered_kwh,demand_kwh,gap_kwh,energy_service_rate,eval_k
+Drummond,2014-01-28,Drummond:2014-01-28#0,33,7,7,,physically_infeasible,,0.6,10,0,0,6,6,1.0,45.7,46.7,93.572,176.246,82.674,0.5309170137194603,7
+Drummond,2014-03-31,Drummond:2014-03-31#0,33,7,7,,physically_infeasible,,0.3333333333333333,3,0,0,1,1,1.0,56.1,35.1,29.991,36.155,6.164,0.8295118240907204,7
+Hyatt,2014-01-07,Hyatt:2014-01-07#0,15,3,3,,physically_infeasible,,0.75,4,0,0,3,3,1.0,12.4,22.9,16.91,46.365,29.455,0.3647147632912757,3
+Jolimont,2014-03-12,Jolimont:2014-03-12#0,58,12,12,,physically_infeasible,,0.4444444444444444,9,0,0,4,4,1.0,49.5,42.2,60.993,134.172,73.179,0.4545881405956534,12
+Jolimont,2014-03-15,Jolimont:2014-03-15#0,58,12,12,,physically_infeasible,,0.3333333333333333,6,0,0,2,2,1.0,54.5,32.7,61.602,70.473,8.871,0.8741220041718104,12
+Jolimont,2014-03-17,Jolimont:2014-03-17#0,58,12,12,,physically_infeasible,,0.3,10,0,0,3,3,1.0,57.6,32.6,80.472,115.019,34.547,0.6996409288900094,12
+Princes Theatre,2014-03-08,Princes Theatre:2014-03-08#0,12,2,2,,physically_infeasible,,0.5,2,0,0,1,1,1.0,34.7,27.2,13.499,19.962,6.463,0.6762348462077948,2
+Princes Theatre,2014-03-14,Princes Theatre:2014-03-14#0,12,2,2,,physically_infeasible,,0.75,8,0,0,6,6,1.0,8.2,38.9,52.799,132.844,80.045,0.3974511457047364,2
+Queensberry,2014-01-07,Queensberry:2014-01-07#0,82,16,16,,physically_infeasible,,0.8571428571428571,7,0,0,6,6,1.0,14.5,48.0,48.133,113.81,65.677,0.4229241718653897,16
+Southbank,2014-01-07,Southbank:2014-01-07#0,72,14,14,,physically_infeasible,,0.8333333333333334,6,0,0,5,5,1.0,3.6,41.5,16.748,98.064,81.316,0.17078642519171156,14
+Titles,2014-03-09,Titles:2014-03-09#0,17,3,3,,physically_infeasible,,0.5,2,0,0,1,1,1.0,57.6,53.2,22.355,39.003,16.648,0.573161038894444,3
+University,2014-02-13,University:2014-02-13#0,40,8,8,,physically_infeasible,,0.4,10,0,0,4,4,1.0,58.8,34.6,91.454,125.42,33.966,0.7291819486525275,8
+Victoria Market,2014-01-22,Victoria Market:2014-01-22#0,35,7,7,,physically_infeasible,,0.8333333333333334,6,0,0,5,5,1.0,5.9,30.1,23.276,61.051,37.775,0.3812550162978493,7
+Victoria Market,2014-01-25,Victoria Market:2014-01-25#0,35,7,7,,physically_infeasible,,0.45454545454545453,11,0,0,5,5,1.0,28.3,36.2,84.682,147.349,62.667,0.5747035948666093,7
+Victoria Market,2014-01-30,Victoria Market:2014-01-30#0,35,7,7,,physically_infeasible,,1.0,8,0,0,8,8,1.0,3.8,40.4,18.608,111.565,92.957,0.16679066015327387,7
+Victoria Market,2014-02-17,Victoria Market:2014-02-17#0,35,7,7,,physically_infeasible,,0.6666666666666666,3,0,0,2,2,1.0,11.9,30.4,16.576,34.886,18.31,0.47514762368858565,7
+Victoria Market,2014-03-11,Victoria Market:2014-03-11#0,35,7,7,,physically_infeasible,,0.7142857142857143,7,0,0,5,5,1.0,39.7,43.9,66.908,107.452,40.544,0.6226780329821688,7
+Victoria Market,2014-03-20,Victoria Market:2014-03-20#0,35,7,7,,physically_infeasible,,0.6,10,0,0,6,6,1.0,26.6,35.1,73.879,128.411,54.532,0.5753323313423305,7
+Victoria Market,2014-03-23,Victoria Market:2014-03-23#0,35,7,7,,physically_infeasible,,0.6,10,0,1,6,6,0.9,14.3,31.8,65.944,138.104,72.16,0.4774952209928749,7
+Victoria Market,2014-03-31,Victoria Market:2014-03-31#0,35,7,7,,physically_infeasible,,0.2,5,0,0,1,1,1.0,60.7,26.7,45.82,54.677,8.857,0.8380123269382007,7

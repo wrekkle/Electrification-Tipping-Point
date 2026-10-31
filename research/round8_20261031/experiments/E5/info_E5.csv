@@ -1,0 +1,21 @@
+family,split,site_id,day_key,stream_id,stream_hash,policy,k_min_feasible,confirmed_minimal_sim,undecidable_ks,delta_k_vs_A,unit,mode
+E5,test,Jolimont,2014-01-15,Jolimont:2014-01-15#0,6a811df51c24478028ae3f783d326b94237cfbb845d3c8d0ed41a10bf6b14c90,A,,False,[],,independent stream (site-day),exploratory
+E5,test,Jolimont,2014-01-15,Jolimont:2014-01-15#0,6a811df51c24478028ae3f783d326b94237cfbb845d3c8d0ed41a10bf6b14c90,D,,False,[],,independent stream (site-day),exploratory
+E5,test,Jolimont,2014-02-07,Jolimont:2014-02-07#0,7681ec28b1d01ad613730d516298d03dd5b7824aaa85b741ce414db97dbb7f52,A,,False,[],,independent stream (site-day),exploratory
+E5,test,Jolimont,2014-02-07,Jolimont:2014-02-07#0,7681ec28b1d01ad613730d516298d03dd5b7824aaa85b741ce414db97dbb7f52,D,,False,[],,independent stream (site-day),exploratory
+E5,test,Jolimont,2014-02-27,Jolimont:2014-02-27#0,663073fc8daa9b371fc75ea1a4c021f8bed34ebcac905e60f02b593d81bfa4b0,A,,False,[],,independent stream (site-day),exploratory
+E5,test,Jolimont,2014-02-27,Jolimont:2014-02-27#0,663073fc8daa9b371fc75ea1a4c021f8bed34ebcac905e60f02b593d81bfa4b0,D,,False,[],,independent stream (site-day),exploratory
+E5,test,Queensberry,2014-01-25,Queensberry:2014-01-25#0,daeeb1b2e528f76bc60c52d9ff7bb38dd95e532f34e80663a61db29f90897982,A,,False,[],,independent stream (site-day),exploratory
+E5,test,Queensberry,2014-01-25,Queensberry:2014-01-25#0,daeeb1b2e528f76bc60c52d9ff7bb38dd95e532f34e80663a61db29f90897982,D,,False,[],,independent stream (site-day),exploratory
+E5,test,Queensberry,2014-02-13,Queensberry:2014-02-13#0,3de754720e06d62e2e067a68bff403e8a18d4b86164258411d54080d814ca79a,A,,False,[],,independent stream (site-day),exploratory
+E5,test,Queensberry,2014-02-13,Queensberry:2014-02-13#0,3de754720e06d62e2e067a68bff403e8a18d4b86164258411d54080d814ca79a,D,,False,[],,independent stream (site-day),exploratory
+E5,test,Southbank,2014-03-08,Southbank:2014-03-08#0,f8a2a7faeb4a38fe2dee338badea19453660819fe6e8758b10a2bf3cc3138376,A,,False,[],,independent stream (site-day),exploratory
+E5,test,Southbank,2014-03-08,Southbank:2014-03-08#0,f8a2a7faeb4a38fe2dee338badea19453660819fe6e8758b10a2bf3cc3138376,D,,False,[],,independent stream (site-day),exploratory
+E5,test,Victoria Market,2014-03-06,Victoria Market:2014-03-06#0,3a62875dad469500b51de87b7926fd86cbf104ab1967567d6a1afbffbdf742b0,A,,False,[],,independent stream (site-day),exploratory
+E5,test,Victoria Market,2014-03-06,Victoria Market:2014-03-06#0,3a62875dad469500b51de87b7926fd86cbf104ab1967567d6a1afbffbdf742b0,D,,False,[],,independent stream (site-day),exploratory
+E5,test,Victoria Market,2014-03-10,Victoria Market:2014-03-10#0,96e7c565fd15b0e01db256dc83f13ec4abd93b420b9632753bb4399def0868b1,A,,False,[],,independent stream (site-day),exploratory
+E5,test,Victoria Market,2014-03-10,Victoria Market:2014-03-10#0,96e7c565fd15b0e01db256dc83f13ec4abd93b420b9632753bb4399def0868b1,D,,False,[],,independent stream (site-day),exploratory
+E5,test,Victoria Market,2014-03-31,Victoria Market:2014-03-31#0,404de4ef9a1b03d1bed62cdeb694148b83fcee599c2f0695bc6d2978bcb1e189,A,,False,[],,independent stream (site-day),exploratory
+E5,test,Victoria Market,2014-03-31,Victoria Market:2014-03-31#0,404de4ef9a1b03d1bed62cdeb694148b83fcee599c2f0695bc6d2978bcb1e189,D,,False,[],,independent stream (site-day),exploratory
+E5,test,West Melbourne,2014-01-15,West Melbourne:2014-01-15#0,0e40225cbcfe8ebc3a7926bc6c1eeda2ce81a9890134a052e0860c8d590d062b,A,,False,[],,independent stream (site-day),exploratory
+E5,test,West Melbourne,2014-01-15,West Melbourne:2014-01-15#0,0e40225cbcfe8ebc3a7926bc6c1eeda2ce81a9890134a052e0860c8d590d062b,D,,False,[],,independent stream (site-day),exploratory

@@ -1,0 +1,26 @@
+{
+  "schema_version": "r8-run-manifest/v1",
+  "family": "M",
+  "status": "ok",
+  "generated_utc": "2026-10-31T11:00:35.684486+00:00",
+  "output_version": "r8-engine-v1-2026-10-31",
+  "command": "run_phase1.py --mode synthetic --seed 20261031",
+  "seed": 20261031,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "m_summaries.csv",
+      "sha256": "e0642a7ea83ad134502bfa2ed7483fabcd946d239a62e6032a51a15f9895861e"
+    },
+    {
+      "path": "m_summaries.json",
+      "sha256": "581f1beebdf0b194de3cf79987605fabb847d393d66ee106d93e628aed129730"
+    }
+  ],
+  "notes": [
+    "bootstrap 单位=场站-日/独立流；bootstrap 次数不是样本量",
+    "不显著不等于无效"
+  ]
+}

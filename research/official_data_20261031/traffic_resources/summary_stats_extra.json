@@ -1,0 +1,141 @@
+{
+ "conn_2026-10-30": {
+  "rows": 267994,
+  "connectors": 1888,
+  "lots": 372,
+  "status": {
+   "待機中": 171071,
+   "充電中": 96923
+  }
+ },
+ "conn_2026-10-31": {
+  "rows": 248837,
+  "connectors": 1888,
+  "lots": 372,
+  "status": {
+   "待機中": 179779,
+   "充電中": 69058
+  }
+ },
+ "connector_count_mismatch_lots": 0,
+ "connector_count_mismatch_sample": [],
+ "raw_files": [
+  {
+   "file": "ACN_research.html",
+   "bytes": 25335,
+   "sha256": "a19f225b2d683f56f2d849bfd9512199256717c8dc64b3e7e0c924af4c18f8fa"
+  },
+  {
+   "file": "AFDC_stations_states.html",
+   "bytes": 48206,
+   "sha256": "a02f71176c2a84671fea418fde8a6b838bb136ab80e79616a64b3b74e0488798"
+  },
+  {
+   "file": "AFDC_vehicle_registration_2024.html",
+   "bytes": 65826,
+   "sha256": "40f39b7139d44b92ff3c2aca87668ab198f251275cdd89a3754e441cab0a7c20"
+  },
+  {
+   "file": "IOT_public_charging_demand_table.pdf",
+   "bytes": 54335400,
+   "sha256": "6c6a0883fdcfaee26f30e5541bbfc5f204d4609ab259f8be244db3e92e57d945"
+  },
+  {
+   "file": "M10_TUE_fulltext.pdf",
+   "bytes": 4655408,
+   "sha256": "dd1312a74ac08f4af3936c2f9acbba3813631255eccd38fffc2cff81464865b6"
+  },
+  {
+   "file": "M13_nature_article.html",
+   "bytes": 356088,
+   "sha256": "544238d6f13d832853bcf4c457e32ac73b4147555a1183cd074b62b39f188b4f"
+  },
+  {
+   "file": "barnet_cityev_2021Q2.csv",
+   "bytes": 601635,
+   "sha256": "ffe8f53f6045929896802e980e4ef296f882fedd52ae45089db360affb1608e4"
+  },
+  {
+   "file": "crossref_M11.json",
+   "bytes": 12025,
+   "sha256": "5756ac8d2d397eac274a9d71a58066e07c905747f6332cfc9e394fca4f9bda45"
+  },
+  {
+   "file": "crossref_M12.json",
+   "bytes": 21329,
+   "sha256": "877c2d5de7d9f086dcb0c892fc6b656a4c0e49ff8adc5496398c31773eb6b14d"
+  },
+  {
+   "file": "datataipei_parking_dataset.html",
+   "bytes": 89855,
+   "sha256": "faaf0daa75ff3c57cb3cd8e4121fb035dd758cd851c67882c404379300724bcd"
+  },
+  {
+   "file": "datataipei_parking_resources.json",
+   "bytes": 2,
+   "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+   "file": "epa_vehicles.csv.zip",
+   "bytes": 2212193,
+   "sha256": "33d32caa0343cdb11c47be631e8a80b7ed7c351ee8503646a4e96485bd67b22f"
+  },
+  {
+   "file": "uk_datagov_ckan_device.json",
+   "bytes": 230,
+   "sha256": "bdeb10efba8ca93dcfdb9e7a66db6db76305b2ec9d6f5d6595c098682349bc78"
+  },
+  {
+   "file": "uk_datagov_ckan_search.json",
+   "bytes": 32738,
+   "sha256": "24950ad8d4c6643a10f8a0d76a60bb50380bc13bd24f1afb4276e8c72d0892c7"
+  }
+ ],
+ "barnet": {
+  "rows": 44225,
+  "cols": [
+   "Charging event",
+   "Chargepoint ID",
+   "Borough",
+   "Operator",
+   "Plug in Date and Time",
+   "Unplug Date and Time",
+   "Charge start Date and Time",
+   "Charge end Date and Time",
+   "Total kWh"
+  ]
+ },
+ "epa": {
+  "EV_rows": 1608,
+  "range_n": 1608,
+  "range_median": 282.0,
+  "range_min": 29.0,
+  "range_max": 520.0
+ },
+ "afdc_registration": {
+  "states_parsed": 53,
+  "sum": 9009425,
+  "top": [
+   [
+    "United States",
+    4503700
+   ],
+   [
+    "California",
+    1533900
+   ],
+   [
+    "Florida",
+    334800
+   ],
+   [
+    "Texas",
+    294700
+   ],
+   [
+    "Washington",
+    191400
+   ]
+  ]
+ }
+}

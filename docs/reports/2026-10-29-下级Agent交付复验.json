@@ -1,0 +1,701 @@
+{
+  "date": "2026-10-29",
+  "scope": "Independent re-verification of A-E deliverables; no source fixes or manuscript changes.",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "commands": [
+    "python tmp/reverify_root_20261029/verify.py snapshot",
+    "python tmp/reverify_root_20261029/verify.py backend-tests",
+    "python tmp/reverify_root_20261029/verify.py pipeline-tests",
+    "python tmp/reverify_root_20261029/verify.py probes",
+    "python tmp/reverify_root_20261029/verify.py finish"
+  ],
+  "backend_tests": {
+    "tests": 73,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "temp_directory": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\tmp\\reverify_root_20261029\\test_tmp"
+  },
+  "pipeline_tests": {
+    "tests": 19,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "temp_directory": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\tmp\\reverify_root_20261029\\test_tmp"
+  },
+  "metric_pass_assertions": 11,
+  "historical_protection": {
+    "main_paper/Electrification tipping point_manuscript 202603submit.docx": {
+      "same": true,
+      "expected": "04bda3111fcc9af3959d3c262cc7a49cdd011d28c710bf747ab6bd39164e5415",
+      "actual": "04bda3111fcc9af3959d3c262cc7a49cdd011d28c710bf747ab6bd39164e5415"
+    },
+    "paper/draft/Electrification_tipping_point_v2_draft_2026-10-29.docx": {
+      "same": true,
+      "expected": "b507a138aca385552ad4b506b23ce66c0d0f19ed8c6260ffdd88f6765f73df32",
+      "actual": "b507a138aca385552ad4b506b23ce66c0d0f19ed8c6260ffdd88f6765f73df32"
+    },
+    "research/electrification/repro/run_all.py": {
+      "same": true,
+      "expected": "ed80382d9f0ab69b9b327d9bddec2680ab668904ca5e7ebe263943c3a3af946f",
+      "actual": "ed80382d9f0ab69b9b327d9bddec2680ab668904ca5e7ebe263943c3a3af946f"
+    },
+    "research/electrification/repro/tests/test_prei.py": {
+      "same": true,
+      "expected": "9cd73c37d14f785f9fab2217f1f96624d77af593c20c7ec0a62ded31d8c9c682",
+      "actual": "9cd73c37d14f785f9fab2217f1f96624d77af593c20c7ec0a62ded31d8c9c682"
+    },
+    "research/electrification/repro/src/prei/capacity.py": {
+      "same": true,
+      "expected": "beaef562cada45b73b9713c8169a0b22b1685c5c9099f7ba2cbb057fdcf3a92a",
+      "actual": "beaef562cada45b73b9713c8169a0b22b1685c5c9099f7ba2cbb057fdcf3a92a"
+    },
+    "research/electrification/repro/src/prei/config.py": {
+      "same": true,
+      "expected": "df51728397cf58a2c2cdeb025a2e4ee8ef2f1d13e5f8aa8d827f3598d055aae4",
+      "actual": "df51728397cf58a2c2cdeb025a2e4ee8ef2f1d13e5f8aa8d827f3598d055aae4"
+    },
+    "research/electrification/repro/src/prei/costs.py": {
+      "same": true,
+      "expected": "9e8484defff83416578988eaa309530b9a6c47341333ec74d5b1709a39aa945c",
+      "actual": "9e8484defff83416578988eaa309530b9a6c47341333ec74d5b1709a39aa945c"
+    },
+    "research/electrification/repro/src/prei/demand.py": {
+      "same": true,
+      "expected": "ee7248cdc35b7e2a7cb2a21a0f76143cf34d310e50c7094704c4fc65e116d662",
+      "actual": "ee7248cdc35b7e2a7cb2a21a0f76143cf34d310e50c7094704c4fc65e116d662"
+    },
+    "research/electrification/repro/src/prei/evaluate.py": {
+      "same": true,
+      "expected": "f6ab56a3e9e60b288fc79d0735c8fe941f469debb5e70b51bc84ac7b09f12254",
+      "actual": "f6ab56a3e9e60b288fc79d0735c8fe941f469debb5e70b51bc84ac7b09f12254"
+    },
+    "research/electrification/repro/src/prei/io.py": {
+      "same": true,
+      "expected": "f81aa2aa3ff623d6c3063c39a65d2bca2f1a7eaeed4f9d206a7e5e32ad8b8340",
+      "actual": "f81aa2aa3ff623d6c3063c39a65d2bca2f1a7eaeed4f9d206a7e5e32ad8b8340"
+    },
+    "research/electrification/repro/src/prei/rules.py": {
+      "same": true,
+      "expected": "56e67f512dc723cb6ff418f1c40a36cb1db91c03eb4852f540e49e3a156978fd",
+      "actual": "56e67f512dc723cb6ff418f1c40a36cb1db91c03eb4852f540e49e3a156978fd"
+    },
+    "research/electrification/repro/src/prei/simulator.py": {
+      "same": true,
+      "expected": "db0be4671335722f374353b1fe02188074364aa2379ecf963ee7ff6585a9f559",
+      "actual": "db0be4671335722f374353b1fe02188074364aa2379ecf963ee7ff6585a9f559"
+    },
+    "research/electrification/repro/src/prei/stats.py": {
+      "same": true,
+      "expected": "a28f75a903c5d538373ff08daa3706cdc4e3d762b2602df8d1d730bbd94a3352",
+      "actual": "a28f75a903c5d538373ff08daa3706cdc4e3d762b2602df8d1d730bbd94a3352"
+    },
+    "research/electrification/repro/src/prei/__init__.py": {
+      "same": true,
+      "expected": "f4e7d50479c346fa163fddcb7da1ada5fd047bdb7e037b8305d9206ad939d940",
+      "actual": "f4e7d50479c346fa163fddcb7da1ada5fd047bdb7e037b8305d9206ad939d940"
+    }
+  },
+  "this_turn_protection": {
+    "checked": 433,
+    "changed": [],
+    "new": []
+  },
+  "probes": {
+    "old_six_cases": {
+      "R1": {
+        "vehicle": 0,
+        "class": "ev_charge",
+        "t_a": 690.0,
+        "t_c": 690.0,
+        "t_d": 714.0,
+        "t_r": 750.0,
+        "berth": 0,
+        "device": 0,
+        "energy_requested_kwh": 20.0,
+        "energy_delivered_kwh": 20.0,
+        "blocked": false
+      },
+      "R2": {
+        "g_hat": 10.0,
+        "g_lo": 10.0,
+        "g_hi": 10.0,
+        "n_scenarios": 4,
+        "n_boot": 400,
+        "alpha": 0.05,
+        "block_len": 1,
+        "best_partial_index": 0,
+        "best_partial_mean": 25.0,
+        "n_partial": 1,
+        "paired": true,
+        "method": "paired_block_bootstrap_percentile",
+        "unit": "RMB"
+      },
+      "R3_included": [
+        0,
+        1
+      ],
+      "R4_starts": [
+        0.0,
+        0.0,
+        96.0,
+        3.0
+      ],
+      "R5": {
+        "n": 25,
+        "tail_n": 2,
+        "tail_weight": 1.250000000000001,
+        "alpha": 0.95,
+        "var": 23.0,
+        "cvar": 84.59999999999995,
+        "cvar_aux": 84.59999999999994,
+        "eta_star": 23.0,
+        "exact": true
+      },
+      "R6_exhaustive_mismatches": []
+    },
+    "g_coverage_fresh_seed": {
+      "fixed_offset_K1": {
+        "g_hat": 10.0,
+        "g_lo": 9.999999999999986,
+        "g_hi": 10.000000000000014,
+        "width": 2.842170943040401e-14
+      },
+      "min_over_partials": {
+        "reps": 200,
+        "K": 6,
+        "true_g": -5.0,
+        "mean_g_hat_min": -4.728022466276224,
+        "mean_g_hat_fixed_partial": -4.986840060411202,
+        "selection_bias_min_vs_fixed": 0.25881759413497885,
+        "bias_vs_true_g": 0.271977533723776,
+        "coverage_of_true_g": 0.65,
+        "mean_width": 0.8844003414549553,
+        "note": "min-over-partials is a biased functional; the paired bootstrap fixes the pairing but not the winner's curse"
+      }
+    },
+    "A_touching_intervals": {
+      "existing_sessions": [
+        [
+          0.0,
+          10.0,
+          50.0,
+          8.333333333333334
+        ],
+        [
+          10.0,
+          20.0,
+          50.0,
+          8.333333333333334
+        ]
+      ],
+      "expected_peak_with_new_session": 100,
+      "actual_peak_with_new_session": 150.0,
+      "expected_connection_start": 0,
+      "actual_schedule": [
+        10.0,
+        16.666666666666668,
+        30.0
+      ]
+    },
+    "A_idle_reposition": {
+      "timeline": [
+        {
+          "vehicle": 0,
+          "class": "ev_charge",
+          "t_a": 0.0,
+          "t_c": 0.0,
+          "t_d": 1.0,
+          "t_r": 200.0,
+          "berth": 0,
+          "device": 0,
+          "energy_requested_kwh": 1.0,
+          "energy_delivered_kwh": 1.0,
+          "blocked": false
+        },
+        {
+          "vehicle": 1,
+          "class": "ev_charge",
+          "t_a": 100.0,
+          "t_c": 100.0,
+          "t_d": 110.0,
+          "t_r": 200.0,
+          "berth": 1,
+          "device": 0,
+          "energy_requested_kwh": 10.0,
+          "energy_delivered_kwh": 10.0,
+          "blocked": false
+        }
+      ],
+      "expected_second_start_without_anticipation": 110,
+      "actual_second_start": 100.0
+    },
+    "B_source_skew": {
+      "source_skew_seconds": 600,
+      "expected_sync_state": "skewed",
+      "actual": {
+        "lot_id": "L",
+        "t_fetch": "2026-10-29T12:00:00+08:00",
+        "parking_fetch_finished_at": "2026-10-29T12:00:00+08:00",
+        "charging_fetch_finished_at": "2026-10-29T12:00:00+08:00",
+        "fetch_skew_seconds": 0.0,
+        "parking_source_time": "2026-10-29T12:00:00+08:00",
+        "charging_source_time": "2026-10-29T11:50:00+08:00",
+        "parking_source_age_seconds": 0.0,
+        "charging_source_age_seconds": 600.0,
+        "total_spaces": 10,
+        "free_spaces": 5,
+        "occupied_spaces": null,
+        "gun_states": {
+          "charging": 1
+        },
+        "state_semantics_state": null,
+        "synthetic": true,
+        "sync_state": "ok",
+        "parking_fresh": true,
+        "charging_fresh": true
+      }
+    },
+    "B_lot_station_coverage": {
+      "expected_lot_coverage": 1.0,
+      "actual": {
+        "lot_id": "L",
+        "rows": 4,
+        "expected_slots_estimate": 2,
+        "coverage_ratio_estimate": 2.0,
+        "max_gap_seconds": 300.0,
+        "gaps_over_2x_interval": 0,
+        "sync_states": {
+          "ok": 4
+        },
+        "parking_fresh_rate": 1.0,
+        "charging_fresh_rate": 1.0
+      }
+    },
+    "B_demo": {
+      "panel": {
+        "rows": 10,
+        "lots": 3,
+        "sync_states": {
+          "ok": 5,
+          "skewed": 1,
+          "parking_only": 3,
+          "unknown_source_time": 1
+        },
+        "missing_parking_side": 0,
+        "missing_charging_side": 3,
+        "source_time_missing_either": 1,
+        "per_lot": [
+          {
+            "lot_id": "LOT-A",
+            "rows": 8,
+            "expected_slots_estimate": 4,
+            "coverage_ratio_estimate": 2.0,
+            "max_gap_seconds": 300.0,
+            "gaps_over_2x_interval": 0,
+            "sync_states": {
+              "ok": 4,
+              "skewed": 1,
+              "parking_only": 3
+            },
+            "parking_fresh_rate": 0.75,
+            "charging_fresh_rate": 0.625
+          },
+          {
+            "lot_id": "LOT-B",
+            "rows": 1,
+            "expected_slots_estimate": null,
+            "coverage_ratio_estimate": null,
+            "max_gap_seconds": null,
+            "gaps_over_2x_interval": 0,
+            "sync_states": {
+              "unknown_source_time": 1
+            },
+            "parking_fresh_rate": 0.0,
+            "charging_fresh_rate": 0.0
+          },
+          {
+            "lot_id": "LOT-C",
+            "rows": 1,
+            "expected_slots_estimate": null,
+            "coverage_ratio_estimate": null,
+            "max_gap_seconds": null,
+            "gaps_over_2x_interval": 0,
+            "sync_states": {
+              "ok": 1
+            },
+            "parking_fresh_rate": 1.0,
+            "charging_fresh_rate": 0.0
+          }
+        ],
+        "note": "覆盖按观测跨度与预期间隔估算；缺测区间不视为 0，也不跨缺口推断状态切换"
+      },
+      "synthetic_only": true
+    },
+    "D_common_demand": {
+      "expected_equal_arrival_sequence": true,
+      "actual_equal": false,
+      "first_difference_minute": 36,
+      "runs": [
+        {
+          "n_c": 2,
+          "day": {
+            "day": 0,
+            "n_c": 2,
+            "policy": "R1",
+            "arrivals": 372,
+            "ev_visits": 121,
+            "ev_connected": 19,
+            "requests": 74,
+            "admitted_req": 19,
+            "rejected": 55,
+            "rejected_need": 1074.2309348969911,
+            "blocked_park": 0,
+            "delivered": 321.93333333333624,
+            "admitted_need": 401.36224932071536,
+            "gap_adm": 80.65130329681435,
+            "wait_sum": 19.0,
+            "wait_n": 19,
+            "supp_min": 878,
+            "idle_occ_min": 532,
+            "chg_occ_min": 1410,
+            "fin_occ_min": 456,
+            "cost": 2911.664476387611
+          }
+        },
+        {
+          "n_c": 8,
+          "day": {
+            "day": 0,
+            "n_c": 8,
+            "policy": "R1",
+            "arrivals": 378,
+            "ev_visits": 123,
+            "ev_connected": 52,
+            "requests": 71,
+            "admitted_req": 52,
+            "rejected": 19,
+            "rejected_need": 314.0469932761115,
+            "blocked_park": 0,
+            "delivered": 808.5680952380974,
+            "admitted_need": 1026.4690447786086,
+            "gap_adm": 221.8414398434401,
+            "wait_sum": 52.0,
+            "wait_n": 52,
+            "supp_min": 3319,
+            "idle_occ_min": 2061,
+            "chg_occ_min": 5380,
+            "fin_occ_min": 2044,
+            "cost": 3476.9768662391034
+          }
+        }
+      ]
+    },
+    "D_energy_balance": [
+      {
+        "n_c": 2,
+        "expected_delivered_plus_gap_minus_need": 0,
+        "actual": 1.2223873094352484
+      },
+      {
+        "n_c": 8,
+        "expected_delivered_plus_gap_minus_need": 0,
+        "actual": 3.9404903029289926
+      }
+    ],
+    "D_R3_R4": {
+      "checks": 324,
+      "different_actions": 0,
+      "peak_non_ev_with_ordinary_full": {
+        "R4_actual": 2,
+        "expected_if_only_charging_bay_protected": null
+      }
+    },
+    "D_hidden_truth_leakage": {
+      "retained_snapshots_identical": true,
+      "expected_estimates_identical_when_only_snapshots_available": true,
+      "actual_q_plug_a": 0.19756838905775076,
+      "actual_q_plug_b": 0.09878419452887538,
+      "hidden_agg_keys_exposed_to_estimator": [
+        "arrivals",
+        "ev_visits",
+        "ev_connected",
+        "requests",
+        "admitted_req",
+        "rejected",
+        "rejected_need",
+        "blocked_park",
+        "delivered",
+        "admitted_need",
+        "gap_adm",
+        "wait_sum",
+        "wait_n",
+        "supp_min",
+        "idle_occ_min",
+        "chg_occ_min",
+        "fin_occ_min",
+        "cost",
+        "days",
+        "cost_per_day",
+        "q_plug_true",
+        "accept_rate",
+        "gap_rate_adm",
+        "idle_occ_share",
+        "daily_cost"
+      ]
+    },
+    "D_E7": {
+      "B": {
+        "interval": [
+          0.3,
+          0.64
+        ],
+        "C_obs": 144.0,
+        "E": [
+          300.0,
+          480.0
+        ],
+        "U": [
+          0.0,
+          48.0
+        ]
+      },
+      "C": {
+        "interval": [
+          0.2675,
+          0.335
+        ],
+        "E_assumed": 480.0
+      },
+      "C_alt": {
+        "interval": [
+          0.5475,
+          0.65
+        ],
+        "E_assumed": 240.0
+      },
+      "mechanical_intersection": [
+        0.3,
+        0.335
+      ],
+      "assessment": {
+        "b_contains_0p6": true,
+        "c_excludes_0p6": true,
+        "intersection_excludes_0p6": true
+      },
+      "equivalence": {
+        "pair1": {
+          "q": 0.6,
+          "E": 240,
+          "C": 144
+        },
+        "pair2": {
+          "q": 0.4,
+          "E": 360,
+          "C": 144
+        },
+        "likelihood_identical": true
+      },
+      "etp": {
+        "grid": [
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "g_two": [
+          3.0,
+          2.0,
+          1.0,
+          -1.0,
+          -1.5,
+          -0.5,
+          0.8,
+          2.2,
+          3.0,
+          0.4
+        ],
+        "windows_two": [
+          [
+            0.1,
+            0.3
+          ],
+          [
+            0.7,
+            1.0
+          ]
+        ],
+        "g_none": [
+          -1.0,
+          -1.2,
+          -1.4,
+          -1.6,
+          -1.8,
+          -2.0,
+          -2.2,
+          -2.4000000000000004,
+          -2.6,
+          -2.8
+        ],
+        "windows_none": [],
+        "inclusion": {
+          "0.1": 0.9925,
+          "0.2": 0.9425,
+          "0.3": 0.7925,
+          "0.4": 0.185,
+          "0.5": 0.145,
+          "0.6": 0.31,
+          "0.7": 0.735,
+          "0.8": 0.9825,
+          "0.9": 1.0,
+          "1.0": 0.625
+        },
+        "stable_grid": [
+          0.1,
+          0.2,
+          0.8,
+          0.9
+        ]
+      }
+    },
+    "D_E7_sign_comparison": {
+      "D_all_negative_windows": [],
+      "backend_ETP_for_same_all_negative_g": 0.1,
+      "note": "D counts positive windows; A defines g=full-minus-partial and negative favors full."
+    },
+    "manifest_keys": [
+      "command",
+      "config_sha256",
+      "files",
+      "platform",
+      "python_version",
+      "run_id",
+      "timings"
+    ],
+    "manifest_content_hashes": [
+      {
+        "file": "confidence_sets.csv",
+        "match": true
+      },
+      {
+        "file": "cvar.csv",
+        "match": true
+      },
+      {
+        "file": "decomposition.csv",
+        "match": true
+      },
+      {
+        "file": "etp.csv",
+        "match": true
+      },
+      {
+        "file": "etp_points.json",
+        "match": true
+      },
+      {
+        "file": "feasibility_costs.csv",
+        "match": true
+      },
+      {
+        "file": "fig8_regions.csv",
+        "match": true
+      },
+      {
+        "file": "g_curve.csv",
+        "match": true
+      },
+      {
+        "file": "integer_check.csv",
+        "match": true
+      },
+      {
+        "file": "modes.csv",
+        "match": true
+      },
+      {
+        "file": "params.json",
+        "match": true
+      },
+      {
+        "file": "rule_matrix.csv",
+        "match": true
+      },
+      {
+        "file": "saa_error.csv",
+        "match": true
+      },
+      {
+        "file": "sensitivity.csv",
+        "match": true
+      },
+      {
+        "file": "static_curves.csv",
+        "match": true
+      },
+      {
+        "file": "static_optimum.csv",
+        "match": true
+      },
+      {
+        "file": "v2_best.csv",
+        "match": true
+      },
+      {
+        "file": "v2_confidence_sets.csv",
+        "match": true
+      },
+      {
+        "file": "v2_cvar.csv",
+        "match": true
+      },
+      {
+        "file": "v2_designs.csv",
+        "match": true
+      },
+      {
+        "file": "v2_g_curve.csv",
+        "match": true
+      },
+      {
+        "file": "v2_q_sensitivity.csv",
+        "match": true
+      },
+      {
+        "file": "v2_regions.csv",
+        "match": true
+      },
+      {
+        "file": "v2_service_accounting.csv",
+        "match": true
+      },
+      {
+        "file": "v2_timeline_sample.csv",
+        "match": true
+      }
+    ]
+  },
+  "manifest_summary": {
+    "files": 25,
+    "matched": 25,
+    "mismatched": []
+  },
+  "check_all": {
+    "command": "python scripts/check_all.py",
+    "exit_code": 0,
+    "log": "tmp/reverify_root_20261029/check_all.log"
+  },
+  "primary_abstract_metadata_checked": [
+    "https://arxiv.org/abs/1708.08526v4",
+    "https://arxiv.org/abs/2511.04457v1",
+    "https://arxiv.org/abs/2506.12215v2",
+    "https://arxiv.org/abs/2509.06147v2"
+  ],
+  "limitations": "No repeated full baseline; no live platform access; no theorem or novelty verification."
+}

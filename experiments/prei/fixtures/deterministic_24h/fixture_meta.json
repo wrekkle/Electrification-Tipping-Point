@@ -1,0 +1,67 @@
+{
+  "fixture": "deterministic_24h",
+  "source_case": "final_tvr",
+  "sampling": "none; closed-form received hourly t array and exact rates",
+  "seed": null,
+  "seed_scope": "not_applicable",
+  "n_spaces": 40.0,
+  "t_hourly_vehicles": [
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    40.0,
+    47.0,
+    40.0,
+    40.0,
+    44.0,
+    48.0,
+    48.0,
+    40.0,
+    40.0,
+    40.0,
+    41.0,
+    40.0,
+    40.0,
+    40.0
+  ],
+  "unit_rates_rmb_per_rejected_vehicle_per_day": {
+    "ev_fuel_cost": 0.2,
+    "ice_fuel_cost": 0.8,
+    "ev_time_cost": 4.672,
+    "ice_time_cost": 6.022,
+    "ev_complaint_cost": 1.65,
+    "ice_complaint_cost": 1.65
+  },
+  "rate_origin": {
+    "ev_fuel": "cgev (final_tvr.m:15)",
+    "ice_fuel": "cgicv",
+    "ev_time": "ctev",
+    "ice_time": "cticv",
+    "ev_complaint": "ccev*ccevp",
+    "ice_complaint": "ccicv*ccicvp"
+  },
+  "comparison": "all 441 (r, EV-share) cells comparable with audit_numeric.deterministic_formula",
+  "fixture_sha256": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+  "fixture_file": "experiments\\prei\\fixtures\\deterministic_24h\\fixture.csv",
+  "generated_utc": "2026-10-29T13:49:20.804268+00:00",
+  "environment": {
+    "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+    "executable": "C:\\anaconda\\python.exe",
+    "numpy": "1.26.4",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "source_hashes": {
+    "audit_numeric.py": "f4b42bbb4481eece04844ad976e3a0fd68b1173e1346e7b9ad41fa6ed89fa3e1",
+    "originals/final_tvr.m": "0fb5501542705d171bf66b47fcbe1a652420d0a74e7488ff10f62eadeef2e6fd",
+    "originals/final_tvr_v2_fluc_re.m": "3123a6ae6ef12413f1086c326dd2f9b741e72f75305a72d1621a9939198d7e31",
+    "sample_fixtures.py": "42770b8e8abf0ea77e0d762ced179f53c31cb8e465fb2a9fc4c1829b15cd7863",
+    "schema.json": "7cf81d242924cfa4bd7f8339ff0e579036b05eaf3a4a135457ea7eddf1494f4e"
+  }
+}

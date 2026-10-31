@@ -1,0 +1,221 @@
+{
+ "schema_version": "r8d-phase3-acceptance/v1",
+ "task": "task-4 / R8-F phase3",
+ "verifier": "R8-D",
+ "generated_local": "2026-10-31T19:58:00+08:00",
+ "generated_utc": "2026-10-31T11:58:00Z",
+ "scope": {
+  "verified": [
+   "research/round8_20261031/analysis/ (fit_for_model.py, audit2.py, audit3.py, 7 CSV outputs, FIT_FOR_MODEL.md §4)",
+   "analysis/SCENARIO_LEDGER.md §1",
+   "paper/content_rev5.py + rev5 draft docx (20% and hardware description)",
+   "experiments_condshare/evidence_at_n_spaces.json/csv",
+   "experiments/ and experiments_main22/ E2/E3/E4/E6/M outputs + run_meta"
+  ],
+  "not_verified": [
+   "rev6 manuscript (not built; per instruction)",
+   "experiments_declared22/ full numeric acceptance (used only as supporting audit evidence)",
+   "analysis scripts executed for output regeneration (not run to avoid overwriting non-acceptance files; compile-checked only)"
+  ]
+ },
+ "snapshot": {
+  "captured_local": "2026-10-31T19:56:07",
+  "contract_sha256": "38b1422bb95d4122565d4de70a5ef4faf35e41600019068c9c077a295ee6bdf6",
+  "window_export_sha256": "c22f559928fe2f1ee674da2c77b941a38e90136542e3cd81e3f2c8ab3aa29ecf",
+  "file_hashes_ref": "research/round8_20261031/acceptance/evidence/phase3_results.json -> snapshot.files (31 files)"
+ },
+ "items": [
+  {
+   "id": "A1",
+   "area": "analysis/window",
+   "check": "窗口导出 236,819 行 − 24→10 区选择 − 2 条 1900-01-01 离场 = 185,550",
+   "verdict": "PASS",
+   "evidence_command": "python research/round8_20261031/acceptance/evidence/phase3_checks.py（重算窗口/面积/坏行/逐场站差额）",
+   "evidence_path": "acceptance/evidence/phase3_checks.out; acceptance/evidence/phase3_results.json → checks.A_reconcile; data/processed/_window_events.csv; data/processed/public_parking_events.json",
+   "observed": "236,819 行 / 24 区；选中 10 区 185,552 行；2 条坏行 dep=1900-01-01T00:00:00 且 dwell 空（VM 2014-03-14T09:40:32 bay 4,182；Hyatt 2014-01-15T18:37:13 bay 690）；185,552−2=185,550=契约事件数=唯一 event_id 数；逐站差额 VM 1、Hyatt 1、其余 0；未选 14 区 51,267 行",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "A2",
+   "area": "analysis/occupancy",
+   "check": "10 站扫描线 max 同时占用 ≤ n_spaces、超容量分钟=0",
+   "verdict": "PASS",
+   "evidence_command": "phase3_checks.py（按同时间戳成组的干净区间扫描，分钟精度）",
+   "evidence_path": "phase3_results.json → checks.B_occupancy.sites; acceptance/evidence/phase3_checks.out A/B 段",
+   "observed": "10/10 站 max≤n_spaces、超容量分钟全 0.0：Queensberry 67/82、Jolimont 49/58、Victoria Market 35/35、Southbank 63/72、University 40/40、Hyatt 15/15、Drummond 33/33、Princes 12/12、Titles 17/17、West Melbourne 18/18",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "A3",
+   "area": "analysis/site_audit",
+   "check": "site_audit.csv 并发列与 FIT_FOR_MODEL §2 解释自洽",
+   "verdict": "FAIL",
+   "evidence_command": "phase3_checks.py（复现 fit_for_model 的事件级排序法 + 正确区间法；剔除 2 条坏行重算）",
+   "evidence_path": "analysis/site_audit.csv; analysis/FIT_FOR_MODEL.md §2; acceptance/evidence/phase3_checks.out B 段; phase3_results.json → checks.B_occupancy",
+   "observed": "site_audit max_concurrency/peak_over_capacity 用“同时间戳先加后减”的事件排序产生瞬时虚高：VM 40>35、Hyatt 18>15、Drummond 34>33、Princes 15>12、Titles 18>17，却又写 minutes_above_capacity=0.0（自相矛盾）。该 40 不是 FIT §2 所称“1 条缺离场记录造成的假象”：剔除 2 条 1900 离场行后瞬时法仍 40；正确区间扫描 VM=35、超容量 0 分钟。另 site_audit.events 仍按窗口行计（VM 24,892 vs 契约 24,891；Hyatt 14,296 vs 14,295），多计 2 条已剔坏行",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "A4",
+   "area": "analysis/ideal_bound",
+   "check": "P=22 的 min(E,P·T) 在 E4 20 条留出流复现 991.891 kWh、80/137 失败",
+   "verdict": "PASS",
+   "evidence_command": "phase3_checks.py（契约事件按 site/day 重算 20 流；对比 ideal_bound_streams.csv 与 experiments_condshare/evidence_at_n_spaces.csv/json）",
+   "evidence_path": "phase3_results.json → checks.C_ideal_bound; experiments_condshare/evidence_at_n_spaces.json; analysis/ideal_bound_streams.csv",
+   "observed": "20 流、137 请求、需求 1,891.028 kWh、交付 991.891 kWh、失败 80；与 ideal_bound_streams.csv 逐流 20/20 一致（容差≤0.001），与 evidence_at_n_spaces.csv A 策略逐流 20/20 一致，JSON 汇总 991.9/1891.0/80 一致；20 流事件数与 E4 n_events 全等；gate 拒绝 0；A/B 两策略逐行相同",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "A5",
+   "area": "analysis/demand_dwell",
+   "check": "demand_dwell_matching.csv 复算",
+   "verdict": "PASS",
+   "evidence_command": "phase3_checks.py（契约 6,588 个 charge request × 7 档能量重算）",
+   "evidence_path": "phase3_results.json → checks.D_demand_dwell; analysis/demand_dwell_matching.csv",
+   "observed": "7 档（2/4/6/8/10/14/20 kWh）n=6,588、需求、理想交付、失败数全部一致（CSV 1 位小数；14 kWh：交付 52,716.7、失败 4,017/6,588）",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "A6",
+   "area": "analysis/area_selection",
+   "check": "FIT_FOR_MODEL §4 bays≥12 & events≥4,000 唯一给出 10 站并与 area_ranking.csv 一致",
+   "verdict": "PASS",
+   "evidence_command": "phase3_checks.py（从窗口导出独立按区计数 events/bays；应用规则；对比 24 行 area_ranking.csv）",
+   "evidence_path": "phase3_results.json → checks.E_area_selection; analysis/area_ranking.csv; analysis/FIT_FOR_MODEL.md §4",
+   "observed": "恰好 10 区满足 bays≥12 & events≥4,000，与契约 10 站集合完全相同；边界：Princes 12/13,115 入选、West Melbourne 18/4,538 入选、Courtney 14/3,021 未入选、Rialto 7/RACV 6 未入选；24 行 area_ranking（events/bays）与独立复算全等；10 站占窗口事件 78.35%（185,550/236,819）。注意：PROVENANCE 无形式化 site_selection_rule（null）；旧规则（bays≥8 & events≥1,500 取事件前 10）也给出同一 10 站，故该集合非唯一可能规则，仅证明规则与数据一致",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "A7",
+   "area": "analysis/scripts",
+   "check": "analysis 三脚本语法/可执行性（静态）",
+   "verdict": "PASS",
+   "evidence_command": "python -m py_compile（内存 compile 检查，不写 analysis/）",
+   "evidence_path": "acceptance/evidence/phase3_checks.out H 段; phase3_results.json → checks.H_scripts_compile",
+   "observed": "fit_for_model.py / audit2.py / audit3.py 全部 compile ok；未执行（执行会覆盖 analysis/ 非验收文件）",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "B1",
+   "area": "scenario_ledger",
+   "check": "SCENARIO_LEDGER §1：7kW 与 main22 运行实际用了 0.1/4/0.5（覆盖契约 20%/bays/bays×kW）",
+   "verdict": "FAIL",
+   "evidence_command": "phase3_checks.py（runner.site_capability 能力探针 + E2/E3 输出侧证据 + experiments_declared22/hardware_audit.json）",
+   "evidence_path": "acceptance/evidence/phase3_results.json → checks.F_scenario_ledger; engine/runner.py:115-158; engine/run_declared22.py:338-360; experiments_declared22/hardware_audit.json; experiments/E3/classes.json; experiments_main22/E2/curve_E2.csv",
+   "observed": "run_meta 的 parameters 确实写 0.1/4/0.5（7kW、main22），但未被应用：契约 10 站 charging_bays/connectors/connector_kw/feeder_kw 齐全 → site_capability derived_fields=[]、charging_bays=16、connectors=16、feeder=112（7kW）；显式 set_scenario(0.1,4,0.5) 仍 16/16/112；仅删除字段才得 8/4/14。输出侧：E3 physical_bound=契约充电位数（Queensberry 16、Southbank 14、University 8；0.1 份额应为 8/7/4）；E2 University k=8 仍有结果（0.1 下仅 4 位不可能）。engine 自写审计结论原文“7 kW 与 main22 运行并未应用…main22 只强制了 connector_kw=22 与 feeder=connectors*22”。故该声明被反驳；run_meta 参数块不代表实际生效硬件",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "B2",
+   "area": "scenario_ledger",
+   "check": "main22 强制 22kW / feeder=connectors×22 是否真实生效",
+   "verdict": "PASS",
+   "evidence_command": "读取 experiments_main22/E6/energy_E6.csv 与 run_meta.scenario_layer",
+   "evidence_path": "experiments_main22/E6/energy_E6.csv; experiments_main22/run_meta.json; experiments_main22/E2/curve_E2.csv",
+   "observed": "main22 E6 现为 6 行、connector_kw=22.0、feeder_kw=22.0、e6_mode=regime_forced_power（7kW 版本为 24 行 7/11 kW × feeder 1.0/0.5）；forced_overrides={connector_kw:22, feeder_kw_per_connector:22}；E2/E4 scenario_label=scenario_charging_layer_main22_22kW_not_observed；M2 幅度与 7kW 不同",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "B3",
+   "area": "paper",
+   "check": "content_rev5.py / rev5 docx 是否出现 20%",
+   "verdict": "PASS",
+   "evidence_command": "正则扫描 content_rev5.py 与 rev5 docx 正文（phase3_checks.py）",
+   "evidence_path": "paper/content_rev5.py; paper/Electrification_tipping_point_v2_draft_rev5.docx; phase3_results.json → checks.F_scenario_ledger",
+   "observed": "content_rev5.py 8 处出现 20%（行 24/147/201/268/275/339/449/555）；rev5 docx 正文 7 处“20%”；契约 charging_bays=round(0.20·n_spaces) 与声明一致",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "B4",
+   "area": "paper",
+   "check": "论文对实际使用硬件（50% 馈线、至多 4 枪）的描述与运行一致",
+   "verdict": "FAIL",
+   "evidence_command": "内容对比：rev5 py 行 270–272 + docx 同句 vs 实际运行能力（runner.site_capability / E3 / E2 / declared22 audit）",
+   "evidence_path": "paper/content_rev5.py:270-272; paper/Electrification_tipping_point_v2_draft_rev5.docx; phase3_results.json → checks.F_scenario_ledger",
+   "observed": "rev5 正文称“two declared layers used in this paper are 7 kW and 22 kW per connector at 50% feeder share and at most four connectors per site”，实际运行无 4 枪封顶、无 50% 馈线（feeder=connectors×7 或 ×22，connectors=charging_bays 最大 16）→ 该句错误；行 448–450 又称“0.1 字符串与 20% 冲突、评价网格按契约计数”，后半句与实际一致，但“0.1 份额”只是未采用的默认字符串，非实际硬件。与 SCENARIO_LEDGER §1 同源",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "C1",
+   "area": "statistics",
+   "check": "M2 流 bootstrap seed=20261031 / 1000 次复现存储 CI",
+   "verdict": "PASS",
+   "evidence_command": "phase3_checks.py（E4 文件顺序构造 baseline−A 配对差；random.Random(20261031)；1000 次；线性分位）",
+   "evidence_path": "phase3_results.json → checks.G_statistics['7kW'|'main22']; experiments/M/m_summaries.json; experiments_main22/M/m_summaries.json",
+   "observed": "6/6 逐位一致（abs diff <1e-12）：7kW B0−A −0.1338580006 [−0.1929512134,−0.0774694734]，B1/B2 0.0030313722 [−0.0002565338,0.0094741668]；main22 B0−A −0.2276386265 [−0.3217065148,−0.1421155447]，B1/B2 0.0076656118 [0.0,0.0223707707]",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "C2",
+   "area": "statistics",
+   "check": "站点簇 bootstrap（9 簇）对 B0_FCFS−A 仍排除 0",
+   "verdict": "PASS",
+   "evidence_command": "phase3_checks.py（20 流按 site 分 9 簇；有放回抽簇、池化簇内流差、1000 次、线性分位）",
+   "evidence_path": "phase3_results.json → checks.G_statistics.cluster; experiments/E4/test_E4.csv; experiments_main22/E4/test_E4.csv",
+   "observed": "7kW point −0.133858 CI [−0.176477,−0.071889]；main22 point −0.227639 CI [−0.297179,−0.133224]；9 簇 ×20 观测，均不含 0（负值=A 更好）",
+   "checked_at": "2026-10-31T19:58+08:00"
+  },
+  {
+   "id": "C3",
+   "area": "statistics",
+   "check": "B1 与 B2 在 20/20 流上能量与容量指标完全相同",
+   "verdict": "PASS",
+   "evidence_command": "phase3_checks.py（逐流 74 列比较；能量 7 指标、容量 6 指标）",
+   "evidence_path": "phase3_results.json → checks.G_statistics.b1b2; experiments/E4/test_E4.csv; experiments_main22/E4/test_E4.csv",
+   "observed": "两个 regime 均：能量指标 20/20 相同、容量指标 20/20 相同；但 M2 note 称“ICE 停车失败均 0/4643”不实：B2 在 2 条流有 8 次 ICE 停车失败（B1 0，分母均 4,643），admitted/rejected/energy_cat_rejected/parking_service_rate 亦在这 2 条流不同；能量/容量指标不受影响",
+   "checked_at": "2026-10-31T19:58+08:00"
+  }
+ ],
+ "summary": {
+  "total": 14,
+  "pass": 11,
+  "fail": 3,
+  "unverified": 0
+ },
+ "issues": [
+  {
+   "id": "P3-1",
+   "title": "A3 site_audit.csv 并发列自相矛盾且 FIT_FOR_MODEL §2 归因错误",
+   "evidence_paths": [
+    "research/round8_20261031/analysis/site_audit.csv",
+    "research/round8_20261031/analysis/FIT_FOR_MODEL.md",
+    "research/round8_20261031/acceptance/evidence/phase3_results.json"
+   ],
+   "observed": "5 站 max_concurrency>n_spaces 却 minutes_above_capacity=0.0；VM 40>35 的瞬时法虚高并非缺离场记录所致（剔除后仍 40），正确区间扫描 VM=35、0 超容量分钟；site_audit.events 多计 2 条已剔坏行",
+   "action": "把 max_concurrency 改为按时间戳成组的净占用（或标注瞬时上界）；修正 §2 举例与因果解释；events 用契约计数"
+  },
+  {
+   "id": "P3-2",
+   "title": "B1/B4 SCENARIO_LEDGER §1 与论文硬件描述同源错误",
+   "evidence_paths": [
+    "research/round8_20261031/analysis/SCENARIO_LEDGER.md",
+    "research/round8_20261031/engine/runner.py",
+    "research/round8_20261031/paper/content_rev5.py",
+    "research/round8_20261031/experiments_declared22/hardware_audit.json"
+   ],
+   "observed": "run_meta 参数写 0.1/4/0.5 但未被应用；实际 charging_bays=契约 20%、connectors=charging_bays（最大 16）、feeder=connectors×kW；engine 自带审计结论同此；论文行 270–272 的 50% feeder/4 connectors 描述与实际不符",
+   "action": "删除/改写 SCENARIO_LEDGER §1 与论文 270–272；run_meta 增加 effective_hardware 与 applied_overrides；以 experiments_declared22 为声明硬件口径"
+  },
+  {
+   "id": "P3-3",
+   "title": "C3 B1/B2 恒等解释注错误（能量/容量恒等本身成立）",
+   "evidence_paths": [
+    "research/round8_20261031/experiments_main22/M/m_summaries.json",
+    "research/round8_20261031/acceptance/evidence/phase3_results.json"
+   ],
+   "observed": "M2 note 称 B1/B2 的 ICE 停车失败均 0/4643，实际 B2 在 2 条流有 8 次 ICE 停车失败（B1 0，分母 4,643）；能量与容量指标仍 20/20 相同",
+   "action": "修正 note：B2 的 ICE 门在 20 条流中的 2 条触发 8 次拒绝，但被拒 ICE 无充电需求，故能量/容量指标不变"
+  }
+ ],
+ "limitations": [
+  "analysis 脚本未实际执行（避免覆盖非验收文件），输出数字全部由独立重算得到；脚本本身仅静态编译检查",
+  "A2 的占用以窗口行事件为占用单元；site_audit.csv 的 max_concurrency 列是事件级瞬时峰值而非区间占用，两者差异已在 A3 说明",
+  "B1 结论基于当前 runner 代码路径 + 输出侧证据；未重跑 experiments/ 以复现其生成过程",
+  "rev6 未构建，不验；experiments_declared22 仅引用其 hardware_audit.json 结论与 resolved_hardware，未独立验收其全部数字"
+ ],
+ "evidence_files": [
+  "research/round8_20261031/acceptance/evidence/phase3_checks.py",
+  "research/round8_20261031/acceptance/evidence/phase3_checks.out",
+  "research/round8_20261031/acceptance/evidence/phase3_results.json"
+ ]
+}

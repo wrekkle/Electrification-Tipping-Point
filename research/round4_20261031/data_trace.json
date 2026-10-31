@@ -1,0 +1,984 @@
+{
+  "schema": "data_trace/v1",
+  "generated_utc": "2026-10-31T06:43:57Z",
+  "command": "python research/round4_20261031/data_trace.py",
+  "repo_root": "C:\\Projects\\停车场充电桩优化方案",
+  "scope": "T36 数据接线审计：原始来源→派生量→参数文件→运行入口→结果字段",
+  "read_only": true,
+  "catalog": {
+    "path": "research/round4_20261031/charge_probability_sources.json",
+    "sha256": "331caf842ebfe60a27df4b9d3c32823190ae0770dc86c08d9646d0e57b477f1c",
+    "scenario_ids": [
+      "REF",
+      "M08-NEAR-BEV",
+      "M08-NEAR-PHEV",
+      "M08-NEAR-COMBINED",
+      "M10-OUT-OF-HOME",
+      "M08-ALL-AWAY-REF"
+    ]
+  },
+  "evidence_files": {
+    "parking_raw": {
+      "path": "research/collection/taipei_372_polling_20261030/data/2026-10-30/parking_slots.jsonl",
+      "exists": true,
+      "bytes": 58472407,
+      "sha256": "b5a777b35d9cdee70c7f3a4df2dcc30f5411acdd8d11ce0cd8c5ca3ae5f4b1ff",
+      "sha256_16": "b5a777b35d9cdee7"
+    },
+    "connector_raw": {
+      "path": "research/collection/taipei_372_polling_20261030/data/2026-10-30/connector_status_long.jsonl",
+      "exists": true,
+      "bytes": 226387966,
+      "sha256": "c9c022673ef9962adb85dca151e68c922a2d6401d673626aa524daa19fc2e803",
+      "sha256_16": "c9c022673ef9962a"
+    },
+    "fitted_parameters": {
+      "path": "research/traffic_generation_20261031/fitted_parameters.json",
+      "exists": true,
+      "bytes": 187613,
+      "sha256": "1dfc14a2a29e204d81db0cecd38b8d4f94ecb6e700280f1e70d1ab66275f6229",
+      "sha256_16": "1dfc14a2a29e204d"
+    },
+    "calibration_report": {
+      "path": "research/traffic_generation_20261031/calibration_report.md",
+      "exists": true,
+      "bytes": 15291,
+      "sha256": "a22e1fa56ce45b7690571acb280d56c3c32abf2391f557d719786071bf8274f6",
+      "sha256_16": "a22e1fa56ce45b76"
+    },
+    "rates": {
+      "path": "research/calibration/charging_probability_20261030/rates.json",
+      "exists": true,
+      "bytes": 3975,
+      "sha256": "097146c9e9bb20b98fe0e95545aa3ce9198340ca493bdbeb5ac9cd22fd5a24f1",
+      "sha256_16": "097146c9e9bb20b9"
+    },
+    "evidence": {
+      "path": "research/calibration/charging_probability_20261030/evidence.json",
+      "exists": true,
+      "bytes": 5124,
+      "sha256": "4da1a545033304c805d213e986bed234899120f180c424076f01a0afb99ca211",
+      "sha256_16": "4da1a545033304c8"
+    },
+    "model_v1": {
+      "path": "research/calibration/charging_probability_20261030/model_20261031.json",
+      "exists": true,
+      "bytes": 36102,
+      "sha256": "75c4f03498398cde561c353fb544a0396e4f8b905550bf933fd0d9c86955017f",
+      "sha256_16": "75c4f03498398cde"
+    },
+    "model_v2": {
+      "path": "research/calibration/charging_probability_20261030/model_20261031_v2.json",
+      "exists": true,
+      "bytes": 9238,
+      "sha256": "628be14cee01e524b001f590f103c126bb6b8b7a7d87a1fec4b6646c1e92d087",
+      "sha256_16": "628be14cee01e524"
+    },
+    "prereg": {
+      "path": "research/round3_20261031/PREREGISTRATION.json",
+      "exists": true,
+      "bytes": 5330,
+      "sha256": "621706667564e73f9c68c840409d40711fb4c8494d26652f8567f45086589665",
+      "sha256_16": "621706667564e73f"
+    },
+    "cost_scenario": {
+      "path": "research/integer_allocation_20261031/cost_scenario.json",
+      "exists": true,
+      "bytes": 2993,
+      "sha256": "6ac1e3dbf0a0658c11a2c863d774a13708cafb2458cce12a11cdb3099b7fc7fe",
+      "sha256_16": "6ac1e3dbf0a0658c"
+    },
+    "parameter_candidates": {
+      "path": "research/cost_model_20261030/parameter_candidates_20261031.json",
+      "exists": true,
+      "bytes": 73891,
+      "sha256": "5076501832ed3528b73a38597dfe75b12df684460e62da44ef4d1bfd799c739a",
+      "sha256_16": "5076501832ed3528"
+    },
+    "main_result": {
+      "path": "research/round3_20261031/results/main_A_pi0_ref_s10.json",
+      "exists": true,
+      "bytes": 17810155,
+      "sha256": "6e95ba243fb379ce947065ad8cdc293ef4f7f0c69b48cef7d4ec280e57cbeb4e",
+      "sha256_16": "6e95ba243fb379ce"
+    },
+    "run_manifest": {
+      "path": "research/round3_20261031/results/run_manifest.json",
+      "exists": true,
+      "bytes": 85481,
+      "sha256": "e10bbbb544aad95fef14bf226aa689cf6e2a00734db023e4060fa4c6521113d4",
+      "sha256_16": "e10bbbb544aad95f"
+    },
+    "m08_pdf": {
+      "path": "papers/electrification-math/M08_INL-parking-event-charging-rate_2015.pdf",
+      "exists": true,
+      "bytes": 355206,
+      "sha256": "afaf43d93c73008bce329d2b76ab12a5e41060be7337d172b1b1f785a509d866",
+      "sha256_16": "afaf43d93c73008b"
+    },
+    "m10_pdf": {
+      "path": "research/official_data_20261031/ev_behavior/raw/M10_TUE_fulltext.pdf",
+      "exists": true,
+      "bytes": 4655408,
+      "sha256": "dd1312a74ac08f4af3936c2f9acbba3813631255eccd38fffc2cff81464865b6",
+      "sha256_16": "dd1312a74ac08f4a"
+    },
+    "m14_pdf": {
+      "path": "research/official_data_20261031/ev_behavior/raw/IOT_public_charging_demand_table.pdf",
+      "exists": true,
+      "bytes": 54335400,
+      "sha256": "6c6a0883fdcfaee26f30e5541bbfc5f204d4609ab259f8be244db3e92e57d945",
+      "sha256_16": "6c6a0883fdcfaee2"
+    },
+    "m15_html": {
+      "path": "research/official_data_20261031/ev_behavior/raw/ACN_research.html",
+      "exists": true,
+      "bytes": 25335,
+      "sha256": "a19f225b2d683f56f2d849bfd9512199256717c8dc64b3e7e0c924af4c18f8fa",
+      "sha256_16": "a19f225b2d683f56"
+    },
+    "m16_csv": {
+      "path": "research/official_data_20261031/ev_behavior/raw/barnet_cityev_2021Q2.csv",
+      "exists": true,
+      "bytes": 601635,
+      "sha256": "ffe8f53f6045929896802e980e4ef296f882fedd52ae45089db360affb1608e4",
+      "sha256_16": "ffe8f53f60459298"
+    },
+    "m14_note": {
+      "path": "literature/notes/M14-台灣運研所公共充電樁調查.md",
+      "exists": true,
+      "bytes": 4266,
+      "sha256": "fc1091457b4d5da16bfdd6e1a754f05805303c68acf2564f86b04dd2b3e24bc1",
+      "sha256_16": "fc1091457b4d5da1"
+    },
+    "m15_note": {
+      "path": "literature/notes/M15-ACN-Data充電會話數據集.md",
+      "exists": true,
+      "bytes": 2037,
+      "sha256": "3f0f937175bacaad791466cd6c4535fbe3670ad0e72803613ec66205e6405c76",
+      "sha256_16": "3f0f937175bacaad"
+    },
+    "m16_note": {
+      "path": "literature/notes/M16-英國市鎮充電交易開放資料.md",
+      "exists": true,
+      "bytes": 2210,
+      "sha256": "4923f3a6e4c859010b3f306b57d1ace187873e065081ef8ad5dcbb30a0a1ea7c",
+      "sha256_16": "4923f3a6e4c85901"
+    },
+    "m10_note": {
+      "path": "literature/notes/M10-荷兰离家停车充电调查.md",
+      "exists": true,
+      "bytes": 2585,
+      "sha256": "5f97d8b82e27dfd2aaa62915ae4f4e5d6ce50ee2f06faea9f84f4359a165db62",
+      "sha256_16": "5f97d8b82e27dfd2"
+    },
+    "progress": {
+      "path": "docs/PROGRESS.md",
+      "exists": true,
+      "bytes": 5047,
+      "sha256": "6eac13b4a5ffcd1bfa257ca3391ff3846f6d8a05b43edec753158715e0eba75c",
+      "sha256_16": "6eac13b4a5ffcd1b"
+    },
+    "todo": {
+      "path": "docs/TODO.md",
+      "exists": true,
+      "bytes": 13625,
+      "sha256": "0a93a16113c3d5877a237e59579e276bcad6740ea9ad62fe894eb24ac35e043d",
+      "sha256_16": "0a93a16113c3d587"
+    }
+  },
+  "checks": [
+    {
+      "id": "C01",
+      "title": "charge_probability_sources.json 通过 load_catalog/resolve",
+      "status": "pass",
+      "detail": "schema=charge_probability_sources/v1；场景数=6；必需 id 缺失=无；catalog sha256=331caf842ebfe60a27df4b9d3c32823190ae0770dc86c08d9646d0e57b477f1c",
+      "evidence": [
+        {
+          "path": "research/round4_20261031/charge_probability_sources.json",
+          "line": 1,
+          "text": "{\"schema_version\": \"charge_probability_sources/v1\""
+        },
+        {
+          "path": "apps/parking_lab/workbench/charge_sources.py",
+          "line": 111,
+          "text": "def load_catalog(path):"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "6 个情景 q_need 与 rates.json 一致、p_EV 全部=0.10",
+      "status": "pass",
+      "detail": "M08-NEAR-BEV: rates 1421/4974=0.285685564938；catalog q_need=0.285685564938；source=M08；M08-NEAR-PHEV: rates 705/3095=0.227786752827；catalog q_need=0.227786752827；source=M08；M08-NEAR-COMBINED: rates 2126/8069=0.263477506506；catalog q_need=0.263477506506；source=M08；M08-ALL-AWAY-REF: rates 16557/232083=0.071340856504；catalog q_need=0.071340856504；source=M08；M10-OUT-OF-HOME: rates 1955/8249=0.236998424051；catalog q_need=0.236998424051；source=M10；p_EV 全部 0.10=True；model v1 q_use_records 数值集合与 rates 一致=True",
+      "evidence": [
+        {
+          "path": "research/calibration/charging_probability_20261030/rates.json",
+          "line": 1,
+          "text": "{\"rows\": [... 7 条 q_use 记录 ...]"
+        },
+        {
+          "path": "research/calibration/charging_probability_20261030/model_20261031.json",
+          "line": 1,
+          "text": "q_use_records（7 条）"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "title": "q_use→q_need 全部显式假设性迁移、REF 标历史参考未识别",
+      "status": "pass",
+      "detail": "异常=无；识别标签集合=['historical_reference_not_identified', 'hypothetical_scenario_transfer_not_target_identified']",
+      "evidence": [
+        {
+          "path": "research/round4_20261031/charge_probability_sources.json",
+          "line": 1,
+          "text": "REF / M08-* / M10-OUT-OF-HOME 的 transfer 段"
+        },
+        {
+          "path": "apps/parking_lab/workbench/charge_sources.py",
+          "line": 95,
+          "text": "if probability_object == \"q_use\":"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "每个情景的分子/分母/事件定义/地区/时期/车型/地点/限制/来源 id 非空",
+      "status": "pass",
+      "detail": "缺失字段=无（6 情景 x 8 必填项）",
+      "evidence": [
+        {
+          "path": "research/round4_20261031/charge_probability_sources.json",
+          "line": 1,
+          "text": "source_id/numerator/denominator/… 每条记录"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "title": "rates.json 7 条记录的转录状态与 v2 识别边界（0.0364 仅为 usage proxy）",
+      "status": "pass",
+      "detail": "记录数=7；转录状态分布={'local PDF table visually checked; origin': 4, 'publisher/institutional fulltext search-': 3}；v2 value=0.036365830891079 status=usage_proxy；分子 reported=2800 / recount=2198；分母=84622 / ratio=0.025974",
+      "evidence": [
+        {
+          "path": "research/calibration/charging_probability_20261030/rates.json",
+          "line": 1,
+          "text": "selected_default"
+        },
+        {
+          "path": "research/calibration/charging_probability_20261030/model_20261031_v2.json",
+          "line": 1,
+          "text": "renamed_identified_quantity"
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "title": "evidence.json 文件 sha256 与 model v1 evidence_file_sha256 是否闭合",
+      "status": "pass",
+      "detail": "model v1 evidence_file_sha256=4da1a545033304c805d213e986bed234899120f180c424076f01a0afb99ca211；evidence.json 文件 sha256=4da1a545033304c805d213e986bed234899120f180c424076f01a0afb99ca211；rates 自身无 evidence_sha256='4da1a545033304c805d213e986bed234899120f180c424076f01a0afb99ca211'；引用对象是 evidence.json，不是 rates.json。",
+      "evidence": [
+        {
+          "path": "research/calibration/charging_probability_20261030/evidence.json",
+          "line": 1,
+          "text": "\"charging_probability_evidence/v1\""
+        },
+        {
+          "path": "research/calibration/charging_probability_20261030/model_20261031.json",
+          "line": 1,
+          "text": "\"evidence_file_sha256\": \"4da1a545033304c805d213e986bed234899120f180c424076f01a0afb99ca211\""
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "title": "台北 parking/connector 原始面板 → fitted_parameters（279 槽/372 场/18 场参数）",
+      "status": "pass",
+      "detail": "原始文件存在：parking=True connector=True；fitted.source: slots_used=279, slot_minutes=5, observed_sites=372, window_utc=['2026-10-30T03:30:00+00:00', '2026-10-31T03:25:00+00:00'], occupancy_definition=O = baseline_totalcar - availablecar (net occupancy, not arr, arrival_method=net-increase counting: sum of max(0, delta O) per 5-min slot；per_lot=18 场，usable=9 场，usable_train=5",
+      "evidence": [
+        {
+          "path": "research/traffic_generation_20261031/fitted_parameters.json",
+          "line": 1,
+          "text": "\"source\": {...parking_panel/connector_panel...}"
+        },
+        {
+          "path": "research/traffic_generation_20261031/calibration_report.md",
+          "line": 1,
+          "text": "（校准报告）"
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "title": "per_lot 派生量可复算：λ×停留=占用、观测乘积、充电会话率、期初占用、分布参数",
+      "status": "pass",
+      "detail": "usable=9 场；max|lambda*dwell/60-occupancy|=1.137e-13；max|rate/lambda-product|=0.000e+00；异常=无；TPE0610: n_spaces=43.0 n_connectors=2 mean_occupancy=9.038 lambda=3.429 dwell_mean=158.159 rate=0.0663 product=0.019332",
+      "evidence": [
+        {
+          "path": "research/traffic_generation_20261031/fitted_parameters.json",
+          "line": 1,
+          "text": "per_lot[]（派生量）"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "title": "真实调用 traffic_gen.generate_for_lot（TPE0610, seed=1, independent, strict）",
+      "status": "pass",
+      "detail": "arrivals=89；initial_occupancy_n=9（round(mean_occupancy)=9，t=0 期初=9）；p_ev=0.1 q_need=0.36 product=0.036；p_ev_source=argument q_need_source=argument；product_coupled=False；demand_calibration_status=scenario_not_identified；warm_start_method=length_biased_stationary；stream_hash=d6daf3849fa3ab97",
+      "evidence": [
+        {
+          "path": "apps/parking_lab/workbench/traffic_gen.py",
+          "line": 584,
+          "text": "def generate_for_lot(...)"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "title": "cost_scenario → costs.facility_cost → 结果行 facility_cost 数值闭合",
+      "status": "pass",
+      "detail": "costs.facility_cost(k=1,days=1)=75.297676712329；结果行 TPE0008/seed1/k1 facility_cost=75.297676712329；cost_scenario 文档 per_connector_day=75.299726027397（文档值与本公式差 0.002049315068，另见 C20）；items={'device_capital': 31.99797808219178, 'device_maintenance': 43.29969863013699, 'facility_fixed': 0.0}；missing=None；row scenario_model=independent p_ev_used=0.1 q_need_used=0.36",
+      "evidence": [
+        {
+          "path": "research/integer_allocation_20261031/cost_scenario.json",
+          "line": 1,
+          "text": "\"cost\" / \"facility_cost\" 块"
+        },
+        {
+          "path": "research/integer_allocation_20261031/run_cost_curve.py",
+          "line": 229,
+          "text": "facility = facility_cost_per_period(...)"
+        }
+      ]
+    },
+    {
+      "id": "C20",
+      "title": "cost_scenario 文档 per_connector_day 与其自身公式复算的差异",
+      "status": "unverified",
+      "detail": "文档=75.299726027397；按 cost 字段复算=75.297676712329；差=0.002049315068 TWD/枪·日（相对 2.72e-05，占比 0.0027%）。可能源于 annual maintenance 基数或舍入不同；结果行使用运行公式值，需成本任务确认文档值口径。",
+      "evidence": [
+        {
+          "path": "research/integer_allocation_20261031/cost_scenario.json",
+          "line": 1,
+          "text": "\"facility_cost\": {\"formula\": ..., \"per_connector_day_TWD\": 75.29972602739726}"
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "title": "运行入口 run_experiments.py → run_cost_curve.py；manifest 正式跑用独立 p_ev/q_need 未用 catalog",
+      "status": "pass",
+      "detail": "manifest 记录=64（phase={'pilot': 2, 'tune': 34, 'main': 4, 'pq': 6, 'power': 4, 'legacy': 1, 'validation': 4, 'expand': 1, 'rules_pq': 8}）；main 记录=4，全部含 independent/p_ev 0.1/q_need 0.36/fitted/cost=True；main 命令含 --charge-catalog/--charge-scenario 数=0；非零退出=无；结果 meta 含 charge_catalog/charge_scenario=False；结果行含 charge_scenario_id 的行数=0（历史结果早于接线）",
+      "evidence": [
+        {
+          "path": "research/round3_20261031/results/run_manifest.json",
+          "line": 1,
+          "text": "64 条 run 记录（phase/name/command/exit_code/out）"
+        },
+        {
+          "path": "research/round3_20261031/results/main_A_pi0_ref_s10.json",
+          "line": 1,
+          "text": "\"meta\": {... p_ev_override, q_need_override, scenario_model ...}"
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "title": "结果字段含成本/服务/识别口径；期初占用与参数一致",
+      "status": "pass",
+      "detail": "缺失字段=无；initial_occupancy_n=29（k=1 行）；service_metrics keys=['denominators', 'levels', 'missing', 'numerators', 'policy', 'rates', 'visit_count', 'window']；observed_ratio_z=0.022779；identification_conflict=False；product_coupled=False；p_ev_source=argument；q_need_source=argument",
+      "evidence": [
+        {
+          "path": "research/round3_20261031/results/main_A_pi0_ref_s10.json",
+          "line": 1,
+          "text": "rows[]（facility_cost/service_metrics/…）"
+        },
+        {
+          "path": "apps/parking_lab/workbench/traffic_gen.py",
+          "line": 584,
+          "text": "generate_for_lot(...)"
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "title": "M08/M10 观测率未被正式运行入口读取（已转录未接线）",
+      "status": "pass",
+      "detail": "运行时 .py（排除 tests）grep 命中数={'rates.json': 0, 'model_20261031': 3, 'M08': 0, 'M10': 0}；rates.json/M08/M10 命中=0；命中文件={'rates.json': [], 'model_20261031': ['research/integer_allocation_20261031/_inspect_model.py', 'research/round3_20261031/audit_round2.py', 'research/round3_20261031/verify_round3.py'], 'M08': [], 'M10': []}；manifest 正式跑 catalog 使用=0；model_20261031 命中仅审计/校验脚本引用",
+      "evidence": [
+        {
+          "path": "research/calibration/charging_probability_20261030/rates.json",
+          "line": 1,
+          "text": "\"source_id\": \"M08\" / \"M10\""
+        },
+        {
+          "path": "research/integer_allocation_20261031/run_cost_curve.py",
+          "line": 358,
+          "text": "charge_payload = None"
+        }
+      ]
+    },
+    {
+      "id": "C14",
+      "title": "M14 仅背景参考：地点份额 0.4 不是 q_use，且运行时未读取",
+      "status": "pass",
+      "detail": "M14 PDF 存在=True bytes=54335400；运行时 q_location_share 命中=3 文件=['apps/parking_lab/workbench/charge_sources.py', 'apps/parking_lab/workbench/parameter_registry.py']（仅 validator/参数注册的拒绝名单，不读 M14 数据）；10 次中 4 次充電为地点份额（q_location_share），不能当 q_use；家充比例等 UNVERIFIED",
+      "evidence": [
+        {
+          "path": "literature/notes/M14-台灣運研所公共充電樁調查.md",
+          "line": 27,
+          "text": "- 充電頻率：多為「每週 1–2 次」（家用/公司/車商樁型態無明顯差異）。"
+        },
+        {
+          "path": "literature/notes/M14-台灣運研所公共充電樁調查.md",
+          "line": 28,
+          "text": "- 公共充電樁使用頻率：設有家充者多為「每月 1–3 次」，無家充者多為「每週 1–2 次」。"
+        },
+        {
+          "path": "literature/notes/M14-台灣運研所公共充電樁調查.md",
+          "line": 29,
+          "text": "- 10 次充電中使用公共樁次數：平均 4 次（0.4）；有家充者 1.6 次、無家充者 6.6 次；無家充者 41.4% 完全倚賴公共樁，有家充者 39.8% 完全不用公共樁。"
+        },
+        {
+          "path": "literature/notes/M14-台灣運研所公共充電樁調查.md",
+          "line": 35,
+          "text": "- 以上「4 次/10 次」「每週 1–2 次」「72 分鐘」都是受訪者自報的充電事件或頻率，沒有「全部 EV 停車事件」分母，因此不能給 q_use，也不能給 q_need。"
+        },
+        {
+          "path": "literature/notes/M14-台灣運研所公共充電樁調查.md",
+          "line": 36,
+          "text": "- 0.4 是「公共充電事件 / 全部充電事件」的地點份額（q_location_share），不能當「每次停車充電概率」，也不能乘停車次數當公共充電需求。"
+        },
+        {
+          "path": "literature/notes/M14-台灣運研所公共充電樁調查.md",
+          "line": 41,
+          "text": "- 可作 q_need 情景的協變量與一致性檢查：家充可得性（有/無）、充電前 SOC≈29%、公共充電時長 72 分鐘、排隊容忍 ≤10 分鐘、公共份額 0.4。"
+        },
+        {
+          "path": "research/round4_20261031/charge_probability_sources.json",
+          "line": 1,
+          "text": "（未把 M14 写入任何情景）"
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "title": "M15 仅下载研究页、未取得数据集 → 未接线",
+      "status": "pass",
+      "detail": "ACN_research.html 存在=True bytes=25335；raw 目录 ACN 数据集文件=无；未下载、未解析、未接线",
+      "evidence": [
+        {
+          "path": "literature/notes/M15-ACN-Data充電會話數據集.md",
+          "line": 1,
+          "text": "读的范围: 只核到研究頁…未下載數據、未讀論文全文"
+        }
+      ]
+    },
+    {
+      "id": "C16",
+      "title": "M16 已下载交易 CSV，字段质量可用于会话级派生，但无停车事件分母 → 未接线",
+      "status": "pass",
+      "detail": "数据行=44225；Operator 非空=860；四个时间戳均非空=856；Total kWh 数值=860；只有充电会话（无 parking event 分母），不可直接算 q_use",
+      "evidence": [
+        {
+          "path": "literature/notes/M16-英國市鎮充電交易開放資料.md",
+          "line": 1,
+          "text": "版本: Barnet Council…CityEV 2021 Q2 CSV"
+        },
+        {
+          "path": "research/official_data_20261031/ev_behavior/raw/barnet_cityev_2021Q2.csv",
+          "line": 1,
+          "text": "Charging event,Chargepoint ID,Borough,Operator,..."
+        }
+      ]
+    },
+    {
+      "id": "C17",
+      "title": "成本参数按官方/可迁移/情景/不可识别分层；设施成本未混入社会损失参数",
+      "status": "pass",
+      "detail": "VOT 官方 CPI 链=6.7771；capex 官方值=None（不可识别），迁移值=116792.62；maintenance 迁移值=15804.14；寿命=情景 10 年；缺失损失参数=['activity_loss_per_failure', 'residual_trip_loss_per_kWh']；cost_scenario sources 含 FX 30.9 UNVERIFIED=True；结果 cost_complete=False cost_missing_parameters=['alternative_charging_delta_per_kwh', 'detour_km_per_failure', 'detour_min', 'emission_cost_per_km', 'ev_energy_price_per_kwh', 'ev_kwh_per_km', 'maintenance_per_kwh', 'residual_trip_loss_per_kwh', 'search_min', 'walking_min']",
+      "evidence": [
+        {
+          "path": "research/integer_allocation_20261031/cost_scenario.json",
+          "line": 1,
+          "text": "\"sources\": {... FX 30.9 UNVERIFIED ...}"
+        },
+        {
+          "path": "research/cost_model_20261030/parameter_candidates_20261031.json",
+          "line": 1,
+          "text": "evse_capex_* / evse_lifetime_years_scenario / vot_*"
+        }
+      ]
+    },
+    {
+      "id": "C18",
+      "title": "CPI 链与 FX 限制已标注（VOT 保守下界、FX 30.9 UNVERIFIED）",
+      "status": "pass",
+      "detail": "VOT limitations=[\"手冊明示未來值應以工資上漲率調整；CPI 僅為保守下限（2009→2018 手冊自身由 3.61 修訂至 5.93，+64%，同期 CPI 僅 +9.8%）\", \"若改用薪資成長率，結果會高於本值；本值為可辯護的下界，不宜宣稱唯一真值\", \"2026 價格水準為 1-9 月平均代理\"]；capex/maintenance FX limitations=[\"FX 30.9 為 UNVERIFIED（央行年報章節未印平均匯率），須以官方年平均替換\", \"2 槍 pedestal 攤提假設；1 槍配置會較高\", \"未含配電擴容、土木與審查費\", \"與交通部慢充補助額度 8 萬元/槍相比偏高，兩者不宜直接互換（見 evse_subsidy_cap）\"][\"FX 30.9 為 UNVERIFIED；且『每 pede；VOT 换算式：6.7771x60=406.626 TWD/veh·h，CPI 链非工資上漲率",
+      "evidence": [
+        {
+          "path": "research/cost_model_20261030/parameter_candidates_20261031.json",
+          "line": 1,
+          "text": "vot_passenger_car_city_2026_TWD_per_vehicle_minute.limitations"
+        }
+      ]
+    },
+    {
+      "id": "C19",
+      "title": "缺失不可识别：官方销售份额/公共使用份额/到达份额、p_EV 与 q_need 均无识别证据",
+      "status": "pass",
+      "detail": "TODO 登记=- U19 外部参数缺口（2026-10-31）：实际市售比/- U20 文献全文缺口（2026-10-31，第四轮更新）/- U21 功率敏感性只有 4 个配置×3 seed，能量约；数据窗口只有两天面板（307 槽/25.75h）无完整日；p_EV/q_need 不可识别，0.0364 仅为 usage proxy；这些缺口未因本目录或接线而消除",
+      "evidence": [
+        {
+          "path": "docs/TODO.md",
+          "line": 37,
+          "text": "- U19 外部参数缺口（2026-10-31）：实际市售比、公共充电使用率、场站 EV 到访份额仍 UNVERIFIED；保有量/市售比/法定比例不能代替到访份额。"
+        },
+        {
+          "path": "docs/TODO.md",
+          "line": 38,
+          "text": "- U20 文献全文缺口（2026-10-31，第四轮更新）：N2=M07（同文，已有全文）；N1=M18 同一篇，付费墙、无合法 OA 全文，只能摘要级；N3 仍 403、N4 元数据未核。"
+        },
+        {
+          "path": "docs/TODO.md",
+          "line": 39,
+          "text": "- U21 功率敏感性只有 4 个配置×3 seed，能量约束下的“功率替代枪数”曲线不足。"
+        },
+        {
+          "path": "docs/PROGRESS.md",
+          "line": 17,
+          "text": "- 仍缺：p_EV 与 q_need 各自不可识别（0.0364 只是 usage proxy）；只有 2026-10-30/31 两日（307 槽/25.75h，无完整 24h 日，整日留出不可做）；未服务损失缺参→无社会最优；实际市售比/公共使用率/场站到访份额 UNVERIFIED；N1(TR-D 2025) 已覆盖联合运营，不能称空白。"
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "taipei_parking_raw",
+      "label": "台北 372 场停车位面板",
+      "kind": "raw_source",
+      "path": "research/collection/taipei_372_polling_20261030/data/2026-10-30/parking_slots.jsonl",
+      "status": "正式读取",
+      "evidence": "fitted_parameters.source.parking_panel；两日 5 分钟槽"
+    },
+    {
+      "id": "taipei_connector_raw",
+      "label": "台北充电桩状态长表",
+      "kind": "raw_source",
+      "path": "research/collection/taipei_372_polling_20261030/data/2026-10-30/connector_status_long.jsonl",
+      "status": "正式读取",
+      "evidence": "fitted_parameters.source.connector_panel"
+    },
+    {
+      "id": "fitted_parameters",
+      "label": "校准拟合参数（per_lot λ/停留/期初/充电会话率）",
+      "kind": "parameter",
+      "path": "research/traffic_generation_20261031/fitted_parameters.json",
+      "status": "正式读取",
+      "evidence": "run_cost_curve --params；manifest 正式命令均含"
+    },
+    {
+      "id": "per_lot_derived",
+      "label": "每场派生量",
+      "kind": "derived",
+      "path": "research/traffic_generation_20261031/fitted_parameters.json#per_lot",
+      "status": "正式读取",
+      "evidence": "C08 可复算：λ、乘积、期初占用、停留分布"
+    },
+    {
+      "id": "traffic_gen",
+      "label": "traffic_gen.generate_for_lot（到达/停留/期初注入）",
+      "kind": "runtime",
+      "path": "apps/parking_lab/workbench/traffic_gen.py",
+      "status": "正式读取",
+      "evidence": "C09 实调用；warm_start length_biased_stationary；initial_occupancy_n"
+    },
+    {
+      "id": "p_ev_q_need_ref",
+      "label": "p_EV=0.10 / q_need=0.36 参考情景",
+      "kind": "scenario_input",
+      "path": "research/round3_20261031/PREREGISTRATION.json",
+      "status": "情景假设",
+      "evidence": "PREREGISTRATION reference_scenario；run_cost_curve --p-ev/--q-need；不可识别"
+    },
+    {
+      "id": "simulation",
+      "label": "Simulation + service_metrics（结果服务指标）",
+      "kind": "runtime",
+      "path": "apps/parking_lab/workbench/simulation.py",
+      "status": "正式读取",
+      "evidence": "run_cost_curve.run_lot_seed → Simulation(...).run()/snapshot()"
+    },
+    {
+      "id": "run_cost_curve",
+      "label": "运行入口 run_experiments.py → run_cost_curve.py",
+      "kind": "runtime",
+      "path": "research/integer_allocation_20261031/run_cost_curve.py",
+      "status": "正式读取",
+      "evidence": "manifest 64 条命令；正式跑 independent + p_ev/q_need"
+    },
+    {
+      "id": "main_results",
+      "label": "第三轮正式结果 main_A_*.json",
+      "kind": "result",
+      "path": "research/round3_20261031/results/main_A_pi0_ref_s10.json",
+      "status": "正式读取",
+      "evidence": "3690 行（9 场 x 5 seed x 41 k x 2 rule）；facility_cost/service_metrics/initial_occupancy_n"
+    },
+    {
+      "id": "run_manifest",
+      "label": "运行清单 run_manifest.json",
+      "kind": "result",
+      "path": "research/round3_20261031/results/run_manifest.json",
+      "status": "正式读取",
+      "evidence": "64 条 command/exit_code；main 无 --charge-catalog/--charge-scenario"
+    },
+    {
+      "id": "cost_scenario",
+      "label": "成本情景参数 cost_scenario.json",
+      "kind": "parameter",
+      "path": "research/integer_allocation_20261031/cost_scenario.json",
+      "status": "正式读取",
+      "evidence": "run_cost_curve --cost-file；facility=75.299726 TWD/枪·日"
+    },
+    {
+      "id": "costs",
+      "label": "costs.facility_cost",
+      "kind": "runtime",
+      "path": "apps/parking_lab/workbench/costs.py",
+      "status": "正式读取",
+      "evidence": "C10 数值闭合"
+    },
+    {
+      "id": "charge_catalog",
+      "label": "概率来源情景目录（本轮新增）",
+      "kind": "scenario_layer",
+      "path": "research/round4_20261031/charge_probability_sources.json",
+      "status": "情景假设",
+      "evidence": "6 情景；p_EV=0.10；q_use→q_need 假设性迁移；runner 支持 --charge-catalog 但第三轮 manifest 未使用"
+    },
+    {
+      "id": "charge_sources_module",
+      "label": "charge_sources.py 校验/解析模块",
+      "kind": "runtime_support",
+      "path": "apps/parking_lab/workbench/charge_sources.py",
+      "status": "正式读取",
+      "evidence": "load_catalog/resolve；validator 拒绝 q_location_share 等"
+    },
+    {
+      "id": "rates_json",
+      "label": "q_use 率表 rates.json（M08/M10 7 条）",
+      "kind": "evidence_table",
+      "path": "research/calibration/charging_probability_20261030/rates.json",
+      "status": "背景参考",
+      "evidence": "转录状态；证据哈希链闭合（evidence.json 与 model v1 引用一致）"
+    },
+    {
+      "id": "model_v1",
+      "label": "概率模型 v1（q_use_records + 4 个 q_need 情景）",
+      "kind": "evidence",
+      "path": "research/calibration/charging_probability_20261030/model_20261031.json",
+      "status": "背景参考",
+      "evidence": "未进正式运行入口"
+    },
+    {
+      "id": "model_v2",
+      "label": "概率模型 v2（识别边界/usage proxy）",
+      "kind": "evidence",
+      "path": "research/calibration/charging_probability_20261030/model_20261031_v2.json",
+      "status": "背景参考",
+      "evidence": "0.0364=usage proxy；p_ev_evidence 缺口"
+    },
+    {
+      "id": "prereg",
+      "label": "第三轮预登记",
+      "kind": "evidence",
+      "path": "research/round3_20261031/PREREGISTRATION.json",
+      "status": "背景参考",
+      "evidence": "REF 情景与 independent 口径来源"
+    },
+    {
+      "id": "parameter_candidates",
+      "label": "成本参数候选与来源分层",
+      "kind": "evidence",
+      "path": "research/cost_model_20261030/parameter_candidates_20261031.json",
+      "status": "背景参考",
+      "evidence": "官方 VOT/fuel/electricity；P26 迁移 capex/maintenance；10 年寿命情景；FX UNVERIFIED"
+    },
+    {
+      "id": "m08_pdf",
+      "label": "M08 INL 停车事件充电率 PDF",
+      "kind": "source_pdf",
+      "path": "papers/electrification-math/M08_INL-parking-event-charging-rate_2015.pdf",
+      "status": "已下载未接线",
+      "evidence": "已转录 rates/model；运行时未读取"
+    },
+    {
+      "id": "m10_pdf",
+      "label": "M10 荷兰离家充电全文 PDF",
+      "kind": "source_pdf",
+      "path": "research/official_data_20261031/ev_behavior/raw/M10_TUE_fulltext.pdf",
+      "status": "已下载未接线",
+      "evidence": "页面转录 provisional；未进正式运行入口"
+    },
+    {
+      "id": "m14_pdf",
+      "label": "M14 運研所公共充電樁調查 PDF",
+      "kind": "source_pdf",
+      "path": "research/official_data_20261031/ev_behavior/raw/IOT_public_charging_demand_table.pdf",
+      "status": "背景参考",
+      "evidence": "10 次中 4 次充電=地点份额，不是 q_use；家充比例 UNVERIFIED"
+    },
+    {
+      "id": "m15_html",
+      "label": "M15 ACN-Data 研究页（仅页面）",
+      "kind": "source_html",
+      "path": "research/official_data_20261031/ev_behavior/raw/ACN_research.html",
+      "status": "已下载未接线",
+      "evidence": "数据集未下载；无任何变量进入参数或情景"
+    },
+    {
+      "id": "m16_csv",
+      "label": "M16 Barnet CityEV 2021Q2 交易 CSV",
+      "kind": "source_csv",
+      "path": "research/official_data_20261031/ev_behavior/raw/barnet_cityev_2021Q2.csv",
+      "status": "已下载未接线",
+      "evidence": "44,225 行会话级；无 parking event 分母；字段质量受限"
+    },
+    {
+      "id": "missing_official_shares",
+      "label": "官方销售份额/公共使用份额/到达份额",
+      "kind": "missing",
+      "path": "docs/TODO.md#U19",
+      "status": "缺失不可识别",
+      "evidence": "T28/U19 未取得；p_EV/q_need 不可识别"
+    },
+    {
+      "id": "missing_loss_params",
+      "label": "社会损失/缺电损失参数",
+      "kind": "missing",
+      "path": "research/cost_model_20261030/parameter_candidates_20261031.json",
+      "status": "缺失不可识别",
+      "evidence": "residual_trip_loss 等为 null；cost_complete=false，只有设施成本"
+    }
+  ],
+  "edges": [
+    {
+      "from": "taipei_parking_raw",
+      "to": "fitted_parameters",
+      "via": "calibrate.py / traffic_generation",
+      "status": "active_formal",
+      "note": "两日 5 分钟槽 → 逐场 λ/停留/期初占用/充电会话率"
+    },
+    {
+      "from": "taipei_connector_raw",
+      "to": "fitted_parameters",
+      "via": "calibrate.py / traffic_generation",
+      "status": "active_formal",
+      "note": "充电桩状态用于充电会话率与占用"
+    },
+    {
+      "from": "fitted_parameters",
+      "to": "per_lot_derived",
+      "via": "fitted_parameters.per_lot",
+      "status": "active_formal"
+    },
+    {
+      "from": "per_lot_derived",
+      "to": "traffic_gen",
+      "via": "--params 读取 per_lot",
+      "status": "active_formal",
+      "note": "λ、停留分布、期初占用 n"
+    },
+    {
+      "from": "p_ev_q_need_ref",
+      "to": "traffic_gen",
+      "via": "--p-ev 0.1 --q-need 0.36 --scenario-model independent",
+      "status": "active_scenario",
+      "note": "独立情景输入，不派生 q_need"
+    },
+    {
+      "from": "traffic_gen",
+      "to": "simulation",
+      "via": "generate_for_lot → arrivals",
+      "status": "active_formal"
+    },
+    {
+      "from": "simulation",
+      "to": "main_results",
+      "via": "run_lot_seed → rows",
+      "status": "active_formal",
+      "note": "facility_cost/service_metrics/initial_occupancy_n"
+    },
+    {
+      "from": "cost_scenario",
+      "to": "costs",
+      "via": "run_cost_curve --cost-file",
+      "status": "active_formal"
+    },
+    {
+      "from": "costs",
+      "to": "main_results",
+      "via": "facility_cost_per_period",
+      "status": "active_formal"
+    },
+    {
+      "from": "parameter_candidates",
+      "to": "cost_scenario",
+      "via": "文档化来源（非运行时读取）",
+      "status": "documented_only",
+      "note": "官方/迁移/情景分层与用途限制"
+    },
+    {
+      "from": "m08_pdf",
+      "to": "rates_json",
+      "via": "人工转录 Table 1/2（本地 PDF 视觉核对）",
+      "status": "documented_only"
+    },
+    {
+      "from": "m10_pdf",
+      "to": "rates_json",
+      "via": "机构库检索索引转写 Table 3（provisional）",
+      "status": "documented_only"
+    },
+    {
+      "from": "rates_json",
+      "to": "model_v1",
+      "via": "q_use_records",
+      "status": "documented_only"
+    },
+    {
+      "from": "model_v1",
+      "to": "charge_catalog",
+      "via": "M08/M10 情景记录（假定 q_use→q_need）",
+      "status": "scenario_definition",
+      "note": "复用 v1 情景 id 数值"
+    },
+    {
+      "from": "prereg",
+      "to": "charge_catalog",
+      "via": "REF 情景",
+      "status": "scenario_definition"
+    },
+    {
+      "from": "charge_catalog",
+      "to": "run_cost_curve",
+      "via": "--charge-catalog + --charge-scenario（已支持）",
+      "status": "declared_not_invoked",
+      "note": "第三轮 64 条 manifest 无该参数，正式结果未使用"
+    },
+    {
+      "from": "m14_pdf",
+      "to": "missing_official_shares",
+      "via": "仅背景参考（地点份额≠q_use）",
+      "status": "not_wired"
+    },
+    {
+      "from": "m15_html",
+      "to": "missing_official_shares",
+      "via": "仅研究页，无数据集",
+      "status": "not_wired"
+    },
+    {
+      "from": "m16_csv",
+      "to": "missing_official_shares",
+      "via": "会话级交易，无停车事件分母",
+      "status": "not_wired"
+    }
+  ],
+  "classification": {
+    "正式读取": [
+      "taipei_parking_raw",
+      "taipei_connector_raw",
+      "fitted_parameters",
+      "per_lot_derived",
+      "traffic_gen",
+      "simulation",
+      "run_cost_curve",
+      "cost_scenario",
+      "costs",
+      "main_results",
+      "run_manifest",
+      "charge_sources_module"
+    ],
+    "已下载未接线": [
+      "m08_pdf",
+      "m10_pdf",
+      "m15_html",
+      "m16_csv"
+    ],
+    "背景参考": [
+      "rates_json",
+      "model_v1",
+      "model_v2",
+      "prereg",
+      "parameter_candidates",
+      "m14_pdf"
+    ],
+    "情景假设": [
+      "p_ev_q_need_ref",
+      "charge_catalog"
+    ],
+    "缺失不可识别": [
+      "missing_official_shares",
+      "missing_loss_params"
+    ]
+  },
+  "findings": [
+    "台北 parking_slots + connector_status_long 经校准生成 fitted_parameters（279 有效槽/372 场/18 场参数），run_cost_curve 以 --params 正式读取；到达、停留、期初占用与充电概率全部经 traffic_gen.generate_for_lot 注入。",
+    "期初占用来自 per_lot.mean_occupancy_vehicles 的四舍五入 + length_biased_stationary 抽样，t=0 即有 n_initial 辆，不是期初新到达；C09 实调用复现（TPE0610: n_initial=9）。",
+    "p_EV=0.10 与 q_need=0.36 是独立情景参数（p_ev_source/q_need_source=argument），不会从数据反推；0.0364 只是观测 usage proxy（v2 status=usage_proxy），不是 q_need 识别值。",
+    "M08/M10 只进入 rates.json/model v1/v2 与情景目录，未进入第三轮正式运行的 manifest 参数；runner 现支持 --charge-catalog/--charge-scenario，但 64 条正式命令均未使用，属已转录未接线。",
+    "M14 的 10 次中 4 次充電=0.4 是地点份额（q_location_share），不是 q_use；未进入任何概率，仅背景参考。",
+    "M15 只下载研究页，数据集未取得；M16 获得 44,225 条会话级交易，但无 parking event 分母，二者均未接线。",
+    "成本：VOT 406.63 TWD/veh·h、油 31.7385 TWD/L、电 4.08 TWD/kWh 为官方；EVSE capex 116,792.62 TWD/枪与维护为 P26 迁移（FX 30.9 UNVERIFIED）；10 年寿命为情景；设施成本 75.299726 TWD/枪·日未混入社会损失参数（后者缺失）。",
+    "结果行含 facility_cost、facility_items、initial_occupancy_n、p_ev_used、q_need_used、scenario_model、service_metrics 等；历史 main_A 行没有 charge_scenario_id/charge_provenance（早于接线），重跑 catalog 情景后才会出现。",
+    "证据哈希链已闭合：model v1 的 evidence_file_sha256=4da1a545… 对应 evidence.json 文件哈希，但当前 rates.json 文件 sha256=097146c9…，且 canonical 序列化也不等于 4da1a545…；不能把该值当完整性证明。"
+  ],
+  "gaps": [
+    {
+      "id": "G1",
+      "item": "p_EV 与 q_need 的目标识别",
+      "status": "缺失不可识别",
+      "note": "只有 usage proxy 0.0364；需官方销售份额/公共使用份额/到达份额（U19/T28）"
+    },
+    {
+      "id": "G2",
+      "item": "M08/M10 进入正式概率情景",
+      "status": "已下载未接线",
+      "note": "catalog 已定义且 runner 支持 --charge-catalog；正式 manifest 尚未使用"
+    },
+    {
+      "id": "G3",
+      "item": "M14/M15/M16 的可用变量",
+      "status": "背景参考/已下载未接线",
+      "note": "M14 仅地点份额；M15 无数据集；M16 无 parking 分母"
+    },
+    {
+      "id": "G4",
+      "item": "成本参数完整社会成本",
+      "status": "缺失不可识别",
+      "note": "损失参数缺失，cost_complete=false，只有设施成本；capex/maintenance 迁移且 FX UNVERIFIED"
+    },
+    {
+      "id": "G5",
+      "item": "证据哈希链闭合",
+      "status": "UNVERIFIED",
+      "note": "已核：引用对象是 evidence.json，其文件 sha256 与 model v1 引用一致；rates.json 自身不含该字段"
+    },
+    {
+      "id": "G6",
+      "item": "数据窗口",
+      "status": "限制",
+      "note": "两日面板（307 槽/25.75h），无完整日；拟合与验证仅此窗口"
+    }
+  ],
+  "summary": {
+    "pass": 19,
+    "unverified": 1,
+    "fail": 0,
+    "total": 20
+  }
+}

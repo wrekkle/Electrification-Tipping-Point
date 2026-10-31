@@ -1,0 +1,160 @@
+{
+  "schema": "pev_sensitivity/v1",
+  "files": [
+    "sens_pev_003.json",
+    "sens_pev_008.json",
+    "sens_pev_012.json"
+  ],
+  "by_pev": {
+    "0.0300": {
+      "TPE0008": {
+        "k_5": 1,
+        "k_10": 1,
+        "k_20": 1,
+        "ev_arrivals": 3.0,
+        "charge_requests": 2.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE0330": {
+        "k_5": 22,
+        "k_10": 19,
+        "k_20": 17,
+        "ev_arrivals": 17.0,
+        "charge_requests": 11.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE0401": {
+        "k_5": 7,
+        "k_10": 7,
+        "k_20": 7,
+        "ev_arrivals": 4.0,
+        "charge_requests": 4.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE0930": {
+        "k_5": 3,
+        "k_10": 3,
+        "k_20": 3,
+        "ev_arrivals": 3.0,
+        "charge_requests": 3.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE1376": {
+        "k_5": 2,
+        "k_10": 2,
+        "k_20": 2,
+        "ev_arrivals": 2.0,
+        "charge_requests": 2.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE1380": {
+        "k_5": 6,
+        "k_10": 6,
+        "k_20": 6,
+        "ev_arrivals": 4.0,
+        "charge_requests": 4.0,
+        "unmet_at_k40": 0.0
+      }
+    },
+    "0.0800": {
+      "TPE0008": {
+        "k_5": 6,
+        "k_10": 6,
+        "k_20": 6,
+        "ev_arrivals": 11.0,
+        "charge_requests": 2.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE0330": {
+        "k_5": 36,
+        "k_10": 29,
+        "k_20": 28,
+        "ev_arrivals": 41.0,
+        "charge_requests": 10.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE0401": {
+        "k_5": 15,
+        "k_10": 13,
+        "k_20": 11,
+        "ev_arrivals": 10.0,
+        "charge_requests": 10.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE0930": {
+        "k_5": 13,
+        "k_10": 13,
+        "k_20": 11,
+        "ev_arrivals": 11.0,
+        "charge_requests": 9.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE1376": {
+        "k_5": 5,
+        "k_10": 5,
+        "k_20": 5,
+        "ev_arrivals": 7.0,
+        "charge_requests": 2.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE1380": {
+        "k_5": 10,
+        "k_10": 10,
+        "k_20": 9,
+        "ev_arrivals": 7.0,
+        "charge_requests": 6.0,
+        "unmet_at_k40": 0.0
+      }
+    },
+    "0.1200": {
+      "TPE0008": {
+        "k_5": 4,
+        "k_10": 4,
+        "k_20": 4,
+        "ev_arrivals": 13.0,
+        "charge_requests": 1.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE0330": {
+        "k_5": 40,
+        "k_10": 40,
+        "k_20": 40,
+        "ev_arrivals": 66.0,
+        "charge_requests": 14.0,
+        "unmet_at_k40": 6.0
+      },
+      "TPE0401": {
+        "k_5": 15,
+        "k_10": 14,
+        "k_20": 12,
+        "ev_arrivals": 13.0,
+        "charge_requests": 12.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE0930": {
+        "k_5": 11,
+        "k_10": 11,
+        "k_20": 10,
+        "ev_arrivals": 14.0,
+        "charge_requests": 7.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE1376": {
+        "k_5": 2,
+        "k_10": 2,
+        "k_20": 2,
+        "ev_arrivals": 8.0,
+        "charge_requests": 1.0,
+        "unmet_at_k40": 0.0
+      },
+      "TPE1380": {
+        "k_5": 13,
+        "k_10": 13,
+        "k_20": 11,
+        "ev_arrivals": 11.0,
+        "charge_requests": 8.0,
+        "unmet_at_k40": 0.0
+      }
+    }
+  }
+}

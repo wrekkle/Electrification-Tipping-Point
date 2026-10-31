@@ -1,0 +1,11 @@
+site_id,n_spaces,distinct_bays,events,max_concurrency,peak_over_capacity,minutes_above_capacity,charging_bays,connectors,dwell_median_min,dwell_p90_min
+Queensberry,82,82,34566,67,-15,0.0,16,16,12.9,118.25
+Jolimont,58,58,25765,49,-9,0.0,12,12,27.33,112.72
+Victoria Market,35,35,24891,35,0,0.0,7,7,25.3,89.95
+Southbank,72,72,24399,63,-9,0.0,14,14,26.53,170.4
+University,40,40,20424,40,0,0.0,8,8,41.05,117.27
+Hyatt,15,15,14295,15,0,0.0,3,3,16.27,97.93
+Drummond,33,33,13634,33,0,0.0,7,7,35.57,118.57
+Princes Theatre,12,12,13115,12,0,0.0,2,2,14.8,81.53
+Titles,17,17,9923,17,0,0.0,3,3,24.6,142.2
+West Melbourne,18,18,4538,18,0,0.0,4,4,26.68,200.37

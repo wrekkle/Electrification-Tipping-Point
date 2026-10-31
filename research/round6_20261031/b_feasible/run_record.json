@@ -1,0 +1,50 @@
+{
+ "schema": "round6/b_feasible/run_record/v1",
+ "generated_local": "2026-10-31",
+ "interpreter": {
+  "path": "C:\\anaconda\\python.exe",
+  "version": "3.12.3"
+ },
+ "commands": [
+  {
+   "command": "C:/anaconda/python.exe research/round6_20261031/b_feasible/feasible_sets.py",
+   "exit_code": 0,
+   "note": "首次运行因仅打印汇总的 tuple key 序列化报错（exit 1），修正打印后重跑 exit 0；分析与写盘逻辑未变"
+  }
+ ],
+ "outputs": {
+  "feasible_sets.py": "9be9d4de23a2f5dc20a8844e126e8a4eeb42662f740f4dc814b807b15e3496ed",
+  "q3_feasible_sets.json": "600795d7beb3669f76cb9c44019bf5b10cbe2c1dd020a38607ede45febb6e454",
+  "REPORT.md": "baaa17c1885774d78508412c054c6d25595f5f6ee380f87f54275b7f9ff27e1d",
+  "q3_run.log": "4aa645b2f1925a41e9233b03cac21aba248a3b04b8b1c8706947d17baf064171",
+  "check_all.log": "c039da7faf2977167705a44a4d9e0f48c5e1c19a6a0a2e2bb0ca49260db65c3f"
+ },
+ "inputs": {
+  "research/round3_20261031/results/main_A_pi0_ref_s10.json": "6e95ba243fb379ce947065ad8cdc293ef4f7f0c69b48cef7d4ec280e57cbeb4e",
+  "research/round3_20261031/results/main_B_pi1_ref_s10.json": "4d289029244353af51d1877ffe08d2c8d5fa48bbbd6ddaccb7332897c7bae390",
+  "research/round3_20261031/results/main_C_quota_ref_s10.json": "50c08ee2161d751b9725844e2ec5f47c25edcb8e02a41434e99a6d89165336bb",
+  "research/round3_20261031/results/main_D_pi2_ref_s10.json": "e2849a003b6cf42cd799601f6140414537fbfe12f20983bc131feb1371af1c98",
+  "research/round3_20261031/results/expand_A_pi0_TPE0330_s10.json": "f1005c8f879f27e334deb4b2446a0a338ca112537ed36cfc3f3e4cebbb7c7898"
+ },
+ "inputs_note": "12 条 round4 scenario 文件的 SHA-256 已逐文件写入 q3_feasible_sets.json 的 inputs[]；本轮未改这些文件。",
+ "checks": {
+  "check_all": { "command": "C:/Users/tho25/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/python/python.exe scripts/check_all.py",
+                 "interpreter": "Python 3.12.14", "exit_code": 0, "warnings": 8,
+                 "note": "8 条警告为仓库既有历史记录（U13 同类），本轮未新增；日志 check_all.log" },
+  "groups": 660,
+  "limits": {
+   "empty_in_range_inclusive": 124,
+   "empty_strict": 139,
+   "zero_demand_na_groups": 15,
+   "broken_in_range": 0,
+   "truncated_at_kmax": 437,
+   "unknown_beyond_kmax": 124
+  },
+  "new_simulation_trajectories": 0
+ },
+ "notes": [
+  "A 的 service_semantics.py 未就绪；脚本按 round5 none_semantics_4way 等价实现并在 q3_feasible_sets.json semantics 字段注明。",
+  "q3_run.log 为最终成功运行的 stdout；首个失败的打印阶段未写入日志，已在本文件记录 exit 1 与原因。",
+  "TPE0330 扩展 k=41..200 只作预算截断记录，不并入 K_40。"
+ ]
+}

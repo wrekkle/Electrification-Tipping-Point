@@ -1,0 +1,2438 @@
+{
+  "生成命令": "python research/sim_rules_20261031/run_rule_comparison.py",
+  "meta": {
+    "kind": "rule_comparison_fixed_k",
+    "synthetic": true,
+    "data_source": "workbench.demand.generate 合成车流；未对任何真实停车场校准",
+    "model_version": "0.1.0",
+    "cost_model_version": "v2-2026-10-30",
+    "seeds": [
+      11,
+      12,
+      13
+    ],
+    "fixed_k": {
+      "n_spaces": 60,
+      "charging_bays": 18,
+      "chargers": 12
+    },
+    "base_config": {
+      "scenario": "peaks",
+      "duration_hours": 12.0,
+      "start_hour": 7.0,
+      "arrival_rate_hour": 35.0,
+      "ev_share": 0.4,
+      "charge_probability": 0.65,
+      "charger_kw": 7.0,
+      "feeder_kw": 60.0,
+      "n_spaces": 60,
+      "charging_bays": 18,
+      "chargers": 12,
+      "cost": {
+        "provenance": "unknown_not_calibrated",
+        "currency": "TWD",
+        "price_year": null
+      }
+    },
+    "rules": {
+      "dedicated_by_type": "按车型专用（π0：EV 含本次不充电可用带枪位/充电位，油车只用普通位）",
+      "full_open_ice_first": "普通位优先、普通位不足开放充电位（π1）",
+      "predictive_shared_ice_first": "预测共享（π2：按可见 EV 到达/充电预测放行油车）"
+    },
+    "legacy_note": "旧 strict（按 needs_charge 隐藏意愿分区）不在本对比中，只作 legacy 历史复现",
+    "traffic_hash_rule": "同 seed 三条规则复用同一 arrivals；每 seed 断言 traffic_hash 全等"
+  },
+  "flows": {
+    "11": {
+      "demand_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+      "arrivals": 594
+    },
+    "12": {
+      "demand_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+      "arrivals": 639
+    },
+    "13": {
+      "demand_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+      "arrivals": 642
+    }
+  },
+  "by_rule": {
+    "dedicated_by_type": {
+      "policy": "dedicated_by_type",
+      "policy_name": "按车型专用（π0：EV 含本次不充电可用带枪位/充电位，油车只用普通位）",
+      "seeds": 3,
+      "arrivals": 625.0,
+      "admitted": 440.333333,
+      "rejected": 184.666667,
+      "rejection_rate": 0.294888,
+      "rejected_ev": 59.666667,
+      "rejected_ice": 125.0,
+      "rejected_charge_requests": 39.333333,
+      "charge_requests": 173.333333,
+      "charge_completed": 26.0,
+      "charge_completion_rate_all": 0.150586,
+      "energy_delivered_kwh": 548.839664,
+      "energy_not_served_kwh": 1778.540095,
+      "departed_shortfall_kwh": 1006.91278,
+      "pending_energy_kwh": 228.369499,
+      "mean_occupancy_rate": 0.888877,
+      "cost_complete_runs": 0,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 2090.428224,
+        "overstay_after_complete_min": 1196.411644,
+        "ice_blocking_connector_min": 0.0
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 2090.428224,
+        "overstay_after_complete": 1196.411644,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "paired_delta_vs_pi0_type_minutes": {
+        "no_charging_demand_bay_min": 0.0,
+        "overstay_after_complete_min": 0.0,
+        "ice_blocking_connector_min": 0.0
+      },
+      "admission_and_rejection_reason_counts": {
+        "admitted:ev_charging_bays_first": 585,
+        "admitted:ice_ordinary_only": 736,
+        "rejected:rejected_no_free_bay": 179,
+        "rejected:rejected_no_ordinary_bay": 375
+      }
+    },
+    "full_open_ice_first": {
+      "policy": "full_open_ice_first",
+      "policy_name": "普通位优先、普通位不足开放充电位（π1）",
+      "seeds": 3,
+      "arrivals": 625.0,
+      "admitted": 447.333333,
+      "rejected": 177.666667,
+      "rejection_rate": 0.283787,
+      "rejected_ev": 75.0,
+      "rejected_ice": 102.666667,
+      "rejected_charge_requests": 51.0,
+      "charge_requests": 173.333333,
+      "charge_completed": 24.333333,
+      "charge_completion_rate_all": 0.140694,
+      "energy_delivered_kwh": 443.074879,
+      "energy_not_served_kwh": 1884.30488,
+      "departed_shortfall_kwh": 994.228969,
+      "pending_energy_kwh": 187.133068,
+      "mean_occupancy_rate": 0.89038,
+      "cost_complete_runs": 0,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 2034.424873,
+        "overstay_after_complete_min": 1122.370881,
+        "ice_blocking_connector_min": 1182.086518
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 3216.51139,
+        "overstay_after_complete": 1122.370881,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "paired_delta_vs_pi0_type_minutes": {
+        "no_charging_demand_bay_min": -56.003351,
+        "overstay_after_complete_min": -74.040763,
+        "ice_blocking_connector_min": 1182.086518
+      },
+      "admission_and_rejection_reason_counts": {
+        "admitted:ev_charging_bays_first": 539,
+        "admitted:ice_ordinary_first": 730,
+        "admitted:ice_shared_charging_bays": 73,
+        "rejected:rejected_no_free_bay": 533
+      }
+    },
+    "predictive_shared_ice_first": {
+      "policy": "predictive_shared_ice_first",
+      "policy_name": "预测共享（π2：按可见 EV 到达/充电预测放行油车）",
+      "seeds": 3,
+      "arrivals": 625.0,
+      "admitted": 440.666667,
+      "rejected": 184.333333,
+      "rejection_rate": 0.294366,
+      "rejected_ev": 60.666667,
+      "rejected_ice": 123.666667,
+      "rejected_charge_requests": 39.666667,
+      "charge_requests": 173.333333,
+      "charge_completed": 25.666667,
+      "charge_completion_rate_all": 0.148745,
+      "energy_delivered_kwh": 547.278009,
+      "energy_not_served_kwh": 1780.10175,
+      "departed_shortfall_kwh": 1004.961402,
+      "pending_energy_kwh": 229.275489,
+      "mean_occupancy_rate": 0.889582,
+      "cost_complete_runs": 0,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 2056.815516,
+        "overstay_after_complete_min": 1196.615967,
+        "ice_blocking_connector_min": 73.058165
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 2129.873681,
+        "overstay_after_complete": 1196.615967,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "paired_delta_vs_pi0_type_minutes": {
+        "no_charging_demand_bay_min": -33.612708,
+        "overstay_after_complete_min": 0.204323,
+        "ice_blocking_connector_min": 73.058165
+      },
+      "admission_and_rejection_reason_counts": {
+        "admitted:ev_charging_bays_first": 582,
+        "admitted:ice_ordinary_first": 736,
+        "rejected:rejected_no_free_bay": 438,
+        "rejected:rejected_ice_reserved_for_ev_forecast": 115,
+        "admitted:ice_shared_by_forecast": 4
+      }
+    }
+  },
+  "predictive_sensitivity": [
+    {
+      "window_min": 30.0,
+      "safety_margin": 1.0,
+      "rejected": 184.333333,
+      "rejected_ice": 123.666667,
+      "admitted_ice_shared_by_forecast": 4,
+      "energy_not_served_kwh": 1780.10175,
+      "ice_blocking_connector_min": 73.058165,
+      "note": "同 seed 同车流；只改 π2 的可配置窗口/余量，用于展示参数影响，不是最优参数搜索"
+    },
+    {
+      "window_min": 10.0,
+      "safety_margin": 0.0,
+      "rejected": 177.666667,
+      "rejected_ice": 102.666667,
+      "admitted_ice_shared_by_forecast": 73,
+      "energy_not_served_kwh": 1884.30488,
+      "ice_blocking_connector_min": 1182.086518,
+      "note": "同 seed 同车流；只改 π2 的可配置窗口/余量，用于展示参数影响，不是最优参数搜索"
+    },
+    {
+      "window_min": 60.0,
+      "safety_margin": 0.0,
+      "rejected": 184.333333,
+      "rejected_ice": 123.666667,
+      "admitted_ice_shared_by_forecast": 4,
+      "energy_not_served_kwh": 1780.10175,
+      "ice_blocking_connector_min": 73.058165,
+      "note": "同 seed 同车流；只改 π2 的可配置窗口/余量，用于展示参数影响，不是最优参数搜索"
+    },
+    {
+      "window_min": 10.0,
+      "safety_margin": 2.0,
+      "rejected": 184.333333,
+      "rejected_ice": 123.666667,
+      "admitted_ice_shared_by_forecast": 4,
+      "energy_not_served_kwh": 1780.10175,
+      "ice_blocking_connector_min": 73.058165,
+      "note": "同 seed 同车流；只改 π2 的可配置窗口/余量，用于展示参数影响，不是最优参数搜索"
+    }
+  ],
+  "runs": [
+    {
+      "policy": "dedicated_by_type",
+      "policy_name": "按车型专用（π0：EV 含本次不充电可用带枪位/充电位，油车只用普通位）",
+      "seed": 11,
+      "traffic_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+      "demand_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+      "traffic_hash_matches_arrivals": true,
+      "arrivals": 594,
+      "admitted": 433,
+      "rejected": 161,
+      "ev_arrivals": 244,
+      "ice_arrivals": 350,
+      "rejected_ev": 63,
+      "rejected_ice": 98,
+      "rejection_rate": 0.271044,
+      "rejected_charge_requests": 45,
+      "charge_requests": 174,
+      "charge_completed": 31,
+      "charge_completion_rate_all": 0.178161,
+      "energy_requested_kwh": 2326.806107,
+      "energy_delivered_kwh": 461.648624,
+      "energy_not_served_kwh": 1865.157483,
+      "rejected_energy_kwh": 661.93427,
+      "departed_shortfall_kwh": 955.506944,
+      "pending_energy_kwh": 247.71627,
+      "mean_occupancy_rate": 0.891255,
+      "peak_occupancy": 60,
+      "peak_charging": 10,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 2477.950367,
+        "overstay_after_complete_min": 1620.293844,
+        "ice_blocking_connector_min": 0.0
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 2477.950367,
+        "overstay_after_complete": 1620.293844,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "resource_minutes": {
+        "power_kw_min": 27698.917464,
+        "connector_min": 8098.694173,
+        "charged_bay_min": 11910.504619,
+        "ordinary_bay_min": 26591.731608,
+        "relocation_moves": 0.0
+      },
+      "admission_reason_counts": {
+        "ev_charging_bays_first": 181,
+        "ice_ordinary_only": 252
+      },
+      "rejection_reason_counts": {
+        "rejected_no_free_bay": 63,
+        "rejected_no_ordinary_bay": 98
+      },
+      "cost": {
+        "cost_model_version": "v2-2026-10-30",
+        "unit": "TWD / 仿真窗口（per_day 口径）",
+        "currency": "TWD",
+        "price_year": null,
+        "accounting_period": "per_day",
+        "items": {
+          "user_time": null,
+          "ev_detour_energy": null,
+          "ev_external": null,
+          "ev_residual_trip_loss": null,
+          "ice_vehicle_operating": null,
+          "ice_external": null,
+          "ice_activity_loss": 0.0,
+          "ev_activity_loss": 0.0,
+          "operator_capital_depreciation": null,
+          "operator_energy": null,
+          "operator_maintenance": null
+        },
+        "total": null,
+        "complete": false,
+        "missing_parameters": [
+          "alternative_charging_delta_per_kwh",
+          "depreciation_annual",
+          "detour_km_per_failure",
+          "detour_min",
+          "electricity_price_per_kwh",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "maintenance_per_bay_day",
+          "maintenance_per_kwh",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "relocation_cost": 0.0
+      },
+      "cost_missing_by_disposition": {
+        "detour_exit": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "admitted_shortfall": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ]
+      },
+      "k": {
+        "n_spaces": 60,
+        "charging_bays": 18,
+        "chargers": 12
+      }
+    },
+    {
+      "policy": "full_open_ice_first",
+      "policy_name": "普通位优先、普通位不足开放充电位（π1）",
+      "seed": 11,
+      "traffic_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+      "demand_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+      "traffic_hash_matches_arrivals": true,
+      "arrivals": 594,
+      "admitted": 437,
+      "rejected": 157,
+      "ev_arrivals": 244,
+      "ice_arrivals": 350,
+      "rejected_ev": 70,
+      "rejected_ice": 87,
+      "rejection_rate": 0.26431,
+      "rejected_charge_requests": 51,
+      "charge_requests": 174,
+      "charge_completed": 29,
+      "charge_completion_rate_all": 0.166667,
+      "energy_requested_kwh": 2326.806107,
+      "energy_delivered_kwh": 432.735245,
+      "energy_not_served_kwh": 1894.070862,
+      "rejected_energy_kwh": 711.155891,
+      "departed_shortfall_kwh": 969.059501,
+      "pending_energy_kwh": 213.85547,
+      "mean_occupancy_rate": 0.891671,
+      "peak_occupancy": 60,
+      "peak_charging": 9,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 2245.488013,
+        "overstay_after_complete_min": 1599.758959,
+        "ice_blocking_connector_min": 519.913083
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 2765.401096,
+        "overstay_after_complete": 1599.758959,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "resource_minutes": {
+        "power_kw_min": 25964.114717,
+        "connector_min": 8081.31145,
+        "charged_bay_min": 11942.828054,
+        "ordinary_bay_min": 26577.356613,
+        "relocation_moves": 0.0
+      },
+      "admission_reason_counts": {
+        "ev_charging_bays_first": 174,
+        "ice_ordinary_first": 250,
+        "ice_shared_charging_bays": 13
+      },
+      "rejection_reason_counts": {
+        "rejected_no_free_bay": 157
+      },
+      "cost": {
+        "cost_model_version": "v2-2026-10-30",
+        "unit": "TWD / 仿真窗口（per_day 口径）",
+        "currency": "TWD",
+        "price_year": null,
+        "accounting_period": "per_day",
+        "items": {
+          "user_time": null,
+          "ev_detour_energy": null,
+          "ev_external": null,
+          "ev_residual_trip_loss": null,
+          "ice_vehicle_operating": null,
+          "ice_external": null,
+          "ice_activity_loss": 0.0,
+          "ev_activity_loss": 0.0,
+          "operator_capital_depreciation": null,
+          "operator_energy": null,
+          "operator_maintenance": null
+        },
+        "total": null,
+        "complete": false,
+        "missing_parameters": [
+          "alternative_charging_delta_per_kwh",
+          "depreciation_annual",
+          "detour_km_per_failure",
+          "detour_min",
+          "electricity_price_per_kwh",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "maintenance_per_bay_day",
+          "maintenance_per_kwh",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "relocation_cost": 0.0
+      },
+      "cost_missing_by_disposition": {
+        "detour_exit": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "admitted_shortfall": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ]
+      },
+      "k": {
+        "n_spaces": 60,
+        "charging_bays": 18,
+        "chargers": 12
+      }
+    },
+    {
+      "policy": "predictive_shared_ice_first",
+      "policy_name": "预测共享（π2：按可见 EV 到达/充电预测放行油车）",
+      "seed": 11,
+      "traffic_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+      "demand_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+      "traffic_hash_matches_arrivals": true,
+      "arrivals": 594,
+      "admitted": 433,
+      "rejected": 161,
+      "ev_arrivals": 244,
+      "ice_arrivals": 350,
+      "rejected_ev": 63,
+      "rejected_ice": 98,
+      "rejection_rate": 0.271044,
+      "rejected_charge_requests": 45,
+      "charge_requests": 174,
+      "charge_completed": 31,
+      "charge_completion_rate_all": 0.178161,
+      "energy_requested_kwh": 2326.806107,
+      "energy_delivered_kwh": 461.648624,
+      "energy_not_served_kwh": 1865.157483,
+      "rejected_energy_kwh": 661.93427,
+      "departed_shortfall_kwh": 955.506944,
+      "pending_energy_kwh": 247.71627,
+      "mean_occupancy_rate": 0.891255,
+      "peak_occupancy": 60,
+      "peak_charging": 10,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 2477.950367,
+        "overstay_after_complete_min": 1620.293844,
+        "ice_blocking_connector_min": 0.0
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 2477.950367,
+        "overstay_after_complete": 1620.293844,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "resource_minutes": {
+        "power_kw_min": 27698.917464,
+        "connector_min": 8098.694173,
+        "charged_bay_min": 11910.504619,
+        "ordinary_bay_min": 26591.731608,
+        "relocation_moves": 0.0
+      },
+      "admission_reason_counts": {
+        "ev_charging_bays_first": 181,
+        "ice_ordinary_first": 252
+      },
+      "rejection_reason_counts": {
+        "rejected_no_free_bay": 143,
+        "rejected_ice_reserved_for_ev_forecast": 18
+      },
+      "cost": {
+        "cost_model_version": "v2-2026-10-30",
+        "unit": "TWD / 仿真窗口（per_day 口径）",
+        "currency": "TWD",
+        "price_year": null,
+        "accounting_period": "per_day",
+        "items": {
+          "user_time": null,
+          "ev_detour_energy": null,
+          "ev_external": null,
+          "ev_residual_trip_loss": null,
+          "ice_vehicle_operating": null,
+          "ice_external": null,
+          "ice_activity_loss": 0.0,
+          "ev_activity_loss": 0.0,
+          "operator_capital_depreciation": null,
+          "operator_energy": null,
+          "operator_maintenance": null
+        },
+        "total": null,
+        "complete": false,
+        "missing_parameters": [
+          "alternative_charging_delta_per_kwh",
+          "depreciation_annual",
+          "detour_km_per_failure",
+          "detour_min",
+          "electricity_price_per_kwh",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "maintenance_per_bay_day",
+          "maintenance_per_kwh",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "relocation_cost": 0.0
+      },
+      "cost_missing_by_disposition": {
+        "detour_exit": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "admitted_shortfall": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ]
+      },
+      "k": {
+        "n_spaces": 60,
+        "charging_bays": 18,
+        "chargers": 12
+      }
+    },
+    {
+      "policy": "dedicated_by_type",
+      "policy_name": "按车型专用（π0：EV 含本次不充电可用带枪位/充电位，油车只用普通位）",
+      "seed": 12,
+      "traffic_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+      "demand_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+      "traffic_hash_matches_arrivals": true,
+      "arrivals": 639,
+      "admitted": 438,
+      "rejected": 201,
+      "ev_arrivals": 251,
+      "ice_arrivals": 388,
+      "rejected_ev": 54,
+      "rejected_ice": 147,
+      "rejection_rate": 0.314554,
+      "rejected_charge_requests": 34,
+      "charge_requests": 165,
+      "charge_completed": 26,
+      "charge_completion_rate_all": 0.157576,
+      "energy_requested_kwh": 2192.202359,
+      "energy_delivered_kwh": 548.797296,
+      "energy_not_served_kwh": 1643.405062,
+      "rejected_energy_kwh": 460.015469,
+      "departed_shortfall_kwh": 950.733284,
+      "pending_energy_kwh": 232.656309,
+      "mean_occupancy_rate": 0.87798,
+      "peak_occupancy": 60,
+      "peak_charging": 10,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 2246.723324,
+        "overstay_after_complete_min": 1054.528041,
+        "ice_blocking_connector_min": 0.0
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 2246.723324,
+        "overstay_after_complete": 1054.528041,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "resource_minutes": {
+        "power_kw_min": 32927.837787,
+        "connector_min": 8145.267434,
+        "charged_bay_min": 11862.107991,
+        "ordinary_bay_min": 26066.634236,
+        "relocation_moves": 0.0
+      },
+      "admission_reason_counts": {
+        "ice_ordinary_only": 241,
+        "ev_charging_bays_first": 197
+      },
+      "rejection_reason_counts": {
+        "rejected_no_ordinary_bay": 147,
+        "rejected_no_free_bay": 54
+      },
+      "cost": {
+        "cost_model_version": "v2-2026-10-30",
+        "unit": "TWD / 仿真窗口（per_day 口径）",
+        "currency": "TWD",
+        "price_year": null,
+        "accounting_period": "per_day",
+        "items": {
+          "user_time": null,
+          "ev_detour_energy": null,
+          "ev_external": null,
+          "ev_residual_trip_loss": null,
+          "ice_vehicle_operating": null,
+          "ice_external": null,
+          "ice_activity_loss": 0.0,
+          "ev_activity_loss": 0.0,
+          "operator_capital_depreciation": null,
+          "operator_energy": null,
+          "operator_maintenance": null
+        },
+        "total": null,
+        "complete": false,
+        "missing_parameters": [
+          "alternative_charging_delta_per_kwh",
+          "depreciation_annual",
+          "detour_km_per_failure",
+          "detour_min",
+          "electricity_price_per_kwh",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "maintenance_per_bay_day",
+          "maintenance_per_kwh",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "relocation_cost": 0.0
+      },
+      "cost_missing_by_disposition": {
+        "admitted_shortfall": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "detour_exit": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ]
+      },
+      "k": {
+        "n_spaces": 60,
+        "charging_bays": 18,
+        "chargers": 12
+      }
+    },
+    {
+      "policy": "full_open_ice_first",
+      "policy_name": "普通位优先、普通位不足开放充电位（π1）",
+      "seed": 12,
+      "traffic_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+      "demand_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+      "traffic_hash_matches_arrivals": true,
+      "arrivals": 639,
+      "admitted": 450,
+      "rejected": 189,
+      "ev_arrivals": 251,
+      "ice_arrivals": 388,
+      "rejected_ev": 72,
+      "rejected_ice": 117,
+      "rejection_rate": 0.295775,
+      "rejected_charge_requests": 49,
+      "charge_requests": 165,
+      "charge_completed": 23,
+      "charge_completion_rate_all": 0.139394,
+      "energy_requested_kwh": 2192.202359,
+      "energy_delivered_kwh": 366.97475,
+      "energy_not_served_kwh": 1825.227609,
+      "rejected_energy_kwh": 676.844725,
+      "departed_shortfall_kwh": 966.972979,
+      "pending_energy_kwh": 181.409905,
+      "mean_occupancy_rate": 0.883425,
+      "peak_occupancy": 60,
+      "peak_charging": 10,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 2125.259783,
+        "overstay_after_complete_min": 912.326618,
+        "ice_blocking_connector_min": 1966.616248
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 4091.876031,
+        "overstay_after_complete": 912.326618,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "resource_minutes": {
+        "power_kw_min": 22018.484999,
+        "connector_min": 8193.883893,
+        "charged_bay_min": 11893.92867,
+        "ordinary_bay_min": 26270.015299,
+        "relocation_moves": 0.0
+      },
+      "admission_reason_counts": {
+        "ice_ordinary_first": 237,
+        "ev_charging_bays_first": 179,
+        "ice_shared_charging_bays": 34
+      },
+      "rejection_reason_counts": {
+        "rejected_no_free_bay": 189
+      },
+      "cost": {
+        "cost_model_version": "v2-2026-10-30",
+        "unit": "TWD / 仿真窗口（per_day 口径）",
+        "currency": "TWD",
+        "price_year": null,
+        "accounting_period": "per_day",
+        "items": {
+          "user_time": null,
+          "ev_detour_energy": null,
+          "ev_external": null,
+          "ev_residual_trip_loss": null,
+          "ice_vehicle_operating": null,
+          "ice_external": null,
+          "ice_activity_loss": 0.0,
+          "ev_activity_loss": 0.0,
+          "operator_capital_depreciation": null,
+          "operator_energy": null,
+          "operator_maintenance": null
+        },
+        "total": null,
+        "complete": false,
+        "missing_parameters": [
+          "alternative_charging_delta_per_kwh",
+          "depreciation_annual",
+          "detour_km_per_failure",
+          "detour_min",
+          "electricity_price_per_kwh",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "maintenance_per_bay_day",
+          "maintenance_per_kwh",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "relocation_cost": 0.0
+      },
+      "cost_missing_by_disposition": {
+        "admitted_shortfall": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "detour_exit": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ]
+      },
+      "k": {
+        "n_spaces": 60,
+        "charging_bays": 18,
+        "chargers": 12
+      }
+    },
+    {
+      "policy": "predictive_shared_ice_first",
+      "policy_name": "预测共享（π2：按可见 EV 到达/充电预测放行油车）",
+      "seed": 12,
+      "traffic_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+      "demand_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+      "traffic_hash_matches_arrivals": true,
+      "arrivals": 639,
+      "admitted": 439,
+      "rejected": 200,
+      "ev_arrivals": 251,
+      "ice_arrivals": 388,
+      "rejected_ev": 55,
+      "rejected_ice": 145,
+      "rejection_rate": 0.312989,
+      "rejected_charge_requests": 34,
+      "charge_requests": 165,
+      "charge_completed": 26,
+      "charge_completion_rate_all": 0.157576,
+      "energy_requested_kwh": 2192.202359,
+      "energy_delivered_kwh": 554.134198,
+      "energy_not_served_kwh": 1638.06816,
+      "rejected_energy_kwh": 460.015469,
+      "departed_shortfall_kwh": 946.245143,
+      "pending_energy_kwh": 231.807549,
+      "mean_occupancy_rate": 0.879492,
+      "peak_occupancy": 60,
+      "peak_charging": 10,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 2086.153418,
+        "overstay_after_complete_min": 1054.528041,
+        "ice_blocking_connector_min": 138.953275
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 2225.106692,
+        "overstay_after_complete": 1054.528041,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "resource_minutes": {
+        "power_kw_min": 33248.051887,
+        "connector_min": 8152.213063,
+        "charged_bay_min": 11875.796661,
+        "ordinary_bay_min": 26118.275634,
+        "relocation_moves": 0.0
+      },
+      "admission_reason_counts": {
+        "ice_ordinary_first": 241,
+        "ev_charging_bays_first": 196,
+        "ice_shared_by_forecast": 2
+      },
+      "rejection_reason_counts": {
+        "rejected_no_free_bay": 141,
+        "rejected_ice_reserved_for_ev_forecast": 59
+      },
+      "cost": {
+        "cost_model_version": "v2-2026-10-30",
+        "unit": "TWD / 仿真窗口（per_day 口径）",
+        "currency": "TWD",
+        "price_year": null,
+        "accounting_period": "per_day",
+        "items": {
+          "user_time": null,
+          "ev_detour_energy": null,
+          "ev_external": null,
+          "ev_residual_trip_loss": null,
+          "ice_vehicle_operating": null,
+          "ice_external": null,
+          "ice_activity_loss": 0.0,
+          "ev_activity_loss": 0.0,
+          "operator_capital_depreciation": null,
+          "operator_energy": null,
+          "operator_maintenance": null
+        },
+        "total": null,
+        "complete": false,
+        "missing_parameters": [
+          "alternative_charging_delta_per_kwh",
+          "depreciation_annual",
+          "detour_km_per_failure",
+          "detour_min",
+          "electricity_price_per_kwh",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "maintenance_per_bay_day",
+          "maintenance_per_kwh",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "relocation_cost": 0.0
+      },
+      "cost_missing_by_disposition": {
+        "admitted_shortfall": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "detour_exit": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ]
+      },
+      "k": {
+        "n_spaces": 60,
+        "charging_bays": 18,
+        "chargers": 12
+      }
+    },
+    {
+      "policy": "dedicated_by_type",
+      "policy_name": "按车型专用（π0：EV 含本次不充电可用带枪位/充电位，油车只用普通位）",
+      "seed": 13,
+      "traffic_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+      "demand_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+      "traffic_hash_matches_arrivals": true,
+      "arrivals": 642,
+      "admitted": 450,
+      "rejected": 192,
+      "ev_arrivals": 269,
+      "ice_arrivals": 373,
+      "rejected_ev": 62,
+      "rejected_ice": 130,
+      "rejection_rate": 0.299065,
+      "rejected_charge_requests": 39,
+      "charge_requests": 181,
+      "charge_completed": 21,
+      "charge_completion_rate_all": 0.116022,
+      "energy_requested_kwh": 2463.130812,
+      "energy_delivered_kwh": 636.073072,
+      "energy_not_served_kwh": 1827.05774,
+      "rejected_energy_kwh": 507.823711,
+      "departed_shortfall_kwh": 1114.498111,
+      "pending_energy_kwh": 204.735918,
+      "mean_occupancy_rate": 0.897396,
+      "peak_occupancy": 60,
+      "peak_charging": 10,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 1546.610981,
+        "overstay_after_complete_min": 914.413046,
+        "ice_blocking_connector_min": 0.0
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 1546.610981,
+        "overstay_after_complete": 914.413046,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "resource_minutes": {
+        "power_kw_min": 38164.384344,
+        "connector_min": 8109.066355,
+        "charged_bay_min": 11973.849811,
+        "ordinary_bay_min": 26793.660486,
+        "relocation_moves": 0.0
+      },
+      "admission_reason_counts": {
+        "ev_charging_bays_first": 207,
+        "ice_ordinary_only": 243
+      },
+      "rejection_reason_counts": {
+        "rejected_no_free_bay": 62,
+        "rejected_no_ordinary_bay": 130
+      },
+      "cost": {
+        "cost_model_version": "v2-2026-10-30",
+        "unit": "TWD / 仿真窗口（per_day 口径）",
+        "currency": "TWD",
+        "price_year": null,
+        "accounting_period": "per_day",
+        "items": {
+          "user_time": null,
+          "ev_detour_energy": null,
+          "ev_external": null,
+          "ev_residual_trip_loss": null,
+          "ice_vehicle_operating": null,
+          "ice_external": null,
+          "ice_activity_loss": 0.0,
+          "ev_activity_loss": 0.0,
+          "operator_capital_depreciation": null,
+          "operator_energy": null,
+          "operator_maintenance": null
+        },
+        "total": null,
+        "complete": false,
+        "missing_parameters": [
+          "alternative_charging_delta_per_kwh",
+          "depreciation_annual",
+          "detour_km_per_failure",
+          "detour_min",
+          "electricity_price_per_kwh",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "maintenance_per_bay_day",
+          "maintenance_per_kwh",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "relocation_cost": 0.0
+      },
+      "cost_missing_by_disposition": {
+        "detour_exit": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "admitted_shortfall": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ]
+      },
+      "k": {
+        "n_spaces": 60,
+        "charging_bays": 18,
+        "chargers": 12
+      }
+    },
+    {
+      "policy": "full_open_ice_first",
+      "policy_name": "普通位优先、普通位不足开放充电位（π1）",
+      "seed": 13,
+      "traffic_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+      "demand_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+      "traffic_hash_matches_arrivals": true,
+      "arrivals": 642,
+      "admitted": 455,
+      "rejected": 187,
+      "ev_arrivals": 269,
+      "ice_arrivals": 373,
+      "rejected_ev": 83,
+      "rejected_ice": 104,
+      "rejection_rate": 0.291277,
+      "rejected_charge_requests": 53,
+      "charge_requests": 181,
+      "charge_completed": 21,
+      "charge_completion_rate_all": 0.116022,
+      "energy_requested_kwh": 2463.130812,
+      "energy_delivered_kwh": 529.514643,
+      "energy_not_served_kwh": 1933.616169,
+      "rejected_energy_kwh": 720.827914,
+      "departed_shortfall_kwh": 1046.654427,
+      "pending_energy_kwh": 166.133828,
+      "mean_occupancy_rate": 0.896044,
+      "peak_occupancy": 60,
+      "peak_charging": 9,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 1732.526822,
+        "overstay_after_complete_min": 855.027066,
+        "ice_blocking_connector_min": 1059.730222
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 2792.257044,
+        "overstay_after_complete": 855.027066,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "resource_minutes": {
+        "power_kw_min": 31770.878609,
+        "connector_min": 8210.709184,
+        "charged_bay_min": 12082.242249,
+        "ordinary_bay_min": 26626.858536,
+        "relocation_moves": 0.0
+      },
+      "admission_reason_counts": {
+        "ev_charging_bays_first": 186,
+        "ice_ordinary_first": 243,
+        "ice_shared_charging_bays": 26
+      },
+      "rejection_reason_counts": {
+        "rejected_no_free_bay": 187
+      },
+      "cost": {
+        "cost_model_version": "v2-2026-10-30",
+        "unit": "TWD / 仿真窗口（per_day 口径）",
+        "currency": "TWD",
+        "price_year": null,
+        "accounting_period": "per_day",
+        "items": {
+          "user_time": null,
+          "ev_detour_energy": null,
+          "ev_external": null,
+          "ev_residual_trip_loss": null,
+          "ice_vehicle_operating": null,
+          "ice_external": null,
+          "ice_activity_loss": 0.0,
+          "ev_activity_loss": 0.0,
+          "operator_capital_depreciation": null,
+          "operator_energy": null,
+          "operator_maintenance": null
+        },
+        "total": null,
+        "complete": false,
+        "missing_parameters": [
+          "alternative_charging_delta_per_kwh",
+          "depreciation_annual",
+          "detour_km_per_failure",
+          "detour_min",
+          "electricity_price_per_kwh",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "maintenance_per_bay_day",
+          "maintenance_per_kwh",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "relocation_cost": 0.0
+      },
+      "cost_missing_by_disposition": {
+        "detour_exit": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "admitted_shortfall": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ]
+      },
+      "k": {
+        "n_spaces": 60,
+        "charging_bays": 18,
+        "chargers": 12
+      }
+    },
+    {
+      "policy": "predictive_shared_ice_first",
+      "policy_name": "预测共享（π2：按可见 EV 到达/充电预测放行油车）",
+      "seed": 13,
+      "traffic_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+      "demand_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+      "traffic_hash_matches_arrivals": true,
+      "arrivals": 642,
+      "admitted": 450,
+      "rejected": 192,
+      "ev_arrivals": 269,
+      "ice_arrivals": 373,
+      "rejected_ev": 64,
+      "rejected_ice": 128,
+      "rejection_rate": 0.299065,
+      "rejected_charge_requests": 40,
+      "charge_requests": 181,
+      "charge_completed": 20,
+      "charge_completion_rate_all": 0.110497,
+      "energy_requested_kwh": 2463.130812,
+      "energy_delivered_kwh": 626.051204,
+      "energy_not_served_kwh": 1837.079608,
+      "rejected_energy_kwh": 515.64484,
+      "departed_shortfall_kwh": 1113.132119,
+      "pending_energy_kwh": 208.302649,
+      "mean_occupancy_rate": 0.897998,
+      "peak_occupancy": 60,
+      "peak_charging": 10,
+      "type_occupancy_minutes": {
+        "no_charging_demand_bay_min": 1606.342762,
+        "overstay_after_complete_min": 915.026016,
+        "ice_blocking_connector_min": 80.221221
+      },
+      "occupancy_minutes_by_reason": {
+        "no_charging_demand": 1686.563983,
+        "overstay_after_complete": 915.026016,
+        "dispatch_defer": 0.0,
+        "insufficient_power": 0.0,
+        "equipment_failure": 0.0
+      },
+      "resource_minutes": {
+        "power_kw_min": 37563.072245,
+        "connector_min": 8118.499734,
+        "charged_bay_min": 11999.749428,
+        "ordinary_bay_min": 26793.749255,
+        "relocation_moves": 0.0
+      },
+      "admission_reason_counts": {
+        "ev_charging_bays_first": 205,
+        "ice_ordinary_first": 243,
+        "ice_shared_by_forecast": 2
+      },
+      "rejection_reason_counts": {
+        "rejected_no_free_bay": 154,
+        "rejected_ice_reserved_for_ev_forecast": 38
+      },
+      "cost": {
+        "cost_model_version": "v2-2026-10-30",
+        "unit": "TWD / 仿真窗口（per_day 口径）",
+        "currency": "TWD",
+        "price_year": null,
+        "accounting_period": "per_day",
+        "items": {
+          "user_time": null,
+          "ev_detour_energy": null,
+          "ev_external": null,
+          "ev_residual_trip_loss": null,
+          "ice_vehicle_operating": null,
+          "ice_external": null,
+          "ice_activity_loss": 0.0,
+          "ev_activity_loss": 0.0,
+          "operator_capital_depreciation": null,
+          "operator_energy": null,
+          "operator_maintenance": null
+        },
+        "total": null,
+        "complete": false,
+        "missing_parameters": [
+          "alternative_charging_delta_per_kwh",
+          "depreciation_annual",
+          "detour_km_per_failure",
+          "detour_min",
+          "electricity_price_per_kwh",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "maintenance_per_bay_day",
+          "maintenance_per_kwh",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "relocation_cost": 0.0
+      },
+      "cost_missing_by_disposition": {
+        "detour_exit": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "fuel_l_per_km",
+          "fuel_price_per_l",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ],
+        "admitted_shortfall": [
+          "alternative_charging_delta_per_kwh",
+          "detour_km_per_failure",
+          "detour_min",
+          "emission_cost_per_km",
+          "ev_energy_price_per_kwh",
+          "ev_kwh_per_km",
+          "residual_trip_loss_per_kwh",
+          "search_min",
+          "vot_per_hour",
+          "walking_min"
+        ]
+      },
+      "k": {
+        "n_spaces": 60,
+        "charging_bays": 18,
+        "chargers": 12
+      }
+    }
+  ],
+  "cost_default_null": {
+    "note": "默认成本参数全为 null：分项与 total 为 null、complete=false，不填 0、不套演示值",
+    "cost_complete_runs": 0,
+    "missing_parameters": [
+      "alternative_charging_delta_per_kwh",
+      "depreciation_annual",
+      "detour_km_per_failure",
+      "detour_min",
+      "electricity_price_per_kwh",
+      "emission_cost_per_km",
+      "ev_energy_price_per_kwh",
+      "ev_kwh_per_km",
+      "fuel_l_per_km",
+      "fuel_price_per_l",
+      "maintenance_per_bay_day",
+      "maintenance_per_kwh",
+      "residual_trip_loss_per_kwh",
+      "search_min",
+      "vot_per_hour",
+      "walking_min"
+    ],
+    "items_sample": {
+      "user_time": null,
+      "ev_detour_energy": null,
+      "ev_external": null,
+      "ev_residual_trip_loss": null,
+      "ice_vehicle_operating": null,
+      "ice_external": null,
+      "ice_activity_loss": 0.0,
+      "ev_activity_loss": 0.0,
+      "operator_capital_depreciation": null,
+      "operator_energy": null,
+      "operator_maintenance": null
+    }
+  },
+  "computable_indicators": {
+    "note": "不依赖缺失成本参数的物理/服务指标（确定可算）；货币成本与缺参见 cost_default_null，不得把 null 成本当 0 或编造罚价",
+    "by_rule": {
+      "dedicated_by_type": {
+        "arrivals": 625.0,
+        "admitted": 440.333333,
+        "rejected": 184.666667,
+        "rejection_rate": 0.294888,
+        "rejected_ev": 59.666667,
+        "rejected_ice": 125.0,
+        "rejected_charge_requests": 39.333333,
+        "charge_requests": 173.333333,
+        "charge_completed": 26.0,
+        "charge_completion_rate_all": 0.150586,
+        "energy_delivered_kwh": 548.839664,
+        "energy_not_served_kwh": 1778.540095,
+        "departed_shortfall_kwh": 1006.91278,
+        "pending_energy_kwh": 228.369499,
+        "mean_occupancy_rate": 0.888877,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 2090.428224,
+          "overstay_after_complete_min": 1196.411644,
+          "ice_blocking_connector_min": 0.0
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 2090.428224,
+          "overstay_after_complete": 1196.411644,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        }
+      },
+      "full_open_ice_first": {
+        "arrivals": 625.0,
+        "admitted": 447.333333,
+        "rejected": 177.666667,
+        "rejection_rate": 0.283787,
+        "rejected_ev": 75.0,
+        "rejected_ice": 102.666667,
+        "rejected_charge_requests": 51.0,
+        "charge_requests": 173.333333,
+        "charge_completed": 24.333333,
+        "charge_completion_rate_all": 0.140694,
+        "energy_delivered_kwh": 443.074879,
+        "energy_not_served_kwh": 1884.30488,
+        "departed_shortfall_kwh": 994.228969,
+        "pending_energy_kwh": 187.133068,
+        "mean_occupancy_rate": 0.89038,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 2034.424873,
+          "overstay_after_complete_min": 1122.370881,
+          "ice_blocking_connector_min": 1182.086518
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 3216.51139,
+          "overstay_after_complete": 1122.370881,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        }
+      },
+      "predictive_shared_ice_first": {
+        "arrivals": 625.0,
+        "admitted": 440.666667,
+        "rejected": 184.333333,
+        "rejection_rate": 0.294366,
+        "rejected_ev": 60.666667,
+        "rejected_ice": 123.666667,
+        "rejected_charge_requests": 39.666667,
+        "charge_requests": 173.333333,
+        "charge_completed": 25.666667,
+        "charge_completion_rate_all": 0.148745,
+        "energy_delivered_kwh": 547.278009,
+        "energy_not_served_kwh": 1780.10175,
+        "departed_shortfall_kwh": 1004.961402,
+        "pending_energy_kwh": 229.275489,
+        "mean_occupancy_rate": 0.889582,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 2056.815516,
+          "overstay_after_complete_min": 1196.615967,
+          "ice_blocking_connector_min": 73.058165
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 2129.873681,
+          "overstay_after_complete": 1196.615967,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        }
+      }
+    }
+  },
+  "cost_illustrative_synthetic": {
+    "note": "config.ILLUSTRATIVE_COST：合成演示值 illustrative_not_calibrated，仅展示算术与缺参口径，不是现实成本、不用于结论；仍有运行因离场缺电的后续时间未知而 total=null，不得把 null 当 0 参与比较",
+    "runs": [
+      {
+        "policy": "dedicated_by_type",
+        "policy_name": "按车型专用（π0：EV 含本次不充电可用带枪位/充电位，油车只用普通位）",
+        "seed": 11,
+        "traffic_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+        "demand_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+        "traffic_hash_matches_arrivals": true,
+        "arrivals": 594,
+        "admitted": 433,
+        "rejected": 161,
+        "ev_arrivals": 244,
+        "ice_arrivals": 350,
+        "rejected_ev": 63,
+        "rejected_ice": 98,
+        "rejection_rate": 0.271044,
+        "rejected_charge_requests": 45,
+        "charge_requests": 174,
+        "charge_completed": 31,
+        "charge_completion_rate_all": 0.178161,
+        "energy_requested_kwh": 2326.806107,
+        "energy_delivered_kwh": 461.648624,
+        "energy_not_served_kwh": 1865.157483,
+        "rejected_energy_kwh": 661.93427,
+        "departed_shortfall_kwh": 955.506944,
+        "pending_energy_kwh": 247.71627,
+        "mean_occupancy_rate": 0.891255,
+        "peak_occupancy": 60,
+        "peak_charging": 10,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 2477.950367,
+          "overstay_after_complete_min": 1620.293844,
+          "ice_blocking_connector_min": 0.0
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 2477.950367,
+          "overstay_after_complete": 1620.293844,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        },
+        "resource_minutes": {
+          "power_kw_min": 27698.917464,
+          "connector_min": 8098.694173,
+          "charged_bay_min": 11910.504619,
+          "ordinary_bay_min": 26591.731608,
+          "relocation_moves": 0.0
+        },
+        "admission_reason_counts": {
+          "ev_charging_bays_first": 181,
+          "ice_ordinary_only": 252
+        },
+        "rejection_reason_counts": {
+          "rejected_no_free_bay": 63,
+          "rejected_no_ordinary_bay": 98
+        },
+        "cost": {
+          "cost_model_version": "v2-2026-10-30",
+          "unit": "TWD / 仿真窗口（per_day 口径）",
+          "currency": "TWD",
+          "price_year": null,
+          "accounting_period": "per_day",
+          "items": {
+            "user_time": null,
+            "ev_detour_energy": null,
+            "ev_external": null,
+            "ev_residual_trip_loss": 12939.529706,
+            "ice_vehicle_operating": 470.4,
+            "ice_external": 294.0,
+            "ice_activity_loss": 0.0,
+            "ev_activity_loss": 0.0,
+            "operator_capital_depreciation": 500.0,
+            "operator_energy": 1384.945873,
+            "operator_maintenance": 350.824312
+          },
+          "total": null,
+          "complete": false,
+          "missing_parameters": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "relocation_cost": 0.0
+        },
+        "cost_missing_by_disposition": {
+          "detour_exit": [],
+          "admitted_shortfall": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ]
+        },
+        "note": "ILLUSTRATIVE 合成成本参数，仅供算术演示，不是现实成本"
+      },
+      {
+        "policy": "full_open_ice_first",
+        "policy_name": "普通位优先、普通位不足开放充电位（π1）",
+        "seed": 11,
+        "traffic_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+        "demand_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+        "traffic_hash_matches_arrivals": true,
+        "arrivals": 594,
+        "admitted": 437,
+        "rejected": 157,
+        "ev_arrivals": 244,
+        "ice_arrivals": 350,
+        "rejected_ev": 70,
+        "rejected_ice": 87,
+        "rejection_rate": 0.26431,
+        "rejected_charge_requests": 51,
+        "charge_requests": 174,
+        "charge_completed": 29,
+        "charge_completion_rate_all": 0.166667,
+        "energy_requested_kwh": 2326.806107,
+        "energy_delivered_kwh": 432.735245,
+        "energy_not_served_kwh": 1894.070862,
+        "rejected_energy_kwh": 711.155891,
+        "departed_shortfall_kwh": 969.059501,
+        "pending_energy_kwh": 213.85547,
+        "mean_occupancy_rate": 0.891671,
+        "peak_occupancy": 60,
+        "peak_charging": 9,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 2245.488013,
+          "overstay_after_complete_min": 1599.758959,
+          "ice_blocking_connector_min": 519.913083
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 2765.401096,
+          "overstay_after_complete": 1599.758959,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        },
+        "resource_minutes": {
+          "power_kw_min": 25964.114717,
+          "connector_min": 8081.31145,
+          "charged_bay_min": 11942.828054,
+          "ordinary_bay_min": 26577.356613,
+          "relocation_moves": 0.0
+        },
+        "admission_reason_counts": {
+          "ev_charging_bays_first": 174,
+          "ice_ordinary_first": 250,
+          "ice_shared_charging_bays": 13
+        },
+        "rejection_reason_counts": {
+          "rejected_no_free_bay": 157
+        },
+        "cost": {
+          "cost_model_version": "v2-2026-10-30",
+          "unit": "TWD / 仿真窗口（per_day 口径）",
+          "currency": "TWD",
+          "price_year": null,
+          "accounting_period": "per_day",
+          "items": {
+            "user_time": null,
+            "ev_detour_energy": null,
+            "ev_external": null,
+            "ev_residual_trip_loss": 13441.723134,
+            "ice_vehicle_operating": 417.6,
+            "ice_external": 261.0,
+            "ice_activity_loss": 0.0,
+            "ev_activity_loss": 0.0,
+            "operator_capital_depreciation": 500.0,
+            "operator_energy": 1298.205736,
+            "operator_maintenance": 336.367623
+          },
+          "total": null,
+          "complete": false,
+          "missing_parameters": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "relocation_cost": 0.0
+        },
+        "cost_missing_by_disposition": {
+          "detour_exit": [],
+          "admitted_shortfall": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ]
+        },
+        "note": "ILLUSTRATIVE 合成成本参数，仅供算术演示，不是现实成本"
+      },
+      {
+        "policy": "predictive_shared_ice_first",
+        "policy_name": "预测共享（π2：按可见 EV 到达/充电预测放行油车）",
+        "seed": 11,
+        "traffic_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+        "demand_hash": "e8fdaf57588066d78750854cdb587add8842bc4ff5dbbe8afe974bccc1b3c3de",
+        "traffic_hash_matches_arrivals": true,
+        "arrivals": 594,
+        "admitted": 433,
+        "rejected": 161,
+        "ev_arrivals": 244,
+        "ice_arrivals": 350,
+        "rejected_ev": 63,
+        "rejected_ice": 98,
+        "rejection_rate": 0.271044,
+        "rejected_charge_requests": 45,
+        "charge_requests": 174,
+        "charge_completed": 31,
+        "charge_completion_rate_all": 0.178161,
+        "energy_requested_kwh": 2326.806107,
+        "energy_delivered_kwh": 461.648624,
+        "energy_not_served_kwh": 1865.157483,
+        "rejected_energy_kwh": 661.93427,
+        "departed_shortfall_kwh": 955.506944,
+        "pending_energy_kwh": 247.71627,
+        "mean_occupancy_rate": 0.891255,
+        "peak_occupancy": 60,
+        "peak_charging": 10,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 2477.950367,
+          "overstay_after_complete_min": 1620.293844,
+          "ice_blocking_connector_min": 0.0
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 2477.950367,
+          "overstay_after_complete": 1620.293844,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        },
+        "resource_minutes": {
+          "power_kw_min": 27698.917464,
+          "connector_min": 8098.694173,
+          "charged_bay_min": 11910.504619,
+          "ordinary_bay_min": 26591.731608,
+          "relocation_moves": 0.0
+        },
+        "admission_reason_counts": {
+          "ev_charging_bays_first": 181,
+          "ice_ordinary_first": 252
+        },
+        "rejection_reason_counts": {
+          "rejected_no_free_bay": 143,
+          "rejected_ice_reserved_for_ev_forecast": 18
+        },
+        "cost": {
+          "cost_model_version": "v2-2026-10-30",
+          "unit": "TWD / 仿真窗口（per_day 口径）",
+          "currency": "TWD",
+          "price_year": null,
+          "accounting_period": "per_day",
+          "items": {
+            "user_time": null,
+            "ev_detour_energy": null,
+            "ev_external": null,
+            "ev_residual_trip_loss": 12939.529706,
+            "ice_vehicle_operating": 470.4,
+            "ice_external": 294.0,
+            "ice_activity_loss": 0.0,
+            "ev_activity_loss": 0.0,
+            "operator_capital_depreciation": 500.0,
+            "operator_energy": 1384.945873,
+            "operator_maintenance": 350.824312
+          },
+          "total": null,
+          "complete": false,
+          "missing_parameters": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "relocation_cost": 0.0
+        },
+        "cost_missing_by_disposition": {
+          "detour_exit": [],
+          "admitted_shortfall": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ]
+        },
+        "note": "ILLUSTRATIVE 合成成本参数，仅供算术演示，不是现实成本"
+      },
+      {
+        "policy": "dedicated_by_type",
+        "policy_name": "按车型专用（π0：EV 含本次不充电可用带枪位/充电位，油车只用普通位）",
+        "seed": 12,
+        "traffic_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+        "demand_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+        "traffic_hash_matches_arrivals": true,
+        "arrivals": 639,
+        "admitted": 438,
+        "rejected": 201,
+        "ev_arrivals": 251,
+        "ice_arrivals": 388,
+        "rejected_ev": 54,
+        "rejected_ice": 147,
+        "rejection_rate": 0.314554,
+        "rejected_charge_requests": 34,
+        "charge_requests": 165,
+        "charge_completed": 26,
+        "charge_completion_rate_all": 0.157576,
+        "energy_requested_kwh": 2192.202359,
+        "energy_delivered_kwh": 548.797296,
+        "energy_not_served_kwh": 1643.405062,
+        "rejected_energy_kwh": 460.015469,
+        "departed_shortfall_kwh": 950.733284,
+        "pending_energy_kwh": 232.656309,
+        "mean_occupancy_rate": 0.87798,
+        "peak_occupancy": 60,
+        "peak_charging": 10,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 2246.723324,
+          "overstay_after_complete_min": 1054.528041,
+          "ice_blocking_connector_min": 0.0
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 2246.723324,
+          "overstay_after_complete": 1054.528041,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        },
+        "resource_minutes": {
+          "power_kw_min": 32927.837787,
+          "connector_min": 8145.267434,
+          "charged_bay_min": 11862.107991,
+          "ordinary_bay_min": 26066.634236,
+          "relocation_moves": 0.0
+        },
+        "admission_reason_counts": {
+          "ice_ordinary_only": 241,
+          "ev_charging_bays_first": 197
+        },
+        "rejection_reason_counts": {
+          "rejected_no_ordinary_bay": 147,
+          "rejected_no_free_bay": 54
+        },
+        "cost": {
+          "cost_model_version": "v2-2026-10-30",
+          "unit": "TWD / 仿真窗口（per_day 口径）",
+          "currency": "TWD",
+          "price_year": null,
+          "accounting_period": "per_day",
+          "items": {
+            "user_time": null,
+            "ev_detour_energy": null,
+            "ev_external": null,
+            "ev_residual_trip_loss": 11285.990023,
+            "ice_vehicle_operating": 705.6,
+            "ice_external": 441.0,
+            "ice_activity_loss": 0.0,
+            "ev_activity_loss": 0.0,
+            "operator_capital_depreciation": 500.0,
+            "operator_energy": 1646.391889,
+            "operator_maintenance": 394.398648
+          },
+          "total": null,
+          "complete": false,
+          "missing_parameters": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "relocation_cost": 0.0
+        },
+        "cost_missing_by_disposition": {
+          "admitted_shortfall": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "detour_exit": []
+        },
+        "note": "ILLUSTRATIVE 合成成本参数，仅供算术演示，不是现实成本"
+      },
+      {
+        "policy": "full_open_ice_first",
+        "policy_name": "普通位优先、普通位不足开放充电位（π1）",
+        "seed": 12,
+        "traffic_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+        "demand_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+        "traffic_hash_matches_arrivals": true,
+        "arrivals": 639,
+        "admitted": 450,
+        "rejected": 189,
+        "ev_arrivals": 251,
+        "ice_arrivals": 388,
+        "rejected_ev": 72,
+        "rejected_ice": 117,
+        "rejection_rate": 0.295775,
+        "rejected_charge_requests": 49,
+        "charge_requests": 165,
+        "charge_completed": 23,
+        "charge_completion_rate_all": 0.139394,
+        "energy_requested_kwh": 2192.202359,
+        "energy_delivered_kwh": 366.97475,
+        "energy_not_served_kwh": 1825.227609,
+        "rejected_energy_kwh": 676.844725,
+        "departed_shortfall_kwh": 966.972979,
+        "pending_energy_kwh": 181.409905,
+        "mean_occupancy_rate": 0.883425,
+        "peak_occupancy": 60,
+        "peak_charging": 10,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 2125.259783,
+          "overstay_after_complete_min": 912.326618,
+          "ice_blocking_connector_min": 1966.616248
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 4091.876031,
+          "overstay_after_complete": 912.326618,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        },
+        "resource_minutes": {
+          "power_kw_min": 22018.484999,
+          "connector_min": 8193.883893,
+          "charged_bay_min": 11893.92867,
+          "ordinary_bay_min": 26270.015299,
+          "relocation_moves": 0.0
+        },
+        "admission_reason_counts": {
+          "ice_ordinary_first": 237,
+          "ev_charging_bays_first": 179,
+          "ice_shared_charging_bays": 34
+        },
+        "rejection_reason_counts": {
+          "rejected_no_free_bay": 189
+        },
+        "cost": {
+          "cost_model_version": "v2-2026-10-30",
+          "unit": "TWD / 仿真窗口（per_day 口径）",
+          "currency": "TWD",
+          "price_year": null,
+          "accounting_period": "per_day",
+          "items": {
+            "user_time": null,
+            "ev_detour_energy": null,
+            "ev_external": null,
+            "ev_residual_trip_loss": 13150.541628,
+            "ice_vehicle_operating": 561.6,
+            "ice_external": 351.0,
+            "ice_activity_loss": 0.0,
+            "ev_activity_loss": 0.0,
+            "operator_capital_depreciation": 500.0,
+            "operator_energy": 1100.92425,
+            "operator_maintenance": 303.487375
+          },
+          "total": null,
+          "complete": false,
+          "missing_parameters": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "relocation_cost": 0.0
+        },
+        "cost_missing_by_disposition": {
+          "admitted_shortfall": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "detour_exit": []
+        },
+        "note": "ILLUSTRATIVE 合成成本参数，仅供算术演示，不是现实成本"
+      },
+      {
+        "policy": "predictive_shared_ice_first",
+        "policy_name": "预测共享（π2：按可见 EV 到达/充电预测放行油车）",
+        "seed": 12,
+        "traffic_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+        "demand_hash": "967b1bb8cafc27909744c19b6b453d55215c77ca270aa6930d031c28845b1f86",
+        "traffic_hash_matches_arrivals": true,
+        "arrivals": 639,
+        "admitted": 439,
+        "rejected": 200,
+        "ev_arrivals": 251,
+        "ice_arrivals": 388,
+        "rejected_ev": 55,
+        "rejected_ice": 145,
+        "rejection_rate": 0.312989,
+        "rejected_charge_requests": 34,
+        "charge_requests": 165,
+        "charge_completed": 26,
+        "charge_completion_rate_all": 0.157576,
+        "energy_requested_kwh": 2192.202359,
+        "energy_delivered_kwh": 554.134198,
+        "energy_not_served_kwh": 1638.06816,
+        "rejected_energy_kwh": 460.015469,
+        "departed_shortfall_kwh": 946.245143,
+        "pending_energy_kwh": 231.807549,
+        "mean_occupancy_rate": 0.879492,
+        "peak_occupancy": 60,
+        "peak_charging": 10,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 2086.153418,
+          "overstay_after_complete_min": 1054.528041,
+          "ice_blocking_connector_min": 138.953275
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 2225.106692,
+          "overstay_after_complete": 1054.528041,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        },
+        "resource_minutes": {
+          "power_kw_min": 33248.051887,
+          "connector_min": 8152.213063,
+          "charged_bay_min": 11875.796661,
+          "ordinary_bay_min": 26118.275634,
+          "relocation_moves": 0.0
+        },
+        "admission_reason_counts": {
+          "ice_ordinary_first": 241,
+          "ev_charging_bays_first": 196,
+          "ice_shared_by_forecast": 2
+        },
+        "rejection_reason_counts": {
+          "rejected_no_free_bay": 141,
+          "rejected_ice_reserved_for_ev_forecast": 59
+        },
+        "cost": {
+          "cost_model_version": "v2-2026-10-30",
+          "unit": "TWD / 仿真窗口（per_day 口径）",
+          "currency": "TWD",
+          "price_year": null,
+          "accounting_period": "per_day",
+          "items": {
+            "user_time": null,
+            "ev_detour_energy": null,
+            "ev_external": null,
+            "ev_residual_trip_loss": 11250.08489,
+            "ice_vehicle_operating": 696.0,
+            "ice_external": 435.0,
+            "ice_activity_loss": 0.0,
+            "ev_activity_loss": 0.0,
+            "operator_capital_depreciation": 500.0,
+            "operator_energy": 1662.402594,
+            "operator_maintenance": 397.067099
+          },
+          "total": null,
+          "complete": false,
+          "missing_parameters": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "relocation_cost": 0.0
+        },
+        "cost_missing_by_disposition": {
+          "admitted_shortfall": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "detour_exit": []
+        },
+        "note": "ILLUSTRATIVE 合成成本参数，仅供算术演示，不是现实成本"
+      },
+      {
+        "policy": "dedicated_by_type",
+        "policy_name": "按车型专用（π0：EV 含本次不充电可用带枪位/充电位，油车只用普通位）",
+        "seed": 13,
+        "traffic_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+        "demand_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+        "traffic_hash_matches_arrivals": true,
+        "arrivals": 642,
+        "admitted": 450,
+        "rejected": 192,
+        "ev_arrivals": 269,
+        "ice_arrivals": 373,
+        "rejected_ev": 62,
+        "rejected_ice": 130,
+        "rejection_rate": 0.299065,
+        "rejected_charge_requests": 39,
+        "charge_requests": 181,
+        "charge_completed": 21,
+        "charge_completion_rate_all": 0.116022,
+        "energy_requested_kwh": 2463.130812,
+        "energy_delivered_kwh": 636.073072,
+        "energy_not_served_kwh": 1827.05774,
+        "rejected_energy_kwh": 507.823711,
+        "departed_shortfall_kwh": 1114.498111,
+        "pending_energy_kwh": 204.735918,
+        "mean_occupancy_rate": 0.897396,
+        "peak_occupancy": 60,
+        "peak_charging": 10,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 1546.610981,
+          "overstay_after_complete_min": 914.413046,
+          "ice_blocking_connector_min": 0.0
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 1546.610981,
+          "overstay_after_complete": 914.413046,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        },
+        "resource_minutes": {
+          "power_kw_min": 38164.384344,
+          "connector_min": 8109.066355,
+          "charged_bay_min": 11973.849811,
+          "ordinary_bay_min": 26793.660486,
+          "relocation_moves": 0.0
+        },
+        "admission_reason_counts": {
+          "ev_charging_bays_first": 207,
+          "ice_ordinary_only": 243
+        },
+        "rejection_reason_counts": {
+          "rejected_no_free_bay": 62,
+          "rejected_no_ordinary_bay": 130
+        },
+        "cost": {
+          "cost_model_version": "v2-2026-10-30",
+          "unit": "TWD / 仿真窗口（per_day 口径）",
+          "currency": "TWD",
+          "price_year": null,
+          "accounting_period": "per_day",
+          "items": {
+            "user_time": null,
+            "ev_detour_energy": null,
+            "ev_external": null,
+            "ev_residual_trip_loss": 12978.574574,
+            "ice_vehicle_operating": 624.0,
+            "ice_external": 390.0,
+            "ice_activity_loss": 0.0,
+            "ev_activity_loss": 0.0,
+            "operator_capital_depreciation": 500.0,
+            "operator_energy": 1908.219217,
+            "operator_maintenance": 438.036536
+          },
+          "total": null,
+          "complete": false,
+          "missing_parameters": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "relocation_cost": 0.0
+        },
+        "cost_missing_by_disposition": {
+          "detour_exit": [],
+          "admitted_shortfall": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ]
+        },
+        "note": "ILLUSTRATIVE 合成成本参数，仅供算术演示，不是现实成本"
+      },
+      {
+        "policy": "full_open_ice_first",
+        "policy_name": "普通位优先、普通位不足开放充电位（π1）",
+        "seed": 13,
+        "traffic_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+        "demand_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+        "traffic_hash_matches_arrivals": true,
+        "arrivals": 642,
+        "admitted": 455,
+        "rejected": 187,
+        "ev_arrivals": 269,
+        "ice_arrivals": 373,
+        "rejected_ev": 83,
+        "rejected_ice": 104,
+        "rejection_rate": 0.291277,
+        "rejected_charge_requests": 53,
+        "charge_requests": 181,
+        "charge_completed": 21,
+        "charge_completion_rate_all": 0.116022,
+        "energy_requested_kwh": 2463.130812,
+        "energy_delivered_kwh": 529.514643,
+        "energy_not_served_kwh": 1933.616169,
+        "rejected_energy_kwh": 720.827914,
+        "departed_shortfall_kwh": 1046.654427,
+        "pending_energy_kwh": 166.133828,
+        "mean_occupancy_rate": 0.896044,
+        "peak_occupancy": 60,
+        "peak_charging": 9,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 1732.526822,
+          "overstay_after_complete_min": 855.027066,
+          "ice_blocking_connector_min": 1059.730222
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 2792.257044,
+          "overstay_after_complete": 855.027066,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        },
+        "resource_minutes": {
+          "power_kw_min": 31770.878609,
+          "connector_min": 8210.709184,
+          "charged_bay_min": 12082.242249,
+          "ordinary_bay_min": 26626.858536,
+          "relocation_moves": 0.0
+        },
+        "admission_reason_counts": {
+          "ev_charging_bays_first": 186,
+          "ice_ordinary_first": 243,
+          "ice_shared_charging_bays": 26
+        },
+        "rejection_reason_counts": {
+          "rejected_no_free_bay": 187
+        },
+        "cost": {
+          "cost_model_version": "v2-2026-10-30",
+          "unit": "TWD / 仿真窗口（per_day 口径）",
+          "currency": "TWD",
+          "price_year": null,
+          "accounting_period": "per_day",
+          "items": {
+            "user_time": null,
+            "ev_detour_energy": null,
+            "ev_external": null,
+            "ev_residual_trip_loss": 14139.858731,
+            "ice_vehicle_operating": 499.2,
+            "ice_external": 312.0,
+            "ice_activity_loss": 0.0,
+            "ev_activity_loss": 0.0,
+            "operator_capital_depreciation": 500.0,
+            "operator_energy": 1588.54393,
+            "operator_maintenance": 384.757322
+          },
+          "total": null,
+          "complete": false,
+          "missing_parameters": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "relocation_cost": 0.0
+        },
+        "cost_missing_by_disposition": {
+          "detour_exit": [],
+          "admitted_shortfall": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ]
+        },
+        "note": "ILLUSTRATIVE 合成成本参数，仅供算术演示，不是现实成本"
+      },
+      {
+        "policy": "predictive_shared_ice_first",
+        "policy_name": "预测共享（π2：按可见 EV 到达/充电预测放行油车）",
+        "seed": 13,
+        "traffic_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+        "demand_hash": "0ac0b88bc77c9727426acc89082731a77bf6799738d1b6f7e726388e6f9e249c",
+        "traffic_hash_matches_arrivals": true,
+        "arrivals": 642,
+        "admitted": 450,
+        "rejected": 192,
+        "ev_arrivals": 269,
+        "ice_arrivals": 373,
+        "rejected_ev": 64,
+        "rejected_ice": 128,
+        "rejection_rate": 0.299065,
+        "rejected_charge_requests": 40,
+        "charge_requests": 181,
+        "charge_completed": 20,
+        "charge_completion_rate_all": 0.110497,
+        "energy_requested_kwh": 2463.130812,
+        "energy_delivered_kwh": 626.051204,
+        "energy_not_served_kwh": 1837.079608,
+        "rejected_energy_kwh": 515.64484,
+        "departed_shortfall_kwh": 1113.132119,
+        "pending_energy_kwh": 208.302649,
+        "mean_occupancy_rate": 0.897998,
+        "peak_occupancy": 60,
+        "peak_charging": 10,
+        "type_occupancy_minutes": {
+          "no_charging_demand_bay_min": 1606.342762,
+          "overstay_after_complete_min": 915.026016,
+          "ice_blocking_connector_min": 80.221221
+        },
+        "occupancy_minutes_by_reason": {
+          "no_charging_demand": 1686.563983,
+          "overstay_after_complete": 915.026016,
+          "dispatch_defer": 0.0,
+          "insufficient_power": 0.0,
+          "equipment_failure": 0.0
+        },
+        "resource_minutes": {
+          "power_kw_min": 37563.072245,
+          "connector_min": 8118.499734,
+          "charged_bay_min": 11999.749428,
+          "ordinary_bay_min": 26793.749255,
+          "relocation_moves": 0.0
+        },
+        "admission_reason_counts": {
+          "ev_charging_bays_first": 205,
+          "ice_ordinary_first": 243,
+          "ice_shared_by_forecast": 2
+        },
+        "rejection_reason_counts": {
+          "rejected_no_free_bay": 154,
+          "rejected_ice_reserved_for_ev_forecast": 38
+        },
+        "cost": {
+          "cost_model_version": "v2-2026-10-30",
+          "unit": "TWD / 仿真窗口（per_day 口径）",
+          "currency": "TWD",
+          "price_year": null,
+          "accounting_period": "per_day",
+          "items": {
+            "user_time": null,
+            "ev_detour_energy": null,
+            "ev_external": null,
+            "ev_residual_trip_loss": 13030.215673,
+            "ice_vehicle_operating": 614.4,
+            "ice_external": 384.0,
+            "ice_activity_loss": 0.0,
+            "ev_activity_loss": 0.0,
+            "operator_capital_depreciation": 500.0,
+            "operator_energy": 1878.153612,
+            "operator_maintenance": 433.025602
+          },
+          "total": null,
+          "complete": false,
+          "missing_parameters": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ],
+          "relocation_cost": 0.0
+        },
+        "cost_missing_by_disposition": {
+          "detour_exit": [],
+          "admitted_shortfall": [
+            "detour_km_per_failure",
+            "detour_min",
+            "search_min",
+            "walking_min"
+          ]
+        },
+        "note": "ILLUSTRATIVE 合成成本参数，仅供算术演示，不是现实成本"
+      }
+    ],
+    "by_rule": {
+      "dedicated_by_type": {
+        "cost_complete_runs": 0,
+        "cost_total_mean_complete_runs": null,
+        "missing_parameters": [
+          "detour_km_per_failure",
+          "detour_min",
+          "search_min",
+          "walking_min"
+        ]
+      },
+      "full_open_ice_first": {
+        "cost_complete_runs": 0,
+        "cost_total_mean_complete_runs": null,
+        "missing_parameters": [
+          "detour_km_per_failure",
+          "detour_min",
+          "search_min",
+          "walking_min"
+        ]
+      },
+      "predictive_shared_ice_first": {
+        "cost_complete_runs": 0,
+        "cost_total_mean_complete_runs": null,
+        "missing_parameters": [
+          "detour_km_per_failure",
+          "detour_min",
+          "search_min",
+          "walking_min"
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "synthetic 车流：参数未对台北/任何真实停车场校准，数值只用于规则行为对比。",
+    "q_need 未识别：needs_charge 是生成器真值，只用于结算与计量，不进入控制器。",
+    "占桩分钟是逐车结果计量（用隐藏真值），只用于研究与成本归因，不反馈进准入决策。",
+    "缺参成本为 null：不得据此比较社会成本优劣，也不得据此定 k*。",
+    "三条规则在同一 k 与同一车流下比较，不构成 k 与规则的联合最优性证明。"
+  ]
+}

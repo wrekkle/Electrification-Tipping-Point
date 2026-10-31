@@ -1,0 +1,17 @@
+lot_type,ev_mode,r,q,best_mode,best_rule,best_theta,best_m,best_ppr,best_v_rmb,mean_daily_loss_rmb,n_days
+pnc,beta,0.4,0.3,overhead,pi_F,0,20,0.2,622209.9538,12.1698377,100
+pnc,beta,0.4,0.9,overhead,pi_F,0,20,0.2,649954.4352,27.37229327,100
+pnc,beta,0.7,0.3,overhead,pi_F,0,20,0.2,631276.3349,17.13771774,100
+pnc,beta,0.7,0.9,overhead,pi_F,0,20,0.2,687565.728,47.9812208,100
+pnc,binomial,0.4,0.3,overhead,pi_F,0,20,0.2,616341.3679,8.954174214,100
+pnc,binomial,0.4,0.9,overhead,pi_F,0,20,0.2,656603.9336,31.01585402,100
+pnc,binomial,0.7,0.3,overhead,pi_F,0,20,0.2,637433.0875,20.51128083,100
+pnc,binomial,0.7,0.9,overhead,pi_F,0,20,0.2,686349.17,47.31461368,100
+plc,beta,0.4,0.3,overhead,pi_F,0,20,0.2,629723.2286,16.2867006,100
+plc,beta,0.4,0.9,overhead,pi_F,0,20,0.2,706929.9535,58.59175532,100
+plc,beta,0.7,0.3,overhead,pi_F,0,20,0.2,648809.9164,26.74515965,100
+plc,beta,0.7,0.9,overhead,pi_F,0,20,0.2,768281.4589,92.20901858,100
+plc,binomial,0.4,0.3,overhead,pi_F,0,20,0.2,630411.8805,16.6640441,100
+plc,binomial,0.4,0.9,overhead,pi_F,0,20,0.2,708681.2664,59.55137883,100
+plc,binomial,0.7,0.3,overhead,pi_F,0,20,0.2,664155.4586,35.15367593,100
+plc,binomial,0.7,0.9,overhead,pi_F,0,20,0.2,769523.961,92.88984163,100

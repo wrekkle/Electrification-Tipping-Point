@@ -1,0 +1,28 @@
+oMath: 65 oMathTagAny: 82 oMathPara: 17
+para 59 ' [V(m0, pi_F) - V(m0, pi_S)]        (12)' oMath inside: 0
+para 127 'K_H(m) + E_r[J_H(m, pi; xi)]        (10)' oMath inside: 0
+para 130 'r) - min_{m < N} V(m, pi; r)        (11)' oMath inside: 0
+para 139 '(13)' oMath inside: 1
+para 143 '(14)' oMath inside: 1
+para 149 '(15)' oMath inside: 1
+leftover Delta t_i 2
+leftover Delta C_energy 1
+leftover Delta C_occ 0
+leftover Delta T_i 1
+leftover released in time 0
+leftover occupancy allowed 0
+standalone number paras: ['(13)', '(14)', '(15)']
+ref: According to above analysis, as EV proportion gradually increases, the optimal PPR will equal to 1 and remain thereafter
+ref: These checks are specified but not yet computed on the submitted numbers. Until they are, the threshold near 0.7 in the 
+ref: Equation (10) is written here for one design and one rule at one EV share:
+ref: where v_i is the value of time of the driver in new Taiwan dollars per hour, Delta t_i is the excess time against the ba
+ref: Equations (13) and (14) do not stack for one vehicle. A charging EV that fails also loses parking time, yet that time is
+ref: Equations (13) and (14) do not stack for one vehicle. A charging EV that fails also loses parking time, yet that time is
+ref: Equations (13) and (14) do not stack for one vehicle. A charging EV that fails also loses parking time, yet that time is
+ref: Four kinds of money enter the accounting and only one of them is social cost. Time, extra energy, externalities and acti
+ref: The accounting items carry fixed names so that the text can be compared line by line with the implementation. User time 
+ref: The accounting items carry fixed names so that the text can be compared line by line with the implementation. User time 
+ref: Table 12 lists the parameters of equations (13) and (14) with their symbols, units and the status of their sources. A va
+m:t total: 331
+m:t with Delta: ['Δ', 'Δ', 'Δ', 'Δ', 'Δ', 'Δ', 'Δ']
+m:t last 40: ['L', 'residual', ',', 'i', 'c', 'ICE', ',', 'i', '=', 'v', 'i', 'Δ', 'T', 'i', '+', 'Δ', 'C', 'veh', ',', 'i', '+', 'Δ', 'C', 'ext', ',', 'i', '+', 'L', 'act', ',', 'i', 'Δ', 'C', 'occ', '=', 'C', 'occupancy allowed', '−', 'C', 'released in time']

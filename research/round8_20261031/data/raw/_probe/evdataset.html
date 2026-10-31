@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        
+            <!-- Responsive Viewport -->
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+            <!-- Required meta tags -->
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+            <!-- Icons --->
+            <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+            <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+            <!--     Fonts and icons     -->
+            <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+            <!-- CSS Files -->
+            <link href="assets/css/material-kit.css?v=2.0.5" rel="stylesheet" />
+            <!-- CSS Just for demo purpose, don't include it in your project -->
+            <link href="assets/demo/demo.css" rel="stylesheet" />
+
+            <!-- Bootstrap CSS -->
+
+
+            <!--- Material Kit CSS --->
+            <link href="assets/css/material-kit.css?v=2.0.5" rel="stylesheet" />
+
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139837603-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-139837603-1');
+            </script>
+
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PFN6XB6');</script>
+            <!-- End Google Tag Manager -->
+
+            <style>
+                @media screen and (max-width: 600px) {
+                  h1 {
+                    font-size: 30px;
+                  }
+                }
+
+                @media screen and (max-width: 600px) {
+                  h4.page-subtitle {
+                    display: None;
+                  }
+                }
+            </style>
+        
+        
+    <title>ACN-Data -- A Public EV Charging Dataset</title>
+
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFN6XB6"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+            <nav class="navbar navbar-expand-lg fixed-top navbar-transparent navbar-color-on-scroll " color-on-scroll="25">
+              <div class="container">
+                <a class="navbar-brand" href="index">Adaptive Charging Network</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="info">Info</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="dataset">Data</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="simulator">Simulator</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+
+
+
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Account
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="register">Register</a>
+                            <a class="dropdown-item" href="login">Retrieve Key</a>
+                            </div>
+                        </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        
+
+        
+    
+        <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/images/open_road_cropped.jpg'); height: 25vh;
+  min-height: 25vh;>">
+            <div class="container">
+                <div class="section">
+                    <div class="row">
+                        <div class="col-md-8 ml-auto mr-auto text-center">
+                            <h1 class="title">
+    ACN-Data
+</h1>
+                            <h4 class="page-subtitle">
+                                
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="main">
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <ul class="nav nav-pills nav-pills-info justify-content-center" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#about" role="tablist"
+                                   aria-expanded="true">
+                                    About
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#interface" role="tablist"
+                                   aria-expanded="false">
+                                    Web Interface
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">API</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" data-toggle="tab" href="#api">API</a>
+                                    <a class="dropdown-item" data-toggle="tab" href="#client">API Client</a>
+                                </div>
+                            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#fields" role="tablist"
+                                   aria-expanded="false">
+                                    Fields
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#sites" role="tablist"
+                                   aria-expanded="false">
+                                    Sites
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#citing" role="tablist"
+                                   aria-expanded="false">
+                                    Citing
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <div class="tab-content tab-space">
+                            <div class="tab-pane active" id="about" aria-expanded="true">
+                                <h2>About the Dataset</h2>
+                                <h5>
+                                    ACN-Data exists to help researchers access real data around electric vehicle
+                                    charging. The dataset is made possible by a close collaboration with
+                                    <a href="http://powerflex.com">PowerFlex Systems</a>  which operates Adaptive Charging
+                                    Networks around the United States.
+                                </h5>
+                                <h5>
+                                    Each entry in the dataset contains information about a single charging session.
+                                    For more details on the data collected see the Fields and Sites tabs above.
+                                </h5>
+                                <h5>
+                                    There are 3 ways to access the dataset.
+                                    <ul>
+                                      <li>Web Interface - A simple way to download data as JSON files.</li>
+                                      <li>REST API - A more flexible way to access data.</li>
+                                      <li>Python API Client - A simple client for using the API in Python.</li>
+                                    </ul>
+                                </h5>
+                            </div>
+                            <div class="tab-pane" id="interface" aria-expanded="false">
+                                <div class="alert alert-warning" role="alert">
+                                    <b>WARNING:</b>
+                                  It has come to our attention that prior to Oct. 10, 2019, a bug in the Web Interface
+                                    led to improper handling of timezones. This means that prior to Oct. 10, all
+                                    timestamps returned by this interface were offset by 7-8 hours (depending on
+                                    daylight savings time). This error has been fixed, but be advised that previously
+                                    downloaded data may still have errors. This bug was isolated to the Web Interface,
+                                    so any data downloaded via the API directly or the current Python Interface is
+                                    correct to our knowledge. If you have any questions or concerns, please feel free
+                                    to contct me at zlee@caltech.edu. We are sincerely sorry for the inconvenience this
+                                    may have caused and are very thankful to the ACN Portal community for helping us to
+                                    identify this bug.
+                                </div>
+                                <h5>
+                                    This interface provides an easy way to explore and download the acndata dataset.
+                                    Simply fill in the fields you would like to filter over and the session count above
+                                    the
+                                    form will update. When you are happy with your filters, click the download button
+                                    below
+                                    to get a json file with all the relevant charging sessions.
+                                </h5>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form action="" method="post" role="form" id="web_interface">
+                                            <input id="csrf_token" name="csrf_token" type="hidden" value="ImU3NTQyZDJiNDJmMjJlN2EzYmY0YTcyMzI3ZGNlMDBmM2FkYTJmNzAi.auXGSQ.3FuWZOENGTWBDBa-4IvM55t4Cfs">
+                                            <div class="form-group">
+                                                <label for="siteSelection"><label for="site">Site</label></label>
+                                                <select aria-expanded="&quot;false&quot;" aria-haspopup="&quot;true&quot;" class="form-control" data-toggle="&quot;dropdown&quot;" id="siteSelection" name="site"><option value="Caltech">Caltech</option><option value="JPL">JPL</option><option value="Office 1">Office 1</option></select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label-control">From</label>
+                                                <div class="input-group date" data-target-input="nearest">
+                                                    <input class="form-control datetimepicker" id="start" name="start" type="text" value="">
+                                                    <div class="input-group-append">
+                                                      <span class="input-group-text">
+                                                        <i class="fa fa-calendar"></i>
+                                                      </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label-control">To</label>
+                                                <div class="input-group date" data-target-input="nearest">
+                                                    <input class="form-control datetimepicker" id="end" name="end" type="text" value="">
+                                                    <div class="input-group-append">
+                                                      <span class="input-group-text">
+                                                        <i class="fa fa-calendar"></i>
+                                                      </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label-control"><label for="min_kWh">Minimum Energy (kWh)</label></label>
+                                                <input class="form-control" id="min_kWh" name="min_kWh" type="text" value="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="label-control">Sessions Found:</label>
+                                                <h5><span id=count>-</span></h5>
+                                            </div>
+                                            <div class="text-center">
+                                                <input class="btn btn-info display-4 " id="submit" name="submit" type="submit" value="Download">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="api" aria-expanded="false">
+                                The ACN-Data API provides programmatic access to the dataset.
+
+                                <h2>Authentication</h2>
+                                We ask all users to register in order to use the ACN-Data API. This helps us keep track
+                                of how much the dataset is being used and protect it from bad actors. To get an access
+                                token please register below.
+
+                                For the following examples, if your browser prompts you for a username and password,
+                                enter your token as the username and leave the password blank.
+                                DO NOT enter the username and password you used to register, this will not work.
+                                <br><br>
+                                <div class="text-center">
+                                    <a  role="button" class="btn btn-info" href="register" role="button">Register</a>
+                                    <a  role="button" class="btn btn-info" href="login" role="button">Retrieve Key</a>
+                                </div>
+
+
+                                <h2>Sessions API</h2>
+                                <h3>Endpoints</h3>
+                                The ACN-Data session API provides two end-points. The first gives access to all fields
+                                EXCEPT time series while the second give access to all fields. To use each endpoint
+                                replace <code>&ltsite_id&gt</code> with the identifier of the site you want to gather
+                                data from.
+                                <br>
+                                <br>
+                                Without time series:
+                                <pre class="bg-light text-center"><code>https://ev.caltech.edu/api/v1/sessions/&ltsite_id&gt</code></pre>
+
+                                With time series:
+                                <pre class="bg-light text-center"><code>https://ev.caltech.edu/api/v1/sessions/&ltsite_id&gt/ts</code></pre>
+                                Only use the /ts endpoint when you really need time series data, as it can be slow and
+                                bogs down our servers.
+
+
+                                <h3>Arguments</h3>
+                                Arguments allow you to have more control over which sessions are returned. Three
+                                args are currently supported, pretty, where, and sort. To use arguments, use a
+                                <code>?</code> between the endpoint and the first argument. If you wish to use multiple
+                                arguments use <code>&</code> between each argument.
+
+                                <h4 class="title">Pretty</h4>
+                                The <code>pretty</code> argument formats the json returned by the API request in a human
+                                readable way.
+
+                                <h4 class="title">Filtering</h4>
+                                Filtering allows you to limit the sessions which are returned from an API call. Filters
+                                are applied using the <code>where</code> parameter. You can filter on most session
+                                fields using standard comparators, i.e. <code>&lt</code>, <code>&lt=</code>,
+                                <code>==</code>, <code>&gt</code>, <code>&gt=</code>. You can also chain conditions
+                                using the <code>and</code> and <code>or</code> keywords.
+
+                                For example we can get only sessions from Caltech which started between May 1, 2019 and
+                                May 2, 2019 using the query:
+                                <br> <br>
+                                <pre class="bg-light"><a
+                                        href="https://ev.caltech.edu/api/v1/sessions/caltech?where=connectionTime>=%22Wed,%201%20May%202019%2000:00:00%20GMT%22%20and%20connectionTime<=%22Thu,%202%20May%202019%2000:00:00%20GMT%22&pretty">https://ev.caltech.edu/api/v1/sessions/caltech?
+where=connectionTime>="Wed, 1 May 2019 00:00:00 GMT"
+and connectionTime<="Thu, 2 May 2019 00:00:00 GMT"
+&pretty</a></pre>
+
+                                To only get sessions from a certain user you can use:
+                                <br> <br>
+                                <pre class="bg-light"><a
+                                        href="https://ev.caltech.edu/api/v1/sessions/caltech?where=userID==%22000000556%22&pretty">https://ev.caltech.edu/api/v1/sessions/caltech?userID="000000556"&pretty</a></pre>
+
+                                To get all sessions for which over 10 kWh were delivered you can use
+                                <pre class="bg-light"><a
+                                        href="https://ev.caltech.edu/api/v1/sessions/caltech?where=kWhDelivered>=10&pretty">https://ev.caltech.edu/api/v1/sessions/caltech?where=kWhDelivered>=10&pretty</a></pre>
+
+
+                                <h4 class="title">Sorting</h4>
+                                You can sort the results of a query using the <code>sort</code> argument. For example to
+                                get sessions sorted in descending order by connectionTime you could use:
+                                <pre class="bg-light"><a
+                                        href="https://ev.caltech.edu/api/v1/sessions/caltech?sort=connectionTime&pretty">https://ev.caltech.edu/api/v1/sessions/caltech?sort=connectionTime&pretty</a></pre>
+
+
+                                By default sorting is is descending order. To instead sort in ascending order, you can
+                                append a <code>-</code> sign before the field, for example:
+                                <pre class="bg-light"><a
+                                        href="https://ev.caltech.edu/api/v1/sessions/caltech?sort=-connectionTime&pretty">https://ev.caltech.edu/api/v1/sessions/caltech?sort=-connectionTime&pretty</a></pre>
+
+
+                                <h3>HATEOAS</h3>
+                                <a href="https://en.wikipedia.org/wiki/HATEOAS"> Hypermedia As The Engine Of Application
+                                    State (HATEOAS)</a>
+                                is a feature of REST APIs which makes it easier for clients to understand how to
+                                interact with the API. For
+                                the ACN-Data API, HATEOAS information is stored under <code>_links</code> in the json
+                                response and contains
+                                links to allow the client to navigate the API. The easiest way to understand this is to
+                                look at an example.
+                                <br><br>
+                                The following is the <code>_links</code> section returned from the query
+                                <pre class="bg-light"><a
+                                        href="https://ev.caltech.edu/api/v1/sessions/caltech?where=userID==%22000000556%22&pretty">https://ev.caltech.edu/api/v1/sessions/caltech?userID="000000556"&pretty</a></pre>
+
+                                <pre class="bg-light"><code>
+"_links": {
+    "parent": {
+        "title": "home",
+        "href": "/"
+    },
+    "self": {
+        "title": "sessions/caltech",
+        "href": "sessions/caltech?where=userID==\"000000556\"&pretty="
+    },
+    "next": {
+        "title": "next page",
+        "href": "sessions/caltech?where=userID==\"000000556\"&page=2&pretty="
+    },
+    "last": {
+        "title": "last page",
+        "href": "sessions/caltech?where=userID==\"000000556\"&page=2&pretty="
+    }
+},
+                                </code></pre>
+                                Each of these entries describes a link relative to the API base, in this case
+                                <pre class="bg-light text-center"><code class="language-css">https://ev.caltech.edu/api/v1/</code></pre>
+                                The most important of these links is <code>next</code> which tells the client what link
+                                to follow to get
+                                the next page of results. The API uses pagination to make responses shorter. For the
+                                non-time series endpoint
+                                requests are limited to 25 sessions per page, for time series the limit is 1 per page.
+                                To get all sessions which
+                                match its request, the client should follow all <code>next</code> links until the <code>next</code>
+                                section is
+                                no longer included in <code>_links</code>. This indicates the client has accessed all
+                                relevant data.
+
+                                Information about pagination can also been seen in the <code>_meta</code> section of the
+                                response. For example
+                                <pre class="bg-light"><code>
+"_meta": {
+    "page": 1,
+    "max_results": 25,
+    "total": 50
+}
+                                </code></pre>
+                                This indicates that we are currently on page 1 of the results, each page has a maximum
+                                of 25 sessions,
+                                and there are 50 total sessions which match our query. By simple math, there are 2 pages
+                                (50/25).
+                            </div>
+                            <div class="tab-pane" id="client" aria-expanded="false">
+                                <h2>Python Client</h2>
+                                While the raw ACN-Data API provides flexibility to those who need it. The simplest way
+                                to interact with ACN-Data programmatically is to use our Python client. This client is
+                                packaged as part of the acnportal library available at <a
+                                    href="https://github.com/zach401/acnportal">https://github.com/zach401/acnportal</a>.
+
+                            </div>
+                            <div class="tab-pane" id="fields" aria-expanded="false">
+                                <br>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Field</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">_id</th>
+                                        <td>string</td>
+                                        <td>Unique identifier of the session record.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">chargingCurrent</th>
+                                        <td>timeseries</td>
+                                        <td>Time series of the measured current draw of the EVSE during the session.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">clusterID</th>
+                                        <td>string</td>
+                                        <td>Unique identifier for a subset of EVSEs at a site, such as a single
+                                            garage.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">connectionTime</th>
+                                        <td>datetime*</td>
+                                        <td>Time when the EV plugged in.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">disconnectTime</th>
+                                        <td>datetime*</td>
+                                        <td>Time when the EV unplugged.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">doneChargingTime</th>
+                                        <td>datetime*</td>
+                                        <td>Time when of the last non-zero current draw recorded.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">kWhDelivered</th>
+                                        <td>float</td>
+                                        <td>Amount of energy delivered during the session.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">pilotSignal</th>
+                                        <td>timeseries</td>
+                                        <td>Time series of the pilot signals passed to the EVSE during the session.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">sessionID</th>
+                                        <td>string</td>
+                                        <td>Unique identifier for the session.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">siteID</th>
+                                        <td>string</td>
+                                        <td>Unique identifier for the site.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">spaceID</th>
+                                        <td>string</td>
+                                        <td>Unique identifier of the parking space.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">stationID</th>
+                                        <td>string</td>
+                                        <td>Unique identifier of the EVSE.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">timezone</th>
+                                        <td>string</td>
+                                        <td>Timezone of the site. Based on pytz format.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">userID</th>
+                                        <td>string</td>
+                                        <td>Unique identifier of the user. Not provided for sessions which are not
+                                            claimed using the mobile app.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">userInputs</th>
+                                        <td>list(User Input)</td>
+                                        <td>Inputs provided by the user. Since inputs can be changed over time, there
+                                            can be multiple user input objects in the list.
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <h5>*datetime fields are stored as strings according to the RFC 1123 format. All
+                                    all datetimes are in UTC (GMT) see timezone field for the correct timezone of the
+                                    site.</h5>
+                                <br>
+                                <h3 class="text-center">User Inputs</h3>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Field</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">WhPerMile</th>
+                                        <td>float</td>
+                                        <td>Efficiency of the EV in Wh per mile.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">kWhRequested</th>
+                                        <td>float</td>
+                                        <td>Energy requested by the user in kWh.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">milesRequested</th>
+                                        <td>float</td>
+                                        <td>Number of miles requested by the user.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">minutesAvailable</th>
+                                        <td>float</td>
+                                        <td>Length of the session as estimated by the user.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">modifiedAt</th>
+                                        <td>datetime*</td>
+                                        <td>Time this user input was provided.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">paymentRequired</th>
+                                        <td>bool</td>
+                                        <td>If the user was required to pay for this session.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">requestedDeparture</th>
+                                        <td>datetime*</td>
+                                        <td>User estimated departure time.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">userID</th>
+                                        <td>string</td>
+                                        <td>Unique identifier for the user.</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <h3 class="text-center">Time Series</h3>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Field</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">timestamps</th>
+                                        <td>list(datetime*)</td>
+                                        <td>List of timestamps, one per value.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">pilot/current</th>
+                                        <td>list(float)</td>
+                                        <td>List of values, one per timestamp.</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="sites" aria-expanded="false">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">id</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Caltech</th>
+                                        <td>caltech</td>
+                                        <td>A research university located in Pasadena, CA. We currently collect data
+                                            from 54 EVSEs in one campus garage. The site is open
+                                            to the public but most usage is from faculty, staff and students.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">JPL</th>
+                                        <td>jpl</td>
+                                        <td>A national research lab located in La Canada, CA. This site currently has 50
+                                            EVSEs and is only open to
+                                            employees. It is indicative of a normal workplace schedule.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" style="white-space:nowrap;">Office 1</th>
+                                        <td>office001</td>
+                                        <td>An office building located in the Silicon Valley area. It currently has 8
+                                            EVSEs and is used only by employees.
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="citing" aria-expanded="false">
+                                <h2>Citing the Dataset</h2>
+                                If you use ACN-Data in published work, we ask that you cite <a href="https://ev.caltech.edu/assets/pub/ACN_Data_Analysis_and_Applications.pdf"
+                                target="_blank">ACN-Data: Analysis and Applications
+                                of an Open EV Charging Dataset</a> so others can find and use the dataset as well.
+                                <pre><code>
+@inproceedings{lee_acndata_2019,
+  author = {Lee, Zachary J. and Li, Tongxin, and Low, Steven H.},
+  title = { {ACN}-{Data}: {Analysis} and {Applications} of an {Open} {EV} {Charging} {Dataset} },
+  booktitle = {Proceedings of the Tenth International Conference on Future Energy Systems},
+  series = {e-Energy '19},
+  month = jun,
+  year = {2019},
+  location = {Phoenix, Arizona}
+}
+                            </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        
+    
+          <!--   Core JS Files   -->
+          <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+          <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+          <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+          <script src="assets/js/plugins/moment.min.js"></script>
+          <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+          <script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+          <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+          <script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+          <!--  Google Maps Plugin    -->
+          <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+          <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+          <script src="assets/js/material-kit.js?v=2.0.5" type="text/javascript"></script>
+        
+    <script type="text/javascript">
+        $SCRIPT_ROOT = "";
+
+        $(function () {
+            $('#web_interface').bind('focusout', function () {
+                $.ajax({
+                    type: "POST",
+                    url: $SCRIPT_ROOT + '/_num_sessions',
+                    data: $('#web_interface').serialize(),
+                    success: function (data) {
+                        $("#count").text(data.result);
+                    }
+                });
+                return false;
+            });
+            // Inject our CSRF token into our AJAX request.
+            $.ajaxSetup({
+                beforeSend: function (xhr, settings) {
+                    if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", "ImU3NTQyZDJiNDJmMjJlN2EzYmY0YTcyMzI3ZGNlMDBmM2FkYTJmNzAi.auXGSQ.3FuWZOENGTWBDBa-4IvM55t4Cfs")
+                    }
+                }
+            })
+        });
+
+        $('.datetimepicker').datetimepicker({
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-chevron-up",
+                down: "fa fa-chevron-down",
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            }
+        });
+    </script>
+
+    </body>
+</html>

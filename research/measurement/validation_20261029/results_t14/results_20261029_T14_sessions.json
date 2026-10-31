@@ -1,0 +1,1530 @@
+{
+ "prereg": {
+  "version": "T14-2026-10-29",
+  "seeds": [
+   20261029,
+   20261130,
+   20261231,
+   20261332,
+   20261433,
+   20261534
+  ],
+  "days": 10,
+  "tune_days": 7,
+  "n_c_grid": [
+   2,
+   3,
+   4,
+   6,
+   8
+  ],
+  "scenarios": {
+   "normal": {
+    "N": 80,
+    "lam": 0.45
+   },
+   "tight": {
+    "N": 22,
+    "lam": 0.45
+   }
+  },
+  "cost": {
+   "c_cap_range": [
+    150.0,
+    300.0,
+    450.0
+   ],
+   "fixed": {
+    "c_gap": 2.0,
+    "c_ref": 3.0,
+    "c_wait": 6.0,
+    "c_park": 4.0
+   }
+  },
+  "assumptions": {
+   "e_range": [
+    0.3,
+    0.42
+   ],
+   "e_mid": 0.36,
+   "dwell_range": [
+    30.0,
+    180.0
+   ],
+   "residual_share": 0.1,
+   "mean_need": 18.0,
+   "gap_rate_default": 0.2,
+   "wait_default": 1.5,
+   "block_rate_default": 0.01,
+   "event_cap": 3,
+   "need_max": 80.0,
+   "precision_target": 0.25,
+   "coverage_target": 0.8,
+   "q_scenario_default": 0.5,
+   "session_per_visit_max": 1
+  },
+  "criteria": {
+   "point_identified_max_width": 0.25,
+   "bound_coverage_min": 0.8,
+   "conservation_tol_kwh": 1e-09,
+   "r4_must_diverge": true,
+   "require_flip": false
+  },
+  "removed_criteria": [
+   "宽度<=0.25 即点识别（宽度只是精度目标）",
+   "观测计数同时作 q 的上下界",
+   "abs(bias/se)<2 即识别",
+   "留出后悔为 0 即泄漏",
+   "硬编码似然相同作为观察等价"
+  ]
+ },
+ "generated_by": "run_validation_t14.py",
+ "date": "2026-10-29",
+ "output": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\measurement\\validation_20261029\\results_t14\\results_20261029_T14_sessions.json",
+ "E1": {
+  "snapshots_identical": true,
+  "A": {
+   "sessions": 1,
+   "new_plugs": 0,
+   "idle_occ_share": 0.0,
+   "energy_kwh": 14.666666666666666
+  },
+  "B": {
+   "sessions": 2,
+   "new_plugs": 1,
+   "idle_occ_share": 0.34210526315789475,
+   "energy_kwh": 9.166666666666666
+  }
+ },
+ "E2": {
+  "B": 95.0,
+  "B_init": 30.0,
+  "R_end": 10.0,
+  "S_in": 75.0,
+  "n_window": 3,
+  "identity_residual": 0.0,
+  "B_hat": 94.5,
+  "rect_error": -0.5,
+  "error_bound": 42.0,
+  "bound_holds": true,
+  "arrivals_bounds": [
+   0.0,
+   49.65
+  ],
+  "arrivals_contains": true,
+  "no_assumption_bounds": [
+   0.0,
+   "inf"
+  ],
+  "naive_arrivals": 2.3625,
+  "naive_error": -0.6375000000000002
+ },
+ "E3": {
+  "M01_acceptance": 0.6666666666666666,
+  "M02_success": 0.5,
+  "M03_wait": {
+   "mean": 11.0,
+   "median": 11.0,
+   "p90": 20.0
+  },
+  "M05_M06_M07": {
+   "delivered": 32.0,
+   "admitted_need": 40.0,
+   "admitted_gap": 8.0,
+   "refusal_gap": 15.0
+  },
+  "M11_gap_rates": {
+   "admitted": 0.2,
+   "refused": 0.2727272727272727
+  },
+  "fairness": {
+   "total_lower_in_cfg2": true,
+   "worst_group_worse_in_cfg2": true
+  }
+ },
+ "F04": {
+  "checks": [
+   {
+    "scenario": "normal",
+    "station": "A",
+    "seed": 20261029,
+    "hash": "bfafbbdf7c7a6d4de08000654dd3bd7e8fd4a920aed9aa30b32e3674054ba985",
+    "arrivals": 3737,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "normal",
+    "station": "A",
+    "seed": 20261130,
+    "hash": "17a2036475535c9777319c35b496de314342edd1846b84ef8a5c9f6bb9283d94",
+    "arrivals": 3754,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "normal",
+    "station": "A",
+    "seed": 20261231,
+    "hash": "a96fc79d60b134a8cdc18097ed3303f5ab81481d84bfd920c7f97ffe76bda2c5",
+    "arrivals": 3800,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "normal",
+    "station": "B",
+    "seed": 20261029,
+    "hash": "680da1bb617aafa2c3018d664262ae6b392a861179967a7a2ee151e128f12f7a",
+    "arrivals": 3004,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "normal",
+    "station": "B",
+    "seed": 20261130,
+    "hash": "69bae4dd9cc10f254412caa7c5d3cf575ca6cc6ede8dec250a569d69a75047bf",
+    "arrivals": 3077,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "normal",
+    "station": "B",
+    "seed": 20261231,
+    "hash": "01956daaa87559f6fb82076aa7ce555a1dd8e9c9df254f1073dd90c5d3c5fb61",
+    "arrivals": 3065,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "tight",
+    "station": "A",
+    "seed": 20261029,
+    "hash": "bfafbbdf7c7a6d4de08000654dd3bd7e8fd4a920aed9aa30b32e3674054ba985",
+    "arrivals": 3737,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "tight",
+    "station": "A",
+    "seed": 20261130,
+    "hash": "17a2036475535c9777319c35b496de314342edd1846b84ef8a5c9f6bb9283d94",
+    "arrivals": 3754,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "tight",
+    "station": "A",
+    "seed": 20261231,
+    "hash": "a96fc79d60b134a8cdc18097ed3303f5ab81481d84bfd920c7f97ffe76bda2c5",
+    "arrivals": 3800,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "tight",
+    "station": "B",
+    "seed": 20261029,
+    "hash": "680da1bb617aafa2c3018d664262ae6b392a861179967a7a2ee151e128f12f7a",
+    "arrivals": 3004,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "tight",
+    "station": "B",
+    "seed": 20261130,
+    "hash": "69bae4dd9cc10f254412caa7c5d3cf575ca6cc6ede8dec250a569d69a75047bf",
+    "arrivals": 3077,
+    "configs": 15,
+    "all_equal": true
+   },
+   {
+    "scenario": "tight",
+    "station": "B",
+    "seed": 20261231,
+    "hash": "01956daaa87559f6fb82076aa7ce555a1dd8e9c9df254f1073dd90c5d3c5fb61",
+    "arrivals": 3065,
+    "configs": 15,
+    "all_equal": true
+   }
+  ],
+  "all_equal": true
+ },
+ "F05": {
+  "per_level": {
+   "L0": {
+    "sessions": 0,
+    "q_bounds": [
+     0.0,
+     1.0
+    ],
+    "q_assumption_mid": 0.5,
+    "q_bound": [
+     0.0,
+     1.0
+    ],
+    "duplicate_view_same": true
+   },
+   "L1": {
+    "sessions": 0,
+    "q_bounds": [
+     0.0,
+     1.0
+    ],
+    "q_assumption_mid": 0.5,
+    "q_bound": [
+     0.0,
+     1.0
+    ],
+    "duplicate_view_same": true
+   },
+   "L2": {
+    "sessions": 297,
+    "q_bounds": [
+     0.057305318686068155,
+     1.0
+    ],
+    "q_assumption_mid": 0.5,
+    "q_bound": [
+     0.057305318686068155,
+     1.0
+    ],
+    "duplicate_view_same": true
+   },
+   "L3": {
+    "sessions": 297,
+    "q_bounds": [
+     0.057305318686068155,
+     1.0
+    ],
+    "q_assumption_mid": 0.5,
+    "q_bound": [
+     0.057305318686068155,
+     1.0
+    ],
+    "duplicate_view_same": true
+   }
+  },
+  "view_keys": [
+   "H",
+   "N",
+   "assumptions",
+   "days",
+   "delta",
+   "level",
+   "rows"
+  ],
+  "row_keys": [
+   "chg",
+   "delivered_cum",
+   "free_obs",
+   "n_fault",
+   "n_idle",
+   "n_supply",
+   "stale_flag",
+   "t"
+  ],
+  "forbidden_keys_in_view": [],
+  "estimate_params": [
+   "view"
+  ],
+  "estimate_accepts_only_view": true,
+  "legacy_probe": {
+   "level": "L0",
+   "sessions": 0,
+   "true_arrivals_used_only_for_probe": 3737,
+   "q_legacy": 0.0,
+   "q_legacy_if_hidden_arrivals_doubled": 0.0,
+   "legacy_ratio": 2.0,
+   "q_new": 0.5,
+   "q_new_bounds": [
+    0.0,
+    1.0
+   ],
+   "q_new_unchanged_by_hidden_truth": true
+  },
+  "note": "新估计器只接收 view；旧 observe 用真实 arrivals 当分母，真值翻倍估计即减半（本轮已复现）"
+ },
+ "F06": {
+  "micro_case": {
+   "events": [
+    [
+     0,
+     290,
+     300.0,
+     0,
+     0,
+     0.0
+    ],
+    [
+     0,
+     291,
+     300.0,
+     0,
+     0,
+     0.0
+    ],
+    [
+     0,
+     300,
+     30.0,
+     0,
+     0,
+     0.0
+    ]
+   ],
+   "R3": {
+    "trace": [
+     [
+      0,
+      290,
+      "ord",
+      0
+     ],
+     [
+      0,
+      291,
+      "ord",
+      1
+     ],
+     [
+      0,
+      300,
+      "ord",
+      2
+     ]
+    ],
+    "blocked": 0
+   },
+   "R4": {
+    "trace": [
+     [
+      0,
+      290,
+      "ord",
+      0
+     ],
+     [
+      0,
+      291,
+      "ord",
+      1
+     ],
+     [
+      0,
+      300,
+      "ord",
+      -1
+     ]
+    ],
+    "blocked": 1
+   },
+   "differs": true
+  },
+  "tight_scenario": {
+   "decisions": 1169,
+   "differing": 70,
+   "protect_k": 2,
+   "protect_window": [
+    300,
+    540
+   ],
+   "protected_bays": [
+    20,
+    21
+   ],
+   "non_ev_in_protected_during_window": 0
+  },
+  "r4_must_differ": true
+ },
+ "F07": {
+  "max_conservation_residual": 5.080380560684716e-13,
+  "max_conservation_gross": 1.2607870303327218e-10,
+  "max_step_excess": 0.0,
+  "ordering_case": {
+   "dwell_min": 10.0,
+   "expected_supply_min": 9,
+   "actual_supply_min": 9,
+   "expected_delivered_kwh": 3.3,
+   "actual_delivered_kwh": 3.3,
+   "delivered_plus_gap": 100.0,
+   "admitted_need": 100.0
+  },
+  "tol": 1e-09,
+  "passes": true
+ },
+ "E4": {
+  "normal": {
+   "mean_cost": {
+    "R1": {
+     "first": 3883.064499711111,
+     "last": 3880.0469154555553,
+     "random": 3880.530664344444
+    },
+    "R2": {
+     "first": 4029.9509008999994,
+     "last": 3792.3920789222225,
+     "random": 3914.196255411111
+    },
+    "R3": {
+     "first": 3056.6137935555557,
+     "last": 3053.518611488889,
+     "random": 3053.790472166667
+    },
+    "R4": {
+     "first": 3056.6330474777774,
+     "last": 3053.6390298888887,
+     "random": 3053.933152066667
+    }
+   },
+   "policy_effect": {
+    "R2": 146.8864011888886,
+    "R3": -826.450706155555,
+    "R4": -826.4314522333334
+   },
+   "selection_effect": {
+    "R1": 3.017584255555448,
+    "R2": 237.55882197777692,
+    "R3": 3.0951820666668937,
+    "R4": 2.9940175888887097
+   }
+  },
+  "tight": {
+   "mean_cost": {
+    "R1": {
+     "first": 4383.064499711111,
+     "last": 4380.046915455555,
+     "random": 4380.530664344445
+    },
+    "R2": {
+     "first": 4957.015895705555,
+     "last": 4951.470262205556,
+     "random": 4952.745417805555
+    },
+    "R3": {
+     "first": 4692.558442594444,
+     "last": 4692.467992594445,
+     "random": 4691.397747683332
+    },
+    "R4": {
+     "first": 4620.552942138888,
+     "last": 4594.207791088889,
+     "random": 4605.7873747
+    }
+   },
+   "policy_effect": {
+    "R2": 573.9513959944434,
+    "R3": 309.49394288333315,
+    "R4": 237.48844242777704
+   },
+   "selection_effect": {
+    "R1": 3.0175842555563577,
+    "R2": 5.545633499998985,
+    "R3": 1.160694911111932,
+    "R4": 26.345151049999004
+   }
+  }
+ },
+ "E5": {
+  "levels": {
+   "L0": {
+    "q_assumption_mid_mean": 0.5,
+    "q_true_mean": 0.2433176725391694,
+    "q_bias": 0.25668232746083064,
+    "q_point_status": "not_established",
+    "A_provenance": "bound",
+    "q_status": "no_info",
+    "sessions_lo_mean": 0.0,
+    "sessions_hi_mean": 11640.486111111111,
+    "q_bias_ci95": [
+     0.25668232746083064,
+     0.25668232746083064
+    ],
+    "q_bounds_width_mean": 1.0,
+    "bound_coverage": 1.0,
+    "sessions_source": "counting_transitions",
+    "n_obs": 12
+   },
+   "L1": {
+    "q_assumption_mid_mean": 0.5,
+    "q_true_mean": 0.2433176725391694,
+    "q_bias": 0.25668232746083064,
+    "q_point_status": "not_established",
+    "A_provenance": "bound",
+    "q_status": "no_info",
+    "sessions_lo_mean": 0.0,
+    "sessions_hi_mean": 11633.416666666666,
+    "q_bias_ci95": [
+     0.25668232746083064,
+     0.25668232746083064
+    ],
+    "q_bounds_width_mean": 1.0,
+    "bound_coverage": 1.0,
+    "sessions_source": "counting_transitions",
+    "n_obs": 12
+   },
+   "L2": {
+    "q_assumption_mid_mean": 0.5,
+    "q_true_mean": 0.2433176725391694,
+    "q_bias": 0.25668232746083064,
+    "q_point_status": "not_established",
+    "A_provenance": "bound",
+    "q_status": "bounded",
+    "sessions_lo_mean": 287.5,
+    "sessions_hi_mean": 11633.416666666666,
+    "q_bias_ci95": [
+     0.25668232746083064,
+     0.25668232746083064
+    ],
+    "q_bounds_width_mean": 0.9408438971594698,
+    "bound_coverage": 1.0,
+    "sessions_source": "session_keys",
+    "n_obs": 12
+   },
+   "L3": {
+    "q_assumption_mid_mean": 0.5,
+    "q_true_mean": 0.2433176725391694,
+    "q_bias": 0.25668232746083064,
+    "q_point_status": "not_established",
+    "A_provenance": "bound",
+    "q_status": "bounded",
+    "sessions_lo_mean": 287.5,
+    "sessions_hi_mean": 11633.416666666666,
+    "q_bias_ci95": [
+     0.25668232746083064,
+     0.25668232746083064
+    ],
+    "q_bounds_width_mean": 0.9408438971594698,
+    "bound_coverage": 1.0,
+    "sessions_source": "session_keys",
+    "n_obs": 12
+   }
+  },
+  "n_logs": 12,
+  "per_run_hash_equal": true,
+  "c_cap=150": {
+   "L0": {
+    "est": {
+     "2": 5114.060861520308,
+     "3": 4748.591076023499,
+     "4": 4405.810773056189,
+     "6": 3809.8145004918515,
+     "8": 3368.2295710941694
+    },
+    "true_cost": {
+     "2": 3914.5581911111112,
+     "3": 3668.894884261111,
+     "4": 3433.0289278472223,
+     "6": 3100.326448138889,
+     "8": 2965.9699291111115
+    },
+    "chosen": 8,
+    "reco_set": [
+     8
+    ],
+    "regret_per_day": 0.0,
+    "regret_pct": 0.0,
+    "reco_q_range": [
+     2,
+     6,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "no_info",
+    "A_provenance": "bound"
+   },
+   "L1": {
+    "est": {
+     "2": 5110.373369875788,
+     "3": 4744.918474462765,
+     "4": 4402.157893122323,
+     "6": 3806.185923503506,
+     "8": 3365.052733431583
+    },
+    "true_cost": {
+     "2": 3914.5581911111112,
+     "3": 3668.894884261111,
+     "4": 3433.0289278472223,
+     "6": 3100.326448138889,
+     "8": 2965.9699291111115
+    },
+    "chosen": 8,
+    "reco_set": [
+     8
+    ],
+    "regret_per_day": 0.0,
+    "regret_pct": 0.0,
+    "reco_q_range": [
+     2,
+     6,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "no_info",
+    "A_provenance": "bound"
+   },
+   "L2": {
+    "est": {
+     "2": 5110.373369875788,
+     "3": 4744.918474462765,
+     "4": 4402.157893122323,
+     "6": 3806.185923503506,
+     "8": 3365.052733431583
+    },
+    "true_cost": {
+     "2": 3914.5581911111112,
+     "3": 3668.894884261111,
+     "4": 3433.0289278472223,
+     "6": 3100.326448138889,
+     "8": 2965.9699291111115
+    },
+    "chosen": 8,
+    "reco_set": [
+     8
+    ],
+    "regret_per_day": 0.0,
+    "regret_pct": 0.0,
+    "reco_q_range": [
+     2,
+     6,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "bounded",
+    "A_provenance": "bound"
+   },
+   "L3": {
+    "est": {
+     "2": 5110.373369875788,
+     "3": 4744.918474462765,
+     "4": 4402.157893122323,
+     "6": 3806.185923503506,
+     "8": 3365.052733431583
+    },
+    "true_cost": {
+     "2": 3914.5581911111112,
+     "3": 3668.894884261111,
+     "4": 3433.0289278472223,
+     "6": 3100.326448138889,
+     "8": 2965.9699291111115
+    },
+    "chosen": 8,
+    "reco_set": [
+     8
+    ],
+    "regret_per_day": 0.0,
+    "regret_pct": 0.0,
+    "reco_q_range": [
+     2,
+     6,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "bounded",
+    "A_provenance": "bound"
+   }
+  },
+  "c_cap=300": {
+   "L0": {
+    "est": {
+     "2": 5414.060861520308,
+     "3": 5198.591076023499,
+     "4": 5005.810773056189,
+     "6": 4709.8145004918515,
+     "8": 4568.22957109417
+    },
+    "true_cost": {
+     "2": 4214.558191111111,
+     "3": 4118.894884261111,
+     "4": 4033.0289278472223,
+     "6": 4000.326448138889,
+     "8": 4165.969929111111
+    },
+    "chosen": 8,
+    "reco_set": [
+     8
+    ],
+    "regret_per_day": 165.64348097222182,
+    "regret_pct": 4.140749089347089,
+    "reco_q_range": [
+     2,
+     4,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "no_info",
+    "A_provenance": "bound"
+   },
+   "L1": {
+    "est": {
+     "2": 5410.373369875788,
+     "3": 5194.918474462765,
+     "4": 5002.157893122323,
+     "6": 4706.185923503505,
+     "8": 4565.052733431583
+    },
+    "true_cost": {
+     "2": 4214.558191111111,
+     "3": 4118.894884261111,
+     "4": 4033.0289278472223,
+     "6": 4000.326448138889,
+     "8": 4165.969929111111
+    },
+    "chosen": 8,
+    "reco_set": [
+     8
+    ],
+    "regret_per_day": 165.64348097222182,
+    "regret_pct": 4.140749089347089,
+    "reco_q_range": [
+     2,
+     4,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "no_info",
+    "A_provenance": "bound"
+   },
+   "L2": {
+    "est": {
+     "2": 5410.373369875788,
+     "3": 5194.918474462765,
+     "4": 5002.157893122323,
+     "6": 4706.185923503505,
+     "8": 4565.052733431583
+    },
+    "true_cost": {
+     "2": 4214.558191111111,
+     "3": 4118.894884261111,
+     "4": 4033.0289278472223,
+     "6": 4000.326448138889,
+     "8": 4165.969929111111
+    },
+    "chosen": 8,
+    "reco_set": [
+     8
+    ],
+    "regret_per_day": 165.64348097222182,
+    "regret_pct": 4.140749089347089,
+    "reco_q_range": [
+     2,
+     4,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "bounded",
+    "A_provenance": "bound"
+   },
+   "L3": {
+    "est": {
+     "2": 5410.373369875788,
+     "3": 5194.918474462765,
+     "4": 5002.157893122323,
+     "6": 4706.185923503505,
+     "8": 4565.052733431583
+    },
+    "true_cost": {
+     "2": 4214.558191111111,
+     "3": 4118.894884261111,
+     "4": 4033.0289278472223,
+     "6": 4000.326448138889,
+     "8": 4165.969929111111
+    },
+    "chosen": 8,
+    "reco_set": [
+     8
+    ],
+    "regret_per_day": 165.64348097222182,
+    "regret_pct": 4.140749089347089,
+    "reco_q_range": [
+     2,
+     4,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "bounded",
+    "A_provenance": "bound"
+   }
+  },
+  "c_cap=450": {
+   "L0": {
+    "est": {
+     "2": 5714.060861520308,
+     "3": 5648.591076023499,
+     "4": 5605.81077305619,
+     "6": 5609.8145004918515,
+     "8": 5768.229571094169
+    },
+    "true_cost": {
+     "2": 4514.558191111111,
+     "3": 4568.894884261111,
+     "4": 4633.028927847222,
+     "6": 4900.32644813889,
+     "8": 5365.969929111111
+    },
+    "chosen": 4,
+    "reco_set": [
+     2,
+     3,
+     4,
+     6
+    ],
+    "regret_per_day": 118.47073673611067,
+    "regret_pct": 2.6241933700040083,
+    "reco_q_range": [
+     2,
+     4,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "no_info",
+    "A_provenance": "bound"
+   },
+   "L1": {
+    "est": {
+     "2": 5710.373369875787,
+     "3": 5644.918474462764,
+     "4": 5602.157893122323,
+     "6": 5606.185923503505,
+     "8": 5765.052733431582
+    },
+    "true_cost": {
+     "2": 4514.558191111111,
+     "3": 4568.894884261111,
+     "4": 4633.028927847222,
+     "6": 4900.32644813889,
+     "8": 5365.969929111111
+    },
+    "chosen": 4,
+    "reco_set": [
+     2,
+     3,
+     4,
+     6
+    ],
+    "regret_per_day": 118.47073673611067,
+    "regret_pct": 2.6241933700040083,
+    "reco_q_range": [
+     2,
+     4,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "no_info",
+    "A_provenance": "bound"
+   },
+   "L2": {
+    "est": {
+     "2": 5710.373369875787,
+     "3": 5644.918474462764,
+     "4": 5602.157893122323,
+     "6": 5606.185923503505,
+     "8": 5765.052733431582
+    },
+    "true_cost": {
+     "2": 4514.558191111111,
+     "3": 4568.894884261111,
+     "4": 4633.028927847222,
+     "6": 4900.32644813889,
+     "8": 5365.969929111111
+    },
+    "chosen": 4,
+    "reco_set": [
+     2,
+     3,
+     4,
+     6
+    ],
+    "regret_per_day": 118.47073673611067,
+    "regret_pct": 2.6241933700040083,
+    "reco_q_range": [
+     2,
+     3,
+     6,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "bounded",
+    "A_provenance": "bound"
+   },
+   "L3": {
+    "est": {
+     "2": 5710.373369875787,
+     "3": 5644.918474462764,
+     "4": 5602.157893122323,
+     "6": 5606.185923503505,
+     "8": 5765.052733431582
+    },
+    "true_cost": {
+     "2": 4514.558191111111,
+     "3": 4568.894884261111,
+     "4": 4633.028927847222,
+     "6": 4900.32644813889,
+     "8": 5365.969929111111
+    },
+    "chosen": 4,
+    "reco_set": [
+     2,
+     3,
+     4,
+     6
+    ],
+    "regret_per_day": 118.47073673611067,
+    "regret_pct": 2.6241933700040083,
+    "reco_q_range": [
+     2,
+     3,
+     6,
+     8
+    ],
+    "reco_status": "range",
+    "boundary": false,
+    "q_used_provenance": "scenario_assumption_not_estimate",
+    "q_status": "bounded",
+    "A_provenance": "bound"
+   }
+  },
+  "chosen_by_level": {
+   "c_cap=150": {
+    "L0": 8,
+    "L1": 8,
+    "L2": 8,
+    "L3": 8
+   },
+   "c_cap=300": {
+    "L0": 8,
+    "L1": 8,
+    "L2": 8,
+    "L3": 8
+   },
+   "c_cap=450": {
+    "L0": 4,
+    "L1": 4,
+    "L2": 4,
+    "L3": 4
+   }
+  },
+  "any_flip": false
+ },
+ "E6": {
+  "tune_days": 7,
+  "days": 10,
+  "partition_max_t": 5875,
+  "partition_ok": true,
+  "chosen_clean": 6,
+  "chosen_leaky": 8,
+  "regret_clean": 0.0,
+  "regret_leaky": 166.00315234920572,
+  "optimism": -166.00315234920572,
+  "note": "泄漏判据=数据划分追踪，不是后悔是否为 0；leaky 仅量化乐观偏差"
+ },
+ "E7": {
+  "observation_equivalence": {
+   "pairs": [
+    {
+     "E": 240,
+     "q": 0.6,
+     "mean": 144.0
+    },
+    {
+     "E": 360,
+     "q": 0.4,
+     "mean": 144.0
+    }
+   ],
+   "equal_means": true,
+   "total_variation_distance": 0.09782569621491782,
+   "distributions_identical": false,
+   "conclusion": "期望相同但分布不同；观察等价必须由分布等价证明。"
+  },
+  "B": {
+   "interval": [
+    0.3,
+    0.64
+   ],
+   "C_obs": 144.0,
+   "E": [
+    300.0,
+    480.0
+   ],
+   "U": [
+    0.0,
+    48.0
+   ]
+  },
+  "etp": {
+   "sign_convention": "g(r)=C_full-C_partial(r); g>0 部分更便宜, g<0 全安装更便宜",
+   "r_grid": {
+    "0.25": -48.58826200000021,
+    "0.375": 47.07504485000027,
+    "0.5": 132.94100126388867,
+    "0.75": 165.64348097222182,
+    "1.0": 0.0
+   },
+   "regions": {
+    "dominant": [
+     [
+      3,
+      6
+     ]
+    ],
+    "sustained_negative_suffix": []
+   },
+   "inclusion_prob": {
+    "2": 0.04,
+    "3": 0.99,
+    "4": 1.0,
+    "6": 1.0,
+    "8": 0.0
+   },
+   "note": "占优窗口= g>0 极大网格段；持续负后缀=末尾连续 g<0 段；不外推网格间"
+  }
+ },
+ "REGRESSIONS": [
+  {
+   "id": "R1-sampling-area",
+   "name": "采样变差不是连续总变差上界",
+   "observed": {
+    "trap": 5.0,
+    "true_area": 2.0,
+    "legacy_bound": 0.0,
+    "legacy_holds": false,
+    "no_cap_status": "no_info",
+    "cap2_bound": 10.0
+   },
+   "expected": {
+    "trap": 5.0,
+    "legacy_holds": false,
+    "no_cap_status": "no_info"
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R2-point-identification",
+   "name": "宽度只表示精度，不表示识别",
+   "observed": {
+    "width": 0.1,
+    "coverage": 0.0,
+    "structural": "尚未建立",
+    "precision_met": true
+   },
+   "expected": {
+    "structural": "尚未建立",
+    "precision_met": true
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R3-residual-scenario",
+   "name": "10% 残余是情景假设而非上界",
+   "observed": {
+    "area": 1.0,
+    "residual": 30.0,
+    "scenario_upper": 0.1,
+    "violates": true
+   },
+   "expected": {
+    "status": "scenario",
+    "violates": true
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R4-no-info",
+   "name": "缺事件上限时给无信息界而不是零误差",
+   "observed": {
+    "A_bounds": [
+     0.0,
+     null
+    ],
+    "A_status": "no_info",
+    "q_bounds": [
+     0.0,
+     1.0
+    ],
+    "q_status": "no_info"
+   },
+   "expected": {
+    "A_upper": null,
+    "q_upper": 1.0,
+    "q_status": "no_info"
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R5-initial-condition",
+   "name": "期初上界的条件（停留<=d_hi）",
+   "observed": {
+    "bound": 180.0,
+    "true_contrib": 400.0,
+    "holds": false
+   },
+   "expected": {
+    "holds": false
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R6-residual-bound",
+   "name": "给事件上限后期末残余有有限界",
+   "observed": {
+    "status": "finite",
+    "upper": 19440.0
+   },
+   "expected": {
+    "status": "finite"
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R13-turnover",
+   "name": "供能数不变但发生周转：观测只作下界",
+   "observed": {
+    "sessions_lo": 0,
+    "sessions_hi": 125.0,
+    "q_bounds": [
+     0.0,
+     1.0
+    ],
+    "q_status": "no_info",
+    "arrival_bounds": [
+     56.666666666666664,
+     186.0
+    ],
+    "truth_q": 0.5,
+    "contains": true,
+    "legacy_observed_only": [
+     0.0,
+     0.0
+    ]
+   },
+   "expected": {
+    "sessions_lo": 0,
+    "contains": true,
+    "q_hi_gt_0": true,
+    "arrival_contains_100": true
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R14-missed-session",
+   "name": "漏会话时观测计数只是下界",
+   "observed": {
+    "sessions_lo": 1,
+    "truth_sessions": 3,
+    "q_bounds": [
+     0.058997050147492625,
+     1.0
+    ],
+    "q_status": "no_info"
+   },
+   "expected": {
+    "sessions_lo": 1,
+    "sessions_lo_lt_truth": true,
+    "q_hi": 1.0
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R15-initial-session",
+   "name": "期初已存在的会话不抬高下界",
+   "observed": {
+    "sessions_lo": 0,
+    "q_lo": 0.0
+   },
+   "expected": {
+    "sessions_lo": 0,
+    "q_lo": 0.0
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R16-dedup",
+   "name": "重复会话键去重后只计一次",
+   "observed": {
+    "sessions_lo": 1
+   },
+   "expected": {
+    "sessions_lo": 1
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R17-no-info-range",
+   "name": "证据不足时保留无信息范围",
+   "observed": {
+    "q_bounds": [
+     0.0,
+     1.0
+    ],
+    "q_status": "no_info",
+    "A_upper": null
+   },
+   "expected": {
+    "q_upper": 1.0,
+    "q_status": "no_info"
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R7-log-hash",
+   "name": "同一需求日志跨配置哈希一致",
+   "observed": {
+    "all_equal": true
+   },
+   "expected": {
+    "all_equal": true
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R8-truth-isolation",
+   "name": "估计器只读 view，不读真值",
+   "observed": {
+    "read": [
+     "view"
+    ],
+    "legacy_drift": {
+     "level": "L0",
+     "sessions": 0,
+     "true_arrivals_used_only_for_probe": 3737,
+     "q_legacy": 0.0,
+     "q_legacy_if_hidden_arrivals_doubled": 0.0,
+     "legacy_ratio": 2.0,
+     "q_new": 0.5,
+     "q_new_bounds": [
+      0.0,
+      1.0
+     ],
+     "q_new_unchanged_by_hidden_truth": true
+    }
+   },
+   "expected": {
+    "read": [
+     "view"
+    ]
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R9-protection",
+   "name": "R4 与 R3 决策不同且保护期内无违规",
+   "observed": {
+    "r4_must_differ": true,
+    "violations": 0
+   },
+   "expected": {
+    "r4_must_differ": true,
+    "violations": 0
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R10-conservation",
+   "name": "逐步交付不超剩余需求且总量守恒",
+   "observed": {
+    "passes": true,
+    "residual": 5.080380560684716e-13
+   },
+   "expected": {
+    "residual_lt": 1e-09
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R11-no-q-point",
+   "name": "分母/去重不足时不给 q 点估计",
+   "observed": {
+    "L0": "not_established",
+    "L1": "not_established",
+    "L2": "not_established",
+    "L3": "not_established"
+   },
+   "expected": {
+    "all_not_established": true
+   },
+   "outcome": "PASS",
+   "pass": true
+  },
+  {
+   "id": "R12-no-flip",
+   "name": "不追翻转；边界与否如实记录",
+   "observed": {
+    "any_flip": false,
+    "boundary": {
+     "150": {
+      "L0": false,
+      "L1": false,
+      "L2": false,
+      "L3": false
+     },
+     "300": {
+      "L0": false,
+      "L1": false,
+      "L2": false,
+      "L3": false
+     },
+     "450": {
+      "L0": false,
+      "L1": false,
+      "L2": false,
+      "L3": false
+     }
+    },
+    "note": "修正会话分子后 q 用情景 0.5，估计最优可离开下边界；只报事实不调参"
+   },
+   "expected": {
+    "any_flip": false
+   },
+   "outcome": "PASS",
+   "pass": true
+  }
+ ],
+ "F08": {
+  "per_level": {
+   "L0": {
+    "structural_identification": "尚未建立",
+    "structural_reason": "未提供结构识别论证：宽度与覆盖只描述精度与重复实验，不构成识别",
+    "precision": {
+     "width": 1.0,
+     "target": 0.25,
+     "meets_precision_target": false,
+     "note": "宽度只表示精度目标，不表示识别"
+    },
+    "coverage": {
+     "empirical": 1.0,
+     "target": 0.8,
+     "note": "重复实验覆盖是经验量，不构成名义保证"
+    },
+    "label": "未识别/仅精度或情景",
+    "assumption_midpoint": 0.5,
+    "bias_vs_truth": 0.25668232746083064,
+    "A_provenance": "bound",
+    "q_status": "no_info",
+    "sessions_lo_mean": 0.0,
+    "sessions_hi_mean": 11640.486111111111
+   },
+   "L1": {
+    "structural_identification": "尚未建立",
+    "structural_reason": "未提供结构识别论证：宽度与覆盖只描述精度与重复实验，不构成识别",
+    "precision": {
+     "width": 1.0,
+     "target": 0.25,
+     "meets_precision_target": false,
+     "note": "宽度只表示精度目标，不表示识别"
+    },
+    "coverage": {
+     "empirical": 1.0,
+     "target": 0.8,
+     "note": "重复实验覆盖是经验量，不构成名义保证"
+    },
+    "label": "未识别/仅精度或情景",
+    "assumption_midpoint": 0.5,
+    "bias_vs_truth": 0.25668232746083064,
+    "A_provenance": "bound",
+    "q_status": "no_info",
+    "sessions_lo_mean": 0.0,
+    "sessions_hi_mean": 11633.416666666666
+   },
+   "L2": {
+    "structural_identification": "尚未建立",
+    "structural_reason": "未提供结构识别论证：宽度与覆盖只描述精度与重复实验，不构成识别",
+    "precision": {
+     "width": 0.9408438971594698,
+     "target": 0.25,
+     "meets_precision_target": false,
+     "note": "宽度只表示精度目标，不表示识别"
+    },
+    "coverage": {
+     "empirical": 1.0,
+     "target": 0.8,
+     "note": "重复实验覆盖是经验量，不构成名义保证"
+    },
+    "label": "未识别/仅精度或情景",
+    "assumption_midpoint": 0.5,
+    "bias_vs_truth": 0.25668232746083064,
+    "A_provenance": "bound",
+    "q_status": "bounded",
+    "sessions_lo_mean": 287.5,
+    "sessions_hi_mean": 11633.416666666666
+   },
+   "L3": {
+    "structural_identification": "尚未建立",
+    "structural_reason": "未提供结构识别论证：宽度与覆盖只描述精度与重复实验，不构成识别",
+    "precision": {
+     "width": 0.9408438971594698,
+     "target": 0.25,
+     "meets_precision_target": false,
+     "note": "宽度只表示精度目标，不表示识别"
+    },
+    "coverage": {
+     "empirical": 1.0,
+     "target": 0.8,
+     "note": "重复实验覆盖是经验量，不构成名义保证"
+    },
+    "label": "未识别/仅精度或情景",
+    "assumption_midpoint": 0.5,
+    "bias_vs_truth": 0.25668232746083064,
+    "A_provenance": "bound",
+    "q_status": "bounded",
+    "sessions_lo_mean": 287.5,
+    "sessions_hi_mean": 11633.416666666666
+   }
+  },
+  "tv_distance": 0.09782569621491782,
+  "tv_threshold": 1e-06,
+  "sampling_rule": "无每间隔事件上限即无有限采样界；delta*V_sampled 不是上界",
+  "residual_rule": "10% 残余仅为情景假设，可被违反（见 R3）",
+  "numerator_rule": "快照/键计数只作会话分子下界；上界用到达数或容量，不用观测计数；证据不足保留无信息范围",
+  "regressions_pass": true,
+  "removed": [
+   "宽度<=0.25 即点识别（宽度只是精度目标）",
+   "观测计数同时作 q 的上下界",
+   "abs(bias/se)<2 即识别",
+   "留出后悔为 0 即泄漏",
+   "硬编码似然相同作为观察等价"
+  ]
+ }
+}

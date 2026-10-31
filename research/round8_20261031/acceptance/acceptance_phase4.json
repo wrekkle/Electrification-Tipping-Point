@@ -1,0 +1,204 @@
+{
+ "schema_version": "r8d-phase4-acceptance/v1",
+ "task": "R8-G verification",
+ "verifier": "R8-D",
+ "generated_local": "2026-10-31T20:15+08:00",
+ "generated_utc": "2026-10-31T12:15:00Z",
+ "scope": {
+  "verified": [
+   "analysis/metrics_v2.py + metrics_v2_decomposition.csv",
+   "analysis/demand_coupling.py + demand_coupling.csv + DEMAND_COUPLING_PLAN.md",
+   "analysis/dwell_scaling.csv",
+   "experiments_declared22/per_stream_declared22.csv + E4/test_E4.csv",
+   "E1/fit_metrics.csv",
+   "paper/content_rev7.py + build_rev7.py + rev7 draft/SI docx + PDFs"
+  ],
+  "not_verified": [
+   "rev7 PDF page layout/rendering beyond existence",
+   "metrics_v2.py execution re-run (script writes analysis CSV; not run to avoid overwriting non-acceptance files)"
+  ]
+ },
+ "snapshot": {
+  "contract_sha256": "38b1422bb95d4122565d4de70a5ef4faf35e41600019068c9c077a295ee6bdf6",
+  "files_ref": "research/round8_20261031/acceptance/evidence/phase4_results.json -> snapshot.files (13 files)"
+ },
+ "items": [
+  {
+   "id": "METRIC-1",
+   "area": "metrics",
+   "check": "declared max k 身份：cr 137、gate+noco 1、short 80、delivered 984.22、demand 1891.03、capacity_only_unmet 均值 58.35%，组成=gate 拒绝+能量短缺",
+   "verdict": "PASS",
+   "evidence_command": "python research/round8_20261031/acceptance/evidence/phase4_checks.py（从 per_stream_declared22.csv 逐流重算；对照 E4 declared22 A@max-k 与 metrics_v2 CSV）",
+   "evidence_path": "acceptance/evidence/phase4_results.json -> checks.M1_metric_identity; experiments_declared22/per_stream_declared22.csv; experiments_declared22/E4/test_E4.csv; apps/parking_lab/workbench/service_metrics.py:186-201",
+   "observed": "137 请求；gate 0+no_connector 1；shortfall 80；delivered 984.221；demand 1,891.028；均值 0.583521；逐流恒等 (gate+shortfall)/cr 20/20；VM 2014-03-23 行 cap rate=6/10=0.6 明确排除 no_connector；E4 A@max-k 20 行同值",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "METRIC-2",
+   "area": "metrics",
+   "check": "pooled capacity_only_unmet = 59.12%（rev7 主稿采用值）",
+   "verdict": "FAIL",
+   "evidence_command": "phase4_checks.py 计算 (gate+shortfall)/cr 与 (gate+noco+shortfall)/cr；扫描 rev7 docx 表格/正文/SI",
+   "evidence_path": "acceptance/evidence/phase4_results.json -> checks.M1b_pooled_claim, N3_pooled_and_table; paper/Electrification_tipping_point_v2_draft_rev7.docx; ..._supplementary_rev7.docx",
+   "observed": "正确池化 80/137=58.39%；59.12% 仅当分子加入 1 个 no_connector（access/never-connected）时成立（81/137），与定义“gate 拒绝+能量短缺、不含 access failure”矛盾；rev7 主稿正文写 pooled 59.12%（1 次），同稿 Table 6 写 80/137=58.39%，SI 写 80/137=58.4%——三处互相矛盾",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "COUPLE-1",
+   "area": "coupling",
+   "check": "场景 B 保持请求数 6,588、EV 数、能量多重集",
+   "verdict": "PASS",
+   "evidence_command": "phase4_checks.py（按 demand_coupling.py 同 seed/算法独立重实现 B）",
+   "evidence_path": "acceptance/evidence/phase4_results.json -> checks.D1_demand_coupling; analysis/demand_coupling.csv; analysis/demand_coupling.py",
+   "observed": "A/B n=6,588；契约 EV 18,566 且两者都是其子集；sorted(E_A)==sorted(E_B)；需求总和 92,366.361 相等；B 请求集合与 A 不同",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "COUPLE-2",
+   "area": "coupling",
+   "check": "A/B 的 22 kW 理想上界在 f=1/0.75/0.5/0.25 与 CSV 一致",
+   "verdict": "PASS",
+   "evidence_command": "phase4_checks.py（A 从契约直接重算；B 用同算法重实现）",
+   "evidence_path": "acceptance/evidence/phase4_results.json -> checks.D1_demand_coupling.A_targets/B_targets; analysis/demand_coupling.csv",
+   "observed": "8/8 值一致：f=1 A 0.5509718/0.5980571，B 0.7092626/0.4209168；f=.75 A .4535/.5335，B .5640/.3543；f=.5 A .3365/.4507，B .4016/.2846；f=.25 A .1944/.3321，B .2179/.1922",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "COUPLE-3",
+   "area": "coupling",
+   "check": "需求未被 P·T 截断、无请求删除",
+   "verdict": "PASS",
+   "evidence_command": "源码检查 demand_coupling.py + plan §2",
+   "evidence_path": "acceptance/evidence/phase4_results.json -> checks.D1_demand_coupling.no_crop_in_generation; analysis/demand_coupling.py; analysis/DEMAND_COUPLING_PLAN.md",
+   "observed": "需求=sum(E) 原值；仅交付量用 min(need,P·T)；6,588 请求全部保留；PLAN 明文禁止 E=min(E,P*T) 生成与删请求",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "COUPLE-4",
+   "area": "coupling",
+   "check": "dwell-conditioned 机制标注 post-hoc、非本数据识别",
+   "verdict": "PASS",
+   "evidence_command": "文本核对 DEMAND_COUPLING_PLAN.md / content_rev7.py",
+   "evidence_path": "analysis/DEMAND_COUPLING_PLAN.md; paper/content_rev7.py; paper/Electrification_tipping_point_v2_draft_rev7.docx",
+   "observed": "PLAN 标题“在看到 R8 结果后制定的后续分析（不是原始预登记）”；C 机制本轮未启用；rev7 称 post-hoc analysis / scenario, not a parameter identified from this data",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "DWELL-1",
+   "area": "dwell",
+   "check": "dwell_scaling.csv 12 行数值复算",
+   "verdict": "PASS",
+   "evidence_command": "phase4_checks.py（scale×scenario×target 独立重算）",
+   "evidence_path": "acceptance/evidence/phase4_results.json -> checks.S1_dwell_scaling; analysis/dwell_scaling.csv",
+   "observed": "12/12 一致：A f=1 0.88->0.5255/0.6321、1.0->0.5510/0.5981、1.12->0.5726/0.5707；B f=1 0.6872/0.4575、0.7093/0.4209、0.7271/0.3936",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "DWELL-2",
+   "area": "dwell",
+   "check": "±12% 标注为压力测试而非 CI",
+   "verdict": "PASS",
+   "evidence_command": "文本核对 demand_coupling.py / PLAN / rev7 docx",
+   "evidence_path": "analysis/demand_coupling.py; analysis/DEMAND_COUPLING_PLAN.md; paper/Electrification_tipping_point_v2_draft_rev7.docx",
+   "observed": "注释“stress test, not CI”；PLAN“压力诊断（不是自动成立的置信区间）”；rev7“stress test … diagnostic range, not a confidence interval”",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "REL-1",
+   "area": "rel_all",
+   "check": "{{rel_all}} 应显示 11.96%（hold-out vs calibration 均值差）",
+   "verdict": "PASS",
+   "evidence_command": "phase4_checks.py（独立复算 split dwell 均值与相对差；核对 fit_metrics 与 content_rev7 NUMBER_SPECS）",
+   "evidence_path": "acceptance/evidence/phase4_results.json -> checks.P1_rel_all; experiments/E1/fit_metrics.csv; paper/content_rev7.py",
+   "observed": "cal mean 51.0631180692 vs test 44.9584131767；(cal-test)/cal=0.1195521371 -> 11.96%；fit_metrics holdout_mean_rel_error=0.1195521371；content_rev7 rel_all scale=100、fmt={:.2f}",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "REL-2",
+   "area": "rel_all",
+   "check": "已构建 rev7 docx/SI 无 0.12% 残留",
+   "verdict": "PASS",
+   "evidence_command": "phase4_checks.py docx 文本扫描（0.12%/11.96%/token/UNRESOLVED/SKELETON）",
+   "evidence_path": "paper/Electrification_tipping_point_v2_draft_rev7.docx; paper/Electrification_tipping_point_v2_supplementary_rev7.docx",
+   "observed": "draft/SI：0.12% 各 0 次；11.96% 各 3 次；花括号 token/UNRESOLVED/SKELETON 各 0；SI 版本说明仅有 1 处“printed 0.12 where the value is 11.96%”的有意更正叙述",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "REL-3",
+   "area": "rel_all",
+   "check": "语义：均值差不是预测误差；KS 不是均值一致证据",
+   "verdict": "PASS",
+   "evidence_command": "rev7 docx 文本核对 + content_rev7 源码替换检查",
+   "evidence_path": "paper/Electrification_tipping_point_v2_draft_rev7.docx; paper/Electrification_tipping_point_v2_supplementary_rev7.docx; paper/content_rev7.py",
+   "observed": "主稿“hold-out-to-calibration mean dwell difference of 11.96%”“reported as a bias, not as an error of a predictive model”；SI“descriptive comparisons … not an out-of-sample…”；未发现 KS=均值一致断言。注：源码中“KS describes a distributional difference rather than an equality of means”目标句在 MAIN 未落地（docx 0 次），建议补入但不构成误导",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "NAME-1",
+   "area": "naming",
+   "check": "rev7 不把 capacity_only_unmet 叫 access/charging success；指标名 vs 公式",
+   "verdict": "PASS",
+   "evidence_command": "phase4_checks.py 文本扫描（禁止短语、六个指标名、否定表述）",
+   "evidence_path": "paper/Electrification_tipping_point_v2_draft_rev7.docx; ..._supplementary_rev7.docx",
+   "observed": "“charging success” 0 次；六指标名齐全（never-connected、EV/ICEV parking failure、departed shortfall、energy shortfall、capacity-only unmet）；SI 明写“not an access measure”；未发现正面把 capacity-only 叫 access 的断言。pooled 59.12% 的问题归入 METRIC-2",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "NAME-2",
+   "area": "naming",
+   "check": "文中硬编码事实 vs 数据公式",
+   "verdict": "PASS",
+   "evidence_command": "phase4_checks.py（_FACTS 与 per_stream/E4/契约逐项对比；conc 上界重算）",
+   "evidence_path": "acceptance/evidence/phase4_results.json -> checks.N2_hardcoded_facts; paper/content_rev7.py",
+   "observed": "无 mismatch：cr 137、gate+noco 1、short 80、dlv 984.221、dem 1891.028、capmean 0.583521、EV 0/452、ICEV 34/4,643、conc n=792/median 2/p90 4/max 9",
+   "checked_at": "2026-10-31T20:15+08:00"
+  },
+  {
+   "id": "NAME-3",
+   "area": "naming",
+   "check": "metrics_v2.py 列名与公式一致",
+   "verdict": "FAIL",
+   "evidence_command": "phase4_checks.py 复算 never_connected_rate 并与列值对比；阅读 metrics_v2.py",
+   "evidence_path": "analysis/metrics_v2.py; analysis/metrics_v2_decomposition.csv; acceptance/evidence/phase4_results.json -> checks.M1_metric_identity",
+   "observed": "never_connected_rate = 1 - admitted/charge_requests（admitted=全部停车准入 ~158-221，cr=2-11），20/20 行为负（-20.9、-55.0 等）；正确 never-connected = (gate+no_connector)/charge_requests=0.73%；身份校验代码（k 字符串 max、implied_short vs censored）实际失效",
+   "checked_at": "2026-10-31T20:15+08:00"
+  }
+ ],
+ "summary": {
+  "total": 14,
+  "pass": 12,
+  "fail": 2,
+  "unverified": 0
+ },
+ "issues": [
+  {
+   "id": "P4-1",
+   "title": "rev7 主稿 pooled capacity-only unmet 写成 59.12%（混入 1 个 never-connected/access 请求），正确 58.39%；与同稿 Table 6 的 80/137=58.39% 及 SI 的 58.4% 矛盾",
+   "evidence_paths": [
+    "paper/Electrification_tipping_point_v2_draft_rev7.docx",
+    "paper/Electrification_tipping_point_v2_supplementary_rev7.docx",
+    "acceptance/evidence/phase4_results.json"
+   ],
+   "action": "改为 58.39%（或删除 pooled 句）；重跑 metrics_v2 与 rev7 构建后再验"
+  },
+  {
+   "id": "P4-2",
+   "title": "metrics_v2.py 的 never_connected_rate 公式错误（1-admitted/charge_requests 恒为负），且身份校验代码失效",
+   "evidence_paths": [
+    "analysis/metrics_v2.py",
+    "analysis/metrics_v2_decomposition.csv"
+   ],
+   "action": "改为 (gate+no_connector)/charge_requests；逐行校验 capacity_only_unmet 恒等；如该列不进正文可删除"
+  }
+ ],
+ "limitations": [
+  "metrics_v2.py 未实际执行（会覆盖 analysis CSV），只读其代码与输出 CSV 做独立复算",
+  "rev7 PDF 只确认存在，未做版面渲染核验",
+  "conc 指标 p90 采用 sorted[int(0.9*n)] 与文中值一致；正文未说明分位定义细节"
+ ],
+ "evidence_files": [
+  "research/round8_20261031/acceptance/evidence/phase4_checks.py",
+  "research/round8_20261031/acceptance/evidence/phase4_checks.out",
+  "research/round8_20261031/acceptance/evidence/phase4_results.json"
+ ]
+}

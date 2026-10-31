@@ -1,0 +1,309 @@
+{
+ "schema": "lit_citations/v1",
+ "entries": [
+  {
+   "paper": "M18",
+   "page": 2,
+   "needle": "proofs are presented in the Appendix",
+   "axis": "information",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 4,
+   "needle": "monopolized by two differentiated operators",
+   "axis": "decision",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 4,
+   "needle": "There are three stages",
+   "axis": "information",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 5,
+   "needle": "The quantity of charging piles constructed by operator i",
+   "axis": "decision",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 5,
+   "needle": "The cost coefficient of constructing unit charging pile",
+   "axis": "capacity_power",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 6,
+   "needle": "we solve the following GNB",
+   "axis": "objective",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 10,
+   "needle": "Consumer surplus (CS) can be expressed as",
+   "axis": "objective",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 10,
+   "needle": "constitute social welfare",
+   "axis": "objective",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 13,
+   "needle": "social welfare is SW",
+   "axis": "objective",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 13,
+   "needle": "When the government subsidizes parking space operator",
+   "axis": "objective",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 14,
+   "needle": "Operator H consistently chooses to construct charging piles",
+   "axis": "decision",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 14,
+   "needle": "commissioning piles enables the company to invest less",
+   "axis": "decision",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 15,
+   "needle": "No data was used for the research described in the article",
+   "axis": "validation",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M18",
+   "page": 15,
+   "needle": "Future studies could further explore charging services for EVs",
+   "axis": "validation",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M18_joint-operation-parking-charging_TRD2025.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 1,
+   "needle": "An augmented Lagrangian relaxation algorithm for allocation optimization",
+   "axis": "method",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 1,
+   "needle": "reduces computation time by 80.31%",
+   "axis": "validation",
+   "tier": "B",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 2,
+   "needle": "minimal walking distance",
+   "axis": "positioning",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 7,
+   "needle": "Rule 1: Parking users who do not require charging",
+   "axis": "capacity_power",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 7,
+   "needle": "Rule 2",
+   "axis": "information",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 7,
+   "needle": "Assumption 1",
+   "axis": "information",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 9,
+   "needle": "objective function",
+   "axis": "objective",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 10,
+   "needle": "Lagrangian relaxation",
+   "axis": "method",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 16,
+   "needle": "data",
+   "axis": "validation",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 18,
+   "needle": "Table 9",
+   "axis": "validation",
+   "tier": "B",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 24,
+   "needle": "without incorporating factors such as charging power and grid load",
+   "axis": "capacity_power",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M06",
+   "page": 24,
+   "needle": "future research will focus on integrating",
+   "axis": "validation",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M06_shared-private-parking-EV_ALR_ESWA2026.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 1,
+   "needle": "Electric vehicles shared charging and parking",
+   "axis": "identity",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 1,
+   "needle": "maximize revenue in hybrid parking lots",
+   "axis": "objective",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 4,
+   "needle": "actual arrival and departure",
+   "axis": "information",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 8,
+   "needle": "deterministic dynamic rolling allocation model (D-DRA)",
+   "axis": "decision",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 8,
+   "needle": "charging power required by request m",
+   "axis": "capacity_power",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 10,
+   "needle": "robust dynamic rolling allocation model (R-DRA)",
+   "axis": "decision",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 11,
+   "needle": "probability",
+   "axis": "information",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 15,
+   "needle": "Hangzhou",
+   "axis": "validation",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 15,
+   "needle": "36 RMB",
+   "axis": "validation",
+   "tier": "B",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 22,
+   "needle": "Table 8",
+   "axis": "validation",
+   "tier": "B",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 25,
+   "needle": "proportion",
+   "axis": "validation",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  },
+  {
+   "paper": "M07",
+   "page": 26,
+   "needle": "future",
+   "axis": "validation",
+   "tier": "A",
+   "pdf": "papers/electrification-math/M07_dynamic-rolling-parking-charging-unpunctuality_TRC2025.pdf"
+  }
+ ]
+}

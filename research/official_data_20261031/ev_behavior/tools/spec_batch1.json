@@ -1,0 +1,34 @@
+{
+ "jobs": [
+  {
+   "url": "https://data.gov.tw/api/v2/rest/dataset?q=%E5%85%85%E9%9B%BB",
+   "purpose": "discover Taiwan official EV charging datasets on data.gov.tw",
+   "filename": "datagovtw_search_charging.json"
+  },
+  {
+   "url": "https://data.gov.tw/api/v2/rest/dataset?q=%E9%9B%BB%E5%8B%95%E8%BB%8A",
+   "purpose": "discover Taiwan official EV registration/stock datasets",
+   "filename": "datagovtw_search_ev.json"
+  },
+  {
+   "url": "https://data.taipei/api/v1/dataset?q=%E5%85%85%E9%9B%BB&limit=20",
+   "purpose": "discover Taipei open data charging datasets",
+   "filename": "datataipei_search_charging.json"
+  },
+  {
+   "url": "https://pure.tue.nl/ws/portalfiles/portal/198541681/A_scenario_based_stochastic_programming_approach_for_the_public_charging_station_location_problem.pdf",
+   "purpose": "verify M10 Table 3 observed counts from institutional full text",
+   "filename": "M10_TUE_fulltext.pdf"
+  },
+  {
+   "url": "https://www.nature.com/articles/s44333-024-00023-3",
+   "purpose": "verify M13 methods/data-availability definitions",
+   "filename": "M13_nature_article.html"
+  },
+  {
+   "url": "https://zenodo.org/api/records/13852045",
+   "purpose": "check M13 public data files availability",
+   "filename": "M13_zenodo_api.json"
+  }
+ ]
+}

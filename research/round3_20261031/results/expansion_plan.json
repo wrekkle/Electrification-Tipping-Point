@@ -1,0 +1,514 @@
+[
+ {
+  "name": "expand_A_pi0_TPE0330_s10",
+  "tag": "A_pi0",
+  "rule": "dedicated_by_type",
+  "lot": "TPE0330",
+  "seeds_n": 10,
+  "k_max": 200,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_A_pi0_TPE0930_s10",
+  "tag": "A_pi0",
+  "rule": "dedicated_by_type",
+  "lot": "TPE0930",
+  "seeds_n": 10,
+  "k_max": 175,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_A_pi0_TPE1376_s10",
+  "tag": "A_pi0",
+  "rule": "dedicated_by_type",
+  "lot": "TPE1376",
+  "seeds_n": 10,
+  "k_max": 73,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_A_pi0_TPE1380_s10",
+  "tag": "A_pi0",
+  "rule": "dedicated_by_type",
+  "lot": "TPE1380",
+  "seeds_n": 10,
+  "k_max": 170,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_B_pi1_TPE0330_s10",
+  "tag": "B_pi1",
+  "rule": "full_open_ice_first",
+  "lot": "TPE0330",
+  "seeds_n": 10,
+  "k_max": 200,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_B_pi1_TPE0930_s10",
+  "tag": "B_pi1",
+  "rule": "full_open_ice_first",
+  "lot": "TPE0930",
+  "seeds_n": 10,
+  "k_max": 175,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_B_pi1_TPE1376_s10",
+  "tag": "B_pi1",
+  "rule": "full_open_ice_first",
+  "lot": "TPE1376",
+  "seeds_n": 10,
+  "k_max": 73,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_B_pi1_TPE1380_s10",
+  "tag": "B_pi1",
+  "rule": "full_open_ice_first",
+  "lot": "TPE1380",
+  "seeds_n": 10,
+  "k_max": 170,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_C_quota_TPE0330_s10",
+  "tag": "C_quota",
+  "rule": "protected_quota",
+  "lot": "TPE0330",
+  "seeds_n": 10,
+  "k_max": 200,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_C_quota_TPE0930_s10",
+  "tag": "C_quota",
+  "rule": "protected_quota",
+  "lot": "TPE0930",
+  "seeds_n": 10,
+  "k_max": 175,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_C_quota_TPE1376_s10",
+  "tag": "C_quota",
+  "rule": "protected_quota",
+  "lot": "TPE1376",
+  "seeds_n": 10,
+  "k_max": 73,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_C_quota_TPE1380_s10",
+  "tag": "C_quota",
+  "rule": "protected_quota",
+  "lot": "TPE1380",
+  "seeds_n": 10,
+  "k_max": 170,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_D_pi2_TPE0330_s10",
+  "tag": "D_pi2",
+  "rule": "predictive_shared_ice_first",
+  "lot": "TPE0330",
+  "seeds_n": 10,
+  "k_max": 200,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_D_pi2_TPE0930_s10",
+  "tag": "D_pi2",
+  "rule": "predictive_shared_ice_first",
+  "lot": "TPE0930",
+  "seeds_n": 10,
+  "k_max": 175,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_D_pi2_TPE1376_s10",
+  "tag": "D_pi2",
+  "rule": "predictive_shared_ice_first",
+  "lot": "TPE1376",
+  "seeds_n": 10,
+  "k_max": 73,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ },
+ {
+  "name": "expand_D_pi2_TPE1380_s10",
+  "tag": "D_pi2",
+  "rule": "predictive_shared_ice_first",
+  "lot": "TPE1380",
+  "seeds_n": 10,
+  "k_max": 170,
+  "selection": {
+   "C": {
+    "protected_bays": 0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "D": {
+    "prediction_object": "charge_arrivals",
+    "window_min": 10.0,
+    "margin": 0.0,
+    "sum_k": 442,
+    "cells": 15,
+    "infeasible": 3
+   },
+   "objective": "训练场站×种子的联合约束 k 之和最小（不可行记 100）；平局取更小 m/margin/window",
+   "train_lots": [
+    "TPE0008",
+    "TPE0610",
+    "TPE0401",
+    "TPE0695",
+    "TPE0330"
+   ]
+  }
+ }
+]

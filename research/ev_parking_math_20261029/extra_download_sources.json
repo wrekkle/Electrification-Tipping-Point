@@ -1,0 +1,9 @@
+{
+  "P08": ["https://pure.tue.nl/ws/portalfiles/portal/3282776/535017.pdf", "https://research.tue.nl/files/3282776/535017.pdf"],
+  "P06": ["https://api.elsevier.com/content/article/pii/S235214652300323X?httpAccept=application/pdf"],
+  "P30": ["https://jtte.chd.edu.cn/cn/article/pdf/preview/10.1016/j.jtte.2023.07.009.pdf"],
+  "P21": ["https://people.eecs.berkeley.edu/~elghaoui/Pubs/RobMDP_OR2005.pdf"],
+  "P14": ["https://dl.acm.org/doi/pdf/10.1145/3727121"],
+  "P35": ["https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=5219198"],
+  "P13": ["https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=7109699"]
+}

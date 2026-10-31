@@ -1,0 +1,135 @@
+{
+  "P05": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.1016/j.omega.2015.11.010",
+      "oa": false
+    },
+    {
+      "pdf": null,
+      "landing": "http://www.sciencedirect.com/science/article/pii/S0305048316000165",
+      "oa": false
+    }
+  ],
+  "P06": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.1016/j.trpro.2023.11.042",
+      "oa": true
+    }
+  ],
+  "P08": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.1081/stm-120001221",
+      "oa": false
+    },
+    {
+      "pdf": null,
+      "landing": "https://research.tue.nl/en/publications/a7903644-848c-441d-aac1-fc6c9eecb30a",
+      "oa": false
+    },
+    {
+      "pdf": null,
+      "landing": "https://research.tue.nl/nl/publications/a7903644-848c-441d-aac1-fc6c9eecb30a",
+      "oa": false
+    }
+  ],
+  "P11": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.2139/ssrn.4320423",
+      "oa": true
+    }
+  ],
+  "P12": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.2139/ssrn.6384158",
+      "oa": true
+    }
+  ],
+  "P13": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.2139/ssrn.7109699",
+      "oa": true
+    }
+  ],
+  "P14": [
+    {
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3727121",
+      "landing": "https://doi.org/10.1145/3727121",
+      "oa": true
+    }
+  ],
+  "P21": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.1287/opre.1050.0216",
+      "oa": false
+    },
+    {
+      "pdf": null,
+      "landing": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.155.4672",
+      "oa": false
+    }
+  ],
+  "P28": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.1016/j.tre.2025.104438",
+      "oa": false
+    }
+  ],
+  "P29": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.2139/ssrn.6254138",
+      "oa": true
+    }
+  ],
+  "P30": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.1016/j.jtte.2023.07.009",
+      "oa": true
+    },
+    {
+      "pdf": null,
+      "landing": "https://doaj.org/article/65973e46d82a4cd887d3bd279d8db4e2",
+      "oa": true
+    }
+  ],
+  "P31": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.1177/03611981251405254",
+      "oa": true
+    }
+  ],
+  "P34": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.1287/moor.2023.0250",
+      "oa": false
+    }
+  ],
+  "P35": [
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.1287/opre.2022.0604",
+      "oa": false
+    },
+    {
+      "pdf": null,
+      "landing": "https://doi.org/10.2139/ssrn.5219198",
+      "oa": true
+    },
+    {
+      "pdf": null,
+      "landing": "http://repository.hkust.edu.hk/ir/Record/1783.1-171289",
+      "oa": false
+    }
+  ]
+}

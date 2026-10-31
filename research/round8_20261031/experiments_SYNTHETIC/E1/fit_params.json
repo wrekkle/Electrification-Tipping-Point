@@ -1,0 +1,90 @@
+{
+  "unit": "site-day",
+  "dataset_id": null,
+  "n_sites": 3,
+  "n_days": 2,
+  "n_site_days": 6,
+  "n_events": 60,
+  "criteria": [
+    {
+      "id": "P2_event_level_arrival_dwell",
+      "requirement": "每条事件都有到达与停留",
+      "value": 60,
+      "status": "pass"
+    },
+    {
+      "id": "P3_sites_ge_3",
+      "requirement": ">= 3 场站",
+      "value": 3,
+      "status": "pass"
+    },
+    {
+      "id": "P3_complete_days_ge_4",
+      "requirement": ">= 4 个完整 24h 日",
+      "value": 0,
+      "status": "unverified",
+      "reason": "契约未提供 coverage.complete_days 标记；记录到的日数不能当作已核完整日"
+    },
+    {
+      "id": "P4_site_capacity",
+      "requirement": "每场站有总车位与充电位/枪数",
+      "value": 3,
+      "status": "pass"
+    },
+    {
+      "id": "charge_fields",
+      "requirement": "needs_charge 与 energy_kwh 可用于 E6",
+      "value": {
+        "needs_charge": 60,
+        "energy_kwh": 60,
+        "events": 60
+      },
+      "status": "pass"
+    }
+  ],
+  "missing": {
+    "needs_charge": 0,
+    "energy_kwh": 0
+  },
+  "dwell_summary_calibration": {
+    "all": {
+      "n": 22,
+      "mean": 82.5,
+      "p50": 75.0,
+      "p90": 110.0
+    },
+    "ev": {
+      "n": 12,
+      "mean": 103.33333333333333,
+      "p50": 95.0,
+      "p90": 120.0
+    },
+    "ice": {
+      "n": 10,
+      "mean": 57.5,
+      "p50": 55.0,
+      "p90": 70.0
+    }
+  },
+  "dwell_summary_test": {
+    "all": {
+      "n": 38,
+      "mean": 77.76315789473684,
+      "p50": 70.0,
+      "p90": 120.0
+    },
+    "ev": {
+      "n": 22,
+      "mean": 93.18181818181819,
+      "p50": 90.0,
+      "p90": 120.0
+    },
+    "ice": {
+      "n": 16,
+      "mean": 56.5625,
+      "p50": 55.0,
+      "p90": 70.0
+    }
+  },
+  "note": "经验分布，无参数外推；单位=场站-日"
+}

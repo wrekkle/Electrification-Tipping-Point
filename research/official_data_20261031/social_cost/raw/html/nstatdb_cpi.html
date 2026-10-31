@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <meta name="description" content="統計資料查詢功能">
+    <meta name="keywords" content="統計、動態查詢、金諄">
+    <link rel="stylesheet" href="kendo/styles/kendo.common.mintmp2303371.css" />
+    <link rel="stylesheet" href="kendo/styles/kendo.blueopal.mintmp2303371.css" />
+    <link rel="stylesheet" href="css/jquery-uitmp1117431.css">
+    <link rel="stylesheet" href="css/surstyletmp2810041.css">
+    <link rel="stylesheet" href="css/dgbasAll/alltmp2611541.css" />
+    <link rel="stylesheet" href="webtemp/usrdefjspc1.css?r=11503090000" />
+    <link rel="stylesheet" href="webtemp/usrdgmaincss.css?r=11203060000" />
+    <link rel="stylesheet" href="webtemp/usrqryoutcss.css?r=11209230000" />
+</head>
+<!-- 系統開發:金諄資訊股份有限公司 (02) 2759-6506 -->
+<title>統計資料庫查詢結果 </title>
+<style type="text/css">
+    .outpanel {
+        font-size: 0.9em;
+    }
+
+
+    .k-popup {
+        color: black;
+        background-color: white;
+    }
+
+    .def5 {
+        display: inline-block;
+    }
+
+    .def5ttl {
+        display: inline-block;
+    }
+
+    .procmsg {
+        position: absolute;
+        left: 40%;
+        top: 10%;
+        border-style: solid;
+        border-width: 2px;
+        padding: 10px;
+        color: darkred;
+        background-color: #eee;
+        z-index: 99999;
+    }
+
+    .optsel {
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 8px;
+        border-color: dodgerblue;
+
+        box-shadow: inset 0px 0px 50px 0px #FFFFFF, 5px 6px 5px 1px #D0D7D9;
+        -webkit-box-shadow: inset 0px 0px 50px 0px #FFFFFF, 5px 6px 5px 1px #D0D7D9;
+        -moz-box-shadow: inset 0px 0px 50px 0px #FFFFFF, 5px 6px 5px 1px #D0D7D9;
+        -o-box-shadow: inset 0px 0px 50px 0px #FFFFFF, 5px 6px 5px 1px #D0D7D9;
+    }
+
+    .pchk1 {
+        border-color: green;
+        position: relative;
+        left: 8px;
+        top: -1px;
+        font-size: 0.8em;
+        color: white;
+        background-color: green;
+        border-radius: 3px;
+    }
+
+    .pchk2 {
+        position: relative;
+        top: -1px;
+        left: 16px;
+        font-size: 0.8em;
+        color: white;
+        background-color: rgb(237, 89, 33);
+        border-radius: 3px;
+    }
+
+    .hlp {
+        display: inline-block;
+        position: relative;
+        top: -1px;
+        border-radius: 50%;
+        background-color: rgb(137, 215, 159);
+        color: white;
+        font-size: 28px;
+        height: 28px;
+        width: 28px;
+        font-family: Arial;
+        font-weight: 300;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+
+    }
+
+    .hlp a {
+        color: white;
+    }
+ 
+</style>
+<script src="js/jquery.js"></script>
+<script src="kendo/js/kendo.all.min.js"></script>
+
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.mouseimage.js"></script>
+<script src="js/jquery.imagemapster.js"></script>
+<script src="js/jquery.cycle2.min.js"></script>
+
+
+<script src="js/stcom.js"></script>
+<script src="js/sdcom.js"></script>
+<script src="js/sdlog.js"></script>
+<script src="js/treefolder.js"></script>
+<script src="webtemp/usrdgbasJS.js?r=11508210000"></script>
+<style type="text/css">
+    .k-grid-content .textcls {
+        text-align: left !important;
+    }
+    li {
+        list-style-type: none;
+    }
+</style>
+<script language="JavaScript">
+    //#comparm#
+    //#state#
+    var gcharColor = ["#FF0F60", "#00ff66", "#FF00CC", "#ffcc66", "#ccff99", "#0033cc", "#ff0033", "#ccff00", "#069", "#3F0", "#03F", "#F36", "#669900", "#C0F", "#699", "#0C9", "#FF8000", "#FFFF46", "#DD006F", "#3EFF9E", "#FF3", "#0000F2", "#EC0076", "#00AE00",
+        "#ff6688", "#0fff63", "#3399ff", "#FF07CC", "#ffcc88 ", "#CF7", "#13C", "#F13", "#CF5", "#169", "#3F1", "#13F", "#F38", "#669906", "#C1F", "#799", "#1C9", "#FF8005", "#FFFF56", "#DD036F", "#3EFF6E", "#FF31", "#0010F2", "#EC0276", "#01AE00"
+    ];
+
+    var preParseMk = 0;
+    var preParseHead = "(全選)";
+    var parseAllMark = 0;
+    var gcsvKind = 2;   			//1020805
+    var seltype = 1;       			//check處理
+    var outModeType = 0;				//顯示圖表之型態
+    var cyclekind2 = 1;	               //表示要顯示截至本月累計
+    var cyclekind4 = 1; 			//含月季年
+    //var OutComputeType=9;   //只含統計項
+    var goutKind = 1;
+    var gadvmark = 0;
+    var gorgsize = "360px"
+    var gymList = "";
+    var ymWin;
+    var gyyf;
+    var gyyt;
+    var gmmf;
+    var gmmt;
+    var gqqf;
+    var gqqt;
+    var gdefcycle = 0;
+    var gtoolWin;
+    var gymf;
+    var gymt;
+    var gorgurl = "funid=A030101015&outmode=8&deflst=1&outkind=1";
+    var gdef = JSON.parse(getAjaxA(1, "webMain.aspx?sys=212&x=2100&funid=A030101015&r=105724401", ""));
+    var gdata;
+    var gArayMk = 0;
+    var gcurYMmk = 0;
+    var ghR = new Array();
+    var ghC = new Array();
+    var gcurGridIdx = 0;
+    var gcurGridList = "";
+    var gridData;
+    var gridData2;
+    var gridCol;
+    var gridTitle;
+    var gcolWidth = 0;
+    var gtreef0 = new Array();
+    var gtreec0 = new Array();
+    var gtreec1 = new Array();
+    var gchkorder = 0;
+    var gchgmk = 0;
+    var gchgmk2 = 0;
+    var treetip = "";
+
+    var gfldchk = new Array();
+    var gfldidx = new Array();
+    var gfldPos = new Array();
+    var gcodchk0 = new Array();
+    var gcodidx0 = new Array();
+    var gcodPos0 = new Array();
+    var gcodchk1 = new Array();
+    var gcodidx1 = new Array();
+    var gcodPos1 = new Array();
+    var gGroupSort = 0;
+    var gsortmode = 0;
+    var grpData;
+    var grpHead;
+    var gfmt = "{0:n0}";
+    var gfmt2 = "n0";
+    var gfmt3 = "###,##0;###,##0;###,##0";
+    var gplus = "";
+    var goplus = "0";
+
+    var colorsender;
+    var gGrpData;
+    var gbubchk = new Array();
+    var curGrpMode = 0;
+    var gcompMode5 = 0;
+    var gcompName = "";
+    var gPhone = getVal("0");
+
+
+
+</script>
+
+<body>
+    <form name="form1" onsubmit="return false;">
+        <div class="headerdiv fwidth2">
+            <div class="hlinkdiv">
+                <div class="hlinkdiv1">
+                    <table summary='表格資料' class="hlinkdiv2" width=100%>
+                        <tr>
+                            <td><a href="javascript:showdata(0);">單表查詢</a></td>
+                            <td><a href="javascript:showdata(1);">跨表查詢</a></td>
+                            <td><a href="javascript:showdata(2);">視覺圖</a></td>
+                            <td><a href="javascript:showdata(3);">快捷工具</a></td>
+                            <td><a href="javascript:showdata(4);">統計驛站</a></td>
+                            <td><a href="javascript:showdata(5);">首頁</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="bframe"></div>
+
+        <div class="maindiv">
+
+            <div class="panmenu">
+                <input id='cmdhtml' type='button' class="css_button css_buttonm" onClick='javascript:setHtml();'
+                    value="統計表" title="統計表">
+                <input id='cmdreport' type='button' class="css_button css_button1" onClick='javascript:setgraph(1);'
+                    value="統計圖" title="統計圖">
+            </div>
+
+            <div class="pansel2 panout1 tbl">
+
+                <div>
+                    <input id='cmdreset' type='button' class="css_button k-button  " onClick='javascript:proc(1);'
+                        value="屬性重設" title="屬性重設">
+                    <input id='cmdsort' type='button' class="css_button k-button  " onClick='javascript:proc(2);'
+                        value="階層排序" title="階層排序">
+                    <input id='cmdchg' type='button' class="css_button k-button  " onClick='javascript:proc(9);'
+                        value="行列互換" title="行列互換">
+                </div>
+
+                <div class="pansel3  ">
+                    <label class="sellabel" for="cycle">&nbsp;&nbsp;&nbsp;週期&nbsp;&nbsp;&nbsp;&nbsp;</label><select
+                        class="selcls selcls1" id="cycle" name="cycle" title="週期"> </select>
+                </div>
+
+                <div class="pansel3 pansel32">
+                    <label class="sellabel" for="compmode">計算模式</label><select class="selcls selcls1" id="compmode"
+                        name="compmode" title="計算模式"></select>
+                    <label class="nodisp" for="unitmode">輸出單位</label><select class="nodisp " id="unitmode"
+                        name="unitmode" title="輸出單位"></select>
+                </div>
+                <div class="pansel3">
+                    <label class="sellabel" for="outmode">輸出模式</label><select class="selcls selcls1" id="outmode"
+                        name="outmode" title="輸出模式">
+                        <option value='0'>網頁</option>
+                        <option value='1'>Excel</option>
+                        <option value='6'>ODS</option>
+                        <option value='2'>CSV</option>
+                        <option value='3'>CSV(UTF8)</option>
+                        <option value='7'>PDF</option>
+                        <option value='8'>JSON</option>
+                        <option value='900'>XML</option>
+                        <option value='906'>XMLView</option>
+                        <option value='989'>PXFile</option>
+                        <option value='988'>PXView</option>
+
+                    </select>
+                    <input id='query' type='button' class="css_button css_button3 " onClick='javascript:proc(18);'
+                        value="匯出" title="查詢統計資料">
+                </div>
+
+                <div class="pansel3 apicls">
+                    <label class="sellabel" for="apiurl">API</label>
+                    <img alt='複製API連結' title='複製API連結' src="images\dgbasAll012.png" class="apiimg" />
+                    <div class="hlp"> <a href="download/API說明文件.pdf" target="_blank" title='API說明文件'>?</a></div>
+                    <input id='apiurl' type='text' class="apiurl" readonly="true" title="API連結"></input>
+                </div>
+            </div>
+
+            <div class="pansel2 panout1 grp">
+
+                <div>
+                    <input id='cmdgrpattr' type='button' class="css_button k-button  " onClick='javascript:graph(1);'
+                        value="圖表及屬性設定" title="圖表及屬性設定">
+                    <input id='cmdgrpset' type='button' class="css_button k-button  " onClick='javascript:graph(2);'
+                        value="座標設定" title="座標設定">
+                </div>
+                <br>
+                <label class="sellabel" for="outmode2">輸出模式</label><select class="selcls selcls1" id="outmode2"
+                    name="outmode2" title="輸出模式">
+                    <option value='1'>PNG</option>
+                    <option value='9'>SVG</option>
+                    <option value='3'>PDF</option>
+                    <option value='2'>JPG</option>
+
+                </select>
+
+                <input id='grpquery' type='button' class="css_button css_button3 " onClick='javascript:saveChart();'
+                    value="匯出" title="匯出圖表檔案">
+
+            </div>
+
+            <div class="pansel2">
+                <span><img alt='圖檔' src="images\dgbasall101.png" class="panimg"></img></span>
+
+                <div class="pansel21">
+                    <table width=100%>
+                        <tr>
+                            <td>
+                                <div class="def1a">領域：<span class="def def1"></span></div>
+                                <div class="def2a">單元：<span class="def def2"></span></div>
+                                <div>資料來源：<span class="def def6">行政院主計總處</span></div>
+                            </td>
+                            <td>
+                                <div>資料週期：<span class="def def3"></span></div>
+                </div>
+                <div>最新公布資料：<span class="def def4"></span></div>
+                <div><span class="def5ttl">最早歷史資料：</span><span class="def def5"></span></div>
+                </td>
+                </tr>
+                </table>
+
+
+            </div>
+
+        </div>
+
+        <div class="panttl" id="panttl">
+            <h1><span id="panttl1"></span><a href="javascript:showinfo(1);"><span class="info">i</span></a><span
+                    class="infoa1"><a href="javascript:showinfo(2);"><img alt="顯示特徵值" src="images\dgbasall301.png"
+                            width=30></a></span></h1>
+        </div>
+        <div class="panterm tbl">
+            <span class="termcls1">表頭表側凍結</span>
+            <input type="checkbox" id="freeze1" name="freeze1" checked><label for="freeze1">表頭</label>
+            <input type="checkbox" id="freeze0" name="freeze0" checked><label for="freeze0">表側</label>
+        </div>
+        <div class="subttlcls">
+            <span class="subymf" onClick='javascript:setYM(1);'>&nbsp;&nbsp;&nbsp;</span>
+            <span class="subymterm"></span>
+            <span class="subymt" onClick='javascript:setYM(2);'>&nbsp;&nbsp;&nbsp;</span>
+        </div>
+        <div class="subunitcls"><span id="unit"> </span></div>
+        <div class="subunitcls"><br> <span class="sysdtcls">查詢時間:<span id=sysdt></span></div>
+        </div>
+        </div>
+
+
+        <div class="outpanel"></div>
+
+
+        <div class="selcls seldiv" style="min-height:200px ;">
+
+            <div class="selcls optsel panym panymf ">
+                <div class="pantitle"><img alt='圖檔' src="images\dgbaslogo1.png"></img><span class="panclose">X</span>
+                </div>
+
+                <label class="sellabel2" id="ymlabel">統計期(起)</label>
+                <br><br><br><br>
+                <div class="ymdiv1">
+                    <input id="yyf" type="number" class="ymcls yycls knum" autocomplete='off'
+                        title="統計期年" />&nbsp;&nbsp;<label class="yycls" for="yyf">
+                        <selym1>年</selym1>
+                    </label>&nbsp;&nbsp;
+                    <span class=mmcls><input id="mmf" type="number" class="ymcls knum" autocomplete='off'
+                            title="統計期月" /></span>&nbsp;&nbsp;<label class="mmcls" for="mmf">
+                        <selym2>月</selym2>
+                    </label>&nbsp;&nbsp;
+                    <span class=qqcls><input id="qqf" type="number" class="ymcls knum" autocomplete='off'
+                            title="統計期季" /></span>&nbsp;&nbsp;<label class="qqcls" for="qqf">
+                        <selym3>季</selym3>
+                    </label>
+
+
+                </div>
+
+                <input id='cmdymf' type='button' class="css_button css_button2 k-button panymcmd "
+                    onClick='javascript:setYM(3);' value="確定" title="確定">
+                <br><br>
+            </div>
+
+
+
+            <div class="selcls optsel panhead">
+                <div class="pantitle">
+                    <span class="attrttla" id="attrtitle">行列互換</span>
+                    <span class="attrttl">&nbsp;</span>
+                    <img alt='圖檔' src="images\dgbaslogo1.png" width=20></img>
+                    <input type="checkbox" id="codeshow1" name="codeshow1" class="codeshow codeshowcls"
+                        title="複分類"><label class="codeshow" id="codelabel" for="codeshow"
+                        title="複分類">以複分類為主呈現模式&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></label>
+                    <span class="panclose">X</span>
+                </div>
+                <br><br>
+                <table width=98% align=center>
+                    <tr class="headcls">
+                        <th width=50%>表側</th>
+                        <th width=50%>表頭</th>
+                    </tr>
+                    <tr class="headitemcls">
+                        <td valign=top>
+                            <div id="rowhead" class="rowhead headconn">
+
+                            </div>
+                        </td>
+                        <td valign=top>
+                            <div id="colhead" class="colhead headconn">
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <input id='cmdgrpah' type='button' class="css_button css_button2 k-button head1"
+                        onClick='javascript:attrproc(9);' value="取消" title="取消">
+                    <input id='cmdgrpah' type='button' class="css_button css_button2 k-button head1"
+                        onClick='javascript:proc(10);' value="確定" title="確定">
+                </div>
+
+
+            </div>
+
+
+            <div class="selcls optsel panattr">
+                <div class="pantitle">
+                    <span class="attrttla" id="attrtitle">屬性重設</span>
+                    <span class="attrttl">&nbsp;</span>
+                    <img alt='圖檔' src="images\dgbaslogo1.png" width=20></img>
+                    <input type="checkbox" id="codeshow" name="codeshow" class="codeshow codeshowcls" title="複分類"><label
+                        class="codeshow" id="codelabel" for="codeshow"
+                        title="複分類">以複分類為主呈現模式&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></label>
+                    <span class="panclose">X</span>
+                </div>
+
+
+                <table width=98% id="panattrid">
+                    <tr>
+                        <td class=sel_radiocls><input id='selfldradio' name='selfldradio' type='radio' class="sel_radio"
+                                value="1"></td>
+                        <td>
+                            <div class="sellabel3 selfldlabel"><label for="selfldradio">統計項</label></div>
+                            <div class="selfldm seldihgh" style="min-height:100px;">
+
+                                <div class="selfld">
+
+                                    <script>
+                                        var ldoc = document;
+                                        var lcnt = 0;
+                                        var lcnt2 = 0;
+                                        var ltree = new Array();
+                                        var lparidx = new Array();
+                                        var llevel = new Array();
+                                        var lattr2 = new Array();
+                                        var lattr = 0;
+                                        var lpar = 0;
+                                        var lhide = "";
+                                        setlogout('qryout');
+                                        treeForm = document.form1;
+                                        preHtmlMk = 1;
+                                        lparidx[0] = lcnt;
+                                        ltree[lcnt] = setFolderPlus("<span class='treeA treef0'>" + gdef.fldTitle + "</span></a><span class='poschk pchk1' title='左標題'>左標</span><span class='poschk pchk2'  title='右標題'>右標</span><br><a>", "", "", "");
+                                        for (lwi = 0; lwi < gdef.fldCnt; lwi++) {
+                                            lcnt++;
+                                            lattr = gdef.fldTree0[lwi];
+                                            lpar = lattr % 10;
+                                            llevel[lcnt] = lattr;
+                                            lattr2[lcnt] = gdef.fldTree1[lwi];
+                                            if (lattr2[lcnt] > 0) { lcnt2++; }
+                                            if (lattr >= 10) { lparidx[lpar + 1] = lcnt; }
+                                            gtreef0[lwi] = lwi;
+                                            lhide = "";
+                                            if (lwi + 1 < gdef.codCnt[0]) {
+                                                if (lpar < gdef.fldTree0[lwi + 1] % 10) {
+                                                    lhide = 'noshow';
+                                                }
+                                            }
+                                            lname = "<span class='sort " + lhide + "'><up id=f0" + lwi + ">▲</up><down id=f0" + lwi + ">▼</down></span>";
+                                            lname += "<input id=fldchk  name=fldchk  class='chk fldchk'  type=checkbox  title='統計項1' value='" + lwi + "' checked>";
+                                            lname += "<input id=poschk  name=poschk  class='poschk'      type=checkbox  title='統計項2' value='" + lwi + "'>";
+                                            lname += "<input id=fldbub  name=fldbub  class='bub fldbub'  type=radio     title='統計項3' value='" + lwi + "'>";
+                                            lname += "<input id=fldbuba name=fldbuba class='bub fldbuba' type=checkbox  title='統計項3' value='" + lwi + "'>";
+                                            lname += "<input id=fldbuk  name=fldbuk  class='buk fldbuk'  type=radio     title='統計項5' value='" + lwi + "'>";
+
+                                            lname += "<label for='" + gdef.fldValue[lwi] + "'>&nbsp;</label>";
+                                            ltree[lcnt] = insertTree(lattr, ltree[lparidx[lpar]], "<span class='tree" + lattr + " f0" + lwi + "'>" + gdef.fldName[lwi] + "</span>", "", "", lname);
+                                        }
+                                        initializeDoc(ltree[firstEntries]);
+
+                                    </script>
+
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="sellabel3 selcodelabel0"><label for="selfldradio">複分類</div>
+                            <div class="selcodem seldihgh">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="selcode0">
+                                                <script>
+                                                    var ldoc = document;
+                                                    var lcnt = 0;
+                                                    var lcnt2 = 0;
+                                                    var ltree = new Array();
+                                                    var lparidx = new Array();
+                                                    var llevel = new Array();
+                                                    var lattr2 = new Array();
+                                                    var lattr = 0;
+                                                    var lpar = 0;
+                                                    var lchkval;
+                                                    var lname;
+                                                    var hide;
+
+
+
+                                                    if (gdef.codCnt[0] > 0 || gdef.codCnt[1] > 0) {
+
+                                                        lparidx[0] = lcnt;
+                                                        ltree[lcnt] = setFolderPlus("<span class='treeA treec0'>" + gdef.codTitle[0] + "</span><br>", "", "", "");
+                                                        for (lwi = 0; lwi < gdef.codCnt[0]; lwi++) {
+                                                            lcnt++;
+                                                            lattr = gdef.codVal0[lwi].val[5];
+                                                            lpar = lattr % 10;
+                                                            llevel[lcnt] = lattr;
+                                                            lattr2[lcnt] = gdef.codVal0[lwi].val[6];
+
+                                                            if (lattr2[lcnt] > 0) { lcnt2++; }
+                                                            if (lattr >= 10) { lparidx[lpar + 1] = lcnt; }
+                                                            lchkval = gdef.codFld[0] + ":" + gdef.codVal0[lwi].val[0];
+                                                            lhide = "";
+                                                            if (lwi + 1 < gdef.codCnt[0]) {
+                                                                if (lpar < gdef.codVal0[lwi + 1].val[5] % 10) {
+                                                                    lhide = 'noshow';
+                                                                }
+                                                            }
+                                                            lname = "<span class='sort " + lhide + "'><up id=c0" + lwi + ">▲</up><down id=c0" + lwi + ">▼</down></span>";
+                                                            lname += "<input id=codchk0  name=codchk0  class='chk codchk0'  type=checkbox value='" + lwi + "'  checked title='複分類'>";
+                                                            lname += "<input id=codbub0  name=codbub0  class='bub codbub0'  type=radio    value='" + lwi + "'  title='複分類'>";
+                                                            lname += "<input id=codbub0a name=codbub0a class='bub codbub0a' type=checkbox value='" + lwi + "'  title='複分類'>";
+                                                            lname += "<input id=codbuk0  name=codbuk0  class='buk codbuk0'  type=radio    value='" + lwi + "'  title='複分類'>";
+
+                                                            //lname+="<label for='"+lchkval+"'>&nbsp;</label>"
+                                                            gtreec0[lwi] = lwi;
+
+                                                            ltree[lcnt] = insertTree(lattr, ltree[lparidx[lpar]], "<span class='tree" + lattr + " c0" + lwi + "'>" + gdef.codName0[lwi] + "</span>", "", "", lname);
+                                                        }
+                                                        initializeDoc(ltree[firstEntries]);
+
+                                                    }
+
+
+                                                </script>
+                                            </div>
+                                        </td>
+
+                                        <script>
+                                            var ldoc = document;
+                                            var lcnt = 0;
+                                            var lcnt2 = 0;
+                                            var ltree = new Array();
+                                            var lparidx = new Array();
+                                            var llevel = new Array();
+                                            var lattr2 = new Array();
+                                            var lattr = 0;
+                                            var lpar = 0;
+                                            var lchkval;
+                                            var lname;
+                                            var lhide = "";
+                                            if (gdef.codCnt[1] > 0) {
+
+                                                ldoc.write('<td><div class="selcode1">');
+                                                lparidx[0] = lcnt;
+                                                ltree[lcnt] = setFolderPlus("<span class='treeA treec1'>" + gdef.codTitle[1] + "</span><br>", "", "", "");
+                                                for (lwi = 0; lwi < gdef.codCnt[1]; lwi++) {
+                                                    lcnt++;
+                                                    lattr = gdef.codVal1[lwi].val[5];
+                                                    lpar = lattr % 10;
+                                                    llevel[lcnt] = lattr;
+                                                    lattr2[lcnt] = gdef.codVal1[lwi].val[6];
+                                                    gtreec1[lwi] = lwi;
+
+                                                    if (lattr2[lcnt] > 0) { lcnt2++; }
+                                                    if (lattr >= 10) { lparidx[lpar + 1] = lcnt; }
+                                                    lchkval = gdef.codFld[0] + ":" + gdef.codVal1[lwi].val[0];
+                                                    lhide = "";
+                                                    if (lwi + 1 < gdef.codCnt[1]) {
+                                                        if (lpar < gdef.codVal1[lwi + 1].val[5] % 10) {
+                                                            lhide = 'noshow';
+                                                        }
+                                                    }
+                                                    lname = "<span class='sort " + lhide + "'><up id=c1" + lwi + ">▲</up><down id=c1" + lwi + ">▼</down></span>";
+                                                    lname += "<input id=codchk1  name=codchk1  class='chk codchk1'  type=checkbox value='" + lwi + "' checked  title='複分類'>";
+                                                    lname += "<input id=codbub1  name=codbub1  class='bub codbub1'  type=radio    value='" + lwi + "' title='複分類'>";
+                                                    lname += "<input id=codbub1a name=codbub1a class='bub codbub1a' type=checkbox value='" + lwi + "' title='複分類'>";
+                                                    lname += "<input id=codbuk1  name=codbuk1  class='buk codbuk1'  type=radio    value='" + lwi + "' title='複分類'>";
+
+                                                    //lname+="<label for='"+lchkval+"'>&nbsp;</label>"			
+                                                    ltree[lcnt] = insertTree(lattr, ltree[lparidx[lpar]], "<span class='tree" + lattr + " c1" + lwi + "'>" + gdef.codName1[lwi] + "</span>", "", "", lname);
+                                                }
+                                                initializeDoc(ltree[firstEntries]);
+                                                ldoc.write('</div></td>');
+
+                                            }
+
+                                        </script>
+
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <div class="attrhelp"></div>
+
+                <div class="cmdgrpah3">
+                    <br><br>
+                    <input id='cmdgrpah' type='button' class="css_button css_button2 k-button bub1"
+                        onClick='javascript:attrproc(9);' value="取消" title="取消">
+                    <input id='cmdgrpah' type='button' class="css_button css_button2 k-button bub1"
+                        onClick='javascript:attrproc(1);' value="確定" title="確定">
+                    <input id='cmdgrpah' type='button' class="css_button css_button2 k-button srt1"
+                        onClick='javascript:attrproc(9);' value="取消" title="取消">
+                    <input id='cmdgrpah' type='button' class="css_button css_button2 k-button srt1"
+                        onClick='javascript:attrproc(2);' value="確定" title="確定">
+
+                </div>
+
+                <div class="buba panbubble">
+                    <input id='cmdbubble' type='button' class="css_button css_button2 k-button cmdcode1 bub1"
+                        onClick='javascript:showbubble(1);' value="選取X軸屬性" title="選取X軸屬性">
+                    <input id='cmdbubble' type='button' class="css_button css_button2 k-button cmdcode2 bub1"
+                        onClick='javascript:showbubble(2);' value="選取Y軸屬性" title="選取Y軸屬性">
+                    <input id='cmdbubble' type='button' class="css_button css_button2 k-button cmdcode3 bub1"
+                        onClick='javascript:showbubble(3);' value="選取資料項" title="選取資料項">
+                    <input id='cmdbubble' type='button' class="css_button css_button2 k-button cmdcode4 srt1"
+                        onClick='javascript:showbubble(4);' value="主階層排序" title="主階層排序">
+                    <input id='cmdbubble' type='button' class="css_button css_button2 k-button cmdcode5 srt1"
+                        onClick='javascript:showbubble(5);' value="次階層排序2" title="次階層排序3">
+                    <input id='cmdbubble' type='button' class="css_button css_button2 k-button cmdcode6 srt1"
+                        onClick='javascript:showbubble(6);' value="次階層排序3" title="次階層排序3">
+                    &nbsp;&nbsp;
+                    <input type="checkbox" id="bubbletime" name="bubbletime" class="codeshow2 " value="X軸為時間"
+                        title="時間""><label  class=" codeshow2" id="bubbletimelabel"
+                        for="bubbletime">X及Y軸為時間</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="bubblelag" for="bubblelag">X及Y軸之時間期差(lag)</label><input id='bubblelag'
+                        class="bubblelag" type='text' size=3 title="X及Y軸之時間期差">
+                    <input id='bubblesort4' class="bubblesort4" type='checkbox' title="遞減"><label class="bubblesort4"
+                        for="bubblesort4">遞減</label>
+                    <input id='bubblesort5' class="bubblesort5" type='checkbox' title="遞減"><label class="bubblesort5"
+                        for="bubblesort5">遞減</label>
+                    <input id='bubblesort6' class="bubblesort6" type='checkbox' title="遞減"><label class="bubblesort6"
+                        for="bubblesort6">遞減</label>
+                </div>
+
+            </div>
+
+
+
+            <div class="selcls optsel panfilter ">
+                <div class="pantitle"><img alt='圖檔' src="images\dgbaslogo1.png"></img>
+                    <span class="panclose">X</span>
+                </div>
+                <br><br>
+                <div id="gridnm" class="gridnm"></div>
+                <div><input id='cmdgridsort' type='button' class="css_button css_button2 k-button"
+                        onClick='javascript:gridproc(1);' value="排序" title="排序"></div>
+                <div><input id='cmdgridsel' type='button' class="css_button css_button2 k-button"
+                        onClick='javascript:gridproc(2);' value="篩選" title="篩選">
+                    <input id='gridsel' type='text' class="css_button" title="篩選">
+                </div>
+                <div><input id='cmdgridhide' type='button' class="css_button css_button2 k-button"
+                        onClick='javascript:gridproc(3);' value="刪除" title="刪除"></div>
+
+            </div>
+
+
+            <div class="selcls optsel pangraph pangrpahattr ">
+                <div class="pangrpttl1"><span class="pangrpttl2"></span><span class="pangrpttl3">&nbsp;圖形種類</span><span
+                        class="panclose">X</span></div>
+                <br>
+
+
+                <div class="grpattr1">
+                    <div class="grpattritem1">
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="11"><label
+                            for="grpmode">折線圖</label><br>
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="12"><label
+                            for="grpmode">堆疊圖</label><br>
+                    </div>
+                    <br>
+                    <div class="grpattritem1">
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="21" checked><label
+                            for="grpmode">垂直直條圖</label><br>
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="22"><label
+                            for="grpmode">水平直條圖</label><br>
+                    </div>
+                    <br>
+                    <div class="grpattritem1">
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="31"><label
+                            for="grpmode">圓餅圖</label><br>
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="32"><label
+                            for="grpmode">環圈圖</label><br>
+                    </div>
+                </div>
+
+                <div class="grpattr2">
+                    <div class="grpattritem1">
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="41"><label
+                            for="grpmode">雙軸折線圖</label><br>
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="42"><label
+                            for="grpmode">直條折線圖</label><br>
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="43"><label
+                            for="grpmode">堆疊折線圖</label><br>
+                    </div>
+                    <br>
+                    <div class="grpattritem1">
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="51"><label
+                            for="grpmode">金字塔圖</label><br>
+                    </div>
+                    <br>
+                    <div class="grpattritem1">
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="61"><label
+                            for="grpmode">泡泡圖</label><br>
+                    </div>
+                    <br>
+                    <div class="grpattritem1 nodisp">
+                        <input id='grpmode' name='grpmode' type='radio' class="css_radio" value="71" disabled><label
+                            for="grpmode">空間面量圖(地圖)</label><br>
+                    </div>
+                    <br>
+                </div>
+
+            </div>
+
+
+            <div class="selcls optsel pangraph pangrpahpos ">
+                <div class="pangrpttl1"><span class="pangrpttl2"></span><span class="pangrpttl3">&nbsp;座標設定</span><span
+                        class="panclose">X</span></div>
+                <br><br>
+                <label class="posattr0" for="postitle">圖標題</label><input id='postitle' type='text' size=60 title="圖標題">
+                <br><br>
+                <div class="posattr1">
+                    <div class="postattr11">X軸</div>
+
+                    <div class="postattr12"><label for="posx11">標題</label><input id='posx11' type='text' size=20
+                            title="標題">
+                        <select class="selcls " id="posx12" name="posx12" title="位置">
+                            <option value='0'>置中</option>
+                            <option value='1'>靠左</option>
+                            <option value='2'>靠右</option>
+                        </select>
+                    </div>
+
+                    <div class="postattr12"><label for="posx21">單位</label><input id='posx21' type='text' size=10
+                            title="單位"></div>
+
+                    <div class="postattr12"><label for="posx31">標籤間隔</label><input id='posx31' type='text' size=3
+                            title="標籤間隔">
+                        <input type="checkbox" id="posx32" name="posx32"><label for="posx32" class="chk">不顯示標籤</label>
+                    </div>
+
+                    <div class="postattr12">
+                        <label for="posx41" class="sliderclsl">呈現範圍</label>
+                        <div class="sliderclsm">
+                            <div id="posx41" class="slidercls"></div>
+                        </div>
+                        <div class="sliderclscur">
+                            <div class="pox4p1 posx41f"></div>
+                            <div class="pox4p2 posx41t"></div>
+                        </div>
+                        <div class="sliderclstot">
+                            <div class="pox4c1 posx41s"></div>
+                            <div class="pox4c2 posx41b"></div>
+                        </div>
+                    </div>
+
+                    <div class="postattrpie">
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input id='pie1' name='pie1' type='radio' value="1"><label class="postattrpiel"
+                            for="pie1">呈現期底結構</label>
+                        <input id='pie1' name='pie1' type='radio' value="2"><label class="postattrpiel"
+                            for="pie1">呈現各統計期加總後結構</label>
+                        <br><br>
+                    </div>
+
+                </div>
+
+                <br><br>
+                <div class="postattrpie">
+                    <div class="postattrpie2">
+                        注意:「圓餅圖」及「環圈圖」若呈現多統計期時，預設模式將呈現查詢期間之最後一個資料期之結構圖，多屬性並呈時，請自行斟酌個屬性間的可比較性。
+                    </div>
+                </div>
+                <div class="posattr2 posattr20 posattr21">
+                    <div class="postattr11" id="posy1label">Y軸</div>
+
+                    <div class="postattr12"><label for="posy11">標題</label><input id='posy11' type='text' size=20
+                            title="標題">
+                        <select class="selcls " id="posy12" name="posy12" title="位置">
+                            <option value='0'>置中</option>
+                            <option value='1'>置頂</option>
+                            <option value='2'>置底</option>
+
+
+                        </select>
+                    </div>
+
+                    <div class="postattr12"><label for="posy21">單位</label><input id='posy21' type='text' size=10
+                            title="單位"></div>
+
+                    <div class="postattr12"><label for="posy31">標籤間隔</label><input id='posy31' type='text' size=3
+                            title="標籤間隔">
+                        <input type="checkbox" id="posy32" name="posx32"><label for="posy32" class="chk">不顯示標籤</label>
+                    </div>
+
+                    <div class="postattr12">
+                        <label for="posy41" class="sliderclsl">呈現範圍</label>
+                        <div class="sliderclsm">
+                            <div id="posy41" class="slidercls"></div>
+                        </div>
+                        <div class="sliderclscur">
+                            <div class="pox4p1 posy41f"></div>
+                            <div class="pox4p2 posy41t"></div>
+                        </div>
+                        <div class="sliderclstot">
+                            <div class="pox4c1 posy41s"></div>
+                            <div class="pox4c2 posy41b"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="posattr2 posattr22">
+                    <div class="postattr11" id="posy2label">Y軸2</div>
+
+                    <div class="postattr12"><label for="posy112">標題</label><input id='posy112' type='text' size=20
+                            title="標題">
+                        <select class="selcls " id="posy122" name="posy122" title="位置">
+                            <option value='0'>置中</option>
+                            <option value='1'>置頂</option>
+                            <option value='2'>置底</option>
+                        </select>
+                    </div>
+
+                    <div class="postattr12"><label for="posy212">單位</label><input id='posy212' type='text' size=10
+                            title="單位"></div>
+
+                    <div class="postattr12"><label for="posy312">標籤間隔</label><input id='posy312' type='text' size=3
+                            title="標籤間隔">
+                        <input type="checkbox" id="posy322" name="posy322"><label for="posy322"
+                            class="chk">不顯示標籤</label>
+                    </div>
+
+                    <div class="postattr12">
+                        <label for="posy41" class="sliderclsl">呈現範圍</label>
+                        <div class="sliderclsm">
+                            <div id="posy412" class="slidercls"></div>
+                        </div>
+                        <div class="sliderclscur">
+                            <div class="pox4p1 posy41f2"></div>
+                            <div class="pox4p2 posy41t2"></div>
+                        </div>
+                        <div class="sliderclstot">
+                            <div class="pox4c1 posy41s2"></div>
+                            <div class="pox4c2 posy41b2"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <br><br>
+                <div class=cmdgrpah>
+                    <input id='cmdgrpah' type='button' class="css_button css_button2 k-button "
+                        onClick='javascript:setGraphMode(9);' value="取消" title="取消">
+                    <input id='cmdgrpah' type='button' class="css_button css_button2 k-button "
+                        onClick='javascript:setGraphMode(1);' value="確定" title="確定">
+                </div>
+                <br><br>
+
+            </div>
+
+            <div class="selcls optsel pangraph pangrpahcol ">
+                <div class="pangrpttl1"><span class="pangrpttl2"></span><span class="pangrpttl3">&nbsp;圖例設定</span><span
+                        class="panclose">X</span></div>
+                <br><br>
+                <div class="posattr0">
+                    <label for="colpick" id="collabel" class="collabelcls"></label>
+                    <input type="color" id="colpick" data-role="colorpicker" data-opacity="true"
+                        data-palette="websafe" />
+                </div>
+                <br><br>
+                <div class="colcmdlcls">
+                    <input id='cmdcoldel' type='button' class="css_button css_buttonpnk"
+                        onClick='javascript:setgraphCol(2);' value="確定" title="確定">
+                    <input id='cmdcolcancel' type='button' class="css_button css_buttonb"
+                        onClick='javascript:setgraphCol(1);' value="復原" title="復原">
+                    <input id='cmdcolok' type='button' class="css_button css_buttonb nodisp"
+                        onClick='javascript:setgraphCol(3);' value="改變顏色" title="改變顏色">
+                </div>
+                <br>
+
+            </div>
+            <div class="infoi infof">
+                <br>
+                <div class="msgtitle  msgtitle1" id="msgtitle0">查詢說明 <span class="panclose panclose2">X</span></div>
+                <div class="msgbox">
+                    <div class="msgboxcls0 msgboxcls" name="msgbox0" id="msgbox0"></div>
+                </div>
+                <br>
+                <div class="msgtitle  msgtitle2" id="msgtitle1">統計項目定義</div>
+                <div class="msgbox">
+                    <div class="msgboxcls0 msgboxcls" name="msgbox1" id="msgbox1"></div>
+                </div>
+                <br>
+                <div class="msgtitle msgtitle3" id="msgtitle2">資料變革</div>
+                <div class="msgbox">
+                    <div class="msgboxcls0 msgboxcls " name="msgbox2" id="msgbox2"></div>
+                </div>
+
+            </div>
+            <div class="infoa infof">
+                <div class="msgtitle  msgtitle2" id="msgtitle0">特徵值 <span class="panclose panclose2">X</span></div>
+                <div class="msgbox">
+                    <div class="msgboxcls0 msgboxcls" name="msgbox3" id="msgbox3"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class='procmsg'>系統處理中， 請稍後!</div>
+    </form>
+    <script src="webtemp/usrqryoutjs.js?r=11504100000"></script>
+</body>
+
+</html>

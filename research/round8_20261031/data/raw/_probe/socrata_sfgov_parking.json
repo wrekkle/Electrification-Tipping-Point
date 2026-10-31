@@ -1,0 +1,124 @@
+{
+  "results" :
+    [
+      {
+        "resource" :
+          {
+            "name" : "RPD Parks",
+            "id" : "3nje-yn2u",
+            "resource_name" : null,
+            "parent_fxf" : [],
+            "description" : "Park Lands layer developed by the San Francisco Recreation and Parks Department. Note the wide extent of the map is because RPD manages Camp Mather to the West.",
+            "attribution" : null,
+            "attribution_link" : null,
+            "contact_email" : null,
+            "type" : "dataset",
+            "updatedAt" : "2024-04-10T19:12:58.000Z",
+            "createdAt" : "2016-07-13T01:30:57.000Z",
+            "metadata_updated_at" : "2024-04-10T19:12:58.000Z",
+            "data_updated_at" : "2016-07-13T01:31:04.000Z",
+            "page_views" :
+              {
+                "page_views_last_week" : 20,
+                "page_views_last_month" : 55,
+                "page_views_total" : 1199,
+                "page_views_last_week_log" : 4.392317422778761,
+                "page_views_last_month_log" : 5.807354922057605,
+                "page_views_total_log" : 10.228818690495881
+              },
+            "columns_name" :
+              [
+                "x",
+                "sqft",
+                "perimeter",
+                "map_park_n",
+                "acres",
+                "the_geom",
+                "y",
+                "gis_fd_pk"
+              ],
+            "columns_field_name" :
+              [
+                "x",
+                "sqft",
+                "perimeter",
+                "map_park_n",
+                "acres",
+                "the_geom",
+                "y",
+                "gis_fd_pk"
+              ],
+            "columns_datatype" :
+              [
+                "Number",
+                "Number",
+                "Number",
+                "Text",
+                "Number",
+                "MultiPolygon",
+                "Number",
+                "Number"
+              ],
+            "columns_description" : [ "", "", "", "", "", "", "", "" ],
+            "columns_format" : [ {}, {}, {}, {}, {}, {}, {}, {} ],
+            "download_count" : 1560,
+            "provenance" : "official",
+            "lens_view_type" : "tabular",
+            "lens_display_type" : "table",
+            "locked" : false,
+            "backend" : "nbe",
+            "blob_mime_type" : null,
+            "hide_from_data_json" : false,
+            "publication_date" : null
+          },
+        "classification" :
+          {
+            "categories" : [],
+            "tags" : [],
+            "domain_category" : "Culture and Recreation",
+            "domain_tags" : [],
+            "domain_metadata" :
+              [
+                {
+                  "key" : "Department-Metrics_Publishing-Department",
+                  "value" : "Recreation and Parks"
+                },
+                {
+                  "key" : "Publishing-Details_Publishing-frequency",
+                  "value" : "As needed"
+                },
+                {
+                  "key" : "Publishing-Details_Data-change-frequency",
+                  "value" : "As needed"
+                },
+                {
+                  "key" : "Detailed-Descriptive_Geographic-unit",
+                  "value" : "Other"
+                }
+              ]
+          },
+        "metadata" :
+          {
+            "domain" : "data.sf.gov",
+            "license" : "Open Data Commons Public Domain Dedication and License"
+          },
+        "permalink" : "https://data.sf.gov/d/3nje-yn2u",
+        "link" : "https://data.sf.gov/Culture-and-Recreation/RPD-Parks/3nje-yn2u",
+        "owner" :
+          {
+            "id" : "dbag-6qd9",
+            "user_type" : "interactive",
+            "display_name" : "OpenData"
+          },
+        "creator" :
+          {
+            "id" : "dbag-6qd9",
+            "user_type" : "interactive",
+            "display_name" : "OpenData"
+          }
+      }
+    ],
+  "resultSetSize" : 1,
+  "timings" : { "serviceMillis" : 17, "searchMillis" : [ 3, 4 ] },
+  "warnings" : []
+}

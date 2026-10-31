@@ -1,0 +1,42 @@
+{
+  "design": {
+    "design": "fixed_streams",
+    "k_fixed": 8,
+    "eligible_sites": [
+      "Jolimont",
+      "Queensberry",
+      "Southbank",
+      "University"
+    ],
+    "n_streams": 24,
+    "k_values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "budget": {
+      "cap": 24,
+      "used": 24,
+      "sampled": true,
+      "method": "seeded index sample (no replacement)"
+    },
+    "note": "固定流设计：入选流在每个 k 上都在场；曲线不作确认性比较"
+  },
+  "n_boot": 1000,
+  "seed": 20261031,
+  "unit": "independent stream (site-day)",
+  "metrics": [
+    "service_capacity_unmet_rate",
+    "service_ev_parking_failure_rate",
+    "service_ice_parking_failure_rate",
+    "charging_access_rate",
+    "energy_service_rate"
+  ],
+  "note": "固定流设计：每个 k 的 n_streams 相同；bootstrap 单位=独立场站-日；描述性曲线，不作确认性比较"
+}

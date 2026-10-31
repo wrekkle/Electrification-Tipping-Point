@@ -1,0 +1,14 @@
+M1 identity {'charge_requests': 137.0, 'gate_plus_noconnector': 1.0, 'shortfall_sessions': 80.0, 'delivered_kwh': 984.221, 'demand_kwh': 1891.028, 'capacity_mean_of_stream_ratios': 0.583521, 'capacity_pooled': 0.591241, 'identity_count_failures': 1} verdict FAIL
+   E4 A max {'rows': 20, 'charge': 137.0, 'capacity_unmet': 80.0, 'delivered': 984.22173333306, 'demand': 1891.028, 'capmean': 0.5835209235209236, 'ev_fail': 0.0, 'ev_visits': 452.0, 'ice_fail': 34.0, 'ice_visits': 4643.0}
+M1 correct pooled capacity-only 58.39 | pooled with never-connected 59.12 | identity failures 0 | verdict PASS | M1b FAIL
+   metrics_v2 neg never_connected rows 20 sample [('Drummond:2014-01-28#0', '-20.9', '219.0', '10.0'), ('Drummond:2014-03-31#0', '-55.0', '168.0', '3.0'), ('Hyatt:2014-01-07#0', '-38.5', '158.0', '4.0')]
+D1 A/B {1.0: (0.551, 0.5981, 0.7093, 0.4209), 0.75: (0.4535, 0.5335, 0.564, 0.3543), 0.5: (0.3365, 0.4507, 0.4016, 0.2846), 0.25: (0.1944, 0.3321, 0.2179, 0.1922)} verdict PASS
+D2 doc {'plan_header_posthoc': True, 'plan_comments_not_identified': True, 'plan_forbid_crop_delete': True, 'plan_stress_not_ci': True, 'plan_has_b': True}
+S1 scaling rows 12 mismatches 0 labels True True True verdict PASS
+P1 rel 51.06311806920595 44.95841317665835 0.11955213710752803 -> 11.96% verdict PASS | rev7 docx/artifacts ['Electrification_tipping_point_v2_draft_rev7.docx', 'Electrification_tipping_point_v2_supplementary_rev7.docx', 'rev7_main.pdf', 'rev7_si.pdf']
+N1 naming {'text_has_capacity_access_claim': False, 'text_says_not_access_measure': True, 'text_charging_success_phrase': False, 'text_table_metrics': ['never-connected rate', 'EV parking failure rate', 'ICEV parking failure rate', 'departed shortfall session rate', 'energy shortfall ratio', 'capacity-only unmet share (mean over streams)'], 'verdict_source': 'PASS'} facts {'never_connected_pct': 0.7299, 'shortfall_session_pct': 58.3942, 'energy_shortfall_pct': 47.9531, 'capmean_pct': 58.3521, 'pooled_pct': 59.1241, 'ev_fail_rate': 0.0, 'ice_fail_rate': 0.7323, 'capacity_formula': 'admission refusals + departed shortfall sessions over charge requests', 'conc_n': 792, 'conc_median': 2.0, 'conc_p90': 4, 'conc_max': 9}
+N2 hardcoded mismatches {}
+N3 pooled/table {'draft_table_departed_shortfall_58_39': True, 'draft_table_capacity_mean_58_35': True, 'draft_text_pooled_59_12': True, 'si_capacity_80_137_58_4': True, 'text_no_charging_success': True, 'verdict_capacity_pooled': 'FAIL'}
+
+WROTE phase4_results.json 13110
+summary {"M1_metric_identity": "PASS", "M1b_pooled_claim": "FAIL", "D1_demand_coupling": "see details", "D2_doc": "PASS", "S1_dwell_scaling": "PASS", "P1_rel_all": "see details", "N1_naming": "see details", "N2_hardcoded_facts": "PASS", "N3_pooled_and_table": "see details"}

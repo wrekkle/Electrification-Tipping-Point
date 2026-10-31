@@ -1,0 +1,76 @@
+{
+  "runs": [
+    {
+      "scale": 0.8,
+      "rule": "A",
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\dwell\\dwell_0.8_A_s3.json",
+      "exit": 0,
+      "seconds": 13.63,
+      "stderr": ""
+    },
+    {
+      "scale": 0.8,
+      "rule": "B",
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\dwell\\dwell_0.8_B_s3.json",
+      "exit": 0,
+      "seconds": 13.56,
+      "stderr": ""
+    },
+    {
+      "scale": 0.8,
+      "rule": "D",
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\dwell\\dwell_0.8_D_s3.json",
+      "exit": 0,
+      "seconds": 15.1,
+      "stderr": ""
+    },
+    {
+      "scale": 1.0,
+      "rule": "A",
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\dwell\\dwell_1.0_A_s3.json",
+      "exit": 0,
+      "seconds": 12.95,
+      "stderr": ""
+    },
+    {
+      "scale": 1.0,
+      "rule": "B",
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\dwell\\dwell_1.0_B_s3.json",
+      "exit": 0,
+      "seconds": 13.19,
+      "stderr": ""
+    },
+    {
+      "scale": 1.0,
+      "rule": "D",
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\dwell\\dwell_1.0_D_s3.json",
+      "exit": 0,
+      "seconds": 14.59,
+      "stderr": ""
+    },
+    {
+      "scale": 1.2,
+      "rule": "A",
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\dwell\\dwell_1.2_A_s3.json",
+      "exit": 0,
+      "seconds": 12.83,
+      "stderr": ""
+    },
+    {
+      "scale": 1.2,
+      "rule": "B",
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\dwell\\dwell_1.2_B_s3.json",
+      "exit": 0,
+      "seconds": 12.85,
+      "stderr": ""
+    },
+    {
+      "scale": 1.2,
+      "rule": "D",
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\dwell\\dwell_1.2_D_s3.json",
+      "exit": 0,
+      "seconds": 14.36,
+      "stderr": ""
+    }
+  ]
+}

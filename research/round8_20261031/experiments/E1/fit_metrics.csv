@@ -1,0 +1,5 @@
+family,row_kind,category,status,n_calibration,n_test,ks_statistic,mean_calibration,mean_test,p50_calibration,p50_test,p90_calibration,p90_test,holdout_mean_rel_error,estimator,unit,mean_gap_calibration,mean_gap_test,note
+E1,dwell_fit,all,ok,107852,77698,0.03297024482113464,51.06311806920595,44.95841317665835,22.017,24.183,125.417,108.667,0.11955213710752803,empirical distribution (no parametric fit),site-day,,,
+E1,dwell_fit,ev,ok,10940,7626,0.031447957075548816,50.8404344606947,43.92611814843955,21.8,23.033,124.633,108.983,0.13600033881694473,empirical distribution (no parametric fit),site-day,,,
+E1,dwell_fit,ice,ok,96912,70072,0.03338377839266926,51.088255912580486,45.070758790957875,22.033,24.35,125.5,108.65,0.11778630947823768,empirical distribution (no parametric fit),site-day,,,
+E1,arrival_fit,,ok,107329,77396,0.04879144320830131,,,,,,,,,site-day,4.2860050250442585,3.219857615378156,块内相邻到达间隔的合并经验分布；块间相关未建模（block resampling 保留）

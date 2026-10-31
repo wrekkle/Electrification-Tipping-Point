@@ -1,0 +1,12 @@
+key,value
+n_spaces,3
+charging_bays,1
+chargers,1
+power_kw,7
+efficiency,1.0
+horizon_min,120
+arrival_rate_per_hour,6
+p_ev,0.5
+p_charge_given_ev,0.6
+prediction_window_min,30
+safety_margin,1

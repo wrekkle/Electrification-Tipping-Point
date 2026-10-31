@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://parking-charging.local/prei/schema.json",
+  "title": "PREI config (schema_version=1)",
+  "description": "Language-neutral experiment config. One config plus one fixture CSV define one fixed input set. Capital is RMB per installed pile; amortization is years; all cost outputs are RMB per day per whole scenario day.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "model_variant", "source_case", "n_spaces",
+    "installation_cost_rmb_per_pile", "amortization_years",
+    "partial_shared_fraction", "full_install_open_to_all",
+    "pile_ratios", "ev_share_targets", "fixture_file"
+  ],
+  "properties": {
+    "schema_version": {"const": 1, "description": "Contract version; must be integer 1."},
+    "model_variant": {
+      "enum": ["legacy_reference", "corrected_baseline"],
+      "description": "legacy_reference reproduces the received formulas and the known full-install EV complaint omission (diagnostic_only). corrected_baseline charges every rejection event exactly once."
+    },
+    "source_case": {
+      "type": "string", "minLength": 1,
+      "description": "Source case label, e.g. final_tvr or final_tvr_v2_fluc_re."
+    },
+    "n_spaces": {
+      "type": "integer", "minimum": 1,
+      "description": "Total parking spaces N (spaces, not piles)."
+    },
+    "installation_cost_rmb_per_pile": {
+      "type": "number", "minimum": 0,
+      "description": "Installed cost per charging pile, RMB per pile (one-off capital)."
+    },
+    "amortization_years": {
+      "type": "number", "exclusiveMinimum": 0,
+      "description": "Straight-line capital amortization period in years."
+    },
+    "partial_shared_fraction": {
+      "type": "number", "minimum": 0, "maximum": 1,
+      "description": "Fraction h of the N*r charging bays opened to ICEV when r<1. h=0 is a strict partition; h=1 opens every charging bay."
+    },
+    "full_install_open_to_all": {
+      "type": "boolean",
+      "description": "If true, r=1 behaves as an open-to-all lot: only total overflow above N is rejected, split by realised EV/ICEV demand shares."
+    },
+    "pile_ratios": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "number", "minimum": 0, "maximum": 1},
+      "description": "Candidate pile-to-space ratios r. Continuous ratios; no silent rounding. Must be strictly increasing and include 1."
+    },
+    "ev_share_targets": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "number", "minimum": 0, "maximum": 1},
+      "description": "Target EV share of arrivals for each simulated day. Must be strictly increasing."
+    },
+    "fixture_file": {
+      "type": "string", "minLength": 1,
+      "description": "CSV path relative to this config file's directory. All pile candidates reuse this one fixture."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"model_variant": {"const": "legacy_reference"}},
+        "required": ["model_variant"]
+      },
+      "then": {
+        "properties": {
+          "partial_shared_fraction": {"const": 0},
+          "full_install_open_to_all": {"const": true}
+        }
+      }
+    }
+  ],
+  "x-fixture_csv": {
+    "encoding": "UTF-8 with optional BOM",
+    "columns_in_order": [
+      "scenario_id", "hour", "ev_share_target", "total_arrivals",
+      "ev_share_actual", "ev_fuel_cost", "ice_fuel_cost",
+      "ev_time_cost", "ice_time_cost",
+      "ev_complaint_cost", "ice_complaint_cost"
+    ],
+    "day_key": ["scenario_id", "ev_share_target"],
+    "rows_per_day": 24,
+    "hour_domain": "0..23 integer",
+    "units": {
+      "total_arrivals": "vehicles arriving in that hour (count)",
+      "ev_share_actual": "realised EV fraction of arrivals in that hour, dimensionless [0,1]",
+      "ev_fuel_cost": "RMB per rejected EV per day (unit rate, constant within a day)",
+      "ice_fuel_cost": "RMB per rejected ICEV per day (unit rate, constant within a day)",
+      "ev_time_cost": "RMB per rejected EV per day (unit rate, constant within a day)",
+      "ice_time_cost": "RMB per rejected ICEV per day (unit rate, constant within a day)",
+      "ev_complaint_cost": "RMB per rejected EV per day (unit rate, constant within a day)",
+      "ice_complaint_cost": "RMB per rejected ICEV per day (unit rate, constant within a day)"
+    },
+    "separation": "The fixture is sampled once by sample_fixtures.py and never re-drawn during evaluation. Python seeds document Python repetition only; they are not a cross-language common random stream."
+  },
+  "x-output_csvs": {
+    "daily_optimal.csv": {
+      "columns_in_order": [
+        "scenario_id", "hour", "ev_share_target", "total_arrivals",
+        "ev_share_actual", "ev_fuel_cost", "ice_fuel_cost",
+        "ev_time_cost", "ice_time_cost",
+        "ev_complaint_cost", "ice_complaint_cost"
+      ],
+      "row_semantics": "one row per (scenario_id, ev_share_target) day for its optimal candidate; hour=24 denotes the whole-day aggregate",
+      "cost_unit": "RMB per scenario day"
+    },
+    "raw_cost_matrix.csv": {
+      "columns_in_order": [
+        "scenario_id", "ev_share_target", "pile_ratio", "total_arrivals",
+        "ev_share_actual", "capital_daily_cost", "ev_rejected", "ice_rejected",
+        "ev_fuel_cost", "ice_fuel_cost", "ev_time_cost", "ice_time_cost",
+        "ev_complaint_cost", "ice_complaint_cost", "total_daily_cost",
+        "is_optimal", "g_full_minus_best_partial", "delta_candidate_minus_full"
+      ],
+      "row_semantics": "one row per day x pile ratio; the matrix MATLAB must reproduce for the full cross-language check",
+      "is_optimal": "tie set within atol=1e-8 RMB and rtol=1e-10",
+      "g_full_minus_best_partial": "C_full - min(C_partial); same value on every row of a day",
+      "delta_candidate_minus_full": "C_candidate - C_full"
+    }
+  }
+}

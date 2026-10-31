@@ -1,0 +1,631 @@
+{
+  "selection_seeds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "evaluation_seeds": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "selection": {
+    "A": {
+      "TPE0008": {
+        "k": 8,
+        "n_selection_cells": 4,
+        "achieved": [
+          9,
+          7,
+          9,
+          7
+        ]
+      },
+      "TPE0401": {
+        "k": 22,
+        "n_selection_cells": 4,
+        "achieved": [
+          20,
+          25,
+          24,
+          15
+        ]
+      },
+      "TPE0610": {
+        "k": 4,
+        "n_selection_cells": 4,
+        "achieved": [
+          3,
+          4,
+          4,
+          4
+        ]
+      },
+      "TPE0695": {
+        "k": 10,
+        "n_selection_cells": 4,
+        "achieved": [
+          11,
+          10,
+          10,
+          5
+        ]
+      },
+      "TPE0330": {
+        "k": null,
+        "n_selection_cells": 0,
+        "achieved": []
+      },
+      "TPE0930": {
+        "k": 21,
+        "n_selection_cells": 3,
+        "achieved": [
+          17,
+          21,
+          23
+        ]
+      },
+      "TPE1376": {
+        "k": 8,
+        "n_selection_cells": 3,
+        "achieved": [
+          8,
+          4,
+          10
+        ]
+      },
+      "TPE1171": {
+        "k": 18,
+        "n_selection_cells": 4,
+        "achieved": [
+          21,
+          18,
+          19,
+          13
+        ]
+      },
+      "TPE1380": {
+        "k": 19,
+        "n_selection_cells": 3,
+        "achieved": [
+          17,
+          19,
+          23
+        ]
+      }
+    },
+    "B": {
+      "TPE0008": {
+        "k": 8,
+        "n_selection_cells": 4,
+        "achieved": [
+          9,
+          7,
+          9,
+          7
+        ]
+      },
+      "TPE0401": {
+        "k": 22,
+        "n_selection_cells": 4,
+        "achieved": [
+          20,
+          25,
+          24,
+          15
+        ]
+      },
+      "TPE0610": {
+        "k": 4,
+        "n_selection_cells": 4,
+        "achieved": [
+          3,
+          4,
+          4,
+          4
+        ]
+      },
+      "TPE0695": {
+        "k": 10,
+        "n_selection_cells": 4,
+        "achieved": [
+          11,
+          10,
+          10,
+          5
+        ]
+      },
+      "TPE0330": {
+        "k": null,
+        "n_selection_cells": 0,
+        "achieved": []
+      },
+      "TPE0930": {
+        "k": 21,
+        "n_selection_cells": 3,
+        "achieved": [
+          17,
+          21,
+          23
+        ]
+      },
+      "TPE1376": {
+        "k": 9,
+        "n_selection_cells": 2,
+        "achieved": [
+          8,
+          10
+        ]
+      },
+      "TPE1171": {
+        "k": 18,
+        "n_selection_cells": 4,
+        "achieved": [
+          21,
+          18,
+          19,
+          13
+        ]
+      },
+      "TPE1380": {
+        "k": 19,
+        "n_selection_cells": 3,
+        "achieved": [
+          17,
+          19,
+          27
+        ]
+      }
+    },
+    "D": {
+      "TPE0008": {
+        "k": 8,
+        "n_selection_cells": 4,
+        "achieved": [
+          9,
+          7,
+          9,
+          7
+        ]
+      },
+      "TPE0401": {
+        "k": 22,
+        "n_selection_cells": 4,
+        "achieved": [
+          20,
+          25,
+          24,
+          15
+        ]
+      },
+      "TPE0610": {
+        "k": 4,
+        "n_selection_cells": 4,
+        "achieved": [
+          3,
+          4,
+          4,
+          4
+        ]
+      },
+      "TPE0695": {
+        "k": 10,
+        "n_selection_cells": 4,
+        "achieved": [
+          11,
+          10,
+          10,
+          5
+        ]
+      },
+      "TPE0330": {
+        "k": null,
+        "n_selection_cells": 0,
+        "achieved": []
+      },
+      "TPE0930": {
+        "k": 21,
+        "n_selection_cells": 3,
+        "achieved": [
+          17,
+          21,
+          23
+        ]
+      },
+      "TPE1376": {
+        "k": 8,
+        "n_selection_cells": 3,
+        "achieved": [
+          8,
+          4,
+          10
+        ]
+      },
+      "TPE1171": {
+        "k": 18,
+        "n_selection_cells": 4,
+        "achieved": [
+          21,
+          18,
+          19,
+          13
+        ]
+      },
+      "TPE1380": {
+        "k": 19,
+        "n_selection_cells": 3,
+        "achieved": [
+          17,
+          19,
+          27
+        ]
+      }
+    }
+  },
+  "runs": [
+    {
+      "rule": "A",
+      "lot": "TPE0008",
+      "mode": "own",
+      "k": 8,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_A_TPE0008.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0008",
+      "mode": "own",
+      "k": 8,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_B_TPE0008.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0008",
+      "mode": "own",
+      "k": 8,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_D_TPE0008.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0008",
+      "mode": "common",
+      "k": 8,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_B_TPE0008.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0008",
+      "mode": "common",
+      "k": 8,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_D_TPE0008.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "A",
+      "lot": "TPE0401",
+      "mode": "own",
+      "k": 22,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_A_TPE0401.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0401",
+      "mode": "own",
+      "k": 22,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_B_TPE0401.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0401",
+      "mode": "own",
+      "k": 22,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_D_TPE0401.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0401",
+      "mode": "common",
+      "k": 22,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_B_TPE0401.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0401",
+      "mode": "common",
+      "k": 22,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_D_TPE0401.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "A",
+      "lot": "TPE0610",
+      "mode": "own",
+      "k": 4,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_A_TPE0610.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0610",
+      "mode": "own",
+      "k": 4,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_B_TPE0610.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0610",
+      "mode": "own",
+      "k": 4,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_D_TPE0610.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0610",
+      "mode": "common",
+      "k": 4,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_B_TPE0610.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0610",
+      "mode": "common",
+      "k": 4,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_D_TPE0610.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "A",
+      "lot": "TPE0695",
+      "mode": "own",
+      "k": 10,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_A_TPE0695.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0695",
+      "mode": "own",
+      "k": 10,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_B_TPE0695.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0695",
+      "mode": "own",
+      "k": 10,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_D_TPE0695.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0695",
+      "mode": "common",
+      "k": 10,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_B_TPE0695.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0695",
+      "mode": "common",
+      "k": 10,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_D_TPE0695.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "A",
+      "lot": "TPE0930",
+      "mode": "own",
+      "k": 21,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_A_TPE0930.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0930",
+      "mode": "own",
+      "k": 21,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_B_TPE0930.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0930",
+      "mode": "own",
+      "k": 21,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_D_TPE0930.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE0930",
+      "mode": "common",
+      "k": 21,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_B_TPE0930.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE0930",
+      "mode": "common",
+      "k": 21,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_D_TPE0930.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "A",
+      "lot": "TPE1376",
+      "mode": "own",
+      "k": 8,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_A_TPE1376.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE1376",
+      "mode": "own",
+      "k": 9,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_B_TPE1376.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE1376",
+      "mode": "own",
+      "k": 8,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_D_TPE1376.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE1376",
+      "mode": "common",
+      "k": 8,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_B_TPE1376.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE1376",
+      "mode": "common",
+      "k": 8,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_D_TPE1376.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "A",
+      "lot": "TPE1171",
+      "mode": "own",
+      "k": 18,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_A_TPE1171.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE1171",
+      "mode": "own",
+      "k": 18,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_B_TPE1171.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE1171",
+      "mode": "own",
+      "k": 18,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_D_TPE1171.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE1171",
+      "mode": "common",
+      "k": 18,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_B_TPE1171.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE1171",
+      "mode": "common",
+      "k": 18,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_D_TPE1171.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "A",
+      "lot": "TPE1380",
+      "mode": "own",
+      "k": 19,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_A_TPE1380.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE1380",
+      "mode": "own",
+      "k": 19,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_B_TPE1380.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE1380",
+      "mode": "own",
+      "k": 19,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_own_D_TPE1380.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "B",
+      "lot": "TPE1380",
+      "mode": "common",
+      "k": 19,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_B_TPE1380.json",
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "rule": "D",
+      "lot": "TPE1380",
+      "mode": "common",
+      "k": 19,
+      "out": "C:\\Projects\\停车场充电桩优化方案\\research\\round4_20261031\\results\\fixedk\\fixedk_common_D_TPE1380.json",
+      "exit": 0,
+      "stderr": ""
+    }
+  ]
+}

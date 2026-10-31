@@ -1,0 +1,38 @@
+{
+  "schema_version": "r8-run-manifest/v1",
+  "family": "E6",
+  "status": "ok",
+  "generated_utc": "2026-10-31T11:16:42.154625+00:00",
+  "output_version": "r8-engine-v1-2026-10-31",
+  "command": "run_phase1.py --mode data --contract research/round8_20261031/data/processed/public_parking_events.json --out research/round8_20261031/experiments_main22 --seed 20261031 --skip-selfcheck --scenario-label scenario_charging_layer_main22_22kW_not_observed --force-connector-kw 22 --feeder-kw-per-connector 22",
+  "seed": 20261031,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "inputs": [
+    {
+      "path": "research\\round8_20261031\\data\\processed\\public_parking_events.json",
+      "sha256": "38b1422bb95d4122565d4de70a5ef4faf35e41600019068c9c077a295ee6bdf6"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "energy_E6.csv",
+      "sha256": "1382b9bb74ef3315af03dca23e0987fb9d19ac2b2dfb8fd6acf0ca298855b77f"
+    }
+  ],
+  "notes": [
+    "22 kW 情景重跑（R8-D F3）：connector_kw=22, feeder_share=1.0 → feeder=k*22",
+    "能量服务条目含分子/分母/适用条件；被拒请求计入缺口口径",
+    "不假设离场后免费补能；censored/initial 分列"
+  ],
+  "mode": "real_data",
+  "dataset_id": "melbourne_parking_bay_events_2014",
+  "scenario_label": "scenario_charging_layer_main22_22kW_not_observed",
+  "e6_mode": "regime_forced_power",
+  "power_values": [
+    22.0
+  ],
+  "feeder_shares": [
+    1.0
+  ]
+}

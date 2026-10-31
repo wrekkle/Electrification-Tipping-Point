@@ -1,0 +1,49 @@
+{
+ "main_sha256": "5b4056db55ad3d42c9ff49fdb3d84fff545e1a8d868f7cb309b9cdd0e7c08a24",
+ "si_sha256": "c0260430d02babaa18e5cb45d65581527258fc08537031bdb0337748ad33b321",
+ "main_paragraphs": 178,
+ "main_tables": 5,
+ "main_inline_images": 1,
+ "main_data_tables": 5,
+ "captions": 6,
+ "references": 76,
+ "citations": 76,
+ "missing_refs": [],
+ "out_of_range": [],
+ "pending_strings": [],
+ "table_refs": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "table_captions": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "figure_refs": [
+  1
+ ],
+ "figure_captions": [
+  1
+ ],
+ "has_table6_caption": false,
+ "si_sections": [
+  "S1 Semantics of a rate and the five states",
+  "S2 A restricted monotonicity proposition and its proof",
+  "S3 The three minimal traces, their controls and the counterexample set",
+  "S4 The information-condition comparison, unit by unit",
+  "S5 The feasible-configuration experiment and its edge cases",
+  "S6 Audit record",
+  "S6 addendum (round 7)",
+  "S7 The earlier v1 cost/ETP model and its status"
+ ],
+ "si_has_S7": true,
+ "citation_ok": true,
+ "table_number_ok": true,
+ "figure_number_ok": true
+}

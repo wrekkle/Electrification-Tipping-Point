@@ -1,0 +1,243 @@
+{
+  "a_paired_g_interval": {
+    "fixed_offset_K1": {
+      "g_hat": 10.0,
+      "g_hi": 10.0,
+      "g_lo": 10.0,
+      "width": 0.0
+    },
+    "min_over_partials": {
+      "K": 6,
+      "bias_vs_true_g": 0.27074902010844326,
+      "coverage_of_true_g": 0.92,
+      "mean_critical_value": 2.5428416825218854,
+      "mean_g_hat_fixed_partial": -4.9860573472211716,
+      "mean_g_hat_min": -4.729250979891557,
+      "mean_width": 1.3049415415243475,
+      "method": "simultaneous-max-t",
+      "note": "g = max_k E[d_k]; the point estimate is biased up by the max, the simultaneous max-t interval keeps nominal coverage because the same bounds are used for every candidate",
+      "reps": 200,
+      "selection_bias_min_vs_fixed": 0.25680636732961537,
+      "true_g": -5.0
+    },
+    "percentile_diagnostic": {
+      "coverage_of_true_g": 0.655,
+      "mean_width": 0.8837272500152105,
+      "method": "paired_block_bootstrap_percentile",
+      "note": "diagnostic only (pre-T14 default); inherits the max selection shift and under-covers near-ties, so it is not reported as a nominal 95% interval"
+    }
+  },
+  "b_confidence_set": {
+    "exact_tie": {
+      "family_size": 3,
+      "included": [
+        0,
+        1
+      ],
+      "pvalues": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "near_tie_max_t": {
+      "S": 100,
+      "clearly_worse_count": 1,
+      "clearly_worse_inclusion_rate": 0.0,
+      "coverage_best": 0.99,
+      "inclusion_rate_by_candidate": [
+        0.99,
+        0.9733333333333334,
+        0.93,
+        0.9533333333333334,
+        0.9166666666666666,
+        0.6966666666666667,
+        0.22666666666666666,
+        0.0
+      ],
+      "mean_set_size": 5.6866666666666665,
+      "method": "max-t",
+      "mis_exclusion_rate": 0.01,
+      "noise_sd": 0.6,
+      "reps": 300,
+      "se_of_gap": 0.0848528137423857
+    },
+    "separated_holm": {
+      "S": 100,
+      "clearly_worse_count": 3,
+      "clearly_worse_inclusion_rate": 0.0,
+      "coverage_best": 1.0,
+      "inclusion_rate_by_candidate": [
+        1.0,
+        0.7433333333333333,
+        0.35,
+        0.01,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_set_size": 2.1033333333333335,
+      "method": "holm",
+      "mis_exclusion_rate": 0.0,
+      "noise_sd": 0.6,
+      "reps": 300,
+      "se_of_gap": 0.0848528137423857
+    },
+    "separated_max_t": {
+      "S": 100,
+      "clearly_worse_count": 3,
+      "clearly_worse_inclusion_rate": 0.0,
+      "coverage_best": 1.0,
+      "inclusion_rate_by_candidate": [
+        1.0,
+        0.8333333333333334,
+        0.43333333333333335,
+        0.013333333333333334,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_set_size": 2.28,
+      "method": "max-t",
+      "mis_exclusion_rate": 0.0,
+      "noise_sd": 0.6,
+      "reps": 300,
+      "se_of_gap": 0.0848528137423857
+    },
+    "zero_variance_dominated": {
+      "included": [
+        0
+      ],
+      "pvalue": 0.0
+    }
+  },
+  "c_cvar": {
+    "aux_agreement_max_gap": 4.263256414560601e-14,
+    "fractional_example_84_6": 84.59999999999995,
+    "normal_check": {
+      "analytic_cvar": 2.062712807507428,
+      "monte_carlo_n500k": 2.0555145828015995,
+      "relative_gap": 0.0034896882782856843
+    },
+    "note": "exactness is with respect to the empirical distribution; the normal check is a large-sample sanity check only",
+    "rows": [
+      {
+        "alpha": 0.9,
+        "cvar": 27.443570520028782,
+        "cvar_aux": 27.443570520028786,
+        "gap": 3.552713678800501e-15,
+        "n": 25,
+        "tail_weight": 2.4999999999999996,
+        "tail_weight_integer": false
+      },
+      {
+        "alpha": 0.95,
+        "cvar": 26.623879818766646,
+        "cvar_aux": 26.62387981876665,
+        "gap": 3.552713678800501e-15,
+        "n": 25,
+        "tail_weight": 1.250000000000001,
+        "tail_weight_integer": false
+      },
+      {
+        "alpha": 0.99,
+        "cvar": 28.478671066071104,
+        "cvar_aux": 28.478671066071104,
+        "gap": 0.0,
+        "n": 25,
+        "tail_weight": 0.2500000000000002,
+        "tail_weight_integer": false
+      },
+      {
+        "alpha": 0.9,
+        "cvar": 40.125961951433915,
+        "cvar_aux": 40.12596195143391,
+        "gap": 7.105427357601002e-15,
+        "n": 100,
+        "tail_weight": 9.999999999999998,
+        "tail_weight_integer": true
+      },
+      {
+        "alpha": 0.95,
+        "cvar": 29.700374029712055,
+        "cvar_aux": 29.70037402971207,
+        "gap": 1.4210854715202004e-14,
+        "n": 100,
+        "tail_weight": 5.000000000000004,
+        "tail_weight_integer": true
+      },
+      {
+        "alpha": 0.99,
+        "cvar": 71.73259847371108,
+        "cvar_aux": 71.73259847371112,
+        "gap": 4.263256414560601e-14,
+        "n": 100,
+        "tail_weight": 1.0000000000000009,
+        "tail_weight_integer": true
+      },
+      {
+        "alpha": 0.9,
+        "cvar": 30.687530980369512,
+        "cvar_aux": 30.687530980369516,
+        "gap": 3.552713678800501e-15,
+        "n": 257,
+        "tail_weight": 25.699999999999996,
+        "tail_weight_integer": false
+      },
+      {
+        "alpha": 0.95,
+        "cvar": 42.67634090036541,
+        "cvar_aux": 42.6763409003654,
+        "gap": 7.105427357601002e-15,
+        "n": 257,
+        "tail_weight": 12.850000000000012,
+        "tail_weight_integer": false
+      },
+      {
+        "alpha": 0.99,
+        "cvar": 58.19933183020742,
+        "cvar_aux": 58.19933183020741,
+        "gap": 7.105427357601002e-15,
+        "n": 257,
+        "tail_weight": 2.570000000000002,
+        "tail_weight_integer": false
+      },
+      {
+        "alpha": 0.9,
+        "cvar": 31.613121570077183,
+        "cvar_aux": 31.613121570077176,
+        "gap": 7.105427357601002e-15,
+        "n": 1000,
+        "tail_weight": 99.99999999999997,
+        "tail_weight_integer": true
+      },
+      {
+        "alpha": 0.95,
+        "cvar": 40.252873371932445,
+        "cvar_aux": 40.252873371932466,
+        "gap": 2.1316282072803006e-14,
+        "n": 1000,
+        "tail_weight": 50.00000000000004,
+        "tail_weight_integer": true
+      },
+      {
+        "alpha": 0.99,
+        "cvar": 82.5341570510804,
+        "cvar_aux": 82.53415705108044,
+        "gap": 4.263256414560601e-14,
+        "n": 1000,
+        "tail_weight": 10.000000000000009,
+        "tail_weight_integer": true
+      }
+    ]
+  },
+  "d_etp_grid": {
+    "grid_points": 4,
+    "mismatches": [],
+    "note": "discrete grid only; g_hat == 0 is not cheaper and breaks the suffix",
+    "patterns_checked": 81
+  },
+  "generated_by": "tools/stat_experiment.py"
+}

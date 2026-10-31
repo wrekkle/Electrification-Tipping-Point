@@ -1,0 +1,11 @@
+{
+  "cost_csv_identical": true,
+  "cost_array_keys_identical": true,
+  "cost_arrays_identical": true,
+  "external_and_snapshot_hashes_unchanged": true,
+  "frozen_manuscript_hash_unchanged": true,
+  "python_syntax_ok": true,
+  "audit_tests_passed": 17,
+  "audit_tests_total": 17,
+  "native_MATLAB_executed": false
+}

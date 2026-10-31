@@ -1,0 +1,26 @@
+no_ordinary_bay          count=1
+power_released           count=1
+connector_released       count=1
+charged_bay_released     count=1
+ordinary_bay_released    count=1
+ev_activity_loss         count=1
+maintenance_per_bay_day  count=1
+relocation_cost          count=1
+relocation_count         count=1
+relocation_blocked       count=1
+projected block          count=2
+at 1x                    count=1
+not implemented          count=1
+idealised intervention   count=1
+not computable           count=3
+unknown rather than zero count=1
+planned dwell time       count=1
+finite-window            count=1
+--- removed/kept checks ---
+when the capacity of the ordinary zone   count=0
+energy still undelivered when the reco   count=1
+paragraphs: 238 tables: 9
+--- matching paragraphs ---
+Occupancy of a charging bay without a charging vehicle has more than one cause, and the causes are not interchangeable. We distinguish five: no charging demand, where an EV takes the bay and does not plug in; overstay after completion, the case studied by Biswas et al. 71; a deferral by the dispatch
+Occupancy and charges accrue on the simulation clock, not on the planned stay. A vehicle still in the lot is counted up to the current simulation instant only, not for the remainder of the window and not for its planned dwell time; a value projected to the planned departure is stored as a forecast i
+Two further entries follow the same vocabulary. A charging EV that fails to find any admissible berth and abandons its activity carries ev_activity_loss, computed with the same parameter as ice_activity_loss; a charging failure keeps ev_residual_trip_loss, and no vehicle carries both, so the abandon

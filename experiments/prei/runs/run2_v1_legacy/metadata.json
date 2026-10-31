@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "model_variant": "legacy_reference",
+  "diagnostic_only": true,
+  "source_case": "final_tvr",
+  "contract": {
+    "n_spaces": 40,
+    "installation_cost_rmb_per_pile": 70100,
+    "amortization_years": 8,
+    "partial_shared_fraction": 0,
+    "full_install_open_to_all": true,
+    "pile_ratios": [
+      0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1
+    ],
+    "ev_share_targets": [
+      0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1
+    ],
+    "capital_unit": "RMB/day = N*r*installation/(365*years)",
+    "cost_unit": "RMB per scenario day"
+  },
+  "input": {
+    "config_sha256": "73cbc0943b2f0c54970497e827a45f87c393ef49221184029c55df5e468a9e4c",
+    "fixture_sha256": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+    "fixture_file": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\fixtures\\deterministic_24h\\fixture.csv",
+    "days": 21,
+    "candidate_rows": 441
+  },
+  "seed_scope": "none during evaluation; fixture was sampled once in Python",
+  "tolerance": {
+    "atol": 1e-08,
+    "rtol": 1e-10
+  },
+  "environment": {
+    "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+    "executable": "C:\\anaconda\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "1.26.4"
+  },
+  "command": [
+    "experiments/prei/reference.py",
+    "--config",
+    "experiments/prei/configs/final_tvr_n40_legacy.json",
+    "--out",
+    "experiments/prei/runs/run2_v1_legacy"
+  ],
+  "generated_utc": "2026-10-29T14:00:48.761271+00:00",
+  "outputs": [
+    "raw_cost_matrix.csv",
+    "daily_optimal.csv",
+    "summary.json",
+    "metadata.json"
+  ],
+  "sources": {
+    "reference.py": {
+      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\reference.py",
+      "sha256": "64a75a262fef8d276bb9a25ca92bed30baab48561fe0714d0fb3625da05f8bfb"
+    },
+    "schema.json": {
+      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\schema.json",
+      "sha256": "f001fd03cf1fe08228cb128f1f48e276263f9c382f5cd5c41fedc1f16a251eb1"
+    },
+    "config": {
+      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\configs\\final_tvr_n40_legacy.json",
+      "sha256": "73cbc0943b2f0c54970497e827a45f87c393ef49221184029c55df5e468a9e4c"
+    },
+    "fixture": {
+      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\fixtures\\deterministic_24h\\fixture.csv",
+      "sha256": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad"
+    },
+    "original/final_tvr.m": {
+      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\matlab_audit_20261029\\originals\\final_tvr.m",
+      "sha256": "0fb5501542705d171bf66b47fcbe1a652420d0a74e7488ff10f62eadeef2e6fd"
+    },
+    "original/final_tvr_v2_fluc_re.m": {
+      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\matlab_audit_20261029\\originals\\final_tvr_v2_fluc_re.m",
+      "sha256": "3123a6ae6ef12413f1086c326dd2f9b741e72f75305a72d1621a9939198d7e31"
+    }
+  }
+}

@@ -1,0 +1,483 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          3
+        ]
+      ],
+      "date-time": "2026-06-03T10:16:57Z",
+      "timestamp": 1780481817024,
+      "version": "3.54.1"
+    },
+    "reference-count": 39,
+    "publisher": "SAGE Publications",
+    "issue": "7",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              11
+            ]
+          ],
+          "date-time": "2026-02-11T00:00:00Z",
+          "timestamp": 1770768000000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://journals.sagepub.com/page/policies/text-and-data-mining-license"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "journals.sagepub.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Production and Operations Management"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          7
+        ]
+      ]
+    },
+    "abstract": "<jats:p>Resource pooling is often introduced in service systems to cope with the variability in customer demand. The primary motivation behind creating a more flexible system is to utilize resources efficiently—namely, assigning customers whose dedicated resources are fully occupied to available non-dedicated resources (referred to as off-service placement). In such a setup, the service system manager expects to serve more customers within a fixed timeframe. However, recent empirical evidence shows that, due to limited server capability, the service time at non-dedicated providers can be significantly longer than that at dedicated ones. In this study, we develop a two-server stochastic model to examine how server capability levels and other factors—such as overall workload and demand asymmetry—affect pooling configurations. We derive conditions that specify the optimal system flexibility configuration across these parameters. Our findings reveal that a partially flexible system can outperform a fully flexible one, particularly in asymmetric scenarios with low server capability. This advantage is also pronounced when considering a range of system costs, including server capability, cross-serving, and other related costs in stochastic service systems with and without buffers. These insights from our two-server model offer guidance on designing more efficient flexibility in complex multi-class, multi-server service systems.</jats:p>",
+    "DOI": "10.1177/10591478261417819",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          13
+        ]
+      ],
+      "date-time": "2026-01-13T10:07:04Z",
+      "timestamp": 1768298824000
+    },
+    "page": "2830-2850",
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "Impact of Server Capability on Pooling Configuration in Stochastic Service Systems"
+    ],
+    "prefix": "10.1177",
+    "volume": "35",
+    "author": [
+      {
+        "given": "Yanting",
+        "family": "Chen",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "University of Shanghai for Science and Technology"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-4100-2339",
+        "authenticated-orcid": false,
+        "given": "Jingui",
+        "family": "Xie",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Technical University of Munich"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nan",
+        "family": "Yang",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Technical University of Munich"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zhe",
+        "family": "George Zhang",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Decision Sciences, Western Washington University, Bellingham, Washington"
+          },
+          {
+            "name": "Beedie School of Business, Simon Fraser University, Burnaby, British Columbia, Canada"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2202-9261",
+        "authenticated-orcid": false,
+        "given": "Taozeng",
+        "family": "Zhu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Dongbei University of Finance and Economics"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "179",
+    "published-online": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          11
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "e_1_3_4_2_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ejim.2009.09.010"
+      },
+      {
+        "key": "e_1_3_4_3_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.2020.2004"
+      },
+      {
+        "key": "e_1_3_4_4_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1467-985X.2010.00669.x"
+      },
+      {
+        "key": "e_1_3_4_5_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s10479-009-0548-x"
+      },
+      {
+        "key": "e_1_3_4_6_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.1080.0918"
+      },
+      {
+        "key": "e_1_3_4_7_1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Barron Y Baron O (2022) On dedicated versus pooled service in the presence of triage errors. Available at SSRN 4147843.",
+        "DOI": "10.2139/ssrn.4147843"
+      },
+      {
+        "key": "e_1_3_4_8_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.1120.1107"
+      },
+      {
+        "key": "e_1_3_4_9_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/msom.2014.0516"
+      },
+      {
+        "key": "e_1_3_4_10_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2017.2974"
+      },
+      {
+        "key": "e_1_3_4_11_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s10696-022-09455-w"
+      },
+      {
+        "key": "e_1_3_4_12_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S0925-5273(03)00085-9"
+      },
+      {
+        "key": "e_1_3_4_13_1",
+        "first-page": "48",
+        "article-title": "[[TC].sup.2] Leading the way in changing times",
+        "volume": "41",
+        "author": "DesMarteau K",
+        "year": "1999",
+        "unstructured": "DesMarteau K (1999) [[TC].sup.2] Leading the way in changing times. Bobbin 41: 48–49.",
+        "journal-title": "Bobbin"
+      },
+      {
+        "key": "e_1_3_4_14_1",
+        "unstructured": "Dong J Shi P Zheng F et al. (2019) Off-service placement in inpatient ward network: Resource pooling versus service slowdown. Available at SSRN 3306853."
+      },
+      {
+        "key": "e_1_3_4_15_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.49.7.907.16381"
+      },
+      {
+        "key": "e_1_3_4_16_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.1040.0333"
+      },
+      {
+        "key": "e_1_3_4_17_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/msom.2019.0820"
+      },
+      {
+        "key": "e_1_3_4_18_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/msom.2023.1225"
+      },
+      {
+        "key": "e_1_3_4_19_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.41.4.577"
+      },
+      {
+        "key": "e_1_3_4_20_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s10479-009-0559-7"
+      },
+      {
+        "key": "e_1_3_4_21_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2014.2057"
+      },
+      {
+        "key": "e_1_3_4_22_1",
+        "volume-title": "Queueing Systems, Vol. I: Theory",
+        "author": "Kleinrock L",
+        "year": "1975",
+        "unstructured": "Kleinrock L (1975) Queueing Systems, Vol. I: Theory.  New York: Wiley."
+      },
+      {
+        "key": "e_1_3_4_23_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ejor.2006.08.021"
+      },
+      {
+        "key": "e_1_3_4_24_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2018.3169"
+      },
+      {
+        "key": "e_1_3_4_25_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TAC.2004.831133"
+      },
+      {
+        "key": "e_1_3_4_26_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/acem.12327"
+      },
+      {
+        "key": "e_1_3_4_27_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/j.1538-7305.1981.tb00221.x"
+      },
+      {
+        "key": "e_1_3_4_28_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2019.3395"
+      },
+      {
+        "key": "e_1_3_4_29_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.2014.2118"
+      },
+      {
+        "issue": "17",
+        "key": "e_1_3_4_30_1",
+        "first-page": "1",
+        "article-title": "Hospital out-lying through lack of beds and its impact on care and patient outcome",
+        "volume": "21",
+        "author": "Stowell A",
+        "year": "2013",
+        "unstructured": "Stowell A, Claret P, Sebbane M, et al. (2013) Hospital out-lying through lack of beds and its impact on care and patient outcome. Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine 21(17): 1–7.",
+        "journal-title": "Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine"
+      },
+      {
+        "key": "e_1_3_4_31_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ejor.2008.06.014"
+      },
+      {
+        "key": "e_1_3_4_32_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11134-009-9149-2"
+      },
+      {
+        "key": "e_1_3_4_33_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/msom.1050.0086"
+      },
+      {
+        "key": "e_1_3_4_34_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/poms.13101"
+      },
+      {
+        "key": "e_1_3_4_35_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/opre.30.2.223"
+      },
+      {
+        "key": "e_1_3_4_36_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/poms.13158"
+      },
+      {
+        "key": "e_1_3_4_37_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.tre.2024.103722"
+      },
+      {
+        "key": "e_1_3_4_38_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1287/mnsc.47.2.324.9842"
+      },
+      {
+        "key": "e_1_3_4_39_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s10696-021-09416-9"
+      },
+      {
+        "key": "e_1_3_4_40_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/poms.13521"
+      }
+    ],
+    "container-title": [
+      "Production and Operations Management"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://journals.sagepub.com/doi/pdf/10.1177/10591478261417819",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://journals.sagepub.com/doi/full-xml/10.1177/10591478261417819",
+        "content-type": "application/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://journals.sagepub.com/doi/pdf/10.1177/10591478261417819",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          3
+        ]
+      ],
+      "date-time": "2026-06-03T09:50:21Z",
+      "timestamp": 1780480221000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://journals.sagepub.com/doi/10.1177/10591478261417819"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          11
+        ]
+      ]
+    },
+    "references-count": 39,
+    "journal-issue": {
+      "issue": "7",
+      "published-print": {
+        "date-parts": [
+          [
+            2026,
+            7
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.1177/10591478261417819"
+    ],
+    "URL": "https://doi.org/10.1177/10591478261417819",
+    "relation": {},
+    "ISSN": [
+      "1059-1478",
+      "1937-5956"
+    ],
+    "issn-type": [
+      {
+        "value": "1059-1478",
+        "type": "print"
+      },
+      {
+        "value": "1937-5956",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          11
+        ]
+      ]
+    }
+  }
+}

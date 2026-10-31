@@ -1,0 +1,157 @@
+{
+ "schema": "round3_verify_generator_independent/v1",
+ "created": "2026-10-31",
+ "generator_version": "traffic_gen-2.1.0",
+ "params_path": "research\\traffic_generation_20261031\\fitted_parameters.json",
+ "params_sha256": "1dfc14a2a29e204d81db0cecd38b8d4f94ecb6e700280f1e70d1ab66275f6229",
+ "lot": "TPE0008",
+ "baseline_traffic_hash": "94b884e19e2f4c7c2cff56f3559692251d9f0f196a5b424a1d4fcb415f7f977a",
+ "independent": {
+  "seeds": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   24
+  ],
+  "p_ev": 0.05,
+  "q_need": 0.7,
+  "n_arrivals": 3809,
+  "n_ev": 186,
+  "n_ev_need": 127,
+  "p_hat": 0.0488317143607246,
+  "q_hat_given_ev": 0.6827956989247311,
+  "sigma_p": 0.003531354511925236,
+  "sigma_q": 0.03360107525161236,
+  "z_observed_p_ev_times_q_need": 0.022779299660096633,
+  "small_p_ev_tested": 0.01
+ },
+ "hashes": {
+  "demand_digest_same_seed": "2eab21d3467362bdc61fdb2df4aa10958941197c8a4f173aca11a70ecb8a645f",
+  "default_call_traffic_hash": "94b884e19e2f4c7c2cff56f3559692251d9f0f196a5b424a1d4fcb415f7f977a",
+  "explicit_p_ev_030_traffic_hash": "94b884e19e2f4c7c2cff56f3559692251d9f0f196a5b424a1d4fcb415f7f977a",
+  "default_call_stream_hash": "94b884e19e2f4c7c2cff56f3559692251d9f0f196a5b424a1d4fcb415f7f977a"
+ },
+ "checks": [
+  {
+   "name": "independent.p_ev_share_mean_24_seeds",
+   "pass": true,
+   "expected": "0.05000 +- 0.01059 (3 binomial sigma)",
+   "actual": "0.04883 (n=3809, EV=186)",
+   "note": "seeds=1..24"
+  },
+  {
+   "name": "independent.q_need_share_given_ev",
+   "pass": true,
+   "expected": "0.70000 +- 0.10080 (3 binomial sigma)",
+   "actual": "0.68280 (EV=186, EV&charge=127)",
+   "note": ""
+  },
+  {
+   "name": "independent.meta_echo",
+   "pass": true,
+   "expected": "p_ev=0.05, q_need=0.70, scenario_model=independent, product_coupled=False",
+   "actual": "p_ev=0.05 q_need=0.7 scenario_model='independent' product_coupled=False",
+   "note": ""
+  },
+  {
+   "name": "independent.p_ev_below_z_no_error",
+   "pass": true,
+   "expected": "no exception for p_ev=0.010 < z=0.02278",
+   "actual": "ok: n=156, p_ev=0.01, product_coupled=False",
+   "note": "z=observed_p_ev_times_q_need(TPE0008)"
+  },
+  {
+   "name": "legacy.meta_flags",
+   "pass": true,
+   "expected": "scenario_model=legacy_product, product_coupled=True",
+   "actual": "scenario_model='legacy_product' product_coupled=True",
+   "note": ""
+  },
+  {
+   "name": "legacy.q_need_equals_product_over_p_ev",
+   "pass": true,
+   "expected": "product/p_ev within 5%; required->0.121219, observed->0.075931, profile_lambda->0.074381",
+   "actual": "q_need_used=0.074381 (best match observed_rate/(profile_lambda_mean*p_ev), rel err 0.00%)",
+   "note": "lambda_bar=5.1429 vs profile_mean=5.2500"
+  },
+  {
+   "name": "legacy.q_need_1p2_clipped",
+   "pass": true,
+   "expected": "q_need_used=1.0, clipped=True",
+   "actual": "q_need_used=1.0 clipped=True",
+   "note": ""
+  },
+  {
+   "name": "strict.q_need_1p2_raises",
+   "pass": true,
+   "expected": "ValueError",
+   "actual": "ValueError: q_need 必须在 [0,1] 内，收到 1.2",
+   "note": ""
+  },
+  {
+   "name": "strict.q_need_nan_raises",
+   "pass": true,
+   "expected": "ValueError",
+   "actual": "ValueError: q_need 必须是有限数值（NaN/inf 不接受），收到 nan",
+   "note": ""
+  },
+  {
+   "name": "strict.q_need_inf_raises",
+   "pass": true,
+   "expected": "ValueError",
+   "actual": "ValueError: q_need 必须是有限数值（NaN/inf 不接受），收到 inf",
+   "note": ""
+  },
+  {
+   "name": "strict.independent_without_q_need_raises",
+   "pass": true,
+   "expected": "ValueError",
+   "actual": "ValueError: scenario_model='independent' 需要显式 q_need（不从 product 推导）",
+   "note": ""
+  },
+  {
+   "name": "repro.same_seed_same_params_same_digest",
+   "pass": true,
+   "expected": "two runs share one demand digest",
+   "actual": "2eab21d3467362bd .. 2eab21d3467362bd",
+   "note": ""
+  },
+  {
+   "name": "repro.default_legacy_call_matches_round2_baseline",
+   "pass": true,
+   "expected": "94b884e19e2f4c7c..",
+   "actual": "94b884e19e2f4c7c..",
+   "note": "traffic_hash(generate_for_lot(TPE0008, seed=1))"
+  },
+  {
+   "name": "repro.explicit_p_ev_0p30_matches_round2_baseline",
+   "pass": true,
+   "expected": "94b884e19e2f4c7c..",
+   "actual": "94b884e19e2f4c7c..",
+   "note": "round-2 call form: p_ev=0.30, q_need=None"
+  }
+ ],
+ "passed": 14,
+ "total": 14,
+ "overall": "PASS"
+}

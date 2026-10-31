@@ -1,0 +1,1590 @@
+{
+ "schema": "round2_consistency_audit/v1",
+ "generated_utc": "2026-10-31T05:19:32+00:00",
+ "command": "python research/round3_20261031/audit_round2.py",
+ "inputs": {
+  "analysis_v2_all.json": "00ec8cdc46f9ec98",
+  "cost_curve_v2_pev020_usable.json": "ef8f7d33bf0982c7",
+  "cost_curve_v2_pev030_seeds123.json": "081de1c074e212fb",
+  "cost_curve_v2_pev050_usable.json": "79324e9e0e17c69e",
+  "scenarios.json": "da9c4d4911790154",
+  "k_sweep.json": "b4c1ec12f9e35bd2",
+  "fitted_parameters.json": "1dfc14a2a29e204d",
+  "calibration_report.md": "a22e1fa56ce45b76",
+  "costs.py": "80deefeff615f149",
+  "cost_scenario.json": "6ac1e3dbf0a0658c"
+ },
+ "method_note": "k5 定义与 analyze_v2/compare_v2 一致：allocation.service_level_k(unmet_no_connector_events, alpha=0.05, k_hard_max=min(n_spaces,最大k))；这里用同一阈值直接复算（不调用生产函数，避免版本漂移）。",
+ "items": [
+  {
+   "id": "R2-A-9OF9",
+   "claim": "报告 §14.3（docs/reports/2026-10-31-整数配桩规则与仿真验证.md 第 250 行）：p_EV=0.20 时 9/9 达 k_5（TPE0401=39 为边界）",
+   "machine": {
+    "lot_count": 9,
+    "achieved_any_seed": 8,
+    "achieved_all_seeds": 7,
+    "table": [
+     {
+      "lot_id": "TPE0008",
+      "n_spaces": 76,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 12
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 5
+       }
+      ],
+      "n_seeds": 2,
+      "n_achieved": 2,
+      "k5_min": 5,
+      "k5_max": 12,
+      "k5_range": 7,
+      "analysis_median_k5": 8.5,
+      "analysis_statuses": [
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE0330",
+      "n_spaces": 851,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 2,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       }
+      ],
+      "n_seeds": 2,
+      "n_achieved": 0,
+      "k5_min": null,
+      "k5_max": null,
+      "k5_range": null,
+      "analysis_median_k5": null,
+      "analysis_statuses": [
+       "infeasible_upper_bound",
+       "infeasible_upper_bound"
+      ]
+     },
+     {
+      "lot_id": "TPE0401",
+      "n_spaces": 205,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 39
+       },
+       {
+        "seed": 2,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       }
+      ],
+      "n_seeds": 2,
+      "n_achieved": 1,
+      "k5_min": 39,
+      "k5_max": 39,
+      "k5_range": null,
+      "analysis_median_k5": 39,
+      "analysis_statuses": [
+       "achieved",
+       "infeasible_upper_bound"
+      ]
+     },
+     {
+      "lot_id": "TPE0610",
+      "n_spaces": 43,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 1
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 5
+       }
+      ],
+      "n_seeds": 2,
+      "n_achieved": 2,
+      "k5_min": 1,
+      "k5_max": 5,
+      "k5_range": 4,
+      "analysis_median_k5": 3.0,
+      "analysis_statuses": [
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE0695",
+      "n_spaces": 146,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 19
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 10
+       }
+      ],
+      "n_seeds": 2,
+      "n_achieved": 2,
+      "k5_min": 10,
+      "k5_max": 19,
+      "k5_range": 9,
+      "analysis_median_k5": 14.5,
+      "analysis_statuses": [
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE0930",
+      "n_spaces": 175,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 26
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 33
+       }
+      ],
+      "n_seeds": 2,
+      "n_achieved": 2,
+      "k5_min": 26,
+      "k5_max": 33,
+      "k5_range": 7,
+      "analysis_median_k5": 29.5,
+      "analysis_statuses": [
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE1171",
+      "n_spaces": 231,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 32
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 40
+       }
+      ],
+      "n_seeds": 2,
+      "n_achieved": 2,
+      "k5_min": 32,
+      "k5_max": 40,
+      "k5_range": 8,
+      "analysis_median_k5": 36.0,
+      "analysis_statuses": [
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE1376",
+      "n_spaces": 73,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 15
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 14
+       }
+      ],
+      "n_seeds": 2,
+      "n_achieved": 2,
+      "k5_min": 14,
+      "k5_max": 15,
+      "k5_range": 1,
+      "analysis_median_k5": 14.5,
+      "analysis_statuses": [
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE1380",
+      "n_spaces": 170,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 36
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 30
+       }
+      ],
+      "n_seeds": 2,
+      "n_achieved": 2,
+      "k5_min": 30,
+      "k5_max": 36,
+      "k5_range": 6,
+      "analysis_median_k5": 33.0,
+      "analysis_statuses": [
+       "achieved",
+       "achieved"
+      ]
+     }
+    ],
+    "not_reached": [
+     "TPE0330"
+    ],
+    "single_seed_only": [
+     "TPE0401"
+    ]
+   },
+   "verdict": "corrected",
+   "correction": "改为：p_EV=0.20 时 8/9 场站至少一个 seed 达 k5；7/9 两个 seed 都达。TPE0330 两 seed 均 infeasible_upper_bound（k<=40 未达）；TPE0401=39 仅 seed1 达、seed2 未达（39 距上限 40 仅 1，属边界但非两 seed 一致）。原文 9/9 与自身列出的 8 个数（TPE0330 缺失）矛盾。"
+  },
+  {
+   "id": "R2-B-SEEDSPREAD",
+   "claim": "报告第 239 行与《第二轮修复与复算》第 15 行：p_EV=0.30、α=5%、上限 40 下 9 个可用场站中 5 个达到 k5（TPE0008=14、TPE0610=3、TPE0695=15、TPE1376=19、TPE1171=39；seed 间摆幅 2-6）",
+   "machine": {
+    "lot_count": 9,
+    "achieved_any_seed": 5,
+    "achieved_all_seeds": 4,
+    "table": [
+     {
+      "lot_id": "TPE0008",
+      "n_spaces": 76,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 14
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 5
+       },
+       {
+        "seed": 3,
+        "status": "achieved",
+        "k5": 16
+       }
+      ],
+      "n_seeds": 3,
+      "n_achieved": 3,
+      "k5_min": 5,
+      "k5_max": 16,
+      "k5_range": 11,
+      "analysis_median_k5": 14,
+      "analysis_statuses": [
+       "achieved",
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE0330",
+      "n_spaces": 851,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 2,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 3,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       }
+      ],
+      "n_seeds": 3,
+      "n_achieved": 0,
+      "k5_min": null,
+      "k5_max": null,
+      "k5_range": null,
+      "analysis_median_k5": null,
+      "analysis_statuses": [
+       "infeasible_upper_bound",
+       "infeasible_upper_bound",
+       "infeasible_upper_bound"
+      ]
+     },
+     {
+      "lot_id": "TPE0401",
+      "n_spaces": 205,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 2,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 3,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       }
+      ],
+      "n_seeds": 3,
+      "n_achieved": 0,
+      "k5_min": null,
+      "k5_max": null,
+      "k5_range": null,
+      "analysis_median_k5": null,
+      "analysis_statuses": [
+       "infeasible_upper_bound",
+       "infeasible_upper_bound",
+       "infeasible_upper_bound"
+      ]
+     },
+     {
+      "lot_id": "TPE0610",
+      "n_spaces": 43,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 6
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 2
+       },
+       {
+        "seed": 3,
+        "status": "achieved",
+        "k5": 3
+       }
+      ],
+      "n_seeds": 3,
+      "n_achieved": 3,
+      "k5_min": 2,
+      "k5_max": 6,
+      "k5_range": 4,
+      "analysis_median_k5": 3,
+      "analysis_statuses": [
+       "achieved",
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE0695",
+      "n_spaces": 146,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 15
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 10
+       },
+       {
+        "seed": 3,
+        "status": "achieved",
+        "k5": 32
+       }
+      ],
+      "n_seeds": 3,
+      "n_achieved": 3,
+      "k5_min": 10,
+      "k5_max": 32,
+      "k5_range": 22,
+      "analysis_median_k5": 15,
+      "analysis_statuses": [
+       "achieved",
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE0930",
+      "n_spaces": 175,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 2,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 3,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       }
+      ],
+      "n_seeds": 3,
+      "n_achieved": 0,
+      "k5_min": null,
+      "k5_max": null,
+      "k5_range": null,
+      "analysis_median_k5": null,
+      "analysis_statuses": [
+       "infeasible_upper_bound",
+       "infeasible_upper_bound",
+       "infeasible_upper_bound"
+      ]
+     },
+     {
+      "lot_id": "TPE1171",
+      "n_spaces": 231,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 39
+       },
+       {
+        "seed": 2,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 3,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       }
+      ],
+      "n_seeds": 3,
+      "n_achieved": 1,
+      "k5_min": 39,
+      "k5_max": 39,
+      "k5_range": null,
+      "analysis_median_k5": 39,
+      "analysis_statuses": [
+       "achieved",
+       "infeasible_upper_bound",
+       "infeasible_upper_bound"
+      ]
+     },
+     {
+      "lot_id": "TPE1376",
+      "n_spaces": 73,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "achieved",
+        "k5": 18
+       },
+       {
+        "seed": 2,
+        "status": "achieved",
+        "k5": 25
+       },
+       {
+        "seed": 3,
+        "status": "achieved",
+        "k5": 19
+       }
+      ],
+      "n_seeds": 3,
+      "n_achieved": 3,
+      "k5_min": 18,
+      "k5_max": 25,
+      "k5_range": 7,
+      "analysis_median_k5": 19,
+      "analysis_statuses": [
+       "achieved",
+       "achieved",
+       "achieved"
+      ]
+     },
+     {
+      "lot_id": "TPE1380",
+      "n_spaces": 170,
+      "seeds": [
+       {
+        "seed": 1,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 2,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       },
+       {
+        "seed": 3,
+        "status": "infeasible_upper_bound",
+        "k5": null
+       }
+      ],
+      "n_seeds": 3,
+      "n_achieved": 0,
+      "k5_min": null,
+      "k5_max": null,
+      "k5_range": null,
+      "analysis_median_k5": null,
+      "analysis_statuses": [
+       "infeasible_upper_bound",
+       "infeasible_upper_bound",
+       "infeasible_upper_bound"
+      ]
+     }
+    ],
+    "ranges": {
+     "TPE0008": 11,
+     "TPE0330": null,
+     "TPE0401": null,
+     "TPE0610": 4,
+     "TPE0695": 22,
+     "TPE0930": null,
+     "TPE1171": null,
+     "TPE1376": 7,
+     "TPE1380": null
+    },
+    "single_seed_only": [
+     "TPE1171"
+    ]
+   },
+   "verdict": "corrected",
+   "correction": "改为：p_EV=0.30 时 5/9 场站至少一个 seed 达 k5；仅 4/9（TPE0008/TPE0610/TPE0695/TPE1376）三个 seed 全达；TPE1171 只有 1/3 seed 达（39），中位数 39 由单 seed 得出。seed 摆幅不是 2-6：TPE0008 11（5-16）、TPE0610 4（2-6）、TPE0695 22（10-32）、TPE1376 7（18-25）；TPE1171 无可比摆幅。"
+  },
+  {
+   "id": "R2-C-OBS-HIGHSAT",
+   "claim": "rules_v2.md §2：实测高饱和情景（普通位占用 0.93-0.98）里 π2 闸门被真实触发（每次运行 39-61 辆 ICE 被放行）；同文覆盖表把 observed_calibrated 的高饱和标为 —",
+   "machine": {
+    "coverage_table": {
+     "synthetic_range": {
+      "unsaturated": [
+       "train_syn_unsat_pe20",
+       "train_syn_unsat_pe40"
+      ],
+      "critical": [
+       "train_syn_crit_pe20",
+       "train_syn_crit_pe40",
+       "val_syn_lowev_pe08"
+      ],
+      "high_saturation": [
+       "val_syn_high_pe20",
+       "val_syn_high_pe40",
+       "val_syn_amp_crit_pe40",
+       "val_syn_lowev_amp_pe08"
+      ]
+     },
+     "observed_calibrated": {
+      "unsaturated": [
+       "train_obs_TPE0610",
+       "train_obs_TPE0008"
+      ],
+      "critical": [
+       "val_obs_TPE0401",
+       "val_obs_TPE1380"
+      ]
+     },
+     "amplified_calibrated": {
+      "critical": [
+       "train_amp_TPE0008_x2.0",
+       "val_amp_TPE0008_x3.0"
+      ],
+      "high_saturation": [
+       "val_amp_TPE0401_x1.5",
+       "val_amp_TPE1380_x1.3"
+      ]
+     },
+     "synthetic_stress": {
+      "high_saturation": [
+       "val_syn_stress_pe40"
+      ]
+     }
+    },
+    "observed_calibrated": [
+     {
+      "scenario": "train_obs_TPE0610",
+      "family": "observed_calibrated",
+      "measured_ordinary_utilization": 0.19701646253654972,
+      "measured_stratum": "unsaturated",
+      "reference_k": 5,
+      "gates": {
+       "selected_charge_arrivals": [],
+       "pi2_default": [
+        0,
+        0
+       ]
+      }
+     },
+     {
+      "scenario": "train_obs_TPE0008",
+      "family": "observed_calibrated",
+      "measured_ordinary_utilization": 0.34705249122023807,
+      "measured_stratum": "unsaturated",
+      "reference_k": 13,
+      "gates": {
+       "selected_charge_arrivals": [],
+       "pi2_default": [
+        0,
+        0
+       ]
+      }
+     },
+     {
+      "scenario": "val_obs_TPE0401",
+      "family": "observed_calibrated",
+      "measured_ordinary_utilization": 0.7688263793723461,
+      "measured_stratum": "critical",
+      "reference_k": 48,
+      "gates": {
+       "selected_charge_arrivals": [
+        0,
+        0
+       ],
+       "pi2_default": [
+        0,
+        0
+       ]
+      }
+     },
+     {
+      "scenario": "val_obs_TPE1380",
+      "family": "observed_calibrated",
+      "measured_ordinary_utilization": 0.7993354729652294,
+      "measured_stratum": "critical",
+      "reference_k": 27,
+      "gates": {
+       "selected_charge_arrivals": [
+        0,
+        0
+       ],
+       "pi2_default": [
+        0,
+        0
+       ]
+      }
+     }
+    ],
+    "scenarios_in_0.93_0.98": [
+     {
+      "scenario": "val_syn_high_pe20",
+      "family": "synthetic_range",
+      "utilization": 0.9328534891238618,
+      "gate_selected": [
+       79,
+       65
+      ]
+     },
+     {
+      "scenario": "val_syn_high_pe40",
+      "family": "synthetic_range",
+      "utilization": 0.9501831190359484,
+      "gate_selected": [
+       58,
+       66
+      ]
+     },
+     {
+      "scenario": "val_syn_amp_crit_pe40",
+      "family": "synthetic_range",
+      "utilization": 0.9532610580005743,
+      "gate_selected": [
+       59,
+       73
+      ]
+     },
+     {
+      "scenario": "val_syn_lowev_amp_pe08",
+      "family": "synthetic_range",
+      "utilization": 0.9420725262819618,
+      "gate_selected": [
+       82,
+       78
+      ]
+     }
+    ],
+    "gate_by_family": {
+     "synthetic_range": [
+      {
+       "scenario": "train_syn_unsat_pe20",
+       "utilization": 0.21490685992316466,
+       "stratum": "unsaturated",
+       "gate_selected": []
+      },
+      {
+       "scenario": "train_syn_crit_pe20",
+       "utilization": 0.7244709708050727,
+       "stratum": "critical",
+       "gate_selected": []
+      },
+      {
+       "scenario": "train_syn_unsat_pe40",
+       "utilization": 0.1747549937463445,
+       "stratum": "unsaturated",
+       "gate_selected": []
+      },
+      {
+       "scenario": "train_syn_crit_pe40",
+       "utilization": 0.6894470616349688,
+       "stratum": "critical",
+       "gate_selected": []
+      },
+      {
+       "scenario": "val_syn_high_pe20",
+       "utilization": 0.9328534891238618,
+       "stratum": "high_saturation",
+       "gate_selected": [
+        79,
+        65
+       ]
+      },
+      {
+       "scenario": "val_syn_high_pe40",
+       "utilization": 0.9501831190359484,
+       "stratum": "high_saturation",
+       "gate_selected": [
+        58,
+        66
+       ]
+      },
+      {
+       "scenario": "val_syn_lowev_pe08",
+       "utilization": 0.7262304684578877,
+       "stratum": "critical",
+       "gate_selected": [
+        0,
+        7
+       ]
+      },
+      {
+       "scenario": "val_syn_amp_crit_pe40",
+       "utilization": 0.9532610580005743,
+       "stratum": "high_saturation",
+       "gate_selected": [
+        59,
+        73
+       ]
+      },
+      {
+       "scenario": "val_syn_lowev_amp_pe08",
+       "utilization": 0.9420725262819618,
+       "stratum": "high_saturation",
+       "gate_selected": [
+        82,
+        78
+       ]
+      }
+     ],
+     "observed_calibrated": [
+      {
+       "scenario": "train_obs_TPE0610",
+       "utilization": 0.19701646253654972,
+       "stratum": "unsaturated",
+       "gate_selected": []
+      },
+      {
+       "scenario": "train_obs_TPE0008",
+       "utilization": 0.34705249122023807,
+       "stratum": "unsaturated",
+       "gate_selected": []
+      },
+      {
+       "scenario": "val_obs_TPE0401",
+       "utilization": 0.7688263793723461,
+       "stratum": "critical",
+       "gate_selected": [
+        0,
+        0
+       ]
+      },
+      {
+       "scenario": "val_obs_TPE1380",
+       "utilization": 0.7993354729652294,
+       "stratum": "critical",
+       "gate_selected": [
+        0,
+        0
+       ]
+      }
+     ],
+     "amplified_calibrated": [
+      {
+       "scenario": "train_amp_TPE0008_x2.0",
+       "utilization": 0.7218248990079366,
+       "stratum": "critical",
+       "gate_selected": []
+      },
+      {
+       "scenario": "val_amp_TPE0401_x1.5",
+       "utilization": 0.9101014906073073,
+       "stratum": "high_saturation",
+       "gate_selected": [
+        0,
+        0
+       ]
+      },
+      {
+       "scenario": "val_amp_TPE1380_x1.3",
+       "utilization": 0.9085935844758066,
+       "stratum": "high_saturation",
+       "gate_selected": [
+        0,
+        0
+       ]
+      },
+      {
+       "scenario": "val_amp_TPE0008_x3.0",
+       "utilization": 0.7938796147389848,
+       "stratum": "critical",
+       "gate_selected": [
+        64,
+        71
+       ]
+      }
+     ],
+     "synthetic_stress": [
+      {
+       "scenario": "val_syn_stress_pe40",
+       "utilization": 0.9803905199579455,
+       "stratum": "high_saturation",
+       "gate_selected": [
+        54,
+        48
+       ]
+      }
+     ]
+    }
+   },
+   "verdict": "corrected",
+   "correction": "更正：覆盖表正确——observed_calibrated 无高饱和（0.197/0.347 不饱和，0.769/0.799 临界，最高 0.799）。0.93-0.98 的 4 个情景（0.933/0.950/0.953/0.942）全部是 synthetic_range，另 synthetic_stress=0.980 也高饱和；都不是实测。observed 临界情景参考 k 下 π2 放行=0，不能作预测有效性证据；这 5 个合成/压力情景在 π2 selected(10min,0) 参考 k 的放行数为 48-82，不是 39-61。"
+  },
+  {
+   "id": "R2-D-TPE1171",
+   "claim": "报告第 39 行：traffic-gen 报告文字列 3 个验证可用，差异在 TPE1171，以 fitted_parameters.json 的 usable 字段为准",
+   "machine": {
+    "fitted_usable_validation": [
+     "TPE1376",
+     "TPE0930",
+     "TPE1380",
+     "TPE1171"
+    ],
+    "fitted_validation_n_lots": 4,
+    "fitted_validation_lots": [
+     "TPE1376",
+     "TPE0930",
+     "TPE1380",
+     "TPE1171"
+    ],
+    "calibration_report": {
+     "usable_validation_text": [
+      "TPE1376",
+      "TPE0930",
+      "TPE1380",
+      "TPE1171"
+     ],
+     "tpe1171_row": [
+      "231",
+      "",
+      "111.00",
+      "9.88",
+      "674",
+      "-21.4%",
+      "3"
+     ],
+     "validation_sentence": "验证（只用 train 参数预测）：4 个验证场站，相对 RMSE 均值 0.553、r=0.227。代表性差，说明单一日均 λ 曲线 + 单一 dwell 混合不足以预测异质场站；这是限制而非可隐藏的误差。"
+    },
+    "tpe1171_per_lot": {
+     "lot_id": "TPE1171",
+     "n_spaces": 231.0,
+     "n_connectors": 4,
+     "date_range": "2026-10-30..2026-10-31",
+     "n_valid_slots": 279,
+     "n_slots_window": 279,
+     "lambda_hour_by_bin": [
+      36.0,
+      49.0,
+      13.0,
+      11.0,
+      5.0,
+      9.0,
+      17.0,
+      45.0,
+      5.0,
+      6.0,
+      0.0,
+      0.0,
+      1.0,
+      4.0,
+      3.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      2.0,
+      6.0,
+      16.0,
+      62.0
+     ],
+     "lambda_units": "vehicles/hour for this lot (net-increase counting)",
+     "lambda_bar_veh_per_hour": 9.877551020408163,
+     "dwell_dist": {
+      "family": "two_component_mixture",
+      "components": [
+       {
+        "name": "short_medium_residual",
+        "weight": 0.7210189335574544,
+        "family": "lognormal_scenario",
+        "params": [
+         6.307055087516934,
+         0.6
+        ],
+        "mean_min": 656.5869222665418,
+        "p50_min": 548.4274973714512,
+        "p90_min": 1183.2096022043138,
+        "is_scenario": true,
+        "units": "minutes",
+        "note": "residual plug: mean solved from Little's identity once the overnight-long share is fixed, not independently identified"
+       },
+       {
+        "name": "overnight_long",
+        "weight": 0.27898106644254567,
+        "family": "lognormal_scenario",
+        "params": [
+         6.518001212010101,
+         0.35
+        ],
+        "mean_min": 720.0,
+        "p50_min": 677.2234056223263,
+        "p90_min": 1060.551420575728,
+        "is_scenario": true,
+        "units": "minutes",
+        "note": "long-stay mean is the residual plug that reproduces the observed mean occupancy; shape sigma is a scenario"
+       }
+      ],
+      "params": {
+       "components": [
+        {
+         "name": "short_medium_residual",
+         "weight": 0.7210189335574544,
+         "family": "lognormal_scenario",
+         "params": [
+          6.307055087516934,
+          0.6
+         ],
+         "mean_min": 656.5869222665418,
+         "p50_min": 548.4274973714512,
+         "p90_min": 1183.2096022043138,
+         "is_scenario": true,
+         "units": "minutes",
+         "note": "residual plug: mean solved from Little's identity once the overnight-long share is fixed, not independently identified"
+        },
+        {
+         "name": "overnight_long",
+         "weight": 0.27898106644254567,
+         "family": "lognormal_scenario",
+         "params": [
+          6.518001212010101,
+          0.35
+         ],
+         "mean_min": 720.0,
+         "p50_min": 677.2234056223263,
+         "p90_min": 1060.551420575728,
+         "is_scenario": true,
+         "units": "minutes",
+         "note": "long-stay mean is the residual plug that reproduces the observed mean occupancy; shape sigma is a scenario"
+        }
+       ],
+       "sigma_long_scenario": 0.35
+      },
+      "mean_min": 674.277970319026,
+      "p50_min": 595.9922369747449,
+      "p90_min": 1137.748510143524,
+      "long_stay_arrival_share": 0.27898106644254567,
+      "method": "Little law mean + night-decay short component + residual long-stay plug"
+     },
+     "charge_session_rate_hour_by_bin": [
+      4.645271252279153,
+      0.45170837407182307,
+      0.4028750363343287,
+      0.35098961498824094,
+      0.3967708691171419,
+      0.3021562772507465,
+      0.38456253468276824,
+      0.5676875511983722,
+      0.5402187987210316,
+      0.3021562772507465,
+      0.26858335755621915,
+      0.22890627064450492,
+      0.11597917712654916,
+      0.13429167877810957,
+      0.05798958856327458,
+      0.03662500330312079,
+      0.021364585260153793,
+      0.033572919694527394,
+      0.042729170520307586,
+      0.054937504954681186,
+      0.10987500990936237,
+      0.2563750231218455,
+      0.4608646248976032,
+      0.46696879211479003,
+      0.4700208757233834
+     ],
+     "charge_session_rate_mean_hour": 0.3560764210025632,
+     "charge_duration_hist_5min": {
+      "5": 93,
+      "10": 67,
+      "15": 45,
+      "20": 48,
+      "25": 62,
+      "30": 57,
+      "35": 56,
+      "40": 58,
+      "45": 47,
+      "50": 65,
+      "55": 64,
+      "60": 66,
+      "65": 80,
+      "70": 77,
+      "75": 48,
+      "80": 58,
+      "85": 45,
+      "90": 58,
+      "95": 51,
+      "100": 47,
+      "105": 51,
+      "110": 54,
+      "115": 39,
+      "120": 47,
+      "125": 37,
+      "130": 25,
+      "135": 23,
+      "140": 26,
+      "145": 41,
+      "150": 26,
+      "155": 31,
+      "160": 29,
+      "165": 32,
+      "170": 19,
+      "175": 27,
+      "180": 23,
+      "185": 30,
+      "190": 24,
+      "195": 18,
+      "200": 31,
+      "205": 22,
+      "210": 8,
+      "215": 14,
+      "220": 12,
+      "225": 17,
+      "230": 6,
+      "235": 14,
+      "240": 12,
+      "245": 13,
+      "250": 12,
+      "255": 13,
+      "260": 8,
+      "265": 6,
+      "270": 7,
+      "275": 11,
+      "280": 17,
+      "285": 6,
+      "290": 9,
+      "295": 4,
+      "300": 10,
+      "305": 8,
+      "310": 5,
+      "315": 9,
+      "320": 7,
+      "325": 9,
+      "330": 12,
+      "335": 11,
+      "340": 7,
+      "345": 8,
+      "350": 9,
+      "355": 2,
+      "360": 8,
+      "365": 10,
+      "370": 5,
+      "375": 5,
+      "380": 12,
+      "385": 11,
+      "390": 5,
+      "395": 6,
+      "400": 9,
+      "405": 11,
+      "410": 1,
+      "415": 6,
+      "420": 5,
+      "425": 4,
+      "430": 7,
+      "435": 3,
+      "440": 4,
+      "445": 8,
+      "450": 5,
+      "455": 4,
+      "460": 3,
+      "465": 3,
+      "475": 11,
+      "480": 4,
+      "485": 4,
+      "490": 5,
+      "495": 3,
+      "500": 5,
+      "505": 1,
+      "510": 6,
+      "515": 5,
+      "520": 5,
+      "525": 1,
+      "530": 1,
+      "535": 1,
+      "540": 2,
+      "545": 4,
+      "550": 9,
+      "555": 5,
+      "560": 3,
+      "570": 2,
+      "575": 6,
+      "580": 1,
+      "585": 7,
+      "590": 1,
+      "600": 3,
+      "605": 3,
+      "610": 3,
+      "615": 4,
+      "625": 4,
+      "630": 5,
+      "635": 3,
+      "640": 4,
+      "645": 2,
+      "650": 6,
+      "655": 3,
+      "660": 2,
+      "665": 2,
+      "670": 2,
+      "675": 3,
+      "680": 2,
+      "685": 1,
+      "690": 5,
+      "695": 2,
+      "700": 1,
+      "705": 1,
+      "710": 4,
+      "715": 4,
+      "720": 2,
+      "725": 2,
+      "730": 2,
+      "735": 7,
+      "740": 3,
+      "745": 6,
+      "755": 3,
+      "760": 3,
+      "765": 2,
+      "770": 3,
+      "775": 2,
+      "780": 2,
+      "785": 2,
+      "790": 1,
+      "795": 2,
+      "800": 5,
+      "805": 2,
+      "810": 4,
+      "815": 4,
+      "820": 4,
+      "825": 2,
+      "830": 3,
+      "835": 5,
+      "840": 3,
+      "845": 1,
+      "850": 1,
+      "860": 3,
+      "865": 1,
+      "870": 1,
+      "880": 4,
+      "900": 1,
+      "905": 1,
+      "915": 3,
+      "925": 2,
+      "930": 1,
+      "935": 2,
+      "940": 5,
+      "950": 1,
+      "960": 1,
+      "965": 4,
+      "970": 2,
+      "980": 2,
+      "990": 2,
+      "995": 1,
+      "1000": 1,
+      "1010": 3,
+      "1015": 1,
+      "1020": 1,
+      "1025": 1,
+      "1030": 2,
+      "1035": 1,
+      "1040": 1,
+      "1045": 3,
+      "1050": 3,
+      "1065": 1,
+      "1070": 1,
+      "1085": 1,
+      "1090": 1,
+      "1100": 1,
+      "1105": 1,
+      "1120": 1,
+      "1130": 2,
+      "1135": 1,
+      "1140": 1,
+      "1155": 1,
+      "1160": 2,
+      "1165": 1,
+      "1175": 1,
+      "1180": 1,
+      "1185": 1,
+      "1190": 1,
+      "1205": 1,
+      "1210": 4,
+      "1275": 2,
+      "1300": 1,
+      "1320": 3,
+      "1330": 1,
+      "1380": 1,
+      "1405": 1,
+      "1425": 208
+     },
+     "charge_session_rate_source": "pooled_scaled",
+     "observed_p_ev_times_q_need": 0.036049059151085944,
+     "n_charge_sessions_observed": 3,
+     "n_charge_transitions_observed": 3,
+     "charge_duration_dist": {
+      "n": 3,
+      "family": "pooled_empirical_span_5min",
+      "mean_min": 297.07142857142856,
+      "p50_min": 125.0,
+      "p90_min": 925.0,
+      "source": "pooled",
+      "n_complete": 3,
+      "mean_complete_min": 172.68827160493828,
+      "hist_5min": {
+       "5": 93,
+       "10": 67,
+       "15": 45,
+       "20": 48,
+       "25": 62,
+       "30": 57,
+       "35": 56,
+       "40": 58,
+       "45": 47,
+       "50": 65,
+       "55": 64,
+       "60": 66,
+       "65": 80,
+       "70": 77,
+       "75": 48,
+       "80": 58,
+       "85": 45,
+       "90": 58,
+       "95": 51,
+       "100": 47,
+       "105": 51,
+       "110": 54,
+       "115": 39,
+       "120": 47,
+       "125": 37,
+       "130": 25,
+       "135": 23,
+       "140": 26,
+       "145": 41,
+       "150": 26,
+       "155": 31,
+       "160": 29,
+       "165": 32,
+       "170": 19,
+       "175": 27,
+       "180": 23,
+       "185": 30,
+       "190": 24,
+       "195": 18,
+       "200": 31,
+       "205": 22,
+       "210": 8,
+       "215": 14,
+       "220": 12,
+       "225": 17,
+       "230": 6,
+       "235": 14,
+       "240": 12,
+       "245": 13,
+       "250": 12,
+       "255": 13,
+       "260": 8,
+       "265": 6,
+       "270": 7,
+       "275": 11,
+       "280": 17,
+       "285": 6,
+       "290": 9,
+       "295": 4,
+       "300": 10,
+       "305": 8,
+       "310": 5,
+       "315": 9,
+       "320": 7,
+       "325": 9,
+       "330": 12,
+       "335": 11,
+       "340": 7,
+       "345": 8,
+       "350": 9,
+       "355": 2,
+       "360": 8,
+       "365": 10,
+       "370": 5,
+       "375": 5,
+       "380": 12,
+       "385": 11,
+       "390": 5,
+       "395": 6,
+       "400": 9,
+       "405": 11,
+       "410": 1,
+       "415": 6,
+       "420": 5,
+       "425": 4,
+       "430": 7,
+       "435": 3,
+       "440": 4,
+       "445": 8,
+       "450": 5,
+       "455": 4,
+       "460": 3,
+       "465": 3,
+       "475": 11,
+       "480": 4,
+       "485": 4,
+       "490": 5,
+       "495": 3,
+       "500": 5,
+       "505": 1,
+       "510": 6,
+       "515": 5,
+       "520": 5,
+       "525": 1,
+       "530": 1,
+       "535": 1,
+       "540": 2,
+       "545": 4,
+       "550": 9,
+       "555": 5,
+       "560": 3,
+       "570": 2,
+       "575": 6,
+       "580": 1,
+       "585": 7,
+       "590": 1,
+       "600": 3,
+       "605": 3,
+       "610": 3,
+       "615": 4,
+       "625": 4,
+       "630": 5,
+       "635": 3,
+       "640": 4,
+       "645": 2,
+       "650": 6,
+       "655": 3,
+       "660": 2,
+       "665": 2,
+       "670": 2,
+       "675": 3,
+       "680": 2,
+       "685": 1,
+       "690": 5,
+       "695": 2,
+       "700": 1,
+       "705": 1,
+       "710": 4,
+       "715": 4,
+       "720": 2,
+       "725": 2,
+       "730": 2,
+       "735": 7,
+       "740": 3,
+       "745": 6,
+       "755": 3,
+       "760": 3,
+       "765": 2,
+       "770": 3,
+       "775": 2,
+       "780": 2,
+       "785": 2,
+       "790": 1,
+       "795": 2,
+       "800": 5,
+       "805": 2,
+       "810": 4,
+       "815": 4,
+       "820": 4,
+       "825": 2,
+       "830": 3,
+       "835": 5,
+       "840": 3,
+       "845": 1,
+       "850": 1,
+       "860": 3,
+       "865": 1,
+       "870": 1,
+       "880": 4,
+       "900": 1,
+       "905": 1,
+       "915": 3,
+       "925": 2,
+       "930": 1,
+       "935": 2,
+       "940": 5,
+       "950": 1,
+       "960": 1,
+       "965": 4,
+       "970": 2,
+       "980": 2,
+       "990": 2,
+       "995": 1,
+       "1000": 1,
+       "1010": 3,
+       "1015": 1,
+       "1020": 1,
+       "1025": 1,
+       "1030": 2,
+       "1035": 1,
+       "1040": 1,
+       "1045": 3,
+       "1050": 3,
+       "1065": 1,
+       "1070": 1,
+       "1085": 1,
+       "1090": 1,
+       "1100": 1,
+       "1105": 1,
+       "1120": 1,
+       "1130": 2,
+       "1135": 1,
+       "1140": 1,
+       "1155": 1,
+       "1160": 2,
+       "1165": 1,
+       "1175": 1,
+       "1180": 1,
+       "1185": 1,
+       "1190": 1,
+       "1205": 1,
+       "1210": 4,
+       "1275": 2,
+       "1300": 1,
+       "1320": 3,
+       "1330": 1,
+       "1380": 1,
+       "1405": 1,
+       "1425": 208
+      }
+     },
+     "overstay_dist": {
+      "is_scenario": true,
+      "identified": false,
+      "scenario_family": "lognormal",
+      "scenario_mean_min": 377.2065417475975,
+      "plausible_range_min": [
+       317.2065417475975,
+       497.2065417475975
+      ],
+      "method": "scenario reconciling mean dwell and mean charge duration; not identifiable from a two-state connector feed (idle does not mean vacant)",
+      "not_identifiable_reason": "connector idle can be a vacant bay or a completed EV still parked"
+     },
+     "connector_availability": 0.9829749103942652,
+     "connector_availability_note": "share of connector-slot observations reading idle; upper bound on truly free chargers",
+     "mean_occupancy_vehicles": 111.00358422939068,
+     "night_floor_occupancy_vehicles": 33.067796610169495,
+     "w_long_occupancy_share": 0.2978984583221598,
+     "fit_split": "validation",
+     "usable": true,
+     "quality_notes": []
+    },
+    "calibrate_criteria": {
+     "implausible_line": "implausible = not (15.0 <= e_short <= 2880.0)",
+     "unusable_line": "unusable = ((rel_err is not None and abs(rel_err)",
+     "rel_err_formula": "rel_err = (e_dwell_dep - mean_dwell_little) / mean_dwell_little"
+    },
+    "scratch_rel_history": []
+   },
+   "verdict": "partially_unsupported",
+   "correction": "结论：fitted_parameters.json 的 usable=True 与当前 calibration_report 一致（可用 validation 4 个，含 TPE1171；rel_err -21.4% 在 25% 阈值内）。3 个的来源是更早的 _scratch/cal.log（rel=-25.6% -> UNUSABLE）旧快照，不是当前报告文字；主报告第 39 行应改为“当前 4 个可用验证场站，TPE1171 仅 3 次会话，样本极少”。"
+  },
+  {
+   "id": "R2-E-CAPITAL",
+   "claim": "设施资本公式年->日在代码中正确（年度折旧/365 或 capex/寿命/365；k 与天数只乘一次）",
+   "machine": {
+    "facility_cost_k1_days1": 75.29767671232877,
+    "facility_cost_k0_days1": 0.0,
+    "facility_cost_k1_days0.5": 37.64883835616438,
+    "annual_3650_yields_daily": 10.0,
+    "cost_scenario_per_connector_day_TWD": 75.29972602739726,
+    "formula_expected": 75.29767671232877,
+    "code_formula_lines": [
+     "DAYS_PER_YEAR = 365.0",
+     "return float(annual) / DAYS_PER_YEAR, ()",
+     "return float(capex) / life / DAYS_PER_YEAR, ()",
+     "items[\"device_capital\"] = daily * k * days",
+     "def summary(self, *, elapsed_min=0.0, delivered_kwh=0.0, chargers=None, transfers=None,",
+     "elapsed = max(0.0, _finite(elapsed_min, \"已运行分钟\"))",
+     "# 窗口天数按 elapsed_min/1440 精确换算；这里不得再乘 chargers 或 days。",
+     "\"elapsed_min\": elapsed,",
+     "\"days_per_year\": DAYS_PER_YEAR, \"hours_per_year\": HOURS_PER_YEAR,",
+     "\"elapsed_min\": elapsed, \"elapsed_days\": days},",
+     "\"elapsed_min\": elapsed,",
+     "report = sim.ledger.summary(elapsed_min=now, delivered_kwh=delivered, chargers=c.chargers,",
+     "\"days=elapsed_min/1440) 计算；调用方不得再乘设备数或天数\","
+    ],
+    "curve_1440_facility_k1": 75.29767671232877,
+    "curve_720_facility_k1": 37.64883835616438
+   },
+   "verdict": "confirmed",
+   "correction": "确认：device_capital = k*(capex/寿命/365)*days 与 annual/365 两条分支都正确；成本曲线 1440min 与 720min 的 facility_cost 成 2:1（75.2997 vs 37.6499），说明天数按 elapsed_min/1440 换算且未重复乘；k=0 为 0。"
+  }
+ ],
+ "summary": {
+  "confirmed": 1,
+  "corrected": 3,
+  "partially_unsupported": 1
+ }
+}

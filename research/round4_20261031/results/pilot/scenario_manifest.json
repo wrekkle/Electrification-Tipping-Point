@@ -1,0 +1,32 @@
+{
+  "command": [
+    "research/round4_20261031/run_scenarios.py",
+    "--catalog",
+    "research/round4_20261031/charge_probability_sources.json",
+    "--scenarios",
+    "REF",
+    "--rules",
+    "A",
+    "--lots",
+    "TPE0008",
+    "--seeds",
+    "1",
+    "--k-max",
+    "3",
+    "--workers",
+    "1",
+    "--outdir",
+    "research/round4_20261031/results/pilot"
+  ],
+  "runs": [
+    {
+      "scenario": "REF",
+      "rule": "A",
+      "out": "research/round4_20261031/results/pilot\\scenario_REF_A_s5.json",
+      "exit": 0,
+      "seconds": 0.22,
+      "stdout": "{\"out\": \"research/round4_20261031/results/pilot\\\\scenario_REF_A_s5.json\", \"rows\": 4, \"failures\": 0}",
+      "stderr": ""
+    }
+  ]
+}

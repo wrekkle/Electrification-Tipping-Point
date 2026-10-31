@@ -1,0 +1,25 @@
+{
+  "schema_version": "r8-run-manifest/v1",
+  "family": "E7",
+  "status": "missing_data",
+  "generated_utc": "2026-10-31T11:00:35.634596+00:00",
+  "output_version": "r8-engine-v1-2026-10-31",
+  "command": "run_phase1.py --mode synthetic --seed 20261031",
+  "seed": 20261031,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "traj_E7.csv",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "meta_E7.json",
+      "sha256": "9ba3069a77060e117ba4f9e39903f5e4d3a4cee6968068ba0fe4b95fcfd1e4bf"
+    }
+  ],
+  "notes": [
+    "说明性单实例轨迹；找不到反例就写 missing_data，不伪造"
+  ]
+}

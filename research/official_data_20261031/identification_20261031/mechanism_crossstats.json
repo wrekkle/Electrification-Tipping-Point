@@ -1,0 +1,7 @@
+{
+ "zero_delta_slots": 57860,
+ "zero_delta_with_any_connector_change": 1074,
+ "zero_delta_with_charging_start": 567,
+ "positive_delta_slots": 22581,
+ "positive_delta_with_connector_change": 1466
+}

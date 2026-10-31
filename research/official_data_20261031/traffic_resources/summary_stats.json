@@ -1,0 +1,38 @@
+{
+ "cohort": {
+  "sites": 372,
+  "totalcar_sum": 80221,
+  "totalcar_median": 145.0,
+  "totalcar_min": 10,
+  "totalcar_max": 1998,
+  "connector_sum": 1888,
+  "connector_median": 3.0,
+  "connector_min": 1,
+  "connector_max": 46,
+  "sites_with_connectors": 372
+ },
+ "polling": {
+  "slots_rows": 49476,
+  "slots_lots": 372,
+  "slots_tmin": "None",
+  "slots_tmax": "None",
+  "conn_rows": 248837,
+  "conn_lots": 372,
+  "connector_ids": 1,
+  "status_counts": {
+   "null": 248837
+  },
+  "conn_tmin": "None",
+  "conn_tmax": "None"
+ },
+ "commit_sample": {
+  "file": "2026-10-30T160000p0000.json",
+  "keys": [
+   "slot_start_utc",
+   "parking_rows",
+   "connector_rows",
+   "meta",
+   "committed_at"
+  ]
+ }
+}

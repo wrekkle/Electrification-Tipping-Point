@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<link rel="icon" href="./assets/img/MF.jpg" type="image/jpeg" />
+<title>Qingsong Liu</title>
+</head>
+
+<body>
+<a id="home" class="anchor"></a>
+<div id="container">
+<div class="container">
+
+<table class="imgtable"><tr><td style="vertical-align: middle; padding-top: 55px;">
+<img src="./assets/img/personal_image.png" alt="Qingsong Liu" height="252px" />&nbsp;</td>
+<td align="left"><p><font size="6">Qingsong Liu</font></p>
+<font size="4">Joint Postdoctoral Researcher</font><br />
+<font size="4">California Institute of Technology (Caltech)</font><br />
+<font size="4">University of Massachusetts Amherst (UMass)</font><br />
+<font size="4">Email: thulqs15@gmail.com</font><br />
+<font size="4">[<a href="https://scholar.google.com/citations?user=bVKCqt0AAAAJ&hl=en" target="_blank"><font color="#9400D3">Google Scholar</font></a>]</font><br />
+ <br />
+
+ <A NAME="Biography"><h2><font color="#483D8B">About Me</font></h2></A>
+
+I am currently a joint postdoctoral researcher at the California Institute of Technology (Caltech) and the University of Massachusetts Amherst (UMass), working with Prof. <a href="https://adamwierman.com/" target="_blank"><font color="#9400D3">Adam Wierman</font></a> and Prof. <a href="https://groups.cs.umass.edu/hajiesmaili/" target="_blank"><font color="#9400D3">Mohammad Hajiesmaili</font></a>. Previously, I was a Postdoctoral Research Associate at the University of Massachusetts Amherst (UMass), working with Prof. <a href="https://groups.cs.umass.edu/hajiesmaili/" target="_blank"><font color="#9400D3">Mohammad Hajiesmaili</font></a> from 2024 to 2026. I received my Ph.D. in July 2024 from the Institute for Interdisciplinary Information Sciences (IIIS), Tsinghua University, where I was supervised by Prof. <a href="https://people.iiis.tsinghua.edu.cn/~fang/" target="_blank"><font color="#9400D3">Zhixuan Fang</font></a>. Prior to that, I achieved my Bachelor's degree in July 2019 at the Department of Electronic Engineering of Tsinghua University and worked with Prof. <a href="https://wenfei-wu.github.io/" target="_blank"><font color="#9400D3">Wenfei Wu</font></a>.
+
+</td></tr></table>
+<br />
+ <class="staffshortcut">
+ [<A HREF="#Research Interests"><font color="#9400D3">Research Interests</font></A>] |
+ [<A HREF="#News"><font color="#9400D3">Recent News</font></A>] |
+ [<A HREF="#Conference Papers"><font color="#9400D3">Conference Papers</font></A>] |
+ [<A HREF="#Journal Papers"><font color="#9400D3">Journal Papers</font></A>] |
+ [<A HREF="#Service"><font color="#9400D3">Academic Service</font></A>] |
+ [<A HREF="#Awards"><font color="#9400D3">Honors &amp; Awards</font></A>] |
+ [<A HREF="#Teaching"><font color="#9400D3">Teaching</font></A>]
+
+<A NAME="Research Interests"><h2><font color="#483D8B">Research Interests</font></h2></A>
+<ul>
+<li><b>Constrained Online Optimization and Learning</b></li>
+<li><b>Performance Modeling and Optimization in Computer Systems and Communication Networks</b></li>
+</ul>
+<br />
+
+
+<A NAME="News"><h2><font color="#483D8B">Recent News</font></h2></A>
+<ul>
+<li><b>[August 2026]</b> One paper accepted to ACM MobiHoc 2026!</li>
+<li><b>[March 2026]</b> Two papers accepted to ACM SIGMETRICS 2026!</li>
+<li><b>[December 2025]</b> One paper accepted to IEEE INFOCOM!</li>
+<li><b>[April 2025]</b> One paper accepted to IEEE/ACM IWQoS 2025!</li>
+<li><b>[April 2025]</b> One paper accepted to ACM SIGMETRICS 2025!</li>
+<li><b>[December 2024]</b> One paper accepted to IEEE INFOCOM!</li>
+<li><b>[October 2024]</b> One paper accepted to IEEE/ACM TON!</li>
+<li><b>[July 2024]</b> I received Tsinghua University Distinguished Doctoral Dissertation Award!</li>
+<li><b>[June 2024]</b> I successfully passed my Ph.D. thesis defense!</li>
+<li><b>[June 2024]</b> One paper accepted to IEEE/ACM TON!</li>
+<li><b>[March 2024]</b> One paper accepted to ACM SIGMETRICS 2024!</li>
+<li><b>[December 2023]</b> One paper accepted to AAAI 2024!</li>
+<li><b>[December 2023]</b> Two papers accepted to INFOCOM 2024!</li>
+</ul>
+<br />
+
+
+<A NAME="Conference Papers"><h2><font color="#483D8B">Conference Papers</font></h2></A>
+<ul>
+<li>S. Fang, Y. He, <b>Q. Liu</b>, Y. Yuan, Y. Xu, W. Wu, and B. Zhao, "TRIAGE: A Hazard Taxonomy for Saturating LLM Inference Pipelines," ACM PPoPP, 2027.</li>
+
+<li><b>Q. Liu</b>, M. Sahebdel, A. Joshi, and M. Hajiesmaili, "Reusable Resource Allocation under Adversarial Arrivals: Learning with Delayed Feedback," ACM MobiHoc, 2026.</li>
+
+<li><b>Q. Liu</b> and M. Hajiesmaili, "A Unified Framework for Online Combinatorial Allocation of Reusable Resources under Endogenous Deterioration," ACM SIGMETRICS, 2026.</li>
+
+<li>A. Joshi*, <b>Q. Liu*</b>, and M. Hajiesmaili, "Learning to Allocate Reusable Resources under Stochastic Rewards and Durations," ACM SIGMETRICS, 2026.</li>
+
+<li>A. Zeynali, M. Sahebdel, <b>Q. Liu</b>, R. Sitaraman, and M. Hajiesmaili, "Smoothed Online Optimization for Target Tracking: Robust and Learning-Augmented Algorithms," ALT, 2026.</li>
+
+<li>S. Fang, <b>Q. Liu</b>, Y. Xu, W. Gao, J. Nie, and W. Wu, "TurboTSS: A Packet Classifier with Fast Rule Lookup and Update for the Cloud," IEEE INFOCOM, 2026.</li>
+
+<li>Z. Jia, H. Fan, X. Gu, B. Li, W. Wang, and <b>Q. Liu</b>, "AoI-Constrained Scheduling for Information Freshness over Unreliable Channels," IEEE/ACM IWQoS, 2025.</li>
+
+<li><b>Q. Liu</b> and M. Hajiesmaili, "Online Fair Allocation of Reusable Resources," ACM SIGMETRICS, 2025.</li>
+
+<li>Z. Jia*, <b>Q. Liu*</b>, H. Fan, X. Gu, B. Li, and W. Wang, "Learning to Optimize Resource Utilization with QoS Guarantees," IEEE INFOCOM, 2025.</li>
+
+<li>Y. Huang, <b>Q. Liu</b>, and J. Xu, "Adversarial Combinatorial Bandits with Switching Cost and Arm Selection Constraints," IEEE INFOCOM, 2024.</li>
+
+<li><b>Q. Liu</b> and Z. Fang, "Learning the Optimal Control for Evolving Systems with Converging Dynamics," ACM SIGMETRICS, 2024.</li>
+
+<li><b>Q. Liu</b>, W. Xu, and Z. Fang, "Learning-based Scheduling for Information Gathering with QoS Constraints," IEEE INFOCOM, 2024.</li>
+
+<li><b>Q. Liu</b> and Z. Fang, "Decentralized Scheduling with QoS Constraints: Achieving O(1) QoS regret," AAAI, 2024.</li>
+
+<li><b>Q. Liu</b> and Z. Fang, "Learning to Schedule Tasks with Deadline and Throughput Constraints," IEEE INFOCOM, 2023.</li>
+
+<li><b>Q. Liu*</b>, W. Xu*, S. Wang, and Z. Fang, "Combinatorial Bandits with Linear Constraints: Beyond Knapsacks and Fairness," NeurIPS, 2022.</li>
+
+<li><b>Q. Liu</b>, Z. Li, and Z. Fang, "Online Convex Optimization with Switching Costs: Algorithms and Performance," IEEE WiOpt, 2022.</li>
+
+<li><b>Q. Liu</b>, W. Wu, L. Huang, and Z. Fang, "Simultaneously Achieving Sublinear Regret and Constraint Violations for Online Convex Optimization with Time-varying Constraints," IFIP Performance, 2021.</li>
+</ul>
+<br />
+
+
+<A NAME="Journal Papers"><h2><font color="#483D8B">Journal Papers</font></h2></A>
+<ul>
+<li>Y. Huang, <b>Q. Liu</b>, and J. Xu, "From Novice to Expert: Cost-Aware Bandits for Evolving Worker Performance in Crowdsensing," IEEE Transactions on Mobile Computing, 2026.</li>
+
+<li><b>Q. Liu</b>, Z. Li, and Z. Fang, "Smoothed Online Decision Making in Communication: Algorithms and Applications," IEEE/ACM Transactions on Networking, 2024.</li>
+
+<li>Z. Jia*, <b>Q. Liu*</b>, J. Zhou, X. Gu, Y. Zhang, B. Li, and W. Wang, "Optimal Caching for Partial-observation Regime and Beyond," IEEE Transactions on Services Computing, 2024.</li>
+
+<li><b>Q. Liu</b> and Z. Fang, "Online Task Scheduling and Termination with Throughput Constraint," IEEE/ACM Transactions on Networking, 2024.</li>
+
+<li>Y. Zhang, <b>Q. Liu</b>, J. Sun, and C. Wu, "The Optimal Dynamic Regret for Smoothed Online Convex Optimization with Squared Norm Switching Costs," Journal of the Franklin Institute, 2023.</li>
+
+<li><b>Q. Liu</b>, W. Wu, L. Huang, and Z. Fang, "Simultaneously Achieving Sublinear Regret and Constraint Violations for Online Convex Optimization with Time-varying Constraints," Elsevier's Performance Evaluation (PEVA), volume 152, 2021.</li>
+</ul>
+<br />
+
+
+<A NAME="Service"><h2><font color="#483D8B">Academic Service</font></h2></A>
+<p><b>Program Committee Member/Conference Reviewer:</b></p>
+<ul>
+<li>AISTATS (2023, 2024, 2025), NeurIPS (2023, 2024, 2025, 2026), ICML (2024, 2025, 2026), ICLR (2024, 2025, 2026), ACM SIGMETRICS (2026, 2027)</li>
+</ul>
+<p><b>Journal Reviewer:</b></p>
+<ul>
+<li><a href="https://www.computer.org/csdl/journal/tm/" target="_blank"><font color="#9400D3">IEEE TMC</font></a>, <a href="https://cis.ieee.org/publications/t-neural-networks-and-learning-systems/" target="_blank"><font color="#9400D3">IEEE TNNLS</font></a>, <a href="https://dl.acm.org/journal/tompecs" target="_blank"><font color="#9400D3">ACM TOMPECS</font></a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=90" target="_blank"><font color="#9400D3">IEEE/ACM TON</font></a></li>
+</ul>
+<br />
+
+
+<A NAME="Awards"><h2><font color="#483D8B">Honors &amp; Awards</font></h2></A>
+<ul>
+<li><b>2024</b>: Tsinghua University Outstanding Ph.D. Thesis Award (one of only two awardees among the IIIS CS Ph.D. students admitted in 2019)</li>
+<li><b>2024</b>: ACM SIGMETRICS Student Travel Grant</li>
+<li><b>2023</b>: IEEE INFOCOM Student Travel Grant</li>
+<li><b>2021 -- 2023</b>: Tsinghua--Yangtze River Delta International R&amp;D Community Talent Scholarship</li>
+<li><b>2022</b>: Tsinghua University Graduate Social Work Scholarship (Second Class)</li>
+<li><b>2021</b>: Tsinghua University Social Practice Excellence Scholarship</li>
+</ul>
+<br />
+
+
+<A NAME="Teaching"><h2><font color="#483D8B">Teaching</font></h2></A>
+<ul>
+<li>Game Theory, Institute for Interdisciplinary Information Sciences (IIIS), Tsinghua University, <b>Teaching Assistant</b></li>
+<li>Security Technologies in Cyberspace, Institute for Interdisciplinary Information Sciences (IIIS), Tsinghua University, <b>Teaching Assistant</b></li>
+</ul>
+
+
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+{
+ "mode": "validation",
+ "lots": [
+  "TPE1376",
+  "TPE0930",
+  "TPE1171",
+  "TPE1380"
+ ],
+ "alpha": 0.05,
+ "constraints": [
+  "capacity_only_unmet_rate",
+  "ev_parking_failure_rate",
+  "ice_parking_failure_rate"
+ ],
+ "curves": {
+  "A_pi0": {
+   "n": 40,
+   "achieved": 35,
+   "infeasible": 5,
+   "min": 2,
+   "median": 14,
+   "max": 25,
+   "mean": 14.228571428571428
+  },
+  "B_pi1": {
+   "n": 40,
+   "achieved": 33,
+   "infeasible": 7,
+   "min": 4,
+   "median": 16,
+   "max": 77,
+   "mean": 17.060606060606062
+  },
+  "C_quota": {
+   "n": 40,
+   "achieved": 33,
+   "infeasible": 7,
+   "min": 4,
+   "median": 16,
+   "max": 77,
+   "mean": 17.060606060606062
+  },
+  "D_pi2": {
+   "n": 40,
+   "achieved": 37,
+   "infeasible": 3,
+   "min": 2,
+   "median": 16,
+   "max": 56,
+   "mean": 17.135135135135137
+  }
+ },
+ "delta_k": {
+  "B_pi1": {
+   "pairs": 33,
+   "infeasible_pairs": 7,
+   "mean": -2.6666666666666665,
+   "median": 0,
+   "positive": 0,
+   "zero": 30,
+   "negative": 3,
+   "cluster_bootstrap": {
+    "mean": -2.679148074826193,
+    "lo": -5.6,
+    "hi": -0.2222222222222222,
+    "lots_resampled": 4,
+    "draws": 5000,
+    "note": "场站聚类配对 bootstrap；只重采样场站块，种子固定"
+   }
+  },
+  "C_quota": {
+   "pairs": 33,
+   "infeasible_pairs": 7,
+   "mean": -2.6666666666666665,
+   "median": 0,
+   "positive": 0,
+   "zero": 30,
+   "negative": 3,
+   "cluster_bootstrap": {
+    "mean": -2.679148074826193,
+    "lo": -5.6,
+    "hi": -0.2222222222222222,
+    "lots_resampled": 4,
+    "draws": 5000,
+    "note": "场站聚类配对 bootstrap；只重采样场站块，种子固定"
+   }
+  },
+  "D_pi2": {
+   "pairs": 35,
+   "infeasible_pairs": 5,
+   "mean": -0.8571428571428571,
+   "median": 0,
+   "positive": 0,
+   "zero": 33,
+   "negative": 2,
+   "cluster_bootstrap": {
+    "mean": -0.8438619636562362,
+    "lo": -2.2777777777777777,
+    "hi": 0.0,
+    "lots_resampled": 4,
+    "draws": 5000,
+    "note": "场站聚类配对 bootstrap；只重采样场站块，种子固定"
+   }
+  }
+ }
+}

@@ -1,0 +1,316 @@
+{
+  "unit": "instance = site-day (offline, future information)",
+  "classes": {
+    "confirmed_minimal": 0,
+    "minimality_unconfirmed": 0,
+    "physically_infeasible": 6,
+    "budget_not_covered": 2,
+    "missing_data": 0
+  },
+  "class_definitions": {
+    "confirmed_minimal": "0..k-1 每个整数都实测不可行，且 k 可行（声明模型内）",
+    "minimality_unconfirmed": "k 可行，但更小的整数存在未测/未收敛/不可判定项",
+    "physically_infeasible": "k 搜到物理边界（枪位/车位上限）仍不可行，原因是容量/服务冲突",
+    "budget_not_covered": "枚举上限截断或超出小实例完整枚举范围，无法判定",
+    "missing_data": "缺参数/缺字段，无法判定"
+  },
+  "instances": [
+    {
+      "class": "physically_infeasible",
+      "reason": "搜到物理边界 k=7 仍不可行：window_too_short",
+      "k_star": null,
+      "k_max_searched": 7,
+      "physical_bound": 7,
+      "stop_reason": "exhausted_physical_bound",
+      "model": "offline_uniform_power_minute_grid",
+      "information": "offline_upper_bound_not_executable",
+      "tested_k": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "uncovered_k": null,
+      "evidence": {
+        "per_k_status": {
+          "0": "infeasible",
+          "1": "infeasible",
+          "2": "infeasible",
+          "3": "infeasible",
+          "4": "infeasible",
+          "5": "infeasible",
+          "6": "infeasible",
+          "7": "infeasible"
+        },
+        "last_reason": "window_too_short"
+      },
+      "definition": "k 搜到物理边界（枪位/车位上限）仍不可行，原因是容量/服务冲突",
+      "note": "confirmed_minimal 只在本文件记录的离线声明模型内成立；不得写成物理下界或在线可执行结论",
+      "instance_id": "Drummond:2014-03-06",
+      "n_vehicles": 20,
+      "n_charge_jobs": 4,
+      "feeder_mode": "site"
+    },
+    {
+      "class": "physically_infeasible",
+      "reason": "搜到物理边界 k=3 仍不可行：window_too_short",
+      "k_star": null,
+      "k_max_searched": 3,
+      "physical_bound": 3,
+      "stop_reason": "exhausted_physical_bound",
+      "model": "offline_uniform_power_minute_grid",
+      "information": "offline_upper_bound_not_executable",
+      "tested_k": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "uncovered_k": null,
+      "evidence": {
+        "per_k_status": {
+          "0": "infeasible",
+          "1": "infeasible",
+          "2": "infeasible",
+          "3": "infeasible"
+        },
+        "last_reason": "window_too_short"
+      },
+      "definition": "k 搜到物理边界（枪位/车位上限）仍不可行，原因是容量/服务冲突",
+      "note": "confirmed_minimal 只在本文件记录的离线声明模型内成立；不得写成物理下界或在线可执行结论",
+      "instance_id": "Hyatt:2014-02-10",
+      "n_vehicles": 20,
+      "n_charge_jobs": 4,
+      "feeder_mode": "site"
+    },
+    {
+      "class": "physically_infeasible",
+      "reason": "搜到物理边界 k=2 仍不可行：window_too_short",
+      "k_star": null,
+      "k_max_searched": 2,
+      "physical_bound": 2,
+      "stop_reason": "exhausted_physical_bound",
+      "model": "offline_uniform_power_minute_grid",
+      "information": "offline_upper_bound_not_executable",
+      "tested_k": [
+        0,
+        1,
+        2
+      ],
+      "uncovered_k": null,
+      "evidence": {
+        "per_k_status": {
+          "0": "infeasible",
+          "1": "infeasible",
+          "2": "infeasible"
+        },
+        "last_reason": "window_too_short"
+      },
+      "definition": "k 搜到物理边界（枪位/车位上限）仍不可行，原因是容量/服务冲突",
+      "note": "confirmed_minimal 只在本文件记录的离线声明模型内成立；不得写成物理下界或在线可执行结论",
+      "instance_id": "Princes Theatre:2014-02-06",
+      "n_vehicles": 20,
+      "n_charge_jobs": 5,
+      "feeder_mode": "site"
+    },
+    {
+      "class": "budget_not_covered",
+      "reason": "枚举上限 k=8 截断（物理边界 16），无法判定；最后一条原因：window_too_short",
+      "k_star": null,
+      "k_max_searched": 8,
+      "physical_bound": 16,
+      "stop_reason": "budget_cap",
+      "model": "offline_uniform_power_minute_grid",
+      "information": "offline_upper_bound_not_executable",
+      "tested_k": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_k": null,
+      "evidence": {
+        "per_k_status": {
+          "0": "infeasible",
+          "1": "infeasible",
+          "2": "infeasible",
+          "3": "infeasible",
+          "4": "infeasible",
+          "5": "infeasible",
+          "6": "infeasible",
+          "7": "infeasible",
+          "8": "infeasible"
+        },
+        "last_reason": "window_too_short"
+      },
+      "definition": "枚举上限截断或超出小实例完整枚举范围，无法判定",
+      "note": "confirmed_minimal 只在本文件记录的离线声明模型内成立；不得写成物理下界或在线可执行结论",
+      "instance_id": "Queensberry:2014-03-21",
+      "n_vehicles": 20,
+      "n_charge_jobs": 3,
+      "feeder_mode": "site"
+    },
+    {
+      "class": "budget_not_covered",
+      "reason": "枚举上限 k=8 截断（物理边界 14），无法判定；最后一条原因：window_too_short",
+      "k_star": null,
+      "k_max_searched": 8,
+      "physical_bound": 14,
+      "stop_reason": "budget_cap",
+      "model": "offline_uniform_power_minute_grid",
+      "information": "offline_upper_bound_not_executable",
+      "tested_k": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_k": null,
+      "evidence": {
+        "per_k_status": {
+          "0": "infeasible",
+          "1": "infeasible",
+          "2": "infeasible",
+          "3": "infeasible",
+          "4": "infeasible",
+          "5": "infeasible",
+          "6": "infeasible",
+          "7": "infeasible",
+          "8": "infeasible"
+        },
+        "last_reason": "window_too_short"
+      },
+      "definition": "枚举上限截断或超出小实例完整枚举范围，无法判定",
+      "note": "confirmed_minimal 只在本文件记录的离线声明模型内成立；不得写成物理下界或在线可执行结论",
+      "instance_id": "Southbank:2014-02-02",
+      "n_vehicles": 17,
+      "n_charge_jobs": 1,
+      "feeder_mode": "site"
+    },
+    {
+      "class": "physically_infeasible",
+      "reason": "搜到物理边界 k=3 仍不可行：window_too_short",
+      "k_star": null,
+      "k_max_searched": 3,
+      "physical_bound": 3,
+      "stop_reason": "exhausted_physical_bound",
+      "model": "offline_uniform_power_minute_grid",
+      "information": "offline_upper_bound_not_executable",
+      "tested_k": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "uncovered_k": null,
+      "evidence": {
+        "per_k_status": {
+          "0": "infeasible",
+          "1": "infeasible",
+          "2": "infeasible",
+          "3": "infeasible"
+        },
+        "last_reason": "window_too_short"
+      },
+      "definition": "k 搜到物理边界（枪位/车位上限）仍不可行，原因是容量/服务冲突",
+      "note": "confirmed_minimal 只在本文件记录的离线声明模型内成立；不得写成物理下界或在线可执行结论",
+      "instance_id": "Titles:2014-01-30",
+      "n_vehicles": 20,
+      "n_charge_jobs": 4,
+      "feeder_mode": "site"
+    },
+    {
+      "class": "physically_infeasible",
+      "reason": "搜到物理边界 k=8 仍不可行：window_too_short",
+      "k_star": null,
+      "k_max_searched": 8,
+      "physical_bound": 8,
+      "stop_reason": "exhausted_physical_bound",
+      "model": "offline_uniform_power_minute_grid",
+      "information": "offline_upper_bound_not_executable",
+      "tested_k": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_k": null,
+      "evidence": {
+        "per_k_status": {
+          "0": "infeasible",
+          "1": "infeasible",
+          "2": "infeasible",
+          "3": "infeasible",
+          "4": "infeasible",
+          "5": "infeasible",
+          "6": "infeasible",
+          "7": "infeasible",
+          "8": "infeasible"
+        },
+        "last_reason": "window_too_short"
+      },
+      "definition": "k 搜到物理边界（枪位/车位上限）仍不可行，原因是容量/服务冲突",
+      "note": "confirmed_minimal 只在本文件记录的离线声明模型内成立；不得写成物理下界或在线可执行结论",
+      "instance_id": "University:2014-03-03",
+      "n_vehicles": 20,
+      "n_charge_jobs": 5,
+      "feeder_mode": "site"
+    },
+    {
+      "class": "physically_infeasible",
+      "reason": "搜到物理边界 k=4 仍不可行：window_too_short",
+      "k_star": null,
+      "k_max_searched": 4,
+      "physical_bound": 4,
+      "stop_reason": "exhausted_physical_bound",
+      "model": "offline_uniform_power_minute_grid",
+      "information": "offline_upper_bound_not_executable",
+      "tested_k": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "uncovered_k": null,
+      "evidence": {
+        "per_k_status": {
+          "0": "infeasible",
+          "1": "infeasible",
+          "2": "infeasible",
+          "3": "infeasible",
+          "4": "infeasible"
+        },
+        "last_reason": "window_too_short"
+      },
+      "definition": "k 搜到物理边界（枪位/车位上限）仍不可行，原因是容量/服务冲突",
+      "note": "confirmed_minimal 只在本文件记录的离线声明模型内成立；不得写成物理下界或在线可执行结论",
+      "instance_id": "West Melbourne:2014-02-23",
+      "n_vehicles": 9,
+      "n_charge_jobs": 2,
+      "feeder_mode": "site"
+    }
+  ],
+  "model": "offline_uniform_power_minute_grid",
+  "information": "offline_upper_bound_not_executable",
+  "note": "confirmed_minimal 仅在本声明模型内成立；不是物理下界，也不在线可执行"
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "purpose": "Source evidence for a backend charging-probability model; not an adopted universal charging rate",
+  "selected_default": null,
+  "definitions": {
+    "q_use": "Observed charging events / EV parking events, conditional on source context and observation threshold",
+    "q_intent": "Probability of wanting to charge before capacity/access restrictions; not identified by these observed ratios alone",
+    "q_day": "Days with charging / eligible driving days; not interchangeable with a per-parking-event probability",
+    "q_location_share": "Charging at a location / all charging events or energy; not a per-arrival probability"
+  },
+  "sources": [
+    {
+      "id": "M08",
+      "source_url": "https://inldigitallibrary.inl.gov/content/uploads/50/2026/04/7323611.pdf",
+      "sample_period": "2013-07-01/2013-12-31",
+      "context": "San Diego; parking within 300 feet of EV Project non-residential EVSE",
+      "transcription_status": "local PDF table visually checked; original vehicle records unavailable",
+      "locator": "Local 8-page version: PDF page 5, printed page 3, Tables 1 and 2",
+      "event_counts": [
+        {"context": "near EVSE; BEV Nissan Leaf", "charging_events": 1421, "parking_events": 4974},
+        {"context": "near EVSE; PHEV Chevrolet Volt", "charging_events": 705, "parking_events": 3095},
+        {"context": "near EVSE; BEV and PHEV combined", "charging_events": 2126, "parking_events": 8069},
+        {"context": "all away-from-home parking; combined; different denominator", "charging_events": 16557, "parking_events": 232083}
+      ],
+      "limitations": ["old vehicle technology and geography", "within 300 feet does not prove an available connector", "observed use does not identify unconstrained intent", "parking duration unavailable", "repeated drivers and sites"]
+    },
+    {
+      "id": "M09",
+      "source_url": "https://doi.org/10.1016/j.apenergy.2025.126608",
+      "transcription_status": "selected local PDF definitions inspected; no public per-parking constant adopted",
+      "locator": "PDF page 9 / printed page 8, Table 5; PDF page 14 / printed page 13, Figures 16 and 17",
+      "event_counts": [],
+      "limitations": ["home overnight parking denominator differs from outside-home driving-day denominator", "SOC and battery-size conditional results", "not a public-lot constant"]
+    },
+    {
+      "id": "M10",
+      "source_url": "https://doi.org/10.1080/21680566.2021.1997672",
+      "sample_period": "2017-01-27/2017-04-28",
+      "context": "Dutch PEV out-of-home activity/parking decisions; 100 surveyed users",
+      "transcription_status": "publisher/institutional fulltext search-index Table 3 transcription; local PDF image unavailable; provisional",
+      "locator": "Sections 3.2-3.4; Table 3 observed outcomes, not predictions",
+      "event_counts": [
+        {"context": "observed training sample", "charging_events": 1486, "parking_events": 6187},
+        {"context": "observed validation sample", "charging_events": 469, "parking_events": 2062},
+        {"context": "combined observed samples; provisional transcription", "charging_events": 1955, "parking_events": 8249}
+      ],
+      "limitations": ["PDF table image not checked", "BEV/PHEV mixed", "self-reported charging", "out-of-home includes different charger access contexts", "not approved as backend default"]
+    },
+    {
+      "id": "M11",
+      "source_url": "https://doi.org/10.1080/26941899.2025.2605778",
+      "transcription_status": "publisher fulltext sections selected; no local PDF",
+      "locator": "Preprocessing charging label; Methods; Figure 3 and effect-plot explanation",
+      "event_counts": [],
+      "limitations": ["charging means SOC increase >= 10 percent points", "55 percent / under 10 percent are conditional model effects, not unconditional public-lot observations", "random effects and predictor coding required before model transfer"]
+    },
+    {
+      "id": "M12",
+      "source_url": "https://doi.org/10.1016/j.trd.2025.105094",
+      "sample_period": "2023-03/2023-12",
+      "transcription_status": "publisher fulltext sections selected; no local PDF",
+      "locator": "Sections 3.1-3.2, 4.1; Appendix B Table B.1; Appendix C",
+      "event_counts": [],
+      "limitations": ["charging inferred from vehicle state changes", "potential charging-trip selection differs from all lot arrivals", "eligibility and threshold not fully checked", "never convert rounded mean charges/mean trips into public-lot q"]
+    },
+    {
+      "id": "M13",
+      "source_url": "https://doi.org/10.1038/s44333-024-00023-3",
+      "correction_url": "https://doi.org/10.1038/s44333-025-00079-9",
+      "data_url": "https://doi.org/10.5281/zenodo.13852045",
+      "transcription_status": "official abstract/method/data-availability excerpts only; data download failed with HTTP 403",
+      "event_counts": [],
+      "limitations": ["no local data inspection", "correction not inspected", "public files not yet shown to contain the needed parking-event denominator", "do not import a universal q"]
+    }
+  ]
+}

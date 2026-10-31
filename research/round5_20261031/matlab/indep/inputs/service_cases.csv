@@ -1,0 +1,7 @@
+scenario_id,alpha,search_max,budget_max,by_k,expected_k,expected_status,expected_boundary
+s_achieved,0.5,,,10;8;4;2;0,2,achieved,0
+s_boundary,0.5,2,,10;8;4;2;0,2,achieved,1
+s_infeasible,0.1,3,,10;8;4;2;0,nan,infeasible_upper_bound,0
+s_missing,0.1,4,,10;8;4;;0,nan,missing_data,0
+s_nodemand,0.5,,,0;0;0;0;0,0,no_demand,0
+s_budget,0.1,,2,10;8;4;2;0,nan,budget_exhausted,0

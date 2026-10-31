@@ -1,0 +1,14 @@
+{
+ "jobs": [
+  {
+   "url": "https://data.gov.uk/api/3/action/package_search?q=electric+vehicle+charging+infrastructure&rows=5",
+   "purpose": "UK open data CKAN search for EV charging statistics",
+   "filename": "uk_datagov_ckan_search.json"
+  },
+  {
+   "url": "https://ev.caltech.edu/research",
+   "purpose": "ACN-Data dataset documentation (independent charging session source)",
+   "filename": "ACN_research.html"
+  }
+ ]
+}

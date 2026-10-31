@@ -1,0 +1,282 @@
+{
+ "schema_version": "r8d-phase1-acceptance/v1",
+ "task": "task-4",
+ "verifier": "R8-D",
+ "generated_local": "2026-10-31T19:16:00+08:00",
+ "generated_utc": "2026-10-31T11:16:00Z",
+ "phase": "phase1",
+ "phase2_status": "not_started",
+ "snapshot": {
+  "contract": {
+   "path": "research/round8_20261031/data/processed/public_parking_events.json",
+   "bytes": 46525880,
+   "sha256": "38b1422bb95d4122565d4de70a5ef4faf35e41600019068c9c077a295ee6bdf6",
+   "mtime_local": "2026-10-31T19:05:27+08:00",
+   "schema_version": "public_parking_events/v1",
+   "dataset_id": "melbourne_parking_bay_events_2014"
+  },
+  "raw_zip": {
+   "path": "research/round8_20261031/data/raw/melbourne_parking_bay_arrivals_departures_2014_mq3i-cbxd.zip",
+   "bytes": 247682126,
+   "sha256": "B92333B236D5DA0FBDC1AB0A195E57EB7A90EA4A3FDA30D06CF9938A3AD02A34"
+  },
+  "python": "3.12.14",
+  "in_flight_changes": [
+   "契约在验证期间被重建：35,052,295 B (sha ae11a988..., 185552 events, ok=False 2 blocking, 141680 duplicate_id_rekeyed warnings) -> 46,525,880 B (sha 38b1422b..., 185550 events, ok=True)",
+   "E1 manifest 输入哈希由 ac29ac4a... 变为 38b1422b...；publicdata.py mtime 19:02:32 仍在修改",
+   "unittest 首跑(19:03) 413 tests/2 failures -> 终跑(19:09) 414 tests/1 failure"
+  ]
+ },
+ "items": [
+  {
+   "id": "T1.1",
+   "area": "taipei_exit",
+   "check": "poller 进程停止且无残留",
+   "verdict": "PASS",
+   "evidence_command": "Get-CimInstance Win32_Process | ? {$_.CommandLine -match 'poller\\.py|372_polling' -and $_.Name -notmatch 'pwsh|DeepSeek|node'}",
+   "evidence_path": "research/collection/taipei_372_polling_20261030/runtime/state.json; research/collection/taipei_372_polling_20261030/runtime/STOP; research/round8_20261031/acceptance/evidence/taipei_process_state.txt",
+   "observed": "poller_hits=0; python_processes=2 (无关 pip install); state.status=stopped; STOP=2026-10-31T10:37:58.630205+00:00; total_rounds=371",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T1.2",
+   "area": "taipei_exit",
+   "check": "无定时任务/守护重启",
+   "verdict": "PASS",
+   "evidence_command": "Get-ScheduledTask 全表并按 Execute/Arguments 匹配; 启动文件夹列举",
+   "evidence_path": "research/round8_20261031/acceptance/evidence/taipei_process_state.txt",
+   "observed": "scheduled_tasks_total=211; scheduled_task_matches=0; startup 3 项均无关 (LocalQwenKeepAlive.vbs, Ollama.lnk.disabled, OpenClaw Gateway Supervisor.vbs.disabled)",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T1.3",
+   "area": "taipei_exit",
+   "check": "workbench 无 datasource.py",
+   "verdict": "PASS",
+   "evidence_command": "Test-Path apps/parking_lab/workbench/datasource.py; python -c 'import apps.parking_lab.workbench.datasource'",
+   "evidence_path": "apps/parking_lab/workbench/; research/round8_20261031/acceptance/evidence/code_surface_grep.txt",
+   "observed": "datasource.py=False; import -> ModuleNotFoundError; 残留 __pycache__/datasource.cpython-312.pyc (无源不可 import)",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T1.4",
+   "area": "taipei_exit",
+   "check": "server.py 无 /api/datasource 与 datasource 导出格式",
+   "verdict": "PASS",
+   "evidence_command": "Select-String -Path apps/parking_lab/workbench/server.py -Pattern datasource",
+   "evidence_path": "apps/parking_lab/workbench/server.py; research/round8_20261031/acceptance/evidence/code_surface_grep.txt",
+   "observed": "server.py datasource hits=0; 路由无 /api/datasource; 导出仅 /api/export -> parking-run.json (EXPORT_SCHEMA_VERSION=2)",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T1.5",
+   "area": "taipei_exit",
+   "check": "continuous 回放只接受 synthetic",
+   "verdict": "PASS",
+   "evidence_command": "grep start_replay apps/parking_lab/workbench/continuous.py",
+   "evidence_path": "apps/parking_lab/workbench/continuous.py:275-281",
+   "observed": "非 synthetic 抛 ContinuousError('回放源必须为 synthetic（通用合成账本回放）'); replay_step source=synthetic_ledger",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T1.6",
+   "area": "taipei_exit",
+   "check": "__main__ 无 --collection/data-span",
+   "verdict": "PASS",
+   "evidence_command": "Select-String -Path apps/parking_lab/workbench/__main__.py -Pattern '--collection|data-span'",
+   "evidence_path": "apps/parking_lab/workbench/__main__.py",
+   "observed": "0 命中; argparse choices=serve/run/compare/traffic",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T1.7",
+   "area": "taipei_exit",
+   "check": "web 无台北面板/按钮",
+   "verdict": "PASS",
+   "evidence_command": "Select-String -Path web/index.html,web/app.js -Pattern 'datasource|taipei|replay-taipei|ds-badge|ds-refresh'",
+   "evidence_path": "apps/parking_lab/workbench/web/index.html; apps/parking_lab/workbench/web/app.js",
+   "observed": "0 命中; 仅 replay-synthetic 与通用 /api/* 调用",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T1.8",
+   "area": "taipei_exit",
+   "check": "工作台测试实际运行结果（计数/exit code）",
+   "verdict": "PASS",
+   "evidence_command": "python -m unittest discover -s apps/parking_lab/workbench/tests -p \"test_*.py\"",
+   "evidence_path": "research/round8_20261031/acceptance/evidence/unittest_recheck_20261031_1915.log; research/round8_20261031/acceptance/evidence/unittest_final_20261031_1909.log (首验失败证据)",
+   "observed": "复验 2026-10-31T19:14:43: Ran 414 tests, OK, exit 0 (test_round8_exit HIST_MARKS 已允许 不读/禁止/不得; INVENTORY 更新为 414; datasource pyc 已删)",
+   "checked_at": "2026-10-31T19:14:43+08:00"
+  },
+  {
+   "id": "T1.9",
+   "area": "taipei_exit",
+   "check": "scripts/check_all.py 错误/警告数",
+   "verdict": "PASS",
+   "evidence_command": "python scripts/check_all.py",
+   "evidence_path": "research/round8_20261031/acceptance/evidence/check_all_recheck_20261031_1915.log; research/round8_20261031/acceptance/evidence/check_all_20261031_1908.log (首验 exit 1 证据)",
+   "observed": "复验 2026-10-31T19:14:43: exit=0; 文档与链接检查 错误 0 警告 174; 文献索引 错误 0 警告 8; 汇总三项全部通过 (doc status line 已改为 状态: 生效)",
+   "checked_at": "2026-10-31T19:14:43+08:00"
+  },
+  {
+   "id": "T2.1",
+   "area": "data_license",
+   "check": "City of Melbourne 数据集页/许可",
+   "verdict": "PASS",
+   "evidence_command": "web_fetch https://data.melbourne.vic.gov.au/api/explore/v2.1/catalog/datasets/parking-bay-arrivals-and-departures-2014",
+   "evidence_path": "data/PROVENANCE.json; data/CANDIDATES.md; （网络响应见本报告正文）",
+   "observed": "license='CC BY'; license_url=https://creativecommons.org/licenses/by/4.0/legalcode; modified=2020-08-05T00:00:00+00:00; download=https://opendatasoft-s3.s3.amazonaws.com/downloads/archive/mq3i-cbxd.zip; description 247.7MB/13.5M rows; records_count=0",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T2.2",
+   "area": "data_license",
+   "check": "raw zip 实际 SHA-256 与字节数",
+   "verdict": "PASS",
+   "evidence_command": "Get-FileHash research\\round8_20261031\\data\\raw\\melbourne_parking_bay_arrivals_departures_2014_mq3i-cbxd.zip -Algorithm SHA256",
+   "evidence_path": "research/round8_20261031/data/raw/melbourne_parking_bay_arrivals_departures_2014_mq3i-cbxd.zip; data/PROVENANCE.json; research/round8_20261031/acceptance/evidence/raw_zip_hash.txt",
+   "observed": "SHA256=B92333B236D5DA0FBDC1AB0A195E57EB7A90EA4A3FDA30D06CF9938A3AD02A34; bytes=247682126; 与 PROVENANCE.json archive_sha256/archive_bytes 一致",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T2.3",
+   "area": "data_license",
+   "check": "timezone 声明与数据自洽（本地日曲线高峰）",
+   "verdict": "PASS",
+   "evidence_command": "python: 从契约 185550 事件统计 arrival_ts 本地小时直方图",
+   "evidence_path": "research/round8_20261031/data/processed/public_parking_events.json; data/PROVENANCE.json",
+   "observed": "07-19 时 11315/11876/17420/18398/18693/19272/16988/15504/13851/12749/13991/9177/3534; 00-05 时 242/79/51/62/120/135; 高峰在本地白天且与 07:30-19:30 咪表时段一致; 窗口全程 AEDT=UTC+11; 局限: 无独立 UTC 来源，仅自洽",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T3.1",
+   "area": "contract",
+   "check": "load_contract/validate_contract 实跑",
+   "verdict": "PASS",
+   "evidence_command": "python -c \"from apps.parking_lab.workbench import publicdata as pd; rep=pd.validate_contract(json.load(open('research/round8_20261031/data/processed/public_parking_events.json',encoding='utf-8'))); print(rep['counts'])\"",
+   "evidence_path": "research/round8_20261031/acceptance/evidence/contract_validate.json",
+   "observed": "ok=True; blocking_errors=0; sites=10; events_declared=185550; accepted=185550; rejected=0; errors=0; warnings=0; missing_needs_charge=0; missing_energy_kwh=178962; strict load OK (10/185550); 快照 sha=38b1422b...",
+   "checked_at": "2026-10-31T19:10:41+08:00"
+  },
+  {
+   "id": "T3.2",
+   "area": "contract",
+   "check": "is_ev/needs_charge/energy_kwh 标 scenario 而非 observed",
+   "verdict": "PASS",
+   "evidence_command": "python: 检查 provenance.observed_fields/scenario_fields + 计数",
+   "evidence_path": "research/round8_20261031/data/processed/public_parking_events.json (provenance)",
+   "observed": "observed_fields=[event_id/window_row, site_id, arrival_ts, dwell_min]; scenario_fields.is_ev='Bernoulli(0.10) ... NOT observed'; needs_charge='Bernoulli(0.36) ... scenario assumption'; energy_kwh='truncated normal(14,6,[2,40]) ... not measured'; hardware 全 scenario; is_ev=18566 (10.0%), needs=6588, energy 非空=6588",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T3.3",
+   "area": "contract",
+   "check": "10 场站容量/窗口事件数/complete_days 复算",
+   "verdict": "PASS",
+   "evidence_command": "python: 契约 vs data/processed/_window_events.csv 按 area 去重 bay_id、逐场站计数；按 coverage.complete_day_definition 复算 5 场站",
+   "evidence_path": "research/round8_20261031/data/processed/public_parking_events.json; research/round8_20261031/data/processed/_window_events.csv",
+   "observed": "容量 82/58/35/72/40/15/33/12/17/18 全等; 事件数差异仅 2 条缺 dwell 剔除 (VM 24891 vs 24892; Hyatt 14295 vs 14296; dropped=2); complete_days 复算 Queensberry 85=85, Jolimont 85=85, Drummond 61=61, West Melbourne 72=72, University 61=61",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T4.1",
+   "area": "isolation",
+   "check": "实验/契约引用台北快照、旧 fitted_parameters、旧 traffic JSON、旧结果",
+   "verdict": "PASS",
+   "evidence_command": "grep -r 'taipei|fitted_parameters|traffic.*json|datasource' research/round8_20261031; grep 同 pattern engine/",
+   "evidence_path": "research/round8_20261031/PLAN.md; DESIGN_MATRIX.json; taipei_exit/INVENTORY.md; taipei_exit/REMOVAL_MANIFEST.json; engine/",
+   "observed": "非历史命中仅禁止性描述/退出清单/removed 副本/traffic_gen.py HISTORICAL 标注; engine/ 旧路径 NO MATCH; 所有 manifest inputs 仅契约路径",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T4.2",
+   "area": "isolation",
+   "check": "experiments manifest 输入路径与哈希抽查",
+   "verdict": "PASS",
+   "evidence_command": "python: 遍历 experiments/*/manifest.json 读取 inputs[*].sha256 并对比契约实际 sha256",
+   "evidence_path": "research/round8_20261031/experiments/{E1..E7,M}/manifest.json",
+   "observed": "复验 2026-10-31T19:15: E1–E7/M manifest inputs[*].sha256 全部 = 当前契约 38b1422b...; 所有 outputs 存在; missing_data.json 空壳 0 个",
+   "checked_at": "2026-10-31T19:15:00+08:00"
+  },
+  {
+   "id": "T4.3",
+   "area": "isolation",
+   "check": "contract arrivals/dwell 无合成痕迹（对 _window_events.csv 抽样/多重集）",
+   "verdict": "PASS",
+   "evidence_command": "python: 多重集比对 (site_id, arrival_ts[:19], dwell_min) 契约 185550 vs _window_events.csv 10 场站",
+   "evidence_path": "research/round8_20261031/data/processed/public_parking_events.json; research/round8_20261031/data/processed/_window_events.csv",
+   "observed": "IN_BOTH=185550; CONTRACT_ONLY=0; WINDOW_ONLY=2 (缺失 dwell 被剔除行); scenario 字段不在窗口 CSV 中，属构建期加入且已声明",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T5.1",
+   "area": "info_fairness",
+   "check": "B0/B1/B2 只用可观测字段、无未来信息标在线",
+   "verdict": "PASS",
+   "evidence_command": "阅读 research/round8_20261031/engine/baselines.py、apps/parking_lab/workbench/rules.py (ObservableState)、info_regimes.py",
+   "evidence_path": "research/round8_20261031/engine/baselines.py; apps/parking_lab/workbench/rules.py:94-113,331-370; apps/parking_lab/workbench/info_regimes.py",
+   "observed": "ObservableState 不含 needs_charge/能量/真实离场/未来到达; B0 类型盲 FCFS; B1 复用 protected_quota(训练集预注册 m); B2 只用可见统计与短期预测; BASELINE_META 均 online_observable; B2 literature_status='规则改编', P09 UNVERIFIED; 未发现未来信息标在线; 注意 p_charge_given_ev=0.36 为情景参数需披露",
+   "checked_at": "2026-10-31T19:11+08:00"
+  },
+  {
+   "id": "T5.2",
+   "area": "info_fairness",
+   "check": "offline_opt 明确标注离线上界",
+   "verdict": "PASS",
+   "evidence_command": "阅读 research/round8_20261031/engine/offline_opt.py docstring 与 min_connectors 返回字段",
+   "evidence_path": "research/round8_20261031/engine/offline_opt.py:1-14,349-350,384-385",
+   "observed": "information='offline_upper_bound_not_executable'; uses_future_information=True; model='offline_uniform_power_minute_grid'; 0..K_max 完整整数枚举; 禁二分/跳点; 禁 peak*mean*safety; E3 输出含 evidence_model/information",
+   "checked_at": "2026-10-31T19:11+08:00"
+  }
+ ],
+ "summary": {
+  "total": 20,
+  "pass": 20,
+  "fail": 0,
+  "unverified": 0
+ },
+ "issues_top3": [
+  {
+   "id": "P3",
+   "title": "数据侧文档与最终产物不一致：PROVENANCE.json 引用不存在的 unified_events.csv 与旧 contract_columns；QA_REPORT 窗口 end/complete_days 说法过时",
+   "evidence": "research/round8_20261031/data/PROVENANCE.json; research/round8_20261031/data/qa/QA_REPORT.md",
+   "detail": "契约实际字段 event_id/source_event_id/device_id/site_id/arrival_ts/dwell_min/is_ev/needs_charge/energy_kwh/window_row; coverage.window.end=2014-03-31; complete_days=789 已提供"
+  },
+  {
+   "id": "P4",
+   "title": "验证期间产物并发重建风险",
+   "evidence": "snapshot.in_flight_changes",
+   "detail": "Phase 2 期间如再重建需重新绑定快照"
+  }
+ ],
+ "additional_risk": {
+  "id": "P4",
+  "title": "验证期间产物并发重建，导致同一检查不同时点结论不同",
+  "evidence": "snapshot.in_flight_changes",
+  "action": "Phase 2 全程记录各文件 mtime/sha，冻结后终验"
+ },
+ "unverified": [
+  "Phase 2 全部未做：E1–E7 机器输出/图表/稿件/SI/复现包/能量分母/k 最小性/统计单位/Word-PDF",
+  "时区原始标注的独立确认（无第二独立 UTC 来源，仅自洽）",
+  "E2–E7/M 输出与当前契约的一致性（manifest 哈希不一致，需重跑）",
+  "_window_events.csv arrival_utc 列全空（0/236819）是否为遗留字段"
+ ],
+ "evidence_files": [
+  "research/round8_20261031/acceptance/evidence/contract_validate.json",
+  "research/round8_20261031/acceptance/evidence/raw_zip_hash.txt",
+  "research/round8_20261031/acceptance/evidence/taipei_process_state.txt",
+  "research/round8_20261031/acceptance/evidence/code_surface_grep.txt",
+  "research/round8_20261031/acceptance/evidence/check_all_20261031_1908.log",
+  "research/round8_20261031/acceptance/evidence/unittest_final_20261031_1909.log",
+  "research/round8_20261031/acceptance/evidence/unittest_recheck_20261031_1915.log",
+  "research/round8_20261031/acceptance/evidence/check_all_recheck_20261031_1915.log"
+ ],
+ "recheck": {
+  "at_local": "2026-10-31T19:14–19:15+08:00",
+  "result": "首验 3 项 FAIL (T1.8/T1.9/T4.2) 全部复验 PASS",
+  "closed_issues": [
+   "P1",
+   "P2"
+  ]
+ }
+}

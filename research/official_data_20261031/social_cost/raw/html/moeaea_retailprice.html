@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="&#x70BA;&#x60A8;&#x63D0;&#x4F9B;&#x4E2D;&#x6CB9;&#x8207;&#x53F0;&#x5851;&#x6BCF;&#x9031;&#x6C7D;&#x6CB9;&#x3001;&#x67F4;&#x6CB9;&#x96F6;&#x552E;&#x50F9;&#x683C;">
+    <meta name="web-rootpath" content="/oil111" />
+	<link rel="Shortcut Icon" type="image/x-icon" href="/oil111/css/front/img/favicon.ico" />
+    <title>&#x6C7D;&#x67F4;&#x6CB9;&#x53C3;&#x8003;&#x96F6;&#x552E;&#x50F9; - &#x52A0;&#x6CB9;&#x7AD9;&#x50F9;&#x683C; - 油價資訊管理與分析系統</title>
+    <link rel="stylesheet" href="/oil111/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/oil111/css/bootstrap/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="/oil111/css/front/Layout.css?v=1stwSEvoYrGNjdMnKgJ3vXtACi7vsmqWfT2P_YSGSUg" />
+    <link rel="stylesheet" href="/oil111/css/front/loading.css?v=d7O_ktJO04kOe07SJullxm37F6m673yVyIg92Cs5JAY" />
+    
+    <link rel="stylesheet" href="/oil111/css/front/contentFrame.css?v=Gp5YKA3I5XQVOozZJQvdNX1z8BAx00ASvLLTlYbtVKc" />
+    <link rel="stylesheet" href="/oil111/css/front/tableStyle.css?v=yoR72AdsdV9vc74koqB1Z8o0rye_f__eIahvaECknws" />
+
+    <!-- Google tag (gtag.js) -->
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MXG6YW31G"></script>
+        <script src="/oil111/js/front/ga.js?v=gtdjNLiNMHgKq7PUUoMDiPAdB728V0E2UfliLAUEViE"></script>
+    
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#scrollWrapper" data-bs-offset="150">
+    <header>
+        <a href="#MC" title="移到主要內容" class="go_to_main">跳到主要內容</a>
+        <div class="logo_box">
+            <h1><a href="/oil111/Home" aria-label="回首頁" title="油價資訊管理與分析系統：回首頁"><img src="/oil111/images/newlogo.svg" alt="LOGO"></a></h1>
+            <a id="showWebMap" class="show_md show_web_map" role="button">
+                <i class="material-icons cont_30 p-3">dehaze</i>
+            </a>
+        </div>
+        <div class="header_menu none_md">
+            <div class="sub_nav" aria-label="次要功能選單" role="navigation">
+                <ul>
+                    <li><a href="/oil111/Sitemap" aria-label="網站導覽">網站導覽</a></li>
+                    <li><a href="/oil111/DataDashboard/DataDashboard" title="移至數據儀表板">數據儀表板</a></li>
+                    <li><a href="/oil111/Feedback" title="前往填寫意見回饋表單">意見信箱</a></li>
+                    <li><a href="/oil111/Home/IndexEN" title="shift to ENGLISH version">ENGLISH</a></li>
+                    <li class="mass_edu_trans" title="首頁版面變更切換按鈕">
+                        <div class="regulate">
+                            <a id="eduVer" class="" title="切換成學術研究用版面">學術研究</a><a id="massVer" class="" title="切換成一般民眾用版面">一般民眾</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <nav>
+                <a id="HU" accesskey="U" name="U" title="上方選單區塊" tabindex="0">:::</a>
+                <ul class="web_map" aria-label="主要功能選單" role="navigation">
+                    <li>
+                        <a title="開啟國際原油選單" tabindex="0" class="meau_open" aria-haspopup="true" aria-expanded="false">國際原油價格</a>
+                        <div class="sub_menu single_list">
+                            <ul>
+                                <li><a href="/oil111/CrudeOil/Price" title="移至國際原油價格" class="meau_child">國際原油價格</a></li>
+                                <li><a href="/oil111/CrudeOil/Compare" title="移至國際原油同期價格比較" class="meau_child">國際原油同期價格比較</a></li>
+                                <li><a href="/oil111/CrudeOil/RangeCompare" title="移至國際原油同期區間比較" class="meau_child">國際原油同期區間比較</a></li>
+                                <li><a href="/oil111/CrudeOil/CIF" title="移至進口原油CIF均價" class="meau_child">進口原油CIF均價</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a title="開啟加油站價格選單" tabindex="0" class="meau_open">加油站價格</a>
+                        <div class="sub_menu">
+                            <ul>
+                                <li><a href="/oil111/Gasoline/NationwideAvg" title="移至全國汽柴油均價" class="meau_child">全國汽柴油均價</a></li>
+                                <li><a href="/oil111/Gasoline/CountyCityAvg" title="移至各縣市汽柴油均價" class="meau_child">各縣市汽柴油均價</a></li>
+                                <li><a href="/oil111/Gasoline/OffshoreMountainIndigenousAvg" title="移至離島/山地鄉鎮市區汽柴油均價" class="meau_child">離島/山地鄉鎮市區汽柴油均價</a></li>
+                                <li><a href="/oil111/Gasoline/OilSupplierWeekAvg" title="移至供油商油品週均價" class="meau_child">供油商油品週均價</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/oil111/Gasoline/FishingBoatFuelMonthAvg" title="移至漁船用油月均價" class="meau_child">漁船用油月均價</a></li>
+                                <li><a href="/oil111/Gasoline/LPGCMonthAvg" title="移至車用液化石油氣月均價" class="meau_child">車用液化石油氣月均價</a></li>
+                                <li><a href="/oil111/Gasoline/TradePrice" title="移至汽柴油批售價" class="meau_child">汽柴油批售價</a></li>
+                                <li><a href="/oil111/Gasoline/RetailPrice" title="移至汽柴油參考零售價" class="meau_child">汽柴油參考零售價</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a title="開啟家用桶裝瓦斯價格選單" tabindex="0" class="meau_open">家用桶裝瓦斯價格</a>
+                        <div class="sub_menu">
+                            <ul>
+                                <li><a href="/oil111/LPG/GISAvg" title="移至鄉鎮市區家用桶裝瓦斯均價" class="meau_child">鄉鎮市區家用桶裝瓦斯均價</a></li>
+                                <li><a href="/oil111/LPG/NationwideAvg" title="移至全國家用桶裝瓦斯均價" class="meau_child">全國家用桶裝瓦斯均價</a></li>
+                                <li><a href="/oil111/LPG/CountyCityAvg" title="移至各縣市家用桶裝瓦斯均價" class="meau_child">各縣市家用桶裝瓦斯均價</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/oil111/LPG/OffshoreMountainIndigenousAvg" title="移至離島/山地鄉鎮市區家用桶裝瓦斯均價" class="meau_child">離島/山地鄉鎮市區家用桶裝瓦斯均價</a></li>
+                                <li><a href="/oil111/LPG/TradePrice" title="移至液化石油氣批售價" class="meau_child">液化石油氣批售價</a></li>
+                                <li><a href="/oil111/LPG/ContractPrice" title="移至液化石油氣國際CP價格" class="meau_child">液化石油氣國際CP價格</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a title="開啟油品價格綜合比較選單" tabindex="0" class="meau_open">油品價格綜合比較</a>
+                        <div class="sub_menu">
+                            <ul>
+                                <li><a href="/oil111/MixCompare/CrudeOilandGasoline" title="移至國際國內油品價格" class="meau_child">國際國內油品價格</a></li>
+                                <li><a href="/oil111/MixCompare/GasolineandLSFO" title="移至國內主要油品價格" class="meau_child">國內主要油品價格</a></li>
+                                <li><a href="/oil111/MixCompare/GasolineandCIF" title="移至進口原油CIF價格與國內主要油品價格" class="meau_child">進口原油CIF價格與國內主要油品價格</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/oil111/MixCompare/AsianCountries" title="移至鄰近國家油品價格" class="meau_child">鄰近國家油品價格</a></li>
+                                <li><a href="/oil111/MixCompare/CompareTable" title="移至油品均價比較表" class="meau_child">油品均價比較表</a></li>
+                                <li><a href="/oil111/DataDashboard/DataDashboard" title="移至數據儀表板" class="meau_child">數據儀表板</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a title="開啟油品經銷體系選單" tabindex="0" class="meau_open">油品經銷體系</a>
+                        <div class="sub_menu has_title">
+                            <ul>
+                                <li class="title">加油站</li>
+                                <li><a href="/oil111/Dealer/GasStations" title="移至加油站位置" class="meau_child">加油站位置</a></li>
+                                <li><a href="/oil111/Dealer/MarketDetail" title="移至加油站品牌明細" class="meau_child">加油站品牌明細</a></li>
+                                <li><a href="/oil111/Dealer/MarketRatio" title="移至加油站銷售品牌站數比" class="meau_child">加油站銷售品牌站數比</a></li>
+                                <li><a href="/oil111/Dealer/BusinessEntity" title="移至加油站經營實體統計" class="meau_child">加油站經營實體統計</a></li>
+                                <li><a href="/oil111/Dealer/LPGCStations" title="移至加氣站位置" class="meau_child">加氣站位置</a></li>
+                            </ul>
+                            <ul>
+                                <li class="title">桶裝瓦斯</li>
+                                <li><a href="/oil111/Dealer/LPGDealer" title="移至液化石油氣經銷商" class="meau_child">液化石油氣經銷商</a></li>
+                                <li><a href="/oil111/Dealer/LPGSubPackaging" title="移至液化石油氣分裝場" class="meau_child">液化石油氣分裝場</a></li>
+                                <li><a href="/oil111/Dealer/LPGAssociation" title="移至全國液化氣體燃料公會" class="meau_child">全國液化氣體燃料公會</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a title="開啟更多資訊選單" tabindex="0" class="meau_open">更多資訊</a>
+                        <div class="sub_menu has_title">
+                            <ul>
+                                <li class="title" >新聞與公告</li>
+                                <li><a href="/oil111/More/News" title="移至油品相關新聞" class="meau_child">油品相關新聞</a></li>
+                                <li><a href="/oil111/More/Links" title="移至油品相關網站" class="meau_child">油品相關網站</a></li>
+                                <li><a href="https://www.cpc.com.tw/cl.aspx?n=60" title="在新視窗開啟中油公司油氣價格調整機制網頁" target="_blank" rel="noreferrer noopener" class="meau_child">中油公司油氣價格調整機制</a></li>
+                                <li class="title" >行動服務</li>
+                                <li><a href="/oil111/More/Applications" title="移至桶裝瓦斯價格APP下載頁" class="meau_child">桶裝瓦斯價格APP</a></li>
+                            </ul>
+                            <ul>
+                                <li class="title" >下載專區</li>
+                                <li><a href="/oil111/More/Download" title="前往下載家用液化石油氣供氣定型化契約範本" class="meau_child">家用液化石油氣供氣定型化契約範本</a></li>
+                                <li><a href="/oil111/More/Download" title="前往下載偏遠與原住民族地區家用桶裝瓦斯差價補助每桶補助費用文件" class="meau_child">偏遠與原住民族地區家用桶裝瓦斯差價補助每桶補助費用</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main role="main" id="list_item1">
+        
+<div class="main_container">
+    <nav class="title">
+        <div class="nav_breadcrumb">
+            加油站價格>
+        </div>
+        <h2 aria-current="page">
+            汽柴油參考零售價
+        </h2>
+        <a class="aside_btn" id="showAside" aria-hidden="true"><i class="material-icons-outlined">more_vert</i>展開列表</a>
+    </nav>
+
+    <section class="mb-5">
+        <aside id="AsideMap">
+            <a id="LL" accesskey="L" name="L" title="左側快捷選單" tabindex="0">:::</a>
+            <a class="closeAside full_aside_close"></a>
+            <ul>
+                 
+<li>
+    <strong class="as_title">加油站價格</strong>
+    <ul>
+        <li><a href="/oil111/Gasoline/NationwideAvg" title="移至全國汽柴油均價">全國汽柴油均價</a></li>
+        <li><a href="/oil111/Gasoline/CountyCityAvg" title="移至各縣市汽柴油均價">各縣市汽柴油均價</a></li>
+        <li><a href="/oil111/Gasoline/OffshoreMountainIndigenousAvg" title="移至離島/山地鄉鎮市區汽柴油均價">離島/山地鄉鎮市區汽柴油均價</a></li>
+        <li><a href="/oil111/Gasoline/OilSupplierWeekAvg" title="移至供油商油品週均價">供油商油品週均價</a></li>
+        <li><a href="/oil111/Gasoline/FishingBoatFuelMonthAvg" title="移至漁船用油月均價">漁船用油月均價</a></li>
+        <li><a href="/oil111/Gasoline/LPGCMonthAvg" title="移至車用液化石油氣月均價">車用液化石油氣月均價</a></li>
+        <li><a href="/oil111/Gasoline/TradePrice" title="移至汽柴油批售價">汽柴油批售價</a></li>
+        <li><a href="/oil111/Gasoline/RetailPrice" title="移至汽柴油參考零售價">汽柴油參考零售價</a></li>
+    </ul>
+</li>
+                <li>
+                    <hr>
+                    <strong class="as_title">相關連結</strong>
+                    <ul>
+                        <li><a href="/oil111/CrudeOil/Price" title="移至國際原油價格">國際原油價格</a></li>
+                        <li><a href="/oil111/More/News" title="移至油品相關新聞">油品相關新聞</a></li>
+                        <li><a href="https://www.cpc.com.tw/cl.aspx?n=60" title="在新視窗開啟中油公司油氣價格調整機制網頁" target="_blank" rel="noreferrer noopener">中油公司油氣價格調整機制</a></li>
+                    </ul>
+                </li>
+                <li class="show_lg">
+                    <a class="closeAside"><i class="material-icons-outlined cont_30 maincolor">west</i></a>
+                </li>
+            </ul>
+        </aside>
+        <div>
+            <a id="MC" accesskey="C" name="C" title="主要內容區塊" tabindex="0">:::</a>
+            <div class="fixed_rightTop">
+                <button id="downloadcsv" class="main_btn outline btn_auto" aria-label="點擊下載CSV">
+                    <i class="material-icons middle regulate mr-1" aria-hidden="true">download</i>
+                    下載CSV
+                </button>
+            </div>
+
+            <h3 id="list_item2" class="cont_18">圖表資料設定 (此區設定調整後會自動改變下方內容)</h3>
+            <div class="chart_info_setting">
+                <ul class="row row-cols-1 row-cols-md-2">
+                    <li id="unit-day" class="col pr_xl_5 range">
+                        <span><label for="startdayInput">查詢期間：</label></span>
+                        <div>
+                            <div class="row row-cols-1 row-cols-sm-2 date_wrapper">
+                                <div class="col mb-4 mb-sm-0">
+                                    <div class="date_box">
+                                        <div class="input-group date form_date" data-date=""
+                                            data-date-format="yyyy/mm/dd" id="startday">
+                                            <input class="form-control" size="16" type="text" value=""
+                                                   placeholder="請選擇開始日期" id="startdayInput" title="請選擇開始日期 (調整後會自動改變下方內容)">
+                                            <span class="closeX input-group-addon">
+                                                <span class="glyphicon-remove"></span>
+                                                <i class="material-icons">clear</i>
+                                            </span>
+                                            <span class="calendar input-group-addon">
+                                                <span class="glyphicon-calendar"></span>
+                                                <i class="material-icons">date_range</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="date_box">
+                                        <div class="input-group date form_date" data-date=""
+                                            data-date-format="yyyy/mm/dd" id="endday">
+                                            <input class="form-control" size="16" type="text" value=""
+                                                   placeholder="請選擇結束日期" id="enddayInput" title="請選擇結束日期 (調整後會自動改變下方內容)">
+                                            <span class="closeX input-group-addon">
+                                                <span class="glyphicon-remove"></span>
+                                                <i class="material-icons">clear</i>
+                                            </span>
+                                            <span class="calendar input-group-addon">
+                                                <span class="glyphicon-calendar"></span>
+                                                <i class="material-icons">date_range</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="date_dash">~</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <h3 id="list_item3" class="cont_18">資料說明</h3>
+            <div class="chart_info_instr">
+                <ul class="row row-cols-1 row-cols-sm-2">
+                    <li class="col">
+                        資料期間：<span id="datarange"></span>
+                    </li>
+                    <li class="col">
+                        資料單位：元/公升
+                    </li>
+                </ul>
+            </div>
+
+            <h3 id="list_item4" class="cont_18">數據資料表</h3>
+            <div class="table_fixed_first style_Adv all_col_S" id="datatable">
+                <div class="report_table fixed">
+                    <table class="detail" cellspacing="0" rules="none">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table_wrapper">
+                    <div class="report_table">
+                        <table class="detail" cellspacing="0" rules="none">
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="list_item5" class="comment_box">
+                <h3 class="mb-3 cont_18">備註</h3>
+                <ol>
+                    <li>本網頁登載資料如有誤植，請以台灣中油公司及台塑石化公司公布資料為準。</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- floating menu -->
+<div id="scrollWrapper" class="list-group" aria-hidden="true">
+    <a class="list-group-item list-group-item-action" href="#list_item1" title="跳轉至圖表資料設定">圖表資料設定</a>
+    <a class="list-group-item list-group-item-action" href="#list_item3" title="跳轉至資料說明">資料說明</a>
+    <a class="list-group-item list-group-item-action" href="#list_item4" title="跳轉至數據資料表">數據資料表</a>
+    <a class="list-group-item list-group-item-action" href="#list_item5" title="跳轉至備註">備註</a>
+    <a class="list_group_close enter_watch" title="隱藏快速定位選單" tabindex="0">〉 隱藏</a><a class="list_group_open enter_watch" title="開啟快速定位選單" tabindex="0"></a>
+</div>
+
+<div id="messageContentDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" class="modal fade w1000 messageContentDialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered dialog_body" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="dialog_main p-2">
+                    <section class="">
+                        <ul class="news_list">
+                            <li>
+                                <strong id="message_list" class="title">小提示</strong>
+                                <p id="messagecontent"></p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <a class="close_btn enter_watch" id="closemessage" tabindex="0" title="關閉通知視窗">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="announcementContentDialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" class="modal fade messageContentDialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered dialog_body" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="dialog_main p-2">
+                    <section class="">
+                        <ul class="news_list">
+                            <li>
+                                <strong class="title" id="announcementtitle">公告標題</strong>
+                                <p id="announcementcontent"></p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <a class="close_btn enter_watch" id="closeannouncement" role="button" tabindex="0" title="關閉公告視窗">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+    </main>
+    <footer>
+        <div class="footer_main none_md">
+            <a id="FB" accesskey="H" name="H" title="底部網站資訊" tabindex="0">:::</a>
+            <div class="container" aria-hidden="true" tabindex="-1">
+                <div class="web_map row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6">
+    <div class="col">
+        <strong class="title">國際原油價格</strong>
+        <ul>
+            <li><a href="/oil111/CrudeOil/Price" title="移至國際原油價格">國際原油價格</a></li>
+            <li><a href="/oil111/CrudeOil/Compare" title="移至國際原油同期價格比較">國際原油同期價格比較</a></li>
+            <li><a href="/oil111/CrudeOil/RangeCompare" title="移至國際原油同期區間比較">國際原油同期區間比較</a></li>
+            <li><a href="/oil111/CrudeOil/CIF" title="移至進口原油CIF均價">進口原油CIF均價</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <strong class="title">加油站價格</strong>
+        <ul>
+            <li><a href="/oil111/Gasoline/NationwideAvg" title="移至全國汽柴油均價">全國汽柴油均價</a></li>
+            <li><a href="/oil111/Gasoline/CountyCityAvg" title="移至各縣市汽柴油均價">各縣市汽柴油均價</a></li>
+            <li><a href="/oil111/Gasoline/OffshoreMountainIndigenousAvg" title="移至離島/山地鄉鎮市區汽柴油均價">離島/山地鄉鎮市區汽柴油均價</a></li>
+            <li><a href="/oil111/Gasoline/OilSupplierWeekAvg" title="移至供油商油品週均價">供油商油品週均價</a></li>
+            <li><a href="/oil111/Gasoline/FishingBoatFuelMonthAvg" title="移至漁船用油月均價">漁船用油月均價</a></li>
+            <li><a href="/oil111/Gasoline/LPGCMonthAvg" title="移至車用液化石油氣月均價">車用液化石油氣月均價</a></li>
+            <li><a href="/oil111/Gasoline/TradePrice" title="移至汽柴油批售價">汽柴油批售價</a></li>
+            <li><a href="/oil111/Gasoline/RetailPrice" title="移至汽柴油參考零售價">汽柴油參考零售價</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <strong class="title">家用桶裝瓦斯價格</strong>
+        <ul>
+            <li><a href="/oil111/LPG/GISAvg" title="移至鄉鎮市區家用桶裝瓦斯均價">鄉鎮市區家用桶裝瓦斯均價</a></li>
+            <li><a href="/oil111/LPG/NationwideAvg" title="移至全國家用桶裝瓦斯均價">全國家用桶裝瓦斯均價</a></li>
+            <li><a href="/oil111/LPG/CountyCityAvg" title="移至各縣市家用桶裝瓦斯均價">各縣市家用桶裝瓦斯均價</a></li>
+            <li><a href="/oil111/LPG/OffshoreMountainIndigenousAvg" title="移至離島/山地鄉鎮市區家用桶裝瓦斯均價">離島/山地鄉鎮市區家用桶裝瓦斯均價</a></li>
+            <li><a href="/oil111/LPG/TradePrice" title="移至液化石油氣批售價">液化石油氣批售價</a></li>
+            <li><a href="/oil111/LPG/ContractPrice" title="移至液化石油氣國際CP價格">液化石油氣國際CP價格</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <strong class="title">油品價格綜合比較</strong>
+        <ul>
+            <li><a href="/oil111/MixCompare/CrudeOilandGasoline" title="移至國際國內油品價格">國際國內油品價格</a></li>
+            <li><a href="/oil111/MixCompare/GasolineandLSFO" title="移至國內主要油品價格">國內主要油品價格</a></li>
+            <li><a href="/oil111/MixCompare/GasolineandCIF" title="移至進口原油CIF價格與國內主要油品價格">進口原油CIF價格與國內主要油品價格</a></li>
+            <li><a href="/oil111/MixCompare/AsianCountries" title="移至鄰近國家油品價格">鄰近國家油品價格</a></li>
+            <li><a href="/oil111/MixCompare/CompareTable" title="移至油品均價比較表">油品均價比較表</a></li>
+            <li><a href="/oil111/DataDashboard/DataDashboard" title="移至數據儀表板">數據儀表板</a></li>
+        </ul>
+    </div>
+    <div class="col has_title">
+        <strong class="title">油品經銷體系</strong>
+        <ul>
+            <li class="sub_title">加油站</li>
+            <li><a href="/oil111/Dealer/GasStations" title="移至加油站位置">加油站位置</a></li>
+            <li><a href="/oil111/Dealer/MarketDetail" title="移至加油站品牌明細">加油站品牌明細</a></li>
+            <li><a href="/oil111/Dealer/MarketRatio" title="移至加油站銷售品牌站數比">加油站銷售品牌站數比</a></li>
+            <li><a href="/oil111/Dealer/BusinessEntity" title="移至加油站經營實體統計">加油站經營實體統計</a></li>
+            <li><a href="/oil111/Dealer/LPGCStations" title="移至加氣站位置">加氣站位置</a></li>
+            <li class="sub_title">桶裝瓦斯</li>
+            <li><a href="/oil111/Dealer/LPGDealer" title="移至液化石油氣經銷商">液化石油氣經銷商</a></li>
+            <li><a href="/oil111/Dealer/LPGSubPackaging" title="移至液化石油氣分裝場">液化石油氣分裝場</a></li>
+            <li><a href="/oil111/Dealer/LPGAssociation" title="移至全國液化氣體燃料公會">全國液化氣體燃料公會</a></li>
+        </ul>
+    </div>
+    <div class="col has_title">
+        <strong class="title">更多資訊</strong>
+        <ul>
+            <li><a href="/oil111/More/News" title="移至油品相關新聞">油品相關新聞</a></li>
+            <li><a href="/oil111/More/Links" title="移至油品相關網站">油品相關網站</a></li>
+            <li><a href="https://www.cpc.com.tw/cl.aspx?n=60" title="在新視窗開啟中油公司油氣價格調整機制網頁" target="_blank" rel="noreferrer noopener">中油公司油氣價格調整機制</a></li>
+            <li class="sub_title">行動服務</li>
+            <li><a href="/oil111/More/Applications" title="移至桶裝瓦斯價格APP下載頁">桶裝瓦斯價格APP</a></li>
+            <li class="sub_title">下載專區</li>
+            <li><a href="/oil111/More/Download" title="前往下載家用液化石油氣供氣定型化契約範本">家用液化石油氣供氣定型化契約範本</a></li>
+            <li><a href="/oil111/More/Download" title="前往下載偏遠與原住民族地區家用桶裝瓦斯差價補助每桶補助費用文件">偏遠與原住民族地區家用桶裝瓦斯差價補助每桶補助費用</a></li>
+        </ul>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="footer_sub px-3 px-sm-0">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <div class="col col-md-4 app_dl_box mb-4 mb-md-0">
+                        <strong class="title cont_18">下載桶裝瓦斯價格APP</strong>
+                        <a href="https://apps.apple.com/tw/app/%E6%A1%B6%E8%A3%9D%E7%93%A6%E6%96%AF%E5%83%B9%E6%A0%BC/id1361459979" target="_blank" rel="noreferrer noopener" class="mr-3">
+                            <img src="/oil111/images/app_dl_ios_bw.svg" alt="下載ios版APP(另開新視窗)">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.userstar.oil.lpg" target="_blank" rel="noreferrer noopener">
+                            <img src="/oil111/images/app_dl_google_bw.svg" alt="下載android版APP(另開新視窗)">
+                        </a>
+                    </div>
+                    <div class="col col-md-8 text-md-right cont_14">
+                        <a href="/oil111/opendataannouncement" title="移至政府網站資料開放宣告">政府網站資料開放宣告</a>　|　<a href="/oil111/privacypolicy" title="移至隱私權政策">隱私權政策</a><br />
+                        本網站支援Edge、Firefox及Chrome，最佳瀏覽解析度為1920x1080以上<br />
+                        <a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20250919161333" title="無障礙網站">
+                            <img src="/oil111/images/a11y.png" border="0" width="88" height="31" class="mt-1" alt="通過A無障礙網頁檢測" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a class="back_to_top enter_watch" role="button" tabindex="0"><i class="material-icons">keyboard_arrow_up</i></a>
+
+    <div class="web_map_mobile none" id="webMap" aria-label="主要功能選單">
+        <a class="close_web_map" id="closeWebMap" role="button">
+            <i class="material-icons">close</i>
+        </a>
+        <a href="/oil111/Home/IndexEN" class="rwd_lan_lg mr-3">English</a>
+        <a href="/oil111/Sitemap" class="rwd_sub_btn mr-3">網站導覽</a>
+        <a href="/oil111/Feedback" class="rwd_sub_btn">意見信箱</a>
+        <hr>
+        <div class="web_map row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6">
+    <div class="col">
+        <strong class="title">國際原油價格</strong>
+        <ul>
+            <li><a href="/oil111/CrudeOil/Price" title="移至國際原油價格">國際原油價格</a></li>
+            <li><a href="/oil111/CrudeOil/Compare" title="移至國際原油同期價格比較">國際原油同期價格比較</a></li>
+            <li><a href="/oil111/CrudeOil/RangeCompare" title="移至國際原油同期區間比較">國際原油同期區間比較</a></li>
+            <li><a href="/oil111/CrudeOil/CIF" title="移至進口原油CIF均價">進口原油CIF均價</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <strong class="title">加油站價格</strong>
+        <ul>
+            <li><a href="/oil111/Gasoline/NationwideAvg" title="移至全國汽柴油均價">全國汽柴油均價</a></li>
+            <li><a href="/oil111/Gasoline/CountyCityAvg" title="移至各縣市汽柴油均價">各縣市汽柴油均價</a></li>
+            <li><a href="/oil111/Gasoline/OffshoreMountainIndigenousAvg" title="移至離島/山地鄉鎮市區汽柴油均價">離島/山地鄉鎮市區汽柴油均價</a></li>
+            <li><a href="/oil111/Gasoline/OilSupplierWeekAvg" title="移至供油商油品週均價">供油商油品週均價</a></li>
+            <li><a href="/oil111/Gasoline/FishingBoatFuelMonthAvg" title="移至漁船用油月均價">漁船用油月均價</a></li>
+            <li><a href="/oil111/Gasoline/LPGCMonthAvg" title="移至車用液化石油氣月均價">車用液化石油氣月均價</a></li>
+            <li><a href="/oil111/Gasoline/TradePrice" title="移至汽柴油批售價">汽柴油批售價</a></li>
+            <li><a href="/oil111/Gasoline/RetailPrice" title="移至汽柴油參考零售價">汽柴油參考零售價</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <strong class="title">家用桶裝瓦斯價格</strong>
+        <ul>
+            <li><a href="/oil111/LPG/GISAvg" title="移至鄉鎮市區家用桶裝瓦斯均價">鄉鎮市區家用桶裝瓦斯均價</a></li>
+            <li><a href="/oil111/LPG/NationwideAvg" title="移至全國家用桶裝瓦斯均價">全國家用桶裝瓦斯均價</a></li>
+            <li><a href="/oil111/LPG/CountyCityAvg" title="移至各縣市家用桶裝瓦斯均價">各縣市家用桶裝瓦斯均價</a></li>
+            <li><a href="/oil111/LPG/OffshoreMountainIndigenousAvg" title="移至離島/山地鄉鎮市區家用桶裝瓦斯均價">離島/山地鄉鎮市區家用桶裝瓦斯均價</a></li>
+            <li><a href="/oil111/LPG/TradePrice" title="移至液化石油氣批售價">液化石油氣批售價</a></li>
+            <li><a href="/oil111/LPG/ContractPrice" title="移至液化石油氣國際CP價格">液化石油氣國際CP價格</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        <strong class="title">油品價格綜合比較</strong>
+        <ul>
+            <li><a href="/oil111/MixCompare/CrudeOilandGasoline" title="移至國際國內油品價格">國際國內油品價格</a></li>
+            <li><a href="/oil111/MixCompare/GasolineandLSFO" title="移至國內主要油品價格">國內主要油品價格</a></li>
+            <li><a href="/oil111/MixCompare/GasolineandCIF" title="移至進口原油CIF價格與國內主要油品價格">進口原油CIF價格與國內主要油品價格</a></li>
+            <li><a href="/oil111/MixCompare/AsianCountries" title="移至鄰近國家油品價格">鄰近國家油品價格</a></li>
+            <li><a href="/oil111/MixCompare/CompareTable" title="移至油品均價比較表">油品均價比較表</a></li>
+            <li><a href="/oil111/DataDashboard/DataDashboard" title="移至數據儀表板">數據儀表板</a></li>
+        </ul>
+    </div>
+    <div class="col has_title">
+        <strong class="title">油品經銷體系</strong>
+        <ul>
+            <li class="sub_title">加油站</li>
+            <li><a href="/oil111/Dealer/GasStations" title="移至加油站位置">加油站位置</a></li>
+            <li><a href="/oil111/Dealer/MarketDetail" title="移至加油站品牌明細">加油站品牌明細</a></li>
+            <li><a href="/oil111/Dealer/MarketRatio" title="移至加油站銷售品牌站數比">加油站銷售品牌站數比</a></li>
+            <li><a href="/oil111/Dealer/BusinessEntity" title="移至加油站經營實體統計">加油站經營實體統計</a></li>
+            <li><a href="/oil111/Dealer/LPGCStations" title="移至加氣站位置">加氣站位置</a></li>
+            <li class="sub_title">桶裝瓦斯</li>
+            <li><a href="/oil111/Dealer/LPGDealer" title="移至液化石油氣經銷商">液化石油氣經銷商</a></li>
+            <li><a href="/oil111/Dealer/LPGSubPackaging" title="移至液化石油氣分裝場">液化石油氣分裝場</a></li>
+            <li><a href="/oil111/Dealer/LPGAssociation" title="移至全國液化氣體燃料公會">全國液化氣體燃料公會</a></li>
+        </ul>
+    </div>
+    <div class="col has_title">
+        <strong class="title">更多資訊</strong>
+        <ul>
+            <li><a href="/oil111/More/News" title="移至油品相關新聞">油品相關新聞</a></li>
+            <li><a href="/oil111/More/Links" title="移至油品相關網站">油品相關網站</a></li>
+            <li><a href="https://www.cpc.com.tw/cl.aspx?n=60" title="在新視窗開啟中油公司油氣價格調整機制網頁" target="_blank" rel="noreferrer noopener">中油公司油氣價格調整機制</a></li>
+            <li class="sub_title">行動服務</li>
+            <li><a href="/oil111/More/Applications" title="移至桶裝瓦斯價格APP下載頁">桶裝瓦斯價格APP</a></li>
+            <li class="sub_title">下載專區</li>
+            <li><a href="/oil111/More/Download" title="前往下載家用液化石油氣供氣定型化契約範本">家用液化石油氣供氣定型化契約範本</a></li>
+            <li><a href="/oil111/More/Download" title="前往下載偏遠與原住民族地區家用桶裝瓦斯差價補助每桶補助費用文件">偏遠與原住民族地區家用桶裝瓦斯差價補助每桶補助費用</a></li>
+        </ul>
+    </div>
+</div>
+        <div class="py-4 icon-20empty"></div>
+    </div>
+</body>
+<script src="/oil111/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/oil111/lib/bootstrap/dist/js/bootstrap.bundle.min.js?v=rAnWnVnzChxAAi8NS-Ilr1mE7Sj-do-X_DqyilNsznM"></script>
+<script src="/oil111/js/front/layout.js?v=tA7DvQ53NAaJHY4mBWB3bNuBehE0prpfS1cDLIGivLU"></script>
+<!-- 日期選擇器 -->
+<script type="text/javascript" src="/oil111/js/bootstrap-datetimepicker.min.js?v=ScBjIuFxanP3sERFXrzi3rQtyv4E8ndbw2tQAO0shgk"></script>
+<script type="text/javascript" src="/oil111/js/bootstrap-datetimepicker.zh-TW.js?v=gRFzeo81mz3QZX3RKwPgwqPe8MRoyrOmiEju08zEyJc"></script>
+<script src="/oil111/js/static/layout_front.js?v=z4lmXxDBaYgzDh1ekeurSnbqxlz-d1pLyzO1ivWNVuA"></script>
+<script src="/oil111/js/popper.min.js?v=A_XDZwqERcCvdaG5NL4Xb2wc3jOfvnaxBizFHlkLypg"></script>
+
+    <script src="/oil111/js/owlcarousel/owl.carousel.min.js?v=TgeBvdLLtdsE2jteBZ7so04yX6u4k77nRXtbq_W3wCk"></script>
+    <script src="/oil111/js/front/gasoline/retailprice.js?v=cBwvMmpcIXjT-gE3L7j0OWOpBlutMaRFZ0F8MRGldyA"></script>
+
+
+</html>

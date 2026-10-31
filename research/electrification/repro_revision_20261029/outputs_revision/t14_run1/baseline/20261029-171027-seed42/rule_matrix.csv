@@ -1,0 +1,19 @@
+rule,demand_class,berth_type,state,condition
+pi_S,icev,ordinary,admitted,
+pi_S,icev,charging,not_admitted,
+pi_S,ev_park,ordinary,admitted,
+pi_S,ev_park,charging,not_admitted,
+pi_S,ev_charge,ordinary,not_admitted,
+pi_S,ev_charge,charging,admitted,
+pi_F,icev,ordinary,admitted,
+pi_F,icev,charging,admitted,
+pi_F,ev_park,ordinary,admitted,
+pi_F,ev_park,charging,admitted,
+pi_F,ev_charge,ordinary,not_admitted,
+pi_F,ev_charge,charging,admitted,
+pi_theta,icev,ordinary,admitted,
+pi_theta,icev,charging,conditional,"only the 60% open charging berths, never the reserved ones"
+pi_theta,ev_park,ordinary,admitted,
+pi_theta,ev_park,charging,conditional,"only the 60% open charging berths, never the reserved ones"
+pi_theta,ev_charge,ordinary,not_admitted,
+pi_theta,ev_charge,charging,admitted,reserved berths always; open berths if free

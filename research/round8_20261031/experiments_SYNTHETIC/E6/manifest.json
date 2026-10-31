@@ -1,0 +1,22 @@
+{
+  "schema_version": "r8-run-manifest/v1",
+  "family": "E6",
+  "status": "ok",
+  "generated_utc": "2026-10-31T11:00:35.605955+00:00",
+  "output_version": "r8-engine-v1-2026-10-31",
+  "command": "run_phase1.py --mode synthetic --seed 20261031",
+  "seed": 20261031,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "energy_E6.csv",
+      "sha256": "a7deb88f433444257b3f0202dac072934fe7197bef0c838d9961a9676ff9d961"
+    }
+  ],
+  "notes": [
+    "能量服务条目含分子/分母/适用条件（energy_ledger.ledger_rows 口径）",
+    "不假设离场后免费补能；被拒请求计入缺口口径"
+  ]
+}

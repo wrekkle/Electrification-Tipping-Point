@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "generated_for": "experiments/prei",
+  "scope": "Parameter provenance for the two fixed source cases. Values were read from the retained source files through research/electrification/matlab_audit_20261029/audit_numeric.py:parameters(); this table records where each value comes from and whether it is measured, coded, or assumed.",
+  "source_files": {
+    "final_tvr": "research/electrification/matlab_audit_20261029/originals/final_tvr.m",
+    "final_tvr_v2_fluc_re": "research/electrification/matlab_audit_20261029/originals/final_tvr_v2_fluc_re.m",
+    "audit_parameters": "research/electrification/matlab_audit_20261029/audit_numeric.py:parameters()",
+    "source_hashes": "experiments/prei/fixtures/deterministic_24h/source_hashes.json"
+  },
+  "real_data_status": "No raw 20-lot arrival/share counts are present in this repository. The 0.09 and 42 values are source-code claims about a real fit; they are not independently verified real data here and are typed source_code, not real.",
+  "parameters": [
+    {"case": "final_tvr", "name": "n_spaces", "value": 40, "unit": "parking spaces", "source_type": "source_code", "origin": "final_tvr.m:7", "note": "N=40 active line; larger commented lines are not used."},
+    {"case": "final_tvr", "name": "hourly_arrivals", "value": [40,40,40,40,40,40,40,40,40,40,40,47,40,40,44,48,48,40,40,40,41,40,40,40], "unit": "vehicles/hour", "source_type": "source_code", "origin": "final_tvr.m:8", "note": "Illustrative received series, not a measured file."},
+    {"case": "final_tvr", "name": "installation_cost", "value": 70100, "unit": "RMB/pile", "source_type": "source_code", "origin": "final_tvr.m:10 (40000+30000+100)", "note": "chargepile+converting+linefee."},
+    {"case": "final_tvr", "name": "amortization_years", "value": 8, "unit": "years", "source_type": "source_code", "origin": "final_tvr.m:43 denominator /365/8/24", "note": "Retained, not harmonised with v2's 5 years."},
+    {"case": "final_tvr", "name": "partial_shared_fraction", "value": 0, "unit": "dimensionless", "source_type": "source_code", "origin": "final_tvr.m:17 h1=0", "note": "Strict partition in the active run; sharing branch exists but is inactive."},
+    {"case": "final_tvr", "name": "full_install_open_to_all", "value": true, "unit": "boolean", "source_type": "source_code", "origin": "final_tvr.m:78-86", "note": "At r=1 the script rejects only total overflow above N and splits it by u."},
+    {"case": "final_tvr", "name": "ev_fuel_unit_rate", "value": 0.2, "unit": "RMB per rejected EV per day", "source_type": "source_code", "origin": "final_tvr.m:15 cgev", "note": "Unit interpretation (per rejected vehicle) is an assumption; value is coded."},
+    {"case": "final_tvr", "name": "ice_fuel_unit_rate", "value": 0.8, "unit": "RMB per rejected ICEV per day", "source_type": "source_code", "origin": "final_tvr.m:15 cgicv", "note": "Unit interpretation is an assumption; value is coded."},
+    {"case": "final_tvr", "name": "ev_time_unit_rate", "value": 4.672, "unit": "RMB per rejected EV per day", "source_type": "source_code", "origin": "final_tvr.m:15 ctev", "note": "Unit interpretation is an assumption; value is coded."},
+    {"case": "final_tvr", "name": "ice_time_unit_rate", "value": 6.022, "unit": "RMB per rejected ICEV per day", "source_type": "source_code", "origin": "final_tvr.m:15 cticv", "note": "Unit interpretation is an assumption; value is coded."},
+    {"case": "final_tvr", "name": "ev_complaint_unit_rate", "value": 1.65, "unit": "RMB per rejected EV per day", "source_type": "source_code", "origin": "final_tvr.m:15 ccev*ccevp=3.3*0.5", "note": "Derived product; the script applies it inside the rejection cost."},
+    {"case": "final_tvr", "name": "ice_complaint_unit_rate", "value": 1.65, "unit": "RMB per rejected ICEV per day", "source_type": "source_code", "origin": "final_tvr.m:15 ccicv*ccicvp=3.3*0.5", "note": "Derived product."},
+    {"case": "final_tvr", "name": "legacy_full_install_ev_complaint_omission", "value": true, "unit": "boolean", "source_type": "source_code", "origin": "final_tvr.m:84-85", "note": "The r=1 branch uses cgev+ctev (no complaint); reproduced only under legacy_reference/diagnostic_only."},
+    {"case": "final_tvr_v2_fluc_re", "name": "n_spaces", "value": 10786, "unit": "parking spaces", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:5", "note": "Active line."},
+    {"case": "final_tvr_v2_fluc_re", "name": "hourly_arrivals_mean", "value": [10786,10786,10786,10786,10786,10786,10786,10786,10786,10786,10786,12673.55,10786,10786,11864.6,12943.2,12943.2,10786,10786,10786,11055.65,10786,10786,10786], "unit": "vehicles/hour (mean)", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:7", "note": "NB means; realised counts are sampled once and stored in the fixture."},
+    {"case": "final_tvr_v2_fluc_re", "name": "power", "value": 50, "unit": "kW", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:16", "note": "Used only through the installation formula."},
+    {"case": "final_tvr_v2_fluc_re", "name": "installation_cost", "value": 60000, "unit": "RMB/pile", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:16-17 power*1000*1.2", "note": "The 1.2 multiplier's physical meaning is an assumption; the arithmetic is coded."},
+    {"case": "final_tvr_v2_fluc_re", "name": "amortization_years", "value": 5, "unit": "years", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:182 denominator /365/5/24", "note": "Retained, not harmonised with v1's 8 years."},
+    {"case": "final_tvr_v2_fluc_re", "name": "nb_variance_to_mean", "value": 42, "unit": "dimensionless ratio", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:31-37 od_arr_min=42", "note": "Variance/mean ratio, not an absolute variance. NB shape mu^2/(var-mu) and p=shape/(shape+mu), as in the source."},
+    {"case": "final_tvr_v2_fluc_re", "name": "beta_relative_dispersion", "value": 0.09, "unit": "dimensionless rho", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:22-28", "note": "rho=Var[u]/(u(1-u)); absolute variance at target e is rho*(1-e)*e. This is NOT an absolute Beta variance of .09."},
+    {"case": "final_tvr_v2_fluc_re", "name": "vot_lognormal_mu", "value": 2.9852, "unit": "natural-log RMB/hour location", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:39", "note": "The RMB/hour unit is inferred from the 6.81/60 conversion and is an assumption."},
+    {"case": "final_tvr_v2_fluc_re", "name": "vot_lognormal_sigma", "value": 0.8477, "unit": "natural-log scale", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:40", "note": "Lognormal shape on the log scale."},
+    {"case": "final_tvr_v2_fluc_re", "name": "complaint_logit_alpha", "value": 6.938, "unit": "dimensionless", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:42", "note": "p=1/(1+exp(alpha+beta*ln(vot)))."},
+    {"case": "final_tvr_v2_fluc_re", "name": "complaint_logit_beta", "value": -2.324, "unit": "dimensionless", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:43", "note": "Same logit."},
+    {"case": "final_tvr_v2_fluc_re", "name": "vot_draw_count", "value": 50, "unit": "draws", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:45,47-50", "note": "Permuted stratified quantiles ((i-.5)/50), one set reused across scenarios."},
+    {"case": "final_tvr_v2_fluc_re", "name": "ev_fuel_unit_rate", "value": 0.765, "unit": "RMB per rejected EV per day", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:83-84 cgev+cfev", "note": "0.085+0.68."},
+    {"case": "final_tvr_v2_fluc_re", "name": "ice_fuel_unit_rate", "value": 2.96, "unit": "RMB per rejected ICEV per day", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:85-86 cgicv+cficv", "note": "0.24+2.72."},
+    {"case": "final_tvr_v2_fluc_re", "name": "complaint_cost_scale", "value": 1.5, "unit": "RMB per complaint", "source_type": "source_code", "origin": "final_tvr_v2_fluc_re.m:84,86 ccev/ccicv", "note": "Multiplied by the logit probability draw."},
+    {"case": "final_tvr_v2_fluc_re", "name": "time_conversion_minutes", "value": 6.81, "unit": "minutes", "source_type": "assumption", "origin": "final_tvr_v2_fluc_re.m:67,70", "note": "The code divides by 60; the minute interpretation is inferred, not stated in the source."},
+    {"case": "final_tvr_v2_fluc_re", "name": "sampling_seed", "value": 20261029, "unit": "integer", "source_type": "assumption", "origin": "experiments/prei/sample_fixtures.py:PY_SEED", "note": "Python-only reproducibility seed. It is not a MATLAB/Octave common random stream."},
+    {"case": "final_tvr_v2_fluc_re", "name": "sampled_days", "value": 4, "unit": "scenario days", "source_type": "assumption", "origin": "experiments/prei/sample_fixtures.py:V2_DAYS", "note": "Deliberately small first stage; 4 days x 21 EV-share targets. Finite-sample argmin is not an acceptance target."},
+    {"case": "final_tvr_v2_fluc_re", "name": "beta_endpoint_clip", "value": 0.0001, "unit": "share", "source_type": "assumption", "origin": "experiments/prei/sample_fixtures.py:v2_fixture", "note": "Mean u is clipped to [1e-4,1-1e-4] so endpoints stay non-degenerate, following audit_numeric.beta_params."}
+  ],
+  "excluded_legacy_defaults": {
+    "event_cost_scale_36": "Not inherited. No 36 multiplier appears in the PREI reference.",
+    "absolute_beta_variance_0.09": "Not inherited. 0.09 is applied as relative dispersion rho, never as absolute variance.",
+    "python_old_N_100": "Not inherited. N comes from each source case (40 and 10786).",
+    "independent_logit": "Not inherited. The v2 complaint probability uses the received logit on the VOT draw."
+  }
+}

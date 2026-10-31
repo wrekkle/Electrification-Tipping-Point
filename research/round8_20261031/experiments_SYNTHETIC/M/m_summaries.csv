@@ -1,0 +1,6 @@
+comparison,mode,definition,point,low,high,n_pairs,unit,pairs_computable,pairs_total,estimate,note,pair
+M1,confirmatory,留出独立流上 B_shared 与 A_dedicated 的仿真最小可行 k 之差,0.0,0.0,0.0,4,independent stream (site-day),4,4,mean of paired differences (bootstrap percentile CI),重采样单位=独立流；bootstrap 次数不是样本量,
+M2,confirmatory,离场能量服务率（含被拒，delivered/demand）的流内配对差,0.06351626016260163,0.0,0.1488821138211382,4,site-day,,,mean paired difference (bootstrap percentile CI),重采样单位=场站-日；同流同 k 配对；不显著不等于无效,A vs B0_FCFS
+M2,confirmatory,离场能量服务率（含被拒，delivered/demand）的流内配对差,0.0,0.0,0.0,4,site-day,,,mean paired difference (bootstrap percentile CI),重采样单位=场站-日；同流同 k 配对；不显著不等于无效,A vs B1_QUOTA
+M2,confirmatory,离场能量服务率（含被拒，delivered/demand）的流内配对差,0.0,0.0,0.0,4,site-day,,,mean paired difference (bootstrap percentile CI),重采样单位=场站-日；同流同 k 配对；不显著不等于无效,A vs B2_LITERATURE
+M3,confirmatory,加入场站馈线能量约束后的离线最小 k 变化（受约束 − 不受约束）,0.0,0.0,0.0,2,site-day,,,mean paired difference (bootstrap percentile CI),离线声明模型内比较，不是物理下界,

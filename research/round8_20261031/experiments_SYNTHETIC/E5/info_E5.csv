@@ -1,0 +1,9 @@
+family,split,site_id,day_key,stream_id,stream_hash,policy,k_min_feasible,confirmed_minimal_sim,undecidable_ks,delta_k_vs_A,unit,mode
+E5,test,S1,2024-03-04,S1:2024-03-04#0,e4e94d8674f2c30cd0bd8f5d912af0404824b64ae23e18fcaf1c0c38c0a97287,A,2,True,[],0,independent stream (site-day),exploratory
+E5,test,S1,2024-03-04,S1:2024-03-04#0,e4e94d8674f2c30cd0bd8f5d912af0404824b64ae23e18fcaf1c0c38c0a97287,D,2,True,[],0,independent stream (site-day),exploratory
+E5,test,S2,2024-03-04,S2:2024-03-04#0,3d2e2dbc85972700f21f9fcb1813a5f09666a0a5a7c97ac59096fa6e1530a4c4,A,2,True,[],0,independent stream (site-day),exploratory
+E5,test,S2,2024-03-04,S2:2024-03-04#0,3d2e2dbc85972700f21f9fcb1813a5f09666a0a5a7c97ac59096fa6e1530a4c4,D,2,True,[],0,independent stream (site-day),exploratory
+E5,test,S3,2024-03-04,S3:2024-03-04#0,446ea05c9c0f26afeaaef077afa107aba41a3724bab9b4742a15df77cb935137,A,2,True,[],0,independent stream (site-day),exploratory
+E5,test,S3,2024-03-04,S3:2024-03-04#0,446ea05c9c0f26afeaaef077afa107aba41a3724bab9b4742a15df77cb935137,D,2,True,[],0,independent stream (site-day),exploratory
+E5,test,S3,2024-03-05,S3:2024-03-05#0,78fd3308d83301fa6a87c3a5049a561a713a7aa62b39b3a7dc9cd3db52e96aca,A,2,True,[],0,independent stream (site-day),exploratory
+E5,test,S3,2024-03-05,S3:2024-03-05#0,78fd3308d83301fa6a87c3a5049a561a713a7aa62b39b3a7dc9cd3db52e96aca,D,2,True,[],0,independent stream (site-day),exploratory

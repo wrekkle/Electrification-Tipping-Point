@@ -1,0 +1,82 @@
+{
+  "command": "run_all.py --mode v2 --seed 42 --out outputs_revision/t14b_run2 --no-canonical",
+  "config_sha256": {
+    "baseline.yaml": "fb39c243a5cff3894e6deba74bf523c8e3c8c197535d068551509647e0abf7f2",
+    "modes.yaml": "e89d18a55b04fef3e0a7e770f92f689e7161cfc6b4d23f37ffef2c36f140c107",
+    "sensitivity.yaml": "581f7f5c1dc76eedf7d1c0d6a36155de8c3b770128e8e9cf07d41c28111de534",
+    "v2.yaml": "911b63034359e35f2d8dc60c5a29146283cc6eb663b0f7245175c8f3e718e874"
+  },
+  "files": [
+    {
+      "file": "decomposition.csv",
+      "note": "式 (12) 的路径 A/B 分解与路径依赖",
+      "sha256": "4e65ea2ffefd19e8734eb2e1ea7d12be03bd50cf27f6c3ad3154d765c0c4ea5f"
+    },
+    {
+      "file": "params.json",
+      "note": "运行参数快照：每个叶子带 value 与 source（manuscript/assumption/sensitivity）",
+      "sha256": "7939b3650ffe7c39e600ca8c03e3a96eb46f6fb0dae8249e7e337e3eb31fd838"
+    },
+    {
+      "file": "rule_matrix.csv",
+      "note": "pi_S/pi_F/pi_theta 与三类需求的兼容矩阵（18 行）",
+      "sha256": "cfb2ac9829ca8cdcb78c251b0a411dbb608c369e597a0e464a4a22ade9411e19"
+    },
+    {
+      "file": "v2_best.csv",
+      "note": "各 r x q 的最优 v2 设计",
+      "sha256": "4eb9d3a2c08db42a1582c9473384a6f7e357e183b7db93acf834fcffce3ac098"
+    },
+    {
+      "file": "v2_confidence_sets.csv",
+      "note": "v2 置信集合（block bootstrap + max-t/holm），Table 11",
+      "sha256": "bf00af11a7d42d57bc7859abdd9462d04f76db0ba74e87f6b3fa93e3936b4017"
+    },
+    {
+      "file": "v2_cvar.csv",
+      "note": "v2 CVaR_0.95（tail_samples 与 aux 两条值），Table 11",
+      "sha256": "923015665a9b0dc7d19b902273d1cccb761f729b066d04b26e9c71b231ce9cd0"
+    },
+    {
+      "file": "v2_designs.csv",
+      "note": "事件层全设计评估（规则 x 设备数 x 模式），Table 10/11 的输入",
+      "sha256": "12205ffc0387cdd3aa2226e556f5ccc3758b4b02c56a6c00fea25ad18a69bcda"
+    },
+    {
+      "file": "v2_g_curve.csv",
+      "note": "v2 的 g(r) 与置信区间，Fig. 7",
+      "sha256": "c9b9cc79b85f527c79d231cc12bc95686276c6399b4f9de47bcf5414fbf35866"
+    },
+    {
+      "file": "v2_g_structure.csv",
+      "note": "占优窗口 vs 持续 ETP 后缀，以及规则是否同时改变",
+      "sha256": "223141980d20d8babac9d85a9c5981e9b21c06e9685149ad52431c557a7f7892"
+    },
+    {
+      "file": "v2_q_sensitivity.csv",
+      "note": "q 敏感性（q=0.3/0.9，100 天）对最优规则/模式的影响",
+      "sha256": "f6abb829acfa068c10b1b2c67db8583b469d4ec7b2ca7d96706b3a8714c824ff"
+    },
+    {
+      "file": "v2_regions.csv",
+      "note": "v2 三区标签（full_dominant/partial_dominant/undetermined），Fig. 8/Table 11",
+      "sha256": "f15eff0a9da358779ceb5ac90dcb340ebb18189911ecbc9ad1c2e10ce49ca2fd"
+    },
+    {
+      "file": "v2_service_accounting.csv",
+      "note": "资源-服务台账（Table 10）：可达车位、并发、功率、能量、拒绝率",
+      "sha256": "7fb9c6afc590d892dae9c491c8682493c9da78377f049025a829311aa1e41aa7"
+    },
+    {
+      "file": "v2_timeline_sample.csv",
+      "note": "事件时间轴样本（t_a/t_c/t_d/t_r），对应 v2 稿 Fig. 6",
+      "sha256": "383ef5a38a05bc1a229a9bd9a14d368c7be2f5036efcef3e011d10834a915a3f"
+    }
+  ],
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python_version": "3.12.3",
+  "run_id": "20261029-183057-seed42",
+  "timings": {
+    "v2_seconds": 240.727
+  }
+}

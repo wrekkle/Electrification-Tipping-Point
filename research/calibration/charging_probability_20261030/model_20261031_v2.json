@@ -1,0 +1,260 @@
+{
+  "schema_version": 2,
+  "date": "2026-10-31",
+  "owner": "ev-data (R2-D)",
+  "supersedes": {
+    "file": "model_20261031.json (v1)",
+    "modified": false,
+    "note": "v1 保持只读；本文件只新增/改名识别边界，不改 v1 的 q_use_records 与 q_need_scenarios"
+  },
+  "target_context": "Taipei-style off-street public parking; q_need unidentified.",
+  "selected_default": null,
+  "identification_status": "unidentified",
+  "renamed_identified_quantity": {
+    "field_name": "observed_charging_session_ratio_v1",
+    "previous_names": [
+      "可识别乘积 p_EV·q_need = 0.0364 (report §3.2/§8)",
+      "product_required_mean",
+      "p_ev_q_need_product",
+      "ev.q_need_by_p_ev (implicit product)"
+    ],
+    "deprecated": true,
+    "value": 0.03636583089107938,
+    "status": "usage_proxy",
+    "definition": "观测到的充电会话开始事件 / 观测到的净增占用事件（每 100 车位每小时的 λ_charge/λ_arrival 均值）；分子分母都只是观测口径计数，不是真值。",
+    "numerator": {
+      "reported_total": 2800,
+      "unit": "observed charging session starts (non-validation lots, old recount rule)",
+      "definition": "待機中->充電中 的会话开始；旧口径把间隔 ≤25 min 的非充电/缺失槽合并为同一会话",
+      "source": "research/traffic_generation_20261031/fitted_parameters.json",
+      "locator": "fitted_parameters.json n_start_transitions/charging block",
+      "reported_n_by_independent_recount": 2198,
+      "independent_recount_note": "相邻槽重算（本单 mechanism_audit §1），另有 61 次跨缺测槽开始"
+    },
+    "denominator": {
+      "definition": "Σmax(0, ΔO)，O=总车位−余位，5 分钟槽；报告 §3.1 明确为到达下界",
+      "reported_unit": "net positive occupancy deltas per 100 spaces per hour",
+      "independent_recount_total": 84622,
+      "independent_recount_ratio": 0.02597433291579022,
+      "note": "净变化下界：饱和/同槽抵消/缺测使真实到达不可见"
+    },
+    "source_class": "derived",
+    "source_id": "TW372+fitted_parameters",
+    "source_file_sha256_prefix": "1dfc14a2a29e204d",
+    "limitations": [
+      "分子是会话开始事件，不是车辆停车事件（重启/暂停/采样/缺测）",
+      "分母是净占用正增量，是到达下界（饱和 8,233 行余位=0、57,860 个 ΔO=0 槽、缺失枪槽约 11,873）",
+      "不同会话重算规则给出 0.0260（相邻槽）vs 0.0364（旧口径），比率对口径敏感",
+      "观测使用率已内含准入、价格与枪可用性效应，不是无约束意愿",
+      "m/k 未知，偏置方向不可识别"
+    ],
+    "admissible_use": [
+      "traffic_fit",
+      "sensitivity_only"
+    ],
+    "forbidden_use": [
+      "把 z 当 p_EV·q_need 识别值",
+      "由 z 反推 p_EV 或 q_need 的点估计",
+      "作为配桩推荐输入而不标注情景"
+    ],
+    "sensitivity": {
+      "formula": "z_true ≈ z_obs × (m/k), m=会话观测覆盖率, k=到达观测覆盖率",
+      "table": {
+        "1": 0.0364,
+        "2": 0.0727,
+        "0.5": 0.0182,
+        "0.75": 0.0273,
+        "1.5": 0.0545
+      },
+      "note": "无数据可钉住 m/k"
+    }
+  },
+  "feasible_region": {
+    "constraint": "p_EV >= z and q_need = z/p_EV <= 1",
+    "incompatible_rule": "p_EV < z => q_need > 1 => status incompatible, rejected; 不得截断后参与 k 比较",
+    "z": 0.03636583089107938,
+    "grid": [
+      {
+        "p_EV": 0.02,
+        "q_need": 1.818292,
+        "status": "incompatible",
+        "reject_reason": "p_EV<z -> q_need>1; rejected, not truncated"
+      },
+      {
+        "p_EV": 0.03,
+        "q_need": 1.212194,
+        "status": "incompatible",
+        "reject_reason": "p_EV<z -> q_need>1; rejected, not truncated"
+      },
+      {
+        "p_EV": 0.036366,
+        "q_need": 1,
+        "status": "boundary_q_equals_1"
+      },
+      {
+        "p_EV": 0.04,
+        "q_need": 0.909146,
+        "status": "feasible"
+      },
+      {
+        "p_EV": 0.05,
+        "q_need": 0.727317,
+        "status": "feasible"
+      },
+      {
+        "p_EV": 0.08,
+        "q_need": 0.454573,
+        "status": "feasible"
+      },
+      {
+        "p_EV": 0.1,
+        "q_need": 0.363658,
+        "status": "feasible"
+      },
+      {
+        "p_EV": 0.12,
+        "q_need": 0.303049,
+        "status": "feasible"
+      },
+      {
+        "p_EV": 0.15,
+        "q_need": 0.242439,
+        "status": "feasible"
+      },
+      {
+        "p_EV": 0.2,
+        "q_need": 0.181829,
+        "status": "feasible"
+      },
+      {
+        "p_EV": 0.3,
+        "q_need": 0.121219,
+        "status": "feasible"
+      },
+      {
+        "p_EV": 0.5,
+        "q_need": 0.072732,
+        "status": "feasible"
+      },
+      {
+        "p_EV": 1,
+        "q_need": 0.036366,
+        "status": "feasible"
+      }
+    ],
+    "incompatible_examples": [
+      {
+        "p_EV": 0.02,
+        "q_need": 1.818292,
+        "status": "incompatible",
+        "note": "旧 fitted_parameters.json q_need_by_p_ev 条目，deprecated"
+      },
+      {
+        "p_EV": 0.03,
+        "q_need": 1.212194,
+        "status": "incompatible",
+        "note": "旧报告 §8 该列按 >1 截断为 1 重跑 → 其结果 deprecated/sensitivity_only"
+      }
+    ]
+  },
+  "p_ev_evidence": {
+    "ledger": "research/official_data_20261031/identification_20261031/t28_p_ev_evidence.json",
+    "stock_examples": [
+      {
+        "period": "2026-02",
+        "value": 130278,
+        "unit": "electric passenger cars registered",
+        "source": "立法院議案附件 t28_ly_charging_infra_2026.pdf"
+      },
+      {
+        "period": "2025-07",
+        "value": 110768,
+        "unit": "electric passenger cars registered",
+        "source": "國發會永續會新聞 t28_ndc_charging_news.html"
+      },
+      {
+        "period": "2024-09",
+        "value": 87182,
+        "unit": "electric small vehicles",
+        "source": "運研所報告（round1，IOT PDF）"
+      },
+      {
+        "period": "2024-06",
+        "value": 76525,
+        "unit": "electric vehicles total",
+        "source": "審計部報告 t28_audit_charging_parking.pdf"
+      }
+    ],
+    "public_charging_guns": [
+      {
+        "period": "2026-02",
+        "total": 15328,
+        "slow": 11426,
+        "fast": 3902,
+        "ratio_total": "8.5:1",
+        "ratio_fast": "33.4:1",
+        "source": "立法院議案附件"
+      },
+      {
+        "period": "2025-07",
+        "total": 12334,
+        "ratio_total": "9.0:1",
+        "ratio_fast": "33.9:1",
+        "source": "國發會新聞"
+      },
+      {
+        "period": "2024-06",
+        "total": 9564,
+        "slow": 7328,
+        "fast": 2236,
+        "source": "審計部報告"
+      }
+    ],
+    "actual_new_car_sales_share": {
+      "value": null,
+      "status": "UNVERIFIED",
+      "evidence": "检索到審計部报告标题称『電動小客車市售比未達年度目標呈負成長』，但下载端点返回 HTML（212/950 bytes）而非 PDF，无法核具体数值；政策目标值另列",
+      "gap_note": "不得用目标值冒充实际值"
+    },
+    "public_charging_usage_share": {
+      "value": null,
+      "status": "UNVERIFIED",
+      "evidence": "立法院/審計部/國發會文件未见公共充电桩使用率数字；M14 调查的 4/10 是自报『公共充电事件份额（q_location_share）』，不是官方使用率，也不是到访份额"
+    },
+    "lot_level_ev_arrival_share": {
+      "value": null,
+      "status": "UNVERIFIED",
+      "evidence": "无场站级 EV 到访统计；不得用保有量份额（2024-09 全国 1.04%）、法定充电位比例（公有 ≥2%/民营 ≥1%）或枪位比（1,888/80,221=2.35%）替代 p_EV_arrival"
+    }
+  },
+  "migration_notes": [
+    {
+      "old": "报告 §3.2『可识别乘积 p_EV·q_need = 0.0364』",
+      "new": "observed_charging_session_ratio_v1（status=usage_proxy）",
+      "action": "old claim deprecated; 不得再写“可识别”"
+    },
+    {
+      "old": "fitted_parameters.json ev.product_required_mean / ev.q_need_by_p_ev",
+      "new": "本文件 renamed_identified_quantity + feasible_region",
+      "action": "旧 JSON 不覆盖；p_EV=0.02/0.03 两条 q>1 标 incompatible"
+    },
+    {
+      "old": "traffic_gen 对 q>1 截断为 1 并置 identification_conflict",
+      "new": "拒绝 incompatible；如需敏感性情景必须单列 incompatible_sensitivity_only",
+      "action": "代码属 traffic-eng 范围，本单不改代码，仅登记"
+    },
+    {
+      "old": "报告 §8 p_EV=0.03 行",
+      "new": "incompatible/sensitivity_only，不影响 §8『k 对 p_EV 敏感』的定性结论（对可行 p_EV 仍成立）",
+      "action": "报告由 Lead 写，本单只登记"
+    }
+  ],
+  "unchanged_from_v1": {
+    "q_use_records": 7,
+    "q_need_scenarios": 6,
+    "selected_default": null,
+    "note": "v1 的 q_use/q_need 情景内容不重复搬运，见 model_20261031.json；v1 sha256[:16]=75c4f03498398cde"
+  },
+  "mechanism_audit": "research/official_data_20261031/identification_20261031/mechanism_audit.md",
+  "validation_command": "python research/calibration/charging_probability_20261030/recompute_model_v2_20261031.py"
+}

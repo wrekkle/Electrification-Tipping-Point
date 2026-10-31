@@ -1,0 +1,11 @@
+{
+  "n_spaces": 24,
+  "charging_bays": 8,
+  "chargers": 6,
+  "reserve_fixed": 2,
+  "duration_hours": 2,
+  "arrival_rate_hour": 20,
+  "scenario": "peaks",
+  "policy": "adaptive",
+  "seed": 42
+}

@@ -1,0 +1,12 @@
+traffic_gen version: traffic_gen-1.1.0
+module file: C:\Projects\停车场充电桩优化方案\research\round2_20261031\traffic_fix\pre_fix_traffic_gen_snapshot.py
+FAIL C1 真实需求不被 min(需求,可交付) 削减 | n_need=22 energy_range=[6.999983, 6.999989, 6.999993] dwell_range=60.00..60.00 期望每辆真实需求 14.0 kWh
+FAIL C2 需求能量不随生成器额定功率改变 | power=7/3.5/50 -> demand_mean=[7.0, 3.5, 14.0] hash_equal=False
+FAIL C3 meta 分列五项需求账 | missing=['demand_energy_kwh_total', 'theoretical_service_min_total', 'deliverable_energy_kwh_total', 'departed_shortfall_kwh', 'pending_energy_kwh'] demand=nan
+FAIL C4 暖启动平稳长度偏置 E[剩余]=4.1 | n=20000 剩余停留均值=2.4891 min（正确值 E[D^2]/(2E[D])=4.1；旧实现 U(0,D) 约 2.5）
+FAIL C5 meta warm_start_method/length_biased | warm_start_method=None length_biased=None
+FAIL C6 删失标记且不算失败 | missing=['censored_charge_sessions', 'pending_energy_kwh', 'charge_shortfall_energy_kwh', 'demand_energy_kwh_total']
+FAIL C7 公开 API warm_start_arrivals | 缺少公开 API warm_start_arrivals(lot_info, n, rng, dwell_dist)
+FAIL C8 不把每辆都削到停留可交付上限 | n_need=20 被提前削减=12 辆，保留真实需求=8 辆（停留内可交付上限小于需求时才允许出现缺口）
+
+SUMMARY: 0/8 通过，失败 8

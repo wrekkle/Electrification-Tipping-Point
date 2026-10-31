@@ -1,0 +1,245 @@
+{
+  "id" : "5bb2-gtef",
+  "name" : "Parking Transactions",
+  "assetType" : "dataset",
+  "attribution" : "City of Austin, Texas - data.austintexas.gov",
+  "averageRating" : 0,
+  "category" : "Transportation and Mobility",
+  "createdAt" : 1640900509,
+  "description" : "Parking transactions for street parking and city operated lots. This includes data from physical parking kiosks and app payments through ParkATX.\n\nNote: Due to an integration issue with a vendor, <b>no parking app (ParkATX) transactions have been added to this dataset since October 2025</b>. Physical kiosk transactions are still being added daily.\n\nSpatial data of physical parking assets such as pay stations, meters, and parking zones are available on <a href = \"https://austin.maps.arcgis.com/home/item.html?id=6a5424475a384ee8af39b67d8f86dfca\" target=\"_blank\">ArcGIS Online</a> (Requires a COA ArcGIS Online account).\n\nThe source code that processes the city's parking transaction data is available on our <a href = \"https://github.com/cityofaustin/atd-parking-data\" target=\"_blank\">GitHub repository</a>.\n\n<a aria-label=\"View the City of Austin Open Data Terms of Use in a new window\" href=\"https://data.austintexas.gov/stories/s/ranj-cccq\" target=\"_blank\">City of Austin Open Data Terms of Use</a>",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "domainCName" : "data.austintexas.gov",
+  "downloadCount" : 4857,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "PUBLIC_DOMAIN",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 0,
+  "oid" : 39532923,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1682446351,
+  "publicationGroup" : 18545269,
+  "publicationStage" : "published",
+  "rowIdentifierColumnId" : 574954721,
+  "rowsUpdatedAt" : 1793368118,
+  "rowsUpdatedBy" : "8t3r-wq64",
+  "tableId" : 19136571,
+  "totalTimesRated" : 0,
+  "viewCount" : 4906,
+  "viewLastModified" : 1792684550,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1686349834,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 5561420,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1686349834,
+    "targetAudience" : "public",
+    "workflowId" : 3284,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1686349834,
+      "failureCount" : 0,
+      "startedAt" : 1686349834,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "8t3r-wq64",
+      "displayName" : "transportation.data@austintexas.gov"
+    }
+  }, {
+    "message" : "The `strict_permissions` flag must be on to enable internal approvals.",
+    "state" : "unsubmittable",
+    "targetAudience" : "internal",
+    "workflowId" : 4707
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 574954721,
+    "name" : "ID",
+    "dataTypeName" : "number",
+    "description" : "A unique identifier for each parking transaction.",
+    "fieldName" : "id",
+    "position" : 1,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140420300,
+    "format" : { }
+  }, {
+    "id" : 574954722,
+    "name" : "Source",
+    "dataTypeName" : "text",
+    "description" : "Data source. Parking Meters or Passport which is the vendor for the ParkATX app.",
+    "fieldName" : "source",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 140420290,
+    "format" : { }
+  }, {
+    "id" : 574954723,
+    "name" : "Duration in Minutes",
+    "dataTypeName" : "number",
+    "description" : "Total minutes purchased. App transactions can be refunded and this reflects the final amount.",
+    "fieldName" : "duration_min",
+    "position" : 3,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140420291,
+    "format" : { }
+  }, {
+    "id" : 574954724,
+    "name" : "Start Time",
+    "dataTypeName" : "calendar_date",
+    "description" : "Start time of the parking session.",
+    "fieldName" : "start_time",
+    "position" : 4,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 140420292,
+    "format" : { }
+  }, {
+    "id" : 574954725,
+    "name" : "End Time",
+    "dataTypeName" : "calendar_date",
+    "description" : "End time of the parking session.",
+    "fieldName" : "end_time",
+    "position" : 5,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 140420293,
+    "format" : { }
+  }, {
+    "id" : 574954726,
+    "name" : "Amount",
+    "dataTypeName" : "number",
+    "description" : "Amount paid for parking. Reflects the final amount accounting for refunds in US dollars ($).",
+    "fieldName" : "amount",
+    "position" : 6,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140420294,
+    "format" : { }
+  }, {
+    "id" : 574954727,
+    "name" : "Kiosk ID",
+    "dataTypeName" : "number",
+    "description" : "Parking Kiosk ID (only for Parking Meter transactions).",
+    "fieldName" : "meter_id",
+    "position" : 7,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140420295,
+    "format" : { }
+  }, {
+    "id" : 574954728,
+    "name" : "App Zone ID",
+    "dataTypeName" : "number",
+    "description" : "Zone ID for App Transactions (only for ParkATX transactions).",
+    "fieldName" : "zone_id",
+    "position" : 8,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140420299,
+    "format" : { }
+  }, {
+    "id" : 574954729,
+    "name" : "App Zone Group",
+    "dataTypeName" : "text",
+    "description" : "Zone group for App Transactions (only for ParkATX transactions).",
+    "fieldName" : "zone_group",
+    "position" : 9,
+    "renderTypeName" : "text",
+    "tableColumnId" : 140420296,
+    "format" : { }
+  }, {
+    "id" : 574954730,
+    "name" : "Payment Method",
+    "dataTypeName" : "text",
+    "description" : "Parking meters: COINS (cash) or CARD payment options. App: Zone Cash which is an in-app payment wallet. Also includes Free and Validation payments.",
+    "fieldName" : "payment_method",
+    "position" : 10,
+    "renderTypeName" : "text",
+    "tableColumnId" : 140420297,
+    "format" : { }
+  }, {
+    "id" : 574954732,
+    "name" : "Location Group",
+    "dataTypeName" : "text",
+    "description" : "Names given to parking areas both app and meter payments reference these groups.",
+    "fieldName" : "location_name",
+    "position" : 11,
+    "renderTypeName" : "text",
+    "tableColumnId" : 146693922,
+    "format" : { }
+  }, {
+    "id" : 574954731,
+    "name" : "Last Updated",
+    "dataTypeName" : "calendar_date",
+    "description" : "When this transaction was last updated in this dataset.",
+    "fieldName" : "updated_at",
+    "position" : 12,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 140420298,
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Public Domain"
+  },
+  "metadata" : {
+    "attachments" : [ {
+      "filename" : "50730686543_a130d0353e_c.jpg",
+      "assetId" : "8d6346c8-440f-42bf-9b59-8de559abbb43",
+      "name" : "dataset_cover_photo"
+    } ],
+    "custom_fields" : {
+      "Ownership" : {
+        "Program Name" : "Parking Enterprise",
+        "Department name" : "Austin Transportation and Public Works"
+      },
+      "Publishing Information" : {
+        "Update Frequency" : "Daily",
+        "Spatial Information" : "Location of pay stations/meters are hosted on ArcGIS Online: https://austin.maps.arcgis.com/home/item.html?id=6a5424475a384ee8af39b67d8f86dfca"
+      },
+      "Citywide Strategic Plan" : {
+        "Strategic Priority" : "Mobility & Critical Infrastructure"
+      }
+    },
+    "rowIdentifier" : 574954721,
+    "rowLabel" : "Parking transaction",
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "8t3r-wq64",
+    "disabledAt" : 1674498345,
+    "displayName" : "transportation.data@austintexas.gov",
+    "profileImageUrlLarge" : "/api/users/8t3r-wq64/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/8t3r-wq64/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/8t3r-wq64/profile_images/TINY",
+    "screenName" : "transportation.data@austintexas.gov",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "8t3r-wq64",
+    "disabledAt" : 1674498345,
+    "displayName" : "transportation.data@austintexas.gov",
+    "profileImageUrlLarge" : "/api/users/8t3r-wq64/profile_images/LARGE",
+    "profileImageUrlMedium" : "/api/users/8t3r-wq64/profile_images/THUMB",
+    "profileImageUrlSmall" : "/api/users/8t3r-wq64/profile_images/TINY",
+    "screenName" : "transportation.data@austintexas.gov",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "tags" : [ "finance", "parking", "parks and recreation", "transportation", "transaction", "parking enterprise", "tpw", "transportation and public works" ],
+  "flags" : [ "default", "federated", "internalToPublicFederatedView", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

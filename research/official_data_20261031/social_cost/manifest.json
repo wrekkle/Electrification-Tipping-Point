@@ -1,0 +1,1197 @@
+{
+ "_meta": {
+  "file": "research/official_data_20261031/social_cost/manifest.json",
+  "owner": "cost-data",
+  "generated_utc": "2026-10-31T03:14:31Z",
+  "contract": "research/official_data_20261031/contract/CONTRACT.md §3",
+  "request_summary": {
+   "total_requests": 33,
+   "web_search_queries": 27,
+   "total_log_rows": 60,
+   "budget_requests": 60,
+   "downloaded_bytes": 23982041,
+   "saved_bytes": 23981408,
+   "budget_bytes": 209715200,
+   "budget_minutes": 45,
+   "first_t_utc": "2026-10-31T02:52:43Z",
+   "last_t_utc": "2026-10-31T03:14:31Z",
+   "failed_requests": 9
+  },
+  "note": "每个 GET/POST 均记入 logs/social_cost_requests.jsonl；失败请求也保留。sha256 见下；非证据文件（404/500/0-byte 或误抓文档）在 sources 中标注 what_happened 或排除。",
+  "budget_ok": {
+   "requests": true,
+   "bytes": true,
+   "minutes_target": 45
+  },
+  "failures": [
+   {
+    "url": "https://www.iot.gov.tw/uploads/asset/data/661978c3367376304acd4e29/%E4%BA%A4%E9%80%9A%E5%BB%BA%E8%A8%AD%E8%A8%88%E7%95%AB%E7%B6%93%E6%BF%9F%E6%95%88%E7%9B%8A%E8%A9%95%E4%BC%B0%E6%89%8B%E5%86%8A%E8%88%87%E7%A1%AC%E9%9B%9D%E8%BB%9F%E9%AB%94%E6%9B%B4%E6%96%B0.pdf",
+    "status": 404,
+    "error": "HTTPError: HTTP Error 404: Not Found",
+    "purpose": "運研所 交通建設計畫經濟效益評估手冊（最新更新版）"
+   },
+   {
+    "url": "https://hc2.taipower.com.tw/media/pm5ho2ou/%e8%a9%b3%e7%b4%b0%e9%9b%bb%e5%83%b9%e8%a1%a8.pdf?mediaDL=true",
+    "status": null,
+    "error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "purpose": "台電 詳細電價表"
+   },
+   {
+    "url": "https://service.cca.gov.tw/File/Get/cca/zh-tw/GA1gKtpnBHxgViJ",
+    "status": 500,
+    "error": "HTTPError: HTTP Error 500: Internal Server Error",
+    "purpose": "環境部 溫室氣體排放係數管理表"
+   },
+   {
+    "url": "https://data.taipei/api/dataset/59027123-0fd0-4599-bcc7-53e3f480e52a/resource/9fea1c0b-4ee1-45eb-9f92-f0a0eb1da2d7/download",
+    "status": 200,
+    "error": "IncompleteRead: IncompleteRead(548196 bytes read, 4029379 more expected)",
+    "purpose": "台北市公有停車場收費費率（data.taipei 開放資料）"
+   },
+   {
+    "url": "https://data.gov.tw/api/v2/rest/dataset?qs=%E9%9B%BB%E5%83%B9",
+    "status": 405,
+    "error": "HTTPError: HTTP Error 405: Method Not Allowed",
+    "purpose": "政府資料開放平臺搜尋電價資料集"
+   },
+   {
+    "url": "https://www.iot.gov.tw/uploads/asset/data/661978c3367376304acd4e29/%E4%BA%A4%E9%80%9A%E5%BB%BA%E8%A8%AD%E8%A8%88%E7%95%AB%E7%B6%93%E6%BF%9F%E6%95%88%E7%9B%8A%E8%A9%95%E4%BC%B0%E6%89%8B%E5%86%8A%E8%88%87%E7%A1%AC%E9%9B%9D%E8%BB%9F%E9%AB%94%E6%9B%B4%E6%96%B0.pdf",
+    "status": 404,
+    "error": "HTTPError: HTTP Error 404: Not Found",
+    "purpose": "運研所 經濟效益評估手冊（帶 Referer 重試）"
+   },
+   {
+    "url": "https://hc1.taipower.com.tw/2289/2406/2437/51029/46920/simpleList?Page=13&PageSize=10",
+    "status": null,
+    "error": "URLError: <urlopen error _ssl.c:983: The handshake operation timed out>",
+    "purpose": "台電 已開放資料集清單"
+   },
+   {
+    "url": "https://www.moeaea.gov.tw/ecw/populace/content/wHandStatistics_File.ashx?statistics_id=4707&serial_no=1",
+    "status": 403,
+    "error": "HTTPError: HTTP Error 403: Forbidden",
+    "purpose": "經濟部能源署 車輛油耗指南（統計檔案）"
+   },
+   {
+    "url": "https://mnscdn.moea.gov.tw/Mns/DOS/content/wHandMenuFile.ashx?file_id=37515",
+    "status": 403,
+    "error": "HTTPError: HTTP Error 403: Forbidden",
+    "purpose": "經濟部統計處 統計手冊（含新台幣對美元月平均匯率）"
+   }
+  ]
+ },
+ "sources": [
+  {
+   "source_id": "S-01-IOT-HANDBOOK-108",
+   "title": "108年 交通建設計畫經濟效益評估手冊（更新版）",
+   "org": "交通部運輸研究所",
+   "url": "https://www.iot.gov.tw/uploads/asset/data/6655325e085777b9e745ca2e/108%E5%B9%B4%E7%B6%93%E6%95%88%E8%A9%95%E4%BC%B0%E6%89%8B%E5%86%8A_110%E5%B9%B4%E8%A1%8C%E8%BB%8A%E6%88%90%E6%9C%AC%E5%8F%83%E6%95%B8%E6%9B%B4%E6%96%B0%E5%BE%8C%E6%95%B4%E7%90%86%E7%89%88%E6%9C%AC_.pdf",
+   "retrieved_at_utc": "2026-10-31T02:59:43Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/iot_108_handbook_110c_params.pdf",
+   "sha256": "bbdb897bb204a4268bd516b72783ad2aeec7a9c8146d64669bf9f5e8068d32c1",
+   "bytes": 6692366,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": "民國107年幣值",
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": "中華民國110年12月（108-129-1425）",
+   "what_it_supports": [
+    "時間價值：表5-6 每車時間價值（本手冊建議值 民國107年幣值：小客車都會 5.93、城際 7.58；前期手冊 3.61/5.23 元/每車每分鐘）",
+    "表5-1 每人每分鐘工資率（都會 3.57、城際 3.18，民國107年幣值）",
+    "表5-5 每人時間價值（小客車都會 2.58）"
+   ],
+   "limitations": [
+    "建議未來值以工資上漲率調整，不是 CPI",
+    "幣值為民國107年（2018），須換算",
+    "都會定義含台北市、新北市等 10 縣市，非台北市單獨值"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-02-DGBAS-CPI-MONTHLY",
+   "title": "物價統計月報 114年5月 653期",
+   "org": "行政院主計總處",
+   "url": "https://ws.dgbas.gov.tw/001/Upload/463/ebook/ebook_331734//pdf/full.pdf",
+   "retrieved_at_utc": "2026-10-31T03:01:38Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/dgbas_price_monthly.pdf",
+   "sha256": "21f894c44a97ed5daa1ee01270b2c280099f15896ce83d1a345afc4fe75f049f",
+   "bytes": 6958456,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": "民國51年–114年5月",
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "表1-8 消費者物價總指數銜接表（110年=100）年指數：民國98年(2009)=89.07、民國107年(2018)=97.76、民國113年(2024)=107.81",
+    "表1-2 消費者物價基本分類指數（月度，可核 114年1-5月）"
+   ],
+   "limitations": [
+    "本刊為 114年5月（2025-05）期，不含 2025 年全年與 2026 年指數"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-03-DGBAS-CPI-NEWS",
+   "title": "115年9月物價變動概況（新聞稿）",
+   "org": "行政院主計總處",
+   "url": "https://ws.dgbas.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDYzL3JlbGZpbGUvMTA5ODAvMjM2NzU5L25ld3MxMTUwOS5wZGY%3d&n=bmV3czExNTA5LnBkZg%3d%3d&icon=..pdf",
+   "retrieved_at_utc": "2026-10-31T03:03:28Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/dgbas_cpi_news_11509.pdf",
+   "sha256": "4edec01c0d74be94b02a31903c16bd3b90dc650287da03354e158aaef4768c23",
+   "bytes": 369724,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": "115年9月",
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "114年 CPI 年增率 1.66%",
+    "115年1-9月平均 CPI 較上年同期漲 1.94%；115年9月年增率 2.73%",
+    "115年1-9月平均指數可由 2024 年官方年指數 × 年增率鏈式推算"
+   ],
+   "limitations": [
+    "新聞稿不含 CPI 指數水準（附表未附於此 6 頁 PDF）",
+    "年增率為四捨五入值，鏈式推算有小誤差"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-04-ENERGY-OIL-API",
+   "title": "汽柴油參考零售價（指定期間查詢 API 回應）",
+   "org": "經濟部能源署 油價資訊管理與分析系統",
+   "url": "https://www2.moeaea.gov.tw/oil111/Gasoline/RetailPrice/load",
+   "retrieved_at_utc": "2026-10-31T02:59:40Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/html/oil_price_range_2025_2026.json",
+   "sha256": "0f033445b42311b760490c8089305a1069207b6e2b42670e703ee5227bdce202",
+   "bytes": 12823,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": "2025-01-06～2026-09-28",
+   "unit_notes": "",
+   "sample_filter": "start=2025/01/01,end=2026/09/30",
+   "revision": null,
+   "what_it_supports": [
+    "台灣中油每周公告零售價：95無鉛 2025 全年 52 筆均值 29.1577、2026-01-01～09-30 共 39 筆均值 31.7385、近12月 30.9212 TWD/L",
+    "同表亦含 92/98 無鉛與超級柴油；A 欄為台灣中油、B 欄為台塑石化"
+   ],
+   "limitations": [
+    "周資料（非日資料），期間平均按公告次數算術平均，未加權",
+    "2025-01-06 前資料不在回應中（查詢起日 2025/01/01，首筆 01/06）"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-05-ENERGY-OIL-PAGE",
+   "title": "汽柴油參考零售價頁面與前端腳本（API 參數與欄位定義）",
+   "org": "經濟部能源署 油價資訊管理與分析系統",
+   "url": "https://www2.moeaea.gov.tw/oil111/Gasoline/RetailPrice",
+   "retrieved_at_utc": "2026-10-31T02:57:55Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/html/moeaea_retailprice.js",
+   "sha256": "701c2f326a5c2178d3fa01372fb8f43963a9065bad31a44567417c3111a57720",
+   "bytes": 10753,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "查詢 API 為 POST /oil111/Gasoline/RetailPrice/load，參數 start/end 格式 yyyy/mm/dd",
+    "CSV 欄位定義：Date/施行時間/92/95/98 無鉛與超級柴油（中油、台塑各一組）"
+   ],
+   "limitations": [
+    "頁面本身不含價格（動態載入）"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-06-TAIPOWER-BRIEF",
+   "title": "簡要電價表",
+   "org": "台灣電力公司",
+   "url": "https://www.taipower.com.tw/media/dhuhrppu/%E7%B0%A1%E8%A6%81%E9%9B%BB%E5%83%B9%E8%A1%A8.pdf?mediaDL=true",
+   "retrieved_at_utc": "2026-10-31T03:03:06Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/taipower_brief_price_2026.pdf",
+   "sha256": "476859a821d7146af2c799b2361922adc389c41f3f41a7b7245f3a765bed97df",
+   "bytes": 1039836,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "低壓電力電價（非時間電價）：流動電費每度 4.08（夏月 6/1-9/30）/3.87（非夏月）元",
+    "電動車充換電設施電價：基本電費按戶 262.50 元/戶月、經常契約 47.20（夏月）/34.60（非夏月）元/瓩月；流動電費尖峰 12.47（夏月 16-22 時）/12.14（非夏月 15-21 時）、離峰 3.05（夏月）/2.90（非夏月）元/度；週六日及離峰日離峰全日 3.05/2.90"
+   ],
+   "limitations": [
+    "摘要版電價表，未列生效日期；表內提及 113年4月、113年10月調幅",
+    "電價表未給充電樁典型時段結構，均價不可直接取"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-07-TAIPOWER-DETAIL",
+   "title": "詳細電價表",
+   "org": "台灣電力公司",
+   "url": "https://www.taipower.com.tw/media/xtofy2yw/%E8%A9%B3%E7%B4%B0%E9%9B%BB%E5%83%B9%E8%A1%A8.pdf?mediaDL=true",
+   "retrieved_at_utc": "2026-10-31T03:03:09Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/taipower_detail_price_2026.pdf",
+   "sha256": "71b9573ce5e5841fec4a1277e327ce20834eddac9f407e586b85a6ddf907e78e",
+   "bytes": 1254436,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "與簡要電價表同一現行費率架構（尚未逐頁核對）"
+   ],
+   "limitations": [
+    "UNVERIFIED: 未逐頁抽出核對，僅作同批落盘"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-08-MOENV-GHG-FACTORS",
+   "title": "溫室氣體排放係數（113年2月5日公告，環部授氣字第1139101231號）",
+   "org": "環境部",
+   "url": "https://ghgregistry.moenv.gov.tw/upload/Tools/AI/113%E5%B9%B42%E6%9C%885%E6%97%A5%E5%85%AC%E5%91%8A%E6%BA%AB%E5%AE%A4%E6%B0%A3%E9%AB%94%E6%8E%92%E6%94%BE%E4%BF%82%E6%95%B8.pdf",
+   "retrieved_at_utc": "2026-10-31T03:02:12Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/moenv_ghg_factors_2024.pdf",
+   "sha256": "f809a27150c014e1cb3bde3133cc433a8be5fe1f14105e63903970540ba9d623",
+   "bytes": 1168401,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "附表一 移動燃燒排放源：車用汽油 CO2 排放係數 69,300 kg/TJ（基於低位熱值）",
+    "同表固定燃燒源亦列 車用汽油 69,300 kg CO2/TJ、CH4 3、N2O 0.6"
+   ],
+   "limitations": [
+    "公告僅給 kg/TJ，未給低位熱值與 kg/L",
+    "無空氣污染物（PM2.5/NOx）係數"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-09-MOTC-PARKING-SURVEY",
+   "title": "自用小客車在居家附近之尋找停車位時間及停車費（統計查詢網頁）",
+   "org": "交通部統計處",
+   "url": "https://statis.motc.gov.tw/motc/Statistics/Display?Seq=810",
+   "retrieved_at_utc": "2026-10-31T02:55:40Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/html/motc_parking_search_time.html",
+   "sha256": "3b0471da9004cef1a771b0aa17e868f2810158410504e815a8dca29552c22dc2",
+   "bytes": 89837,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "官方調查「自用小客車使用狀況調查」存在，且查詢頁可存取（Seq=810）"
+   ],
+   "limitations": [
+    "數值在查詢表單/圖表接口，需 POST 或前端互動；本輪未取到台北數值",
+    "不得用外地 Shoup 8.1 分鐘替代"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-10-TAIPOWER-LIST",
+   "title": "台電電價表下載清單頁",
+   "org": "台灣電力公司",
+   "url": "https://www.taipower.com.tw/2289/2290/46940/simpleList",
+   "retrieved_at_utc": "2026-10-31T03:02:07Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/html/taipower_price_list.html",
+   "sha256": "ea457a401cfb03c1216756f38160039b7d6b8d67ba9850f02d2cdbf5463544a7",
+   "bytes": 104477,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "簡要電價表（1039.8KB）與詳細電價表（1254.4KB）、最近兩年時間電價日曆表 PDF 連結"
+   ],
+   "limitations": [],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-11-TAIPOWER-EV",
+   "title": "電動車用電業務專區",
+   "org": "台灣電力公司",
+   "url": "https://www.taipower.com.tw/2289/2406/2420/2429/simpleList",
+   "retrieved_at_utc": "2026-10-31T03:02:10Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/html/taipower_ev_zone.html",
+   "sha256": "c870aaec77f304e67e1459e67bf2f08183ca9b1c1db709cdbf0fced7e2529358",
+   "bytes": 105883,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "台電電動車用電業務入口（含充換電設施電價說明頁索引）"
+   ],
+   "limitations": [
+    "本輪未逐頁核對內容"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-12-DATAGOV-CPC",
+   "title": "政府資料開放平臺 dataset 6339「中油主產品牌價」元資料",
+   "org": "政府資料開放平臺",
+   "url": "https://data.gov.tw/api/v2/rest/dataset/6339",
+   "retrieved_at_utc": "2026-10-31T02:56:14Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/html/datagovtw_dataset_6339.json",
+   "sha256": "d78fe11542be1336e9db174a0c0a3c12daccb8e36a16b46382f7c538dbcdccad",
+   "bytes": 5974,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": "擷取時點",
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "中油現行牌價 WebService/JSON 端點（僅現價，非歷史）"
+   ],
+   "limitations": [
+    "不提供歷史序列；歷史改用能源署 API"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-13-CARRIED-EY-HANDBOOK",
+   "title": "前瞻基礎建設核定本（轉引運研所 100年9月手冊表5-6；含怠速油耗 0.82 L/h）",
+   "org": "行政院（交通部核定本）",
+   "url": "https://www.ey.gov.tw/File/1A7A9AD51FC4695F",
+   "retrieved_at_utc": null,
+   "http_status": null,
+   "local_path": "research/cost_model_20261030/downloads/ey_time_value_handbook_excerpt.pdf",
+   "sha256": "e72743c15e12b53293781a8907055774c9fc04ffde9905644286915f841b2414",
+   "bytes": 12445778,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": "民國98年幣值（3.61 項）",
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "民國98年幣值 都會一般化 小客車 3.61、城際 5.23 元/每車每分鐘（與 108 年手冊「前期手冊」列值一致，互相核對）",
+    "停等怠速油耗 小客車 0.82 L/小時、機車 0.59 L/小時"
+   ],
+   "limitations": [
+    "前輪任務已核；本輪未重抓，僅用於交叉核對與引入既有官方值"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-14-CARRIED-CARBON",
+   "title": "環境部公告「碳費徵收費率」（113-10-23）",
+   "org": "環境部氣候變遷署",
+   "url": "https://enews.moenv.gov.tw/moenv-news/zh-tw/News/2756",
+   "retrieved_at_utc": null,
+   "http_status": null,
+   "local_path": null,
+   "sha256": null,
+   "bytes": null,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "一般費率 300 TWD/tCO2e；優惠費率 A 50、B 100"
+   ],
+   "limitations": [
+    "前輪任務已核，本輪未重抓（無本地檔案 sha256）",
+    "法定碳費≠運輸邊際社會碳成本，只能作敏感性"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-15-REJECTED-TAIPEI-CHARGING-PDF",
+   "title": "（誤抓）交通部電動車充電站(樁)資料標準",
+   "org": "交通部",
+   "url": "https://www-ws.gov.taipei/001/Upload/455/relfile/22477/8991302/105c068d-191d-4593-ad23-3e8e83ffe86c.pdf",
+   "retrieved_at_utc": "2026-10-31T02:56:12Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/taipei_charging_fee_rates.pdf",
+   "sha256": "4db0d848987f567894f2727548386a887b10e795ba11ceb9495c47e047630aa7",
+   "bytes": 2285620,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [],
+   "limitations": [
+    "內容為資料標準（XML 欄位定義），不是充電費率；不得當費率證據"
+   ],
+   "what_happened": "原以為是台北市充電費率 PDF，讀後排除"
+  },
+  {
+   "source_id": "S-16-CBC-FX",
+   "title": "中央銀行 2019 年報：II. Financial Developments – 4. Foreign Exchange Market",
+   "org": "中央銀行",
+   "url": "https://www.cbc.gov.tw/dl-149432-669bf5f5a92c434cb24881ba49fb8e02.html",
+   "retrieved_at_utc": "2026-10-31T03:14:31Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/html/cbc_fx_statistics.html",
+   "sha256": "f90af614dd7baf6ddd180e56ea3fc28346280df392703bcdbe4375ec1fffe30b",
+   "bytes": 410755,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": "2019 年",
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "2019 年新台幣對美元、日圓、歐元、人民幣之升貶方向與幅度（日平均基礎）"
+   ],
+   "limitations": [
+    "UNVERIFIED: 章節僅敘述方向，未印 2019 年平均匯率水準；不能直接給 FX 值",
+    "本地檔案副檔名為 .html，內容實為 PDF（HTTP Content-Type: application/pdf）"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-17-P26-PAPER",
+   "title": "Tucker & Alizadeh (2020) An Online Admission Control Mechanism for EVs at Public Parking Infrastructures, IEEE TSG 11(1)",
+   "org": "IEEE / arXiv",
+   "url": "https://arxiv.org/abs/1905.06468",
+   "retrieved_at_utc": null,
+   "http_status": null,
+   "local_path": "research/ev_parking_math_20261029/PDFs/P26_An_Online_Admission_Control_Mechanism_for_Electric_Vehicles_at_Public_Parking_Infrastructures.pdf",
+   "sha256": "6c14530764139d3735fd941f5efdcf3d268ea6c16bdb1632373f8d622bfb2b69",
+   "bytes": 1037480,
+   "official": false,
+   "source_class": "peer_reviewed",
+   "region": "美國洛杉磯",
+   "period": "2019 前後",
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "p.10 §IV-E：pedestal EVSE install 3,308 USD；per extra cable 3,343 USD；networking/maintenance 75 USD/月"
+   ],
+   "limitations": [
+    "美國洛杉磯 2019 前後、非台灣採購價",
+    "轉引 AFDC/DOE 2015 EVSE cost report，原報告未讀",
+    "前輪已核，本輪未重抓（本地檔案 sha256 已記）"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-18-THB-CHARGING-PLAN",
+   "title": "公共充電樁設置及區域充電需求評估計畫（修正計畫）",
+   "org": "交通部公路局",
+   "url": "https://ws.thb.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDM2L3JlbGZpbGUvMTIyNzEvMzQyOS8yNGRkNGI1YS04MzIwLTQ5OWEtODk4YS03ZmI2MzQ2YWVhNzUucGRm&n=5YWs5YWx5YWF6Zu75qiB6Kit572u5Y%2bK5Y2A5Z%2bf5YWF6Zu76ZyA5rGC6KmV5Lyw6KiI55WrX%2besrDHmrKHkv67mraPoqIjnlasucGRm&icon=.pdf",
+   "retrieved_at_utc": "2026-10-31T03:13:19Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/thb_public_charging_plan.pdf",
+   "sha256": "29fa95f47ac189c070b7ecb311cde41d3e42c2e95eb1eb3bba2568dc2ab86380",
+   "bytes": 828424,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": "2023-01-01～2024-12-31 計畫（2022-09-26 核定）",
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "補助額度：快充每槍 200 萬元、慢充每槍 8 萬元、充電樁資訊管理系統每套 80 萬元（計畫 p.4/p.13/p.15）",
+    "計畫總經費 9.8 億元、核定中央補助 672,310,200 元；2023-2024 年目標慢充 6,000 槍、快充 500 槍"
+   ],
+   "limitations": [
+    "為『補助額度上限』，非實際決標成本",
+    "是否含安裝/配電擴容未逐項列明"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-19-NLMA-GHG-INVENTORY",
+   "title": "內政部國土管理署 溫室氣體盤查報告書（2023 年）",
+   "org": "內政部國土管理署",
+   "url": "https://www.nlma.gov.tw/uploads/files/077692af23bbfa3af2d22aa36a01d30f.pdf",
+   "retrieved_at_utc": "2026-10-31T03:13:31Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/nlma_ghg_inventory_2023.pdf",
+   "sha256": "e2d3b3adf5fceef21635c196d3ab8d3f807627106f240386767e78aac42c4f6a",
+   "bytes": 1954141,
+   "official": true,
+   "source_class": "official",
+   "region": "台灣",
+   "period": "2023 年盤查",
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [
+    "p.23：固定源/移動源 汽油 CO2 係數 2.263132872 kg CO2/L（與環境部公告 69,300 kg/TJ 相容）",
+    "同表列 CH4/N2O 係數（kg/L）"
+   ],
+   "limitations": [
+    "政府報告書之二次轉列，非環境部公告正文",
+    "報告書未標明所引環境部係數表版本"
+   ],
+   "what_happened": null
+  },
+  {
+   "source_id": "S-20-REJECTED-ACEBIDX",
+   "title": "（非官方鏡像）台東縣政府電動汽車充電樁購置設備案 決標公告",
+   "org": "acebidx.com（非官方）",
+   "url": "https://acebidx.com/zh-TW/docs/award/id/1c5c5a02-0425-4958-a3cd-a8362bc65481",
+   "retrieved_at_utc": "2026-10-31T03:13:22Z",
+   "http_status": 200,
+   "local_path": "research/official_data_20261031/social_cost/raw/html/acebidx_taitung_evse_award.html",
+   "sha256": "09dbeb8b98c7cc10a4098943ed839860652c68b7a865cbd2b54dd5a64a0ad223",
+   "bytes": 224414,
+   "official": false,
+   "source_class": "institutional_report",
+   "region": "台灣",
+   "period": null,
+   "unit_notes": "",
+   "sample_filter": null,
+   "revision": null,
+   "what_it_supports": [],
+   "limitations": [
+    "決標金額/底價欄位需付費解鎖（頁面顯示 * * * * *），未取得金額",
+    "非官方鏡像，不得作為成本證據；官方原始為政府電子採購網決標公告"
+   ],
+   "what_happened": "嘗試以鏡像取得充電樁決標單價，但金額欄位付費牆，判 rejected"
+  }
+ ],
+ "request_ledger": [
+  {
+   "seq": 9,
+   "t_utc": "2026-10-31T02:53:22Z",
+   "method": "GET",
+   "url": "https://www.iot.gov.tw/uploads/asset/data/661978c3367376304acd4e29/%E4%BA%A4%E9%80%9A%E5%BB%BA%E8%A8%AD%E8%A8%88%E7%95%AB%E7%B6%93%E6%BF%9F%E6%95%88%E7%9B%8A%E8%A9%95%E4%BC%B0%E6%89%8B%E5%86%8A%E8%88%87%E7%A1%AC%E9%9B%9D%E8%BB%9F%E9%AB%94%E6%9B%B4%E6%96%B0.pdf",
+   "purpose": "運研所 交通建設計畫經濟效益評估手冊（最新更新版）",
+   "status": 404,
+   "bytes": 548,
+   "sha256": "d465172175d35d493fb1633e237700022bd849fa123164790b168b8318acb090",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/iot_handbook_latest.pdf",
+   "error": "HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "seq": 10,
+   "t_utc": "2026-10-31T02:54:23Z",
+   "method": "GET",
+   "url": "https://hc2.taipower.com.tw/media/pm5ho2ou/%e8%a9%b3%e7%b4%b0%e9%9b%bb%e5%83%b9%e8%a1%a8.pdf?mediaDL=true",
+   "purpose": "台電 詳細電價表",
+   "status": null,
+   "bytes": 0,
+   "sha256": null,
+   "saved_path": null,
+   "error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+  },
+  {
+   "seq": 11,
+   "t_utc": "2026-10-31T02:54:26Z",
+   "method": "GET",
+   "url": "https://service.cca.gov.tw/File/Get/cca/zh-tw/GA1gKtpnBHxgViJ",
+   "purpose": "環境部 溫室氣體排放係數管理表",
+   "status": 500,
+   "bytes": 2363,
+   "sha256": "88683ed828270c121ac3e180cd20c73e3ae9ac9281d0ba0acb545b4fd9deb09b",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/moenv_ghg_factors.pdf",
+   "error": "HTTPError: HTTP Error 500: Internal Server Error"
+  },
+  {
+   "seq": 20,
+   "t_utc": "2026-10-31T02:55:40Z",
+   "method": "GET",
+   "url": "https://statis.motc.gov.tw/motc/Statistics/Display?Seq=810",
+   "purpose": "交通部統計查詢網：自用小客車在居家附近尋找停車位時間及停車費",
+   "status": 200,
+   "bytes": 89837,
+   "sha256": "3b0471da9004cef1a771b0aa17e868f2810158410504e815a8dca29552c22dc2",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/motc_parking_search_time.html",
+   "error": null
+  },
+  {
+   "seq": 21,
+   "t_utc": "2026-10-31T02:56:00Z",
+   "method": "GET",
+   "url": "https://data.taipei/api/dataset/59027123-0fd0-4599-bcc7-53e3f480e52a/resource/9fea1c0b-4ee1-45eb-9f92-f0a0eb1da2d7/download",
+   "purpose": "台北市公有停車場收費費率（data.taipei 開放資料）",
+   "status": 200,
+   "bytes": 0,
+   "sha256": null,
+   "saved_path": null,
+   "error": "IncompleteRead: IncompleteRead(548196 bytes read, 4029379 more expected)"
+  },
+  {
+   "seq": 22,
+   "t_utc": "2026-10-31T02:56:12Z",
+   "method": "GET",
+   "url": "https://www-ws.gov.taipei/001/Upload/455/relfile/22477/8991302/105c068d-191d-4593-ad23-3e8e83ffe86c.pdf",
+   "purpose": "台北市公共充電樁充電費率樣態",
+   "status": 200,
+   "bytes": 2285620,
+   "sha256": "4db0d848987f567894f2727548386a887b10e795ba11ceb9495c47e047630aa7",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/taipei_charging_fee_rates.pdf",
+   "error": null
+  },
+  {
+   "seq": 23,
+   "t_utc": "2026-10-31T02:56:14Z",
+   "method": "GET",
+   "url": "https://data.gov.tw/api/v2/rest/dataset/6339",
+   "purpose": "政府資料開放平臺 dataset 6339 中油主產品牌價（找官方 CSV 資源）",
+   "status": 200,
+   "bytes": 5974,
+   "sha256": "d78fe11542be1336e9db174a0c0a3c12daccb8e36a16b46382f7c538dbcdccad",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/datagovtw_dataset_6339.json",
+   "error": null
+  },
+  {
+   "seq": 24,
+   "t_utc": "2026-10-31T02:56:15Z",
+   "method": "GET",
+   "url": "https://data.gov.tw/api/v2/rest/dataset?qs=%E9%9B%BB%E5%83%B9",
+   "purpose": "政府資料開放平臺搜尋電價資料集",
+   "status": 405,
+   "bytes": 556,
+   "sha256": "44a1dc30cb7250253cf536db7f221ca2746c82db5005fdbb7a0cdc119225c4a8",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/datagovtw_search_powerprice.json",
+   "error": "HTTPError: HTTP Error 405: Method Not Allowed"
+  },
+  {
+   "seq": 25,
+   "t_utc": "2026-10-31T02:57:22Z",
+   "method": "GET",
+   "url": "https://nstatdb.dgbas.gov.tw/dgbasAll/webMain.aspx?sys=100&funid=qryout&funid2=A030101015&outmode=8&deflst=1&outkind=1",
+   "purpose": "主計總處 統計資訊網 CPI 基本分類指數查詢",
+   "status": 200,
+   "bytes": 49630,
+   "sha256": "1342d72a9ca24de0c5efe344a991d154fbff40346585c1f951a940e119e96a18",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/nstatdb_cpi.html",
+   "error": null
+  },
+  {
+   "seq": 26,
+   "t_utc": "2026-10-31T02:57:26Z",
+   "method": "GET",
+   "url": "https://www.cpc.com.tw/historyprice.aspx",
+   "purpose": "中油 歷史油價查詢頁",
+   "status": 200,
+   "bytes": 196625,
+   "sha256": "3c44259e88ce06b9ccf3b0ba74d46bf0ad6345d0e6af24af4c52918f2ff85fcc",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/cpc_historyprice.html",
+   "error": null
+  },
+  {
+   "seq": 27,
+   "t_utc": "2026-10-31T02:57:27Z",
+   "method": "GET",
+   "url": "https://www.iot.gov.tw/uploads/asset/data/661978c3367376304acd4e29/%E4%BA%A4%E9%80%9A%E5%BB%BA%E8%A8%AD%E8%A8%88%E7%95%AB%E7%B6%93%E6%BF%9F%E6%95%88%E7%9B%8A%E8%A9%95%E4%BC%B0%E6%89%8B%E5%86%8A%E8%88%87%E7%A1%AC%E9%9B%9D%E8%BB%9F%E9%AB%94%E6%9B%B4%E6%96%B0.pdf",
+   "purpose": "運研所 經濟效益評估手冊（帶 Referer 重試）",
+   "status": 404,
+   "bytes": 548,
+   "sha256": "d465172175d35d493fb1633e237700022bd849fa123164790b168b8318acb090",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/iot_handbook_latest.pdf",
+   "error": "HTTPError: HTTP Error 404: Not Found"
+  },
+  {
+   "seq": 28,
+   "t_utc": "2026-10-31T02:57:55Z",
+   "method": "GET",
+   "url": "https://www2.moeaea.gov.tw/oil111/Gasoline/RetailPrice",
+   "purpose": "經濟部能源署 油價資訊 汽柴油零售價頁",
+   "status": 200,
+   "bytes": 40346,
+   "sha256": "72be8da78c3ad9320e9f5f1f05dc1423e7b3f44a98698b6dd8929bad1d5b77ac",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/moeaea_retailprice.html",
+   "error": null
+  },
+  {
+   "seq": 29,
+   "t_utc": "2026-10-31T02:58:28Z",
+   "method": "GET",
+   "url": "https://www2.moeaea.gov.tw/oil111/js/front/gasoline/retailprice.js",
+   "purpose": "能源署 零售價頁面前端腳本（找資料 API）",
+   "status": 200,
+   "bytes": 10753,
+   "sha256": "701c2f326a5c2178d3fa01372fb8f43963a9065bad31a44567417c3111a57720",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/moeaea_retailprice.js",
+   "error": null
+  },
+  {
+   "seq": 34,
+   "t_utc": "2026-10-31T02:59:19Z",
+   "method": "POST",
+   "url": "https://www2.moeaea.gov.tw/oil111/Gasoline/RetailPrice/load",
+   "purpose": "能源署 汽柴油參考零售價 指定期間查詢（中油公告零售價）",
+   "status": 200,
+   "bytes": 85,
+   "sha256": "53f5937ecac2e0527ef0398459f45eb35605e1aa802c905c18ddb54c098a7081",
+   "saved_path": "停车场充电桩优化方案/research/official_data_20261031/social_cost/raw/html/oil_price_range_2025_2026.json",
+   "error": null
+  },
+  {
+   "seq": 35,
+   "t_utc": "2026-10-31T02:59:40Z",
+   "method": "POST",
+   "url": "https://www2.moeaea.gov.tw/oil111/Gasoline/RetailPrice/load",
+   "purpose": "能源署 汽柴油參考零售價 指定期間查詢（中油公告零售價，yyyy/mm/dd）",
+   "status": 200,
+   "bytes": 12823,
+   "sha256": "0f033445b42311b760490c8089305a1069207b6e2b42670e703ee5227bdce202",
+   "saved_path": "停车场充电桩优化方案/research/official_data_20261031/social_cost/raw/html/oil_price_range_2025_2026.json",
+   "error": null
+  },
+  {
+   "seq": 36,
+   "t_utc": "2026-10-31T02:59:43Z",
+   "method": "GET",
+   "url": "https://www.iot.gov.tw/uploads/asset/data/6655325e085777b9e745ca2e/108%E5%B9%B4%E7%B6%93%E6%95%88%E8%A9%95%E4%BC%B0%E6%89%8B%E5%86%8A_110%E5%B9%B4%E8%A1%8C%E8%BB%8A%E6%88%90%E6%9C%AC%E5%8F%83%E6%95%B8%E6%9B%B4%E6%96%B0%E5%BE%8C%E6%95%B4%E7%90%86%E7%89%88%E6%9C%AC_.pdf",
+   "purpose": "運研所 108年經效評估手冊（110年行車成本參數更新整理版）",
+   "status": 200,
+   "bytes": 6692366,
+   "sha256": "bbdb897bb204a4268bd516b72783ad2aeec7a9c8146d64669bf9f5e8068d32c1",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/iot_108_handbook_110c_params.pdf",
+   "error": null
+  },
+  {
+   "seq": 37,
+   "t_utc": "2026-10-31T03:00:43Z",
+   "method": "GET",
+   "url": "https://hc1.taipower.com.tw/2289/2406/2437/51029/46920/simpleList?Page=13&PageSize=10",
+   "purpose": "台電 已開放資料集清單",
+   "status": null,
+   "bytes": 0,
+   "sha256": null,
+   "saved_path": null,
+   "error": "URLError: <urlopen error _ssl.c:983: The handshake operation timed out>"
+  },
+  {
+   "seq": 38,
+   "t_utc": "2026-10-31T03:01:38Z",
+   "method": "GET",
+   "url": "https://ws.dgbas.gov.tw/001/Upload/463/ebook/ebook_331734//pdf/full.pdf",
+   "purpose": "主計總處 物價統計月報（CPI 表）",
+   "status": 200,
+   "bytes": 6958456,
+   "sha256": "21f894c44a97ed5daa1ee01270b2c280099f15896ce83d1a345afc4fe75f049f",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/dgbas_price_monthly.pdf",
+   "error": null
+  },
+  {
+   "seq": 39,
+   "t_utc": "2026-10-31T03:01:39Z",
+   "method": "GET",
+   "url": "https://data.gov.tw/api/v2/rest/dataset/6046",
+   "purpose": "政府資料開放平臺 dataset 6046（測是否為 CPI 資料集）",
+   "status": 200,
+   "bytes": 78,
+   "sha256": "789537ea0c20766936ad7db7a5b8f4738c15c6b58861a488f7c2a004c6db01bd",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/datagovtw_dataset_6046.json",
+   "error": null
+  },
+  {
+   "seq": 40,
+   "t_utc": "2026-10-31T03:01:42Z",
+   "method": "GET",
+   "url": "https://www.taipower.com.tw/tc/page.aspx?mid=2078",
+   "purpose": "台電 電價表頁面（測 WAF）",
+   "status": 200,
+   "bytes": 100097,
+   "sha256": "42213cc119e893c41d39108334d660249969b2ca58f2e60c275e0afc8f6d4886",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/taipower_price_page.html",
+   "error": null
+  },
+  {
+   "seq": 41,
+   "t_utc": "2026-10-31T03:01:45Z",
+   "method": "GET",
+   "url": "https://ghgregistry.moenv.gov.tw/epa_ghg/",
+   "purpose": "環境部 溫室氣體減量管理室（找係數管理表下載）",
+   "status": 200,
+   "bytes": 65751,
+   "sha256": "2fc9e33467ae6f092ae0dc057cf5251be8e5c22911640afad3ddef87aee1fbf7",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/moenv_ghg_registry.html",
+   "error": null
+  },
+  {
+   "seq": 42,
+   "t_utc": "2026-10-31T03:02:07Z",
+   "method": "GET",
+   "url": "https://www.taipower.com.tw/2289/2290/46940/simpleList",
+   "purpose": "台電 電價表 下載清單頁",
+   "status": 200,
+   "bytes": 104477,
+   "sha256": "ea457a401cfb03c1216756f38160039b7d6b8d67ba9850f02d2cdbf5463544a7",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/taipower_price_list.html",
+   "error": null
+  },
+  {
+   "seq": 43,
+   "t_utc": "2026-10-31T03:02:10Z",
+   "method": "GET",
+   "url": "https://www.taipower.com.tw/2289/2406/2420/2429/simpleList",
+   "purpose": "台電 電動車用電業務專區",
+   "status": 200,
+   "bytes": 105883,
+   "sha256": "c870aaec77f304e67e1459e67bf2f08183ca9b1c1db709cdbf0fced7e2529358",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/taipower_ev_zone.html",
+   "error": null
+  },
+  {
+   "seq": 44,
+   "t_utc": "2026-10-31T03:02:12Z",
+   "method": "GET",
+   "url": "https://ghgregistry.moenv.gov.tw/upload/Tools/AI/113%E5%B9%B42%E6%9C%885%E6%97%A5%E5%85%AC%E5%91%8A%E6%BA%AB%E5%AE%A4%E6%B0%A3%E9%AB%94%E6%8E%92%E6%94%BE%E4%BF%82%E6%95%B8.pdf",
+   "purpose": "環境部 113年2月5日公告 溫室氣體排放係數",
+   "status": 200,
+   "bytes": 1168401,
+   "sha256": "f809a27150c014e1cb3bde3133cc433a8be5fe1f14105e63903970540ba9d623",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/moenv_ghg_factors_2024.pdf",
+   "error": null
+  },
+  {
+   "seq": 45,
+   "t_utc": "2026-10-31T03:03:06Z",
+   "method": "GET",
+   "url": "https://www.taipower.com.tw/media/dhuhrppu/%E7%B0%A1%E8%A6%81%E9%9B%BB%E5%83%B9%E8%A1%A8.pdf?mediaDL=true",
+   "purpose": "台電 簡要電價表（現行）",
+   "status": 200,
+   "bytes": 1039836,
+   "sha256": "476859a821d7146af2c799b2361922adc389c41f3f41a7b7245f3a765bed97df",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/taipower_brief_price_2026.pdf",
+   "error": null
+  },
+  {
+   "seq": 46,
+   "t_utc": "2026-10-31T03:03:09Z",
+   "method": "GET",
+   "url": "https://www.taipower.com.tw/media/xtofy2yw/%E8%A9%B3%E7%B4%B0%E9%9B%BB%E5%83%B9%E8%A1%A8.pdf?mediaDL=true",
+   "purpose": "台電 詳細電價表（現行）",
+   "status": 200,
+   "bytes": 1254436,
+   "sha256": "71b9573ce5e5841fec4a1277e327ce20834eddac9f407e586b85a6ddf907e78e",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/taipower_detail_price_2026.pdf",
+   "error": null
+  },
+  {
+   "seq": 49,
+   "t_utc": "2026-10-31T03:03:28Z",
+   "method": "GET",
+   "url": "https://ws.dgbas.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDYzL3JlbGZpbGUvMTA5ODAvMjM2NzU5L25ld3MxMTUwOS5wZGY%3d&n=bmV3czExNTA5LnBkZg%3d%3d&icon=..pdf",
+   "purpose": "主計總處 115年9月消費者物價指數新聞稿",
+   "status": 200,
+   "bytes": 369724,
+   "sha256": "4edec01c0d74be94b02a31903c16bd3b90dc650287da03354e158aaef4768c23",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/dgbas_cpi_news_11509.pdf",
+   "error": null
+  },
+  {
+   "seq": 54,
+   "t_utc": "2026-10-31T03:13:14Z",
+   "method": "GET",
+   "url": "https://www.moeaea.gov.tw/ecw/populace/content/wHandStatistics_File.ashx?statistics_id=4707&serial_no=1",
+   "purpose": "經濟部能源署 車輛油耗指南（統計檔案）",
+   "status": 403,
+   "bytes": 4548,
+   "sha256": "9d35d4d37b0ee3da72353d4d90cc30f09233c92b2f4c9adc00a833403230e35e",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/moeaea_vehicle_fuel_economy_guide",
+   "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "seq": 55,
+   "t_utc": "2026-10-31T03:13:16Z",
+   "method": "GET",
+   "url": "https://mnscdn.moea.gov.tw/Mns/DOS/content/wHandMenuFile.ashx?file_id=37515",
+   "purpose": "經濟部統計處 統計手冊（含新台幣對美元月平均匯率）",
+   "status": 403,
+   "bytes": 4546,
+   "sha256": "e1bbe46fccb9215ed8e4f29aacce2598e32823a2a478b4a691744426bd804d91",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/moea_stat_handbook_fx.pdf",
+   "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "seq": 56,
+   "t_utc": "2026-10-31T03:13:19Z",
+   "method": "GET",
+   "url": "https://ws.thb.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvNDM2L3JlbGZpbGUvMTIyNzEvMzQyOS8yNGRkNGI1YS04MzIwLTQ5OWEtODk4YS03ZmI2MzQ2YWVhNzUucGRm&n=5YWs5YWx5YWF6Zu75qiB6Kit572u5Y%2bK5Y2A5Z%2bf5YWF6Zu76ZyA5rGC6KmV5Lyw6KiI55WrX%2besrDHmrKHkv67mraPoqIjnlasucGRm&icon=.pdf",
+   "purpose": "公路局 公共充電樁設置及區域充電需求評估計畫",
+   "status": 200,
+   "bytes": 828424,
+   "sha256": "29fa95f47ac189c070b7ecb311cde41d3e42c2e95eb1eb3bba2568dc2ab86380",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/thb_public_charging_plan.pdf",
+   "error": null
+  },
+  {
+   "seq": 57,
+   "t_utc": "2026-10-31T03:13:22Z",
+   "method": "GET",
+   "url": "https://acebidx.com/zh-TW/docs/award/id/1c5c5a02-0425-4958-a3cd-a8362bc65481",
+   "purpose": "（非官方鏡像）台東縣政府電動汽車充電樁購置設備案 決標公告",
+   "status": 200,
+   "bytes": 224414,
+   "sha256": "09dbeb8b98c7cc10a4098943ed839860652c68b7a865cbd2b54dd5a64a0ad223",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/acebidx_taitung_evse_award.html",
+   "error": null
+  },
+  {
+   "seq": 58,
+   "t_utc": "2026-10-31T03:13:31Z",
+   "method": "GET",
+   "url": "https://www.nlma.gov.tw/uploads/files/077692af23bbfa3af2d22aa36a01d30f.pdf",
+   "purpose": "國土管理署 溫室氣體盤查報告書（轉列環境部係數，含移動源汽油 kg CO2/L）",
+   "status": 200,
+   "bytes": 1954141,
+   "sha256": "e2d3b3adf5fceef21635c196d3ab8d3f807627106f240386767e78aac42c4f6a",
+   "saved_path": "research/official_data_20261031/social_cost/raw/pdf/nlma_ghg_inventory_2023.pdf",
+   "error": null
+  },
+  {
+   "seq": 60,
+   "t_utc": "2026-10-31T03:14:31Z",
+   "method": "GET",
+   "url": "https://www.cbc.gov.tw/dl-149432-669bf5f5a92c434cb24881ba49fb8e02.html",
+   "purpose": "中央銀行 年報統計表 外匯市場（含新台幣對美元年平均匯率）",
+   "status": 200,
+   "bytes": 410755,
+   "sha256": "f90af614dd7baf6ddd180e56ea3fc28346280df392703bcdbe4375ec1fffe30b",
+   "saved_path": "research/official_data_20261031/social_cost/raw/html/cbc_fx_statistics.html",
+   "error": null
+  }
+ ],
+ "search_queries": [
+  {
+   "seq": 1,
+   "t_utc": "2026-10-31T02:52:43Z",
+   "query": "交通建設計畫經濟效益評估手冊 時間價值 交通部運輸研究所"
+  },
+  {
+   "seq": 2,
+   "t_utc": "2026-10-31T02:52:43Z",
+   "query": "主計總處 消費者物價指數 民國98年 指數 2025 年"
+  },
+  {
+   "seq": 3,
+   "t_utc": "2026-10-31T02:52:43Z",
+   "query": "台灣中油 汽柴油 歷史油價 查詢 92無鉛"
+  },
+  {
+   "seq": 4,
+   "t_utc": "2026-10-31T02:52:43Z",
+   "query": "台電 電價表 電動車充電 專用電價 費率"
+  },
+  {
+   "seq": 5,
+   "t_utc": "2026-10-31T02:53:06Z",
+   "query": "「交通建設計畫經濟效益評估手冊」 pdf 時間價值 表 運研所 iot.gov.tw"
+  },
+  {
+   "seq": 6,
+   "t_utc": "2026-10-31T02:53:06Z",
+   "query": "data.gov.tw 台灣中油 汽柴油歷史價格 csv 開放下載"
+  },
+  {
+   "seq": 7,
+   "t_utc": "2026-10-31T02:53:06Z",
+   "query": "台電 電價表 低壓 表燈 非時間電價 電動車充電設備 費率 pdf"
+  },
+  {
+   "seq": 8,
+   "t_utc": "2026-10-31T02:53:06Z",
+   "query": "環境部 溫室氣體排放係數管理表 汽油 CO2 排放係數 2.2631"
+  },
+  {
+   "seq": 12,
+   "t_utc": "2026-10-31T02:54:58Z",
+   "query": "site:iot.gov.tw 交通建設計畫經濟效益評估手冊 時間價值"
+  },
+  {
+   "seq": 13,
+   "t_utc": "2026-10-31T02:54:58Z",
+   "query": "中油 油價 歷史 政府資料開放平臺 資料集 汽柴油 零售價"
+  },
+  {
+   "seq": 14,
+   "t_utc": "2026-10-31T02:54:58Z",
+   "query": "環境部 溫室氣體排放係數管理表 下載 汽油 移動源"
+  },
+  {
+   "seq": 15,
+   "t_utc": "2026-10-31T02:54:58Z",
+   "query": "台北市 公有停車場 收費費率標準 每小時 費率"
+  },
+  {
+   "seq": 16,
+   "t_utc": "2026-10-31T02:55:19Z",
+   "query": "\"溫室氣體排放係數管理表\" 環境部 下載 pdf 113年 版本"
+  },
+  {
+   "seq": 17,
+   "t_utc": "2026-10-31T02:55:19Z",
+   "query": "電動車充電樁 補助 每槍 萬元 經濟部 要點 設置"
+  },
+  {
+   "seq": 18,
+   "t_utc": "2026-10-31T02:55:19Z",
+   "query": "台北市 公共充電樁 充電費率 每度 元 公告"
+  },
+  {
+   "seq": 19,
+   "t_utc": "2026-10-31T02:55:19Z",
+   "query": "台灣 停車 尋找車位 時間 調查 分鐘 交通部"
+  },
+  {
+   "seq": 30,
+   "t_utc": "2026-10-31T02:58:51Z",
+   "query": "site:data.gov.tw 消費者物價指數 資料集"
+  },
+  {
+   "seq": 31,
+   "t_utc": "2026-10-31T02:58:51Z",
+   "query": "中油 歷史油價 查詢 92無鉛 95無鉛 98無鉛 柴油 價格 頁面"
+  },
+  {
+   "seq": 32,
+   "t_utc": "2026-10-31T02:58:51Z",
+   "query": "交通建設計畫經濟效益評估手冊 時間價值 建議值 112年 下載"
+  },
+  {
+   "seq": 33,
+   "t_utc": "2026-10-31T02:58:51Z",
+   "query": "台電 電價表 資料集 政府資料開放 電價 費率"
+  },
+  {
+   "seq": 47,
+   "t_utc": "2026-10-31T03:03:15Z",
+   "query": "主計總處 115年9月 消費者物價指數 新聞稿 總指數"
+  },
+  {
+   "seq": 48,
+   "t_utc": "2026-10-31T03:03:15Z",
+   "query": "115年 消費者物價指數 年增率 主計總處 最新"
+  },
+  {
+   "seq": 50,
+   "t_utc": "2026-10-31T03:13:00Z",
+   "query": "經濟部能源署 車輛耗能 小客車 平均油耗 公里/公升 國產 進口"
+  },
+  {
+   "seq": 51,
+   "t_utc": "2026-10-31T03:13:00Z",
+   "query": "政府電子採購網 充電樁 決標公告 查詢"
+  },
+  {
+   "seq": 52,
+   "t_utc": "2026-10-31T03:13:00Z",
+   "query": "經濟部 能源署 充電樁 補助要點 每槍 金額"
+  },
+  {
+   "seq": 53,
+   "t_utc": "2026-10-31T03:13:00Z",
+   "query": "中央銀行 新台幣對美元 年平均匯率 2019 統計"
+  },
+  {
+   "seq": 59,
+   "t_utc": "2026-10-31T03:14:22Z",
+   "query": "中央銀行 新台幣對美元 年平均匯率 2019 統計 cbc.gov.tw"
+  }
+ ],
+ "downloaded_files_not_in_sources": [
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/cpc_historyprice.html",
+   "bytes": 196625,
+   "sha256": "3c44259e88ce06b9ccf3b0ba74d46bf0ad6345d0e6af24af4c52918f2ff85fcc"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/datagovtw_dataset_6046.json",
+   "bytes": 78,
+   "sha256": "789537ea0c20766936ad7db7a5b8f4738c15c6b58861a488f7c2a004c6db01bd"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/datagovtw_search_powerprice.json",
+   "bytes": 556,
+   "sha256": "44a1dc30cb7250253cf536db7f221ca2746c82db5005fdbb7a0cdc119225c4a8"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/moeaea_retailprice.html",
+   "bytes": 40346,
+   "sha256": "72be8da78c3ad9320e9f5f1f05dc1423e7b3f44a98698b6dd8929bad1d5b77ac"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/moenv_ghg_registry.html",
+   "bytes": 65751,
+   "sha256": "2fc9e33467ae6f092ae0dc057cf5251be8e5c22911640afad3ddef87aee1fbf7"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/nstatdb_cpi.html",
+   "bytes": 49630,
+   "sha256": "1342d72a9ca24de0c5efe344a991d154fbff40346585c1f951a940e119e96a18"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/html/taipower_price_page.html",
+   "bytes": 100097,
+   "sha256": "42213cc119e893c41d39108334d660249969b2ca58f2e60c275e0afc8f6d4886"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/iot_handbook_latest.pdf",
+   "bytes": 548,
+   "sha256": "d465172175d35d493fb1633e237700022bd849fa123164790b168b8318acb090"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/moea_stat_handbook_fx.pdf",
+   "bytes": 4546,
+   "sha256": "e1bbe46fccb9215ed8e4f29aacce2598e32823a2a478b4a691744426bd804d91"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/moeaea_vehicle_fuel_economy_guide",
+   "bytes": 4548,
+   "sha256": "9d35d4d37b0ee3da72353d4d90cc30f09233c92b2f4c9adc00a833403230e35e"
+  },
+  {
+   "local_path": "research/official_data_20261031/social_cost/raw/pdf/moenv_ghg_factors.pdf",
+   "bytes": 2363,
+   "sha256": "88683ed828270c121ac3e180cd20c73e3ae9ac9281d0ba0acb545b4fd9deb09b"
+  }
+ ]
+}

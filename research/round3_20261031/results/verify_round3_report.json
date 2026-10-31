@@ -1,0 +1,214 @@
+{
+ "schema": "round3_verification/v1",
+ "checks": [
+  {
+   "name": "independent_generator",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "ev_share": 0.048177083333333336,
+    "need_share": 0.7297297297297297,
+    "meta": {
+     "scenario_model": "independent",
+     "p_ev": 0.05,
+     "q_need": 0.7,
+     "product_coupled": false
+    }
+   }
+  },
+  {
+   "name": "legacy_generator",
+   "passed": true,
+   "detail": {
+    "ok": true
+   }
+  },
+  {
+   "name": "strict_rejects",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "rejected": [
+     true,
+     true,
+     true,
+     true
+    ]
+   }
+  },
+  {
+   "name": "service_metrics_hand",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "wrong": {},
+    "rates": {
+     "capacity_unmet_rate": 0.6666666666666666,
+     "ev_parking_failure_rate": 0.25,
+     "ice_parking_failure_rate": 1.0,
+     "departed_shortfall_energy_rate": 0.4
+    }
+   }
+  },
+  {
+   "name": "config_roundtrip",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "to_dict_keys": [
+     "arrival_rate_hour",
+     "burst_multiplier",
+     "charge_probability",
+     "charger_kw",
+     "chargers",
+     "charging_bays"
+    ]
+   }
+  },
+  {
+   "name": "rule_c_endpoints",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "detail": {
+     "pi0": {
+      "ice_on_charging": 0,
+      "visits": 363,
+      "rule": "dedicated_by_type",
+      "protected": 0
+     },
+     "pi1": {
+      "ice_on_charging": 12,
+      "visits": 363,
+      "rule": "full_open_ice_first",
+      "protected": 0
+     },
+     "c_m0": {
+      "ice_on_charging": 12,
+      "visits": 363,
+      "rule": "protected_quota",
+      "protected": 0
+     },
+     "c_mk": {
+      "ice_on_charging": 0,
+      "visits": 363,
+      "rule": "protected_quota",
+      "protected": 6
+     }
+    }
+   }
+  },
+  {
+   "name": "hidden_info_states",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "hidden_fields_found": [],
+    "decisions": [
+     "ice_ordinary_only",
+     "ice_ordinary_first",
+     "ice_ordinary_first",
+     "ice_ordinary_first"
+    ]
+   }
+  },
+  {
+   "name": "joint_recompute_independent",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "wrong": []
+   }
+  },
+  {
+   "name": "allocation_statuses",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "detail": {
+     "no_servers": 0,
+     "unreachable": "user_bound",
+     "achieved": 3,
+     "rec": {
+      "per_seed": [
+       7,
+       8,
+       10
+      ],
+      "median": 8,
+      "q90": 10,
+      "recommended_k": 8,
+      "status": "ok",
+      "note": "中位数 k=8、q90=10 为整数，可直接作为安装数"
+     }
+    }
+   }
+  },
+  {
+   "name": "cost_arithmetic",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "detail": {
+     "one": 2120.0,
+     "half": 1060.0,
+     "zero": 100.0
+    }
+   }
+  },
+  {
+   "name": "audit_round2",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "summary": {
+     "confirmed": 1,
+     "corrected": 3,
+     "partially_unsupported": 1
+    }
+   }
+  },
+  {
+   "name": "multiday_audit",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "days": [
+     "2026-10-30",
+     "2026-10-31"
+    ],
+    "slots": 307,
+    "holdout": false
+   }
+  },
+  {
+   "name": "frozen_hashes",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "changed": {}
+   }
+  },
+  {
+   "name": "docs_limits",
+   "passed": true,
+   "detail": {
+    "ok": true,
+    "lengths": {
+     "docs/PROGRESS.md": 2602,
+     "docs/TODO.md": 6838,
+     "docs/methods/COST-MODEL-V2.md": 3187
+    }
+   }
+  },
+  {
+   "name": "rules_v2_corrected",
+   "passed": true,
+   "detail": {
+    "ok": true
+   }
+  }
+ ],
+ "passed": 15,
+ "total": 15
+}

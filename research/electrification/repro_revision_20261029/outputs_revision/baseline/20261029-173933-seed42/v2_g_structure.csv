@@ -1,0 +1,5 @@
+lot_type,ev_mode,etp_sustained_suffix,full_dominant_windows,partial_dominant_windows,negative_islands,n_grid_points,r_grid_first,r_grid_last,n_cells_rule_changed,n_cells_rule_fixed_evaluated,g_hat_rule_fixed_min,g_hat_rule_fixed_max,best_partial_rules_seen
+plc,beta,,,0.20-1.00,,9,0.2,1,9,9,4608274.541,4759573.876,pi_S
+plc,binomial,,,0.20-1.00,,9,0.2,1,9,9,4568579.195,4753423.138,pi_S
+pnc,beta,,,0.20-1.00,,9,0.2,1,9,9,4797660.093,4800000,pi_S
+pnc,binomial,,,0.20-1.00,,9,0.2,1,9,9,4798828.519,4800000,pi_S

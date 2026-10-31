@@ -1,0 +1,863 @@
+{
+  "date": "2026-10-29",
+  "source_root": "C:\\Users\\tho25\\Desktop\\论文学习",
+  "project_root": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案",
+  "status": "move_complete_hash_verified",
+  "source_threads": [
+    "01a1855a-6e0c-7682-8bd6-18c12ac3a93c",
+    "01a1857b-b931-7fe3-990f-d9a48c4f082e"
+  ],
+  "records": [
+    {
+      "relative_path": "research\\electrification\\算法解析与数学结合建议_2026-10-29.md",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\算法解析与数学结合建议_2026-10-29.md",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\算法解析与数学结合建议_2026-10-29.md",
+      "bytes": 19363,
+      "sha256_before": "5DCD359DE970E096A13A4AB8740BF8ECA0623CCE340CA9E1DA510175D00286AB",
+      "operation": "move",
+      "sha256_after": "A435D39EA870A64870907ED68E30C2B09380FB6146F35A57D26B95FF7D19C442",
+      "path_references_updated": true
+    },
+    {
+      "relative_path": "research\\electrification\\download_math_papers.py",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\download_math_papers.py",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\download_math_papers.py",
+      "bytes": 3390,
+      "sha256_before": "86207F91F233D59A058E482D6D8F5B812FA34BB7C152266E2F2859CD61AEB253",
+      "operation": "move",
+      "sha256_after": "9104A2441B7FF6C080C65E3657D3DB3E445C287B695BE9731B4BFAD25AD854D5",
+      "path_references_updated": true
+    },
+    {
+      "relative_path": "research\\electrification\\equations.xml",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\equations.xml",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\equations.xml",
+      "bytes": 296185,
+      "sha256_before": "A81F9F064F58505562B2103F1D1D4BA846C39C394572BF9F1DE7E8E9B747BE40",
+      "operation": "move",
+      "sha256_after": "A81F9F064F58505562B2103F1D1D4BA846C39C394572BF9F1DE7E8E9B747BE40",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\extract_manuscript.py",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\extract_manuscript.py",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\extract_manuscript.py",
+      "bytes": 2117,
+      "sha256_before": "A4744571D8D6B60CC462E1DA1564EC36920290E34DB676EAFFECD1B842B07925",
+      "operation": "move",
+      "sha256_after": "1D6A3474DD8BD6747303762CBE902848691A3190A78AC63DD2A2707BC2DAE942",
+      "path_references_updated": true
+    },
+    {
+      "relative_path": "research\\electrification\\image1.png",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\image1.png",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\image1.png",
+      "bytes": 76096,
+      "sha256_before": "458445592FAA0D7FE6652EAB3F3284D0C8F4A4676CD9B76C6BA4C101317420A7",
+      "operation": "move",
+      "sha256_after": "458445592FAA0D7FE6652EAB3F3284D0C8F4A4676CD9B76C6BA4C101317420A7",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\image2.png",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\image2.png",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\image2.png",
+      "bytes": 317403,
+      "sha256_before": "EE1C9FB3A85C93EEF1C2DD846DF83FC5C21723AD9BBC7988EF1B44D5F461E795",
+      "operation": "move",
+      "sha256_after": "EE1C9FB3A85C93EEF1C2DD846DF83FC5C21723AD9BBC7988EF1B44D5F461E795",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\image3.png",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\image3.png",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\image3.png",
+      "bytes": 100699,
+      "sha256_before": "9AFBFD4D6E3B7FA65BDA8E7A6E9A8D7FDD0D0766CC9CEBF5153D723A486CCB79",
+      "operation": "move",
+      "sha256_after": "9AFBFD4D6E3B7FA65BDA8E7A6E9A8D7FDD0D0766CC9CEBF5153D723A486CCB79",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\image4.png",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\image4.png",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\image4.png",
+      "bytes": 151447,
+      "sha256_before": "F98D406D1780C17C8EA58575CD865019A32CC6246714EABB88C99EE2176DACC6",
+      "operation": "move",
+      "sha256_after": "F98D406D1780C17C8EA58575CD865019A32CC6246714EABB88C99EE2176DACC6",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\image5.png",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\image5.png",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\image5.png",
+      "bytes": 71094,
+      "sha256_before": "A3BDE885762593113D973E21A29F6995FF673F6D7F053E7C2EC9C2E6604439CD",
+      "operation": "move",
+      "sha256_after": "A3BDE885762593113D973E21A29F6995FF673F6D7F053E7C2EC9C2E6604439CD",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\image6.png",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\image6.png",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\image6.png",
+      "bytes": 83824,
+      "sha256_before": "AB9F1E3119D32C368D2F1ED39E18E2D6BDA3F27D8579D14A26ABC07F6EFF17DD",
+      "operation": "move",
+      "sha256_after": "AB9F1E3119D32C368D2F1ED39E18E2D6BDA3F27D8579D14A26ABC07F6EFF17DD",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\image7.png",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\image7.png",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\image7.png",
+      "bytes": 459843,
+      "sha256_before": "57BEB3E3CB84A8F0D9DF973EBB8053955D03713DF872655E49E066FD513A2AEB",
+      "operation": "move",
+      "sha256_after": "57BEB3E3CB84A8F0D9DF973EBB8053955D03713DF872655E49E066FD513A2AEB",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\image8.png",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\image8.png",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\image8.png",
+      "bytes": 91973,
+      "sha256_before": "460EEE7F6A9CC9419A74FA74198ACF0AE6075860FEDBBE0E5757309F8544186C",
+      "operation": "move",
+      "sha256_after": "460EEE7F6A9CC9419A74FA74198ACF0AE6075860FEDBBE0E5757309F8544186C",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\manuscript_extracted.json",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\manuscript_extracted.json",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\manuscript_extracted.json",
+      "bytes": 49004,
+      "sha256_before": "79D8F49E8EF08B6BA95016A2D6FFE61AA82017D1C5BD68581023B74C46B8E725",
+      "operation": "move",
+      "sha256_after": "79D8F49E8EF08B6BA95016A2D6FFE61AA82017D1C5BD68581023B74C46B8E725",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\electrification\\manuscript_extracted.txt",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\electrification\\manuscript_extracted.txt",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\manuscript_extracted.txt",
+      "bytes": 44429,
+      "sha256_before": "001C3E419A228C9435340C691AD13248A362F9D41298B71998940BC92A8E4D99",
+      "operation": "move",
+      "sha256_after": "001C3E419A228C9435340C691AD13248A362F9D41298B71998940BC92A8E4D99",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\下载目录.md",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\下载目录.md",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\下载目录.md",
+      "bytes": 13786,
+      "sha256_before": "89CE0619BCF0AF639832EBD0FB14241645DCC8E727FEC69B2C8564A07DFE6BF1",
+      "operation": "move",
+      "sha256_after": "C0229C8F9C94FA097FE097103DC367A0A6E3234CC528D1556AAE353DADE4ABBF",
+      "path_references_updated": true
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\相关论文_已下载22篇_20261029.zip",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\相关论文_已下载22篇_20261029.zip",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\相关论文_已下载22篇_20261029.zip",
+      "bytes": 27268312,
+      "sha256_before": "471CB17BCA0B2B1731B352666BFE780EFFE63CD527CD42E416B26F0891BB922B",
+      "operation": "move",
+      "sha256_after": "471CB17BCA0B2B1731B352666BFE780EFFE63CD527CD42E416B26F0891BB922B",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\download_manifest.csv",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\download_manifest.csv",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\download_manifest.csv",
+      "bytes": 16682,
+      "sha256_before": "8C0A0656A7AA69292647A43F5F4DAD8111A41F2566D2D2BCAB3A33FBDD7027B4",
+      "operation": "move",
+      "sha256_after": "8C0A0656A7AA69292647A43F5F4DAD8111A41F2566D2D2BCAB3A33FBDD7027B4",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\download_papers.py",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\download_papers.py",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\download_papers.py",
+      "bytes": 9197,
+      "sha256_before": "27949E358DFC7DBFB6AA356E8B075F784B6266F5514199157B6B8266FBF296FA",
+      "operation": "move",
+      "sha256_after": "27949E358DFC7DBFB6AA356E8B075F784B6266F5514199157B6B8266FBF296FA",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\download_status.json",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\download_status.json",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\download_status.json",
+      "bytes": 38719,
+      "sha256_before": "D46E82D79551C50C40CDAECC462C04DD0098AF9CC097BF174ED267A84EDFA380",
+      "operation": "move",
+      "sha256_after": "D46E82D79551C50C40CDAECC462C04DD0098AF9CC097BF174ED267A84EDFA380",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\extra_download_sources.json",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\extra_download_sources.json",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\extra_download_sources.json",
+      "bytes": 613,
+      "sha256_before": "227988489785ACD0216ED3B2C85AEC06409EE66477E93C3914C41B77B2912BE5",
+      "operation": "move",
+      "sha256_after": "227988489785ACD0216ED3B2C85AEC06409EE66477E93C3914C41B77B2912BE5",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\hal_lookup.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\hal_lookup.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\hal_lookup.html",
+      "bytes": 44,
+      "sha256_before": "B06688A7B8B577F623BE74935E8FC7E333DD36CDAFA51FA4FE1C3D6157118F24",
+      "operation": "move",
+      "sha256_after": "B06688A7B8B577F623BE74935E8FC7E333DD36CDAFA51FA4FE1C3D6157118F24",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\literature_35.md",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\literature_35.md",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\literature_35.md",
+      "bytes": 28780,
+      "sha256_before": "29A9509AD26C270CFCE7E3B2EFAC783EA5B92243265E576E22CB36427BC8B6C5",
+      "operation": "move",
+      "sha256_after": "29A9509AD26C270CFCE7E3B2EFAC783EA5B92243265E576E22CB36427BC8B6C5",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\open_access_discovery.json",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\open_access_discovery.json",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\open_access_discovery.json",
+      "bytes": 2832,
+      "sha256_before": "007AD4522C53315C7845349609EA1AF88B7DEAA7CE77BB8192897BE181D15A51",
+      "operation": "move",
+      "sha256_after": "007AD4522C53315C7845349609EA1AF88B7DEAA7CE77BB8192897BE181D15A51",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\opt_lookup.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\opt_lookup.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\opt_lookup.html",
+      "bytes": 2,
+      "sha256_before": "4F53CDA18C2BAA0C0354BB5F9A3ECBE5ED12AB4D8E11BA873C2F11161202B945",
+      "operation": "move",
+      "sha256_after": "4F53CDA18C2BAA0C0354BB5F9A3ECBE5ED12AB4D8E11BA873C2F11161202B945",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P06_author_repository.zip",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P06_author_repository.zip",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P06_author_repository.zip",
+      "bytes": 15882397,
+      "sha256_before": "382C81BFCFADA88C0110371DF72E2C312A2D737A3DF9D9AC6E9B4701BD2E76BF",
+      "operation": "move",
+      "sha256_after": "382C81BFCFADA88C0110371DF72E2C312A2D737A3DF9D9AC6E9B4701BD2E76BF",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P06_hal_discovery.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P06_hal_discovery.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P06_hal_discovery.html",
+      "bytes": 44,
+      "sha256_before": "B06688A7B8B577F623BE74935E8FC7E333DD36CDAFA51FA4FE1C3D6157118F24",
+      "operation": "move",
+      "sha256_after": "B06688A7B8B577F623BE74935E8FC7E333DD36CDAFA51FA4FE1C3D6157118F24",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P07_Euclid.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P07_Euclid.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P07_Euclid.html",
+      "bytes": 1163,
+      "sha256_before": "08C7E8ACD3A3171A6D8AC3BE59E44D2F4AF31B1DE98E28EA09783DFD260677F8",
+      "operation": "move",
+      "sha256_after": "08C7E8ACD3A3171A6D8AC3BE59E44D2F4AF31B1DE98E28EA09783DFD260677F8",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P07_jstor_candidate.bin",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P07_jstor_candidate.bin",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P07_jstor_candidate.bin",
+      "bytes": 3038,
+      "sha256_before": "32ED63159C77E21EE19CA1B9AA3213CCF0218EB59539560B132A8E68EF0E18EA",
+      "operation": "move",
+      "sha256_after": "32ED63159C77E21EE19CA1B9AA3213CCF0218EB59539560B132A8E68EF0E18EA",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P12_person_lookup.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P12_person_lookup.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P12_person_lookup.html",
+      "bytes": 18510,
+      "sha256_before": "F1D5F211BC19D4720DF9A9928ACA584038EAB492EEEE52B4DBF7EDD8AB9E8E94",
+      "operation": "move",
+      "sha256_after": "F1D5F211BC19D4720DF9A9928ACA584038EAB492EEEE52B4DBF7EDD8AB9E8E94",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P14_author.bin",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P14_author.bin",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P14_author.bin",
+      "bytes": 10262,
+      "sha256_before": "F161C54AAB369FE97D951C6BDBE23C5FD81BCB7EA030ABBCFEB83CD0759A8ADB",
+      "operation": "move",
+      "sha256_after": "F161C54AAB369FE97D951C6BDBE23C5FD81BCB7EA030ABBCFEB83CD0759A8ADB",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P14_person_lookup.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P14_person_lookup.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P14_person_lookup.html",
+      "bytes": 59299,
+      "sha256_before": "4A4986ADFC643530B4E9EC583626D9A79AD3E821C449852827EE4C7946588E3D",
+      "operation": "move",
+      "sha256_after": "4A4986ADFC643530B4E9EC583626D9A79AD3E821C449852827EE4C7946588E3D",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P30_candidate.bin",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P30_candidate.bin",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P30_candidate.bin",
+      "bytes": 3145,
+      "sha256_before": "DBE8E175D52250115D65E28E37D9A068B1BE17D9799C97E2368250CB4DE45FDC",
+      "operation": "move",
+      "sha256_after": "DBE8E175D52250115D65E28E37D9A068B1BE17D9799C97E2368250CB4DE45FDC",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P31_rosenheim.bin",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P31_rosenheim.bin",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P31_rosenheim.bin",
+      "bytes": 7350,
+      "sha256_before": "02048ADEA8C9696D6677F0AF7EDCF29E3BD6566F1F2A5634E475939070891512",
+      "operation": "move",
+      "sha256_after": "02048ADEA8C9696D6677F0AF7EDCF29E3BD6566F1F2A5634E475939070891512",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P31_tum_discovery.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P31_tum_discovery.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P31_tum_discovery.html",
+      "bytes": 55084,
+      "sha256_before": "F3233667A026748F80714FEC4AF66CCC89682248E26271AE4640B912B99F9261",
+      "operation": "move",
+      "sha256_after": "F3233667A026748F80714FEC4AF66CCC89682248E26271AE4640B912B99F9261",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\P34_author_discovery.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\P34_author_discovery.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\P34_author_discovery.html",
+      "bytes": 173363,
+      "sha256_before": "03EB0824DCC514019F3DED3AC9AED1F7861E51F4721272D92697C55A771EE656",
+      "operation": "move",
+      "sha256_after": "03EB0824DCC514019F3DED3AC9AED1F7861E51F4721272D92697C55A771EE656",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\package_downloads.py",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\package_downloads.py",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\package_downloads.py",
+      "bytes": 10666,
+      "sha256_before": "A13DA9430E2BDDDDBBEF1302475F05C00BB8840DFD17FB9BEF76D238EA70C259",
+      "operation": "move",
+      "sha256_after": "A13DA9430E2BDDDDBBEF1302475F05C00BB8840DFD17FB9BEF76D238EA70C259",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\progress.md",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\progress.md",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\progress.md",
+      "bytes": 1079,
+      "sha256_before": "921F92607E04E2F206F10489DEC2ED3A88A104FC1F91A36B940BC88DF9F36BE5",
+      "operation": "move",
+      "sha256_after": "921F92607E04E2F206F10489DEC2ED3A88A104FC1F91A36B940BC88DF9F36BE5",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\README.md",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\README.md",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\README.md",
+      "bytes": 11616,
+      "sha256_before": "A7A80C1857C7E7688D3529F3A919434011FF61F7266D550232C98BFCEBFCCE38",
+      "operation": "move",
+      "sha256_after": "A7A80C1857C7E7688D3529F3A919434011FF61F7266D550232C98BFCEBFCCE38",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\research_framework.md",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\research_framework.md",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\research_framework.md",
+      "bytes": 17410,
+      "sha256_before": "3C598C9F8B0F30C3F8AE42DF48CCE7597CBC15E025589E8BA5C06B6E0E8936FD",
+      "operation": "move",
+      "sha256_after": "3C598C9F8B0F30C3F8AE42DF48CCE7597CBC15E025589E8BA5C06B6E0E8936FD",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\solar_publications.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\solar_publications.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\solar_publications.html",
+      "bytes": 82053,
+      "sha256_before": "61986EBAEB5F6893E396DFB4FC9BE941C77751346221AE8D99ED0446D080227C",
+      "operation": "move",
+      "sha256_after": "61986EBAEB5F6893E396DFB4FC9BE941C77751346221AE8D99ED0446D080227C",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\sources.json",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\sources.json",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\sources.json",
+      "bytes": 26141,
+      "sha256_before": "FED3A4A352132E5A19629EF7B3943E6D692D4329B85C87AAEC495F6081277090",
+      "operation": "move",
+      "sha256_after": "FED3A4A352132E5A19629EF7B3943E6D692D4329B85C87AAEC495F6081277090",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\umass_publications.html",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\umass_publications.html",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\umass_publications.html",
+      "bytes": 38638,
+      "sha256_before": "1CDF8DA2D6BB4945B3DF510001DF3706410F8573B6D7651E105038D19E17760C",
+      "operation": "move",
+      "sha256_after": "1CDF8DA2D6BB4945B3DF510001DF3706410F8573B6D7651E105038D19E17760C",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P01_Simulation_of_nonhomogeneous_poisson_processes_by_thinning.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P01_Simulation_of_nonhomogeneous_poisson_processes_by_thinning.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P01_Simulation_of_nonhomogeneous_poisson_processes_by_thinning.pdf",
+      "bytes": 1195523,
+      "sha256_before": "E432FA7E6BCB91B1CE6935109D077107181618F78EF2A2B9D78821AA6515B7C8",
+      "operation": "move",
+      "sha256_after": "E432FA7E6BCB91B1CE6935109D077107181618F78EF2A2B9D78821AA6515B7C8",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P02_Spectra_of_some_self_exciting_and_mutually_exciting_point_processes.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P02_Spectra_of_some_self_exciting_and_mutually_exciting_point_processes.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P02_Spectra_of_some_self_exciting_and_mutually_exciting_point_processes.pdf",
+      "bytes": 356103,
+      "sha256_before": "67F153FBAB3EADF8BF78F8A001F7C6E2CEF0E9706BE597D90353EEC7B3D33302",
+      "operation": "move",
+      "sha256_after": "67F153FBAB3EADF8BF78F8A001F7C6E2CEF0E9706BE597D90353EEC7B3D33302",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P03_Recurrent_Marked_Temporal_Point_Processes_Embedding_Event_History_to_Vector.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P03_Recurrent_Marked_Temporal_Point_Processes_Embedding_Event_History_to_Vector.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P03_Recurrent_Marked_Temporal_Point_Processes_Embedding_Event_History_to_Vector.pdf",
+      "bytes": 2085614,
+      "sha256_before": "7354C2646FE5E0DE00C2756F3AFD6CA027DB1A6A1C3C3CF220B8E23D3D7AA782",
+      "operation": "move",
+      "sha256_after": "7354C2646FE5E0DE00C2756F3AFD6CA027DB1A6A1C3C3CF220B8E23D3D7AA782",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P04_The_Neural_Hawkes_Process_A_Neurally_Self_Modulating_Multivariate_Point_Process.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P04_The_Neural_Hawkes_Process_A_Neurally_Self_Modulating_Multivariate_Point_Process.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P04_The_Neural_Hawkes_Process_A_Neurally_Self_Modulating_Multivariate_Point_Process.pdf",
+      "bytes": 1318431,
+      "sha256_before": "B9AFA5898A37AD3A291C25B3DA377EA31C6C038F154ADAC701E73C532D8891A9",
+      "operation": "move",
+      "sha256_after": "B9AFA5898A37AD3A291C25B3DA377EA31C6C038F154ADAC701E73C532D8891A9",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P08_Admission_policies_for_a_two_class_loss_system.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P08_Admission_policies_for_a_two_class_loss_system.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P08_Admission_policies_for_a_two_class_loss_system.pdf",
+      "bytes": 1102203,
+      "sha256_before": "A8350CEBFF739FCF9A016C136B80DE4230B646398D52E5934F685E2ACB89871F",
+      "operation": "move",
+      "sha256_after": "A8350CEBFF739FCF9A016C136B80DE4230B646398D52E5934F685E2ACB89871F",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P09_Admission_and_pricing_optimization_of_on_street_parking_with_delivery_bays.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P09_Admission_and_pricing_optimization_of_on_street_parking_with_delivery_bays.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P09_Admission_and_pricing_optimization_of_on_street_parking_with_delivery_bays.pdf",
+      "bytes": 756873,
+      "sha256_before": "CD075DFC4F958BB77DED20E010F6248F2234ED593859361A906503A7ED3ECD29",
+      "operation": "move",
+      "sha256_after": "CD075DFC4F958BB77DED20E010F6248F2234ED593859361A906503A7ED3ECD29",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P10_Asymptotically_Optimal_Competitive_Ratio_for_Online_Allocation_of_Reusable_Resources.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P10_Asymptotically_Optimal_Competitive_Ratio_for_Online_Allocation_of_Reusable_Resources.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P10_Asymptotically_Optimal_Competitive_Ratio_for_Online_Allocation_of_Reusable_Resources.pdf",
+      "bytes": 1024779,
+      "sha256_before": "CA661647A5AD224BB701C1F247DCC57B7B6947B71B63EFAC74B7509487C7A7BB",
+      "operation": "move",
+      "sha256_after": "CA661647A5AD224BB701C1F247DCC57B7B6947B71B63EFAC74B7509487C7A7BB",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P15_The_Bayesian_Prophet_A_Low_Regret_Framework_for_Online_Decision_Making.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P15_The_Bayesian_Prophet_A_Low_Regret_Framework_for_Online_Decision_Making.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P15_The_Bayesian_Prophet_A_Low_Regret_Framework_for_Online_Decision_Making.pdf",
+      "bytes": 849198,
+      "sha256_before": "DFE33E10961221DDD2BDA81E4C03BD5EAC6379D1736244C6D536FD1B8E32B24D",
+      "operation": "move",
+      "sha256_after": "DFE33E10961221DDD2BDA81E4C03BD5EAC6379D1736244C6D536FD1B8E32B24D",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P16_AdaSwitch_An_Adaptive_Switching_Meta_Algorithm_for_Learning_Augmented_Bounded_Influence_Problems.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P16_AdaSwitch_An_Adaptive_Switching_Meta_Algorithm_for_Learning_Augmented_Bounded_Influence_Problems.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P16_AdaSwitch_An_Adaptive_Switching_Meta_Algorithm_for_Learning_Augmented_Bounded_Influence_Problems.pdf",
+      "bytes": 1608599,
+      "sha256_before": "E8B9136074CF4AC96F3489812D8FC8495AC01E6BFB96814AA3CDC26C70A4DCAA",
+      "operation": "move",
+      "sha256_after": "E8B9136074CF4AC96F3489812D8FC8495AC01E6BFB96814AA3CDC26C70A4DCAA",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P17_From_Predictive_to_Prescriptive_Analytics.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P17_From_Predictive_to_Prescriptive_Analytics.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P17_From_Predictive_to_Prescriptive_Analytics.pdf",
+      "bytes": 4826824,
+      "sha256_before": "AF1AC505E163B11E0156766D6142633FC532F9A10CA573CD75A4880F82202797",
+      "operation": "move",
+      "sha256_after": "AF1AC505E163B11E0156766D6142633FC532F9A10CA573CD75A4880F82202797",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P18_Smart_Predict_then_Optimize.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P18_Smart_Predict_then_Optimize.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P18_Smart_Predict_then_Optimize.pdf",
+      "bytes": 1886022,
+      "sha256_before": "929B1831FD9F5FDE6979CE602DF87C29BDDCE84929F35C2668B1B67920965EA3",
+      "operation": "move",
+      "sha256_after": "929B1831FD9F5FDE6979CE602DF87C29BDDCE84929F35C2668B1B67920965EA3",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P19_Data_driven_distributionally_robust_optimization_using_the_Wasserstein_metric_performance_guarantees_and_tractable_reformulations.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P19_Data_driven_distributionally_robust_optimization_using_the_Wasserstein_metric_performance_guarantees_and_tractable_reformulations.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P19_Data_driven_distributionally_robust_optimization_using_the_Wasserstein_metric_performance_guarantees_and_tractable_reformulations.pdf",
+      "bytes": 1461979,
+      "sha256_before": "7D755C4A3B49DE7AE1F7C95EF73E0E89A9FA6AC1BC553B2D84740B898B52D15B",
+      "operation": "move",
+      "sha256_after": "7D755C4A3B49DE7AE1F7C95EF73E0E89A9FA6AC1BC553B2D84740B898B52D15B",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P20_Distributionally_Robust_Optimization_Under_Moment_Uncertainty_with_Application_to_Data_Driven_Problems.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P20_Distributionally_Robust_Optimization_Under_Moment_Uncertainty_with_Application_to_Data_Driven_Problems.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P20_Distributionally_Robust_Optimization_Under_Moment_Uncertainty_with_Application_to_Data_Driven_Problems.pdf",
+      "bytes": 277565,
+      "sha256_before": "1F0B86F9A8455C000BB641F7054A9C1C7AF7F7092DC16C0AD9731D7F41B626D1",
+      "operation": "move",
+      "sha256_after": "1F0B86F9A8455C000BB641F7054A9C1C7AF7F7092DC16C0AD9731D7F41B626D1",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P21_Robust_Control_of_Markov_Decision_Processes_with_Uncertain_Transition_Matrices.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P21_Robust_Control_of_Markov_Decision_Processes_with_Uncertain_Transition_Matrices.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P21_Robust_Control_of_Markov_Decision_Processes_with_Uncertain_Transition_Matrices.pdf",
+      "bytes": 330171,
+      "sha256_before": "237429248DBF6D860588C5C8EB55EBDEA8D89AD2C6E38E82EDB5F8AAA4F2144A",
+      "operation": "move",
+      "sha256_after": "237429248DBF6D860588C5C8EB55EBDEA8D89AD2C6E38E82EDB5F8AAA4F2144A",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P22_Optimization_of_Conditional_Value_at_Risk.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P22_Optimization_of_Conditional_Value_at_Risk.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P22_Optimization_of_Conditional_Value_at_Risk.pdf",
+      "bytes": 200088,
+      "sha256_before": "34AFF2161733085CA8E5A067053A8F144CBA52F556E253D69C932F7D22D842F4",
+      "operation": "move",
+      "sha256_after": "34AFF2161733085CA8E5A067053A8F144CBA52F556E253D69C932F7D22D842F4",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P23_Adaptive_Conformal_Inference_Under_Distribution_Shift.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P23_Adaptive_Conformal_Inference_Under_Distribution_Shift.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P23_Adaptive_Conformal_Inference_Under_Distribution_Shift.pdf",
+      "bytes": 1210440,
+      "sha256_before": "15F35BF6D3FF2ABFC21EAFF1F1A7DF2A51A5C891F2BED752F6FD75D3E47A5FF7",
+      "operation": "move",
+      "sha256_after": "15F35BF6D3FF2ABFC21EAFF1F1A7DF2A51A5C891F2BED752F6FD75D3E47A5FF7",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P24_Conformal_prediction_beyond_exchangeability.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P24_Conformal_prediction_beyond_exchangeability.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P24_Conformal_prediction_beyond_exchangeability.pdf",
+      "bytes": 4176553,
+      "sha256_before": "7D09BE24289DE9A91D90E1CE6331CE28E229F067BEA9CDB095CEBFA067E3416F",
+      "operation": "move",
+      "sha256_after": "7D09BE24289DE9A91D90E1CE6331CE28E229F067BEA9CDB095CEBFA067E3416F",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P25_Stochastic_Model_Predictive_Control_An_Overview_and_Perspectives_for_Future_Research.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P25_Stochastic_Model_Predictive_Control_An_Overview_and_Perspectives_for_Future_Research.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P25_Stochastic_Model_Predictive_Control_An_Overview_and_Perspectives_for_Future_Research.pdf",
+      "bytes": 1146732,
+      "sha256_before": "4DFD8DA96263DCFFF82E87259076BDDC1A82B86F44606D44D26C9068664FDCDB",
+      "operation": "move",
+      "sha256_after": "4DFD8DA96263DCFFF82E87259076BDDC1A82B86F44606D44D26C9068664FDCDB",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P26_An_Online_Admission_Control_Mechanism_for_Electric_Vehicles_at_Public_Parking_Infrastructures.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P26_An_Online_Admission_Control_Mechanism_for_Electric_Vehicles_at_Public_Parking_Infrastructures.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P26_An_Online_Admission_Control_Mechanism_for_Electric_Vehicles_at_Public_Parking_Infrastructures.pdf",
+      "bytes": 1037480,
+      "sha256_before": "6C14530764139D3735FD941F5EFDCF3D268EA6C16BDB1632373F8D622BFB2B69",
+      "operation": "move",
+      "sha256_after": "6C14530764139D3735FD941F5EFDCF3D268EA6C16BDB1632373F8D622BFB2B69",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P27_A_probabilistic_capacity_planning_methodology_for_plug_in_electric_vehicle_charging_lots_with_on_site_energy_storage_systems.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P27_A_probabilistic_capacity_planning_methodology_for_plug_in_electric_vehicle_charging_lots_with_on_site_energy_storage_systems.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P27_A_probabilistic_capacity_planning_methodology_for_plug_in_electric_vehicle_charging_lots_with_on_site_energy_storage_systems.pdf",
+      "bytes": 2765096,
+      "sha256_before": "DB16693C177674EB206F137E847F5B38E44C4D36C60261F2E80860957BBB3049",
+      "operation": "move",
+      "sha256_after": "DB16693C177674EB206F137E847F5B38E44C4D36C60261F2E80860957BBB3049",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P32_ACN_Data_Analysis_and_Applications_of_an_Open_EV_Charging_Dataset.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P32_ACN_Data_Analysis_and_Applications_of_an_Open_EV_Charging_Dataset.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P32_ACN_Data_Analysis_and_Applications_of_an_Open_EV_Charging_Dataset.pdf",
+      "bytes": 1242109,
+      "sha256_before": "69BE21CDEB097E6A362322E2DC7A486D5EE3F07ABDE68990291DEE04C701F879",
+      "operation": "move",
+      "sha256_after": "69BE21CDEB097E6A362322E2DC7A486D5EE3F07ABDE68990291DEE04C701F879",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\PDFs\\P33_ACN_Sim_An_Open_Source_Simulator_for_Data_Driven_Electric_Vehicle_Charging_Research.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\PDFs\\P33_ACN_Sim_An_Open_Source_Simulator_for_Data_Driven_Electric_Vehicle_Charging_Research.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\PDFs\\P33_ACN_Sim_An_Open_Source_Simulator_for_Data_Driven_Electric_Vehicle_Charging_Research.pdf",
+      "bytes": 412553,
+      "sha256_before": "6FEF6CADEC82A22866110B16D41F94A53A871BD63B99EE521B56238E7673C4EB",
+      "operation": "move",
+      "sha256_after": "6FEF6CADEC82A22866110B16D41F94A53A871BD63B99EE521B56238E7673C4EB",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\__pycache__\\download_papers.cpython-312.pyc",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\__pycache__\\download_papers.cpython-312.pyc",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\__pycache__\\download_papers.cpython-312.pyc",
+      "bytes": 15452,
+      "sha256_before": "2648D3F3831A4B62A5921670594E3B6D4FDEA3E37944425261EB60A2A574EA7B",
+      "operation": "move",
+      "sha256_after": "2648D3F3831A4B62A5921670594E3B6D4FDEA3E37944425261EB60A2A574EA7B",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P05_Scheduling_and_performance_analysis_under_a_stochastic_model_for_electric_vehicle_charging_stations.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P05_Scheduling_and_performance_analysis_under_a_stochastic_model_for_electric_vehicle_charging_stations.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P05_Scheduling_and_performance_analysis_under_a_stochastic_model_for_electric_vehicle_charging_stations.url",
+      "bytes": 97,
+      "sha256_before": "426D673AACE0F72AC7311010519B52A21341FAE93F0CE187687427BD8344A35A",
+      "operation": "move",
+      "sha256_after": "426D673AACE0F72AC7311010519B52A21341FAE93F0CE187687427BD8344A35A",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P06_Modelling_the_Intensity_of_Electric_Vehicle_Arrivals_at_Charging_Points.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P06_Modelling_the_Intensity_of_Electric_Vehicle_Arrivals_at_Charging_Points.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P06_Modelling_the_Intensity_of_Electric_Vehicle_Arrivals_at_Charging_Points.url",
+      "bytes": 93,
+      "sha256_before": "4D6BC4AD3DF440CFD0017ADBF99C9816203015CC020F5371F2C96C0ADA0982C7",
+      "operation": "move",
+      "sha256_after": "4D6BC4AD3DF440CFD0017ADBF99C9816203015CC020F5371F2C96C0ADA0982C7",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P07_Loss_Networks.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P07_Loss_Networks.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P07_Loss_Networks.url",
+      "bytes": 79,
+      "sha256_before": "10979F746F48852162E542CC6945E3880504893E90EF48EBB50A72E47C523B7E",
+      "operation": "move",
+      "sha256_after": "10979F746F48852162E542CC6945E3880504893E90EF48EBB50A72E47C523B7E",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P11_Online_Reusable_Resource_Allocations_with_Multi_class_Arrivals.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P11_Online_Reusable_Resource_Allocations_with_Multi_class_Arrivals.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P11_Online_Reusable_Resource_Allocations_with_Multi_class_Arrivals.url",
+      "bytes": 85,
+      "sha256_before": "8DC96E86111FEA214C9E131CB2F82B4C70D259A36042E0BD1CD48666C5620FC3",
+      "operation": "move",
+      "sha256_after": "8DC96E86111FEA214C9E131CB2F82B4C70D259A36042E0BD1CD48666C5620FC3",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P12_Optimal_Bayesian_Online_Allocation_of_Reusable_Resources.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P12_Optimal_Bayesian_Online_Allocation_of_Reusable_Resources.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P12_Optimal_Bayesian_Online_Allocation_of_Reusable_Resources.url",
+      "bytes": 85,
+      "sha256_before": "EDD681675FB6B3140A3F8E13DA01F9573C0B1D3692E706677C41633957461CAE",
+      "operation": "move",
+      "sha256_after": "EDD681675FB6B3140A3F8E13DA01F9573C0B1D3692E706677C41633957461CAE",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P13_Optimal_Online_Allocation_of_One_Way_Substitutable_Resources.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P13_Optimal_Online_Allocation_of_One_Way_Substitutable_Resources.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P13_Optimal_Online_Allocation_of_One_Way_Substitutable_Resources.url",
+      "bytes": 85,
+      "sha256_before": "352BD54DD8478A0E5159B6F9C9B140995A15B27D61210BFF3A2EFD1506B8D9DF",
+      "operation": "move",
+      "sha256_after": "352BD54DD8478A0E5159B6F9C9B140995A15B27D61210BFF3A2EFD1506B8D9DF",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P14_Online_Fair_Allocation_of_Reusable_Resources.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P14_Online_Fair_Allocation_of_Reusable_Resources.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P14_Online_Fair_Allocation_of_Reusable_Resources.url",
+      "bytes": 97,
+      "sha256_before": "B183EA6E0069C0E65139B8F2CEC9E1E937EB1605BCB37865FAA0EE705FBB8E41",
+      "operation": "move",
+      "sha256_after": "B183EA6E0069C0E65139B8F2CEC9E1E937EB1605BCB37865FAA0EE705FBB8E41",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P28_Optimizing_charging_station_locations_for_mixed_traffic_of_electric_and_gasoline_vehicles_a_stochastic_user_equilibrium_approach.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P28_Optimizing_charging_station_locations_for_mixed_traffic_of_electric_and_gasoline_vehicles_a_stochastic_user_equilibrium_approach.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P28_Optimizing_charging_station_locations_for_mixed_traffic_of_electric_and_gasoline_vehicles_a_stochastic_user_equilibrium_approach.url",
+      "bytes": 93,
+      "sha256_before": "286EDF871DFD8326E1CB414B4F5F165AF00552AFBA5082AA6DB8449801EE2A35",
+      "operation": "move",
+      "sha256_after": "286EDF871DFD8326E1CB414B4F5F165AF00552AFBA5082AA6DB8449801EE2A35",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P29_Dynamic_and_Robust_Allocation_of_On_Street_Parking_for_Passenger_and_Delivery_Vehicles.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P29_Dynamic_and_Robust_Allocation_of_On_Street_Parking_for_Passenger_and_Delivery_Vehicles.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P29_Dynamic_and_Robust_Allocation_of_On_Street_Parking_for_Passenger_and_Delivery_Vehicles.url",
+      "bytes": 85,
+      "sha256_before": "480A4C3D971E5F8A2E7DC124BFACB75F6B3D6B75D095331E118203DF7CAC5A40",
+      "operation": "move",
+      "sha256_after": "480A4C3D971E5F8A2E7DC124BFACB75F6B3D6B75D095331E118203DF7CAC5A40",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P30_Parking_reservation_techniques_A_review_of_research_topics_considerations_and_optimization_methods.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P30_Parking_reservation_techniques_A_review_of_research_topics_considerations_and_optimization_methods.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P30_Parking_reservation_techniques_A_review_of_research_topics_considerations_and_optimization_methods.url",
+      "bytes": 68,
+      "sha256_before": "E0774F0D17B232DE7D09E9AFBAE26A3E1F39C6EF946C20E0004C89C59BBAF35A",
+      "operation": "move",
+      "sha256_after": "E0774F0D17B232DE7D09E9AFBAE26A3E1F39C6EF946C20E0004C89C59BBAF35A",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P31_CDRpy_Data_Driven_Decision_Support_for_the_Rollout_of_Public_Charging_Infrastructure_in_Urban_Areas.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P31_CDRpy_Data_Driven_Decision_Support_for_the_Rollout_of_Public_Charging_Infrastructure_in_Urban_Areas.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P31_CDRpy_Data_Driven_Decision_Support_for_the_Rollout_of_Public_Charging_Infrastructure_in_Urban_Areas.url",
+      "bytes": 84,
+      "sha256_before": "91D8D4DC18DCE890ACF09CBDF471FE9DA7E40923BC3E30E4CC45B0C9A4F32BF0",
+      "operation": "move",
+      "sha256_after": "91D8D4DC18DCE890ACF09CBDF471FE9DA7E40923BC3E30E4CC45B0C9A4F32BF0",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P34_Online_Allocation_of_Reusable_Resources_in_Nonstationary_Environments.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P34_Online_Allocation_of_Reusable_Resources_in_Nonstationary_Environments.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P34_Online_Allocation_of_Reusable_Resources_in_Nonstationary_Environments.url",
+      "bytes": 87,
+      "sha256_before": "CFCCDC4A57E0A5F0952E407E94180E8CF2CC0A21E29176DB3D7E452002DC02F8",
+      "operation": "move",
+      "sha256_after": "CFCCDC4A57E0A5F0952E407E94180E8CF2CC0A21E29176DB3D7E452002DC02F8",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "research\\ev_parking_math_20261029\\待补全文链接\\P35_Online_Planning_in_Nonstationary_Environments.url",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\research\\ev_parking_math_20261029\\待补全文链接\\P35_Online_Planning_in_Nonstationary_Environments.url",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\ev_parking_math_20261029\\待补全文链接\\P35_Online_Planning_in_Nonstationary_Environments.url",
+      "bytes": 85,
+      "sha256_before": "4F2709FBEED2FB7B36DFFD501AF3FEE51D97FA9702C6C678009B082C526B5350",
+      "operation": "move",
+      "sha256_after": "4F2709FBEED2FB7B36DFFD501AF3FEE51D97FA9702C6C678009B082C526B5350",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "papers\\electrification-math\\下载索引.md",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\papers\\electrification-math\\下载索引.md",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\papers\\electrification-math\\下载索引.md",
+      "bytes": 2385,
+      "sha256_before": "F3608BF67A396E30ECEC9446EBC236A17BDF475DD42E77B0E82BB63E9833C13B",
+      "operation": "move",
+      "sha256_after": "84F489F85DC7AE3F990005D9A85B6775CE81AC6C6802544B86CFA3C78B88742A",
+      "path_references_updated": true
+    },
+    {
+      "relative_path": "papers\\electrification-math\\download_manifest.json",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\papers\\electrification-math\\download_manifest.json",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\papers\\electrification-math\\download_manifest.json",
+      "bytes": 4987,
+      "sha256_before": "D26688C3E5C7FF4069043ED914DBD87B43FD30EFA3B6D3836A38FEF0462B1DEC",
+      "operation": "move",
+      "sha256_after": "49B8643F689F46923F70BFADA9437D8A9034365638A89FCB16E3A86D540539FE",
+      "path_references_updated": true
+    },
+    {
+      "relative_path": "papers\\electrification-math\\M03_confidence-sets-stochastic-discrete-optimization_LEM2026-09.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\papers\\electrification-math\\M03_confidence-sets-stochastic-discrete-optimization_LEM2026-09.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\papers\\electrification-math\\M03_confidence-sets-stochastic-discrete-optimization_LEM2026-09.pdf",
+      "bytes": 646963,
+      "sha256_before": "3DCB9FD880EA73C3405E2459E260437865098629C85EB57F11A3C89D862F2781",
+      "operation": "move",
+      "sha256_after": "3DCB9FD880EA73C3405E2459E260437865098629C85EB57F11A3C89D862F2781",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "papers\\electrification-math\\M04_decision-dependent-distributional-ambiguity_arxiv2609.33926v2.pdf",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\papers\\electrification-math\\M04_decision-dependent-distributional-ambiguity_arxiv2609.33926v2.pdf",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\papers\\electrification-math\\M04_decision-dependent-distributional-ambiguity_arxiv2609.33926v2.pdf",
+      "bytes": 487025,
+      "sha256_before": "E275440D486B0E224C17D98A822D0CD73042132983E2C0E9652F78E46D2E6AE4",
+      "operation": "move",
+      "sha256_after": "E275440D486B0E224C17D98A822D0CD73042132983E2C0E9652F78E46D2E6AE4",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "plan\\notes.md",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\plan\\notes.md",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\plan\\notes.md",
+      "bytes": 2149,
+      "sha256_before": "DF811B7D6EAC040FD755C502B3966676442C8E646B65A779BCDCA0C64683DB39",
+      "operation": "move",
+      "sha256_after": "DF811B7D6EAC040FD755C502B3966676442C8E646B65A779BCDCA0C64683DB39",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "plan\\progress.md",
+      "source": "C:\\Users\\tho25\\Desktop\\论文学习\\plan\\progress.md",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\plan\\progress.md",
+      "bytes": 675,
+      "sha256_before": "A797C993BAF9B8F92477045504E502B59F2AF7B5694F6A83342AF486580492AF",
+      "operation": "move",
+      "sha256_after": "A797C993BAF9B8F92477045504E502B59F2AF7B5694F6A83342AF486580492AF",
+      "path_references_updated": false
+    },
+    {
+      "relative_path": "main_paper\\Electrification tipping point_manuscript 202603submit.docx",
+      "source": "C:\\Users\\tho25\\xwechat_files\\wxid_uzw9b88qpcnr11_a6a3\\msg\\file\\2026-10\\Electrification tipping point_manuscript 202603submit.docx",
+      "destination": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\main_paper\\Electrification tipping point_manuscript 202603submit.docx",
+      "bytes": 1448203,
+      "sha256_before": "04BDA3111FCC9AF3959D3C262CC7A49CDD011D28C710BF747AB6BD39164E5415",
+      "operation": "copy_original",
+      "sha256_after": "04BDA3111FCC9AF3959D3C262CC7A49CDD011D28C710BF747AB6BD39164E5415",
+      "path_references_updated": false
+    }
+  ],
+  "completion_note": "84 source files moved; project path references updated; 24 distinct PDFs verified; original manuscript copied and preserved at original attachment path; 73 local Markdown links checked."
+}

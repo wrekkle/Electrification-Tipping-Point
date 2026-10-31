@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        
+            <!-- Responsive Viewport -->
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+            <!-- Required meta tags -->
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+            <!-- Icons --->
+            <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+            <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+            <!--     Fonts and icons     -->
+            <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+            <!-- CSS Files -->
+            <link href="assets/css/material-kit.css?v=2.0.5" rel="stylesheet" />
+            <!-- CSS Just for demo purpose, don't include it in your project -->
+            <link href="assets/demo/demo.css" rel="stylesheet" />
+
+            <!-- Bootstrap CSS -->
+
+
+            <!--- Material Kit CSS --->
+            <link href="assets/css/material-kit.css?v=2.0.5" rel="stylesheet" />
+
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139837603-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-139837603-1');
+            </script>
+
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PFN6XB6');</script>
+            <!-- End Google Tag Manager -->
+
+            <style>
+                @media screen and (max-width: 600px) {
+                  h1 {
+                    font-size: 30px;
+                  }
+                }
+
+                @media screen and (max-width: 600px) {
+                  h4.page-subtitle {
+                    display: None;
+                  }
+                }
+            </style>
+        
+        
+    <title>EV Charging Research at Caltech</title>
+
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFN6XB6"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+            <nav class="navbar navbar-expand-lg fixed-top navbar-transparent navbar-color-on-scroll " color-on-scroll="25">
+              <div class="container">
+                <a class="navbar-brand" href="index">Adaptive Charging Network</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="info">Info</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="dataset">Data</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="simulator">Simulator</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+
+
+
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Account
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="register">Register</a>
+                            <a class="dropdown-item" href="login">Retrieve Key</a>
+                            </div>
+                        </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        
+
+        
+    
+        <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/images/open_road_cropped.jpg'); height: 25vh;
+  min-height: 25vh;>">
+            <div class="container">
+                <div class="section">
+                    <div class="row">
+                        <div class="col-md-8 ml-auto mr-auto text-center">
+                            <h1 class="title">
+    Research
+</h1>
+                            <h4 class="page-subtitle">
+                                
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="main">
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h2>Adaptive Charging Network Research Portal</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">ACN Dataset</h3>
+                                <h5 class="card-text">
+                                The Adaptive Charging Network Dataset (ACN-Data) is a dynamic dataset of workplace EV charging
+                                sessions. In this paper we describe the dataset, as well as some interesting user behavior it
+                                exhibits. To demonstrate the usefulness of the dataset, we present three examples,
+                                learning and predicting user behavior using Gaussian mixture models, optimally sizing on-site
+                                solar generation for adaptive electric vehicle charging, and using workplace charging to smooth
+                                the net demand Duck Curve.
+                                </h5>
+                                <hr class="style1" width="33%">
+                                <h5 class="card-text">
+                                Z. Lee, T. Li, S. H. Low.
+                                <a href="https://ev.caltech.edu/assets/pub/ACN_Data_Analysis_and_Applications.pdf"
+                                target="_blank">ACN-Data: Analysis and Applications
+                                of an Open EV Charging Dataset</a>, Proc. the Tenth International Conference on
+                                Future Energy Systems (e-Energy '19), June 2019
+                                </h5>
+                                <h5 class="card-text">e-Energy, June 2019: <a href="https://ev.caltech.edu/assets/pub/ACN_Data_Presentation_eEnergy_2019.pdf"
+                           target="_blank">Slides</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">ACN Simulator</h3>
+                                <h5 class="card-text">
+                                    The Adaptive Charging Network Simulator (ACN-Sim)
+                                    is a data-driven, open-source simulation environment
+                                    designed to accelerate research in the field of smart
+                                    electric vehicle (EV) charging. It fills the need in
+                                    this community for a widely available, realistic
+                                    simulation environment in which researchers can
+                                    evaluate algorithms and test assumptions.
+                                    ACN-Sim provides a modular, extensible
+                                    architecture, which models the complexity of real
+                                    charging systems, including battery charging
+                                    behavior and unbalanced three-phase
+                                    infrastructure. It also integrates with a broader
+                                    ecosystem of research tools. These include
+                                    ACN-Data, an open dataset of EV charging
+                                    sessions, which provides realistic simulation
+                                    scenarios, and ACN-Live, a framework for
+                                    field-testing charging algorithms. It also
+                                    integrates with grid simulators like MATPOWER,
+                                    PandaPower and OpenDSS, and OpenAI Gym for training
+                                    reinforcement learning agents.
+                                </h5>
+                                <h5 class="card-text">
+                                     Z. Lee, S. Sharma, D. Johansson, S. H. Low
+                                    <a href="https://ieeexplore.ieee.org/document/9509290"
+                                       target="_blank">ACN-Sim: An Open-Source
+                                        Simulator for Data-Driven Electric Vehicle
+                                        Charging Research</a>,  IEEE Transactions on
+                                        Smart Grid, 12(6):5113– 5123, November 2021
+                                </h5>
+                                <hr class="style1" width="33%">
+                                <h5 class="card-text">
+                                    Z. Lee, D. Johansson, S. H. Low.
+                                    <a href="https://ev.caltech.edu/assets/pub/ACN_Sim_Open_Source_Simulator.pdf"
+                                       target="_blank">ACN-Sim: An Open-Source Simulator for Data-Driven Electric Vehicle Charging Research</a>, Proc. of the IEEE
+                                    International Conference on Communications, Control, and Computing Technologies for Smart Grids
+                                    (SmartGridComm), Beijing, China, October 2019
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h2>Infrastructure and Algorithms</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">ACN Infrastructure and Algorithms</h3>
+                                <h5 class="card-text">
+                                The Adaptive Charging Network (ACN) is a unique framework for large-scale smart EV charging. In
+                                these papers we describe the hardware and software architecture of the ACN. We also present an
+                                algorithm framework based on convex optimization and model predictive control which
+                                can be used to schedule EV charging to achieve various objective such as maximizing energy
+                                delivery in constrained infrastructure, reducing costs when subjected to time-varying prices, or
+                                following demand response signals.
+                                </h5>
+                                <hr class="style1" width="33%">
+                                <h5 class="card-text">
+                                    Z. Lee, G. Lee, T. Lee, C. Jin, R. Lee, Z. Low, D. Chang, C. Ortega, S. H. Low.
+                                    <a href="https://ieeexplore.ieee.org/document/9409126"
+                                       target="_blank">Adaptive Charging Networks: A
+                                        Framework for Smart Electric Vehicle
+                                        Charging</a>, IEEE Transactions on Smart Grid,
+                                        12(5):4339-4350, September 2021
+                                </h5>
+                                <h5 class="card-text">
+                                    Z. Lee, D. Chang, C. Jin, G. S. Lee, R. Lee, T. Lee and S. H. Low.
+                                    <a href="https://ev.caltech.edu/assets/pub/Large_Scale_Adaptive_Electric_Vehicle_Charging.pdf"
+                                       target="_blank">Large-Scale Adaptive Electric Vehicle Charging</a>, Proc. of the IEEE
+                                    International Conference on Communications, Control, and Computing Technologies for Smart Grids
+                                    (SmartGridComm), Aalborg, Denmark, October 2018
+                                </h5>
+                                <h5 class="card-text"> G. Lee, T. Lee, Z. Low, S. H. Low and C. Ortega.
+                                    <a href="https://ieeexplore.ieee.org/document/7905971/" target="_blank">Adaptive charging
+                                    network for electric vehicles</a>, Proc. of the IEEE Global Conference on Signal and Information
+                                    Processing (GlobalSIP), Washington, DC, December 2016
+                                </h5>
+                                <h5 class="card-text">LACI, December 2018: <a href="http://netlab.caltech.edu/assets/slides/Low-201812-ACN.pptx"
+                                                           target="_blank">Slides</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Pricing EV charging service with demand charge</h3>
+                                <h5 class="card-text">
+                                    Pricing electric vehicle (EV) charging services is difficult
+                                    when the electricity tariff includes both time-of-use energy
+                                    cost and demand charge based on peak power draw. In this paper,
+                                    we propose a pricing scheme that assigns a session-specific
+                                    energy price to each charging session at the end of the billing
+                                    period. The session price precisely captures the costs of energy,
+                                    demand charge, and infrastructure congestion for which that session
+                                    is responsible in that month while optimizing the trade-off between
+                                    inexpensive time-of-use pricing and peak power draw. While our pricing
+                                    scheme is calculated offline at the end of the billing period, we propose
+                                    an online scheduling algorithm based on model predictive control to determine
+                                    charging rates for each EV in real-time. We provide theoretical justification
+                                    for our proposal and support it with simulations using real data collected from
+                                    charging facilities at Caltech and JPL. Our simulation results suggest that the online
+                                    algorithm can approximate the offline optimal reasonably well, e.g., the cost paid by the
+                                    operator in the online setting is higher than the offline optimal cost by 9.2% and 6.5% at
+                                    Caltech and JPL respectively. In the case of JPL, congestion rents are enough to cover
+                                    this increase in costs, while at Caltech, this results in a negligible average loss of
+                                    $18 per month.
+                                </h5>
+                                <hr class="style1" width="33%">
+                                <h5 class="card-text">
+                                    Z. Lee, J. Z. F. Pang, S. H. Low
+                                    <a href="http://pscc.epfl.ch/rms/modules/request.php?module=oc_program&action=view.php&id=400&file=1/400.pdf" target="_blank">Pricing EV charging service with demand charge</a>.
+                                    Electric Power Systems Research, 2020
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Optimality of Online LP</h3>
+                                <h5 class="card-text">
+                                    In its simplest form, optimal charging can be formulated as a linear program (LP) or a quadratic
+                                    program (QP). An offline LP assumes all future EV arrivals, departures, and energy demands are
+                                    known and computes the charging profiles of all EVs as an optimal solution of a single LP. An
+                                    online LP is an iterative algorithm in a model-predictive control fashion, and, in each
+                                    iteration, computes the charging profiles of existing EVs assuming there will not be any future
+                                    EV arrival. Offline LP is impractical but serves as a lower bound on the cost of online LP which
+                                    can be implemented in ACN. Extensive simulations using datasets from Caltech ACN and Google’s
+                                    charging facilities show that the performance of online LP is extremely close to that of offline
+                                    LP. We prove that, under appropriate assumptions, when online LP is feasible it indeed attains
+                                    offline optimal.
+                                </h5>
+                                <hr class="style1" width="33%">
+                                <h5 class="card-text">
+                                    L. Guo, K. F. Erliksson and S. H. Low.
+                                    <a href="http://netlab.caltech.edu/assets/publications/Guo-2017-OLP.pdf" target="_blank">Optimal online adaptive electric vehicle charging</a>.
+                                    Proc. of the IEEE Power and Energy Society General Meeting, Chicago, IL, July 2017</span><br/>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Smoothed Least-Laxity First Algorithm</h3>
+                                <h5 class="card-text">
+                                    We formulate EV charging as a feasibility problem that meets all EVs’ energy demands before departure
+                                    under charging rate con- straints and total power constraint. We propose an online algorithm, the
+                                    smoothed least-laxity-first (sLLF) algorithm, that decides on the current charging rates based on
+                                    only the information up to the current time. We characterize the performance of the sLLF algorithm
+                                    analytically and numerically. Numerical experiments with real-world data show that it has significantly
+                                    higher rate of generating feasible EV charging than several other common EV charging
+                                    algorithms.
+                                </h5>
+                                <hr class="style1" width="33%">
+                                <h5 class="card-text">
+                                    Y. Nakahira, N. Chen, L. Chen and S. H. Low. <a
+                                    href="http://netlab.caltech.edu/assets/publications/Nakahira-2017-llf.pdf" target="_blank">Smoothed
+                                    Least-laxity-first Algorithm for EV Charging</a>. Proc. the Eighth International Conference on
+                                    Future Energy Systems (e-Energy '17), 2017
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Optimal Distributed EV Charging</h3>
+                                <h5 class="card-text">
+                                    We design a distributed iterative scheduling algorithm for EV charging where, in each iteration,
+                                    EVs update their charging profiles according to the control signal broadcast by an aggregator,
+                                    and the aggregator adjusts the control signal to guide their updates. The algorithm converges to
+                                    optimal charging profiles even when EVs can plug in at different times, update their charging
+                                    profiles at different times with different frequencies, and may use outdated control signals
+                                    when they update.
+                                </h5>
+                                <hr class="style1" width="33%">
+                                <h5 class="card-text">
+                                    L. Gan, U. Topcu and S. H. Low. <a
+                                    href="http://netlab.caltech.edu/assets/publications/Gan-2012-EV.pdf">Optimal decentralized protocol for electric vehicle charging</a>,
+                                    IEEE Trans. on Power Systems, 228(2):940–951, May 2013</span>
+
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+        
+          <!--   Core JS Files   -->
+          <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+          <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+          <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+          <script src="assets/js/plugins/moment.min.js"></script>
+          <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+          <script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+          <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+          <script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+          <!--  Google Maps Plugin    -->
+          <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+          <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+          <script src="assets/js/material-kit.js?v=2.0.5" type="text/javascript"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,13 @@
+﻿python.exe : ...............................................................
+所在位置 行:4 字符: 8
++ $out = & python -m unittest apps.parking_lab.workbench.tests.test_cos ...
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (.................................:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+----------------------------------------------------------------------
+Ran 63 tests in 0.014s
+
+OK
+
+EXIT_CODE=0

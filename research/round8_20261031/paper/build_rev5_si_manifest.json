@@ -1,0 +1,173 @@
+{
+ "schema": "round8/rev5_build/v1",
+ "mode": "real",
+ "document": "si",
+ "generated_utc": "2026-10-31T11:35:33Z",
+ "template": {
+  "path": "paper\\draft\\Electrification_tipping_point_v2_draft_2026-10-31_round7_rev4.docx",
+  "sha256": "5b4056db55ad3d42c9ff49fdb3d84fff545e1a8d868f7cb309b9cdd0e7c08a24",
+  "note": "styles and section properties only; body cleared"
+ },
+ "output": {
+  "path": "research\\round8_20261031\\paper\\Electrification_tipping_point_v2_supplementary_rev5.docx",
+  "written": true,
+  "sha256": "c60dc45db9ae893ce314315466c6ebb7e37918cec3f9eb21feea62c4a8a2bf42",
+  "bytes": 1502736
+ },
+ "figures_embedded": [
+  "S1",
+  "S3"
+ ],
+ "figures_not_embedded": [],
+ "figure_records": [
+  {
+   "figure": "S1",
+   "embedded": true,
+   "status": "real",
+   "png": "research/round8_20261031/figures/S1.png",
+   "provenance_record": true
+  },
+  {
+   "figure": "S3",
+   "embedded": true,
+   "status": "real",
+   "png": "research/round8_20261031/figures/S3.png",
+   "provenance_record": true
+  }
+ ],
+ "figures_json": {
+  "path": "research\\round8_20261031\\figures\\FIGURES.json",
+  "sha256": "cbe253ed68c57b5fe0f7b730d619a7a0c551d81f356987f469268cbda0e114c9"
+ },
+ "h1_sections": [
+  "S1 Data coverage, QA and analysis units",
+  "S2 Calibration and hold-out checks",
+  "S3 Offline enumeration and budget accounting",
+  "S4 Energy ledger detail",
+  "S5 Conditional uncapped-connector analysis",
+  "S6 Number provenance ledger",
+  "S7 Reproduction package index"
+ ],
+ "structure_ok": true,
+ "references_cited": [],
+ "references_defined": [],
+ "word_count": 1023,
+ "char_count": 6781,
+ "paragraphs": 20,
+ "tables": 2,
+ "unresolved_numbers": [],
+ "unresolved_citation_keys": [],
+ "numbers": [
+  {
+   "token": "n_sites",
+   "value": 10,
+   "formatted": "10",
+   "unit": "sites",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "site_id",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_site_days",
+   "value": 825,
+   "formatted": "825",
+   "unit": "site-days",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "site_days",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_events",
+   "value": 185550,
+   "formatted": "185550",
+   "unit": "events",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "events",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_cal",
+   "value": 107852,
+   "formatted": "107852",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "n_calibration",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "n_test",
+   "value": 77698,
+   "formatted": "77698",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "n_test",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "ks_all",
+   "value": 0.03297024482113464,
+   "formatted": "0.0330",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "ks_statistic",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "rel_all",
+   "value": 0.11955213710752803,
+   "formatted": "0.12",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "holdout_mean_rel_error",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  }
+ ],
+ "placeholder_hits": {
+  "[TBD]": 0,
+  "SKELETON": 0,
+  "UNRESOLVED": 0,
+  "placeholder": 0,
+  "to be drawn": 0
+ },
+ "problems": []
+}

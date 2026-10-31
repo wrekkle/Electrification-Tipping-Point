@@ -1,0 +1,807 @@
+Alternative Fuels Data Center: Vehicle Registration Counts by State
+Alternative Fuels Data Center
+About
+|
+Contacts
+Menu
+About
+|
+Contacts
+Fuels & Vehicles
+Fuels & Vehicles
+Biodiesel
+|
+Diesel Vehicles
+Electricity
+|
+Electric Vehicles
+Ethanol
+|
+Flex Fuel Vehicles
+Hydrogen
+|
+Fuel Cell Vehicles
+Natural Gas
+|
+Natural Gas Vehicles
+Propane
+|
+Propane Vehicles
+Renewable Diesel
+Sustainable Aviation Fuel
+Emerging Fuels
+Fuel Prices
+Alternative Fuel & Advanced Vehicle Search
+Vehicle Cost Calculator
+Conserve Fuel
+Conserve Fuel
+Idle Reduction
+Parts & Equipment
+Driving Behavior
+Fleet Rightsizing
+System Efficiency
+Station Locator
+Station Locator
+Find Stations
+Analyze Trends
+Build Corridors
+Charging Networks
+About the Tool
+Laws & Incentives
+Laws & Incentives
+Search
+Federal
+State
+Local Examples
+Utility Incentives
+Summary Tables
+Project Assistance & Funding Opportunities
+More
+Maps & Data
+Case Studies
+Publications
+Tools
+Maps & Data
+Case Studies
+Publications
+Tools
+AFDC
+Maps & Data
+Vehicle Registration Counts by State
+Year
+2025
+2024
+2023
+2022
+2021
+2020
+2019
+2018
+2017
+2016
+This page provides approximate light-duty vehicle registration counts derived by the National Laboratory of the Rockies with data from Experian Information Solutions. Counts are rounded to the closest 100 vehicles and reflect the total number of light-duty registered vehicles through the selected year. Fuel types are based on vehicle identification numbers (VINs), which do not reflect aftermarket conversions to use different fuels or power sources.
+For a map comparing the density of light-duty vehicles per state and charts comparing registration counts over time, see
+TransAtlas
+.
+2024 Light-Duty Vehicle Registration Counts by State and Fuel Type
+State
+Electric (EV)
+Plug-In Hybrid Electric (PHEV)
+Hybrid Electric (HEV)
+Biodiesel
+Ethanol/Flex (E85)
+Compressed Natural Gas (CNG)
+Propane
+Hydrogen
+Methanol
+Gasoline
+Diesel
+Unknown Fuel
+Alabama
+17,500
+6,800
+77,600
+59,500
+435,400
+100
+100
+0
+0
+4,129,300
+127,400
+28,000
+Alaska
+3,400
+1,100
+12,100
+10,600
+46,800
+0
+0
+0
+0
+460,800
+30,200
+5,100
+Arizona
+111,200
+29,300
+202,200
+75,500
+429,300
+500
+700
+0
+0
+5,479,600
+198,400
+60,200
+Arkansas
+9,500
+3,800
+44,500
+39,700
+272,900
+200
+0
+0
+0
+2,265,200
+91,400
+10,000
+California
+1,533,900
+447,100
+1,895,100
+217,000
+1,309,800
+10,000
+1,500
+16,900
+0
+31,251,600
+737,900
+7,900
+Colorado
+127,000
+48,700
+171,200
+72,900
+326,400
+300
+100
+0
+0
+4,501,600
+200,300
+45,500
+Connecticut
+39,400
+22,500
+85,200
+11,900
+130,500
+100
+0
+0
+0
+2,572,400
+40,500
+20,200
+Delaware
+11,100
+4,600
+26,400
+5,500
+62,900
+0
+0
+0
+0
+790,600
+13,900
+5,000
+District of Columbia
+10,100
+4,300
+19,300
+500
+16,200
+100
+0
+0
+0
+255,300
+1,800
+500
+Florida
+334,800
+70,400
+499,300
+188,100
+1,079,800
+400
+100
+0
+0
+16,122,400
+352,800
+94,400
+Georgia
+120,000
+26,400
+206,300
+101,500
+705,700
+300
+200
+0
+0
+8,261,200
+205,900
+74,900
+Hawaii
+29,900
+8,700
+40,000
+3,700
+35,800
+0
+0
+0
+0
+944,100
+15,300
+3,600
+Idaho
+11,000
+5,600
+50,200
+51,000
+134,200
+100
+100
+0
+0
+1,595,100
+141,200
+30,400
+Illinois
+125,500
+40,400
+325,700
+66,400
+758,800
+300
+0
+0
+0
+8,571,800
+169,000
+67,800
+Indiana
+34,600
+15,300
+135,000
+60,200
+570,400
+300
+0
+0
+0
+5,186,300
+154,900
+57,600
+Iowa
+11,700
+7,300
+65,600
+44,500
+326,400
+100
+0
+0
+0
+2,556,700
+105,400
+56,800
+Kansas
+14,500
+6,600
+57,700
+30,300
+250,700
+200
+100
+0
+0
+2,186,000
+87,600
+15,300
+Kentucky
+15,000
+6,400
+75,600
+40,200
+352,100
+300
+0
+0
+0
+3,358,000
+115,600
+22,100
+Louisiana
+11,600
+4,600
+49,600
+68,000
+371,400
+100
+0
+0
+0
+3,142,700
+115,400
+18,500
+Maine
+9,700
+9,200
+38,200
+13,200
+102,300
+0
+0
+0
+0
+1,048,000
+26,900
+8,500
+Maryland
+94,900
+36,600
+191,800
+33,600
+297,500
+200
+0
+0
+0
+4,261,500
+84,800
+31,000
+Massachusetts
+91,100
+52,200
+212,900
+23,100
+279,600
+200
+0
+0
+0
+4,789,300
+56,500
+29,900
+Michigan
+75,800
+33,600
+179,300
+76,200
+864,700
+300
+0
+0
+0
+7,131,900
+173,400
+49,300
+Minnesota
+47,400
+20,100
+143,300
+56,700
+508,000
+100
+0
+0
+0
+4,259,000
+126,800
+24,200
+Mississippi
+4,900
+2,400
+34,400
+37,700
+291,400
+100
+0
+0
+0
+2,272,700
+75,000
+8,200
+Missouri
+34,200
+16,800
+132,100
+76,500
+570,100
+800
+100
+0
+0
+4,682,900
+176,400
+36,600
+Montana
+5,600
+3,200
+24,700
+41,100
+91,800
+0
+0
+0
+0
+792,500
+68,900
+10,800
+Nebraska
+9,100
+4,700
+37,900
+31,100
+195,000
+100
+0
+0
+0
+1,610,600
+76,200
+24,900
+Nevada
+65,600
+13,400
+81,600
+29,300
+123,200
+200
+100
+0
+0
+2,187,600
+86,100
+19,900
+New Hampshire
+12,700
+8,200
+42,500
+14,700
+86,900
+100
+0
+0
+0
+1,194,400
+28,700
+12,400
+New Jersey
+173,800
+51,600
+205,200
+29,900
+387,500
+300
+0
+0
+0
+6,460,100
+82,400
+35,600
+New Mexico
+13,000
+5,800
+50,500
+35,000
+148,600
+100
+100
+0
+0
+1,592,600
+88,200
+22,000
+New York
+168,100
+111,400
+361,000
+59,200
+577,800
+300
+0
+0
+0
+9,824,900
+148,000
+78,600
+North Carolina
+91,000
+28,300
+248,200
+88,300
+641,200
+300
+100
+0
+0
+7,803,000
+209,400
+69,900
+North Dakota
+1,300
+1,000
+10,100
+21,800
+88,100
+0
+0
+0
+0
+631,700
+45,000
+6,900
+Ohio
+69,400
+29,700
+233,900
+76,300
+824,400
+600
+100
+0
+0
+8,894,800
+195,500
+60,300
+Oklahoma
+22,600
+34,300
+73,000
+65,900
+343,200
+1,700
+200
+0
+0
+3,506,700
+146,500
+44,000
+Oregon
+78,400
+33,200
+171,400
+59,600
+183,100
+100
+100
+0
+0
+3,059,000
+216,000
+49,300
+Pennsylvania
+89,900
+47,600
+288,100
+76,200
+646,000
+500
+0
+0
+0
+8,866,100
+191,400
+39,800
+Rhode Island
+8,300
+6,000
+25,300
+3,500
+41,200
+0
+0
+0
+0
+771,500
+10,800
+5,500
+South Carolina
+26,800
+11,100
+99,100
+49,300
+399,800
+100
+100
+0
+0
+4,372,500
+111,400
+44,500
+South Dakota
+2,300
+1,700
+14,700
+24,400
+103,200
+0
+0
+0
+0
+765,600
+54,600
+13,500
+Tennessee
+42,600
+12,800
+131,600
+58,800
+503,400
+100
+100
+0
+0
+5,652,900
+162,000
+36,100
+Texas
+294,700
+64,700
+538,900
+493,800
+2,267,600
+1,300
+1,200
+0
+0
+21,601,400
+773,300
+118,400
+Utah
+52,200
+15,500
+96,000
+74,700
+183,000
+2,000
+500
+0
+0
+2,529,000
+161,300
+25,900
+Vermont
+10,200
+6,900
+22,200
+7,400
+35,000
+0
+0
+0
+0
+486,200
+14,300
+4,900
+Virginia
+107,400
+32,100
+262,000
+48,200
+475,400
+300
+0
+0
+0
+6,707,000
+152,500
+29,100
+Washington
+191,400
+48,500
+336,500
+79,100
+330,900
+100
+100
+0
+0
+5,528,500
+272,100
+44,100
+West Virginia
+3,800
+2,200
+26,600
+18,700
+120,500
+100
+0
+0
+0
+1,285,900
+46,500
+16,600
+Wisconsin
+32,300
+15,100
+141,200
+57,400
+528,500
+300
+0
+0
+0
+4,621,700
+147,300
+26,300
+Wyoming
+1,500
+1,000
+9,800
+22,900
+58,400
+0
+0
+0
+0
+498,300
+61,300
+13,700
+United States
+4,503,700
+1,520,800
+8,502,600
+3,030,600
+19,912,800
+23,700
+5,700
+16,900
+0
+243,320,500
+7,174,400
+1,664,500
+Need project assistance?
+Technical Response Service
+800-254-6735
+Fuels & Vehicles
+Station Locator
+Laws & Incentives
+Data Downloads
+Developer APIs
+The AFDC is a resource of the U.S. Department of Energy's
+Transportation Technologies Office
+.
+Quick Links
+Leadership & Offices
+Mission
+Contact Us
+Careers
+Resources
+Budget & Performance
+Directives, Delegations, & Requirements
+Freedom of Information Act (FOIA)
+Inspector General
+Privacy Program
+Federal Government
+USA.gov
+The White House
+Open Gov
+Accessibility
+Privacy
+Information Quality
+Web Policies
+Vulnerability Disclosure Program
+Whistleblower Protection

@@ -1,0 +1,122 @@
+{
+ "schema": "round6/lead_q3_indep/v1",
+ "alpha": 0.05,
+ "rules": {
+  "A": {
+   "units": 90,
+   "empty": 15,
+   "nonempty": 75,
+   "intervals": 75,
+   "gaps": 0,
+   "max_k40": 29,
+   "na_cells": 0,
+   "bad_cells": 0
+  },
+  "B": {
+   "units": 90,
+   "empty": 18,
+   "nonempty": 72,
+   "intervals": 72,
+   "gaps": 0,
+   "max_k40": 72,
+   "na_cells": 0,
+   "bad_cells": 0
+  },
+  "C": {
+   "units": 90,
+   "empty": 18,
+   "nonempty": 72,
+   "intervals": 72,
+   "gaps": 0,
+   "max_k40": 72,
+   "na_cells": 0,
+   "bad_cells": 0
+  },
+  "D": {
+   "units": 90,
+   "empty": 16,
+   "nonempty": 74,
+   "intervals": 74,
+   "gaps": 0,
+   "max_k40": 73,
+   "na_cells": 0,
+   "bad_cells": 0
+  }
+ },
+ "summary": {
+  "units_per_rule": 90,
+  "rules": {
+   "A": {
+    "units": 90,
+    "empty": 15,
+    "nonempty": 75,
+    "intervals": 75,
+    "gaps": 0,
+    "max_k40": 29,
+    "na_cells": 0,
+    "bad_cells": 0
+   },
+   "B": {
+    "units": 90,
+    "empty": 18,
+    "nonempty": 72,
+    "intervals": 72,
+    "gaps": 0,
+    "max_k40": 72,
+    "na_cells": 0,
+    "bad_cells": 0
+   },
+   "C": {
+    "units": 90,
+    "empty": 18,
+    "nonempty": 72,
+    "intervals": 72,
+    "gaps": 0,
+    "max_k40": 72,
+    "na_cells": 0,
+    "bad_cells": 0
+   },
+   "D": {
+    "units": 90,
+    "empty": 16,
+    "nonempty": 74,
+    "intervals": 74,
+    "gaps": 0,
+    "max_k40": 73,
+    "na_cells": 0,
+    "bad_cells": 0
+   }
+  },
+  "cross_rule": {
+   "equal": 88,
+   "A_subset": 125,
+   "B_subset": 0,
+   "disjoint": 5,
+   "overlap_not_nested": 0,
+   "one_empty": 7
+  },
+  "large_delta_count": 1
+ },
+ "cross_rule": {
+  "equal": 88,
+  "A_subset": 125,
+  "B_subset": 0,
+  "disjoint": 5,
+  "overlap_not_nested": 0,
+  "one_empty": 7
+ },
+ "large_delta": {
+  "count": 1,
+  "examples": [
+   {
+    "lot": "TPE1376",
+    "seed": 10,
+    "min_A": 2,
+    "min_B": 24,
+    "delta": 22,
+    "K_A_interval": true,
+    "K_B_interval": true
+   }
+  ]
+ }
+}

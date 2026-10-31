@@ -1,0 +1,152 @@
+{
+  "version": "round8-20261031",
+  "preregistered_at_utc": "2026-10-31T10:45:00Z",
+  "owner": "lead",
+  "data": {
+    "primary_status": "PENDING_SELECTION_BY_RULE",
+    "primary_selection_rule": [
+      "P1_downloadable",
+      "P2_event_level_arrival_dwell",
+      "P3_multi_site_multi_week",
+      "P4_site_id_capacity_tz_timestamps",
+      "P5_clear_license_archivable"
+    ],
+    "secondary_charge_source": "PENDING",
+    "cross_source_combination": "declared; no per-vehicle joint claim",
+    "forbidden_inputs": [
+      "taipei snapshots",
+      "old fitted_parameters",
+      "old traffic json",
+      "old results"
+    ]
+  },
+  "splits": {
+    "calibration": {
+      "unit": "site-day",
+      "rule": "fit on training sites and training days"
+    },
+    "solve": {
+      "unit": "site-day",
+      "rule": "representative sites solved separately"
+    },
+    "test": {
+      "unit": "site-day + independent stream",
+      "rule": "held-out sites AND held-out complete days; no overlap with calibration"
+    },
+    "paired_replay": true
+  },
+  "families": [
+    {
+      "id": "E1",
+      "mode": "confirmatory",
+      "question": "coverage, arrival/dwell fit, holdout error",
+      "unit": "site-day",
+      "outputs": [
+        "fit_params.json",
+        "fit_metrics.csv",
+        "coverage.csv"
+      ]
+    },
+    {
+      "id": "E2",
+      "mode": "confirmatory",
+      "question": "k vs service-rate curve with uncertainty",
+      "unit": "site-day paired",
+      "outputs": [
+        "curve_E2.csv"
+      ]
+    },
+    {
+      "id": "E3",
+      "mode": "mixed",
+      "question": "feasible k set and minimality classes",
+      "unit": "site x rule x seed",
+      "classes": [
+        "confirmed_minimal",
+        "minimality_unconfirmed",
+        "physically_infeasible",
+        "budget_not_covered",
+        "missing_data"
+      ],
+      "outputs": [
+        "search_E3.csv"
+      ]
+    },
+    {
+      "id": "E4",
+      "mode": "confirmatory",
+      "question": "rules vs baselines on held-out test",
+      "unit": "site-day",
+      "rules": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "B0_FCFS",
+        "B1_quota",
+        "B2_literature"
+      ],
+      "outputs": [
+        "test_E4.csv"
+      ]
+    },
+    {
+      "id": "E5",
+      "mode": "exploratory",
+      "question": "per-stream delta k and service tradeoff",
+      "unit": "independent stream",
+      "outputs": [
+        "info_E5.csv"
+      ]
+    },
+    {
+      "id": "E6",
+      "mode": "confirmatory",
+      "question": "energy constraint x k x power x feeder",
+      "unit": "site-day",
+      "outputs": [
+        "energy_E6.csv"
+      ]
+    },
+    {
+      "id": "E7",
+      "mode": "illustrative",
+      "question": "non-monotone event trajectory",
+      "unit": "single instance",
+      "outputs": [
+        "traj_E7.csv"
+      ]
+    }
+  ],
+  "primary_comparisons": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5"
+  ],
+  "service_standard": {
+    "default_alpha": 0.05,
+    "selection": "risk margin or upper confidence bound",
+    "test_report": "meets/not meets with interval"
+  },
+  "practical_significance_threshold": {
+    "service_rate_pp": 1
+  },
+  "k_search": {
+    "enumeration": "integer 0..K_max exhaustive for confirmed_minimal",
+    "forbid": [
+      "binary search without monotonicity proof",
+      "peak*mean*safety factor as proven bound"
+    ]
+  },
+  "energy_accounting": {
+    "reject_counts_in_denominator": true,
+    "initial_vehicles": "separate",
+    "zero_demand": "separate",
+    "censored": "separate",
+    "missing_illegal": "separate",
+    "no_free_refill_after_departure": true
+  },
+  "outputs_root": "research/round8_20261031"
+}

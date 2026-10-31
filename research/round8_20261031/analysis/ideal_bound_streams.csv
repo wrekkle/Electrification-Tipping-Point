@@ -1,0 +1,21 @@
+site_id,day_key,n_requests,demand_kwh,ideal_delivered_kwh,ideal_rate,session_failure,session_failure_rate,dwell_power_limited
+Drummond,2014-01-28,10,176.246,93.572,0.5309,6,0.6,True
+Drummond,2014-03-31,3,36.155,29.991,0.8295,1,0.3333,True
+Hyatt,2014-01-07,4,46.365,16.91,0.3647,3,0.75,True
+Jolimont,2014-03-12,9,134.172,60.993,0.4546,4,0.4444,True
+Jolimont,2014-03-15,6,70.473,61.602,0.8741,2,0.3333,True
+Jolimont,2014-03-17,10,115.019,80.472,0.6996,3,0.3,True
+Princes Theatre,2014-03-08,2,19.962,13.499,0.6762,1,0.5,True
+Princes Theatre,2014-03-14,8,132.844,52.799,0.3975,6,0.75,True
+Queensberry,2014-01-07,7,113.81,48.133,0.4229,6,0.8571,True
+Southbank,2014-01-07,6,98.064,16.748,0.1708,5,0.8333,True
+Titles,2014-03-09,2,39.003,22.355,0.5732,1,0.5,True
+University,2014-02-13,10,125.42,91.454,0.7292,4,0.4,True
+Victoria Market,2014-01-22,6,61.051,23.276,0.3813,5,0.8333,True
+Victoria Market,2014-01-25,11,147.349,84.682,0.5747,5,0.4545,True
+Victoria Market,2014-01-30,8,111.565,18.608,0.1668,8,1.0,True
+Victoria Market,2014-02-17,3,34.886,16.576,0.4751,2,0.6667,True
+Victoria Market,2014-03-11,7,107.452,66.908,0.6227,5,0.7143,True
+Victoria Market,2014-03-20,10,128.411,73.879,0.5753,6,0.6,True
+Victoria Market,2014-03-23,10,138.104,73.614,0.533,6,0.6,True
+Victoria Market,2014-03-31,5,54.677,45.82,0.838,1,0.2,True

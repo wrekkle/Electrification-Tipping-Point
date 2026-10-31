@@ -1,0 +1,22 @@
+# 生成的缓存、日志与临时文件
+__pycache__/
+*.pyc
+*.log
+.log
+Thumbs.db
+.DS_Store
+~$*
+**/_scratch/
+
+# 大体积原始数据与已退出的采集链路（体积原因不入库）
+tmp/
+research/collection/
+research/**/downloads/
+research/**/octave_runtime/
+
+# 文献 PDF 原件与压缩包（版权/体积原因不入库）
+papers/
+*.zip
+*.pdf
+*.gz
+*.jsonl

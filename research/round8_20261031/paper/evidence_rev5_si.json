@@ -1,0 +1,110 @@
+{
+ "schema": "round8/evidence/v1",
+ "experiments_root": "research/round8_20261031/experiments",
+ "records": [
+  {
+   "token": "n_sites",
+   "value": 10,
+   "formatted": "10",
+   "unit": "sites",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "site_id",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_site_days",
+   "value": 825,
+   "formatted": "825",
+   "unit": "site-days",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "site_days",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_events",
+   "value": 185550,
+   "formatted": "185550",
+   "unit": "events",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "events",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_cal",
+   "value": 107852,
+   "formatted": "107852",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "n_calibration",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "n_test",
+   "value": 77698,
+   "formatted": "77698",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "n_test",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "ks_all",
+   "value": 0.03297024482113464,
+   "formatted": "0.0330",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "ks_statistic",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "rel_all",
+   "value": 0.11955213710752803,
+   "formatted": "0.12",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "holdout_mean_rel_error",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  }
+ ],
+ "unresolved": []
+}

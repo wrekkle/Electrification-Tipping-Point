@@ -1,0 +1,55 @@
+{
+ "schema": "review/none_semantics_4way/v1",
+ "generated_utc": "2026-10-31T08:02:19Z",
+ "command": "python research/round5_20261031/review/none_semantics_4way.py",
+ "interpreter": "3.12.3",
+ "scope": "59 条既有曲线（round3 main 4 + round4 scenario/fixedk），只读，不重跑仿真",
+ "method": {
+  "capacity_only_unmet_rate": "分母=row.charge_requests=0 → zero_demand_na",
+  "departed_shortfall_energy_rate": "分母=departed_requested_kwh=0：exogenous_charge_requests=0 → zero_demand_na；否则 no_departure_sample（有需求但窗口内无离场样本，删失）",
+  "ev/ice_parking_failure_rate": "分母=exogenous_ev_visits/exogenous_ice_visits=0 → zero_demand_na",
+  "true_missing": "rate=None 且分母>0，或 service_metrics/分母缺失",
+  "illegal": "非有限数值、越界 [0,1]",
+  "prereg": "零需求 N/A 按 PREREGISTRATION.json:61 跳过并记录；尚无离场样本不是 achieved，也不等于 N/A，应与真实缺失分开报告"
+ },
+ "counts": {
+  "capacity_only_unmet_rate": {
+   "valid": 31360,
+   "zero_demand_na": 615,
+   "no_departure_sample": 0,
+   "true_missing": 0,
+   "illegal": 0
+  },
+  "ev_parking_failure_rate": {
+   "valid": 31975,
+   "zero_demand_na": 0,
+   "no_departure_sample": 0,
+   "true_missing": 0,
+   "illegal": 0
+  },
+  "ice_parking_failure_rate": {
+   "valid": 31975,
+   "zero_demand_na": 0,
+   "no_departure_sample": 0,
+   "true_missing": 0,
+   "illegal": 0
+  },
+  "departed_shortfall_energy_rate": {
+   "valid": 22895,
+   "zero_demand_na": 615,
+   "no_departure_sample": 8465,
+   "true_missing": 0,
+   "illegal": 0
+  }
+ },
+ "units": {
+  "curves": 59,
+  "rows": 31975,
+  "n_units_with_shortfall_no_departure": 305,
+  "n_units_with_shortfall_zero_demand": 15
+ },
+ "b4_interpretation": {
+  "note": "review 中 4 约束“310→51”是把零分母一律当失败的严格口径，属于口径变化，不是修复结果；按预登记 N/A 口径仍为 310。",
+  "energy_constraint_status": "若进入主结论，必须先固定到达群体（独立情景、既定 lot/seed）、拒绝需求口径（capacity unmet 未服务，不等于离场缺电）和离场随访（离场后补能行为无观测，costs.py:718 保持 null）；否则只能作删失条件下的辅助结果。"
+ }
+}

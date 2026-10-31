@@ -1,0 +1,312 @@
+{
+  "generated_utc": "2026-10-29T14:04:39.940129+00:00",
+  "scope": "four fixed Python baselines; fixed scenarios reused by every pile candidate",
+  "environment": {
+    "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+    "executable": "C:\\anaconda\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "commands": {
+    "fixtures": "python experiments/prei/sample_fixtures.py",
+    "runs": "python experiments/prei/reference.py --config <config> --out <new run dir>",
+    "tests": "python -m unittest discover -s experiments/prei/tests -v",
+    "cross_language": "python experiments/prei/compare_with_matlab.py --reference experiments/prei/runs/run2_v1_legacy --candidate matlab/prei/runs/<run>"
+  },
+  "source_hashes": {
+    "reference.py": "64a75a262fef8d276bb9a25ca92bed30baab48561fe0714d0fb3625da05f8bfb",
+    "schema.json": "f001fd03cf1fe08228cb128f1f48e276263f9c382f5cd5c41fedc1f16a251eb1",
+    "compare_with_matlab.py": "38e3f14574ab816a9912b518e24391eea9c42444029052a868f5a50232b482e6",
+    "sample_fixtures.py": "c2e324662ea3ec1ce3cef1862d287f61de046c37d0df4ce5ce4131e80a38878e",
+    "audit_numeric.py": "f4b42bbb4481eece04844ad976e3a0fd68b1173e1346e7b9ad41fa6ed89fa3e1",
+    "originals/final_tvr.m": "0fb5501542705d171bf66b47fcbe1a652420d0a74e7488ff10f62eadeef2e6fd",
+    "originals/final_tvr_v2_fluc_re.m": "3123a6ae6ef12413f1086c326dd2f9b741e72f75305a72d1621a9939198d7e31"
+  },
+  "cases": [
+    {
+      "config": "experiments\\prei\\configs\\final_tvr_n40_legacy.json",
+      "run": "experiments\\prei\\runs\\run2_v1_legacy",
+      "model_variant": "legacy_reference",
+      "diagnostic_only": true,
+      "input_hashes": {
+        "config_actual": "73cbc0943b2f0c54970497e827a45f87c393ef49221184029c55df5e468a9e4c",
+        "config_recorded": "73cbc0943b2f0c54970497e827a45f87c393ef49221184029c55df5e468a9e4c",
+        "config_matches": true,
+        "fixture_actual": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+        "fixture_recorded": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+        "fixture_matches": true,
+        "fixture_meta_recorded": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+        "fixture_meta_matches": true
+      },
+      "rows": 441,
+      "days": 21,
+      "conservation": {
+        "rows": 441,
+        "max_component_identity_abs_error_rmb": 9.094947017729282e-13,
+        "max_capital_formula_abs_error_rmb": 0.0,
+        "max_rejection_minus_total_arrivals": 0.0,
+        "all_rejections_within_total_arrivals": true
+      },
+      "oracle": {
+        "oracle": "research/electrification/matlab_audit_20261029/audit_numeric.py:deterministic_formula",
+        "cells": 441,
+        "max_abs_cost_error_rmb": 3.637978807091713e-12,
+        "max_abs_ev_rejection_error": 5.684341886080802e-14,
+        "max_abs_ice_rejection_error": 5.861977570020827e-14,
+        "within_atol_1e_9": true
+      },
+      "cross_language": {
+        "status": "pass",
+        "verdict": "pass",
+        "exit_code": 0,
+        "candidate": "matlab\\prei\\runs\\m2_final_tvr_n40_legacy",
+        "candidate_csv_sha256": "8216e558c00b248b403faa2fba1050b8702b766110c254229eef387321d5cf76",
+        "same_fixed_input": true,
+        "config_sha256": {
+          "reference": "73cbc0943b2f0c54970497e827a45f87c393ef49221184029c55df5e468a9e4c",
+          "candidate": "73cbc0943b2f0c54970497e827a45f87c393ef49221184029c55df5e468a9e4c"
+        },
+        "fixture_sha256": {
+          "reference": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+          "candidate": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad"
+        },
+        "rows": {
+          "reference": 441,
+          "candidate": 441
+        },
+        "mismatch_count": 0,
+        "max_abs_error_by_column": {
+          "total_arrivals": 0.0,
+          "ev_share_actual": 1.1102230246251565e-16,
+          "capital_daily_cost": 0.0,
+          "ev_rejected": 3.552713678800501e-15,
+          "ice_rejected": 5.684341886080802e-14,
+          "ev_fuel_cost": 8.526512829121202e-14,
+          "ice_fuel_cost": 2.2737367544323206e-13,
+          "ev_time_cost": 2.2737367544323206e-12,
+          "ice_time_cost": 2.7284841053187847e-12,
+          "ev_complaint_cost": 4.547473508864641e-13,
+          "ice_complaint_cost": 4.547473508864641e-13,
+          "total_daily_cost": 4.547473508864641e-12,
+          "g_full_minus_best_partial": 9.094947017729282e-13,
+          "delta_candidate_minus_full": 4.547473508864641e-12
+        },
+        "tie_mismatches": [],
+        "flag_errors": []
+      }
+    },
+    {
+      "config": "experiments\\prei\\configs\\final_tvr_n40_corrected.json",
+      "run": "experiments\\prei\\runs\\run2_v1_corrected",
+      "model_variant": "corrected_baseline",
+      "diagnostic_only": false,
+      "input_hashes": {
+        "config_actual": "de4b5db228277de8d3485610f2fdd01230464c6dbebdaad8efd9d6b57f65ad94",
+        "config_recorded": "de4b5db228277de8d3485610f2fdd01230464c6dbebdaad8efd9d6b57f65ad94",
+        "config_matches": true,
+        "fixture_actual": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+        "fixture_recorded": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+        "fixture_matches": true,
+        "fixture_meta_recorded": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+        "fixture_meta_matches": true
+      },
+      "rows": 441,
+      "days": 21,
+      "conservation": {
+        "rows": 441,
+        "max_component_identity_abs_error_rmb": 9.094947017729282e-13,
+        "max_capital_formula_abs_error_rmb": 0.0,
+        "max_rejection_minus_total_arrivals": 0.0,
+        "all_rejections_within_total_arrivals": true
+      },
+      "oracle": {
+        "oracle": "research/electrification/matlab_audit_20261029/audit_numeric.py:deterministic_formula",
+        "cells": 441,
+        "max_abs_cost_error_rmb": 46.2000000000005,
+        "max_abs_ev_rejection_error": 5.684341886080802e-14,
+        "max_abs_ice_rejection_error": 5.861977570020827e-14,
+        "within_atol_1e_9": false,
+        "note": "corrected_baseline is not a direct oracle copy: r=1 adds the EV complaint term the legacy oracle omits",
+        "max_abs_full_install_difference_rmb": 46.2000000000005
+      },
+      "cross_language": {
+        "status": "pass",
+        "verdict": "pass",
+        "exit_code": 0,
+        "candidate": "matlab\\prei\\runs\\m2_final_tvr_n40_corrected",
+        "candidate_csv_sha256": "8b236a4b91adef17ed223d746512867ea8fff4e05b2b263d9d4e562c68e36c5e",
+        "same_fixed_input": true,
+        "config_sha256": {
+          "reference": "de4b5db228277de8d3485610f2fdd01230464c6dbebdaad8efd9d6b57f65ad94",
+          "candidate": "de4b5db228277de8d3485610f2fdd01230464c6dbebdaad8efd9d6b57f65ad94"
+        },
+        "fixture_sha256": {
+          "reference": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
+          "candidate": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad"
+        },
+        "rows": {
+          "reference": 441,
+          "candidate": 441
+        },
+        "mismatch_count": 0,
+        "max_abs_error_by_column": {
+          "total_arrivals": 0.0,
+          "ev_share_actual": 1.1102230246251565e-16,
+          "capital_daily_cost": 0.0,
+          "ev_rejected": 3.552713678800501e-15,
+          "ice_rejected": 5.684341886080802e-14,
+          "ev_fuel_cost": 8.526512829121202e-14,
+          "ice_fuel_cost": 2.2737367544323206e-13,
+          "ev_time_cost": 2.2737367544323206e-12,
+          "ice_time_cost": 2.7284841053187847e-12,
+          "ev_complaint_cost": 4.547473508864641e-13,
+          "ice_complaint_cost": 4.547473508864641e-13,
+          "total_daily_cost": 4.547473508864641e-12,
+          "g_full_minus_best_partial": 1.1368683772161603e-12,
+          "delta_candidate_minus_full": 4.547473508864641e-12
+        },
+        "tie_mismatches": [],
+        "flag_errors": []
+      }
+    },
+    {
+      "config": "experiments\\prei\\configs\\v2_n10786_legacy.json",
+      "run": "experiments\\prei\\runs\\run2_v2_legacy",
+      "model_variant": "legacy_reference",
+      "diagnostic_only": true,
+      "input_hashes": {
+        "config_actual": "a4218199090832b42e15c1c4dfa3ee86bcd29cdceb499553fb78bfd4fe6cf1a7",
+        "config_recorded": "a4218199090832b42e15c1c4dfa3ee86bcd29cdceb499553fb78bfd4fe6cf1a7",
+        "config_matches": true,
+        "fixture_actual": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe",
+        "fixture_recorded": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe",
+        "fixture_matches": true,
+        "fixture_meta_recorded": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe",
+        "fixture_meta_matches": true
+      },
+      "rows": 1764,
+      "days": 84,
+      "conservation": {
+        "rows": 1764,
+        "max_component_identity_abs_error_rmb": 2.3283064365386963e-10,
+        "max_capital_formula_abs_error_rmb": 0.0,
+        "max_rejection_minus_total_arrivals": 0.0,
+        "all_rejections_within_total_arrivals": true
+      },
+      "cross_language": {
+        "status": "pass",
+        "verdict": "pass",
+        "exit_code": 0,
+        "candidate": "matlab\\prei\\runs\\m2_v2_n10786_legacy",
+        "candidate_csv_sha256": "9550964a1ddca95b54fcf6e703c46f4acefc247307c7c39bb50d20513e22cc40",
+        "same_fixed_input": true,
+        "config_sha256": {
+          "reference": "a4218199090832b42e15c1c4dfa3ee86bcd29cdceb499553fb78bfd4fe6cf1a7",
+          "candidate": "a4218199090832b42e15c1c4dfa3ee86bcd29cdceb499553fb78bfd4fe6cf1a7"
+        },
+        "fixture_sha256": {
+          "reference": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe",
+          "candidate": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe"
+        },
+        "rows": {
+          "reference": 1764,
+          "candidate": 1764
+        },
+        "mismatch_count": 0,
+        "max_abs_error_by_column": {
+          "total_arrivals": 0.0,
+          "ev_share_actual": 2.220446049250313e-16,
+          "capital_daily_cost": 0.0,
+          "ev_rejected": 3.637978807091713e-12,
+          "ice_rejected": 5.820766091346741e-11,
+          "ev_fuel_cost": 8.731149137020111e-11,
+          "ice_fuel_cost": 3.4924596548080444e-10,
+          "ev_time_cost": 2.3283064365386963e-10,
+          "ice_time_cost": 2.3283064365386963e-10,
+          "ev_complaint_cost": 5.820766091346741e-11,
+          "ice_complaint_cost": 8.731149137020111e-11,
+          "total_daily_cost": 6.984919309616089e-10,
+          "g_full_minus_best_partial": 2.3283064365386963e-10,
+          "delta_candidate_minus_full": 6.984919309616089e-10
+        },
+        "tie_mismatches": [],
+        "flag_errors": []
+      }
+    },
+    {
+      "config": "experiments\\prei\\configs\\v2_n10786_corrected.json",
+      "run": "experiments\\prei\\runs\\run2_v2_corrected",
+      "model_variant": "corrected_baseline",
+      "diagnostic_only": false,
+      "input_hashes": {
+        "config_actual": "21e9c8e95c8a52598d6fbdbea67cb9336637fcc55f19b3e39e6ffbac9369c6e8",
+        "config_recorded": "21e9c8e95c8a52598d6fbdbea67cb9336637fcc55f19b3e39e6ffbac9369c6e8",
+        "config_matches": true,
+        "fixture_actual": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe",
+        "fixture_recorded": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe",
+        "fixture_matches": true,
+        "fixture_meta_recorded": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe",
+        "fixture_meta_matches": true
+      },
+      "rows": 1764,
+      "days": 84,
+      "conservation": {
+        "rows": 1764,
+        "max_component_identity_abs_error_rmb": 2.3283064365386963e-10,
+        "max_capital_formula_abs_error_rmb": 0.0,
+        "max_rejection_minus_total_arrivals": 0.0,
+        "all_rejections_within_total_arrivals": true
+      },
+      "cross_language": {
+        "status": "pass",
+        "verdict": "pass",
+        "exit_code": 0,
+        "candidate": "matlab\\prei\\runs\\m2_v2_n10786_corrected",
+        "candidate_csv_sha256": "c308de34123f063898c41c4bb8cc616f64957701fa8f6a0129cfc60ca7b56740",
+        "same_fixed_input": true,
+        "config_sha256": {
+          "reference": "21e9c8e95c8a52598d6fbdbea67cb9336637fcc55f19b3e39e6ffbac9369c6e8",
+          "candidate": "21e9c8e95c8a52598d6fbdbea67cb9336637fcc55f19b3e39e6ffbac9369c6e8"
+        },
+        "fixture_sha256": {
+          "reference": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe",
+          "candidate": "0e90cc4f65a2139296dfd397e2095f151a60bc6e86d175818a321fa90824f2fe"
+        },
+        "rows": {
+          "reference": 1764,
+          "candidate": 1764
+        },
+        "mismatch_count": 0,
+        "max_abs_error_by_column": {
+          "total_arrivals": 0.0,
+          "ev_share_actual": 2.220446049250313e-16,
+          "capital_daily_cost": 0.0,
+          "ev_rejected": 3.637978807091713e-12,
+          "ice_rejected": 5.820766091346741e-11,
+          "ev_fuel_cost": 8.731149137020111e-11,
+          "ice_fuel_cost": 3.4924596548080444e-10,
+          "ev_time_cost": 2.3283064365386963e-10,
+          "ice_time_cost": 2.3283064365386963e-10,
+          "ev_complaint_cost": 5.820766091346741e-11,
+          "ice_complaint_cost": 8.731149137020111e-11,
+          "total_daily_cost": 6.984919309616089e-10,
+          "g_full_minus_best_partial": 2.9103830456733704e-10,
+          "delta_candidate_minus_full": 6.984919309616089e-10
+        },
+        "tie_mismatches": [],
+        "flag_errors": []
+      }
+    }
+  ],
+  "cross_language": {
+    "status": "verified_4_of_4",
+    "verified_configs": [
+      "experiments\\prei\\runs\\run2_v1_legacy",
+      "experiments\\prei\\runs\\run2_v1_corrected",
+      "experiments\\prei\\runs\\run2_v2_legacy",
+      "experiments\\prei\\runs\\run2_v2_corrected"
+    ],
+    "pending_or_failed_configs": [],
+    "verdict": "actual same-hash full-matrix pass where verified; remaining configs are pending and NOT VERIFIED",
+    "note": "a copied-reference logic test is not counted as cross-language evidence"
+  }
+}

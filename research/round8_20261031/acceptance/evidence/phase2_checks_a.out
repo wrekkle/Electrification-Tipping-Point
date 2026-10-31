@@ -1,0 +1,51 @@
+CONTRACT ok=True sites=10 events=185550
+BLOCKS 825 keys ['site_id', 'day_key', 'site', 'events', 'n_events', 'first_arrival_min', 'last_arrival_min']
+SPLIT keys ['unit', 'seed', 'calibration', 'test', 'test_site_ids', 'test_day_keys', 'n', 'rule', 'warnings']
+SPLIT n {'blocks': 825, 'calibration': 523, 'test': 302} run_meta {'blocks': 825, 'calibration': 523, 'test': 302, 'sites_total': 10, 'sites_calibration': 8}
+SPLIT_RULE_VIOLATIONS test=0 cal=0
+SPLIT_SITES {'Victoria Market', 'Jolimont'} TEST_DAYS 17
+
+E1_FIT_PARAMS {"unit": "site-day", "dataset_id": "melbourne_parking_bay_events_2014", "n_sites": 10, "n_days": 85, "n_site_days": 825, "n_events": 185550}
+E1_CRITERIA [{"id": "P2_event_level_arrival_dwell", "requirement": "每条事件都有到达与停留", "value": 185550, "status": "pass"}, {"id": "P3_sites_ge_3", "requirement": ">= 3 场站", "value": 10, "status": "pass"}, {"id": "P3_complete_days_ge_4", "requirement": ">= 4 个完整 24h 日", "value": 789, "status": "pass", "reason": null}, {"id": "P4_site_capacity", "requirement": "每场站有总车位与充电位/枪数", "value": 10, "status": "pass"}, {"id": "charge_fields", "requirement": "needs_charge 与 energy_kwh 可用于 E6", "value": {"needs_charge": 185550, "energy_kwh": 6588, "events": 185550}, "status": "missing_data"}]
+E1_PARAM_KEYS ['unit', 'dataset_id', 'n_sites', 'n_days', 'n_site_days', 'n_events', 'criteria', 'missing', 'dwell_summary_calibration', 'dwell_summary_test', 'note']
+E1_COMPLETE_DAYS total_calc=789 total_contract=789 all_equal=True
+E1_COVERAGE rowwise True
+E1_FIT rows [(('dwell_fit', 'all'), 'ok', '107852', '77698'), (('dwell_fit', 'ev'), 'ok', '10940', '7626'), (('dwell_fit', 'ice'), 'ok', '96912', '70072'), (('arrival_fit', ''), 'ok', '107329', '77396')]
+E1_DWELL all n_cal=107852/107852 n_test=77698/77698 ks=0.0329702448/0.03297024482113464 mean_cal=51.063118/51.06311806920595 mean_test=44.958413/44.95841317665835 p50=22.017/22.017 p90=125.417/125.417
+E1_DWELL ev n_cal=10940/10940 n_test=7626/7626 ks=0.0314479571/0.031447957075548816 mean_cal=50.840434/50.8404344606947 mean_test=43.926118/43.92611814843955 p50=21.809/21.800 p90=124.640/124.633
+E1_DWELL ice n_cal=96912/96912 n_test=70072/70072 ks=0.0333837784/0.03338377839266926 mean_cal=51.088256/51.088255912580486 mean_test=45.070759/45.070758790957875 p50=22.033/22.033 p90=125.500/125.500
+E1_ARRIVAL n_cal=107329/107329 n_test=77396/77396 ks=0.0487914432/0.04879144320830131 mean_gap_cal=4.2860050/4.2860050250442585 mean_gap_test=3.2198576/3.219857615378156
+
+E2 summary rows 34 groups 34
+E2_BOOTSTRAP_RECOMPUTE max_abs_diff=0.000e+00 mismatches=0
+E2_MISMATCH_SAMPLE []
+E2_STREAMS_PER_K [(('A', 0), 24), (('A', 1), 24), (('A', 2), 24), (('A', 3), 24), (('A', 4), 22), (('A', 5), 20), (('A', 6), 20), (('A', 7), 20), (('A', 8), 11), (('A', 9), 10), (('A', 10), 10), (('A', 11), 10), (('A', 12), 10), (('A', 13), 5), (('A', 14), 5), (('A', 15), 2), (('A', 16), 2)]
+E2_DUP_ROWS 0
+E2_POLICIES ['A', 'D'] STREAMS 24 HASH_UNIQUE 24
+E2_SUMMARY_META {
+  "source": "curve_E2.csv",
+  "rows": 34,
+  "n_boot": 1000,
+  "seed": 20261031,
+  "unit": "independent stream (site-day)",
+  "note": "bootstrap 重采样单位=独立场站-日；bootstrap 次数不是样本量；未做多重比较校正（E2 为曲线描述，不作确认性比较）；service_* 为失败率，越低越好；charging_access_rate 为交付过电量比例",
+  "metrics": [
+    "service_capacity_unmet_rate",
+    "service_ev_parking_failure_rate",
+    "service_ice_parking_failure_rate",
+    "charging_access_rate",
+    "energy_service_rate"
+  ]
+}
+
+
+E3 classes {'confirmed_minimal': 0, 'minimality_unconfirmed': 0, 'physically_infeasible': 6, 'budget_not_covered': 2, 'missing_data': 0} instances 8 searchrows 59 per_k rows 51
+E3_INST Drummond:2014-03-06 physically_infeasible k=[0..7] physical 7 allinf True contiguous True class_ok True stop exhausted_physical_bound
+E3_INST Hyatt:2014-02-10 physically_infeasible k=[0..3] physical 3 allinf True contiguous True class_ok True stop exhausted_physical_bound
+E3_INST Princes Theatre:2014-02-06 physically_infeasible k=[0..2] physical 2 allinf True contiguous True class_ok True stop exhausted_physical_bound
+E3_INST Queensberry:2014-03-21 budget_not_covered k=[0..8] physical 16 allinf True contiguous True class_ok True stop budget_cap
+E3_INST Southbank:2014-02-02 budget_not_covered k=[0..8] physical 14 allinf True contiguous True class_ok True stop budget_cap
+E3_INST Titles:2014-01-30 physically_infeasible k=[0..3] physical 3 allinf True contiguous True class_ok True stop exhausted_physical_bound
+E3_INST University:2014-03-03 physically_infeasible k=[0..8] physical 8 allinf True contiguous True class_ok True stop exhausted_physical_bound
+E3_INST West Melbourne:2014-02-23 physically_infeasible k=[0..4] physical 4 allinf True contiguous True class_ok True stop exhausted_physical_bound
+E3_CONFIRMED_MINIMAL_CLAIMS 0 k_star_nonnull 0

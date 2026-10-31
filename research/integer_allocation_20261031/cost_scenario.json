@@ -1,0 +1,52 @@
+{
+  "schema": "cost_scenario/v1",
+  "generated_utc": "2026-10-31",
+  "owner": "lead",
+  "purpose": "整数配桩 C(k) 的设施成本与已核成本参数；缺参保持 null，不补 0。",
+  "sources": {
+    "vot_per_hour_2026": "research/cost_model_20261030/parameter_candidates_20261031.json#vot_per_hour_2026（官方，運研所 2009 值经 CPI 链式换算到 2026，406.63 TWD/车·小时）",
+    "fuel_price_95_unleaded_2026_ytd": "#fuel_price_95_unleaded_2026_ytd_TWD_per_liter（官方，中油 2026-01-01~09-30 周均价 31.7385 TWD/L）",
+    "electricity_price_per_kwh": "#electricity_tariff_lowvoltage_flat_2026（官方，台电低压非时间电价 4.08 TWD/kWh，夏月）",
+    "depreciation_capex": "#evse_capex_TWD_per_connector_2026_transferable（P26 迁移值 116792.62 TWD/枪，2026 币值；FX 30.9 UNVERIFIED）",
+    "depreciation_life_years": "#evse_lifetime_years_scenario（情景 10 年，无官方来源）",
+    "maintenance_per_bay_day": "#evse_maintenance_TWD_per_connector_year_2026_transferable / 365 = 43.30 TWD/设备位·日（P26 迁移值）"
+  },
+  "facility_cost": {
+    "formula": "facility_cost_per_day(k) = k * (depreciation_capex/depreciation_life_years/365 + maintenance_per_bay_day)",
+    "per_connector_day_TWD": 75.29972602739726,
+    "classification": "transferable_scenario",
+    "caveat": "来源为 LA 2019 场景的 P26 迁移值并加 10 年寿命情景，不是台湾官方采购价；FX 30.9 未核（UNVERIFIED）。设备成本只占 C(k) 的设施项，用户社会成本仍缺参。"
+  },
+  "cost": {
+    "currency": "TWD",
+    "price_year": 2026,
+    "accounting_period": "per_day",
+    "provenance": "unknown_not_calibrated",
+    "vot_per_hour": 406.63,
+    "fuel_price_per_l": 31.7385,
+    "electricity_price_per_kwh": 4.08,
+    "depreciation_capex": 116792.62,
+    "depreciation_life_years": 10,
+    "maintenance_per_bay_day": 43.29969863013699,
+    "sources": {
+      "vot_per_hour": "官方：運研所 2009 时间价值经 CPI 链式换算到 2026；见 parameter_candidates_20261031.json#vot_per_hour_2026",
+      "fuel_price_per_l": "官方：中油 95 无铅 2026 YTD 周均价；见 parameter_candidates_20261031.json",
+      "electricity_price_per_kwh": "官方：台电低压电价（夏月非时间）4.08 TWD/kWh；见 parameter_candidates_20261031.json",
+      "depreciation_capex": "迁移情景：P26 LA 2019 每枪设备+安装 3325.5 USD 经 FX/CPI 换算 2026 币值",
+      "depreciation_life_years": "情景：10 年寿命，无官方来源",
+      "maintenance_per_bay_day": "迁移情景：P26 networking/maintenance 75 USD/月/桩 经 FX/CPI 换算并 /365"
+    },
+    "metadata": {
+      "depreciation_capex": {
+        "currency": "TWD",
+        "year": 2026,
+        "note": "P26 迁移换算，FX 30.9 UNVERIFIED"
+      },
+      "maintenance_per_bay_day": {
+        "currency": "TWD",
+        "year": 2026,
+        "note": "P26 迁移换算，设备口径=带枪设备位数"
+      }
+    }
+  }
+}

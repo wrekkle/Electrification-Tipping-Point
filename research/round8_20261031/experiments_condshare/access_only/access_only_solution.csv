@@ -1,0 +1,21 @@
+site_id,day_key,stream_id,n_spaces,declared_charging_bays,k_star_access_only,share_k_star,status,k_checked,charge_requests,gate_rejections,no_connector,access_unmet_rate,energy_delivered_kwh,energy_demand_kwh,energy_gap_kwh,energy_service_rate
+Drummond,2014-01-28,Drummond:2014-01-28#0,33,7,5,0.15151515151515152,confirmed_minimal,6,10,0,0,0.0,93.572,176.246,82.674,0.5309
+Drummond,2014-03-31,Drummond:2014-03-31#0,33,7,2,0.06060606060606061,confirmed_minimal,3,3,0,0,0.0,29.991,36.155,6.164,0.8295
+Hyatt,2014-01-07,Hyatt:2014-01-07#0,15,3,1,0.06666666666666667,confirmed_minimal,2,4,0,0,0.0,16.91,46.365,29.455,0.3647
+Jolimont,2014-03-12,Jolimont:2014-03-12#0,58,12,5,0.08620689655172414,confirmed_minimal,6,9,0,0,0.0,60.993,134.172,73.179,0.4546
+Jolimont,2014-03-15,Jolimont:2014-03-15#0,58,12,9,0.15517241379310345,confirmed_minimal,10,6,0,0,0.0,61.602,70.473,8.871,0.8741
+Jolimont,2014-03-17,Jolimont:2014-03-17#0,58,12,8,0.13793103448275862,confirmed_minimal,9,10,0,0,0.0,80.472,115.019,34.547,0.6996
+Princes Theatre,2014-03-08,Princes Theatre:2014-03-08#0,12,2,2,0.16666666666666666,confirmed_minimal,3,2,0,0,0.0,13.499,19.962,6.463,0.6762
+Princes Theatre,2014-03-14,Princes Theatre:2014-03-14#0,12,2,2,0.16666666666666666,confirmed_minimal,3,8,0,0,0.0,52.799,132.844,80.045,0.3975
+Queensberry,2014-01-07,Queensberry:2014-01-07#0,82,16,5,0.06097560975609756,confirmed_minimal,6,7,0,0,0.0,48.133,113.81,65.677,0.4229
+Southbank,2014-01-07,Southbank:2014-01-07#0,72,14,3,0.041666666666666664,confirmed_minimal,4,6,0,0,0.0,16.748,98.064,81.316,0.1708
+Titles,2014-03-09,Titles:2014-03-09#0,17,3,2,0.11764705882352941,confirmed_minimal,3,2,0,0,0.0,22.355,39.003,16.648,0.5732
+University,2014-02-13,University:2014-02-13#0,40,8,6,0.15,confirmed_minimal,7,10,0,0,0.0,91.454,125.42,33.966,0.7292
+Victoria Market,2014-01-22,Victoria Market:2014-01-22#0,35,7,2,0.05714285714285714,confirmed_minimal,3,6,0,0,0.0,23.276,61.051,37.775,0.3813
+Victoria Market,2014-01-25,Victoria Market:2014-01-25#0,35,7,5,0.14285714285714285,confirmed_minimal,6,11,0,0,0.0,84.682,147.349,62.667,0.5747
+Victoria Market,2014-01-30,Victoria Market:2014-01-30#0,35,7,3,0.08571428571428572,confirmed_minimal,4,8,0,0,0.0,18.608,111.565,92.957,0.1668
+Victoria Market,2014-02-17,Victoria Market:2014-02-17#0,35,7,2,0.05714285714285714,confirmed_minimal,3,3,0,0,0.0,16.576,34.886,18.31,0.4751
+Victoria Market,2014-03-11,Victoria Market:2014-03-11#0,35,7,4,0.11428571428571428,confirmed_minimal,5,7,0,0,0.0,66.908,107.452,40.544,0.6227
+Victoria Market,2014-03-20,Victoria Market:2014-03-20#0,35,7,6,0.17142857142857143,confirmed_minimal,7,10,0,0,0.0,73.879,128.411,54.532,0.5753
+Victoria Market,2014-03-23,Victoria Market:2014-03-23#0,35,7,9,0.2571428571428571,confirmed_minimal,10,10,0,0,0.0,73.614,138.104,64.49,0.533
+Victoria Market,2014-03-31,Victoria Market:2014-03-31#0,35,7,2,0.05714285714285714,confirmed_minimal,3,5,0,0,0.0,45.82,54.677,8.857,0.838

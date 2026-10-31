@@ -1,0 +1,43 @@
+{
+  "grid_instances": 3456,
+  "grid_failures": 0,
+  "random_instances": 12000,
+  "random_failures": 0,
+  "occupancy_claim_counterexample": {
+    "k0": [
+      {
+        "arrival": 0,
+        "bay": 0,
+        "occupied": {
+          "0": 10
+        }
+      },
+      {
+        "arrival": 1,
+        "bay": 1,
+        "occupied": {
+          "0": 10,
+          "1": 11
+        }
+      }
+    ],
+    "k1": [
+      {
+        "arrival": 0,
+        "bay": 1,
+        "occupied": {
+          "1": 10
+        }
+      },
+      {
+        "arrival": 1,
+        "bay": 2,
+        "occupied": {
+          "1": 10,
+          "2": 11
+        }
+      }
+    ]
+  },
+  "note": "P1 enumeration is supportive, not a proof; corrected dominance proof in consistency_check.md section 4."
+}

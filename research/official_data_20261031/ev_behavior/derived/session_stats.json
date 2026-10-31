@@ -1,0 +1,15 @@
+{
+ "barnet": {
+  "sessions": 44225,
+  "parsed": 856,
+  "conn_min_median": 291.0,
+  "chg_min_median": 222.0,
+  "post_charge_conn_min_median": 1.0,
+  "post_charge_conn_min_p90": 413.0,
+  "share_dwell_gt_30min": 0.3329,
+  "share_dwell_gt_60min": 0.285,
+  "kwh_median": 11.89,
+  "kwh_mean": 16.2,
+  "charging_min_total": 275932.0
+ }
+}

@@ -1,0 +1,11 @@
+{
+  "removed_at": "2026-10-31",
+  "reason": "Taipei-specific module left the execution chain (user decision 2026-10-31)",
+  "moved": [
+    {
+      "from": "apps/parking_lab/workbench/datasource.py",
+      "to": "research/round8_20261031/taipei_exit/removed/datasource.py",
+      "sha256": "08ebf8e4775a421058c5f6864fcc21ba1b1ada5149a42f19314acc0abd817e41"
+    }
+  ]
+}

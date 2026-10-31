@@ -1,0 +1,80 @@
+﻿python.exe : ..........................................................................................................
+.......................................................................................................................
+..........F................F.....F...E....
+所在位置 行:10 字符: 10
++ $suite = & python -m unittest discover -s apps/parking_lab/workbench/ ...
++          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (..................F.....F...E....:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+======================================================================
+ERROR: test_c_pi2_admits_or_rejects_ice_from_visible_charging_history (test_type_rules.TypeRuleSimulationTests.test_c_p
+i2_admits_or_rejects_ice_from_visible_charging_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_type_rules.py", line 240, in test_c_pi2_admits_or_
+rejects_ice_from_visible_charging_history
+    self.assertGreater(detail["expected_charge_arrivals"], detail["forecast_slack_bays"])
+                       ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'expected_charge_arrivals'
+
+======================================================================
+FAIL: test_energy_is_physically_feasible (test_traffic_gen.TrafficGenTests.test_energy_is_physically_feasible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_traffic_gen.py", line 92, in test_energy_is_physic
+ally_feasible
+    self.assertLessEqual(a.energy_kwh, cap + 1e-6)
+AssertionError: 16.72659 not less than or equal to 9.14606122
+
+======================================================================
+FAIL: test_observable_state_has_no_hidden_fields (test_type_rules.HiddenInformationBoundaryTests.test_observable_state_
+has_no_hidden_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_type_rules.py", line 53, in test_observable_state_
+has_no_hidden_fields
+    self.assertEqual(names, {"time_min", "is_ev", "free_bays", "n_spaces", "charging_bays",
+AssertionError: Items in the first set but not the second:
+'observed_departures'
+'mean_ice_occupancy_min'
+'mean_connector_minutes_per_ev'
+
+======================================================================
+FAIL: test_pi2_gate_uses_prediction_threshold_and_window (test_type_rules.RuleEngineUnitTests.test_pi2_gate_uses_predic
+tion_threshold_and_window)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_type_rules.py", line 148, in test_pi2_gate_uses_pr
+ediction_threshold_and_window
+    self.assertEqual(low.bay, 0)
+AssertionError: None != 0
+
+----------------------------------------------------------------------
+Ran 267 tests in 6.665s
+
+FAILED (failures=3, errors=1)
+{
+  "decisions": {
+    "p_test": "admitted"
+  },
+  "errors": [],
+  "file": "C:\\Users\\tho25\\AppData\\Local\\Temp\\tmp6qq3x4hb\\good.json",
+  "missing_parameters": [],
+  "records": 1,
+  "schema_version": "v3-2026-10-31"
+}
+{
+  "decisions": {
+    "p_test": "admitted"
+  },
+  "errors": [
+    "records[0].unit 缺失"
+  ],
+  "file": "C:\\Users\\tho25\\AppData\\Local\\Temp\\tmp6qq3x4hb\\bad.json",
+  "missing_parameters": [],
+  "records": 1,
+  "schema_version": "v3-2026-10-31"
+}
+
+EXIT_CODE=1

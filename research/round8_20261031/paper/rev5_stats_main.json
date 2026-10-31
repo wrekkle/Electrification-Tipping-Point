@@ -1,0 +1,107 @@
+# 论文稿件字数报告
+
+生成命令: python scripts/paper_stats.py --manuscript research/round8_20261031/paper/Electrification_tipping_point_v2_draft_rev5.docx --out research/round8_20261031/paper/rev5_stats_main.json
+生成时间: 2026-10-31 19:35
+状态: 已完成
+口径: 长度为 LF 归一化后的 Unicode 字符数，含空格与标点，每个换行计 1 个字符。
+
+## 结论
+
+全稿 2 段：汉字 0，英文词 242，字符 1728，公式 0（文档整体 0）；图 8 张，表 1 张，参考文献 0 条。
+
+稿件: research\round8_20261031\paper\Electrification_tipping_point_v2_draft_rev5.docx
+文件修改时间(文件系统): 2026-10-31 19:35
+
+## 统计口径
+
+- 汉字: Unicode 汉字区间 U+3400–U+4DBF、U+4E00–U+9FFF、U+F900–U+FAFF、U+20000–U+2A6DF、U+2F800–U+2FA1F
+- 英文词: 正则 [A-Za-z][A-Za-z'’\-]*，一个词条计 1 个词
+- 字符: 同管理文档口径：LF 归一化后的全部字符（含空格与标点）
+- 公式: Word 公式（OMML）单独计数，文字里数不到公式符号，所以不并入汉字/英文词
+- 表格: 表格内文字单独统计，不计入正文段落字数
+- 题注: 图题、表题（Caption 样式）单独统计，不计入正文
+- 参考文献: Bibliography 样式段落，单独统计，不套正文口径
+
+## 分范围字数
+
+范围  名称                汉字  英文词  字符  段落  公式
+----  ------------------  ----  ------  ----  ----  ----
+S0    题名、摘要与关键词  0     242     1728  2     0
+合计  全部范围之和        0     242     1728  2     0
+
+## 图、表与题注
+
+图 8 张（inline shape），表 1 张，题注 0 条。
+
+表    行  单元格  汉字  英文词  字符
+----  --  ------  ----  ------  ----
+表 1  11  77      0     183     1506
+
+## 未归类段落
+
+- 第 4 段（Heading 1）：Introduction
+- 第 5 段（Normal）：Parking sites are being asked to host charging equipment whi
+- 第 6 段（Normal）：We take the three service constraints of the round-8 design 
+- 第 7 段（Normal）：Stating the result before the evidence is unusual, but the a
+- 第 8 段（Normal）：The paper proceeds as follows. Section 2 writes the model an
+- 第 9 段（Heading 1）：2 Model: joint service constraints and the integer design
+- 第 10 段（Normal）：Consider a site s with n_s spaces of which k are charging be
+- 第 11 段（Normal）：The standard is: capacity-only unmet at most 0.05, EV failur
+- 第 12 段（Normal）：Two kinds of minimality statements are kept strictly apart. 
+- 第 13 段（Heading 1）：3 Methods: rules, replay, baselines and enumeration
+- 第 14 段（Normal）：Streams and split. The contract exposes 85 days at 10 sites,
+- 第 15 段（Normal）：Replay. Arrivals and dwell times are drawn by block resampli
+- 第 16 段（Normal）：Rules and baselines. Four formal admission rules are replaye
+- 第 17 段（Normal）：Offline enumeration. Eight held-out instances are enumerated
+- 第 18 段（Normal）：Conditional analysis. To separate the connector constraint f
+- 第 19 段（Normal）：Inference. Rule differences are paired by stream. The engine
+- 第 20 段（Normal）：Provenance. Every figure is built from machine outputs only:
+- 第 21 段（Heading 1）：4 Data: source, QA, calibration and scenario inputs
+- 第 22 段（Normal）：Source. The parking observations are the City of Melbourne p
+- 第 23 段（Normal）：QA. Arrival timestamps are parsed with an explicit offset an
+- 第 24 段（Normal）：Calibration. The empirical arrival-gap and dwell distributio
+- 第 25 段（Normal）：Scenario layer. The processed contract assigns each site its
+- 第 26 段（Normal）：Energy demand. The source has no charging energy. The contra
+- 第 27 段（Heading 1）：5 Results
+- 第 28 段（Heading 2）：5.1 Coverage and calibration
+- 第 29 段（Normal）：Figure 1 summarises the observable layer. Coverage is uneven
+- 第 32 段（Heading 2）：5.2 The k curve and the first bound
+- 第 33 段（Normal）：Figure 2a shows the capacity-only unmet share against k in t
+- 第 36 段（Heading 2）：5.3 Offline enumeration
+- 第 37 段（Normal）：The offline enumeration gives the first independent check (F
+- 第 40 段（Heading 2）：5.4 Held-out rules and baselines
+- 第 41 段（Normal）：Figure 4 compares the seven policies on the same 20 held-out
+- 第 44 段（Heading 2）：5.5 The conditional uncapped-connector analysis
+- 第 45 段（Normal）：Section 5.2 leaves an obvious objection: the declared 20% sh
+- 第 48 段（Heading 2）：5.6 Energy ledger and power sensitivity
+- 第 49 段（Normal）：Figure 6 reports the energy ledger in the corrected 22 kW ma
+- 第 52 段（Heading 2）：5.7 Signal and trajectory experiments
+- 第 53 段（Normal）：Figure 7 reports the smallest k that meets each constraint p
+- 第 58 段（Heading 2）：5.8 Recommendation table
+- 第 59 段（Normal）：Table 5 is the recommendation table requested for a represen
+- 第 61 段（Heading 1）：6 Discussion
+- 第 62 段（Normal）：The result is an infeasibility boundary, not a design rule. 
+- 第 63 段（Normal）：This changes how the rule comparison should be read. With k 
+- 第 64 段（Normal）：Validity threats. First, charging demand, power and bay shar
+- 第 65 段（Normal）：What would make the question decidable? A charging-demand me
+- 第 66 段（Heading 1）：7 Reproducibility
+- 第 67 段（Normal）：All results in this draft come from machine outputs produced
+- 第 68 段（Normal）：The figure build is figures/build_figures_real.py; it reads 
+- 第 69 段（Normal）：Measured counts for this build are recorded in the build man
+
+## Word 缓存字数的处理
+
+docProps/app.xml 记录 Words=6733、Characters=38384、Pages=26，这些是 Word 上次保存时的缓存值，
+本报告不使用它，只把解析出的段落文字作为统计对象；缓存值与实测值不一致属正常现象。
+
+## 目标字数
+
+目标期刊: —；目标字数: —。
+未提供期刊与目标字数。
+
+## 本次无法准确识别的部分
+
+- 公式只计数不折字：Word 公式（OMML）里的符号数不到文字里，因此单列公式个数。
+- 表内文字与题注单列，不计入正文；若期刊要求把表计入字数，需要用本报告的两个数相加再人工取舍。
+- 补充材料不在本文件中，未计入。
+- 中文汉字与英文词分开统计，中英混排的句子按字符类别归属，不做语言判定。

@@ -1,0 +1,2661 @@
+{
+ "meta": {
+  "charge_shortfall_sessions": 2,
+  "seed": 42,
+  "split": "train",
+  "horizon_min": 1440.0,
+  "n_spaces": 264.2,
+  "lot_id": null,
+  "minute_step_min": 1.0,
+  "p_ev": 0.3,
+  "q_need": 0.12121943630359794,
+  "demand_scale": 1.0,
+  "identification_conflict": false,
+  "initial_occupancy_n": 0,
+  "initial_occupancy_vehicles": 0.0,
+  "warm_start": false,
+  "n_arrivals": 329,
+  "n_ev": 105,
+  "n_needs_charge": 9,
+  "mean_dwell_min": 910.4274787416414,
+  "mean_energy_kwh": 60.229095111111114,
+  "stream_hash": "8d1e990a546b8616f423074f16d89a8cc8d2d55f764fe12dd9b8c0f5e83e55e3",
+  "params_hash": "e956703595a80686d541e6741280cbfea1057f63799d31dea1247262d2010327",
+  "generator_version": "traffic_gen-1.1.0"
+ },
+ "arrivals": [
+  {
+   "vehicle_id": 0,
+   "time_min": 39.752539,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 321.572813,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 1,
+   "time_min": 44.09313,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 607.591189,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 2,
+   "time_min": 184.095172,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 784.953143,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 3,
+   "time_min": 201.897301,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 3241.928526,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 4,
+   "time_min": 203.879583,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1049.222903,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 5,
+   "time_min": 220.131096,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 828.923223,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 6,
+   "time_min": 233.218295,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1375.832659,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 7,
+   "time_min": 233.285665,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1434.294603,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 8,
+   "time_min": 239.46321,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 807.486592,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 9,
+   "time_min": 239.708672,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1488.180658,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 10,
+   "time_min": 303.122966,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 313.712957,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 11,
+   "time_min": 330.98252,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1359.515275,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 12,
+   "time_min": 336.642892,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1271.322002,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 13,
+   "time_min": 351.086216,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 585.876843,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 14,
+   "time_min": 363.992672,
+   "is_ev": true,
+   "needs_charge": true,
+   "dwell_min": 1159.687077,
+   "energy_kwh": 23.885261
+  },
+  {
+   "vehicle_id": 15,
+   "time_min": 372.48786,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 551.238509,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 16,
+   "time_min": 400.618567,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 897.095936,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 17,
+   "time_min": 414.489301,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 633.660184,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 18,
+   "time_min": 424.526224,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1427.082707,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 19,
+   "time_min": 432.578564,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 832.795472,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 20,
+   "time_min": 438.027162,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1476.193672,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 21,
+   "time_min": 438.463615,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 684.551063,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 22,
+   "time_min": 449.837999,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 696.054659,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 23,
+   "time_min": 450.25694,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1165.013122,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 24,
+   "time_min": 452.509871,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1889.884739,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 25,
+   "time_min": 464.133697,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1129.386546,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 26,
+   "time_min": 467.853783,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 765.725817,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 27,
+   "time_min": 472.046274,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1392.158438,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 28,
+   "time_min": 492.080099,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 576.136671,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 29,
+   "time_min": 496.620319,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1251.852165,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 30,
+   "time_min": 497.654512,
+   "is_ev": true,
+   "needs_charge": true,
+   "dwell_min": 403.358878,
+   "energy_kwh": 63.03524
+  },
+  {
+   "vehicle_id": 31,
+   "time_min": 498.264397,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 903.16931,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 32,
+   "time_min": 500.820655,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 273.488068,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 33,
+   "time_min": 504.966115,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1400.14504,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 34,
+   "time_min": 512.37226,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 833.212533,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 35,
+   "time_min": 516.183224,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 622.059357,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 36,
+   "time_min": 520.902896,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 861.94416,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 37,
+   "time_min": 521.38144,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 246.369143,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 38,
+   "time_min": 530.903412,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1170.109256,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 39,
+   "time_min": 535.066046,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1069.783594,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 40,
+   "time_min": 535.567209,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 360.030004,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 41,
+   "time_min": 536.331959,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 550.473205,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 42,
+   "time_min": 543.583187,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1406.39098,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 43,
+   "time_min": 546.522573,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 399.745774,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 44,
+   "time_min": 552.4707,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 613.967273,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 45,
+   "time_min": 553.171249,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 476.577327,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 46,
+   "time_min": 554.153702,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1603.58277,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 47,
+   "time_min": 560.923509,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1038.036759,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 48,
+   "time_min": 562.069129,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 643.197662,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 49,
+   "time_min": 562.077955,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 655.545521,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 50,
+   "time_min": 580.631241,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 566.797745,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 51,
+   "time_min": 581.960534,
+   "is_ev": true,
+   "needs_charge": true,
+   "dwell_min": 1443.274373,
+   "energy_kwh": 22.050927
+  },
+  {
+   "vehicle_id": 52,
+   "time_min": 583.045747,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1120.895502,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 53,
+   "time_min": 584.898535,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 703.765318,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 54,
+   "time_min": 585.231677,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 402.182714,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 55,
+   "time_min": 587.258748,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 801.881143,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 56,
+   "time_min": 588.804896,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 338.347435,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 57,
+   "time_min": 591.090063,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2448.645085,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 58,
+   "time_min": 595.334939,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 447.607402,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 59,
+   "time_min": 595.430506,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1036.438181,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 60,
+   "time_min": 596.553085,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1028.932466,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 61,
+   "time_min": 598.23994,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 881.907451,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 62,
+   "time_min": 610.994262,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 403.445083,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 63,
+   "time_min": 611.12831,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1125.78119,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 64,
+   "time_min": 612.499596,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1701.666419,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 65,
+   "time_min": 613.165343,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 308.103247,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 66,
+   "time_min": 615.894965,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1942.827132,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 67,
+   "time_min": 616.261096,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 849.288406,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 68,
+   "time_min": 617.871848,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 870.679895,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 69,
+   "time_min": 620.981303,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 420.517421,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 70,
+   "time_min": 624.232108,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 645.801638,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 71,
+   "time_min": 628.436893,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 895.732877,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 72,
+   "time_min": 630.031294,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 655.980036,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 73,
+   "time_min": 631.912772,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 215.817964,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 74,
+   "time_min": 632.669166,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 526.749546,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 75,
+   "time_min": 633.230815,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 985.438499,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 76,
+   "time_min": 634.202869,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 370.338012,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 77,
+   "time_min": 634.473998,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 980.155473,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 78,
+   "time_min": 637.016337,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 540.638099,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 79,
+   "time_min": 637.657027,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 280.100447,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 80,
+   "time_min": 637.984119,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1005.664419,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 81,
+   "time_min": 639.948797,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 838.392861,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 82,
+   "time_min": 642.386688,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1193.827518,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 83,
+   "time_min": 643.798973,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 426.410337,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 84,
+   "time_min": 644.802777,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1498.591605,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 85,
+   "time_min": 645.568055,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1006.022783,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 86,
+   "time_min": 647.952898,
+   "is_ev": true,
+   "needs_charge": true,
+   "dwell_min": 675.029598,
+   "energy_kwh": 2.831729
+  },
+  {
+   "vehicle_id": 87,
+   "time_min": 647.961543,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 683.70078,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 88,
+   "time_min": 651.114326,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1002.634242,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 89,
+   "time_min": 651.473823,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1286.220268,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 90,
+   "time_min": 651.926439,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 816.592625,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 91,
+   "time_min": 659.663772,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1913.383852,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 92,
+   "time_min": 662.345693,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 784.668092,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 93,
+   "time_min": 664.179641,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1190.766712,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 94,
+   "time_min": 664.810733,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 654.469419,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 95,
+   "time_min": 668.458483,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1745.349339,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 96,
+   "time_min": 669.597435,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1580.466167,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 97,
+   "time_min": 676.85521,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 952.653833,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 98,
+   "time_min": 678.537384,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 251.469288,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 99,
+   "time_min": 679.724974,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 633.158375,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 100,
+   "time_min": 683.716632,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 3579.187216,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 101,
+   "time_min": 685.906675,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 2210.532813,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 102,
+   "time_min": 687.383756,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 763.690082,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 103,
+   "time_min": 687.999184,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1072.872444,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 104,
+   "time_min": 689.734388,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 777.363622,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 105,
+   "time_min": 691.041989,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 756.135042,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 106,
+   "time_min": 691.279257,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 889.195285,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 107,
+   "time_min": 692.299185,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 398.887721,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 108,
+   "time_min": 710.598709,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 923.581449,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 109,
+   "time_min": 710.643251,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 788.210834,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 110,
+   "time_min": 715.574101,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 576.571244,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 111,
+   "time_min": 715.676081,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1060.294967,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 112,
+   "time_min": 716.454438,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2476.316397,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 113,
+   "time_min": 722.183414,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 924.254338,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 114,
+   "time_min": 722.214669,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 595.784354,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 115,
+   "time_min": 722.591597,
+   "is_ev": true,
+   "needs_charge": true,
+   "dwell_min": 82.912346,
+   "energy_kwh": 13.680537
+  },
+  {
+   "vehicle_id": 116,
+   "time_min": 724.569059,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 966.24285,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 117,
+   "time_min": 729.69132,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2404.050948,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 118,
+   "time_min": 730.135663,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 829.37612,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 119,
+   "time_min": 734.000076,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1848.289702,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 120,
+   "time_min": 734.280079,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 304.312244,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 121,
+   "time_min": 735.264863,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 940.460208,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 122,
+   "time_min": 735.750528,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1298.397171,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 123,
+   "time_min": 736.292288,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1431.86744,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 124,
+   "time_min": 738.723468,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1119.484427,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 125,
+   "time_min": 746.555111,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 541.259973,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 126,
+   "time_min": 747.070589,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 465.622143,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 127,
+   "time_min": 750.332988,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1660.248985,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 128,
+   "time_min": 751.752228,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1014.2758,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 129,
+   "time_min": 754.360539,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1187.133746,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 130,
+   "time_min": 754.413156,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 855.679676,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 131,
+   "time_min": 757.151018,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 585.821213,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 132,
+   "time_min": 760.597378,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 272.802778,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 133,
+   "time_min": 763.473306,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 665.436697,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 134,
+   "time_min": 771.7881,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 265.942428,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 135,
+   "time_min": 777.15452,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 758.200797,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 136,
+   "time_min": 778.600714,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1313.502094,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 137,
+   "time_min": 779.001042,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 663.785873,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 138,
+   "time_min": 779.724802,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1022.127662,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 139,
+   "time_min": 789.30075,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 863.652989,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 140,
+   "time_min": 789.829477,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 610.98691,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 141,
+   "time_min": 796.45966,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1172.638066,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 142,
+   "time_min": 797.795798,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 588.281241,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 143,
+   "time_min": 798.410171,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1094.895438,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 144,
+   "time_min": 799.134214,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 792.036558,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 145,
+   "time_min": 805.198876,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 769.276415,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 146,
+   "time_min": 809.341513,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1119.933084,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 147,
+   "time_min": 817.552723,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 596.291748,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 148,
+   "time_min": 818.232627,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1074.643973,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 149,
+   "time_min": 818.387103,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 727.740304,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 150,
+   "time_min": 822.816453,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 398.512595,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 151,
+   "time_min": 825.535585,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1474.756241,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 152,
+   "time_min": 828.681839,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 843.260036,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 153,
+   "time_min": 829.516455,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 925.630738,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 154,
+   "time_min": 829.975628,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 741.801302,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 155,
+   "time_min": 830.060941,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1775.466585,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 156,
+   "time_min": 832.398445,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2412.130623,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 157,
+   "time_min": 833.319328,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 609.496521,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 158,
+   "time_min": 834.094913,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 539.304332,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 159,
+   "time_min": 834.510033,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 669.82312,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 160,
+   "time_min": 838.322138,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1056.264292,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 161,
+   "time_min": 839.834573,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1013.955948,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 162,
+   "time_min": 842.466947,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1048.310216,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 163,
+   "time_min": 843.516191,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 846.458923,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 164,
+   "time_min": 846.281759,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 578.15837,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 165,
+   "time_min": 847.963506,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 357.204964,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 166,
+   "time_min": 857.359145,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1514.307808,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 167,
+   "time_min": 859.009355,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 2290.233883,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 168,
+   "time_min": 863.89853,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 263.589541,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 169,
+   "time_min": 866.064614,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1017.843741,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 170,
+   "time_min": 878.098944,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 702.791848,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 171,
+   "time_min": 890.283751,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 782.844773,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 172,
+   "time_min": 894.643511,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 581.293611,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 173,
+   "time_min": 895.165601,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 800.556272,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 174,
+   "time_min": 906.038979,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 694.87962,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 175,
+   "time_min": 908.265097,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 590.483925,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 176,
+   "time_min": 909.362051,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 678.392664,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 177,
+   "time_min": 912.57628,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 636.345595,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 178,
+   "time_min": 914.123999,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1460.359983,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 179,
+   "time_min": 919.593345,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 593.710639,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 180,
+   "time_min": 920.246074,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 430.637698,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 181,
+   "time_min": 924.326975,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 506.765984,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 182,
+   "time_min": 931.779755,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 798.586943,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 183,
+   "time_min": 932.674627,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1116.301738,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 184,
+   "time_min": 933.451196,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2973.343843,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 185,
+   "time_min": 936.441865,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 853.431212,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 186,
+   "time_min": 940.923058,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 588.588999,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 187,
+   "time_min": 945.032784,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 445.334567,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 188,
+   "time_min": 945.75624,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1381.968018,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 189,
+   "time_min": 947.210245,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 510.19788,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 190,
+   "time_min": 948.222348,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 583.450473,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 191,
+   "time_min": 948.962041,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 628.504717,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 192,
+   "time_min": 951.649553,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 918.355391,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 193,
+   "time_min": 951.68239,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 506.394439,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 194,
+   "time_min": 952.195659,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 443.240225,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 195,
+   "time_min": 955.117956,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 270.906011,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 196,
+   "time_min": 956.098402,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1068.423086,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 197,
+   "time_min": 969.213589,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1326.273339,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 198,
+   "time_min": 969.887662,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 685.91883,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 199,
+   "time_min": 983.404008,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2571.358106,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 200,
+   "time_min": 989.156645,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 449.820908,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 201,
+   "time_min": 991.168172,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 653.077851,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 202,
+   "time_min": 996.409972,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1544.024956,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 203,
+   "time_min": 997.508696,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 911.998134,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 204,
+   "time_min": 1001.3043,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 487.732345,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 205,
+   "time_min": 1012.362293,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 269.787051,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 206,
+   "time_min": 1018.89168,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1894.697062,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 207,
+   "time_min": 1020.810156,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 703.228335,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 208,
+   "time_min": 1024.958352,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 824.291373,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 209,
+   "time_min": 1028.588245,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 977.232343,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 210,
+   "time_min": 1029.743151,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1451.747821,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 211,
+   "time_min": 1030.114719,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 181.143266,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 212,
+   "time_min": 1030.836025,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 479.37805,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 213,
+   "time_min": 1037.500748,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 350.138977,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 214,
+   "time_min": 1040.400259,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1249.987484,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 215,
+   "time_min": 1040.783972,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 205.119055,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 216,
+   "time_min": 1044.146446,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1450.826673,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 217,
+   "time_min": 1048.216294,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1052.465779,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 218,
+   "time_min": 1050.426002,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 570.890894,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 219,
+   "time_min": 1051.466457,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 507.78977,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 220,
+   "time_min": 1053.281647,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 939.910367,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 221,
+   "time_min": 1053.908076,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 841.103301,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 222,
+   "time_min": 1054.805958,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 551.127349,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 223,
+   "time_min": 1059.51635,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 832.02119,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 224,
+   "time_min": 1061.630081,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1558.500216,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 225,
+   "time_min": 1066.361449,
+   "is_ev": true,
+   "needs_charge": true,
+   "dwell_min": 576.328193,
+   "energy_kwh": 85.377031
+  },
+  {
+   "vehicle_id": 226,
+   "time_min": 1067.694715,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2838.165227,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 227,
+   "time_min": 1070.654958,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 849.916049,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 228,
+   "time_min": 1071.058077,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 447.615469,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 229,
+   "time_min": 1072.788272,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 472.826965,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 230,
+   "time_min": 1074.717113,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1305.720141,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 231,
+   "time_min": 1078.016114,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 313.661855,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 232,
+   "time_min": 1078.410507,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 740.630225,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 233,
+   "time_min": 1079.640845,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 633.438327,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 234,
+   "time_min": 1080.963338,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 467.991341,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 235,
+   "time_min": 1082.814364,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 444.909728,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 236,
+   "time_min": 1082.824477,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1041.581151,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 237,
+   "time_min": 1083.502861,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 890.98559,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 238,
+   "time_min": 1083.827945,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1188.067304,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 239,
+   "time_min": 1083.989275,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1101.451204,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 240,
+   "time_min": 1085.440417,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 278.100453,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 241,
+   "time_min": 1085.616215,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 789.857122,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 242,
+   "time_min": 1088.577678,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 453.927365,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 243,
+   "time_min": 1091.589278,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1170.275701,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 244,
+   "time_min": 1094.517172,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 480.211565,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 245,
+   "time_min": 1100.603458,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 624.914821,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 246,
+   "time_min": 1102.571912,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 718.959839,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 247,
+   "time_min": 1104.787527,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 335.822768,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 248,
+   "time_min": 1105.04605,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 448.113131,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 249,
+   "time_min": 1108.703419,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1328.102525,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 250,
+   "time_min": 1108.845481,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 336.843736,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 251,
+   "time_min": 1111.462194,
+   "is_ev": true,
+   "needs_charge": true,
+   "dwell_min": 642.018117,
+   "energy_kwh": 11.672874
+  },
+  {
+   "vehicle_id": 252,
+   "time_min": 1112.466436,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 449.071866,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 253,
+   "time_min": 1113.643279,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 520.945918,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 254,
+   "time_min": 1115.060771,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 725.457529,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 255,
+   "time_min": 1116.24347,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1378.609108,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 256,
+   "time_min": 1118.74092,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2299.624409,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 257,
+   "time_min": 1122.139404,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 208.824916,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 258,
+   "time_min": 1125.425025,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 994.256312,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 259,
+   "time_min": 1126.03565,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1242.300715,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 260,
+   "time_min": 1126.752212,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1042.715329,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 261,
+   "time_min": 1127.305858,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 980.123867,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 262,
+   "time_min": 1135.046606,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 734.22523,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 263,
+   "time_min": 1136.158116,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 336.849529,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 264,
+   "time_min": 1137.135671,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 947.159634,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 265,
+   "time_min": 1137.798799,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 764.191209,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 266,
+   "time_min": 1138.044702,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 510.803123,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 267,
+   "time_min": 1138.291191,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1034.849766,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 268,
+   "time_min": 1140.248292,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 691.135622,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 269,
+   "time_min": 1140.760706,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 459.770509,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 270,
+   "time_min": 1140.796905,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1090.84813,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 271,
+   "time_min": 1140.97508,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 394.396493,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 272,
+   "time_min": 1141.648898,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1384.883408,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 273,
+   "time_min": 1143.576734,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1798.125442,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 274,
+   "time_min": 1145.035265,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 741.0598,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 275,
+   "time_min": 1148.365429,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 842.818241,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 276,
+   "time_min": 1150.250024,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1808.908263,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 277,
+   "time_min": 1152.617177,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 988.786626,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 278,
+   "time_min": 1154.708418,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 285.312058,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 279,
+   "time_min": 1155.933109,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 691.167006,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 280,
+   "time_min": 1156.036602,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 583.549176,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 281,
+   "time_min": 1156.196425,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1292.20697,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 282,
+   "time_min": 1156.958164,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 238.239998,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 283,
+   "time_min": 1158.392445,
+   "is_ev": true,
+   "needs_charge": true,
+   "dwell_min": 1421.997622,
+   "energy_kwh": 234.629608
+  },
+  {
+   "vehicle_id": 284,
+   "time_min": 1158.61382,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1421.004911,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 285,
+   "time_min": 1160.206308,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2164.833763,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 286,
+   "time_min": 1162.706628,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 914.277203,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 287,
+   "time_min": 1164.885875,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1275.438163,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 288,
+   "time_min": 1165.450175,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2392.720194,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 289,
+   "time_min": 1166.415823,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 594.93016,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 290,
+   "time_min": 1167.921091,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 252.237794,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 291,
+   "time_min": 1169.568014,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1262.644319,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 292,
+   "time_min": 1169.739295,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 362.352726,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 293,
+   "time_min": 1178.12511,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 466.502,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 294,
+   "time_min": 1181.214553,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1304.601259,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 295,
+   "time_min": 1182.015677,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 572.192679,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 296,
+   "time_min": 1182.983932,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 394.357016,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 297,
+   "time_min": 1184.19809,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 738.45781,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 298,
+   "time_min": 1190.184989,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 575.626384,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 299,
+   "time_min": 1190.37422,
+   "is_ev": true,
+   "needs_charge": true,
+   "dwell_min": 748.736978,
+   "energy_kwh": 84.898649
+  },
+  {
+   "vehicle_id": 300,
+   "time_min": 1193.542129,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 847.404987,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 301,
+   "time_min": 1194.435737,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 700.190158,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 302,
+   "time_min": 1195.085875,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 827.701594,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 303,
+   "time_min": 1196.369778,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1356.1598,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 304,
+   "time_min": 1196.825983,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1389.495282,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 305,
+   "time_min": 1197.406616,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 953.093538,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 306,
+   "time_min": 1199.650151,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 601.437694,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 307,
+   "time_min": 1200.713188,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 1740.974933,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 308,
+   "time_min": 1205.256888,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 490.598432,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 309,
+   "time_min": 1211.12917,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 624.173555,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 310,
+   "time_min": 1213.774806,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 707.353865,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 311,
+   "time_min": 1214.634932,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1480.82311,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 312,
+   "time_min": 1222.576654,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 681.817469,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 313,
+   "time_min": 1222.868284,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 332.830673,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 314,
+   "time_min": 1226.413674,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1522.355808,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 315,
+   "time_min": 1227.272103,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 2251.968211,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 316,
+   "time_min": 1240.691373,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 697.193476,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 317,
+   "time_min": 1242.02591,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 598.577672,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 318,
+   "time_min": 1242.110906,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 199.095298,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 319,
+   "time_min": 1242.149787,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 781.129619,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 320,
+   "time_min": 1250.323372,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 452.678305,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 321,
+   "time_min": 1253.05132,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 1245.358844,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 322,
+   "time_min": 1253.93566,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 456.934682,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 323,
+   "time_min": 1258.41271,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 385.346458,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 324,
+   "time_min": 1321.598736,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 463.795572,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 325,
+   "time_min": 1343.049937,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 828.492458,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 326,
+   "time_min": 1367.535142,
+   "is_ev": true,
+   "needs_charge": false,
+   "dwell_min": 845.246444,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 327,
+   "time_min": 1370.119118,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 186.238215,
+   "energy_kwh": 0.0
+  },
+  {
+   "vehicle_id": 328,
+   "time_min": 1410.657423,
+   "is_ev": false,
+   "needs_charge": false,
+   "dwell_min": 883.607557,
+   "energy_kwh": 0.0
+  }
+ ],
+ "stream_hash": "8d1e990a546b8616f423074f16d89a8cc8d2d55f764fe12dd9b8c0f5e83e55e3"
+}

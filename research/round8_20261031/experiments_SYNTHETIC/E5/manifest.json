@@ -1,0 +1,21 @@
+{
+  "schema_version": "r8-run-manifest/v1",
+  "family": "E5",
+  "status": "ok",
+  "generated_utc": "2026-10-31T11:00:35.577922+00:00",
+  "output_version": "r8-engine-v1-2026-10-31",
+  "command": "run_phase1.py --mode synthetic --seed 20261031",
+  "seed": 20261031,
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "info_E5.csv",
+      "sha256": "d981df84e5a59e062e0655d0a2529675c05f529f2539ffb00f4d5c5a4949e86b"
+    }
+  ],
+  "notes": [
+    "探索性：逐独立流的 Δk 方向与幅度；不作确认性结论"
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "scenario_label": "scenario_conditional_uncapped_connectors_22kW",
+  "connector_kw": 22.0,
+  "seed": 20261031,
+  "m1": {
+    "comparison": "M1",
+    "definition": "留出独立流上 B_shared 与 A_dedicated 的条件最小 k 之差",
+    "regime": "conditional_uncapped_connectors_22kW",
+    "unit": "independent stream (site-day)",
+    "pairs_computable": 0,
+    "pairs_total": 20,
+    "missing_infeasible": [
+      {
+        "stream_id": "Drummond:2014-01-28#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Drummond:2014-03-31#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Hyatt:2014-01-07#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Jolimont:2014-03-12#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Jolimont:2014-03-15#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Jolimont:2014-03-17#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Princes Theatre:2014-03-08#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Princes Theatre:2014-03-14#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Queensberry:2014-01-07#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Southbank:2014-01-07#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Titles:2014-03-09#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "University:2014-02-13#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Victoria Market:2014-01-22#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Victoria Market:2014-01-25#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Victoria Market:2014-01-30#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Victoria Market:2014-02-17#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Victoria Market:2014-03-11#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Victoria Market:2014-03-20#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Victoria Market:2014-03-23#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      },
+      {
+        "stream_id": "Victoria Market:2014-03-31#0",
+        "reason": "A 或 B 在 0..n_spaces 内无可行 k"
+      }
+    ],
+    "status": "missing_data",
+    "reason": "可比配对不足 2 个"
+  },
+  "m2": [
+    {
+      "comparison": "M2",
+      "pair": "A vs B0_FCFS",
+      "definition": "离场能量服务率（含被拒，delivered/demand）的流内配对差（基线减 A）",
+      "regime": "conditional_uncapped_connectors_22kW",
+      "k_eval": "A 的条件最小 k*（同流同 k 配对）",
+      "n_pairs": 0,
+      "status": "missing_data",
+      "reason": "可比配对不足 2 个"
+    },
+    {
+      "comparison": "M2",
+      "pair": "A vs B1_QUOTA",
+      "definition": "离场能量服务率（含被拒，delivered/demand）的流内配对差（基线减 A）",
+      "regime": "conditional_uncapped_connectors_22kW",
+      "k_eval": "A 的条件最小 k*（同流同 k 配对）",
+      "n_pairs": 0,
+      "status": "missing_data",
+      "reason": "可比配对不足 2 个"
+    },
+    {
+      "comparison": "M2",
+      "pair": "A vs B2_LITERATURE",
+      "definition": "离场能量服务率（含被拒，delivered/demand）的流内配对差（基线减 A）",
+      "regime": "conditional_uncapped_connectors_22kW",
+      "k_eval": "A 的条件最小 k*（同流同 k 配对）",
+      "n_pairs": 0,
+      "status": "missing_data",
+      "reason": "可比配对不足 2 个"
+    }
+  ],
+  "aggregates": {
+    "n_streams": 20,
+    "n_feasible_A": 0,
+    "n_physically_infeasible_A": 20,
+    "n_streams_share_gt_20pct": 0,
+    "n_streams_kstar_gt_declared_bays": 0,
+    "n_sites": 9,
+    "n_sites_with_any_stream_share_gt_20pct": 0,
+    "n_sites_any_stream_gt_declared_bays": 0,
+    "share_min": null,
+    "share_median": null,
+    "share_max": null,
+    "kstar_min": null,
+    "kstar_median": null,
+    "kstar_max": null,
+    "class_counts": {
+      "confirmed_minimal": 0,
+      "minimality_unconfirmed": 0,
+      "physically_infeasible": 20,
+      "budget_not_covered": 0,
+      "missing_data": 0
+    },
+    "per_site": {}
+  },
+  "note": "条件分析：允许 EV 专用充电位超过 20% 情景默认；非观测硬件；不作无条件外推；结果：20/20 流在 k<=n_spaces 内无可行 k，按规则归 physically_infeasible；原因是 capacity_unmet 口径含能量短缺，观测停留短于 22 kW 所需充电时长。",
+  "evidence_at_n_spaces": {
+    "scenario_label": "scenario_conditional_uncapped_connectors_22kW",
+    "k_eval": "k = n_spaces（所有车位均设为充电位）",
+    "note": "三约束中的 capacity_unmet 在 workbench 口径 = 入园被拒 + 能量短缺会话（service_metrics.py:196-201），不是纯连接器可用性；因此能量无法在停留内交付时，无论 k 多大都不满足标准。",
+    "aggregate": {
+      "A": {
+        "n_streams": 20,
+        "charge_requests": 137,
+        "rejected_at_gate": 0,
+        "shortfall_sessions": 80,
+        "unmet_total": 80,
+        "delivered_kwh": 991.9,
+        "demand_kwh": 1891.0,
+        "gap_kwh": 899.1,
+        "sessions_dwell_lt_required": 80,
+        "admitted_charge_requests": 137,
+        "n_streams_with_zero_unmet": 0
+      },
+      "B": {
+        "n_streams": 20,
+        "charge_requests": 137,
+        "rejected_at_gate": 0,
+        "shortfall_sessions": 80,
+        "unmet_total": 80,
+        "delivered_kwh": 991.9,
+        "demand_kwh": 1891.0,
+        "gap_kwh": 899.1,
+        "sessions_dwell_lt_required": 80,
+        "admitted_charge_requests": 137,
+        "n_streams_with_zero_unmet": 0
+      }
+    },
+    "n_streams": 20
+  }
+}

@@ -1,0 +1,424 @@
+{
+ "schema": "round8/evidence/v1",
+ "experiments_root": "research/round8_20261031/experiments",
+ "records": [
+  {
+   "token": "n_sites",
+   "value": 10,
+   "formatted": "10",
+   "unit": "sites",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "site_id",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_site_days",
+   "value": 825,
+   "formatted": "825",
+   "unit": "site-days",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "site_days",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_events",
+   "value": 185550,
+   "formatted": "185550",
+   "unit": "events",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "events",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_cal",
+   "value": 107852,
+   "formatted": "107852",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "n_calibration",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "n_test",
+   "value": 77698,
+   "formatted": "77698",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "n_test",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "ks_all",
+   "value": 0.03297024482113464,
+   "formatted": "0.0330",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "ks_statistic",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "rel_all",
+   "value": 0.11955213710752803,
+   "formatted": "0.12",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "holdout_mean_rel_error",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "n_events",
+   "value": 185550,
+   "formatted": "185550",
+   "unit": "events",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "events",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_sites",
+   "value": 10,
+   "formatted": "10",
+   "unit": "sites",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "site_id",
+    "where": {}
+   }
+  },
+  {
+   "token": "e4_streams",
+   "value": 20,
+   "formatted": "20",
+   "unit": "",
+   "source": {
+    "path": "E4/test_E4.csv",
+    "sha256": "30b73de00e4e75a8a84ca7a57a05f20a3625806f3f423a18ff466e5244ef13f6",
+    "row_number_in_file": 2,
+    "column": "stream_id",
+    "where": {
+     "policy": "A"
+    }
+   }
+  },
+  {
+   "token": "n_events",
+   "value": 185550,
+   "formatted": "185550",
+   "unit": "events",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "events",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_sites",
+   "value": 10,
+   "formatted": "10",
+   "unit": "sites",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "site_id",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_site_days",
+   "value": 825,
+   "formatted": "825",
+   "unit": "site-days",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "site_days",
+    "where": {}
+   }
+  },
+  {
+   "token": "n_cal",
+   "value": 107852,
+   "formatted": "107852",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "n_calibration",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "n_test",
+   "value": 77698,
+   "formatted": "77698",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "n_test",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "ks_all",
+   "value": 0.03297024482113464,
+   "formatted": "0.0330",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "ks_statistic",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "rel_all",
+   "value": 0.11955213710752803,
+   "formatted": "0.12",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "holdout_mean_rel_error",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "n_events",
+   "value": 185550,
+   "formatted": "185550",
+   "unit": "events",
+   "source": {
+    "path": "E1/coverage.csv",
+    "sha256": "9179bbd98a26842ee09d0726724de19d0ed572b42193a89789c7c0a59d822391",
+    "row_number_in_file": 2,
+    "column": "events",
+    "where": {}
+   }
+  },
+  {
+   "token": "rel_all",
+   "value": 0.11955213710752803,
+   "formatted": "0.12",
+   "unit": "",
+   "source": {
+    "path": "E1/fit_metrics.csv",
+    "sha256": "7d6703cfcab7d636ea2059d417403ad6233ecff74a124906992f27f4c22e3b92",
+    "row_number_in_file": 2,
+    "column": "holdout_mean_rel_error",
+    "where": {
+     "row_kind": "dwell_fit",
+     "category": "all"
+    }
+   }
+  },
+  {
+   "token": "e3_infeasible",
+   "value": 6,
+   "formatted": "6",
+   "unit": "",
+   "source": {
+    "path": "E3/search_E3.csv",
+    "sha256": "f817f53e9ed6ef30e7e416660c7cf02e7b7312403866fb4e4909a87043f80072",
+    "row_number_in_file": 2,
+    "column": "instance_id",
+    "where": {
+     "k_class": "physically_infeasible"
+    }
+   }
+  },
+  {
+   "token": "e3_budget",
+   "value": 2,
+   "formatted": "2",
+   "unit": "",
+   "source": {
+    "path": "E3/search_E3.csv",
+    "sha256": "f817f53e9ed6ef30e7e416660c7cf02e7b7312403866fb4e4909a87043f80072",
+    "row_number_in_file": 20,
+    "column": "instance_id",
+    "where": {
+     "k_class": "budget_not_covered"
+    }
+   }
+  },
+  {
+   "token": "e4_streams",
+   "value": 20,
+   "formatted": "20",
+   "unit": "",
+   "source": {
+    "path": "E4/test_E4.csv",
+    "sha256": "30b73de00e4e75a8a84ca7a57a05f20a3625806f3f423a18ff466e5244ef13f6",
+    "row_number_in_file": 2,
+    "column": "stream_id",
+    "where": {
+     "policy": "A"
+    }
+   }
+  },
+  {
+   "token": "m2_ab0",
+   "value": -0.13385800064617756,
+   "formatted": "-0.1339",
+   "unit": "",
+   "source": {
+    "path": "M/m_summaries.csv",
+    "sha256": "d35c3fd5a3a12af8be53536bd7d9ba470675901974394d24662506f92d01feea",
+    "row_number_in_file": 3,
+    "column": "point",
+    "where": {
+     "comparison": "M2",
+     "pair": "B0_FCFS - A"
+    }
+   }
+  },
+  {
+   "token": "m2_ab0_lo",
+   "value": -0.19295121338136972,
+   "formatted": "-0.1930",
+   "unit": "",
+   "source": {
+    "path": "M/m_summaries.csv",
+    "sha256": "d35c3fd5a3a12af8be53536bd7d9ba470675901974394d24662506f92d01feea",
+    "row_number_in_file": 3,
+    "column": "low",
+    "where": {
+     "comparison": "M2",
+     "pair": "B0_FCFS - A"
+    }
+   }
+  },
+  {
+   "token": "m2_ab0_hi",
+   "value": -0.07746947338429402,
+   "formatted": "-0.0775",
+   "unit": "",
+   "source": {
+    "path": "M/m_summaries.csv",
+    "sha256": "d35c3fd5a3a12af8be53536bd7d9ba470675901974394d24662506f92d01feea",
+    "row_number_in_file": 3,
+    "column": "high",
+    "where": {
+     "comparison": "M2",
+     "pair": "B0_FCFS - A"
+    }
+   }
+  },
+  {
+   "token": "m2_ab1",
+   "value": 0.003031372238127189,
+   "formatted": "+0.0030",
+   "unit": "",
+   "source": {
+    "path": "M/m_summaries.csv",
+    "sha256": "d35c3fd5a3a12af8be53536bd7d9ba470675901974394d24662506f92d01feea",
+    "row_number_in_file": 4,
+    "column": "point",
+    "where": {
+     "comparison": "M2",
+     "pair": "B1_QUOTA - A"
+    }
+   }
+  },
+  {
+   "token": "m2_ab1_lo",
+   "value": -0.0002565338074910529,
+   "formatted": "-0.0003",
+   "unit": "",
+   "source": {
+    "path": "M/m_summaries.csv",
+    "sha256": "d35c3fd5a3a12af8be53536bd7d9ba470675901974394d24662506f92d01feea",
+    "row_number_in_file": 4,
+    "column": "low",
+    "where": {
+     "comparison": "M2",
+     "pair": "B1_QUOTA - A"
+    }
+   }
+  },
+  {
+   "token": "m2_ab1_hi",
+   "value": 0.009474166799553497,
+   "formatted": "+0.0095",
+   "unit": "",
+   "source": {
+    "path": "M/m_summaries.csv",
+    "sha256": "d35c3fd5a3a12af8be53536bd7d9ba470675901974394d24662506f92d01feea",
+    "row_number_in_file": 4,
+    "column": "high",
+    "where": {
+     "comparison": "M2",
+     "pair": "B1_QUOTA - A"
+    }
+   }
+  }
+ ],
+ "unresolved": []
+}

@@ -1,0 +1,157 @@
+{
+  "revision": "repro_revision_20261029",
+  "copied_at": "2026-10-29T15:37:53",
+  "source_root": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro",
+  "target_root": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro_revision_20261029",
+  "excluded": [
+    "outputs/",
+    "__pycache__/",
+    "*.pyc"
+  ],
+  "files": [
+    {
+      "path": "src/prei/__init__.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\__init__.py",
+      "source_sha256": "f4e7d50479c346fa163fddcb7da1ada5fd047bdb7e037b8305d9206ad939d940",
+      "copied_sha256": "f4e7d50479c346fa163fddcb7da1ada5fd047bdb7e037b8305d9206ad939d940",
+      "bytes": 160,
+      "match": true
+    },
+    {
+      "path": "src/prei/config.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\config.py",
+      "source_sha256": "df51728397cf58a2c2cdeb025a2e4ee8ef2f1d13e5f8aa8d827f3598d055aae4",
+      "copied_sha256": "df51728397cf58a2c2cdeb025a2e4ee8ef2f1d13e5f8aa8d827f3598d055aae4",
+      "bytes": 9616,
+      "match": true
+    },
+    {
+      "path": "src/prei/rules.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\rules.py",
+      "source_sha256": "56e67f512dc723cb6ff418f1c40a36cb1db91c03eb4852f540e49e3a156978fd",
+      "copied_sha256": "56e67f512dc723cb6ff418f1c40a36cb1db91c03eb4852f540e49e3a156978fd",
+      "bytes": 3339,
+      "match": true
+    },
+    {
+      "path": "src/prei/io.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\io.py",
+      "source_sha256": "f81aa2aa3ff623d6c3063c39a65d2bca2f1a7eaeed4f9d206a7e5e32ad8b8340",
+      "copied_sha256": "f81aa2aa3ff623d6c3063c39a65d2bca2f1a7eaeed4f9d206a7e5e32ad8b8340",
+      "bytes": 2697,
+      "match": true
+    },
+    {
+      "path": "src/prei/costs.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\costs.py",
+      "source_sha256": "9e8484defff83416578988eaa309530b9a6c47341333ec74d5b1709a39aa945c",
+      "copied_sha256": "9e8484defff83416578988eaa309530b9a6c47341333ec74d5b1709a39aa945c",
+      "bytes": 6987,
+      "match": true
+    },
+    {
+      "path": "src/prei/demand.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\demand.py",
+      "source_sha256": "ee7248cdc35b7e2a7cb2a21a0f76143cf34d310e50c7094704c4fc65e116d662",
+      "copied_sha256": "ee7248cdc35b7e2a7cb2a21a0f76143cf34d310e50c7094704c4fc65e116d662",
+      "bytes": 8435,
+      "match": true
+    },
+    {
+      "path": "src/prei/evaluate.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\evaluate.py",
+      "source_sha256": "f6ab56a3e9e60b288fc79d0735c8fe941f469debb5e70b51bc84ac7b09f12254",
+      "copied_sha256": "f6ab56a3e9e60b288fc79d0735c8fe941f469debb5e70b51bc84ac7b09f12254",
+      "bytes": 34109,
+      "match": true
+    },
+    {
+      "path": "src/prei/simulator.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\simulator.py",
+      "source_sha256": "db0be4671335722f374353b1fe02188074364aa2379ecf963ee7ff6585a9f559",
+      "copied_sha256": "db0be4671335722f374353b1fe02188074364aa2379ecf963ee7ff6585a9f559",
+      "bytes": 7563,
+      "match": true
+    },
+    {
+      "path": "src/prei/stats.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\stats.py",
+      "source_sha256": "a28f75a903c5d538373ff08daa3706cdc4e3d762b2602df8d1d730bbd94a3352",
+      "copied_sha256": "a28f75a903c5d538373ff08daa3706cdc4e3d762b2602df8d1d730bbd94a3352",
+      "bytes": 7146,
+      "match": true
+    },
+    {
+      "path": "src/prei/capacity.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\src\\prei\\capacity.py",
+      "source_sha256": "beaef562cada45b73b9713c8169a0b22b1685c5c9099f7ba2cbb057fdcf3a92a",
+      "copied_sha256": "beaef562cada45b73b9713c8169a0b22b1685c5c9099f7ba2cbb057fdcf3a92a",
+      "bytes": 8228,
+      "match": true
+    },
+    {
+      "path": "configs/baseline.yaml",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\configs\\baseline.yaml",
+      "source_sha256": "fb39c243a5cff3894e6deba74bf523c8e3c8c197535d068551509647e0abf7f2",
+      "copied_sha256": "fb39c243a5cff3894e6deba74bf523c8e3c8c197535d068551509647e0abf7f2",
+      "bytes": 2441,
+      "match": true
+    },
+    {
+      "path": "configs/modes.yaml",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\configs\\modes.yaml",
+      "source_sha256": "e89d18a55b04fef3e0a7e770f92f689e7161cfc6b4d23f37ffef2c36f140c107",
+      "copied_sha256": "e89d18a55b04fef3e0a7e770f92f689e7161cfc6b4d23f37ffef2c36f140c107",
+      "bytes": 290,
+      "match": true
+    },
+    {
+      "path": "configs/sensitivity.yaml",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\configs\\sensitivity.yaml",
+      "source_sha256": "581f7f5c1dc76eedf7d1c0d6a36155de8c3b770128e8e9cf07d41c28111de534",
+      "copied_sha256": "581f7f5c1dc76eedf7d1c0d6a36155de8c3b770128e8e9cf07d41c28111de534",
+      "bytes": 1468,
+      "match": true
+    },
+    {
+      "path": "configs/v2.yaml",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\configs\\v2.yaml",
+      "source_sha256": "9c054ce9cb0f6edc655ef3e76b60ea1f82f09b17765520ad626b72a67e81117f",
+      "copied_sha256": "9c054ce9cb0f6edc655ef3e76b60ea1f82f09b17765520ad626b72a67e81117f",
+      "bytes": 1925,
+      "match": true
+    },
+    {
+      "path": "tests/test_prei.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\tests\\test_prei.py",
+      "source_sha256": "9cd73c37d14f785f9fab2217f1f96624d77af593c20c7ec0a62ded31d8c9c682",
+      "copied_sha256": "9cd73c37d14f785f9fab2217f1f96624d77af593c20c7ec0a62ded31d8c9c682",
+      "bytes": 28142,
+      "match": true
+    },
+    {
+      "path": "run_all.py",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\run_all.py",
+      "source_sha256": "ed80382d9f0ab69b9b327d9bddec2680ab668904ca5e7ebe263943c3a3af946f",
+      "copied_sha256": "ed80382d9f0ab69b9b327d9bddec2680ab668904ca5e7ebe263943c3a3af946f",
+      "bytes": 27452,
+      "match": true
+    },
+    {
+      "path": "README.md",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\README.md",
+      "source_sha256": "4a62776c0bfd644df4f7926a93d6d5c8355f8effc41c068fa7ed85af09ffacb3",
+      "copied_sha256": "4a62776c0bfd644df4f7926a93d6d5c8355f8effc41c068fa7ed85af09ffacb3",
+      "bytes": 9008,
+      "match": true
+    },
+    {
+      "path": ".gitignore",
+      "source_abs": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\repro\\.gitignore",
+      "source_sha256": "cb9ee45c21d27b5d02459d22d295c2a7a3283ee5685415726c8a7d7d62951abb",
+      "copied_sha256": "cb9ee45c21d27b5d02459d22d295c2a7a3283ee5685415726c8a7d7d62951abb",
+      "bytes": 109,
+      "match": true
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+python : ............................................................................................................EF
+F.........................F.....E..E.FEEE..............................................................................
+....................................................
+所在位置 行:9 字符: 1
++ python -m unittest discover -s apps/parking_lab/workbench/tests 2>&1  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (.................................:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+======================================================================
+ERROR: test_counterfactual_delta_is_attribution_only (test_costs.CounterfactualRunnerTests.test_counterfactual_delta_is
+_attribution_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 423, in test_counterfactual_delta_
+is_attribution_only
+    self.assertAlmostEqual(m["total_cost"], sum(m["cost_items"].values()))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'float' and 'NoneType'
+
+======================================================================
+ERROR: test_ev_give_up_counts_activity_loss (test_costs.SimulationCostTests.test_ev_give_up_counts_activity_loss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 196, in test_ev_give_up_counts_act
+ivity_loss
+    self.assertAlmostEqual(m["total_cost"], sum(m["cost_items"].values()))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'float' and 'NoneType'
+
+======================================================================
+ERROR: test_overstay_attribution_not_in_total (test_costs.SimulationCostTests.test_overstay_attribution_not_in_total)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 251, in test_overstay_attribution_
+not_in_total
+    self.assertAlmostEqual(m["total_cost"], 2 * 1000.0 / 24.0 + 3.0 + 0.5 + 2 * 20.0 / 24.0)
+  File "C:\anaconda\Lib\unittest\case.py", line 916, in assertAlmostEqual
+    diff = abs(first - second)
+               ~~~~~~^~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
+
+======================================================================
+ERROR: test_pending_at_horizon_is_not_failure (test_costs.SimulationCostTests.test_pending_at_horizon_is_not_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 219, in test_pending_at_horizon_is
+_not_failure
+    self.assertAlmostEqual(m["total_cost"], 2 * 1000.0 / 24.0 + 15.0 + 2.5 + 2 * 20.0 / 24.0)
+  File "C:\anaconda\Lib\unittest\case.py", line 916, in assertAlmostEqual
+    diff = abs(first - second)
+               ~~~~~~^~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
+
+======================================================================
+ERROR: test_rejected_ev_end_to_end_hand_calc (test_costs.SimulationCostTests.test_rejected_ev_end_to_end_hand_calc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 155, in test_rejected_ev_end_to_en
+d_hand_calc
+    self.assertAlmostEqual(m["total_cost"], 130.0 + 41.8 + 3.0 + 80.0)
+  File "C:\anaconda\Lib\unittest\case.py", line 916, in assertAlmostEqual
+    diff = abs(first - second)
+               ~~~~~~^~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
+
+======================================================================
+ERROR: test_rejected_ice_end_to_end_hand_calc (test_costs.SimulationCostTests.test_rejected_ice_end_to_end_hand_calc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 170, in test_rejected_ice_end_to_e
+nd_hand_calc
+    self.assertAlmostEqual(m["total_cost"], 130.0 + 4.8 + 3.0)
+  File "C:\anaconda\Lib\unittest\case.py", line 916, in assertAlmostEqual
+    diff = abs(first - second)
+               ~~~~~~^~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'float'
+
+======================================================================
+FAIL: test_runner_no_charging_demand_releases_connector (test_costs.CounterfactualRunnerTests.test_runner_no_charging_d
+emand_releases_connector)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 393, in test_runner_no_charging_de
+mand_releases_connector
+    self.assertTrue(result["complete"])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_runner_overstay_releases_connector_and_bay (test_costs.CounterfactualRunnerTests.test_runner_overstay_releas
+es_connector_and_bay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 363, in test_runner_overstay_relea
+ses_connector_and_bay
+    self.assertTrue(result["complete"])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_relocation_cost_known_is_included_in_total (test_costs.RelocationAndRealtimeTests.test_relocation_cost_known
+_is_included_in_total)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 499, in test_relocation_cost_known
+_is_included_in_total
+    self.assertTrue(report["complete"])
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_paired_counterfactual_same_traffic (test_costs.SimulationCostTests.test_paired_counterfactual_same_traffic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\停车场充电桩优化方案\apps\parking_lab\workbench\tests\test_costs.py", line 269, in test_paired_counterfactual
+_same_traffic
+    self.assertTrue(result["complete"])
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 281 tests in 6.988s
+
+FAILED (failures=4, errors=6)
+{
+  "decisions": {
+    "p_test": "admitted"
+  },
+  "errors": [],
+  "file": "C:\\Users\\tho25\\AppData\\Local\\Temp\\tmpornd0cmk\\good.json",
+  "missing_parameters": [],
+  "records": 1,
+  "schema_version": "v3-2026-10-31"
+}
+{
+  "decisions": {
+    "p_test": "admitted"
+  },
+  "errors": [
+    "records[0].unit 缺失"
+  ],
+  "file": "C:\\Users\\tho25\\AppData\\Local\\Temp\\tmpornd0cmk\\bad.json",
+  "missing_parameters": [],
+  "records": 1,
+  "schema_version": "v3-2026-10-31"
+}
+TIMESTAMP=2026-10-31T04:07:11Z EXIT_CODE=1
+NOTE: 本文件记录的全量套件 4 failures + 6 errors 全部位于 tests/test_costs.py（R2-A 成本工作流并行编辑中，非本单范围）；本单 tests/test_traffic_gen.py 18/18 OK（见 traffic_gen_tests_run.txt）。
