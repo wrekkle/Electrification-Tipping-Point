@@ -1,0 +1,25 @@
+{
+ "joined_requests": 6588,
+ "violation_requests": 702,
+ "all": {
+  "n": 6588,
+  "delivered": 50891.26,
+  "demand": 92366.36,
+  "rate": 0.551,
+  "session_failure": 0.5981
+ },
+ "excl_violation": {
+  "n": 5886,
+  "delivered": 41365.86,
+  "demand": 82550.66,
+  "rate": 0.5011,
+  "session_failure": 0.6611
+ },
+ "only_violation": {
+  "n": 702,
+  "delivered": 9525.4,
+  "demand": 9815.7,
+  "rate": 0.9704,
+  "session_failure": 0.0698
+ }
+}

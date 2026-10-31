@@ -1,5 +1,0 @@
-run,n_streams,charge_requests,rejected_visits_all_types,access_num,access_den,access_rate,delivered_kwh,demand_kwh,gap_kwh,energy_service_rate,k,hardware_note,gate_rejections_charge_requests,no_connector,shortfall_sessions,capacity_only_unmet_mean,capacity_only_unmet_median
-7kW_experiments,20,137,34,52,137,0.3796,210.1,1891.0,1680.9,0.1111,['1'],审计后确认：resolved=契约声明 20%，无 4-connector 上限（见 hardware_audit.json）,,,,,
-main22_experiments,20,137,34,52,137,0.3796,365.7,1891.0,1525.4,0.1934,['1'],"22 kW, feeder=k*22；charging_bays/connectors 来自契约声明",,,,,
-declared22_k_prereg,20,137,34,52,137,0.3796,365.7,1891.0,1525.4,0.1934,prereg(1),契约声明硬件（20%）+22kW；k=1,,,,,
-declared22_at_declared_max_k,20,137,,136,137,0.9927,984.2,1891.0,906.8,0.5205,declared_max_k (2..16),契约声明硬件（20%）+22kW；k=declared charging_bays,0,1,80,0.5835,0.6

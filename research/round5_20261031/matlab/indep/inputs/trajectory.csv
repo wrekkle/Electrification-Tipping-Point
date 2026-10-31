@@ -1,7 +1,0 @@
-vehicle_id,time_min,dwell_min,is_ev,needs_charge,energy_kwh,initial
-1,0,120,0,0,0,1
-2,0,120,0,0,0,1
-3,0,20,1,1,7,0
-4,25,30,0,0,0,0
-5,30,30,1,1,14,0
-6,100,60,1,1,14,0

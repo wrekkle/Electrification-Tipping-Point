@@ -1,5 +1,0 @@
-generated_local=2026-10-31T19:10:38.8213759+08:00
-file=research\round8_20261031\data\raw\melbourne_parking_bay_arrivals_departures_2014_mq3i-cbxd.zip
-bytes=247682126
-sha256=B92333B236D5DA0FBDC1AB0A195E57EB7A90EA4A3FDA30D06CF9938A3AD02A34
-mtime=2026-10-31T18:45:30.7307641+08:00

@@ -1,7 +1,0 @@
-row_kind,instance_id,n_vehicles,k,status,reason,demanded_minutes,schedulable_minutes,peak_occupancy,k_class,k_star,model,information,evidence_model,k_max_searched,physical_bound,tested_k,uncovered_k
-per_k,S1:2024-03-05,12,0,infeasible,no_connector_with_charge_demand,,,,confirmed_minimal,1,offline_uniform_power_minute_grid,offline_upper_bound_not_executable,offline_uniform_power_minute_grid,,,,
-per_k,S1:2024-03-05,12,1,feasible,schedule_exists,353,,,confirmed_minimal,1,offline_uniform_power_minute_grid,offline_upper_bound_not_executable,offline_uniform_power_minute_grid,,,,
-summary,S1:2024-03-05,12,1,confirmed_minimal,k=1 可行；0..0 每个整数都实测不可行,,,,confirmed_minimal,1,offline_uniform_power_minute_grid,offline_upper_bound_not_executable,offline_uniform_power_minute_grid,3,3,"[0, 1]",[]
-per_k,S2:2024-03-05,10,0,infeasible,no_connector_with_charge_demand,,,,confirmed_minimal,1,offline_uniform_power_minute_grid,offline_upper_bound_not_executable,offline_uniform_power_minute_grid,,,,
-per_k,S2:2024-03-05,10,1,feasible,schedule_exists,311,,,confirmed_minimal,1,offline_uniform_power_minute_grid,offline_upper_bound_not_executable,offline_uniform_power_minute_grid,,,,
-summary,S2:2024-03-05,10,1,confirmed_minimal,k=1 可行；0..0 每个整数都实测不可行,,,,confirmed_minimal,1,offline_uniform_power_minute_grid,offline_upper_bound_not_executable,offline_uniform_power_minute_grid,2,2,"[0, 1]",[]

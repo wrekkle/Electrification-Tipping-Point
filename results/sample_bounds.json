@@ -1,0 +1,38 @@
+{
+ "source": "data/sample/parking_events_sample.csv",
+ "scenario_energy": "truncated normal(14,6) kWh on [2,40], seed 20261031",
+ "bounds": [
+  {
+   "power_kw": 7.0,
+   "sessions": 300,
+   "requested_kwh": 4280.73,
+   "delivered_kwh": 897.07,
+   "energy_service_rate": 0.2096,
+   "session_failure_rate": 0.9533
+  },
+  {
+   "power_kw": 11.0,
+   "sessions": 300,
+   "requested_kwh": 4280.73,
+   "delivered_kwh": 1306.21,
+   "energy_service_rate": 0.3051,
+   "session_failure_rate": 0.9
+  },
+  {
+   "power_kw": 22.0,
+   "sessions": 300,
+   "requested_kwh": 4280.73,
+   "delivered_kwh": 2082.33,
+   "energy_service_rate": 0.4864,
+   "session_failure_rate": 0.74
+  },
+  {
+   "power_kw": 50.0,
+   "sessions": 300,
+   "requested_kwh": 4280.73,
+   "delivered_kwh": 2924.61,
+   "energy_service_rate": 0.6832,
+   "session_failure_rate": 0.4833
+  }
+ ]
+}

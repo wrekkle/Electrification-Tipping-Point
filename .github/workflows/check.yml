@@ -1,0 +1,22 @@
+name: public-check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Public example
+        run: python analysis/example.py
+      - name: Public checks
+        run: python scripts/check_public.py
+      - name: Workbench tests
+        run: python -m unittest discover -s apps/parking_lab/workbench/tests -p "test_*.py"

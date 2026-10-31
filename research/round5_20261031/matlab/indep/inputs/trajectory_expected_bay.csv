@@ -1,8 +1,0 @@
-rule,vehicle_id,expected_admitted,expected_bay
-A,3,1,0
-A,4,0,-1
-A,5,1,0
-B,4,1,0
-B,5,0,-1
-D,4,0,-1
-D,5,1,0

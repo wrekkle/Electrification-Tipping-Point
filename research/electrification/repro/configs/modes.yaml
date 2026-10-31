@@ -1,7 +1,0 @@
-# Operation modes (manuscript Results 2.4 / v2 Methods 4.1)
-modes:
-  partial_sharing_ratio: {value: 0.4, source: manuscript}
-  overhead:
-    coverage: {value: 2, source: manuscript}
-    reposition_min: {value: 10.0, source: assumption}
-    unit_cost_ratio: {value: 0.5, source: assumption}

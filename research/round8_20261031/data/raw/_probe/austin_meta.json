@@ -1,2 +1,0 @@
-[{"id":"95036625","source":"Parking Meters","duration_min":"165","start_time":"2023-12-01T08:24:51.000","end_time":"2023-12-01T11:09:51.000","amount":"6.25","meter_id":"10000132","payment_method":"CARD","location_name":"Core","updated_at":"2024-01-31T09:23:32.000"}
-,{"id":"529880210","source":"Passport - app","duration_min":"60","start_time":"2024-02-01T16:45:00.000","end_time":"2024-02-01T17:45:00.000","amount":"2.3","zone_id":"39264","zone_group":"CORE","payment_method":"Apple Pay","location_name":"Core","updated_at":"2024-03-31T14:24:45.000"}]

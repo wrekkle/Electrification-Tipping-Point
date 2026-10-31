@@ -1,5 +1,0 @@
-scenario_id,per_seed,cap,expected_median,expected_q90,expected_k,expected_status
-r_ok,3;4;5,10,4,5,4,ok
-r_stat,3;4;5;6,10,4.5,6,5,statistical_summary_not_installable
-r_lower,3;4;5;,10,4,5,nan,lower_bound
-r_empty,,10,nan,nan,nan,missing_data

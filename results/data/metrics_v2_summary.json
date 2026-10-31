@@ -1,0 +1,18 @@
+{
+ "n_streams": 20,
+ "charge_requests": 137.0,
+ "gate_rejections": 0.0,
+ "no_connector": 1.0,
+ "never_connected_rate": 0.007299,
+ "shortfall_sessions": 80.0,
+ "shortfall_session_rate": 0.583942,
+ "capacity_only_unmet_mean": 0.583521,
+ "capacity_only_unmet_pooled": 0.583942,
+ "delivered_kwh": 984.221,
+ "demand_kwh": 1891.028,
+ "energy_shortfall_ratio": 0.479531,
+ "ev_parking_failures": 0.0,
+ "ev_visits": 452.0,
+ "ice_parking_failures": 34.0,
+ "ice_visits": 4643.0
+}

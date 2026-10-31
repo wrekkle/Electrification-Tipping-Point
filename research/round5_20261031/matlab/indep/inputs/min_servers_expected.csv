@@ -1,5 +1,0 @@
-case_id,offered_load,target_blocking,k_max,expected_k
-ms_0,0,0.05,10,0
-ms_2_005,2,0.05,10,5
-ms_2_05,2,0.5,10,2
-ms_2_001,2,0.001,3,nan

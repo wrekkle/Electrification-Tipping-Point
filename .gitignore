@@ -1,4 +1,4 @@
-# 生成的缓存、日志与临时文件
+# caches and local tooling
 __pycache__/
 *.pyc
 *.log
@@ -6,17 +6,56 @@ __pycache__/
 Thumbs.db
 .DS_Store
 ~$*
+.venv/
 **/_scratch/
 
-# 大体积原始数据与已退出的采集链路（体积原因不入库）
-tmp/
-research/collection/
-research/**/downloads/
-research/**/octave_runtime/
-
-# 文献 PDF 原件与压缩包（版权/体积原因不入库）
+# private research workspace, kept locally and never published
+main_paper/
+paper/
 papers/
+literature/
+plan/
+metadata/
+research/
+tmp/
+docs/PROGRESS.md
+docs/TODO.md
+docs/README.md
+docs/reports/
+docs/methods/
+docs/archive/
+docs/plans/
+docs/plan/
+docs/sections/
+docs/handoffs/
+docs/proposals/
+docs/notes/
+docs/superpowers/
+AGENTS.md
+repo-discipline.json
+待手动下载论文链接_*.md
+其他获取方式_*.md
+
+# internal check scripts and their fixtures
+scripts/_common.py
+scripts/check_all.py
+scripts/check_docs.py
+scripts/lit_index.py
+scripts/paper_stats.py
+scripts/tests/
+
+# large or third-party material
 *.zip
 *.pdf
 *.gz
 *.jsonl
+*.docx
+*.doc
+*.pptx
+*.xlsx
+
+# local runtime outputs
+*_manifest.json
+acceptance/
+*.out
+*.err

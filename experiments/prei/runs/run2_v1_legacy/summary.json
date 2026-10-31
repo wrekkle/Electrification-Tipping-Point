@@ -61,7 +61,7 @@
   "input": {
     "config_sha256": "73cbc0943b2f0c54970497e827a45f87c393ef49221184029c55df5e468a9e4c",
     "fixture_sha256": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad",
-    "fixture_file": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\fixtures\\deterministic_24h\\fixture.csv",
+    "fixture_file": "<workspace>",
     "days": 21,
     "candidate_rows": 441
   },
@@ -92,27 +92,27 @@
   ],
   "sources": {
     "reference.py": {
-      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\reference.py",
+      "path": "<workspace>",
       "sha256": "64a75a262fef8d276bb9a25ca92bed30baab48561fe0714d0fb3625da05f8bfb"
     },
     "schema.json": {
-      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\schema.json",
+      "path": "<workspace>",
       "sha256": "f001fd03cf1fe08228cb128f1f48e276263f9c382f5cd5c41fedc1f16a251eb1"
     },
     "config": {
-      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\configs\\final_tvr_n40_legacy.json",
+      "path": "<workspace>",
       "sha256": "73cbc0943b2f0c54970497e827a45f87c393ef49221184029c55df5e468a9e4c"
     },
     "fixture": {
-      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\experiments\\prei\\fixtures\\deterministic_24h\\fixture.csv",
+      "path": "<workspace>",
       "sha256": "9cd87ec592b364d43cf5f8542486448c91c2eec5c719d7a211296fa1d0b2b4ad"
     },
     "original/final_tvr.m": {
-      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\matlab_audit_20261029\\originals\\final_tvr.m",
+      "path": "<workspace>",
       "sha256": "0fb5501542705d171bf66b47fcbe1a652420d0a74e7488ff10f62eadeef2e6fd"
     },
     "original/final_tvr_v2_fluc_re.m": {
-      "path": "C:\\Users\\tho25\\Documents\\ChatGPT\\停车场充电桩优化方案\\research\\electrification\\matlab_audit_20261029\\originals\\final_tvr_v2_fluc_re.m",
+      "path": "<workspace>",
       "sha256": "3123a6ae6ef12413f1086c326dd2f9b741e72f75305a72d1621a9939198d7e31"
     }
   }
