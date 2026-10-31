@@ -91,3 +91,7 @@ Third-party data: CC BY 4.0, attribution required. Code: no reuse licence grante
 [LICENSE.md](LICENSE.md). Third-party papers are not redistributed.
 
 中文入口：[docs/README.zh.md](docs/README.zh.md)
+
+## Data status
+
+Current results and figures are the Melbourne 2014 historical case, kept as an external benchmark. A Chinese domestic parking dataset is being validated and is not yet integrated; no number on this page is presented as a Chinese case. See data/README.md for provenance and the current sample.
