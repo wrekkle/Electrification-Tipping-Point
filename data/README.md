@@ -34,3 +34,5 @@ are assumptions, not measured EV behaviour. No EV labels exist in the source dat
 The full processed contract (185,550 events, ten sites) is not published because it can be
 rebuilt from the public source with the documented steps; the sample exists so the quick start
 runs without downloading 236 MB.
+
+当前公开样例数据来自 Melbourne 2014（历史/外部对照）。国内城市数据的核验与接入仍在进行；在数据核验完成前，本仓库的任何结果都不得标注为国内案例。
