@@ -94,4 +94,4 @@ Third-party data: CC BY 4.0, attribution required. Code: no reuse licence grante
 
 ## Data status
 
-Current results and figures are the Melbourne 2014 historical case, kept as an external benchmark. A Chinese domestic parking dataset is being validated and is not yet integrated; no number on this page is presented as a Chinese case. See data/README.md for provenance and the current sample.
+Current results and figures are the Melbourne 2014 historical case, kept as an external benchmark. A 2025 Yantai parking-order dataset has been obtained and validated internally; only aggregate figures are shared, raw rows are not redistributed, and no number on this page is presented as a Chinese case. Other Chinese cities are not connected yet. See data/README.md for provenance and the current sample.
