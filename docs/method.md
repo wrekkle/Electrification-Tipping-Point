@@ -1,5 +1,7 @@
 # Method summary
 
+状态: 生效
+
 The full derivation is in the manuscript; this page fixes the symbols, units and the equations
 that the public code implements, so the results can be read without the paper.
 

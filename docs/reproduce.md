@@ -1,5 +1,7 @@
 # Reproducing the public checks
 
+状态: 生效
+
 Everything below uses only files tracked in this repository.
 
 ## Environment

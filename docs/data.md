@@ -1,5 +1,7 @@
 # Data source, scope and processing
 
+状态: 生效
+
 ## Acquisition
 
 1. Download the 2014 archive from the City of Melbourne open data portal
