@@ -272,13 +272,47 @@ class ContinuousEngine:
         return list(self.ledger)
 
     # ----------------------------------------------------------------- replay
+    def _replay_positions(self):
+        """回放位置 = 后端记录的真实状态快照（不是账本逐事件位置）。
+
+        同一时刻的多个事件在模型里是一个处理批次，对应同一个快照；回放控件只在
+        这些可用快照之间定位，并显示快照实际时刻，不能用更细的时间配上更早的状态。
+        """
+        positions = [{"t": snap["t"], "event_seq": snap["event_seq"]}
+                     for snap in getattr(self.sim, "replay_snapshots", [])]
+        if not positions:
+            positions = [{"t": 0.0, "event_seq": 0}]
+        return positions
+
+    def _replay_clamp(self, index):
+        total = len(self.replay.get("positions") or [])
+        if total <= 0:
+            return 0
+        try:
+            value = int(index)
+        except (TypeError, ValueError):
+            raise ContinuousError("回放位置必须是整数快照序号")
+        return max(0, min(value, total - 1))
+
+    def _replay_view(self):
+        positions = self.replay.get("positions") or []
+        cursor = self._replay_clamp(self.replay.get("cursor", 0))
+        position = positions[cursor] if positions else {"t": 0.0, "event_seq": 0}
+        return {"label": "回放 replay", "source": "synthetic_ledger",
+                "basis": "state_snapshot", "cursor": cursor,
+                "total": len(positions), "t": position["t"],
+                "event_seq": position["event_seq"],
+                "positions": positions}
+
     def start_replay(self, source="synthetic", events=None):
-        if source == "synthetic":
-            source_events = [dict(item) for item in (self.ledger if events is None else events)]
-            self.replay = {"active": True, "label": "回放 replay", "source": "synthetic_ledger",
-                           "cursor": 0, "total": len(source_events), "events": source_events}
-        else:
+        if source != "synthetic":
             raise ContinuousError("回放源必须为 synthetic（通用合成账本回放）")
+        self.post_pending()  # 把尚未入账的仿真事件补齐，保证快照 event_seq 与账本一致
+        source_events = [dict(item) for item in (self.ledger if events is None else events)]
+        self.replay = {"active": True, "label": "回放 replay", "source": "synthetic_ledger",
+                       "basis": "state_snapshot", "cursor": 0, "total": 0,
+                       "positions": self._replay_positions(), "events": source_events}
+        self.replay.update(self._replay_view())
         self.paused = False
         self.mode = "replay"
         self.last_tick_monotonic = self.clock()
@@ -288,22 +322,36 @@ class ContinuousEngine:
     def exit_replay(self):
         if not self.replay["active"]:
             raise ContinuousError("当前不在回放模式")
-        self.replay = {"active": False, "label": "回放 replay", "source": None, "cursor": 0, "total": 0, "events": []}
+        self.replay = {"active": False, "label": "回放 replay", "source": None,
+                       "basis": None, "cursor": 0, "total": 0, "positions": [], "events": []}
         self.mode = self._resume_mode
         self.last_tick_monotonic = self.clock()
         self._record(self.mode, "exit replay")
         return self.status()
+
+    def replay_jump(self, index):
+        if not self.replay["active"]:
+            raise ContinuousError("当前不在回放模式")
+        target = self._replay_clamp(index)
+        old = self._replay_clamp(self.replay.get("cursor", 0))
+        revealed = []
+        if target > old:
+            positions = self.replay.get("positions") or []
+            lo = positions[old]["event_seq"] if positions else 0
+            hi = positions[target]["event_seq"] if positions else 0
+            revealed = [item for item in self.replay["events"] if lo < item.get("seq", 0) <= hi]
+        self.replay["cursor"] = target
+        self.replay.update(self._replay_view())
+        return {**self._replay_view(), "previous": old, "events": revealed}
 
     def replay_step(self, count=1):
         if not self.replay["active"]:
             raise ContinuousError("当前不在回放模式")
         if isinstance(count, bool) or not isinstance(count, int) or not 1 <= count <= 500:
             raise ContinuousError("回放步数必须为1至500的整数")
-        start = self.replay["cursor"]
-        items = self.replay["events"][start:start + count]
-        self.replay["cursor"] = start + len(items)
-        return {"label": "回放 replay", "source": "synthetic_ledger", "cursor": self.replay["cursor"],
-                "total": self.replay["total"], "events": items}
+        cursor = self._replay_clamp(self.replay.get("cursor", 0))
+        result = self.replay_jump(cursor + count)
+        return {**result, "events": result.get("events", [])}
 
     # ----------------------------------------------------------------- status
     def status(self, metrics=None):

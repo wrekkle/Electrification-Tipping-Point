@@ -3,122 +3,346 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>停车场仿真与在线学习实验台</title>
+  <title>停车场充电桩共享与配置优化 · 研究可视化实验台</title>
   <link rel="stylesheet" href="/style.css">
+  <script src="/lib/dotgrid.js" defer></script>
+  <script src="/lib/charts.js" defer></script>
   <script src="/app.js" defer></script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="icon-play" viewBox="0 0 16 16"><path d="M4.5 3.2v9.6L12.8 8z"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 16 16"><rect x="4" y="3.2" width="2.6" height="9.6" rx="1"/><rect x="9.4" y="3.2" width="2.6" height="9.6" rx="1"/></symbol>
+    <symbol id="icon-step" viewBox="0 0 16 16"><path d="M4 3.2v9.6L10.2 8z"/><rect x="11" y="3.2" width="1.8" height="9.6" rx=".9"/></symbol>
+    <symbol id="icon-reset" viewBox="0 0 16 16"><path d="M8 2.6a5.4 5.4 0 1 1-5.1 3.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M2.4 2.2v4.1h4.1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-finish" viewBox="0 0 16 16"><path d="M3.4 4.6 7.6 8l-4.2 3.4z"/><path d="M8.6 4.6 12.8 8l-4.2 3.4z"/></symbol>
+    <symbol id="icon-replay" viewBox="0 0 16 16"><path d="M3 8a5 5 0 1 0 1.6-3.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M3.2 2.4v4.2h4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 5.8v4.4L10.4 8z"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 16 16"><path d="M8 2.8v7.1M5 7.2l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 11.8h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
 <div class="app-shell">
-  <aside class="sidebar">
-    <div class="brand"><span class="brand-icon">P<span>&#8599;</span></span><div><strong>停车场研究</strong><small>PARKING LAB</small></div></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i>
+      </span>
+      <div class="brand-text"><strong>停车场研究</strong><small>PARKING LAB</small></div>
+    </div>
     <button type="button" id="toggle-settings" class="mobile-settings" aria-expanded="false" aria-controls="config-form">展开参数设置</button>
-    <div class="sidebar-intro"><h2>构建一个停车场</h2><p>调整资源与车流，观察学习和共享。</p></div>
-    <form id="config-form">
-      <label class="preset-label" for="preset">情景预设</label>
-      <select id="preset" aria-label="情景预设"></select>
-      <div id="fields"></div>
-      <div class="config-actions">
-        <button type="button" id="apply" class="primary full">应用参数并重置</button>
-        <p id="dirty-note" class="muted">修改参数后，点击应用创建新的实验。</p>
-        <div class="button-pair"><button type="button" id="export-config">导出配置</button><button type="button" id="import-config">导入配置</button></div>
-        <input id="config-file" type="file" accept=".json,application/json" hidden>
+    <div class="sidebar-scroll">
+      <div class="sidebar-intro">
+        <h2>构建一个停车场</h2>
+        <p>调整资源与车流参数，观察准入规则、共享策略与充电配置的效果。参数应用到「新实验」；正在观看的运行保持原配置。</p>
       </div>
-    </form>
-    <p class="sidebar-foot">纯本地运行 · 后端推进时钟 · 成本参数缺失时显示未知／待校准</p>
+      <form id="config-form" novalidate>
+        <label class="preset-label" for="preset">情景预设</label>
+        <select id="preset" aria-label="情景预设"></select>
+        <div id="fields"></div>
+        <div class="config-actions">
+          <button type="button" id="apply" class="primary full">应用参数并重置</button>
+          <p id="dirty-note" class="muted">修改参数后点击应用；右侧运行使用「当前运行配置」。</p>
+          <div class="config-summary" id="config-summary" aria-live="polite"></div>
+          <div class="button-pair">
+            <button type="button" id="export-config">导出配置</button>
+            <button type="button" id="import-config">导入配置</button>
+          </div>
+          <input id="config-file" type="file" accept=".json,application/json" hidden>
+        </div>
+      </form>
+      <p class="sidebar-foot">纯本地运行 · 后端推进仿真时钟 · 成本参数缺失时显示未知／待校准<br>合成仿真与声明情景，不代表实测 EV 行为。</p>
+    </div>
   </aside>
-  <main>
-    <header class="page-header"><div><div class="eyebrow">SIMULATION / CONTINUOUS RUN / REPLAY</div><h1>油电共享实验台</h1><p>后端推进时钟、暂停恢复不重复入账；回放模式显式标注。</p></div><span class="tag">合成仿真</span></header>
+
+  <main class="main">
+    <header class="page-header">
+      <div class="page-title">
+        <p class="eyebrow">PARKING LAB · RESEARCH VISUALIZATION</p>
+        <h1>停车场充电桩共享与配置优化</h1>
+        <p class="subtitle">合成仿真 · 观测车流回放 · 声明需求情景 —— 车位点阵与图表共用同一仿真时钟</p>
+      </div>
+      <div class="page-actions">
+        <span class="tag" title="车流与需求为声明情景，不是实测 EV 数据">合成仿真</span>
+        <div class="export-inline">
+          <select id="export-format" aria-label="结果导出格式">
+            <option value="json">完整结果 JSON</option>
+            <option value="csv">车辆账本 CSV</option>
+            <option value="events_csv">事件 CSV</option>
+            <option value="predictions_csv">预测评分 CSV</option>
+            <option value="ledger_csv">持续运行账本 CSV</option>
+            <option value="cost_csv">成本分项 CSV（v2 口径列）</option>
+          </select>
+          <button type="button" id="download"><svg class="icon" aria-hidden="true"><use href="#icon-download"></use></svg>导出结果</button>
+        </div>
+      </div>
+    </header>
+
     <div id="message" class="message" role="status" aria-live="polite">正在连接本地后端…</div>
     <div id="provenance-banner" class="banner" role="status" hidden></div>
 
-    <section class="toolbar panel" aria-label="运行控制">
-      <div class="clock"><span id="run-indicator" class="dot"></span><strong id="clock">07:00</strong><span id="run-status">尚未创建</span></div>
-      <span id="mode-badge" class="badge">实时 realtime</span>
-      <div class="controls">
-        <button id="mode-realtime">实时</button><button id="mode-accelerated">加速</button>
-        <label for="speed">倍速</label><select id="speed"><option value="1">1x</option><option value="10">10x</option><option value="60" selected>60x</option><option value="300">300x</option><option value="1800">1800x</option><option value="3600">3600x</option></select>
-        <button id="pause">暂停</button><button id="resume">恢复</button>
-        <label for="step-minutes">单步步长</label><select id="step-minutes"><option value="1">1分钟</option><option value="5" selected>5分钟</option><option value="15">15分钟</option><option value="30">30分钟</option></select>
-        <button id="step">单步</button><button id="finish">运行至结束</button><button id="reset">重置</button>
+    <section class="toolbar panel" aria-label="仿真时间控制">
+      <div class="clock-block">
+        <span class="clock-label">仿真时钟</span>
+        <strong id="clock" class="clock">00:00</strong>
+        <span id="run-status" class="status-chip">尚未创建</span>
+        <span class="run-lamp" id="run-indicator" aria-hidden="true"></span>
       </div>
-      <div class="controls replay-controls">
-        <span class="muted">回放</span>
-        <button id="replay-synthetic">回放（合成账本）</button>
-        <button id="replay-step">回放单步</button><button id="replay-exit">退出回放</button>
+      <div class="transport" role="group" aria-label="运行控制">
+        <button type="button" id="transport-play" class="primary" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#icon-play"></use></svg><span id="transport-play-label">播放</span></button>
+        <button type="button" id="transport-step" title="按步长推进一次"><svg class="icon" aria-hidden="true"><use href="#icon-step"></use></svg>单步</button>
+        <button type="button" id="transport-finish" title="直接运行到窗口结束"><svg class="icon" aria-hidden="true"><use href="#icon-finish"></use></svg>运行至结束</button>
+        <button type="button" id="transport-reset" title="按当前运行配置与种子重置"><svg class="icon" aria-hidden="true"><use href="#icon-reset"></use></svg>重置</button>
+        <label class="inline-field" for="step-minutes">步长
+          <select id="step-minutes"><option value="1">1 分钟</option><option value="5" selected>5 分钟</option><option value="15">15 分钟</option><option value="30">30 分钟</option></select>
+        </label>
+        <div class="speed-group" role="group" aria-label="倍速">
+          <button type="button" data-speed="1" title="实时 1x：1 仿真分钟 = 60 实时秒">1x</button>
+          <button type="button" data-speed="10">10x</button>
+          <button type="button" data-speed="60" class="active">60x</button>
+          <button type="button" data-speed="300">300x</button>
+          <button type="button" data-speed="1800">1800x</button>
+        </div>
       </div>
-      <div class="progress"><span id="progress-fill"></span></div>
+      <div class="progress-wrap">
+        <div class="progress"><span id="progress-fill"></span><span id="progress-replay-mark" hidden></span></div>
+        <div class="progress-meta"><span id="progress-text">— / — 分钟</span><span id="mode-badge" class="badge">尚未创建</span></div>
+      </div>
+      <div class="replay-block">
+        <button type="button" id="replay-start"><svg class="icon" aria-hidden="true"><use href="#icon-replay"></use></svg>回放</button>
+        <button type="button" id="replay-step" disabled>回放单步</button>
+        <button type="button" id="replay-exit" disabled>退出回放</button>
+        <div class="replay-track"><input type="range" id="replay-range" min="0" max="0" value="0" step="1" aria-label="回放快照位置" title="回放位置=后端记录的真实状态快照，不是账本事件的更细时间" disabled><span id="replay-status" class="muted">未在回放</span></div>
+      </div>
     </section>
 
-    <section class="stats" aria-label="运行指标">
-      <article class="stat panel"><span>在场车辆 / 总车位</span><strong id="stat-occupancy">0 / 60</strong><small id="stat-utilization">时间平均占用率 —</small></article>
-      <article class="stat panel"><span>到达 / 被拒车辆</span><strong id="stat-arrivals">0 / 0</strong><small id="stat-rejections">油车 0 · 电车 0</small></article>
-      <article class="stat panel"><span>已交付电量</span><strong><span id="stat-energy">0.0</span><em>kWh</em></strong><small id="stat-power">当前功率 0.0 kW</small></article>
-      <article class="stat panel"><span>窗口内成本（v2 口径）</span><strong id="stat-cost">无法完整计算</strong><small id="stat-cost-note">成本参数未知时显示未知／待校准</small></article>
+    <section class="kpi-row" aria-label="关键运行指标">
+      <article class="kpi panel">
+        <span class="kpi-label">在场车辆 / 总车位</span>
+        <strong class="kpi-value" id="kpi-occupancy">0 / 0</strong>
+        <span class="kpi-sub" id="kpi-occupancy-sub">空位 — · 时间平均占用率 —</span>
+      </article>
+      <article class="kpi panel">
+        <span class="kpi-label">充电中 / 已充满</span>
+        <strong class="kpi-value" id="kpi-charging">0</strong>
+        <span class="kpi-sub" id="kpi-charging-sub">充电车位 — · 带枪位 —</span>
+      </article>
+      <article class="kpi panel">
+        <span class="kpi-label">累计交付电量</span>
+        <strong class="kpi-value"><span id="kpi-energy">0.0</span><em>kWh</em></strong>
+        <span class="kpi-sub" id="kpi-energy-sub">当前功率 — kW · 场站限额 — kW</span>
+      </article>
+      <article class="kpi panel">
+        <span class="kpi-label">到达 / 被拒</span>
+        <strong class="kpi-value" id="kpi-arrivals">0 / 0</strong>
+        <span class="kpi-sub" id="kpi-arrivals-sub">拒绝率 — · 油车 — · 电车 —</span>
+      </article>
     </section>
 
-    <div class="content-grid">
-      <section class="panel runtime-panel">
-        <div class="section-heading"><div><h2>持续运行时钟</h2><p>后端推进：每次 tick 从当前时刻推进，不重置种子、不按数组索引重播。</p></div><span id="runtime-label" class="soft-tag">实时 realtime</span></div>
-        <dl class="forecast-details runtime-details">
-          <div><dt>当前模式</dt><dd id="run-mode">—</dd></div>
-          <div><dt>倍速 / 语义</dt><dd id="run-speed">—</dd></div>
-          <div><dt>仿真时间</dt><dd id="run-time">—</dd></div>
-          <div><dt>实时已推进</dt><dd id="run-elapsed">—</dd></div>
-          <div><dt>tick 次数</dt><dd id="run-ticks">—</dd></div>
-          <div><dt>仿真事件 / 已入账</dt><dd id="run-events">—</dd></div>
-          <div><dt>已入账水位 / 序号</dt><dd id="run-ledger">—</dd></div>
-          <div><dt>时钟来源</dt><dd id="run-clock-source">—</dd></div>
-          <div><dt>模式时延（实时 / 期望）</dt><dd id="run-lag">—</dd></div>
-          <div><dt>窗口到期</dt><dd id="run-window">—</dd></div>
-          <div><dt>回放状态</dt><dd id="run-replay">未在回放</dd></div>
-          <div><dt>防重复入账</dt><dd id="run-guard">—</dd></div>
-        </dl>
-        <p class="note">realtime 恒为 1x（所选倍速只在 accelerated 生效）。暂停、改倍速、切换模式会先结算上一运行区间（不丢最后一次轮询到操作时刻）；恢复不补算暂停区间，也不重复入账（单调 seq + 已入账水位守卫）。有限窗口运行：仿真时长 duration_hours 折算成窗口后，到期自动停止推进，不是无限持续运行。</p>
-      </section>
-    </div>
-
-    <div class="content-grid">
-      <section class="panel parking-panel"><div class="section-heading"><div><h2>车位实时状态</h2><p id="lot-summary">充电车位与带枪车位分别配置</p></div><span id="policy-label" class="soft-tag"></span></div>
-        <div class="legend"><span><i class="empty"></i>空位</span><span><i class="ice"></i>油车</span><span><i class="ev"></i>电车</span><span><i class="charging"></i>充电中</span><span>&#9889; 带枪车位</span></div>
-        <div id="bay-grid" class="bay-grid" aria-label="停车格"></div><p id="bay-note" class="note"></p>
-        <div class="energy-strip"><span>充电完成 <b id="completed">0 / 0</b></span><span>已离场缺口 <b id="departed-gap">0 kWh</b></span><span>在场待交付 <b id="pending-energy">0 kWh</b></span></div>
-      </section>
-      <section class="panel prediction-panel"><div class="section-heading"><div><h2>下一辆车的预测</h2><p>只使用已经发生的到达与观测</p></div><span id="cold-start" class="soft-tag">冷启动</span></div>
-        <div class="probability"><span>下一辆是电车的概率</span><strong id="p-ev">50.0<em>%</em></strong><div class="prob-track"><span id="p-ev-fill"></span></div></div>
-        <div class="forecast-time"><span id="interval-label">90% 到达等待时间预测区间</span><strong id="wait-interval">—</strong><small>从当前时刻起等待；区间水平不等于已保证覆盖率</small></div>
-        <dl class="forecast-details"><div><dt>已观察到达</dt><dd id="observed">0 辆</dd></div><div><dt>估计到达强度</dt><dd id="rate">20 辆/小时</dd></div><div><dt>短期需充电到达</dt><dd id="need-forecast">—</dd></div><div><dt>保留带枪空位目标</dt><dd id="reserve">—</dd></div></dl>
-        <p class="note">在线基线：折扣 Gamma–Poisson + Beta–Bernoulli。所有被拒到达也可被入口观察；无摄像头或真实车牌数据。</p>
-      </section>
-    </div>
-
-    <section class="panel cost-panel"><div class="section-heading"><div><h2>成本模型 v2（未知即 null）</h2><p>分项与总成本按 docs/methods/COST-MODEL-V2.md；缺失参数一律 null，不填 0。</p></div><span id="cost-version" class="soft-tag">—</span></div>
-      <dl class="forecast-details runtime-details">
-        <div><dt>总成本</dt><dd id="cost-total">无法完整计算</dd></div>
-        <div><dt>是否完整</dt><dd id="cost-complete">—</dd></div>
-        <div><dt>币种 / 价格年份</dt><dd id="cost-currency">—</dd></div>
-        <div><dt>核算周期</dt><dd id="cost-period">—</dd></div>
-        <div><dt>缺失参数</dt><dd id="cost-missing">—</dd></div>
-      </dl>
-      <div class="table-wrap"><table><thead><tr><th>成本分项</th><th>值</th><th>单位</th></tr></thead><tbody id="cost-items"></tbody></table></div>
-      <p class="note" id="cost-notes">占桩影响归因（attribution）与收费/转移支付（transfers）单列，不进 total。</p>
+    <section class="panel matrix-panel" aria-label="车位实时状态">
+      <div class="panel-head">
+        <div>
+          <h2>车位点阵</h2>
+          <p id="bay-summary">每个圆点对应一个真实车位；圆环表示资源类型，填充与中心符号表示当前状态。</p>
+        </div>
+        <div class="matrix-meta">
+          <span id="bay-range" class="soft-tag">—</span>
+          <span id="matrix-count" class="muted"></span>
+        </div>
+      </div>
+      <div class="matrix-legend">
+        <div class="legend-group" id="legend-states" role="group" aria-label="按车位状态筛选">
+          <button type="button" class="chip" data-filter-state="0" aria-pressed="false"><i class="swatch s0"></i>空闲</button>
+          <button type="button" class="chip" data-filter-state="1" aria-pressed="false"><i class="swatch s1"></i>油车占用</button>
+          <button type="button" class="chip" data-filter-state="2" aria-pressed="false"><i class="swatch s2"></i>电车停车</button>
+          <button type="button" class="chip" data-filter-state="3" aria-pressed="false"><i class="swatch s3"></i>充电中</button>
+          <button type="button" class="chip" data-filter-state="4" aria-pressed="false"><i class="swatch s4"></i>充满仍占位</button>
+        </div>
+        <div class="legend-group legend-types" aria-label="资源类型图例（圆环）">
+          <span class="legend-item"><i class="ring ordinary"></i>普通位</span>
+          <span class="legend-item"><i class="ring charge-bay"></i>充电车位（无枪）</span>
+          <span class="legend-item"><i class="ring equipped"></i>带枪位</span>
+        </div>
+      </div>
+      <div class="matrix-body">
+        <div id="bay-matrix" class="bay-matrix" aria-label="车位点阵"></div>
+        <aside id="bay-detail" class="bay-detail" hidden>
+          <div class="bay-detail-head">
+            <h3 id="bay-detail-title">车位 —</h3>
+            <button type="button" id="bay-detail-close" aria-label="关闭车位详情">×</button>
+          </div>
+          <dl class="bay-facts" id="bay-facts"></dl>
+          <div class="bay-timeline-wrap">
+            <span class="mini-label">状态时间线（截至当前仿真时刻）</span>
+            <div id="bay-timeline" class="bay-timeline" role="img" aria-label="所选车位状态时间线"></div>
+            <div class="timeline-axis"><span>开始</span><span id="bay-timeline-end">—</span></div>
+          </div>
+        </aside>
+      </div>
+      <div class="matrix-foot">
+        <p id="bay-note" class="note">颜色 + 圆环 + 中心符号同时区分状态与资源类型；状态变化只更新对应圆点，位置不因占用情况重排。</p>
+      </div>
     </section>
-
-    <section class="panel scoring"><div><h2>预测表现</h2><p id="score-description">在上一辆到达后发布预测，等下一辆真正到达再评分。</p></div><div><span>车型 Brier &#8595;</span><strong id="brier">—</strong></div><div><span>区间经验覆盖</span><strong id="coverage">—</strong></div><div><span>区间平均宽度</span><strong id="width">—</strong></div><div><span>已评分样本</span><strong id="score-n">0</strong></div></section>
 
     <div class="charts-grid">
-      <section class="panel"><div class="section-heading"><div><h2>占用与充电</h2><p>深绿：在场车辆 · 琥珀：正在充电</p></div></div><svg id="occupancy-chart" viewBox="0 0 640 190" role="img" aria-label="在场车辆与充电数量随时间变化"></svg></section>
-      <section class="panel"><div class="section-heading"><div><h2>在线学习过程</h2><p>蓝色：电车预测概率 · 使用左侧百分比刻度</p></div></div><svg id="learning-chart" viewBox="0 0 640 190" role="img" aria-label="在线电车概率随时间变化"></svg></section>
+      <section class="panel chart-panel" aria-label="占用构成随时间变化">
+        <div class="panel-head">
+          <div><h2>占用构成</h2><p>空闲、停车未充与充电中的车位数随时间变化</p></div>
+          <div id="occupancy-legend" class="legend-group small" role="group" aria-label="图表图例筛选"></div>
+        </div>
+        <div id="chart-occupancy" class="chart-host"></div>
+        <p class="chart-foot">step-after 折线：每个点是一次后端 tick 快照，不插值。</p>
+      </section>
+      <section class="panel chart-panel" aria-label="功率与累计电量">
+        <div class="panel-head">
+          <div><h2>功率与电量</h2><p>上：当前充电功率；下：累计交付电量</p></div>
+          <span id="energy-chart-note" class="soft-tag">—</span>
+        </div>
+        <div id="chart-power" class="chart-host"></div>
+        <div id="chart-energy-cum" class="chart-host"></div>
+        <p class="chart-foot">虚线为场站功率限额；累计电量与 KPI、地图口径同源。</p>
+      </section>
+      <section class="panel chart-panel wide" aria-label="车位状态热力图">
+        <div class="panel-head">
+          <div><h2>车位状态热力图</h2><p>行为车位、列为仿真时间；同一仿真时钟随时间推进展开</p></div>
+          <div class="heatmap-controls">
+            <span id="heatmap-range" class="soft-tag">—</span>
+            <button type="button" id="heatmap-prev" disabled>上一页</button>
+            <button type="button" id="heatmap-next" disabled>下一页</button>
+          </div>
+        </div>
+        <div id="chart-heatmap" class="chart-host heatmap-host"></div>
+        <div id="heatmap-legend" class="legend-group small"></div>
+        <p class="chart-foot">悬停单元格高亮对应圆点；点击单元格或圆点查看该车位状态时间线。</p>
+      </section>
     </div>
 
-    <section class="panel comparison"><div class="section-heading"><div><h2>把四种共享策略放在同一条起跑线</h2><p>每个种子使用同一批外生车辆；均值 ± 种子间样本标准差。</p></div><button id="compare" class="primary">比较四种策略</button></div><div class="compare-options"><label for="seeds">随机种子</label><input id="seeds" value="42,43,44" aria-label="对比随机种子"><span id="compare-description">使用左侧当前表单参数；可与正在观看的运行分别比较。</span></div>
-      <div id="compare-empty" class="empty-state">运行对比后，查看拒绝率、充电完成率与情景成本的差别。</div>
-      <div id="compare-results" hidden><div id="cost-bars" class="cost-bars"></div><div class="table-wrap"><table><thead><tr><th>共享策略</th><th>拒绝率</th><th>充电完成 / 全需求</th><th>交付电量 kWh</th><th>成本</th><th>成本差 / 开放策略</th></tr></thead><tbody id="compare-body"></tbody></table></div></div>
-      <div class="download-row"><button id="download-comparison" disabled>下载对比 JSON</button><span class="note">成本不是收益；尚在场的未交付电量不计作已离场失败。</span></div>
+    <section class="panel compare-panel" aria-label="共享策略对比">
+      <div class="panel-head">
+        <div><h2>共享策略对比</h2><p id="compare-description">使用当前表单参数，在同一批外生车辆上重放各策略</p></div>
+        <div class="compare-actions">
+          <label for="policy-set">策略集合</label>
+          <select id="policy-set" aria-label="策略集合">
+            <option value="formal">正式规则（当前研究）</option>
+            <option value="legacy">历史策略演示（legacy）</option>
+          </select>
+          <label for="seeds">随机种子</label>
+          <input id="seeds" value="42,43,44" aria-label="对比随机种子">
+          <button type="button" id="compare" class="primary">比较四种策略</button>
+        </div>
+      </div>
+      <div id="compare-warning" class="banner" role="status" hidden></div>
+      <div id="compare-empty" class="empty-state">运行对比后，查看拒绝率、充电完成率、交付电量与情景成本的差异（均值 ± 种子间样本标准差）。默认比较当前研究模型的正式规则（π0/π1/π2/C 基线）；legacy 组是历史策略演示。</div>
+      <div id="compare-meta" class="compare-meta" hidden></div>
+      <div id="compare-results" hidden>
+        <div class="compare-metric-tabs" id="compare-metric-tabs" role="group" aria-label="对比指标">
+          <button type="button" data-metric="rejection_rate" aria-pressed="true">拒绝率</button>
+          <button type="button" data-metric="charge_completion_rate_all" aria-pressed="false">充电完成率（全需求）</button>
+          <button type="button" data-metric="energy_delivered_kwh" aria-pressed="false">交付电量</button>
+        </div>
+        <div id="compare-bars" class="chart-host compare-bars-host"></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>共享策略</th><th>拒绝率</th><th>充电完成 / 全需求</th><th>交付电量 kWh</th><th>成本</th><th>成本差 / 基线</th></tr></thead>
+            <tbody id="compare-body"></tbody>
+          </table>
+        </div>
+        <div class="download-row"><button type="button" id="download-comparison" disabled>下载对比 JSON</button><span class="note">成本不是收益；尚在场的未交付电量不计作已离场失败。成本为 v2 口径，缺失参数显示未知。“±”是种子间样本标准差，不是置信区间。</span></div>
+      </div>
     </section>
 
-    <section class="panel"><div class="section-heading"><div><h2>车辆事件（= 入账账本）</h2><p>显示最近60条已入账事件；完整账本与事件可分别导出。</p></div><div class="download-row"><select id="export-format" aria-label="结果导出格式"><option value="json">完整结果 JSON</option><option value="csv">车辆账本 CSV</option><option value="events_csv">事件 CSV</option><option value="predictions_csv">预测评分 CSV</option><option value="ledger_csv">持续运行账本 CSV</option><option value="cost_csv">成本分项 CSV（v2 口径列）</option></select><button id="download">下载结果</button></div></div><div class="table-wrap"><table><thead><tr><th>序号</th><th>时间</th><th>车辆</th><th>事件</th><th>车位</th><th>说明</th></tr></thead><tbody id="event-body"></tbody></table></div></section>
-    <footer>后端推进时钟 · 暂停恢复不重复入账 · 回放显式标注 · 成本参数缺失即 null · 保留完整随机种子、配置与源码摘要</footer>
+    <section class="panel details-panel" aria-label="运行明细与技术信息">
+      <div class="tabs" role="tablist" aria-label="次级信息">
+        <button type="button" class="tab" role="tab" data-tab="runtime" aria-selected="true" id="tab-runtime">运行明细</button>
+        <button type="button" class="tab" role="tab" data-tab="cost" aria-selected="false" id="tab-cost">成本模型 v2</button>
+        <button type="button" class="tab" role="tab" data-tab="prediction" aria-selected="false" id="tab-prediction">预测与评分</button>
+        <button type="button" class="tab" role="tab" data-tab="events" aria-selected="false" id="tab-events">事件账本</button>
+        <button type="button" class="tab" role="tab" data-tab="notes" aria-selected="false" id="tab-notes">口径说明</button>
+      </div>
+      <div class="tab-panel" data-panel="runtime" role="tabpanel" aria-labelledby="tab-runtime">
+        <div class="detail-grid">
+          <dl class="facts">
+            <div><dt>当前模式</dt><dd id="run-mode">—</dd></div>
+            <div><dt>倍速 / 语义</dt><dd id="run-speed">—</dd></div>
+            <div><dt>仿真时间</dt><dd id="run-time">—</dd></div>
+            <div><dt>实时已推进</dt><dd id="run-elapsed">—</dd></div>
+            <div><dt>tick 次数</dt><dd id="run-ticks">—</dd></div>
+            <div><dt>仿真事件 / 已入账</dt><dd id="run-events">—</dd></div>
+            <div><dt>已入账水位 / 序号</dt><dd id="run-ledger">—</dd></div>
+            <div><dt>时钟来源</dt><dd id="run-clock-source">—</dd></div>
+            <div><dt>模式时延（实时 / 期望）</dt><dd id="run-lag">—</dd></div>
+            <div><dt>窗口到期</dt><dd id="run-window">—</dd></div>
+            <div><dt>回放状态</dt><dd id="run-replay">未在回放</dd></div>
+            <div><dt>防重复入账</dt><dd id="run-guard">—</dd></div>
+          </dl>
+          <div class="detail-aside">
+            <h3>在线学习过程</h3>
+            <p class="muted">下一辆为电车的预测概率（蓝色）随时间变化。</p>
+            <div id="learning-spark" class="spark-host"></div>
+            <dl class="facts compact">
+              <div><dt>已观察到达</dt><dd id="observed">0 辆</dd></div>
+              <div><dt>估计到达强度</dt><dd id="rate">— 辆/小时</dd></div>
+              <div><dt>短期需充电到达</dt><dd id="need-forecast">—</dd></div>
+              <div><dt>保留带枪空位目标</dt><dd id="reserve">— 个</dd></div>
+            </dl>
+          </div>
+        </div>
+        <p class="note" id="run-note" hidden></p>
+        <p class="note">realtime 恒为 1x（所选倍速只在 accelerated 生效）。暂停、改倍速、切换模式会先结算上一运行区间；恢复不补算暂停区间，也不重复入账（单调 seq + 已入账水位守卫）。有限窗口运行：到期自动停止推进。</p>
+      </div>
+      <div class="tab-panel" data-panel="cost" role="tabpanel" aria-labelledby="tab-cost" hidden>
+        <div class="panel-head inline"><div><h2>成本模型 v2（未知即 null）</h2><p>分项与总成本按 docs/methods/COST-MODEL-V2.md；缺失参数一律 null，不填 0。</p></div><span id="cost-version" class="soft-tag">—</span></div>
+        <dl class="facts">
+          <div><dt>总成本</dt><dd id="cost-total">无法完整计算</dd></div>
+          <div><dt>是否完整</dt><dd id="cost-complete">—</dd></div>
+          <div><dt>币种 / 价格年份</dt><dd id="cost-currency">—</dd></div>
+          <div><dt>核算周期</dt><dd id="cost-period">—</dd></div>
+          <div><dt>缺失参数</dt><dd id="cost-missing">—</dd></div>
+        </dl>
+        <div class="table-wrap"><table><thead><tr><th>成本分项</th><th>值</th><th>单位</th></tr></thead><tbody id="cost-items"></tbody></table></div>
+        <p class="note" id="cost-notes">占桩影响归因（attribution）与收费/转移支付（transfers）单列，不进 total。</p>
+      </div>
+      <div class="tab-panel" data-panel="prediction" role="tabpanel" aria-labelledby="tab-prediction" hidden>
+        <div class="detail-grid">
+          <div>
+            <h3>下一辆车的预测</h3>
+            <p class="muted">只使用已经发生的到达与观测（折扣 Gamma–Poisson + Beta–Bernoulli）。</p>
+            <div class="probability"><span>下一辆是电车的概率</span><strong id="p-ev">50.0<em>%</em></strong><div class="prob-track"><span id="p-ev-fill"></span></div></div>
+            <div class="forecast-time"><span id="interval-label">90% 到达等待时间预测区间</span><strong id="wait-interval">—</strong><small>从当前时刻起等待；区间水平不等于已保证覆盖率</small></div>
+          </div>
+          <div>
+            <h3>预测表现</h3>
+            <p class="muted" id="score-description">在上一辆到达后发布预测，等下一辆真正到达再评分。</p>
+            <dl class="facts compact">
+              <div><dt>车型 Brier</dt><dd id="brier">—</dd></div>
+              <div><dt>区间经验覆盖</dt><dd id="coverage">—</dd></div>
+              <div><dt>区间平均宽度</dt><dd id="width">—</dd></div>
+              <div><dt>已评分样本</dt><dd id="score-n">0</dd></div>
+            </dl>
+            <p class="note">所有被拒到达也可被入口观察；无摄像头或真实车牌数据。</p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-panel" data-panel="events" role="tabpanel" aria-labelledby="tab-events" hidden>
+        <div class="panel-head inline"><div><h2>车辆事件（= 入账账本）</h2><p id="ledger-meta">显示最近 60 条已入账事件；完整账本与事件可分别导出。</p></div></div>
+        <div class="table-wrap tall"><table><thead><tr><th>序号</th><th>时间</th><th>车辆</th><th>事件</th><th>车位</th><th>说明</th></tr></thead><tbody id="event-body"></tbody></table></div>
+      </div>
+      <div class="tab-panel" data-panel="notes" role="tabpanel" aria-labelledby="tab-notes" hidden>
+        <div class="notes-grid">
+          <section><h3>数据来源与情景</h3><p>车流与需求由后端按配置生成（合成仿真，随机种子固定）；EV 比例、充电概率、目标电量属于<strong>声明的需求情景</strong>，不是观测到的 EV 行为。停车到达与停留来自模型生成的事件流，回放只展示已入账账本。</p></section>
+          <section><h3>指标口径</h3><ul><li>拒绝率 = 被拒到达 / 到达总数；分母含所有到访（含被拒）。</li><li>充电完成率（全需求）= 完成充电请求 / 需充电请求；尚在场未交付单独列为待交付，不计入已离场失败。</li><li>能量账本：需求 = 交付 + 被拒 + 离场缺口 + 在场待交付（平衡误差在模型内校验）。</li><li>时间平均占用率 = 占用车位分钟 /（车位总数 × 已运行分钟）。</li><li>成本 v2：分项唯一入口，缺失参数为 null；占桩归因与转移支付不进总成本。</li></ul></section>
+          <section><h3>回放与时钟</h3><p>仿真时钟由后端推进；浏览器每秒轮询同一状态。暂停后所有视图停止推进；倍速改变后各视图同步；单步按步长推进一次。回放位置是后端在事件批次处理完时记录的真实状态快照：顶部时钟显示该快照的实际时刻，点阵、占用/充电数量、功率、累计电量、趋势图与热力图截止、事件列表都来自这同一份快照；同一时刻的多个事件合为一个快照，不插值、不产生到达/离场/充满事件。快照未保存的字段（时间平均占用率、成本、大场地的车辆级明细）明确显示“该历史时刻未记录”。</p></section>
+          <section><h3>限制</h3><p>合成仿真不证明现实 EV 行为；缺少真实车牌/摄像头数据；成本参数多数未知；热力图分辨率受后端帧采样限制（大场地与大总时长自动降采样）。</p></section>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>后端推进时钟 · 暂停恢复不重复入账 · 回放显式标注 · 成本参数缺失即 null</span>
+      <span id="version-line" class="muted"></span>
+    </footer>
   </main>
 </div>
+<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
 </body>
 </html>

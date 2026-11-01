@@ -98,6 +98,25 @@ python -m unittest discover -s apps/parking_lab/workbench/tests -p "test_*.py"
 
 快速开始的范围：用 [method.md](method.md) 式 (1)-(3) 在 300 行墨尔本样本上跑一遍上界。它是冒烟测试，不复现 `results/figures` 下的任何一张图，也不涉及国内重放。
 
+## 网页实验台（演示）
+
+`apps/parking_lab` 带一个本地研究可视化前端。它用浏览器驱动合成仿真：左栏情景与资源参数，一条共享仿真时钟，车位点阵（空闲、油车占用、电车停车、充电中、充满仍占位、普通位、充电位、带枪位），占用构成与功率/电量曲线，以及整次运行导出。它用来操作和观察仿真本身，不展示墨尔本或烟台的研究结果，屏幕上的数字来自所选预设情景。
+
+![停车场实验台界面](../apps/parking_lab/web-frontend.png)
+
+*1600×1000，合成早晚高峰预设：左侧情景设置，上方共享时钟与步进控制，中部车位点阵，下方占用与功率/电量图。点开可看原尺寸。*
+
+查看步骤：
+
+1. 在 GitHub 页面点 **Code > Download ZIP** 下载并解压（克隆仓库也可以）。
+2. 安装 Python 3.10 或更高版本（python.org），安装时勾选“Add python.exe to PATH”。
+3. Windows 双击 `apps\parking_lab\start_lab.cmd`；macOS/Linux 在仓库根目录运行 `python3 -m apps.parking_lab.workbench serve --port 8765`。
+4. 浏览器打开 http://127.0.0.1:8765/，即可看到运行中的合成实验台。
+
+除 Python 标准库外不需要安装任何包；服务只监听 127.0.0.1。端口被占用时换一个，例如 `--port 8766`。前端单元测试为 `node --test apps/parking_lab/workbench/web/tests/dotgrid.test.mjs`，Python 侧由上面的 workbench 测试覆盖。布局在 390 px 窄屏下也已核对：侧栏折叠为“展开参数设置”，页面无横向溢出。
+
+
+
 ## 文档导航
 
 | 文件 | 看什么 |

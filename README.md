@@ -99,6 +99,25 @@ The example writes `results/sample_bounds.json` and `results/sample_bounds.png` 
 
 Scope of the quick start: it runs the bound from [docs/method.md](docs/method.md) equations (1)-(3) on 300 adopted Melbourne rows. It is a smoke test. It does not reproduce any figure under `results/figures` and it does not touch the domestic replay.
 
+## Web frontend (demo)
+
+`apps/parking_lab` also ships a local research-visualisation frontend. It drives the synthetic simulation from a browser: a scenario panel, one shared simulation clock, a bay matrix with a legend for occupancy and charging state, occupancy and power/energy charts, and an export of the run. It is a way to operate and inspect the simulation. It does not display the Melbourne or Yantai study results, and the numbers on the screen come from the preset scenario you choose.
+
+![Parking lab web frontend](apps/parking_lab/web-frontend.png)
+
+*The lab at 1600 x 1000 on the synthetic early-peak preset: scenario setup on the left, shared clock and frame controls, bay matrix in the middle, occupancy and power/energy charts below. Open the image for full size.*
+
+The shortest way to see it:
+
+1. On the GitHub page choose **Code > Download ZIP** and unzip it (a clone works too).
+2. Install Python 3.10 or newer from python.org, and tick "Add python.exe to PATH" during setup.
+3. Windows: double-click `apps\parking_lab\start_lab.cmd`. macOS or Linux: open a terminal in the repository root and run `python3 -m apps.parking_lab.workbench serve --port 8765`.
+4. Open http://127.0.0.1:8765/ in a browser; the page shows the running synthetic lab.
+
+No packages beyond the Python standard library are needed, and the server only listens on 127.0.0.1. If the port is busy, pass another one, for example `--port 8766`. Frontend unit tests run with `node --test apps/parking_lab/workbench/web/tests/dotgrid.test.mjs`; the Python side is covered by the workbench tests above. The layout was checked at 390 px as well as desktop width, and the narrow view folds the parameter panel behind a button.
+
+
+
 ## Where to look
 
 | path | what is there |

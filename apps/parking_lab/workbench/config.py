@@ -39,7 +39,8 @@ LEGACY_POLICIES = {
     "fixed": "固定保留（legacy）",
     "adaptive": "在线自适应保留（legacy）",
 }
-# POLICIES：历史四策略集合，experiments.compare 与 server 元数据沿用（保持旧对比口径）。
+# POLICIES：历史四策略集合（legacy），保留给旧对比口径与注册表校验；
+# experiments.compare 默认改用 RULE_POLICIES（policy_set="formal"），legacy 需显式选择并标注演示。
 POLICIES = dict(LEGACY_POLICIES)
 # ALL_POLICIES：配置校验与界面标签的完整集合（正式规则在前）。
 ALL_POLICIES = {**RULE_POLICIES, **LEGACY_POLICIES}

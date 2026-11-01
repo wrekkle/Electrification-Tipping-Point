@@ -19,9 +19,10 @@ from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlsplit
 
 from . import VERSION
-from .config import Config, POLICIES, SCENARIOS, presets
+from .config import ALL_POLICIES, Config, SCENARIOS, presets
 from .continuous import COST_MODEL_SOURCE, COST_MODEL_VERSION, ContinuousEngine, ContinuousError
-from .experiments import compare, export_run
+from .experiments import (FORMAL_POLICY_SET, POLICY_SETS, compare, export_run)
+from .metrics import sampled
 from .simulation import Simulation
 
 EXPORT_SCHEMA_VERSION = 2
@@ -80,6 +81,76 @@ def state_payload(entry):
                           "replay_label": REPLAY_LABEL if engine.replay["active"] else None,
                           "clock_source": payload["continuous"]["clock_source"]}
     return payload
+
+
+def replay_snapshot_payload(entry, index):
+    """回放视图的唯一数据源：一份后端真实状态快照。
+
+    回放不再把“实时 state”按时间裁剪来拼视图；点阵、KPI、趋势图、热力图、事件列表
+    都从这一个快照派生，快照时间和状态同源。车辆级明细只在快照保存了 roster 时可用，
+    否则明确标记为未记录。cost/运行诊断属于当前运行状态，放在 replay_diagnostics 中
+    单独标注，不冒充历史时刻。
+    """
+    sim, engine = entry["sim"], entry["engine"]
+    snapshots = getattr(sim, "replay_snapshots", [])
+    if not snapshots:
+        raise ValueError("当前运行没有可用的回放快照，请先让仿真产生事件")
+    try:
+        wanted = int(index)
+    except (TypeError, ValueError):
+        raise ValueError("回放位置必须是整数快照序号")
+    idx = max(0, min(wanted, len(snapshots) - 1))
+    snap = snapshots[idx]
+    t = snap["t"]
+    history_index = snap.get("history_index", -1)
+    history = sim.history[:history_index + 1] if history_index >= 0 else []
+    frames = [frame for frame in sim.bay_frames if frame["t"] <= t + 1e-9]
+    events = [dict(item) for item in engine.ledger if item.get("seq", 0) <= snap["event_seq"]][-60:]
+    scores = [row for row in sim.scores if row.get("observed_at_min", 0) <= t + 1e-9]
+
+    def mean(key):
+        values = [row[key] for row in scores if row.get(key) is not None]
+        return sum(values) / len(values) if values else None
+
+    prediction = {"samples": len(scores), "brier": mean("brier"),
+                  "type_accuracy": mean("correct"), "interval_coverage": mean("covered"),
+                  "interval_width_min": mean("width_min"),
+                  "interval_level": sim.config.interval_level}
+    metrics = dict(snap["metrics"])
+    metrics.update({"prediction_samples": prediction["samples"],
+                    "brier": prediction["brier"], "type_accuracy": prediction["type_accuracy"],
+                    "interval_coverage": prediction["interval_coverage"],
+                    "interval_width_min": prediction["interval_width_min"],
+                    "interval_level": prediction["interval_level"],
+                    # 时间平均占用率需要运行期累计，未随快照保存：历史值不可恢复，显式置空。
+                    "mean_occupancy_rate": None})
+    continuous = engine.status(sim.snapshot().get("metrics") or {})
+    positions = [{"t": item["t"], "event_seq": item["event_seq"]} for item in snapshots]
+    replay_block = {"active": True, "label": REPLAY_LABEL, "source": "synthetic_ledger",
+                    "basis": "state_snapshot", "index": idx, "cursor": idx,
+                    "total": len(snapshots), "t": t, "event_seq": snap["event_seq"],
+                    "history_t": history[-1]["time_min"] if history else None,
+                    "frame_t": frames[-1]["t"] if frames else None,
+                    "positions": positions,
+                    "note": "回放位置=后端记录的真实状态快照；同一时刻的多个事件合为一个快照；"
+                            "不插值，也不产生到达/离场/充电完成事件。"}
+    return {"config": sim.config.to_dict(), "time_min": t, "horizon_min": sim.horizon,
+            "finished": t >= sim.horizon - 1e-9, "metrics": metrics,
+            "bay_state": snap["bay_state"], "history": sampled(history),
+            "bay_frames": frames, "occupied": snap.get("roster"),
+            "occupied_available": bool(snap.get("roster_available")),
+            "events": events, "events_total": snap["event_seq"], "ledger_tail": events,
+            "forecast": snap["forecast"], "reserve": snap["reserve"],
+            "prediction_summary": prediction,
+            "policy_name": ALL_POLICIES[sim.config.policy], "policy_rule": sim.rule,
+            "policy_legacy": sim.legacy_policy is not None,
+            "cost_model_version": COST_MODEL_VERSION, "cost_model_source": COST_MODEL_SOURCE,
+            "replay": replay_block, "continuous": continuous,
+            "replay_diagnostics": {"diagnostics_time_min": sim.time,
+                                   "note": "运行明细/账本/成本是当前运行状态（非回放时刻），回放视图只使用本快照数据。"},
+            "runtime": {"server_version": VERSION, "session_created_utc": entry["created_utc"],
+                        "export_schema_version": EXPORT_SCHEMA_VERSION,
+                        "replay_label": REPLAY_LABEL, "clock_source": continuous["clock_source"]}}
 
 
 def export_payload(entry):
@@ -167,7 +238,16 @@ def make_server(port=8765):
                                            "continuous": True, "replay": True})
                 if path == "/api/presets":
                     return self.send(200, {"presets": presets(), "defaults": Config().to_dict(),
-                                           "policies": POLICIES, "scenarios": SCENARIOS,
+                                           "policies": ALL_POLICIES, "scenarios": SCENARIOS,
+                                           "policy_sets": {key: {
+                                               "label": value["label"], "kind": value["kind"],
+                                               "baseline": value["baseline"],
+                                               "applicable_model": value["applicable_model"],
+                                               "info_contract": value["info_contract"],
+                                               "legacy_notice": value["legacy_notice"],
+                                               "policies": value["policies"]}
+                                               for key, value in POLICY_SETS.items()},
+                                           "default_policy_set": FORMAL_POLICY_SET,
                                            "cost_model_version": COST_MODEL_VERSION})
                 if path in {"/api/state", "/api/export"}:
                     with store.lock:
@@ -236,7 +316,9 @@ def make_server(port=8765):
                         return self.send(200, output.getvalue().encode("utf-8-sig"), "text/csv; charset=utf-8", "parking-" + kind + ".csv")
                 mapping = {"/": ("index.html", "text/html; charset=utf-8"),
                            "/app.js": ("app.js", "text/javascript; charset=utf-8"),
-                           "/style.css": ("style.css", "text/css; charset=utf-8")}
+                           "/style.css": ("style.css", "text/css; charset=utf-8"),
+                           "/lib/charts.js": ("lib/charts.js", "text/javascript; charset=utf-8"),
+                           "/lib/dotgrid.js": ("lib/dotgrid.js", "text/javascript; charset=utf-8")}
                 if path not in mapping:
                     return self.send(404, {"error": "页面不存在"})
                 filename, mime = mapping[path]
@@ -256,7 +338,8 @@ def make_server(port=8765):
                     if not comparison_gate.acquire(blocking=False):
                         raise BlockingIOError("已有策略对比正在计算，请稍后再试")
                     try:
-                        result = compare(Config.parse(data.get("config", {})), data.get("seeds"))
+                        result = compare(Config.parse(data.get("config", {})), data.get("seeds"),
+                                         policy_set=data.get("policy_set") or FORMAL_POLICY_SET)
                     finally:
                         comparison_gate.release()
                     return self.send(200, result)
@@ -323,6 +406,15 @@ def make_server(port=8765):
                         entry = store.get(key)
                         entry["engine"].resume()
                         return self.send(200, {"id": key, **state_payload(entry)})
+                    if path in {"/api/replay/jump", "/api/replay/snapshot"}:
+                        key = data.get("id")
+                        entry = store.get(key)
+                        engine = entry["engine"]
+                        if path == "/api/replay/jump":
+                            result = engine.replay_jump(data.get("index", 0))
+                            return self.send(200, {"id": key, "replay_jump": result, **state_payload(entry)})
+                        payload = replay_snapshot_payload(entry, data.get("index", 0))
+                        return self.send(200, {"id": key, **payload})
                     if path in {"/api/replay/start", "/api/replay/step", "/api/replay/exit"}:
                         key = data.get("id")
                         entry = store.get(key)

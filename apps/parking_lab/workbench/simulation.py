@@ -74,8 +74,28 @@ class Simulation:
         self.visits, self.scores, self.events, self.history, self.power_segments = [], [], [], [], []
         self.occupied_minutes = 0.0
         self.rejected_count = 0
+        self.rejected_ev_count = 0
+        self.rejected_ice_count = 0
         self.peak_power = self.peak_charging = self.peak_occupancy = 0
+        # 展示层累计量（不进入任何准入决策、指标分母或成本口径）：
+        # delivered_total 与 metrics.energy_delivered_kwh 同源累计，供前端画累计电量曲线；
+        # bay_frames 是车位状态热力图的历史帧，按字符编码并限量，避免每秒传整车位明细。
+        self.delivered_total = 0.0
+        self.completed_total = 0
+        self.bay_frames = []
+        self._frame_limit = max(24, min(240, int(120000 / max(1, c.n_spaces))))
+        self._frame_interval = max(self.horizon / self._frame_limit, 0.25) if self.horizon > 0 else 0.25
+        self._last_frame_time = None
+        # 回放快照（展示层）：只在事件批次处理完、对应 history 行写入后记录一份真实状态；
+        # 回放控件只在这些快照之间定位，不插值、不推进仿真、不伪造未来状态。
+        # 与 bay_frames 一样按车位数量限量，超限时二分降采样（保留首尾覆盖范围）。
+        self.replay_snapshots = []
+        self._snapshot_limit = max(40, min(240, int(200000 / max(1, c.n_spaces))))
+        # 车辆级明细（车位详情）只在可承受的车位数下随快照保存；否则回放显示“该历史时刻未记录”。
+        self._roster_enabled = c.n_spaces <= 300
+        self._last_snapshot_event_seq = -1
         self._history()
+        self._capture_replay_snapshot()
 
     @property
     def finished(self):
@@ -222,6 +242,10 @@ class Simulation:
             self.active[bay] = visit
         else:
             self.rejected_count += 1
+            if a.is_ev:
+                self.rejected_ev_count += 1
+            else:
+                self.rejected_ice_count += 1
             self._record_rejection_cost(a, visit)
         self._log("arrival" if bay is not None else "rejected", a.vehicle_id,
                   is_ev=a.is_ev, needs_charge=a.needs_charge, bay=bay)
@@ -334,11 +358,13 @@ class Simulation:
                "charging": len(self.powers()), "arrivals": len(self.visits),
                "rejected": self.rejected_count,
                "power_kw": sum(self.powers().values()), "p_ev": f["p_ev"],
-               "rate_hour": f["arrival_rate_hour"], "reserve": self.reserve(f)}
+               "rate_hour": f["arrival_rate_hour"], "reserve": self.reserve(f),
+               "energy_kwh": round(self.delivered_total, 6), "charged": self.completed_total}
         if self.history and abs(self.history[-1]["time_min"] - self.time) < 1e-9:
             self.history[-1] = row
         else:
             self.history.append(row)
+        self._capture_bay_frame()
 
     def advance(self, target_min):
         if isinstance(target_min, bool) or not isinstance(target_min, (int, float)) or not math.isfinite(target_min):
@@ -366,7 +392,9 @@ class Simulation:
                     if v["charge_start_min"] is None and v["delivered_kwh"] <= EPS and p > 0:
                         v["charge_start_min"] = segment_start
                         started.append((b, v))
-                    v["delivered_kwh"] = min(v["energy_kwh"], v["delivered_kwh"] + p * dt / 60)
+                    _before = v["delivered_kwh"]
+                    v["delivered_kwh"] = min(v["energy_kwh"], _before + p * dt / 60)
+                    self.delivered_total += v["delivered_kwh"] - _before
                 self.occupied_minutes += len(self.active) * dt
                 self.learner.advance(nxt)
                 self.time = nxt
@@ -380,6 +408,7 @@ class Simulation:
                 if v["needs_charge"] and not v["completed"] and v["energy_kwh"] - v["delivered_kwh"] <= EPS:
                     v["completed"] = True
                     v["completion_min"] = self.time
+                    self.completed_total += 1
                     self._log("charged", v["vehicle_id"], bay=b)
             if self.intervention.get("release_after_complete"):
                 # 反事实 B：充满后挪到普通位以释放枪口（overstay_after_complete），其余规则不变。
@@ -407,12 +436,14 @@ class Simulation:
                 self._arrive(self.arrivals[self.index])
                 self.index += 1
             self._history()
+            self._capture_replay_snapshot()
             if self.time >= target - 1e-10:
                 break
         if self.time < target:
             self.learner.advance(target)
             self.time = target
             self._history()
+            self._capture_replay_snapshot()
         self.assert_invariants()
         return self.snapshot()
 
@@ -470,6 +501,108 @@ class Simulation:
         cut = self.time if cut_min is None else cut_min
         return type_occupancy_ledger(self.visits, self.config, cut)
 
+    def _bay_state_string(self):
+        """每车位一个数字：0 空位 / 1 油车 / 2 电车停车未充 / 3 充电中 / 4 充满仍占位。
+
+        只服务展示（点阵与热力图），不进入准入决策、指标或成本口径。
+        """
+        c = self.config
+        powers = self.powers()
+        states = ["0"] * c.n_spaces
+        for b, v in self.active.items():
+            if not 0 <= b < c.n_spaces:
+                continue
+            if b in powers:
+                states[b] = "3"
+            elif v["needs_charge"] and v["completed"]:
+                states[b] = "4"
+            elif v["is_ev"]:
+                states[b] = "2"
+            else:
+                states[b] = "1"
+        return "".join(states)
+
+    def _capture_bay_frame(self):
+        """追加车位状态热力图帧；超过帧数上限时二分降采样，保持覆盖整个已运行区间。"""
+        if self.time is None:
+            return
+        if self.bay_frames and self._last_frame_time is not None \
+                and self.time - self._last_frame_time < self._frame_interval - 1e-9:
+            return
+        if len(self.bay_frames) >= self._frame_limit:
+            self.bay_frames = self.bay_frames[::2]
+            self._frame_interval *= 2
+        self.bay_frames.append({"t": round(self.time, 6), "s": self._bay_state_string()})
+        self._last_frame_time = self.time
+
+    def _capture_replay_snapshot(self):
+        """记录一份可回放的真实状态快照（展示层，不参与模型决策）。
+
+        调用时机：事件批次已处理完、对应 history 行已写入。快照包含：
+        * t / event_seq：该时刻与截至该时刻已入账的事件数；
+        * history_index / frame_t：用于精确截取趋势图与热力图；
+        * bay_state：离散车位状态（与点阵逐位一致）；
+        * metrics：该时刻的占用、充电、功率、累计电量、到达/拒绝等标量；
+        * forecast / reserve：该时刻已发布的预测与保留位数（历史真实值）；
+        * roster：车辆级明细（车位数较大时为 None，回放显示“该历史时刻未记录”）。
+
+        同一时刻的多个事件在模型里是一个处理批次，因此只记一个快照（状态为该批次处理完后的
+        真实状态）；没有新事件的纯时间推进不重复记录，避免回放位置与事件游标错位。
+        """
+        if self.time is None:
+            return
+        event_seq = len(self.events)
+        # 事件批次（同一时刻多个事件）只记一个快照；没有新事件的纯推进不重复记录。
+        # 例外：窗口结束时刻补记一份终态快照，保证回放能覆盖终点（此时 seq 不变但 t 前进，
+        # 充电功率/累计电量确实变化，仍是该时刻的真实状态）。
+        finished_now = self.time >= self.horizon - 1e-9
+        last_t = self.replay_snapshots[-1]["t"] if self.replay_snapshots else None
+        if event_seq == self._last_snapshot_event_seq and not (finished_now and last_t != self.time):
+            return
+        powers = self.powers()
+        roster = None
+        if self._roster_enabled:
+            roster = []
+            for bay, v in sorted(self.active.items()):
+                roster.append({
+                    "bay": bay, "power_kw": round(powers.get(bay, 0.0), 6),
+                    "vehicle": {
+                        "vehicle_id": v["vehicle_id"], "is_ev": bool(v["is_ev"]),
+                        "needs_charge": bool(v["needs_charge"]),
+                        "energy_kwh": v["energy_kwh"], "delivered_kwh": round(v["delivered_kwh"], 6),
+                        "completed": bool(v["completed"]), "completion_min": v["completion_min"],
+                        "departure_min": v["departure_min"], "time_min": v["time_min"],
+                        "charge_start_min": v["charge_start_min"],
+                    },
+                })
+        metrics = {
+            "time_min": round(self.time, 6), "capacity": self.config.n_spaces,
+            "occupancy": len(self.active), "charging_now": len(powers),
+            "current_power_kw": round(sum(powers.values()), 6),
+            "energy_delivered_kwh": round(self.delivered_total, 6),
+            "charge_completed": self.completed_total,
+            "arrivals": len(self.visits), "rejected": self.rejected_count,
+            "rejected_ev": self.rejected_ev_count, "rejected_ice": self.rejected_ice_count,
+            "rejection_rate": (self.rejected_count / len(self.visits)) if self.visits else None,
+            "peak_power_kw": round(self.peak_power, 6), "peak_charging": self.peak_charging,
+            "peak_occupancy": self.peak_occupancy,
+        }
+        snapshot = {
+            # 保存未舍入的仿真时刻：history 行/事件时间同一源头，避免回放截断丢最后一行。
+            "t": float(self.time), "event_seq": event_seq,
+            "history_index": len(self.history) - 1,
+            "frame_t": self.bay_frames[-1]["t"] if self.bay_frames else None,
+            "bay_state": self._bay_state_string(),
+            "metrics": metrics, "forecast": self.learner.forecast(),
+            "reserve": self.reserve(), "roster": roster,
+            "roster_available": roster is not None,
+        }
+        if len(self.replay_snapshots) >= self._snapshot_limit:
+            # 二分降采样：位置变粗但每个位置仍是真实快照；首尾覆盖范围保持。
+            self.replay_snapshots = self.replay_snapshots[::2]
+        self.replay_snapshots.append(snapshot)
+        self._last_snapshot_event_seq = event_seq
+
     def snapshot(self):
         c = self.config
         powers = self.powers()
@@ -486,6 +619,10 @@ class Simulation:
                 "finished": self.finished, "forecast": self.learner.forecast(),
                 "reserve": self.reserve(), "metrics": metrics, "bays": bays,
                 "bays_shown": shown, "bays_total": c.n_spaces,
+                "bay_state": self._bay_state_string(),
+                "bay_frames": self.bay_frames,
+                "occupied": [{"bay": b, "power_kw": powers.get(b, 0), "vehicle": dict(v)}
+                             for b, v in sorted(self.active.items())],
                 "events": self.events[-60:], "history": sampled(self.history),
                 "demand_hash": self.demand_hash, "traffic_hash": self.traffic_hash,
                 "rule_options": {"prediction_object": c.prediction_object,

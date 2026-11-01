@@ -14,6 +14,8 @@ def main():
     ap.add_argument("--port", type=int, default=8765)
     ap.add_argument("--config", help="UTF-8 JSON配置路径")
     ap.add_argument("--seeds", help="对比用逗号分隔种子，如42,43,44")
+    ap.add_argument("--policy-set", choices=["formal", "legacy"], default="formal",
+                    help="compare 的策略集合：formal=当前研究正式规则（默认），legacy=历史策略演示")
     ap.add_argument("--out", help="显式指定一个尚不存在的输出目录")
     ap.add_argument("--params", help="车流生成参数文件（traffic 子命令，须为 round8 公开数据标定参数）")
     ap.add_argument("--seed", help="车流随机种子（traffic 子命令，默认 42）")
@@ -45,7 +47,7 @@ def main():
     c = Config.parse(raw)
     if args.command == "compare":
         seeds = [int(x) for x in args.seeds.split(",")] if args.seeds else None
-        result = compare(c, seeds)
+        result = compare(c, seeds, policy_set=args.policy_set)
     else:
         sim = Simulation(c)
         sim.run()

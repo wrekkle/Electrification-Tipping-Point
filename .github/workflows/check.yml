@@ -20,3 +20,8 @@ jobs:
         run: python scripts/check_public.py
       - name: Workbench tests
         run: python -m unittest discover -s apps/parking_lab/workbench/tests -p "test_*.py"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Frontend tests
+        run: node --test apps/parking_lab/workbench/web/tests/dotgrid.test.mjs
