@@ -308,7 +308,10 @@
       return this.plot.x + Math.max(0, Math.min(t, horizon)) / horizon * this.plot.w;
     }
     setGeometry(meta) {
+      const prevOffset = this.meta.rowOffset;
       this.meta = Object.assign({}, this.meta, meta || {});
+      // 分页后旧页码对应的悬停行已不在本页：立即清掉悬停框/辅助线/气泡/联动点。
+      if (this.hoverBay !== null && this.meta.rowOffset !== prevOffset) this.clearHover();
       // 选中/分页等几何变化只更新复用矩形，不重建 SVG，也不追加高亮节点。
       this.drawHighlights();
       this.syncHoverGuide();
@@ -316,6 +319,15 @@
     update(frames, meta) {
       this.frames = frames || [];
       this.meta = Object.assign({}, this.meta, meta || {});
+      const rowCount = this.meta.rowCount || this.rows || 0;
+      // 本页已看不到的悬停行（例如翻页/数据重置）不再保留悬停态；无数据时同样立即清理。
+      if (this.hoverBay !== null && resolveHighlightRows(this.hoverBay, null, this.meta.rowOffset, rowCount).hover === null) this.clearHover();
+      if (this.meta.highlightBay !== null && this.meta.highlightBay !== undefined
+          && resolveHighlightRows(this.meta.highlightBay, null, this.meta.rowOffset, rowCount).hover === null) {
+        this.meta.highlightBay = null;
+        this.hoverBay = null;
+        this.hoverT = null;
+      }
       // 无数据时立即清掉悬停框/辅助线/提示气泡，不依赖下一次 pointermove 或轮询。
       if (!this.frames.length) this.clearHover();
       this.draw();
