@@ -1,8 +1,18 @@
 # Data source, scope and processing
 
 状态: 生效
+更新: 2026-11-01
 
-## Acquisition
+## Two data sets
+
+| | Melbourne 2014 | Yantai 2025 |
+|---|---|---|
+| source | City of Melbourne open data, *Parking bay arrivals and departures 2014*, dataset `mq3i-cbxd` | Shandong public data open platform, Yantai parking lot entry/exit orders |
+| records | 13,503,655 source rows; 10 sites; 185,550 adopted events; one city-year | 357,680 raw rows, 35 lots; records span 2024-04-10 to 2025-05-20; analysis window 2025-03-01 to 2025-05-20 |
+| licence and redistribution | CC BY 4.0; the archive is not stored here, a 300-row sample is published | platform terms; plates masked; raw rows and page snapshots are not redistributed, only aggregate outputs |
+| what this repository publishes | processing rules, site audit, sample, figures, bound and metric tables | aggregate replay table and two figures |
+
+## Melbourne 2014: acquisition
 
 1. Download the 2014 archive from the City of Melbourne open data portal
    (dataset `mq3i-cbxd`, CC BY 4.0):
@@ -15,7 +25,7 @@
 Timestamps are local Melbourne time; 2014 contains both AEDT (UTC+11) and AEST (UTC+10), with
 DST transitions that must be handled per local date, not by a fixed offset.
 
-## Processing rules
+## Melbourne 2014: processing rules
 
 - Candidate areas are filtered by observed bays and event counts; the study keeps ten sites,
   each an aggregation of 3-17 block faces (12-82 observed bays), with 825 site-day blocks and
@@ -32,7 +42,51 @@ DST transitions that must be handled per local date, not by a fixed offset.
   (`apps/parking_lab/workbench/publicdata.py`, seed 20261031): EV share 0.10, charge need 0.36
   of EVs, energy from a truncated normal (14, 6) kWh on [2, 40]. They are assumptions.
 
+The site-to-block-face selection list is part of the authors' local archive and is not
+published. It is the reason the processed contract cannot be rebuilt exactly from the public
+archive; see `reproduce.md`.
+
+## Yantai 2025: acquisition and contract
+
+- Source: Yantai parking lot entry/exit orders, obtained 2026-10-31. Raw export: 357,680 rows,
+  30 fields, 35 lots; entry timestamps run from 2024-04-10 to 2025-05-20, with 97.5% of records
+  in 2025-04 and 2025-05. Plates are masked; no vehicle-level identity is published.
+- Window 2025-03-01 to 2025-05-20: 348,683 rows inside the window, after dropping 8,945 rows
+  with a missing entry time and 52 rows recorded outside the window.
+- Analysis subset: 311,589 sessions after excluding stays shorter than 1 minute (16,449) and
+  longer than 24 hours (20,645). This gives 1,619 lot-days, 1,398 of them with at least ten
+  sessions; 51 dates have analysed requests and are split 35/16 by date into training and
+  hold-out.
+- The source has no berth or space counts and no capacity field, so registered capacity cannot
+  be checked. Stays longer than 24 hours are treated as a sensitivity, not as an error.
+
+## Yantai 2025: scenario layer
+
+- Demand scenarios are the product of two declared shares: p_EV x q_need = 0.15 x 0.30,
+  0.25 x 0.35 and 0.40 x 0.40, which realise 0.0453 / 0.0882 / 0.1596 of the 311,589 candidate
+  sessions as charge requests (14,128 / 27,496 / 49,734 requests).
+- Each request draws a target energy from a lognormal distribution with median 12 kWh, clipped
+  to 3-60 kWh; the connector power is 22 kW; the seed is 20261101 with the scenario name in the
+  request hash, so the same scenario keeps the same requests across every k and every policy
+  comparison.
+- These are assumptions. The orders record no EV identity, no charging decision and no
+  delivered energy.
+
+## What the data cannot support
+
+- EV presence, charging willingness and requested energy are not observed in either data set.
+  Every EV-related number in `results/` is a scenario result.
+- The domestic data are one city, one platform and an 11-week window. No multi-city result
+  exists, and other Chinese cities are not connected: a Qingdao facility registry has 16,787
+  rows but no berth counts or events, Jinan requires an application and returns no rows
+  anonymously, and no public 2025 event-level data was found for the other probed cities.
+- The Yantai source cannot check whether a lot is over capacity, because it has no space count.
+- The domestic replay code and the raw rows are local, so the domestic numbers cannot be
+  recomputed from this repository; `reproduce.md` states the gap and `../results/README.md`
+  lists what is published.
+
 ## Sample
 
-`../data/sample/parking_events_sample.csv` contains 300 adopted rows with the same columns as
-the processed window extract, so the quick-start example runs without the raw archive.
+`../data/sample/parking_events_sample.csv` contains 300 adopted Melbourne rows with the same
+columns as the processed window extract, so the quick-start example runs without the raw
+archive. The sample contains no EV or energy field and no domestic rows.
