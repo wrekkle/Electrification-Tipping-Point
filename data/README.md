@@ -38,3 +38,5 @@ runs without downloading 236 MB.
 当前公开样例数据来自 Melbourne 2014（历史/外部对照）。国内城市数据的核验与接入仍在进行；在数据核验完成前，本仓库的任何结果都不得标注为国内案例。
 
 Domestic data status: a 2025 Yantai parking-order dataset was validated internally; raw rows are not redistributed (platform terms, masked plates). Aggregate figures appear under results/figures/domestic/. Other Chinese cities are pending.
+
+Domestic acquisition status (2026-10-31): Yantai 2025 parking orders obtained and processed internally; Qingdao open registry 519D54FB79CB43828A67CBF3A7C5DAC6 has 16,787 facility rows but no berth counts and no entry/exit events; Jinan conditional dataset (8231ac2c...) returns 0 rows anonymously and needs an application; Beijing/Shanghai/Guangzhou/Shenzhen/Ningbo/Nanjing/Suzhou/Hefei/Xiamen: no public event-level dataset verified. Raw rows, plate tokens and identity mappings are not redistributed.
