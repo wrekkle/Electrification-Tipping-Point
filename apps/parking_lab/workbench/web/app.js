@@ -706,7 +706,7 @@ function ensureCharts(s) {
     height: 380, maxRows: heat.rows, stateColors: STATE_FILL, clock: function (t) { return shortClock(t); },
     tooltip: function (payload) { showTooltip(payload); },
     onHoverBay: function (bay) { hoverBay = bay; updateLinkedDot(); },
-    onHoverEnd: function () { hoverBay = null; updateLinkedDot(); },
+    onHoverEnd: function () { hoverBay = null; updateLinkedDot(); hideTooltip(); },
     onClickBay: function (bay) { selectBay(bay); }
   });
   updateOccupancyLegend();

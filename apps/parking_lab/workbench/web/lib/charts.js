@@ -46,6 +46,37 @@
     return Math.ceil(span / (target || 6));
   }
 
+  /* ------------------------------------------------------------ 热力图行高亮（纯函数）
+     交互约束：任意时刻最多一个行框；悬停优先于点击选中；移出后恢复已选行；只描边不填充。 */
+  const HIGHLIGHT_STYLE = {
+    hover: { fill: 'none', stroke: '#172E2B', 'stroke-width': 1.6, 'pointer-events': 'none' },
+    selected: { fill: 'none', stroke: '#1F5FA8', 'stroke-width': 1.4, 'stroke-dasharray': '4 3', 'pointer-events': 'none' }
+  };
+  function highlightStyle(kind) {
+    const base = kind === 'selected' ? HIGHLIGHT_STYLE.selected : HIGHLIGHT_STYLE.hover;
+    return Object.assign({}, base);
+  }
+  function resolveHighlightRows(hoverBay, selectedBay, rowOffset, rows) {
+    const count = Math.max(0, Number(rows) || 0);
+    const offset = Number(rowOffset) || 0;
+    const valid = function (bay) {
+      if (bay === null || bay === undefined || !Number.isInteger(Number(bay))) return null;
+      const row = Number(bay) - offset;
+      return row >= 0 && row < count ? Number(bay) : null;
+    };
+    // 悬停优先：有悬停时选中框必须隐藏；移出后才能恢复已选行。
+    const hover = valid(hoverBay);
+    return { hover: hover, selected: hover === null ? valid(selectedBay) : null,
+             priority: hover === null ? 'selected' : 'hover' };
+  }
+  function heatmapRowRect(plot, rowH, rows, rowOffset, bay) {
+    const resolved = resolveHighlightRows(bay, null, rowOffset, rows);
+    if (!plot || !resolved.hover || !(rowH > 0)) return null;
+    const row = resolved.hover - (Number(rowOffset) || 0);
+    return { x: plot.x + 0.5, y: plot.y + row * rowH + 0.5,
+             width: Math.max(0.5, plot.w - 1), height: Math.max(1.5, rowH - 1) };
+  }
+
   /* ------------------------------------------------------------ 时间序列折线/堆叠面积 */
   class TimeChart {
     constructor(host, opts) {
@@ -235,6 +266,17 @@
       this.frames = [];
       this.meta = {};
       this.ctx = this.canvas.getContext('2d');
+      // 交互层在构造时创建一次、draw() 时重新挂载；每层只用一个复用的 rect/line 更新位置，
+      // 不在 pointermove 中追加节点。pointer-events: none，保证不阻挡画布命中测试。
+      this.selectedLayer = el('g', { class: 'heatmap-selected-layer', 'pointer-events': 'none' });
+      this.hoverLayer = el('g', { class: 'heatmap-hover-layer', 'pointer-events': 'none' });
+      this.hoverGroup = el('g', { class: 'heatmap-guide-layer', 'pointer-events': 'none' });
+      this.selectedRect = el('rect', Object.assign({ visibility: 'hidden' }, highlightStyle('selected')), this.selectedLayer);
+      this.hoverRect = el('rect', Object.assign({ visibility: 'hidden' }, highlightStyle('hover')), this.hoverLayer);
+      this.hoverLine = el('line', { visibility: 'hidden', stroke: 'rgba(23,46,43,.55)', 'stroke-width': 1, 'stroke-dasharray': '3 3' }, this.hoverGroup);
+      this.svg.append(this.selectedLayer, this.hoverLayer, this.hoverGroup);
+      this.hoverBay = null;
+      this.hoverT = null;
       const self = this;
       this.svg.addEventListener('pointermove', function (e) { self.hover(e); });
       this.svg.addEventListener('pointerleave', function () { self.clearHover(); });
@@ -265,10 +307,17 @@
       const m = this.meta, horizon = Math.max(1, m.horizon || 1);
       return this.plot.x + Math.max(0, Math.min(t, horizon)) / horizon * this.plot.w;
     }
-    setGeometry(meta) { this.meta = Object.assign({}, this.meta, meta || {}); }
+    setGeometry(meta) {
+      this.meta = Object.assign({}, this.meta, meta || {});
+      // 选中/分页等几何变化只更新复用矩形，不重建 SVG，也不追加高亮节点。
+      this.drawHighlights();
+      this.syncHoverGuide();
+    }
     update(frames, meta) {
       this.frames = frames || [];
       this.meta = Object.assign({}, this.meta, meta || {});
+      // 无数据时立即清掉悬停框/辅助线/提示气泡，不依赖下一次 pointermove 或轮询。
+      if (!this.frames.length) this.clearHover();
       this.draw();
     }
     draw() {
@@ -329,60 +378,83 @@
       txt(this.svg, plot.x - 6, plot.y - 1, '车位', { 'text-anchor': 'end', fill: MUTED, 'font-size': 9 });
       // 透明捕获层：保证空白单元格也能触发悬停/点击（SVG 只对已绘制元素做命中测试）
       el('rect', { x: plot.x, y: plot.y, width: plot.w, height: plot.h, fill: 'transparent', 'pointer-events': 'all' }, this.svg);
+      // 交互层最后挂载：固定为“选中行框 / 悬停行框 / 悬停辅助线”三个复用节点，
+      // draw() 只重新挂载，不创建新节点；图层本身 pointer-events:none。
       this.rows = rows;
       this.rowH = rowH;
+      this.svg.append(this.selectedLayer, this.hoverLayer, this.hoverGroup);
       this.drawHighlights();
+      this.syncHoverGuide();
     }
     drawHighlights() {
-      if (!this.rows) return;
-      // 已选车位：整行描边 + 联动点阵
-      const plot = this.plot;
-      const selected = this.meta.selectedBay;
-      const hover = this.meta.highlightBay;
-      function rowRect(bay) {
-        const r = bay - (this.meta.rowOffset || 0);
-        if (r < 0 || r >= this.rows) return null;
-        return { x: plot.x, y: plot.y + r * this.rowH, w: plot.w, h: this.rowH };
+      if (!this.rows || !this.hoverRect || !this.selectedRect) return;
+      // 任意时刻最多一个行框：有悬停时只显示悬停框，选中框隐藏；移出后恢复选中框。
+      const resolved = resolveHighlightRows(this.meta.highlightBay, this.meta.selectedBay,
+                                            this.meta.rowOffset, this.rows);
+      this.placeHighlightRect(this.hoverRect, resolved.hover);
+      this.placeHighlightRect(this.selectedRect, resolved.selected);
+    }
+    placeHighlightRect(rect, bay) {
+      const box = heatmapRowRect(this.plot, this.rowH, this.rows, this.meta.rowOffset, bay);
+      if (!box) { rect.setAttribute('visibility', 'hidden'); return; }
+      // 只描边、无填充：不遮挡原始状态颜色。
+      rect.setAttribute('visibility', 'visible');
+      rect.setAttribute('x', String(box.x));
+      rect.setAttribute('y', String(box.y));
+      rect.setAttribute('width', String(box.width));
+      rect.setAttribute('height', String(box.height));
+    }
+    syncHoverGuide() {
+      if (!this.hoverLine) return;
+      if (this.hoverBay === null || this.hoverBay === undefined
+          || this.hoverT === null || this.hoverT === undefined || !this.rows) {
+        this.hoverLine.setAttribute('visibility', 'hidden');
+        return;
       }
-      if (selected !== undefined && selected !== null) {
-        const rect = rowRect.call(this, selected);
-        if (rect) el('rect', { x: rect.x + 0.5, y: rect.y + 0.5, width: rect.w - 1, height: Math.max(1.5, rect.h - 1), fill: 'none', stroke: '#172E2B', 'stroke-width': 1.6, 'pointer-events': 'none' }, this.svg);
-      }
-      if (hover !== undefined && hover !== null && hover !== selected) {
-        const rect = rowRect.call(this, hover);
-        if (rect) el('rect', { x: rect.x, y: rect.y, width: rect.w, height: Math.max(1.5, rect.h), fill: 'rgba(255,255,255,.28)', stroke: 'rgba(23,46,43,.35)', 'stroke-width': 1, 'pointer-events': 'none' }, this.svg);
-      }
+      const plot = this.plot, x = this.xTime(this.hoverT);
+      this.hoverLine.setAttribute('x1', String(x));
+      this.hoverLine.setAttribute('x2', String(x));
+      this.hoverLine.setAttribute('y1', String(plot.y));
+      this.hoverLine.setAttribute('y2', String(plot.y + plot.h));
+      this.hoverLine.setAttribute('visibility', 'visible');
     }
     hover(event) {
       if (!this.frames.length || !this.rows) return;
       const rect = this.svg.getBoundingClientRect();
-      const scale = this.w / rect.width;
-      const px = (event.clientX - rect.left) * scale;
-      const py = (event.clientY - rect.top) * scale;
+      if (!rect.width || !rect.height) return;
+      const px = (event.clientX - rect.left) * (this.w / rect.width);
+      const py = (event.clientY - rect.top) * (this.h / rect.height);
       const plot = this.plot;
       if (px < plot.x || px > plot.x + plot.w || py < plot.y || py > plot.y + plot.h) { this.clearHover(); return; }
-      const r = Math.min(this.rows - 1, Math.floor((py - plot.y) / this.rowH));
-      const bay = (this.meta.rowOffset || 0) + r;
+      const row = Math.min(this.rows - 1, Math.max(0, Math.floor((py - plot.y) / this.rowH)));
+      const bay = (this.meta.rowOffset || 0) + row;
       const horizon = Math.max(1, this.meta.horizon || 1);
-      const t = (px - plot.x) / plot.w * horizon;
+      const t = Math.min(horizon, Math.max(0, (px - plot.x) / plot.w * horizon));
       let idx = 0;
       for (let i = 0; i < this.frames.length; i++) if (this.frames[i].t <= t + 1e-9) idx = i;
       const frame = this.frames[idx];
+      if (!frame) { this.clearHover(); return; }
       const code = (frame.s || '')[bay] || '0';
-      if (this.hoverGroup && this.hoverGroup.parentNode) this.hoverGroup.parentNode.removeChild(this.hoverGroup);
-      this.hoverGroup = null;
+      const changed = this.hoverBay !== bay;
+      // 复用同一个悬停框和辅助线，只改坐标/可见性；行未变化时不触发联动点阵更新。
+      this.hoverBay = bay;
+      this.hoverT = frame.t;
       this.meta.highlightBay = bay;
-      this.drawHighlights();
-      this.hoverGroup = el('g', {}, this.svg);
-      const x = this.xTime(frame.t);
-      el('line', { x1: x, x2: x, y1: plot.y, y2: plot.y + plot.h, stroke: 'rgba(23,46,43,.55)', 'stroke-width': 1, 'stroke-dasharray': '3 3' }, this.hoverGroup);
-      if (this.opts.onHoverBay) this.opts.onHoverBay(bay);
+      if (changed) this.drawHighlights();
+      this.syncHoverGuide();
+      if (changed && this.opts.onHoverBay) this.opts.onHoverBay(bay);
       if (this.opts.tooltip) this.opts.tooltip({ x: event.clientX, y: event.clientY, title: '车位 ' + (bay + 1) + ' · ' + this.opts.clock(frame.t), rows: [{ label: '状态', value: (STATE[code] || STATE[0]).label, color: (STATE[code] || STATE[0]).color }] });
     }
     clearHover() {
-      if (this.hoverGroup) { clear(this.hoverGroup); this.hoverGroup = null; }
-      if (this.meta.highlightBay !== null && this.meta.highlightBay !== undefined) { this.meta.highlightBay = null; this.drawHighlights(); }
-      if (this.opts.onHoverEnd) this.opts.onHoverEnd();
+      const hadHover = this.hoverBay !== null || this.hoverT !== null
+        || (this.meta.highlightBay !== null && this.meta.highlightBay !== undefined);
+      // 只隐藏复用的悬停框/辅助线，并恢复已选行；不追加、不残留任何节点。
+      this.hoverBay = null;
+      this.hoverT = null;
+      if (this.meta.highlightBay !== null && this.meta.highlightBay !== undefined) this.meta.highlightBay = null;
+      this.drawHighlights();
+      this.syncHoverGuide();
+      if (hadHover && this.opts.onHoverEnd) this.opts.onHoverEnd();
     }
     click(event) {
       if (!this.rows || !this.opts.onClickBay) return;
@@ -471,5 +543,7 @@
     el('circle', { cx: x(data.length - 1), cy: y(data[data.length - 1]), r: 2.4, fill: o.color }, svg);
   }
 
-  global.LabCharts = { TimeChart: TimeChart, Heatmap: Heatmap, PolicyBars: PolicyBars, sparkline: sparkline, STATE: STATE, fmt: fmt, niceCeil: niceCeil, palette: { ink: INK, axis: AXIS, grid: GRID, muted: MUTED } };
+  global.LabCharts = { TimeChart: TimeChart, Heatmap: Heatmap, PolicyBars: PolicyBars, sparkline: sparkline,
+    resolveHighlightRows: resolveHighlightRows, heatmapRowRect: heatmapRowRect, highlightStyle: highlightStyle,
+    STATE: STATE, fmt: fmt, niceCeil: niceCeil, palette: { ink: INK, axis: AXIS, grid: GRID, muted: MUTED } };
 })(window);
