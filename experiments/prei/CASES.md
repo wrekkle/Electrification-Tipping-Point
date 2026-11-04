@@ -1,9 +1,11 @@
 # Case studies: Melbourne 2014 and Yantai 2025
 
-Status: reference note for the public repository. Date: 2026-11-04.
+状态: 生效
+类型: 公开仓库说明
+日期: 2026-11-04
 
 This note keeps the detailed case material that used to sit on the repository home page.
-The home page ([README.md](../README.md)) carries only the question, one figure, three
+The home page ([README.md](../../README.md)) carries only the question, one figure, three
 results and the shortest run command. The two cases below answer related but different
 questions and are never added into one estimate.
 
@@ -23,12 +25,12 @@ The two cases answer related but different questions, and we do not add them int
 
 - Melbourne data. The 2014 archive (13,503,655 rows, 236 MB) was downloaded and checksum-verified. Ten sites were aggregated from block faces, two rows with unusable timestamps were dropped, leaving 185,550 adopted events over 825 site-day blocks, of which 789 pass the complete 24-hour-day check. Processing rules and counts: [docs/data.md](docs/data.md) and [results/data/site_audit.csv](results/data/site_audit.csv).
 - Input calibration. Arrival and dwell distributions are compared between calibration and hold-out splits of site-days, and the KS statistic and hold-out mean error are reported instead of a single fit score ([F1](results/figures/F1.png)). This checks that the replay input is stable across the split. It does not validate the charging scenario.
-- Replay engine. Python modules for admission, allocation, service rules, demand generation, metrics, energy ledger and cost ledger, with unit tests that run in CI ([apps/parking_lab/workbench](apps/parking_lab/workbench)).
+- Replay engine. Python modules for admission, allocation, service rules, demand generation, metrics, energy ledger and cost ledger, with unit tests that run in CI ([apps/parking_lab/workbench](../../apps/parking_lab/workbench)).
 - Analytic layer. The delivery bound, service rates, failure rates and minimal-connector rule are fixed as equations (1)-(11) in [docs/method.md](docs/method.md) and implemented in the public example ([analysis/example.py](analysis/example.py)).
 - Configuration search. Connector grids, feasibility classes and paired policy comparisons on held-out site-days ([F2](results/figures/F2.png), [F3](results/figures/F3.png), [F4](results/figures/F4.png), [F5](results/figures/F5.png), [F8](results/figures/F8.png)).
-- Reference implementations. A Python PREI reference path with fixtures, configs and recorded runs ([experiments/prei](experiments/prei)); an optional MATLAB implementation with its own recorded runs ([matlab/prei](matlab/prei)).
-- Public example and checks. A 300-row Melbourne sample runs without network access ([data/sample](data/sample)); the repository checks are [scripts/check_public.py](scripts/check_public.py), and the same steps run in [.github/workflows/check.yml](.github/workflows/check.yml).
-- Domestic work. Yantai orders were acquired, quality-checked and mapped to the parking-event contract, then replayed under three declared demand scenarios; v2 is the current version ([results/figures/domestic](results/figures/domestic)).
+- Reference implementations. A Python PREI reference path with fixtures, configs and recorded runs ([experiments/prei](../../experiments/prei)); an optional MATLAB implementation with its own recorded runs ([matlab/prei](../../matlab/prei)).
+- Public example and checks. A 300-row Melbourne sample runs without network access ([data/sample](../../data/sample)); the repository checks are [scripts/check_public.py](scripts/check_public.py), and the same steps run in [.github/workflows/check.yml](.github/workflows/check.yml).
+- Domestic work. Yantai orders were acquired, quality-checked and mapped to the parking-event contract, then replayed under three declared demand scenarios; v2 is the current version ([results/figures/domestic](../../results/figures/domestic)).
 
 ![F1: Melbourne data coverage and dwell calibration](results/figures/F1.png)
 
@@ -65,7 +67,7 @@ What this supports: in this model, the queue at the connectors is not what limit
 
 ## Three model layers, not interchangeable
 
-- **Parking competition and replay** ([apps/parking_lab/workbench](apps/parking_lab/workbench)). Observed arrivals enter with rules A-D; admission and allocation decide which vehicle gets a space or a connector. This layer models electric and combustion vehicles competing for the same site and produces model results, not observations.
+- **Parking competition and replay** ([apps/parking_lab/workbench](../../apps/parking_lab/workbench)). Observed arrivals enter with rules A-D; admission and allocation decide which vehicle gets a space or a connector. This layer models electric and combustion vehicles competing for the same site and produces model results, not observations.
 - **Charging-access submodel** (domestic v2). Observed sessions are sampled into charge requests at rate p_EV x q_need, queue at connectors, and lose service at departure. This layer has no parking competition and no site capacity, so its connector count is a scenario-based access requirement rather than the berth count of a lot.
 - **Ideal energy upper bound.** Deliverable energy is min(f x E, P x T / 60) with perfect scheduling. It ignores connector count by construction and carries no policy.
 
@@ -75,9 +77,9 @@ A bound answers what is reachable. A replay answers what a rule did on held-out 
 
 | layer | examples | where |
 |---|---|---|
-| observed | arrival and departure timestamps, dwell, bay, street, `InViolation` (Melbourne); lot identifier, entry and exit time (Yantai) | [data/](data/) |
+| observed | arrival and departure timestamps, dwell, bay, street, `InViolation` (Melbourne); lot identifier, entry and exit time (Yantai) | [data/](../../data/) |
 | declared scenario | `is_ev`, `needs_charge`, requested energy, EV share, charge need, p_EV x q_need, energy distribution | [docs/data.md](docs/data.md) |
-| model output | connector counts, delivered energy, failure rates, bounds | [results/](results/) |
+| model output | connector counts, delivered energy, failure rates, bounds | [results/](../../results/) |
 
 The data cannot identify how many parked vehicles were electric or how many wanted a charge, and no field records an EV. The scenario layer is generated by code with a recorded seed. Reading a result as an identified EV behaviour would be wrong.
 

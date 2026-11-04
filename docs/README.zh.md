@@ -36,7 +36,7 @@ python apps/parking_lab/workbench/make_summary_figure.py   # 重建上图
 |---|---|
 | [docs/method.md](method.md) | 符号、单位与公式 |
 | [docs/data.md](data.md) | 数据来源、清洗规则、哪些是观测哪些是声明 |
-| [docs/cases.md](cases.md) | 两个案例（墨尔本 2014、烟台 2025）的详细材料 |
+| [experiments/prei/CASES.md](../experiments/prei/CASES.md) | 两个案例（墨尔本 2014、烟台 2025）的详细材料 |
 | [docs/reproduce.md](reproduce.md) | 仓库内可重建与不可重建的内容 |
 | [results/README.md](../results/README.md) | 每张公开图表是什么 |
 | [apps/parking_lab](../apps/parking_lab) | 回放引擎、规则、指标与测试 |
@@ -45,6 +45,6 @@ python apps/parking_lab/workbench/make_summary_figure.py   # 重建上图
 
 ## 范围与许可
 
-两个案例分开报告、从不合并成一个估计，详见 [docs/cases.md](cases.md)。第三方数据遵循原发布方许可：墨尔本数据为 CC BY 4.0，需注明 City of Melbourne。代码尚未选择许可，仅供阅读与审阅，不授予复用权，见 [LICENSE.md](../LICENSE.md)。第三方论文不再分发。
+两个案例分开报告、从不合并成一个估计，详见 [experiments/prei/CASES.md](../experiments/prei/CASES.md)。第三方数据遵循原发布方许可：墨尔本数据为 CC BY 4.0，需注明 City of Melbourne。代码尚未选择许可，仅供阅读与审阅，不授予复用权，见 [LICENSE.md](../LICENSE.md)。第三方论文不再分发。
 
 稿件在作者工作区，尚未投稿或发表，没有预印本与 DOI。请勿把本仓库当作已发表论文引用。

@@ -35,7 +35,7 @@ The figure is rebuilt from [data/t5_summary/paired_worlds_2026-11-04.csv](data/t
 |---|---|
 | [docs/method.md](docs/method.md) | symbols, units and equations |
 | [docs/data.md](docs/data.md) | sources, processing rules, what is observed and what is declared |
-| [docs/cases.md](docs/cases.md) | the two case studies (Melbourne 2014, Yantai 2025) in detail |
+| [experiments/prei/CASES.md](experiments/prei/CASES.md) | the two case studies (Melbourne 2014, Yantai 2025) in detail |
 | [docs/reproduce.md](docs/reproduce.md) | what can be rebuilt here and what cannot |
 | [results/README.md](results/README.md) | what each published figure and table is |
 | [apps/parking_lab](apps/parking_lab) | replay engine, rules, metrics and tests |
@@ -44,6 +44,6 @@ The figure is rebuilt from [data/t5_summary/paired_worlds_2026-11-04.csv](data/t
 
 ## Scope and licence
 
-Two cases are kept separate and never added into one estimate; see [docs/cases.md](docs/cases.md). Third-party data stay under their publisher's licence: the Melbourne extract is CC BY 4.0 with attribution to the City of Melbourne. No licence has been chosen for the code yet, so it is provided for reading and review without a grant of reuse rights; see [LICENSE.md](LICENSE.md). Third-party papers are not redistributed.
+Two cases are kept separate and never added into one estimate; see [experiments/prei/CASES.md](experiments/prei/CASES.md). Third-party data stay under their publisher's licence: the Melbourne extract is CC BY 4.0 with attribution to the City of Melbourne. No licence has been chosen for the code yet, so it is provided for reading and review without a grant of reuse rights; see [LICENSE.md](LICENSE.md). Third-party papers are not redistributed.
 
 The manuscript is in the authors' workspace and has not been submitted or published; there is no preprint and no DOI. Do not cite this repository as a published paper.
