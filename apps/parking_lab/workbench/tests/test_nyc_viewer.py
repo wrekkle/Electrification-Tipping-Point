@@ -14,6 +14,9 @@ from apps.parking_lab.workbench.server import make_server
 
 REPO_ROOT = Path(__file__).resolve().parents[4]
 SAMPLE_DIR = REPO_ROOT / "research" / "nyc_semisynthetic_20261103" / "v1" / "viewer_sample"
+if not SAMPLE_DIR.is_dir():
+    raise unittest.SkipTest(
+        "viewer sample fixture is not part of the public repository")
 R0_RUN = "R0__nyc-bri__observed"
 R1_RUN = "R1__nyc-bri__R1__slack25__h0__strict__rep0"
 R2_RUN = "R2__nyc-bri__R2__bg060__h0__strict__rep0"

@@ -11,6 +11,9 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(WB)))
 if WB not in sys.path:
     sys.path.insert(0, WB)
 REF_DIR = os.path.join(REPO, "research", "model_architecture_20261102")
+if not os.path.isdir(REF_DIR):
+    raise unittest.SkipTest(
+        "reference model fixture is not part of the public repository")
 if REF_DIR not in sys.path:
     sys.path.insert(0, REF_DIR)
 

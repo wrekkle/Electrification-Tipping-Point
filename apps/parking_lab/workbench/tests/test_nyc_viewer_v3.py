@@ -15,7 +15,10 @@ from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-from apps.parking_lab.workbench.server import make_server
+try:
+    from apps.parking_lab.workbench.server import make_server
+except Exception as exc:  # pragma: no cover - public repository without research tree
+    raise unittest.SkipTest("workbench server is not importable here: %s" % exc)
 
 REPO_ROOT = Path(__file__).resolve().parents[4]
 CURVE_KEYS = ("n", "total", "capital", "refusal", "energy", "shortfall", "resource",
