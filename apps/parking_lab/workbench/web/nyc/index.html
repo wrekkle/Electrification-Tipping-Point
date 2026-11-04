@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYC 半合成研究结果 · 停车充电配置优化</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/nyc/style.css">
+  <script src="/nyc/app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <a class="back-link" href="/">← 返回仿真实验台</a>
+    <div class="title-block">
+      <p class="eyebrow">NYC SEMISYNTHETIC VIEWER · READ-ONLY</p>
+      <h1>NYC 半合成研究结果</h1>
+    </div>
+    <div id="dataset-switch" class="dataset-switch" role="group" aria-label="数据集切换">
+      <button type="button" class="dataset-btn" data-dataset="v1" aria-pressed="false">v1 数据集</button>
+      <button type="button" class="dataset-btn active" data-dataset="v2" aria-pressed="true">v2 数据集</button>
+      <button type="button" class="dataset-btn" data-dataset="v3" aria-pressed="false">v3 数据集</button>
+    </div>
+    <span id="data-status" class="status-pill" aria-live="polite">正在连接…</span>
+  </header>
+
+  <p id="dataset-note" class="dataset-note">当前数据集：v2。v1 保留观测重放与单世界运行视图；v3 提供机制对照（M0/M1/M2）、R0 真实锚点回放、逐世界事后最优明细与留出验证/归因表格；三套契约由 index.json 的 schema_version 区分。</p>
+  <div id="banner" class="banner" role="status" aria-live="polite" hidden></div>
+
+  <section class="panel evidence-panel" aria-label="证据类型标签（始终显示）">
+    <div class="panel-head">
+      <div>
+        <h2>证据类型标签（始终显示）</h2>
+        <p>四类分析对象显式区分：期望成本选择是可实施选择；单世界事后最优仅诊断；固定配置评价评估冻结后的 n；稳健配置 A/B 分开命名。R0 观测重放不计算 J(n)、拒绝率或模拟交付。</p>
+      </div>
+    </div>
+    <div id="evidence-badges" class="evidence-badges"></div>
+  </section>
+
+  <section id="mode-panel" class="panel mode-panel" aria-label="模式标签">
+    <div class="panel-head">
+      <div>
+        <h2>模式标签（始终显示）</h2>
+        <p>R0 是真实会话的观测重放；R1/R2 含未知量情景。成本曲线、拒绝率与缺口属于模型输出，不是实测数据。模式标签与证据类型标签都常显，不只放在提示框里。</p>
+      </div>
+    </div>
+    <div id="mode-cards" class="mode-cards"></div>
+  </section>
+
+  <section id="select-panel" class="panel select-panel" aria-label="结果选择顺序">
+    <div class="panel-head">
+      <div>
+        <h2>结果选择</h2>
+        <p id="select-note">选择顺序固定：模式 → 站点 → 情景 → 运行（含规则 / 重复 / 时间块 / 证据类型）。切换后刷新所有面板。</p>
+      </div>
+    </div>
+    <div class="select-grid">
+      <label class="field"><span>① 模式</span><select id="mode-select" aria-label="模式"></select></label>
+      <label class="field"><span>② 站点</span><select id="site-select" aria-label="站点"></select></label>
+      <label class="field"><span>③ 情景</span><select id="scenario-select" aria-label="情景"></select></label>
+      <label class="field"><span>④ 运行</span><select id="run-select" aria-label="运行"></select></label>
+    </div>
+    <p id="run-meta" class="run-meta">尚未选择运行</p>
+  </section>
+
+  <section id="empty-state" class="panel empty-state" hidden>
+    <h2>尚未生成结果</h2>
+    <p id="empty-message">研究端把 NYC 半合成结果写入 research/nyc_semisynthetic_20261103/v1/viewer/（v2 为 v2/viewer/）后刷新本页即可。</p>
+    <p class="note">本页只读展示离线研究产物，不在浏览器里重算账本。开发联调可用环境变量 NYC_VIEWER_DIR（v1）或 NYC_VIEWER_DIR_V2（v2）指向样例目录。</p>
+  </section>
+
+  <!-- v1 数据集视图：保持原有面板与行为不变 -->
+  <main id="content" hidden>
+    <section class="kpi-row" aria-label="关键结果">
+      <article class="kpi panel"><span class="kpi-label">到达合计</span><strong class="kpi-value" id="kpi-arrivals">未知</strong><span class="kpi-sub" id="kpi-arrivals-sub">—</span></article>
+      <article class="kpi panel"><span class="kpi-label">被拒合计</span><strong class="kpi-value" id="kpi-rejected">未知</strong><span class="kpi-sub" id="kpi-rejected-sub">—</span></article>
+      <article class="kpi panel"><span class="kpi-label">交付电量</span><strong class="kpi-value" id="kpi-delivered">未知</strong><span class="kpi-sub" id="kpi-delivered-sub">—</span></article>
+      <article class="kpi panel"><span class="kpi-label">未满足需求</span><strong class="kpi-value" id="kpi-unmet">未知</strong><span class="kpi-sub" id="kpi-unmet-sub">—</span></article>
+    </section>
+
+    <section class="panel chart-panel" aria-label="占用与充电状态时间序列">
+      <div class="panel-head">
+        <div>
+          <h2>占用与充电状态（时间序列）</h2>
+          <p>时间序列按交付契约的 15 分钟分箱；可切换汇总分箱。占用与功率取分箱内均值，到达 / 拒绝 / 交付取分箱内求和。</p>
+        </div>
+        <label class="inline-field" for="bin-select">分箱
+          <select id="bin-select"><option value="15" selected>15 分钟</option><option value="30">30 分钟</option><option value="60">60 分钟</option></select>
+        </label>
+      </div>
+      <div class="chart-block">
+        <h3>占用车位数</h3>
+        <div id="occupancy-legend" class="legend"></div>
+        <div id="chart-occupancy" class="chart-host"></div>
+      </div>
+      <div class="chart-block">
+        <h3>充电功率</h3>
+        <div id="power-legend" class="legend"></div>
+        <div id="chart-power" class="chart-host"></div>
+      </div>
+      <p id="series-range" class="chart-meta"></p>
+      <p id="series-note" class="note"></p>
+    </section>
+
+    <section class="panel chart-panel" aria-label="到达、拒绝与交付">
+      <div class="panel-head">
+        <div>
+          <h2>到达 / 拒绝 / 交付 / 未满足需求</h2>
+          <p>与上方同一分箱聚合；R0 观测重放不计算拒绝率与缺口，因此不显示被拒曲线与未满足需求。</p>
+        </div>
+      </div>
+      <div class="chart-block">
+        <h3>到达与被拒（辆 / 分箱）</h3>
+        <div id="arrivals-legend" class="legend"></div>
+        <div id="chart-arrivals" class="chart-host"></div>
+      </div>
+      <div class="chart-block">
+        <h3>交付电量（kWh / 分箱）</h3>
+        <div id="delivered-legend" class="legend"></div>
+        <div id="chart-delivered" class="chart-host"></div>
+      </div>
+      <p id="arrivals-summary" class="chart-meta"></p>
+    </section>
+
+    <section class="panel chart-panel" aria-label="配置—成本曲线与成本分项">
+      <div class="panel-head">
+        <div>
+          <h2>配置—成本曲线与成本分项</h2>
+          <p>J(n) = 资本 / 运营成本 + 服务损失；n 为契约定义的配置变量（充电位数量）。R0 不计算 J(n)。</p>
+        </div>
+      </div>
+      <p id="cost-empty" class="r0-note" hidden></p>
+      <p id="cost-head" class="cost-head"></p>
+      <div id="cost-legend" class="legend"></div>
+      <div id="chart-cost" class="chart-host"></div>
+      <h3 class="subhead">各配置成本分项</h3>
+      <div id="cost-table" class="table-wrap"></div>
+      <h3 class="subhead">所选配置的分项特征</h3>
+      <div id="cost-detail" class="table-wrap"></div>
+      <p id="cost-note" class="note"></p>
+    </section>
+
+    <section class="panel" aria-label="假设、来源、随机种子、版本与数据覆盖">
+      <div class="panel-head">
+        <div>
+          <h2>假设 / 来源 / 随机种子 / 版本 / 数据覆盖</h2>
+          <p>未知字段显示“未知”，不以 0 代替。随机种子与来源按交付契约登记。</p>
+        </div>
+      </div>
+      <div class="meta-grid">
+        <section class="meta-card"><h3>运行与时间契约</h3><dl id="facts-run" class="facts"></dl></section>
+        <section class="meta-card"><h3>版本与来源</h3><dl id="facts-provenance" class="facts"></dl></section>
+        <section class="meta-card"><h3>随机种子</h3><div id="table-seeds" class="table-wrap"></div></section>
+        <section class="meta-card"><h3>数据覆盖（站点）</h3><dl id="facts-coverage" class="facts"></dl></section>
+        <section class="meta-card"><h3>队列与需求</h3><dl id="facts-cohort" class="facts"></dl></section>
+        <section class="meta-card"><h3>成本参数 θ</h3><div id="table-theta" class="table-wrap"></div></section>
+      </div>
+      <h3 class="subhead">假设清单</h3>
+      <div id="table-assumptions" class="table-wrap"></div>
+      <div id="source-notes" class="notes"></div>
+    </section>
+
+    <section id="observed-panel" class="panel" aria-label="R0 观测数据" hidden>
+      <div class="panel-head">
+        <div>
+          <h2>R0 观测会话</h2>
+          <p>观测重放数据：只有观测到的会话、日状态与峰值并发；不计算拒绝率、缺口或 J(n)。</p>
+        </div>
+      </div>
+      <dl id="facts-observed" class="facts"></dl>
+      <h3 class="subhead">观测会话</h3>
+      <div id="table-observed-sessions" class="table-wrap"></div>
+      <h3 class="subhead">日状态</h3>
+      <div id="table-observed-days" class="table-wrap"></div>
+      <h3 class="subhead">逐日峰值并发</h3>
+      <div id="table-observed-peaks" class="table-wrap"></div>
+    </section>
+
+    <section class="panel" aria-label="世界与结果导出">
+      <div class="panel-head">
+        <div>
+          <h2>世界与结果导出</h2>
+          <p>全部为只读 GET。下载内容来自研究端已写出的 JSON，或由后端从运行 JSON 的 rows / selected 逐行转出，不重算。</p>
+        </div>
+      </div>
+      <div id="export-links" class="export-links"></div>
+      <dl id="facts-export" class="facts"></dl>
+      <p class="note">JSON：完整运行结果；curve_csv：配置—成本曲线；outcomes_csv：逐车结果；world_json：冻结世界文件（若该运行有关联世界）。</p>
+    </section>
+  </main>
+
+  <!-- v2 数据集视图：四类证据对象（期望成本 / 固定配置评价 / 稳健 A·B / 单世界事后最优-仅诊断） -->
+  <main id="v2-content" hidden>
+    <section class="panel" aria-label="运行元信息">
+      <div class="panel-head">
+        <div>
+          <h2>运行元信息（模式 / 证据类型 / 阶段 / 时间块 / θ / 规则）</h2>
+          <p>每个 run 常显 mode_label、evidence_kind、stage、block_id、theta_id、rule、覆盖范围、来源与未知字段；未知显示“未知”，不以 0 代替。</p>
+        </div>
+        <span id="v2-run-evidence" class="evidence-badge">未知</span>
+      </div>
+      <p id="v2-run-meta" class="run-meta">尚未选择运行</p>
+      <dl id="v2-run-facts" class="facts facts-grid"></dl>
+      <p id="v2-run-note" class="note"></p>
+    </section>
+
+    <section class="panel chart-panel" id="v2-expected-panel" aria-label="期望成本选择">
+      <div class="panel-head">
+        <div>
+          <h2>期望成本选择（可实施）</h2>
+          <p>对重复取期望后的 J̄(n) 与 argmin（选择阶段时间块 + 重复数）；这是可实施选择（evidence_kind = expected_cost），不是单世界事后最优。</p>
+        </div>
+        <span class="evidence-badge implementable">expected_cost · 可实施选择</span>
+      </div>
+      <p id="v2-cost-empty" class="r0-note" hidden></p>
+      <p id="v2-cost-head" class="cost-head"></p>
+      <div id="v2-cost-legend" class="legend"></div>
+      <div id="v2-chart-cost" class="chart-host"></div>
+      <h3 class="subhead">曲线数值（按 n）</h3>
+      <div id="v2-cost-table" class="table-wrap"></div>
+      <p id="v2-cost-note" class="note"></p>
+    </section>
+
+    <section class="panel" id="v2-fixed-panel" aria-label="固定配置评价">
+      <div class="panel-head">
+        <div>
+          <h2>固定配置评价（冻结 n，独立时间块 × 独立重复）</h2>
+          <p>n 在选择阶段确定后冻结，再在 evaluation 块上评价；每行必须带 block_id 与评价重复数。配对差 = J_fixed − J_registered_ev。</p>
+        </div>
+        <span class="evidence-badge eval">fixed_config_eval</span>
+      </div>
+      <p id="v2-fixed-summary" class="cost-head"></p>
+      <div id="v2-fixed-table" class="table-wrap"></div>
+      <p id="v2-fixed-note" class="note"></p>
+    </section>
+
+    <section class="panel" id="v2-robust-panel" aria-label="稳健配置">
+      <div class="panel-head">
+        <div>
+          <h2>稳健配置（A / B 分开命名，不得合并）</h2>
+          <p>robust_A：先对 ω 求期望、再对 φ/θ 取最坏（设计对象）；robust_B：对单次实现取最坏，单独命名（压力测试对象，不是设计选择）。</p>
+        </div>
+        <span class="evidence-badge robust">robust_A / robust_B</span>
+      </div>
+      <div class="robust-grid">
+        <section class="robust-block" aria-label="稳健 A">
+          <h3>稳健 A · robust_A（设计对象）</h3>
+          <p id="v2-robust-a-summary" class="cost-head"></p>
+          <div id="v2-robust-a-table" class="table-wrap"></div>
+          <p id="v2-robust-a-note" class="note"></p>
+        </section>
+        <section class="robust-block" aria-label="稳健 B">
+          <h3>稳健 B · robust_B（压力测试对象，非设计选择）</h3>
+          <p id="v2-robust-b-summary" class="cost-head"></p>
+          <div id="v2-robust-b-table" class="table-wrap"></div>
+          <p id="v2-robust-b-note" class="note"></p>
+        </section>
+      </div>
+      <p id="v2-robust-note" class="note"></p>
+    </section>
+
+    <section class="panel" id="v2-hindsight-panel" aria-label="单世界事后最优">
+      <div class="panel-head">
+        <div>
+          <h2>单世界事后最优（仅诊断）</h2>
+          <p>单个世界内的事后最优 n 与其 J(n)。仅用于诊断，不是推荐配置，也不得作为可实施选择。</p>
+        </div>
+        <span class="evidence-badge diagnostic">仅诊断 · single_world_hindsight</span>
+      </div>
+      <p id="v2-hindsight-summary" class="cost-head"></p>
+      <div id="v2-hindsight-table" class="table-wrap"></div>
+      <p id="v2-hindsight-note" class="note"></p>
+    </section>
+
+    <section id="v2-observed-panel" class="panel" aria-label="R0 观测重放" hidden>
+      <div class="panel-head">
+        <div>
+          <h2>R0 观测重放（不计算 J(n)）</h2>
+          <p>R0 只有观测会话与日状态；拒绝率、缺口、J(n) 与模拟交付都不计算，未知项显示“未知”。</p>
+        </div>
+        <span class="evidence-badge observed">observed_replay · 观测</span>
+      </div>
+      <dl id="v2-observed-facts" class="facts"></dl>
+      <div id="v2-observed-days" class="table-wrap"></div>
+    </section>
+
+    <section class="panel" aria-label="来源、覆盖范围、未知项与限制">
+      <div class="panel-head">
+        <div>
+          <h2>来源 / 覆盖范围 / 未知项 / 限制</h2>
+          <p>sources、limits、registration 与覆盖范围常显；未知字段显示“未知”，不以 0 代替。限制项不得只放在页面角落。</p>
+        </div>
+      </div>
+      <div class="meta-grid">
+        <section class="meta-card"><h3>数据集与版本指纹</h3><dl id="v2-facts-dataset" class="facts"></dl></section>
+        <section class="meta-card"><h3>所选运行覆盖范围</h3><dl id="v2-facts-coverage" class="facts"></dl></section>
+        <section class="meta-card"><h3>未知项（unknown / computed）</h3><ul id="v2-unknown-list" class="notes-list"></ul></section>
+        <section class="meta-card"><h3>来源（sources）</h3><div id="v2-sources-table" class="table-wrap"></div></section>
+      </div>
+      <h3 class="subhead">限制（limits，必须可见）</h3>
+      <ul id="v2-limits-list" class="notes-list"></ul>
+      <p id="v2-labels-rule" class="note"></p>
+    </section>
+
+    <section class="panel" aria-label="世界与结果导出（v2）">
+      <div class="panel-head">
+        <div>
+          <h2>下载（JSON / 曲线 CSV / 世界 JSON）</h2>
+          <p>下载内容来自研究产物本身，页面不重算成本；文件名可复现。curve CSV 与页面同一 run 的曲线数值一致。</p>
+        </div>
+      </div>
+      <div id="v2-export-links" class="export-links"></div>
+      <dl id="v2-facts-export" class="facts"></dl>
+      <p class="note">v2 契约不提供 outcomes_csv（逐车结果）；world_json 仅在该运行关联 world 文件时可用。</p>
+    </section>
+  </main>
+
+  <!-- v3 数据集视图：机制对照 + R0 真实锚点 + 逐世界事后最优（读 CSV）+ 留出 A/B + 归因 -->
+  <main id="v3-content" hidden>
+    <section class="panel" aria-label="v3 数据集概览">
+      <div class="panel-head">
+        <div>
+          <h2>v3 机制对照数据集（nyc_viewer_v3/1）</h2>
+          <p>R0 是真实锚点回放，不参与选择；M0/M1/M2 是机制对照（M0 冻结 v2 模板作对照，M1 到达时间条件属性，M2 经验连续周/多日块）。n* 来自期望成本 argmin，仅用于选择；固定配置评价与逐世界事后最优都不参与选择。</p>
+        </div>
+        <span class="evidence-badge implementable">nyc_viewer_v3/1 · 只读</span>
+      </div>
+      <dl id="v3-overview-facts" class="facts facts-grid"></dl>
+      <p id="v3-overview-note" class="note"></p>
+    </section>
+
+    <section class="panel" aria-label="v3 R0 真实锚点回放">
+      <div class="panel-head">
+        <div>
+          <h2>R0 真实锚点回放（不参与选择）</h2>
+          <p>R0 回放观测到的真实会话锚点；它不是配置选择，不计算 J(n)，也不能和 M0/M1/M2 的期望曲线混在一起作选择依据。</p>
+        </div>
+        <span class="evidence-badge observed">R0 · 观测重放 · 不参与选择</span>
+      </div>
+      <p id="v3-r0-summary" class="cost-head"></p>
+      <div id="v3-r0-table" class="table-wrap"></div>
+      <div id="v3-r0-links" class="export-links"></div>
+      <p id="v3-r0-note" class="note"></p>
+    </section>
+
+    <section class="panel chart-panel" aria-label="v3 机制期望曲线">
+      <div class="panel-head">
+        <div>
+          <h2>M0 / M1 / M2 期望曲线与 n*（选择对象）</h2>
+          <p>曲线来自 runs/run_*.json 的 curve.total 与 choice 字段；n* 是期望成本 argmin。三种机制共用同一成本参数与网格，只替换生成机制。</p>
+        </div>
+        <span class="evidence-badge implementable">expected cost · M0/M1/M2</span>
+      </div>
+      <div class="select-grid v3-select-grid">
+        <label class="field"><span>站点</span><select id="v3-site-select" aria-label="v3 站点"></select></label>
+        <label class="field"><span>情景</span><select id="v3-scenario-select" aria-label="v3 情景"></select></label>
+      </div>
+      <p id="v3-expected-summary" class="cost-head"></p>
+      <div id="v3-expected-legend" class="legend"></div>
+      <div id="v3-chart-expected" class="chart-host"></div>
+      <div id="v3-expected-table" class="table-wrap"></div>
+      <div id="v3-expected-links" class="export-links"></div>
+      <p id="v3-expected-note" class="note"></p>
+    </section>
+
+    <section class="panel" aria-label="v3 固定配置评价">
+      <div class="panel-head">
+        <div>
+          <h2>固定配置评价（跨机制 · 登记充电位 · n=0 基线）</h2>
+          <p>把选择阶段冻结的 n 放到独立时间块上评价，并做跨机制评价：同一 n 在不同机制生成的世界里评价。必须同时看登记充电位（registered_ev_bays）与 n=0 基线（J_mean_at_0），否则无法判断成本差异来自配置还是机制。</p>
+        </div>
+        <span class="evidence-badge eval">fixed_config_eval · 不参与选择</span>
+      </div>
+      <p id="v3-fixed-summary" class="cost-head"></p>
+      <div id="v3-fixed-table" class="table-wrap"></div>
+      <div id="v3-fixed-links" class="export-links"></div>
+      <p id="v3-fixed-note" class="note"></p>
+    </section>
+
+    <section class="panel" aria-label="v3 稳健配置">
+      <div class="panel-head">
+        <div>
+          <h2>稳健配置（robust_A / robust_B 分开命名）</h2>
+          <p>robust_A：先对 ω 求期望、再对机制/情景/θ 取最坏，是设计对象；robust_B：对单次实现取最坏，是压力测试对象，不是设计选择。两表不合并、不互相替代。</p>
+        </div>
+        <span class="evidence-badge robust">robust_A / robust_B</span>
+      </div>
+      <div class="robust-grid">
+        <section class="robust-block" aria-label="v3 稳健 A">
+          <h3>稳健 A · robust_A（设计对象）</h3>
+          <p id="v3-robust-a-summary" class="cost-head"></p>
+          <div id="v3-robust-a-table" class="table-wrap"></div>
+          <p id="v3-robust-a-note" class="note"></p>
+        </section>
+        <section class="robust-block" aria-label="v3 稳健 B">
+          <h3>稳健 B · robust_B（压力测试对象，非设计选择）</h3>
+          <p id="v3-robust-b-summary" class="cost-head"></p>
+          <div id="v3-robust-b-table" class="table-wrap"></div>
+          <p id="v3-robust-b-note" class="note"></p>
+        </section>
+      </div>
+      <div id="v3-robust-links" class="export-links"></div>
+      <p id="v3-robust-note" class="note"></p>
+    </section>
+
+    <section class="panel" aria-label="v3 逐世界事后最优明细">
+      <div class="panel-head">
+        <div>
+          <h2>逐世界事后最优明细（读 panels.hindsight.csv，仅诊断）</h2>
+          <p>本表逐行来自 v3 的 export/t63_per_world_hindsight.csv 真实 CSV，不使用固定配置评价兜底。hindsight_gap = 固定 n 的 J_fixed − 该世界最小 J（≥0）；只做诊断，不参与选择。</p>
+        </div>
+        <span class="evidence-badge diagnostic">仅诊断 · 逐世界 hindsight</span>
+      </div>
+      <p id="v3-hindsight-summary" class="cost-head"></p>
+      <p id="v3-hindsight-source" class="chart-meta"></p>
+      <div id="v3-hindsight-table" class="table-wrap"></div>
+      <div id="v3-hindsight-links" class="export-links"></div>
+      <p id="v3-hindsight-note" class="note"></p>
+    </section>
+
+    <section class="panel" aria-label="v3 留出验证 A/B 与噪声底">
+      <div class="panel-head">
+        <div>
+          <h2>留出验证 A / B 两表与噪声底</h2>
+          <p>A 给定留出周的观测计数，只评形状；B 用训练期信息同时预测数量+形状。A 不得当作 B，两表不合并。噪声底给同一观测在重复生成下的波动尺度，不构成真实数据上的置信区间。</p>
+        </div>
+        <span class="evidence-badge eval">holdout A / B · noise floor</span>
+      </div>
+      <h3 class="subhead">留出 A（给定计数，只评形状）</h3>
+      <p id="v3-holdout-a-summary" class="cost-head"></p>
+      <div id="v3-holdout-a-table" class="table-wrap"></div>
+      <h3 class="subhead">留出 B（训练信息预测数量+形状）</h3>
+      <p id="v3-holdout-b-summary" class="cost-head"></p>
+      <div id="v3-holdout-b-table" class="table-wrap"></div>
+      <h3 class="subhead">噪声底（同观测重复生成波动）</h3>
+      <p id="v3-noise-summary" class="cost-head"></p>
+      <div id="v3-noise-table" class="table-wrap"></div>
+      <div id="v3-holdout-links" class="export-links"></div>
+      <p id="v3-holdout-note" class="note"></p>
+    </section>
+
+    <section class="panel" aria-label="v3 归因对照与选择诊断">
+      <div class="panel-head">
+        <div>
+          <h2>归因对照与选择诊断</h2>
+          <p>归因按"每次只改一个机制"的成对对照展示；同向偏差不等于某一机制主导，缺失值显示“未定义”。选择诊断给出登记充电位与观测/未约束生成峰值，帮助判断机制差异是否可能来自服务样本与需求定义差异。</p>
+        </div>
+        <span class="evidence-badge robust">attribution · selection diagnostics</span>
+      </div>
+      <p id="v3-attr-summary" class="cost-head"></p>
+      <div id="v3-attr-table" class="table-wrap"></div>
+      <h3 class="subhead">选择诊断</h3>
+      <p id="v3-selection-summary" class="cost-head"></p>
+      <div id="v3-selection-table" class="table-wrap"></div>
+      <div id="v3-attr-links" class="export-links"></div>
+      <p id="v3-attr-note" class="note"></p>
+    </section>
+
+    <section class="panel" aria-label="v3 来源、限制与下载">
+      <div class="panel-head">
+        <div>
+          <h2>来源 / 限制 / 下载（真实 CSV 与 JSON）</h2>
+          <p>所有下载都指向研究端写出的真实文件（export/*.csv、runs/*.json、world/*.json），页面不把渲染文本当数据。未知/缺失显示“未定义”。</p>
+        </div>
+      </div>
+      <div class="meta-grid">
+        <section class="meta-card"><h3>数据集与版本</h3><dl id="v3-meta-facts" class="facts"></dl></section>
+        <section class="meta-card"><h3>来源（sources）</h3><div id="v3-sources-table" class="table-wrap"></div></section>
+        <section class="meta-card"><h3>限制（limits）</h3><ul id="v3-limits-list" class="notes-list"></ul></section>
+      </div>
+      <h3 class="subhead">下载</h3>
+      <div id="v3-downloads" class="export-links"></div>
+      <p id="v3-downloads-note" class="note"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>只读查看器 · 数据来自离线研究产物 · 不在浏览器重算账本</span>
+    <a href="/">返回仿真实验台</a>
+  </footer>
+</div>
+<noscript><p class="banner warn">本页需要 JavaScript 才能通过只读接口加载研究结果。</p></noscript>
+</body>
+</html>

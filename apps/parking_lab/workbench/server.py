@@ -18,7 +18,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlsplit
 
-from . import VERSION
+from . import VERSION, nyc_viewer, scheme_service
 from .config import ALL_POLICIES, Config, SCENARIOS, presets
 from .continuous import COST_MODEL_SOURCE, COST_MODEL_VERSION, ContinuousEngine, ContinuousError
 from .experiments import (FORMAL_POLICY_SET, POLICY_SETS, compare, export_run)
@@ -226,6 +226,37 @@ def make_server(port=8765):
             if origin and origin not in {"http://" + host for host in allowed_hosts}:
                 raise PermissionError("不接受其他网页发起的请求")
 
+        def nyc(self, path, query):
+            """NYC 半合成结果只读接口；错误沿用 error()：KeyError->404，ValueError->400。
+
+            数据集用 ?dataset=v1|v2|v3 选择（缺省读环境变量 NYC_VIEWER_DATASET，再缺省 v1），
+            实际契约版本仍由 index.json 的 schema_version 决定；非法数据集返回 400。
+            """
+            dataset = (query.get("dataset") or [None])[0]
+            dataset = nyc_viewer.dataset_name(dataset)
+            if path == "/api/nyc/index":
+                return self.send(200, nyc_viewer.index_payload(dataset))
+            if path == "/api/nyc/health":
+                return self.send(200, nyc_viewer.health_payload(dataset))
+            if path == "/api/nyc/fixed_eval":
+                return self.send(200, nyc_viewer.fixed_eval_payload(dataset))
+            if path == "/api/nyc/robust":
+                return self.send(200, nyc_viewer.robust_payload(dataset))
+            if path.startswith("/api/nyc/run/"):
+                return self.send(200, nyc_viewer.run_payload(path[len("/api/nyc/run/"):], dataset))
+            if path.startswith("/api/nyc/world/"):
+                return self.send(200, nyc_viewer.world_payload(path[len("/api/nyc/world/"):], dataset))
+            if path.startswith("/api/nyc/export/"):
+                run_id = path[len("/api/nyc/export/"):]
+                fmt = (query.get("format") or ["json"])[0]
+                body, content_type, filename = nyc_viewer.export_payload(run_id, fmt, dataset)
+                return self.send(200, body, content_type, filename)
+            if path.startswith("/api/nyc/table/"):
+                table_name = path[len("/api/nyc/table/"):]
+                body, content_type, filename = nyc_viewer.table_payload(table_name, dataset)
+                return self.send(200, body, content_type, filename)
+            raise KeyError("接口不存在")
+
         # ------------------------------------------------------------------ GET
         def do_GET(self):
             try:
@@ -233,6 +264,14 @@ def make_server(port=8765):
                 parsed = urlsplit(self.path)
                 path = unquote(parsed.path)
                 query = parse_qs(parsed.query)
+                if path.startswith("/api/nyc/"):
+                    return self.nyc(path, query)
+                if path.startswith("/api/t64/"):
+                    status, body = scheme_service.handle_get(path, query)
+                    if isinstance(body, tuple):
+                        payload, content_type, filename = body
+                        return self.send(status, payload, content_type, filename)
+                    return self.send(status, body)
                 if path == "/api/health":
                     return self.send(200, {"ok": True, "version": VERSION, "synthetic": True,
                                            "continuous": True, "replay": True})
@@ -318,7 +357,19 @@ def make_server(port=8765):
                            "/app.js": ("app.js", "text/javascript; charset=utf-8"),
                            "/style.css": ("style.css", "text/css; charset=utf-8"),
                            "/lib/charts.js": ("lib/charts.js", "text/javascript; charset=utf-8"),
-                           "/lib/dotgrid.js": ("lib/dotgrid.js", "text/javascript; charset=utf-8")}
+                           "/lib/dotgrid.js": ("lib/dotgrid.js", "text/javascript; charset=utf-8"),
+                           # NYC 半合成结果独立查看页（web/nyc/），只读静态资源。
+                           "/nyc": ("nyc/index.html", "text/html; charset=utf-8"),
+                           "/nyc/": ("nyc/index.html", "text/html; charset=utf-8"),
+                           "/nyc/index.html": ("nyc/index.html", "text/html; charset=utf-8"),
+                           "/nyc/app.js": ("nyc/app.js", "text/javascript; charset=utf-8"),
+                           "/nyc/style.css": ("nyc/style.css", "text/css; charset=utf-8"),
+                           # T64 三方案操作页（web/schemes/），数据全部来自 /api/t64/* 真实运行。
+                           "/t64": ("schemes/index.html", "text/html; charset=utf-8"),
+                           "/t64/": ("schemes/index.html", "text/html; charset=utf-8"),
+                           "/t64/index.html": ("schemes/index.html", "text/html; charset=utf-8"),
+                           "/t64/app.js": ("schemes/app.js", "text/javascript; charset=utf-8"),
+                           "/t64/style.css": ("schemes/style.css", "text/css; charset=utf-8")}
                 if path not in mapping:
                     return self.send(404, {"error": "页面不存在"})
                 filename, mime = mapping[path]
@@ -332,6 +383,12 @@ def make_server(port=8765):
                 self.guard()
                 data = self.body()
                 path = urlsplit(self.path).path
+                if path.startswith("/api/t64/"):
+                    status, body = scheme_service.handle_post(path, data)
+                    if isinstance(body, tuple):
+                        payload, content_type, filename = body
+                        return self.send(status, payload, content_type, filename)
+                    return self.send(status, body)
                 if path == "/api/validate":
                     return self.send(200, {"ok": True, "config": Config.parse(data.get("config", {})).to_dict()})
                 if path == "/api/compare":
